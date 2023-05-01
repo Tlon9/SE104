@@ -16,5 +16,13 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
         }
+
+        private void MenuItemFinalReport_Click(object sender, EventArgs e)
+        {
+            BaoCaoTongKet newform = new BaoCaoTongKet();
+            this.Hide();
+            newform.ShowDialog();
+            this.Close();
+        }
     }
 }
