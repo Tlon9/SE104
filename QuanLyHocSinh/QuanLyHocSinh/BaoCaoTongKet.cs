@@ -28,5 +28,6 @@ namespace QuanLyHocSinh
             ComboBox subject = sender as ComboBox;
             MessageBox.Show(subject.SelectedItem.ToString());
         }
+
     }
 }

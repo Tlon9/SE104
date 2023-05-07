@@ -7,3 +7,16 @@ D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.Generate
 D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
 D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
 D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
