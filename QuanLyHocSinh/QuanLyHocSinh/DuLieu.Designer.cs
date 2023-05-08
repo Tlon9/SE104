@@ -4510,8 +4510,7 @@ SELECT MaHocSinh, HoTen, GioiTinh, NgaySinh, DiaChi, QueQuan, DanToc, TonGiao, S
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
-            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Resources.QUANLYHOCSINHConnectionString;
+            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5139,8 +5138,7 @@ SELECT MaLop, TenLop, MaKhoi, SiSo, NamHoc FROM LOP WHERE (MaLop = @MaLop)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
-            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Resources.QUANLYHOCSINHConnectionString;
+            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5567,8 +5565,7 @@ SELECT MaLop, TenLop, MaKhoi, SiSo, NamHoc FROM LOP WHERE (MaLop = @MaLop)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
-            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Resources.QUANLYHOCSINHConnectionString;
+            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5968,8 +5965,7 @@ SELECT MaDiem, MaMonHoc, MaHocSinh, NamHoc, HocKy, DiemTX, DiemGK, DiemCK, DiemT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
-            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Resources.QUANLYHOCSINHConnectionString;
+            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6579,8 +6575,7 @@ SELECT MaMonHoc, TenMonHoc FROM MONHOC WHERE (MaMonHoc = @MaMonHoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
-            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Resources.QUANLYHOCSINHConnectionString;
+            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6925,8 +6920,7 @@ SELECT MaMonHoc, TenMonHoc FROM MONHOC WHERE (MaMonHoc = @MaMonHoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
-            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Resources.QUANLYHOCSINHConnectionString;
+            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7230,8 +7224,7 @@ SELECT MaMonHoc, TenMonHoc FROM MONHOC WHERE (MaMonHoc = @MaMonHoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            //this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
-            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Resources.QUANLYHOCSINHConnectionString;
+            this._connection.ConnectionString = global::QuanLyHocSinh.Properties.Settings.Default.QUANLYHOCSINHConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

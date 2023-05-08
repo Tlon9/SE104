@@ -15,19 +15,61 @@ namespace QuanLyHocSinh
         public BaoCaoTongKet()
         {
             InitializeComponent();
-            Panel1.Hide();
+            PanelStudent.Hide();
+            PanelStudent2.Hide();
+            PanelStudent3.Hide();
+            PanelStudent4.Hide();
+            dataGridViewReport.Hide();
+            dataGridViewReport2.Hide();
+            dataGridViewReport3.Hide();
+            dataGridViewReport4.Hide();
         }
 
-        private void tổngKếtMônNămHọcToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void BaoCaoTongKet_Load(object sender, EventArgs e)
         {
-            Panel1.Show();
+            // TODO: This line of code loads data into the 'duLieu.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Fill(this.duLieu.MONHOC);
+
         }
 
-        private void ComboBoxSubjects_SelectedValueChanged(object sender, EventArgs e)
+        private void ButtonReport_Click(object sender, EventArgs e)
         {
-            ComboBox subject = sender as ComboBox;
-            MessageBox.Show(subject.SelectedItem.ToString());
+            PanelStudent.Show();
+            dataGridViewReport.Show();
         }
+
+
+
+        private void ButtonReport2_Click(object sender, EventArgs e)
+        {
+            PanelStudent2.Show();
+            dataGridViewReport2.Show();
+        }
+
+        private void buttonReport3_Click(object sender, EventArgs e)
+        {
+            PanelStudent3.Show();
+            dataGridViewReport3.Show();
+        }
+
+        private void buttonReport4_Click(object sender, EventArgs e)
+        {
+            PanelStudent4.Show();
+            dataGridViewReport4.Show();
+        }
+
+
+
+
+        /*private void ButtonReport_Click(object sender, EventArgs e)
+{
+dataEntities dt = new dataEntities();
+var reSource = from c in dt.MONHOCs
+         where c.MaMonHoc == ComboBoxSubjects.SelectedValue
+         select c;
+dataGridViewSubjects.DataSource = reSource.ToList();
+}*/
 
     }
 }
