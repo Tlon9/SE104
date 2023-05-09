@@ -33,3 +33,4 @@ D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
 D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
 D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
 D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHocCuaLopNamHoc.resources
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources

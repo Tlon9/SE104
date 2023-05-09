@@ -49,5 +49,13 @@ namespace QuanLyHocSinh
             newform.ShowDialog();
             this.Show();
         }
+
+        private void MenuItemAddStudent_Click(object sender, EventArgs e)
+        {
+            TiepNhanHocSinh newform = new TiepNhanHocSinh();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
     }
 }
