@@ -23,6 +23,10 @@ namespace QuanLyHocSinh
             dataGridViewReport2.Hide();
             dataGridViewReport3.Hide();
             dataGridViewReport4.Hide();
+            dataEntities data = new dataEntities();
+            var reSource = from c in data.MONHOCs
+                           select c.TenMonHoc;
+            ComboBoxSubjects.DataSource = reSource.ToList();
         }
 
 
