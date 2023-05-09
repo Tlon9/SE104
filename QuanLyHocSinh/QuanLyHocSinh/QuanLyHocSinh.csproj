@@ -96,11 +96,21 @@
     <Compile Include="KHOI.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LapBangDiemMonHocCuaLopNamHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LapBangDiemMonHocCuaLopNamHoc.Designer.cs" />
     <Compile Include="LOP.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MONHOC.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhapBangDiemMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhapBangDiemMonHoc.Designer.cs">
+      <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
@@ -115,6 +125,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaoCaoTongKet.resx">
       <DependentUpon>BaoCaoTongKet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapBangDiemMonHocCuaLopNamHoc.resx" />
+    <EmbeddedResource Include="NhapBangDiemMonHoc.resx">
+      <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -43,7 +43,6 @@ namespace QuanLyHocSinh
             this.ButtonReport = new System.Windows.Forms.Button();
             this.ComboBoxSemesters = new System.Windows.Forms.ComboBox();
             this.ComboBoxYears = new System.Windows.Forms.ComboBox();
-            this.mONHOCTableAdapter = new QuanLyHocSinh.DuLieuTableAdapters.MONHOCTableAdapter();
             this.PanelStudent = new System.Windows.Forms.Panel();
             this.labelRatio5 = new System.Windows.Forms.Label();
             this.labelRatio4 = new System.Windows.Forms.Label();
@@ -188,8 +187,6 @@ namespace QuanLyHocSinh
             // 
             this.ComboBoxSubjects.AllowDrop = true;
             this.ComboBoxSubjects.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ComboBoxSubjects.DataSource = this.mONHOCBindingSource;
-            this.ComboBoxSubjects.DisplayMember = "TenMonHoc";
             this.ComboBoxSubjects.FormattingEnabled = true;
             this.ComboBoxSubjects.Location = new System.Drawing.Point(3, 30);
             this.ComboBoxSubjects.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -317,9 +314,7 @@ namespace QuanLyHocSinh
             this.ComboBoxYears.Size = new System.Drawing.Size(148, 24);
             this.ComboBoxYears.TabIndex = 1;
             // 
-            // mONHOCTableAdapter
             // 
-            this.mONHOCTableAdapter.ClearBeforeFill = true;
             // 
             // PanelStudent
             // 
@@ -624,8 +619,6 @@ namespace QuanLyHocSinh
             // 
             this.ComboBoxSubjects2.AllowDrop = true;
             this.ComboBoxSubjects2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ComboBoxSubjects2.DataSource = this.mONHOCBindingSource;
-            this.ComboBoxSubjects2.DisplayMember = "TenMonHoc";
             this.ComboBoxSubjects2.FormattingEnabled = true;
             this.ComboBoxSubjects2.Location = new System.Drawing.Point(3, 30);
             this.ComboBoxSubjects2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1547,7 +1540,7 @@ namespace QuanLyHocSinh
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BaoCaoTongKet";
             this.Text = "BaoCaoTongKet";
-            this.Load += new System.EventHandler(this.BaoCaoTongKet_Load);
+            //this.Load += new System.EventHandler(this.BaoCaoTongKet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).EndInit();
@@ -1593,7 +1586,6 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.BindingSource duLieuBindingSource;
         private DuLieu duLieu;
         private System.Windows.Forms.BindingSource mONHOCBindingSource;
-        private DuLieuTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private System.Windows.Forms.ComboBox ComboBoxSubjects;
         private System.Windows.Forms.Panel PanelStudent;
         private System.Windows.Forms.TextBox textBoxRatio3;

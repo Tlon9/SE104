@@ -34,6 +34,9 @@ namespace QuanLyHocSinh
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemHome = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSubjectScore = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemScoreBoard = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemSubjectScoreYear = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelTitle.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,10 +65,13 @@ namespace QuanLyHocSinh
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemHome,
-            this.MenuItemFinalReport});
+            this.MenuItemSubjectScore,
+            this.MenuItemScoreBoard,
+            this.MenuItemFinalReport,
+            this.MenuItemSubjectScoreYear});
             this.menuStrip1.Location = new System.Drawing.Point(8, 135);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(385, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1025, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,11 +88,32 @@ namespace QuanLyHocSinh
             this.MenuItemFinalReport.Text = "Báo cáo tổng kết";
             this.MenuItemFinalReport.Click += new System.EventHandler(this.MenuItemFinalReport_Click);
             // 
+            // MenuItemSubjectScore
+            // 
+            this.MenuItemSubjectScore.Name = "MenuItemSubjectScore";
+            this.MenuItemSubjectScore.Size = new System.Drawing.Size(197, 24);
+            this.MenuItemSubjectScore.Text = "Nhập bảng điểm môn học";
+            this.MenuItemSubjectScore.Click += new System.EventHandler(this.MenuItemSubjectScore_Click);
+            // 
+            // MenuItemScoreBoard
+            // 
+            this.MenuItemScoreBoard.Name = "MenuItemScoreBoard";
+            this.MenuItemScoreBoard.Size = new System.Drawing.Size(153, 24);
+            this.MenuItemScoreBoard.Text = "Bảng điểm học sinh";
+            this.MenuItemScoreBoard.Click += new System.EventHandler(this.MenuItemScoreBoard_Click);
+            // 
+            // MenuItemSubjectScoreYear
+            // 
+            this.MenuItemSubjectScoreYear.Name = "MenuItemSubjectScoreYear";
+            this.MenuItemSubjectScoreYear.Size = new System.Drawing.Size(290, 24);
+            this.MenuItemSubjectScoreYear.Text = "Lập bảng điểm môn học của lớp cả năm";
+            this.MenuItemSubjectScoreYear.Click += new System.EventHandler(this.MenuItemSubjectScoreYear_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 450);
             this.Controls.Add(this.PanelTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -108,5 +135,8 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemHome;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFinalReport;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemSubjectScore;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemScoreBoard;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemSubjectScoreYear;
     }
 }
