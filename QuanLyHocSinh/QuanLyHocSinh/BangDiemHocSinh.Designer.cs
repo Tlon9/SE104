@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TraCuuButton = new System.Windows.Forms.Button();
+            this.TraCuuHKButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,18 +45,31 @@
             this.LopTextBox = new System.Windows.Forms.TextBox();
             this.DTBHKTextBox = new System.Windows.Forms.TextBox();
             this.XepLoaiTextBox = new System.Windows.Forms.TextBox();
+            this.PanelDHK = new System.Windows.Forms.Panel();
+            this.panelDNH = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TraCuuNHButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.PanelDHK.SuspendLayout();
+            this.panelDNH.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TraCuuButton
+            // TraCuuHKButton
             // 
-            this.TraCuuButton.Location = new System.Drawing.Point(878, 36);
-            this.TraCuuButton.Name = "TraCuuButton";
-            this.TraCuuButton.Size = new System.Drawing.Size(78, 22);
-            this.TraCuuButton.TabIndex = 0;
-            this.TraCuuButton.Text = "Tra cứu";
-            this.TraCuuButton.UseVisualStyleBackColor = true;
-            this.TraCuuButton.Click += new System.EventHandler(this.TraCuuButton_Click);
+            this.TraCuuHKButton.Location = new System.Drawing.Point(878, 36);
+            this.TraCuuHKButton.Name = "TraCuuHKButton";
+            this.TraCuuHKButton.Size = new System.Drawing.Size(123, 22);
+            this.TraCuuHKButton.TabIndex = 0;
+            this.TraCuuHKButton.Text = "Tra cứu điểm học kỳ";
+            this.TraCuuHKButton.UseVisualStyleBackColor = true;
+            this.TraCuuHKButton.Click += new System.EventHandler(this.TraCuuButton_Click);
             // 
             // textBox1
             // 
@@ -141,7 +154,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(287, 78);
+            this.label5.Location = new System.Drawing.Point(117, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 11;
@@ -151,7 +164,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(332, 109);
+            this.label6.Location = new System.Drawing.Point(162, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 12;
@@ -161,7 +174,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(198, 146);
+            this.label7.Location = new System.Drawing.Point(28, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(162, 16);
             this.label7.TabIndex = 13;
@@ -171,7 +184,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(296, 179);
+            this.label8.Location = new System.Drawing.Point(126, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 16);
             this.label8.TabIndex = 14;
@@ -179,45 +192,148 @@
             // 
             // HoTenTextBox
             // 
-            this.HoTenTextBox.Location = new System.Drawing.Point(386, 74);
+            this.HoTenTextBox.Location = new System.Drawing.Point(216, 0);
             this.HoTenTextBox.Name = "HoTenTextBox";
             this.HoTenTextBox.Size = new System.Drawing.Size(125, 20);
             this.HoTenTextBox.TabIndex = 15;
             // 
             // LopTextBox
             // 
-            this.LopTextBox.Location = new System.Drawing.Point(386, 106);
+            this.LopTextBox.Location = new System.Drawing.Point(216, 32);
             this.LopTextBox.Name = "LopTextBox";
             this.LopTextBox.Size = new System.Drawing.Size(125, 20);
             this.LopTextBox.TabIndex = 16;
             // 
             // DTBHKTextBox
             // 
-            this.DTBHKTextBox.Location = new System.Drawing.Point(386, 142);
+            this.DTBHKTextBox.Location = new System.Drawing.Point(216, 68);
             this.DTBHKTextBox.Name = "DTBHKTextBox";
             this.DTBHKTextBox.Size = new System.Drawing.Size(100, 20);
             this.DTBHKTextBox.TabIndex = 17;
             // 
             // XepLoaiTextBox
             // 
-            this.XepLoaiTextBox.Location = new System.Drawing.Point(386, 179);
+            this.XepLoaiTextBox.Location = new System.Drawing.Point(216, 105);
             this.XepLoaiTextBox.Name = "XepLoaiTextBox";
             this.XepLoaiTextBox.Size = new System.Drawing.Size(100, 20);
             this.XepLoaiTextBox.TabIndex = 18;
+            // 
+            // PanelDHK
+            // 
+            this.PanelDHK.Controls.Add(this.XepLoaiTextBox);
+            this.PanelDHK.Controls.Add(this.DTBHKTextBox);
+            this.PanelDHK.Controls.Add(this.LopTextBox);
+            this.PanelDHK.Controls.Add(this.HoTenTextBox);
+            this.PanelDHK.Controls.Add(this.label8);
+            this.PanelDHK.Controls.Add(this.label7);
+            this.PanelDHK.Controls.Add(this.label6);
+            this.PanelDHK.Controls.Add(this.label5);
+            this.PanelDHK.Location = new System.Drawing.Point(170, 87);
+            this.PanelDHK.Name = "PanelDHK";
+            this.PanelDHK.Size = new System.Drawing.Size(533, 144);
+            this.PanelDHK.TabIndex = 19;
+            // 
+            // panelDNH
+            // 
+            this.panelDNH.Controls.Add(this.textBox2);
+            this.panelDNH.Controls.Add(this.textBox3);
+            this.panelDNH.Controls.Add(this.textBox4);
+            this.panelDNH.Controls.Add(this.textBox5);
+            this.panelDNH.Controls.Add(this.label9);
+            this.panelDNH.Controls.Add(this.label10);
+            this.panelDNH.Controls.Add(this.label11);
+            this.panelDNH.Controls.Add(this.label12);
+            this.panelDNH.Location = new System.Drawing.Point(170, 87);
+            this.panelDNH.Name = "panelDNH";
+            this.panelDNH.Size = new System.Drawing.Size(533, 144);
+            this.panelDNH.TabIndex = 20;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(216, 105);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 18;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(216, 68);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 17;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(216, 32);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(125, 20);
+            this.textBox4.TabIndex = 16;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(216, 6);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(125, 20);
+            this.textBox5.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(126, 105);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 16);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Xếp loại";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(28, 72);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(175, 16);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Điểm trung bình năm học";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(162, 35);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(28, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Lớp";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(117, 4);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 16);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Họ và tên";
+            // 
+            // TraCuuNHButton
+            // 
+            this.TraCuuNHButton.Location = new System.Drawing.Point(1024, 37);
+            this.TraCuuNHButton.Name = "TraCuuNHButton";
+            this.TraCuuNHButton.Size = new System.Drawing.Size(140, 22);
+            this.TraCuuNHButton.TabIndex = 21;
+            this.TraCuuNHButton.Text = "Tra cứu điểm năm học";
+            this.TraCuuNHButton.UseVisualStyleBackColor = true;
+            this.TraCuuNHButton.Click += new System.EventHandler(this.TraCuuNHButton_Click);
             // 
             // BangDiemHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1421, 666);
-            this.Controls.Add(this.XepLoaiTextBox);
-            this.Controls.Add(this.DTBHKTextBox);
-            this.Controls.Add(this.LopTextBox);
-            this.Controls.Add(this.HoTenTextBox);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TraCuuNHButton);
+            this.Controls.Add(this.panelDNH);
+            this.Controls.Add(this.PanelDHK);
             this.Controls.Add(this.NamHocCbb);
             this.Controls.Add(this.HocKyCbb);
             this.Controls.Add(this.label4);
@@ -226,10 +342,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.TraCuuButton);
+            this.Controls.Add(this.TraCuuHKButton);
             this.Name = "BangDiemHocSinh";
             this.Text = "BangDiemHocSinh";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.PanelDHK.ResumeLayout(false);
+            this.PanelDHK.PerformLayout();
+            this.panelDNH.ResumeLayout(false);
+            this.panelDNH.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,7 +357,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button TraCuuButton;
+        private System.Windows.Forms.Button TraCuuHKButton;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
@@ -254,5 +374,16 @@
         private System.Windows.Forms.TextBox LopTextBox;
         private System.Windows.Forms.TextBox DTBHKTextBox;
         private System.Windows.Forms.TextBox XepLoaiTextBox;
+        private System.Windows.Forms.Panel PanelDHK;
+        private System.Windows.Forms.Panel panelDNH;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button TraCuuNHButton;
     }
 }
