@@ -33,10 +33,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.HocKyCbb = new System.Windows.Forms.ComboBox();
+            this.NamHocCbb = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.HoTenTextBox = new System.Windows.Forms.TextBox();
+            this.LopTextBox = new System.Windows.Forms.TextBox();
+            this.DTBHKTextBox = new System.Windows.Forms.TextBox();
+            this.XepLoaiTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +64,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(196, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
             // 
@@ -64,7 +71,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 67);
+            this.dataGridView1.Location = new System.Drawing.Point(40, 264);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1329, 373);
             this.dataGridView1.TabIndex = 2;
@@ -89,20 +96,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Mã số học sinh";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(635, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(92, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(758, 36);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(92, 20);
-            this.textBox3.TabIndex = 6;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -121,15 +114,114 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Năm học";
             // 
+            // HocKyCbb
+            // 
+            this.HocKyCbb.FormattingEnabled = true;
+            this.HocKyCbb.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.HocKyCbb.Location = new System.Drawing.Point(635, 36);
+            this.HocKyCbb.Name = "HocKyCbb";
+            this.HocKyCbb.Size = new System.Drawing.Size(85, 21);
+            this.HocKyCbb.TabIndex = 9;
+            // 
+            // NamHocCbb
+            // 
+            this.NamHocCbb.FormattingEnabled = true;
+            this.NamHocCbb.Items.AddRange(new object[] {
+            "2021-2022",
+            "2022-2023",
+            "2023-2024"});
+            this.NamHocCbb.Location = new System.Drawing.Point(758, 38);
+            this.NamHocCbb.Name = "NamHocCbb";
+            this.NamHocCbb.Size = new System.Drawing.Size(85, 21);
+            this.NamHocCbb.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(287, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 16);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Họ và tên";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(332, 109);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Lớp";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(198, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(162, 16);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Điểm trung bình học kỳ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(296, 179);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 16);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Xếp loại";
+            // 
+            // HoTenTextBox
+            // 
+            this.HoTenTextBox.Location = new System.Drawing.Point(386, 74);
+            this.HoTenTextBox.Name = "HoTenTextBox";
+            this.HoTenTextBox.Size = new System.Drawing.Size(125, 20);
+            this.HoTenTextBox.TabIndex = 15;
+            // 
+            // LopTextBox
+            // 
+            this.LopTextBox.Location = new System.Drawing.Point(386, 106);
+            this.LopTextBox.Name = "LopTextBox";
+            this.LopTextBox.Size = new System.Drawing.Size(125, 20);
+            this.LopTextBox.TabIndex = 16;
+            // 
+            // DTBHKTextBox
+            // 
+            this.DTBHKTextBox.Location = new System.Drawing.Point(386, 142);
+            this.DTBHKTextBox.Name = "DTBHKTextBox";
+            this.DTBHKTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DTBHKTextBox.TabIndex = 17;
+            // 
+            // XepLoaiTextBox
+            // 
+            this.XepLoaiTextBox.Location = new System.Drawing.Point(386, 179);
+            this.XepLoaiTextBox.Name = "XepLoaiTextBox";
+            this.XepLoaiTextBox.Size = new System.Drawing.Size(100, 20);
+            this.XepLoaiTextBox.TabIndex = 18;
+            // 
             // BangDiemHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1421, 666);
+            this.Controls.Add(this.XepLoaiTextBox);
+            this.Controls.Add(this.DTBHKTextBox);
+            this.Controls.Add(this.LopTextBox);
+            this.Controls.Add(this.HoTenTextBox);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.NamHocCbb);
+            this.Controls.Add(this.HocKyCbb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -150,9 +242,17 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox HocKyCbb;
+        private System.Windows.Forms.ComboBox NamHocCbb;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox HoTenTextBox;
+        private System.Windows.Forms.TextBox LopTextBox;
+        private System.Windows.Forms.TextBox DTBHKTextBox;
+        private System.Windows.Forms.TextBox XepLoaiTextBox;
     }
 }
