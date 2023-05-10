@@ -160,6 +160,7 @@ namespace QuanLyHocSinh
             this.labelYears4 = new System.Windows.Forms.Label();
             this.buttonReport4 = new System.Windows.Forms.Button();
             this.comboBoxYears4 = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
@@ -185,11 +186,14 @@ namespace QuanLyHocSinh
             // 
             // ComboBoxSubjects
             // 
-            this.ComboBoxSubjects.AllowDrop = true;
+            this.ComboBoxSubjects.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.ComboBoxSubjects.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBoxSubjects.DisplayMember = "MaMonHoc";
             this.ComboBoxSubjects.FormattingEnabled = true;
+            this.ComboBoxSubjects.ImeMode = System.Windows.Forms.ImeMode.On;
             this.ComboBoxSubjects.Location = new System.Drawing.Point(3, 30);
             this.ComboBoxSubjects.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ComboBoxSubjects.MaxDropDownItems = 4;
             this.ComboBoxSubjects.Name = "ComboBoxSubjects";
             this.ComboBoxSubjects.Size = new System.Drawing.Size(139, 24);
             this.ComboBoxSubjects.TabIndex = 0;
@@ -303,7 +307,10 @@ namespace QuanLyHocSinh
             // 
             // ComboBoxYears
             // 
+            this.ComboBoxYears.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBoxYears.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ComboBoxYears.FormattingEnabled = true;
+            this.ComboBoxYears.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ComboBoxYears.Items.AddRange(new object[] {
             "2021-2022",
             "2022-2023",
@@ -313,8 +320,6 @@ namespace QuanLyHocSinh
             this.ComboBoxYears.Name = "ComboBoxYears";
             this.ComboBoxYears.Size = new System.Drawing.Size(148, 24);
             this.ComboBoxYears.TabIndex = 1;
-            // 
-            // 
             // 
             // PanelStudent
             // 
@@ -619,6 +624,7 @@ namespace QuanLyHocSinh
             // 
             this.ComboBoxSubjects2.AllowDrop = true;
             this.ComboBoxSubjects2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ComboBoxSubjects2.DisplayMember = "MaMonHoc";
             this.ComboBoxSubjects2.FormattingEnabled = true;
             this.ComboBoxSubjects2.Location = new System.Drawing.Point(3, 30);
             this.ComboBoxSubjects2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -657,6 +663,9 @@ namespace QuanLyHocSinh
             // 
             this.dataGridViewReport.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.dataGridViewReport.Enabled = false;
             this.dataGridViewReport.Location = new System.Drawing.Point(5, 213);
             this.dataGridViewReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewReport.Name = "dataGridViewReport";
@@ -1529,6 +1538,14 @@ namespace QuanLyHocSinh
             this.comboBoxYears4.Size = new System.Drawing.Size(148, 24);
             this.comboBoxYears4.TabIndex = 1;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "DIEMCK";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
             // BaoCaoTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1540,7 +1557,6 @@ namespace QuanLyHocSinh
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BaoCaoTongKet";
             this.Text = "BaoCaoTongKet";
-            //this.Load += new System.EventHandler(this.BaoCaoTongKet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).EndInit();
@@ -1707,5 +1723,6 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.Label labelYears4;
         private System.Windows.Forms.Button buttonReport4;
         private System.Windows.Forms.ComboBox comboBoxYears4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

@@ -24,23 +24,29 @@ namespace QuanLyHocSinh
             dataGridViewReport3.Hide();
             dataGridViewReport4.Hide();
             dataEntities data = new dataEntities();
-            var reSource = from c in data.MONHOCs
-                           select c.TenMonHoc;
-            ComboBoxSubjects.DataSource = reSource.ToList();
+            var ComboBoxSubjectsSource = from obj in data.MONHOCs
+                           select obj;
+            ComboBoxSubjects.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubjects.DisplayMember = "TenMonHoc";
+            ComboBoxSubjects.ValueMember = "MaMonHoc";
+            ComboBoxSubjects2.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubjects2.DisplayMember = "TenMonHoc";
+            ComboBoxSubjects.ValueMember = "MaMonHoc";
         }
 
 
-        /*private void BaoCaoTongKet_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'duLieu.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Fill(this.duLieu.MONHOC);
-
-        }*/
-
         private void ButtonReport_Click(object sender, EventArgs e)
         {
+            dataEntities dtb = new dataEntities();
+            var reSource = from scr in dtb.DIEMs
+                           join cls in dtb.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
+                           where ComboBoxSubjects.SelectedValue == scr.MaMonHoc && ComboBoxYears.SelectedItem == scr.NamHoc && ComboBoxSemesters.SelectedItem == scr.HocKy
+                           select new { Malop = cls.MaLop, Mahocsinh = scr.MaHocSinh, Diemcuoiky = scr.DiemCK };
+
+            dataGridViewReport.DataSource = reSource.ToList();
             PanelStudent.Show();
             dataGridViewReport.Show();
+
         }
 
 
@@ -63,17 +69,6 @@ namespace QuanLyHocSinh
             dataGridViewReport4.Show();
         }
 
-
-
-
-        /*private void ButtonReport_Click(object sender, EventArgs e)
-{
-dataEntities dt = new dataEntities();
-var reSource = from c in dt.MONHOCs
-         where c.MaMonHoc == ComboBoxSubjects.SelectedValue
-         select c;
-dataGridViewSubjects.DataSource = reSource.ToList();
-}*/
 
     }
 }
