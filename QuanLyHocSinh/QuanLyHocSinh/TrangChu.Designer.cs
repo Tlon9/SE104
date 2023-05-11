@@ -38,6 +38,7 @@ namespace QuanLyHocSinh
             this.MenuItemScoreBoard = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSubjectScoreYear = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFindStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelTitle.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,13 +68,14 @@ namespace QuanLyHocSinh
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemHome,
             this.MenuItemAddStudent,
+            this.MenuItemFindStudent,
             this.MenuItemSubjectScore,
             this.MenuItemScoreBoard,
             this.MenuItemSubjectScoreYear,
             this.MenuItemFinalReport});
             this.menuStrip1.Location = new System.Drawing.Point(8, 135);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1171, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1300, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,6 +120,13 @@ namespace QuanLyHocSinh
             this.MenuItemFinalReport.Text = "Báo cáo tổng kết";
             this.MenuItemFinalReport.Click += new System.EventHandler(this.MenuItemFinalReport_Click);
             // 
+            // MenuItemFindStudent
+            // 
+            this.MenuItemFindStudent.Name = "MenuItemFindStudent";
+            this.MenuItemFindStudent.Size = new System.Drawing.Size(129, 24);
+            this.MenuItemFindStudent.Text = "Tra cứu học sinh";
+            this.MenuItemFindStudent.Click += new System.EventHandler(this.MenuItemFindStudent_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,5 +157,6 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.ToolStripMenuItem MenuItemScoreBoard;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSubjectScoreYear;
         private System.Windows.Forms.ToolStripMenuItem MenuItemAddStudent;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFindStudent;
     }
 }

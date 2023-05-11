@@ -57,5 +57,13 @@ namespace QuanLyHocSinh
             newform.ShowDialog();
             this.Show();
         }
+
+        private void MenuItemFindStudent_Click(object sender, EventArgs e)
+        {
+            TraCuuHocSinh newform = new TraCuuHocSinh();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
     }
 }
