@@ -17,7 +17,7 @@ namespace QuanLyHocSinh
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOP()
         {
-            this.HOCSINHs = new HashSet<HOCSINH>();
+            this.CTLOPs = new HashSet<CTLOP>();
         }
     
         public string MaLop { get; set; }
@@ -26,8 +26,8 @@ namespace QuanLyHocSinh
         public Nullable<byte> SiSo { get; set; }
         public string NamHoc { get; set; }
     
-        public virtual KHOI KHOI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOCSINH> HOCSINHs { get; set; }
+        public virtual ICollection<CTLOP> CTLOPs { get; set; }
+        public virtual KHOI KHOI { get; set; }
     }
 }

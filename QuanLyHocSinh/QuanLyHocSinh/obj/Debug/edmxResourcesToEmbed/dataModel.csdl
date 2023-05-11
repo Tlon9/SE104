@@ -1,10 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
+    <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
+    <EntitySet Name="HOCSINHs" EntityType="dataModel.HOCSINH" />
+    <EntitySet Name="KHOIs" EntityType="dataModel.KHOI" />
+    <EntitySet Name="LOPs" EntityType="dataModel.LOP" />
+    <EntitySet Name="MONHOCs" EntityType="dataModel.MONHOC" />
+    <EntitySet Name="sysdiagrams" EntityType="dataModel.sysdiagram" />
+    <AssociationSet Name="fk_ctl_hs" Association="dataModel.fk_ctl_hs">
+      <End Role="HOCSINH" EntitySet="HOCSINHs" />
+      <End Role="CTLOP" EntitySet="CTLOPs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ctl_ml" Association="dataModel.fk_ctl_ml">
+      <End Role="LOP" EntitySet="LOPs" />
+      <End Role="CTLOP" EntitySet="CTLOPs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_diem_hs" Association="dataModel.fk_diem_hs">
+      <End Role="HOCSINH" EntitySet="HOCSINHs" />
+      <End Role="DIEM" EntitySet="DIEMs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_diem_mmh" Association="dataModel.fk_diem_mmh">
+      <End Role="MONHOC" EntitySet="MONHOCs" />
+      <End Role="DIEM" EntitySet="DIEMs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mk" Association="dataModel.fk_mk">
+      <End Role="KHOI" EntitySet="KHOIs" />
+      <End Role="LOP" EntitySet="LOPs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CTLOP">
+    <Key>
+      <PropertyRef Name="MaCTL" />
+    </Key>
+    <Property Name="MaCTL" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaHocSinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaLop" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HOCSINH" Relationship="dataModel.fk_ctl_hs" FromRole="CTLOP" ToRole="HOCSINH" />
+    <NavigationProperty Name="LOP" Relationship="dataModel.fk_ctl_ml" FromRole="CTLOP" ToRole="LOP" />
+  </EntityType>
   <EntityType Name="DIEM">
     <Key>
       <PropertyRef Name="MaDiem" />
     </Key>
-    <Property Name="MaDiem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaDiem" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaHocSinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NamHoc" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
@@ -14,14 +53,14 @@
     <Property Name="DiemCK" Type="Double" />
     <Property Name="DiemTB" Type="Double" />
     <Property Name="XepLoai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <NavigationProperty Name="HOCSINH" Relationship="Self.fk_diem_hs" FromRole="DIEM" ToRole="HOCSINH" />
-    <NavigationProperty Name="MONHOC" Relationship="Self.fk_diem_mmh" FromRole="DIEM" ToRole="MONHOC" />
+    <NavigationProperty Name="HOCSINH" Relationship="dataModel.fk_diem_hs" FromRole="DIEM" ToRole="HOCSINH" />
+    <NavigationProperty Name="MONHOC" Relationship="dataModel.fk_diem_mmh" FromRole="DIEM" ToRole="MONHOC" />
   </EntityType>
   <EntityType Name="HOCSINH">
     <Key>
       <PropertyRef Name="MaHocSinh" />
     </Key>
-    <Property Name="MaHocSinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaHocSinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
     <Property Name="NgaySinh" Type="DateTime" Precision="3" />
@@ -31,50 +70,74 @@
     <Property Name="TonGiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="DIEMs" Relationship="Self.fk_diem_hs" FromRole="HOCSINH" ToRole="DIEM" />
-    <NavigationProperty Name="LOPs" Relationship="Self.CTLOP" FromRole="HOCSINH" ToRole="LOP" />
+    <NavigationProperty Name="CTLOPs" Relationship="dataModel.fk_ctl_hs" FromRole="HOCSINH" ToRole="CTLOP" />
+    <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_hs" FromRole="HOCSINH" ToRole="DIEM" />
   </EntityType>
   <EntityType Name="KHOI">
     <Key>
       <PropertyRef Name="MaKhoi" />
     </Key>
-    <Property Name="MaKhoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TenKhoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="LOPs" Relationship="Self.fk_mk" FromRole="KHOI" ToRole="LOP" />
+    <NavigationProperty Name="LOPs" Relationship="dataModel.fk_mk" FromRole="KHOI" ToRole="LOP" />
   </EntityType>
   <EntityType Name="LOP">
     <Key>
       <PropertyRef Name="MaLop" />
     </Key>
-    <Property Name="MaLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaLop" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TenLop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MaKhoi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SiSo" Type="Byte" />
     <Property Name="NamHoc" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="KHOI" Relationship="Self.fk_mk" FromRole="LOP" ToRole="KHOI" />
-    <NavigationProperty Name="HOCSINHs" Relationship="Self.CTLOP" FromRole="LOP" ToRole="HOCSINH" />
+    <NavigationProperty Name="CTLOPs" Relationship="dataModel.fk_ctl_ml" FromRole="LOP" ToRole="CTLOP" />
+    <NavigationProperty Name="KHOI" Relationship="dataModel.fk_mk" FromRole="LOP" ToRole="KHOI" />
   </EntityType>
   <EntityType Name="MONHOC">
     <Key>
       <PropertyRef Name="MaMonHoc" />
     </Key>
-    <Property Name="MaMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="DIEMs" Relationship="Self.fk_diem_mmh" FromRole="MONHOC" ToRole="DIEM" />
+    <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_mmh" FromRole="MONHOC" ToRole="DIEM" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="principal_id" Type="Int32" Nullable="false" />
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <Association Name="fk_ctl_hs">
+    <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
+    <End Type="dataModel.CTLOP" Role="CTLOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCSINH">
+        <PropertyRef Name="MaHocSinh" />
+      </Principal>
+      <Dependent Role="CTLOP">
+        <PropertyRef Name="MaHocSinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ctl_ml">
+    <End Type="dataModel.LOP" Role="LOP" Multiplicity="1" />
+    <End Type="dataModel.CTLOP" Role="CTLOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="CTLOP">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_diem_hs">
-    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="0..1" />
-    <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+    <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="0..1" />
+    <End Type="dataModel.DIEM" Role="DIEM" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="HOCSINH">
         <PropertyRef Name="MaHocSinh" />
@@ -85,8 +148,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_diem_mmh">
-    <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="0..1" />
-    <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+    <End Type="dataModel.MONHOC" Role="MONHOC" Multiplicity="0..1" />
+    <End Type="dataModel.DIEM" Role="DIEM" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="MONHOC">
         <PropertyRef Name="MaMonHoc" />
@@ -97,8 +160,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="fk_mk">
-    <End Role="KHOI" Type="Self.KHOI" Multiplicity="1" />
-    <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+    <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="1" />
+    <End Type="dataModel.LOP" Role="LOP" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="KHOI">
         <PropertyRef Name="MaKhoi" />
@@ -108,32 +171,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="CTLOP">
-    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="*" />
-    <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
-  </Association>
-  <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="DIEMs" EntityType="Self.DIEM" />
-    <EntitySet Name="HOCSINHs" EntityType="Self.HOCSINH" />
-    <EntitySet Name="KHOIs" EntityType="Self.KHOI" />
-    <EntitySet Name="LOPs" EntityType="Self.LOP" />
-    <EntitySet Name="MONHOCs" EntityType="Self.MONHOC" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <AssociationSet Name="fk_diem_hs" Association="Self.fk_diem_hs">
-      <End Role="HOCSINH" EntitySet="HOCSINHs" />
-      <End Role="DIEM" EntitySet="DIEMs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_diem_mmh" Association="Self.fk_diem_mmh">
-      <End Role="MONHOC" EntitySet="MONHOCs" />
-      <End Role="DIEM" EntitySet="DIEMs" />
-    </AssociationSet>
-    <AssociationSet Name="fk_mk" Association="Self.fk_mk">
-      <End Role="KHOI" EntitySet="KHOIs" />
-      <End Role="LOP" EntitySet="LOPs" />
-    </AssociationSet>
-    <AssociationSet Name="CTLOP" Association="Self.CTLOP">
-      <End Role="HOCSINH" EntitySet="HOCSINHs" />
-      <End Role="LOP" EntitySet="LOPs" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

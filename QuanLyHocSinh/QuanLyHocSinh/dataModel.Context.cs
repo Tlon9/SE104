@@ -25,6 +25,7 @@ namespace QuanLyHocSinh
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CTLOP> CTLOPs { get; set; }
         public virtual DbSet<DIEM> DIEMs { get; set; }
         public virtual DbSet<HOCSINH> HOCSINHs { get; set; }
         public virtual DbSet<KHOI> KHOIs { get; set; }
