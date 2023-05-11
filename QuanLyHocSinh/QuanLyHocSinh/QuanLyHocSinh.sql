@@ -1,5 +1,5 @@
 ﻿CREATE DATABASE QUANLYHOCSINH
-
+DROP DATABASE QUANLYHOCSINH
 USE QUANLYHOCSINH
 
 CREATE TABLE HOCSINH
@@ -13,6 +13,21 @@ CREATE TABLE HOCSINH
 	TonGiao nvarchar(50),
 	SDT nvarchar(50),
 	Email nvarchar(50),
+	HoTenCha nvarchar (50),
+	NamSinh_Cha int,
+	CCCD_Cha nvarchar (50),
+	SDT_Cha nvarchar (10),
+	NgheNghiep_Cha nvarchar (50),
+	HoTenMe nvarchar (50),
+	NamSinh_Me int,
+	CCCD_Me nvarchar (50),
+	SDT_Me nvarchar (10),
+	NgheNghiep_Me nvarchar (50),
+	HoTen_NguoiGH nvarchar (50),
+	NamSinh_NguoiGH int,
+	CCCD_NguoiGH nvarchar (50),
+	SDT_NguoiGH nvarchar (10),
+	NgheNghiep_NguoiGH nvarchar (50),
 	constraint pk_hs primary key(MaHocSinh)
 )
 
@@ -74,28 +89,29 @@ CREATE TABLE THAMSO
 ALTER TABLE LOP ADD CONSTRAINT fk_mk FOREIGN KEY(MaKhoi) REFERENCES KHOI(MaKhoi)
 ALTER TABLE CTLOP ADD CONSTRAINT fk_ctl_hs FOREIGN KEY(MaHocSinh) REFERENCES HOCSINH(MaHocSinh)
 ALTER TABLE CTLOP ADD CONSTRAINT fk_ctl_ml FOREIGN KEY(MaLop) REFERENCES LOP(MaLop)
-ALTER TABLE DIEM ADD CONSTRAINT fk_diem_hs FOREIGN KEY(MaHocSinh) REFERENCES HOCSINH(MaHocSinh)
-ALTER TABLE DIEM ADD CONSTRAINT fk_diem_mmh FOREIGN KEY(MaMonHoc) REFERENCES MonHoc(MaMonHoc)
+ALTER TABLE DIEM ADD CONSTRAINT fk_diem_hs FOREIGN KEY(MaHocSinh) REFERENCES HOCSINH (MaHocSinh)
+ALTER TABLE DIEM ADD CONSTRAINT fk_diem_mmh FOREIGN KEY(MaMonHoc) REFERENCES MONHOC (MaMonHoc)
 
 set dateformat DMY
 --HOC SINH
-INSERT INTO HOCSINH VALUES ('22111000','Nguyen Van A','Nam','01/01/2006','731 Tran Hung Dao, Q5, TpHCM','TpHCM','Kinh','Khong','0972030034','NguyenVanA@gmail.com')
-INSERT INTO HOCSINH VALUES ('22110001',N'Nguyễn Hoài Nam','Nam','15/06/2006',N'23/5 Nguyễn Trãi, Q5, TpHCM','TpHCM','Kinh',N'Không','0908256478','NamNguyen@gmail.com')
-INSERT INTO HOCSINH VALUES ('22112023',N'Trần Ngọc Hân',N'Nữ','28/10/2006',N'227 Nguyễn Văn Cừ, Q5, TpHCM','TpHCM','Kinh',N'Không','0863173826','TranNgocHan@gmail.com')
-INSERT INTO HOCSINH VALUES ('22111016',N'Lê Hoài Thương',N'Nữ','24/11/2006',N'873 Lê Hồng Phong, Q5, TpHCM','TpHCM','Kinh',N'Không','0938435756','HoaiThuong2411@gmail.com')
-INSERT INTO HOCSINH VALUES ('22110054',N'Hà Duy Lập','Nam','16/01/2006',N'45/2 An Dương Vương, Q5, TpHCM','TpHCM','Kinh','Không','0938776266','DuyLapHa@gmail.com')
+INSERT INTO HOCSINH VALUES ('22111000',N'Nguyễn Văn Tài','Nam','01/01/2006','731 Tran Hung Dao, Q5, TpHCM','TpHCM','Kinh','Khong','0972030034','NguyenVanA@gmail.com','Nguyễn Anh Hùng',1970,'096302000894','0932178385',N'Giáo viên','Thái Văn Nga',1974,'096102000745','0873965179',N'Công nhân - Viên chức',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22110001',N'Nguyễn Hoài Nam','Nam','15/06/2006',N'23/5 Nguyễn Trãi, Q5, TpHCM','TpHCM','Kinh',N'Không','0908256478','NamNguyen@gmail.com','Nguyễn Trần Hoài Bảo',1982,'096301020365','0937198354',N'Kinh doanh','Nguyễn Thị An',1982,'096102001863','0854867351',N'Giáo viên',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22112023',N'Trần Ngọc Hân',N'Nữ','28/10/2006',N'227 Nguyễn Văn Cừ, Q5, TpHCM','TpHCM','Kinh',N'Không','0863173826','TranNgocHan@gmail.com','Trần Minh Nghĩa',1978,'096302000983','0987398213',N'Nhân viên ngân hàng','Trần Minh Anh',1981,'096202001254','0743854789',N'Giảng viên',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22111016',N'Lê Hoài Thương',N'Nữ','24/11/2006',N'873 Lê Hồng Phong, Q5, TpHCM','TpHCM','Kinh',N'Không','0938435756','HoaiThuong2411@gmail.com','Lê Trần Chính Nghĩa',1984,'096302011475','0987365152',N'Kinh doanh','Nguyễn Trần Thanh Mai',1982,'096102000421','0824377471',N'Giáo viên',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22110054',N'Hà Duy Lập','Nam','16/01/2006',N'45/2 An Dương Vương, Q5, TpHCM','TpHCM','Kinh','Không','0938776266','DuyLapHa@gmail.com','Hà Minh Duy',1987,'096301020782','0862351986',N'Kinh doanh','Trần Nguyễn Minh Vy',1983,'096102000129','0782468312',N'Nội trợ',NULL,NULL,NULL,NULL,NULL)
 
-INSERT INTO HOCSINH VALUES ('22100018',N'Lê Hà Vinh','Nam','31/12/2007',N'50/341 Lê Đại Hành, Q5, TpHCM','TpHCM','Kinh',N'Không','0973012434','Vinhle@gmail.com')
-INSERT INTO HOCSINH VALUES ('22100100',N'Lê Nhật Minh','Nam','25/04/2007',N'34 Trương Định, Q5, TpHCM','TpHCM','Kinh',N'Không','0975126056','LeNhatMinh@gmail.com')
-INSERT INTO HOCSINH VALUES ('22100113',N'Phan Thị Thanh',N'Nữ','16/04/2007',N'74/3 Nguyễn Trãi, Q5, TpHCM','TpHCM','Kinh',N'Không','0972030034','Phanthithanh@gmail.com')
-INSERT INTO HOCSINH VALUES ('22101000',N'Nguyễn Văn Tâm','Nam','17/09/2007',N'63 Trần Hưng Đạo, Q5, TpHCM','TpHCM','Kinh',N'Không','0912137367','NguyenVanTam@gmail.com')
-INSERT INTO HOCSINH VALUES ('22100010',N'Trần Ngọc Linh',N'Nữ','01/01/2007',N'47/3 An Dương Vương, Q5, TpHCM','TpHCM','Kinh',N'Không','0972156266','Tranngoclinh@gmail.com')
+INSERT INTO HOCSINH VALUES ('22100018',N'Lê Hà Vinh','Nam','31/12/2007',N'50/341 Lê Đại Hành, Q5, TpHCM','TpHCM','Kinh',N'Không','0973012434','Vinhle@gmail.com','Lê Thanh Hiếu',1982,'096301000893','0486932215',N'Nhân viên IT','Nguyễn Hà Vy',1983,'096302000368','0983652142',N'Nhà sáng tạo nội dung',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22100100',N'Lê Nhật Minh','Nam','25/04/2007',N'34 Trương Định, Q5, TpHCM','TpHCM','Kinh',N'Không','0975126056','LeNhatMinh@gmail.com','Lê Nguyễn Minh Long',1977,'096302001721','0486932215',N'Nhân viên IT','Nguyễn Thị Thu Hà',1980,'096302023896','0632982121',N'Giám đốc R&D',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22100113',N'Phan Thị Thanh',N'Nữ','16/04/2007',N'74/3 Nguyễn Trãi, Q5, TpHCM','TpHCM','Kinh',N'Không','0972030034','Phanthithanh@gmail.com','Phan Thanh Binh',1982,'096301004398','0923542362',N'Nhân viên phát triển phần mềm','Phan Thanh Thảo',1982,'096302004236','0723658323',N'Bác sĩ',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22101000',N'Nguyễn Văn Tâm','Nam','17/09/2007',N'63 Trần Hưng Đạo, Q5, TpHCM','TpHCM','Kinh',N'Không','0912137367','NguyenVanTam@gmail.com','Nguyễn Thành Hiếu',1974,'096301002627','0723623475',N'Kỹ sư','Châu Nguyễn Minh Nguyệt',1979,'096302005332','0736144288',N'Nhân viên ngân hàng',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22100010',N'Trần Ngọc Linh',N'Nữ','01/01/2007',N'47/3 An Dương Vương, Q5, TpHCM','TpHCM','Kinh',N'Không','0972156266','Tranngoclinh@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nguyền Hồ Thanh Thủy',1975,'096203004785','0936123487',N'Y tá')
 
-INSERT INTO HOCSINH VALUES ('22120224',N'Lê Thị Phi Yến',N'Nữ','13/08/2005',N'728 Trần Hưng Đạo, Q5, TpHCM','TpHCM','Kinh',N'Không','0872133246','Yenle@gmail.com')
-INSERT INTO HOCSINH VALUES ('22120331',N'Ngô Thanh Tuấn','Nam','15/07/2005',N'202 Lê Hồng Phong, Q5, TpHCM','TpHCM','Kinh',N'Không','0868025976','Ngothanhtuan@gmail.com')
-INSERT INTO HOCSINH VALUES ('22120247',N'Nguyễn Thị Trúc Thanh',N'Nữ','11/11/2005',N'58 Trương Định, Q5, TpHCM','TpHCM','Kinh',N'Không','0975987687','Thanhnguyen@gmail.com')
-INSERT INTO HOCSINH VALUES ('22120016',N'Trần Minh Long','Nam','12/12/2005',N'231 Nguyễn Văn Cừ, Q5, TpHCM','TpHCM','Kinh',N'Không','0363250168','Tranminhlong@gmail.com')
-INSERT INTO HOCSINH VALUES ('22120112',N'Trần Quang Minh','Nam','01/01/2005','24/122 Lê Đại Hành, Q5, TpHCM','TpHCM','Kinh',N'Không','0969251332','QuangMinh@gmail.com')
+INSERT INTO HOCSINH VALUES ('22120224',N'Lê Thị Phi Yến',N'Nữ','13/08/2005',N'728 Trần Hưng Đạo, Q5, TpHCM','TpHCM','Kinh',N'Không','0872133246','Yenle@gmail.com','Lê Trần Trung Tín',1974,'096301002627','0723623475',N'Kỹ sư','Châu Nguyễn Minh Nguyệt',1979,'096302005332','0736144288',N'Nhân viên ngân hàng',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22120331',N'Ngô Thanh Tuấn','Nam','15/07/2005',N'202 Lê Hồng Phong, Q5, TpHCM','TpHCM','Kinh',N'Không','0868025976','Ngothanhtuan@gmail.com','Ngô Minh Quân',1973,'096301002627','0723623475',N'Kỹ sư','Nguyễn Lai Như Thảo',1975,'096302005332','0736144288',N'Giáo viên',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22120247',N'Nguyễn Thị Trúc Thanh',N'Nữ','11/11/2005',N'58 Trương Định, Q5, TpHCM','TpHCM','Kinh',N'Không','0975987687','Thanhnguyen@gmail.com','Nguyễn Phan Anh Hùng',1977,'096301002627','0723623475',N'Giảng viên','Mai Nguyễn Minh Châu',1982,'096302005332','0736144288',N'Nhân viên bán hàng',NULL,NULL,NULL,NULL,NULL)
+INSERT INTO HOCSINH VALUES ('22120016',N'Trần Minh Long','Nam','12/12/2005',N'231 Nguyễn Văn Cừ, Q5, TpHCM','TpHCM','Kinh',N'Không','0363250168','Tranminhlong@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Nguyền Thanh Tuấn',1979,'096203007556','0836992312',N'Bác sĩ')
+INSERT INTO HOCSINH VALUES ('22120112',N'Trần Quang Minh','Nam','01/01/2005','24/122 Lê Đại Hành, Q5, TpHCM','TpHCM','Kinh',N'Không','0969251332','QuangMinh@gmail.com','Trần Phan Chí Nhân',1983,'096303007889','0783224757',N'Bác sĩ','Nguyễn Hồ Thu Mai',1983,'096302002111','0825337222',N'Bác sĩ',NULL,NULL,NULL,NULL,NULL)
+
 
 
 --KHOI
