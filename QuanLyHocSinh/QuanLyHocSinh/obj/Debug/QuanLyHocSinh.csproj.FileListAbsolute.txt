@@ -57,3 +57,4 @@ D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
 D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
 D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
 D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
