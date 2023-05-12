@@ -23,13 +23,15 @@ namespace QuanLyHocSinh
             dataEntities db = new dataEntities();
             var result = from iter in db.HOCSINHs
                          where iter.MaHocSinh == textBox1.Text
-                         select iter;
+                         select  iter.HoTen ;
 
             //Ko tim duoc HocSinh
             if (result.Count()==0)      MessageBox.Show("Không tìm thấy học sinh phù hợp với mã số sinh viên đã nhập","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             else
             {
-
+                //Ho Ten
+                tbHoTen.Text = result.First();
+                
             }    
         }
 
