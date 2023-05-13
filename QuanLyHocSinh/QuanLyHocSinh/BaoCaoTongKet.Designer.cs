@@ -76,6 +76,14 @@ namespace QuanLyHocSinh
             this.tabControlReport = new System.Windows.Forms.TabControl();
             this.tabPageSubjectsSummary1 = new System.Windows.Forms.TabPage();
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageSubjectsSummary2 = new System.Windows.Forms.TabPage();
             this.PanelStudent2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -160,14 +168,6 @@ namespace QuanLyHocSinh
             this.labelYears4 = new System.Windows.Forms.Label();
             this.buttonReport4 = new System.Windows.Forms.Button();
             this.comboBoxYears4 = new System.Windows.Forms.ComboBox();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
@@ -330,6 +330,7 @@ namespace QuanLyHocSinh
             // 
             // PanelStudent
             // 
+            this.PanelStudent.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PanelStudent.Controls.Add(this.labelRatio5);
             this.PanelStudent.Controls.Add(this.labelRatio4);
             this.PanelStudent.Controls.Add(this.labelRatio3);
@@ -655,6 +656,7 @@ namespace QuanLyHocSinh
             // 
             // tabPageSubjectsSummary1
             // 
+            this.tabPageSubjectsSummary1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tabPageSubjectsSummary1.Controls.Add(this.dataGridViewReport);
             this.tabPageSubjectsSummary1.Controls.Add(this.PanelStudent);
             this.tabPageSubjectsSummary1.Controls.Add(this.PanelSubjectsSummary1);
@@ -664,11 +666,11 @@ namespace QuanLyHocSinh
             this.tabPageSubjectsSummary1.Size = new System.Drawing.Size(1253, 541);
             this.tabPageSubjectsSummary1.TabIndex = 0;
             this.tabPageSubjectsSummary1.Text = "Tổng kết môn học kì";
-            this.tabPageSubjectsSummary1.UseVisualStyleBackColor = true;
             // 
             // dataGridViewReport
             // 
-            this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewReport.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReport.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -687,8 +689,81 @@ namespace QuanLyHocSinh
             this.dataGridViewReport.Name = "dataGridViewReport";
             this.dataGridViewReport.RowHeadersWidth = 51;
             this.dataGridViewReport.RowTemplate.Height = 24;
+            this.dataGridViewReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridViewReport.Size = new System.Drawing.Size(1057, 314);
             this.dataGridViewReport.TabIndex = 6;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "STT";
+            this.Column1.FillWeight = 342.246F;
+            this.Column1.HeaderText = "STT";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 64;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "LOP";
+            this.Column2.FillWeight = 65.39342F;
+            this.Column2.HeaderText = "Lớp";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 61;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SISO";
+            this.Column3.FillWeight = 65.39342F;
+            this.Column3.HeaderText = "Sĩ số ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 53;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "GIOI";
+            this.Column4.FillWeight = 65.39342F;
+            this.Column4.HeaderText = "Số lượng HS Giỏi ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 110;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "KHA";
+            this.Column5.FillWeight = 65.39342F;
+            this.Column5.HeaderText = "Số lượng HS Khá";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 110;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "TB";
+            this.Column6.FillWeight = 65.39342F;
+            this.Column6.HeaderText = "Số lượng HS TB";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 110;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "YEU";
+            this.Column7.FillWeight = 65.39342F;
+            this.Column7.HeaderText = "Số lượng HS Yếu";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 110;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "KEM";
+            this.Column8.FillWeight = 65.39342F;
+            this.Column8.HeaderText = "Số lượng HS Kém";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 110;
             // 
             // tabPageSubjectsSummary2
             // 
@@ -698,7 +773,7 @@ namespace QuanLyHocSinh
             this.tabPageSubjectsSummary2.Location = new System.Drawing.Point(4, 25);
             this.tabPageSubjectsSummary2.Name = "tabPageSubjectsSummary2";
             this.tabPageSubjectsSummary2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSubjectsSummary2.Size = new System.Drawing.Size(1066, 541);
+            this.tabPageSubjectsSummary2.Size = new System.Drawing.Size(1253, 541);
             this.tabPageSubjectsSummary2.TabIndex = 1;
             this.tabPageSubjectsSummary2.Text = "Tổng kết môn năm học";
             this.tabPageSubjectsSummary2.UseVisualStyleBackColor = true;
@@ -939,7 +1014,7 @@ namespace QuanLyHocSinh
             this.tabPageSemesters.Location = new System.Drawing.Point(4, 25);
             this.tabPageSemesters.Name = "tabPageSemesters";
             this.tabPageSemesters.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSemesters.Size = new System.Drawing.Size(1066, 541);
+            this.tabPageSemesters.Size = new System.Drawing.Size(1253, 541);
             this.tabPageSemesters.TabIndex = 2;
             this.tabPageSemesters.Text = "Tổng kết học kì";
             this.tabPageSemesters.UseVisualStyleBackColor = true;
@@ -1263,7 +1338,7 @@ namespace QuanLyHocSinh
             this.tabPageYears.Location = new System.Drawing.Point(4, 25);
             this.tabPageYears.Name = "tabPageYears";
             this.tabPageYears.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageYears.Size = new System.Drawing.Size(1066, 541);
+            this.tabPageYears.Size = new System.Drawing.Size(1253, 541);
             this.tabPageYears.TabIndex = 3;
             this.tabPageYears.Text = "Tổng kết năm học";
             this.tabPageYears.UseVisualStyleBackColor = true;
@@ -1553,70 +1628,6 @@ namespace QuanLyHocSinh
             this.comboBoxYears4.Name = "comboBoxYears4";
             this.comboBoxYears4.Size = new System.Drawing.Size(148, 24);
             this.comboBoxYears4.TabIndex = 1;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "KEM";
-            this.Column8.FillWeight = 65.39342F;
-            this.Column8.HeaderText = "Số lượng HS Kém";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "YEU";
-            this.Column7.FillWeight = 65.39342F;
-            this.Column7.HeaderText = "Số lượng HS Yếu";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "TB";
-            this.Column6.FillWeight = 65.39342F;
-            this.Column6.HeaderText = "Số lượng HS TB";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "KHA";
-            this.Column5.FillWeight = 65.39342F;
-            this.Column5.HeaderText = "Số lượng HS Khá";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "GIOI";
-            this.Column4.FillWeight = 65.39342F;
-            this.Column4.HeaderText = "Số lượng HS Giỏi ";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "SISO";
-            this.Column3.FillWeight = 65.39342F;
-            this.Column3.HeaderText = "Sĩ số ";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "LOP";
-            this.Column2.FillWeight = 65.39342F;
-            this.Column2.HeaderText = "Lớp";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "STT";
-            this.Column1.FillWeight = 342.246F;
-            this.Column1.HeaderText = "STT";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
             // 
             // BaoCaoTongKet
             // 

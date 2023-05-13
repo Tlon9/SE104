@@ -67,7 +67,7 @@ namespace QuanLyHocSinh
                            by new { cls_detail.MaLop, cls.TenLop, scr.XepLoai}
                            into grp
                            select new { Tenlop = grp.Key.TenLop, XepLoai = grp.Key.XepLoai, Soluong = grp.Count()};
-            List<reportformat> reSource = new List<reportformat>();
+            var reSource = new List<reportformat>();
             var temp = new reportformat();
             var index = -1;
             foreach (var item in Source)
@@ -107,7 +107,40 @@ namespace QuanLyHocSinh
                 temp.SISO += item.Soluong;
                 reSource[index] = temp;
             }
-            
+            int Gioi = 0;
+            int Kha = 0;
+            int Tb = 0;
+            int Yeu = 0;
+            int Kem = 0;
+            int TongSo = 0;
+            foreach (var item in reSource)
+            {
+                Gioi += item.GIOI;
+                Kha += item.KHA;
+                Tb += item.TB;
+                Yeu += item.YEU;
+                Kem += item.KEM;
+                TongSo += item.SISO;
+            }
+            double ratio1 = 100 * Gioi / TongSo;
+            double ratio2 = 100 * Kha / TongSo;
+            double ratio3 = 100 * Tb / TongSo;
+            double ratio4 = 100 * Yeu / TongSo;
+            double ratio5 = 100 * Kem / TongSo;
+
+            textBoxStudent.Text = TongSo.ToString();
+            textBoxStudent1.Text = Gioi.ToString();
+            textBoxStudent2.Text = Kha.ToString();
+            textBoxStudent3.Text = Tb.ToString();
+            textBoxStudent4.Text = Yeu.ToString();
+            textBoxStudent5.Text = Kem.ToString();
+
+            textBoxRatio1.Text = Math.Round(ratio1, 2).ToString() +'%' ;
+            textBoxRatio2.Text = Math.Round(ratio2, 2).ToString() + '%';
+            textBoxRatio3.Text = Math.Round(ratio3, 2).ToString() + '%';
+            textBoxRatio4.Text = Math.Round(ratio4, 2).ToString() + '%';
+            textBoxRatio5.Text = Math.Round(ratio5, 2).ToString() + '%';
+
             dataGridViewReport.DataSource = reSource;
             PanelStudent.Show();
             dataGridViewReport.Show();
