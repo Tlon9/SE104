@@ -44,10 +44,10 @@
             this.XepLoaiTextBox = new System.Windows.Forms.TextBox();
             this.PanelDHK = new System.Windows.Forms.Panel();
             this.panelDNH = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.XepLoaiTxtBox_nh = new System.Windows.Forms.TextBox();
+            this.DTBNHTxtBox = new System.Windows.Forms.TextBox();
+            this.LopTxtBox_nh = new System.Windows.Forms.TextBox();
+            this.HoTenTxtBox_nh = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,8 +55,15 @@
             this.TracuuHKTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.InputHKpanel = new System.Windows.Forms.Panel();
+            this.TraCuuButton_hk = new System.Windows.Forms.Button();
             this.MHStextbox_hk = new System.Windows.Forms.TextBox();
             this.DHKGridView = new System.Windows.Forms.DataGridView();
+            this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.InputNHpanel = new System.Windows.Forms.Panel();
             this.MHStextbox_nh = new System.Windows.Forms.TextBox();
@@ -65,13 +72,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.NamHocCbb_nh = new System.Windows.Forms.ComboBox();
             this.DNHGridView = new System.Windows.Forms.DataGridView();
-            this.TraCuuButton_hk = new System.Windows.Forms.Button();
-            this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelDHK.SuspendLayout();
             this.panelDNH.SuspendLayout();
             this.TracuuHKTab.SuspendLayout();
@@ -232,10 +237,10 @@
             // 
             // panelDNH
             // 
-            this.panelDNH.Controls.Add(this.textBox2);
-            this.panelDNH.Controls.Add(this.textBox3);
-            this.panelDNH.Controls.Add(this.textBox4);
-            this.panelDNH.Controls.Add(this.textBox5);
+            this.panelDNH.Controls.Add(this.XepLoaiTxtBox_nh);
+            this.panelDNH.Controls.Add(this.DTBNHTxtBox);
+            this.panelDNH.Controls.Add(this.LopTxtBox_nh);
+            this.panelDNH.Controls.Add(this.HoTenTxtBox_nh);
             this.panelDNH.Controls.Add(this.label9);
             this.panelDNH.Controls.Add(this.label10);
             this.panelDNH.Controls.Add(this.label11);
@@ -245,33 +250,33 @@
             this.panelDNH.Size = new System.Drawing.Size(533, 144);
             this.panelDNH.TabIndex = 20;
             // 
-            // textBox2
+            // XepLoaiTxtBox_nh
             // 
-            this.textBox2.Location = new System.Drawing.Point(216, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 18;
+            this.XepLoaiTxtBox_nh.Location = new System.Drawing.Point(216, 105);
+            this.XepLoaiTxtBox_nh.Name = "XepLoaiTxtBox_nh";
+            this.XepLoaiTxtBox_nh.Size = new System.Drawing.Size(100, 20);
+            this.XepLoaiTxtBox_nh.TabIndex = 18;
             // 
-            // textBox3
+            // DTBNHTxtBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(216, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 17;
+            this.DTBNHTxtBox.Location = new System.Drawing.Point(216, 68);
+            this.DTBNHTxtBox.Name = "DTBNHTxtBox";
+            this.DTBNHTxtBox.Size = new System.Drawing.Size(100, 20);
+            this.DTBNHTxtBox.TabIndex = 17;
             // 
-            // textBox4
+            // LopTxtBox_nh
             // 
-            this.textBox4.Location = new System.Drawing.Point(216, 35);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 16;
+            this.LopTxtBox_nh.Location = new System.Drawing.Point(216, 35);
+            this.LopTxtBox_nh.Name = "LopTxtBox_nh";
+            this.LopTxtBox_nh.Size = new System.Drawing.Size(100, 20);
+            this.LopTxtBox_nh.TabIndex = 16;
             // 
-            // textBox5
+            // HoTenTxtBox_nh
             // 
-            this.textBox5.Location = new System.Drawing.Point(216, 6);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 20);
-            this.textBox5.TabIndex = 15;
+            this.HoTenTxtBox_nh.Location = new System.Drawing.Point(216, 6);
+            this.HoTenTxtBox_nh.Name = "HoTenTxtBox_nh";
+            this.HoTenTxtBox_nh.Size = new System.Drawing.Size(125, 20);
+            this.HoTenTxtBox_nh.TabIndex = 15;
             // 
             // label9
             // 
@@ -352,6 +357,17 @@
             this.InputHKpanel.Size = new System.Drawing.Size(369, 134);
             this.InputHKpanel.TabIndex = 25;
             // 
+            // TraCuuButton_hk
+            // 
+            this.TraCuuButton_hk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TraCuuButton_hk.Location = new System.Drawing.Point(239, 29);
+            this.TraCuuButton_hk.Name = "TraCuuButton_hk";
+            this.TraCuuButton_hk.Size = new System.Drawing.Size(74, 24);
+            this.TraCuuButton_hk.TabIndex = 26;
+            this.TraCuuButton_hk.Text = "Tra cứu";
+            this.TraCuuButton_hk.UseVisualStyleBackColor = true;
+            this.TraCuuButton_hk.Click += new System.EventHandler(this.TraCuuButton_hk_Click);
+            // 
             // MHStextbox_hk
             // 
             this.MHStextbox_hk.Location = new System.Drawing.Point(6, 30);
@@ -371,11 +387,46 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.DHKGridView.Location = new System.Drawing.Point(79, 156);
+            this.DHKGridView.Location = new System.Drawing.Point(75, 156);
             this.DHKGridView.Name = "DHKGridView";
             this.DHKGridView.Size = new System.Drawing.Size(772, 361);
             this.DHKGridView.TabIndex = 23;
-            this.DHKGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DHKGridView_CellContentClick);
+            // 
+            // MaMonHoc
+            // 
+            this.MaMonHoc.DataPropertyName = "MaMonHoc";
+            this.MaMonHoc.HeaderText = "Mã môn học";
+            this.MaMonHoc.Name = "MaMonHoc";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "TenMonHoc";
+            this.Column1.HeaderText = "Tên môn học";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "DiemTX";
+            this.Column2.HeaderText = "Điểm TX";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "DiemGK";
+            this.Column3.HeaderText = "Điểm GK";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "DiemCK";
+            this.Column4.HeaderText = "Điểm CK";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "DiemTB";
+            this.Column5.HeaderText = "Điểm TB";
+            this.Column5.Name = "Column5";
             // 
             // tabPage2
             // 
@@ -404,7 +455,7 @@
             // 
             // MHStextbox_nh
             // 
-            this.MHStextbox_nh.Location = new System.Drawing.Point(6, 29);
+            this.MHStextbox_nh.Location = new System.Drawing.Point(6, 30);
             this.MHStextbox_nh.Name = "MHStextbox_nh";
             this.MHStextbox_nh.Size = new System.Drawing.Size(196, 20);
             this.MHStextbox_nh.TabIndex = 24;
@@ -443,6 +494,10 @@
             // NamHocCbb_nh
             // 
             this.NamHocCbb_nh.FormattingEnabled = true;
+            this.NamHocCbb_nh.Items.AddRange(new object[] {
+            "2021-2022",
+            "2022-2023",
+            "2023-2024"});
             this.NamHocCbb_nh.Location = new System.Drawing.Point(6, 85);
             this.NamHocCbb_nh.Name = "NamHocCbb_nh";
             this.NamHocCbb_nh.Size = new System.Drawing.Size(85, 21);
@@ -453,57 +508,41 @@
             this.DNHGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.DNHGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DNHGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DNHGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10});
             this.DNHGridView.Location = new System.Drawing.Point(75, 156);
             this.DNHGridView.Name = "DNHGridView";
             this.DNHGridView.Size = new System.Drawing.Size(772, 361);
             this.DNHGridView.TabIndex = 24;
             // 
-            // TraCuuButton_hk
+            // Column6
             // 
-            this.TraCuuButton_hk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TraCuuButton_hk.Location = new System.Drawing.Point(239, 29);
-            this.TraCuuButton_hk.Name = "TraCuuButton_hk";
-            this.TraCuuButton_hk.Size = new System.Drawing.Size(74, 24);
-            this.TraCuuButton_hk.TabIndex = 26;
-            this.TraCuuButton_hk.Text = "Tra cứu";
-            this.TraCuuButton_hk.UseVisualStyleBackColor = true;
-            this.TraCuuButton_hk.Click += new System.EventHandler(this.TraCuuButton_hk_Click);
+            this.Column6.HeaderText = "Mã môn học ";
+            this.Column6.Name = "Column6";
             // 
-            // MaMonHoc
+            // Column7
             // 
-            this.MaMonHoc.DataPropertyName = "MaMonHoc";
-            this.MaMonHoc.HeaderText = "Mã môn học";
-            this.MaMonHoc.Name = "MaMonHoc";
+            this.Column7.HeaderText = "Tên môn học";
+            this.Column7.Name = "Column7";
             // 
-            // Column1
+            // Column8
             // 
-            this.Column1.DataPropertyName = "TenMonHoc";
-            this.Column1.HeaderText = "Tên môn học";
-            this.Column1.Name = "Column1";
+            this.Column8.HeaderText = "Điểm TB HK1";
+            this.Column8.Name = "Column8";
             // 
-            // Column2
+            // Column9
             // 
-            this.Column2.DataPropertyName = "DiemTX";
-            this.Column2.HeaderText = "Điểm TX";
-            this.Column2.Name = "Column2";
+            this.Column9.HeaderText = "Điểm TB HK2";
+            this.Column9.Name = "Column9";
             // 
-            // Column3
+            // Column10
             // 
-            this.Column3.DataPropertyName = "DiemGK";
-            this.Column3.HeaderText = "Điểm GK";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "DiemCK";
-            this.Column4.HeaderText = "Điểm CK";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "DiemTB";
-            this.Column5.HeaderText = "Điểm TB";
-            this.Column5.Name = "Column5";
+            this.Column10.HeaderText = "Điểm TB cả năm";
+            this.Column10.Name = "Column10";
             // 
             // BangDiemHocSinh
             // 
@@ -549,10 +588,10 @@
         private System.Windows.Forms.TextBox XepLoaiTextBox;
         private System.Windows.Forms.Panel PanelDHK;
         private System.Windows.Forms.Panel panelDNH;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox XepLoaiTxtBox_nh;
+        private System.Windows.Forms.TextBox DTBNHTxtBox;
+        private System.Windows.Forms.TextBox LopTxtBox_nh;
+        private System.Windows.Forms.TextBox HoTenTxtBox_nh;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -577,5 +616,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

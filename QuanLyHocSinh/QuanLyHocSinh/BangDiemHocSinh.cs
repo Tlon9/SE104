@@ -19,6 +19,8 @@ namespace QuanLyHocSinh
             InitializeComponent();
             DHKGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DHKGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DNHGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DNHGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         string GetHoTen(string MaHS, dataEntities dtb)
@@ -87,6 +89,55 @@ namespace QuanLyHocSinh
         }
         void TraCuuDiemNamHoc()
         {
+            dataEntities dtb = new dataEntities();
+            var MaMonHoc = from c in dtb.DIEMs
+                           where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "1"
+                           select c.MaMonHoc;
+            var TenMonHoc = from c in dtb.DIEMs
+                            join g in dtb.MONHOCs on c.MaMonHoc equals g.MaMonHoc
+                            where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "1"
+                            select c.MONHOC.TenMonHoc;
+            var DiemTBhk1 = from c in dtb.DIEMs
+                            where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "1"
+                            select c.DiemTB;
+            var DiemTbhk2 = from c in dtb.DIEMs
+                            where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "2"
+                            select c.DiemTB;
+            var DiemTbnh = from c in dtb.DIEMs
+                           where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text
+                           group c by new { c.MaHocSinh, c.NamHoc, c.MaMonHoc } into g
+                           select g.Sum(row => row.DiemTB);
+            DNHGridView.Rows.Clear();
+            for (int i = 0; i < MaMonHoc.Count(); i++)
+            {
+                
+                DataGridViewRow newRow = new DataGridViewRow();
+                newRow.CreateCells(DNHGridView);
+                newRow.Cells[0].Value = MaMonHoc.ToList()[i];
+                newRow.Cells[1].Value = TenMonHoc.ToList()[i];
+                newRow.Cells[2].Value = DiemTBhk1.ToList()[i];
+                newRow.Cells[3].Value = DiemTbhk2.ToList()[i];
+                newRow.Cells[4].Value = Math.Round((double)DiemTbnh.ToList()[i]/2, 2);
+                DNHGridView.Rows.Add(newRow);
+            }
+            //Ho Ten
+            HoTenTxtBox_nh.Text = GetHoTen(MHStextbox_nh.Text, dtb);
+
+            //LOP
+            LopTxtBox_nh.Text = GetLop(MHStextbox_nh.Text,"2", NamHocCbb_nh.Text, dtb);
+
+
+            //Diem trung binh nam hoc
+            var DTBnh = DiemTbnh.Sum(row=>row)/13;
+            DTBnh = Math.Round((double)DTBnh/2, 2);
+            DTBNHTxtBox.Text = DTBnh.ToString();
+
+            //XepLoai
+            if (DTBnh >= 8) XepLoaiTxtBox_nh.Text = "Giỏi";
+            else if (DTBnh >= 6.5) XepLoaiTxtBox_nh.Text = "Khá";
+            else if (DTBnh >= 5) XepLoaiTxtBox_nh.Text = "Trung Bình";
+            else if (DTBnh >= 3.5) XepLoaiTxtBox_nh.Text = "Yếu";
+            else XepLoaiTxtBox_nh.Text = "Kém";
 
         }
 
@@ -100,9 +151,5 @@ namespace QuanLyHocSinh
             TraCuuDiemNamHoc();
         }
 
-        private void DHKGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
