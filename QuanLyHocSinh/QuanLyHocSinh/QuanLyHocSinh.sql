@@ -65,12 +65,12 @@ CREATE TABLE DIEM
 	DiemGK float,
 	DiemCK float,
 	DiemTB float,
-	MaXepLoai nvarchar(50),
+	MaXepLoai nvarchar(5),
 	constraint pk_md primary key(MaDiem)
 )
 CREATE TABLE XEPLOAI
 (
-	MaXepLoai nvarchar (50) not null,
+	MaXepLoai nvarchar (5) not null,
 	TenXepLoai nvarchar (50),
 	DiemToiThieu float,
 	DiemToiDa float,
@@ -133,6 +133,9 @@ INSERT INTO LOP VALUES ('2211A3','11A3','2211',40,2022)
 
 INSERT INTO LOP VALUES ('2212A1','12A1','2212',33,2022)
 INSERT INTO LOP VALUES ('2212A2','12A2','2212',34,2022)
+
+UPDATE LOP
+SET NamHoc = '2022-2023'
 
 --CTLOP
 INSERT INTO CTLOP VALUES ('1','22111000','2211A1')
