@@ -19,7 +19,6 @@ namespace QuanLyHocSinh
             pnStudent_info.Hide();
             pnDadofStudent_Info.Hide();
             pnMomOfStudent_Info.Hide();
-            pnNGHofStudent_Info.Hide();
             lbThongTinPhuHuynh.Hide();
         }
 
@@ -63,11 +62,6 @@ namespace QuanLyHocSinh
                                  job_mom = iter1.NgheNghiep_Me,
                                  id_mom = iter1.CCCD_Me,
 
-                                 name_NGH = iter1.HoTen_NguoiGH,
-                                 phonenum_NGH = iter1.SDT_NguoiGH,
-                                 yearbirth_NGH = iter1.NamSinh_NguoiGH,
-                                 job_NGH = iter1.NgheNghiep_NguoiGH,
-                                 id_NGH = iter1.CCCD_NguoiGH
                              };
 
                 foreach (var item in result)
@@ -118,33 +112,13 @@ namespace QuanLyHocSinh
                         tbSDT_Me.Text = "Không có thông tin";
                         tbNgheNghiepMe.Text = "Không có thông tin";
                         tbNamSinhMe.Text = "Không có thông tin";
-                    }
-                        
-                        
-                    if (item.name_NGH != null)
-                    {
-                        tbHoTenNGH.Text = item.name_NGH;
-                        tbCCCD_NGH.Text = item.id_NGH;
-                        tbSDT_NGH.Text = item.phonenum_NGH;
-                        tbNgheNghiep_NGH.Text = item.job_NGH;
-                        tbNamSinhNGH.Text = item.yearbirth_NGH.ToString ();
-                    }
-                    else
-                    {
-                        tbHoTenNGH.Text = "Không có thông tin";
-                        tbCCCD_NGH.Text = "Không có thông tin";
-                        tbSDT_NGH.Text = "Không có thông tin";
-                        tbNgheNghiep_NGH.Text = "Không có thông tin";
-                        tbNamSinhNGH.Text = "Không có thông tin";
-                    }
-                        
+                    }                       
                 }
 
                 pnStudent_info.Show();
                 lbThongTinPhuHuynh.Show();
                 pnDadofStudent_Info.Show();
                 pnMomOfStudent_Info.Show();
-                pnNGHofStudent_Info.Show();
             }
         }
 
