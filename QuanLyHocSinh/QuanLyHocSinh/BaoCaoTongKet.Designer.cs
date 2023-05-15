@@ -118,6 +118,14 @@ namespace QuanLyHocSinh
             this.textBoxStudent6 = new System.Windows.Forms.TextBox();
             this.tabPageSemesters = new System.Windows.Forms.TabPage();
             this.dataGridViewReport3 = new System.Windows.Forms.DataGridView();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelStudent3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -161,29 +169,29 @@ namespace QuanLyHocSinh
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio18 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio20 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio19 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent23 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent22 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent21 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio17 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio16 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent20 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent19 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent18 = new System.Windows.Forms.TextBox();
             this.panelYears = new System.Windows.Forms.Panel();
             this.labelYears4 = new System.Windows.Forms.Label();
             this.buttonReport4 = new System.Windows.Forms.Button();
             this.comboBoxYears4 = new System.Windows.Forms.ComboBox();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
@@ -1128,6 +1136,66 @@ namespace QuanLyHocSinh
             this.dataGridViewReport3.Size = new System.Drawing.Size(1061, 325);
             this.dataGridViewReport3.TabIndex = 10;
             // 
+            // Column17
+            // 
+            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column17.DataPropertyName = "STT";
+            this.Column17.HeaderText = "STT";
+            this.Column17.MinimumWidth = 6;
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 64;
+            // 
+            // Column18
+            // 
+            this.Column18.DataPropertyName = "LOP";
+            this.Column18.HeaderText = "Lớp";
+            this.Column18.MinimumWidth = 6;
+            this.Column18.Name = "Column18";
+            // 
+            // Column19
+            // 
+            this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column19.DataPropertyName = "SISO";
+            this.Column19.HeaderText = "Sĩ số";
+            this.Column19.MinimumWidth = 6;
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 64;
+            // 
+            // Column20
+            // 
+            this.Column20.DataPropertyName = "GIOI";
+            this.Column20.HeaderText = "Số lượng HS Giỏi";
+            this.Column20.MinimumWidth = 6;
+            this.Column20.Name = "Column20";
+            // 
+            // Column21
+            // 
+            this.Column21.DataPropertyName = "KHA";
+            this.Column21.HeaderText = "Số lượng HS Khá";
+            this.Column21.MinimumWidth = 6;
+            this.Column21.Name = "Column21";
+            // 
+            // Column22
+            // 
+            this.Column22.DataPropertyName = "TB";
+            this.Column22.HeaderText = "Số lượng HS TB";
+            this.Column22.MinimumWidth = 6;
+            this.Column22.Name = "Column22";
+            // 
+            // Column23
+            // 
+            this.Column23.DataPropertyName = "YEU";
+            this.Column23.HeaderText = "Số lượng HS Yếu";
+            this.Column23.MinimumWidth = 6;
+            this.Column23.Name = "Column23";
+            // 
+            // Column24
+            // 
+            this.Column24.DataPropertyName = "KEM";
+            this.Column24.HeaderText = "Số lượng HS Kém";
+            this.Column24.MinimumWidth = 6;
+            this.Column24.Name = "Column24";
+            // 
             // PanelStudent3
             // 
             this.PanelStudent3.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -1430,6 +1498,7 @@ namespace QuanLyHocSinh
             // 
             // tabPageYears
             // 
+            this.tabPageYears.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tabPageYears.Controls.Add(this.dataGridViewReport4);
             this.tabPageYears.Controls.Add(this.PanelStudent4);
             this.tabPageYears.Controls.Add(this.panelYears);
@@ -1439,15 +1508,26 @@ namespace QuanLyHocSinh
             this.tabPageYears.Size = new System.Drawing.Size(1253, 541);
             this.tabPageYears.TabIndex = 3;
             this.tabPageYears.Text = "Tổng kết năm học";
-            this.tabPageYears.UseVisualStyleBackColor = true;
             // 
             // dataGridViewReport4
             // 
+            this.dataGridViewReport4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReport4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReport4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReport4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReport4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column25,
+            this.Column26,
+            this.Column27,
+            this.Column28,
+            this.Column29,
+            this.Column30,
+            this.Column31,
+            this.Column32});
             this.dataGridViewReport4.Location = new System.Drawing.Point(2, 209);
             this.dataGridViewReport4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewReport4.Name = "dataGridViewReport4";
+            this.dataGridViewReport4.RowHeadersVisible = false;
             this.dataGridViewReport4.RowHeadersWidth = 51;
             this.dataGridViewReport4.RowTemplate.Height = 24;
             this.dataGridViewReport4.Size = new System.Drawing.Size(1061, 314);
@@ -1466,17 +1546,17 @@ namespace QuanLyHocSinh
             this.PanelStudent4.Controls.Add(this.label31);
             this.PanelStudent4.Controls.Add(this.label32);
             this.PanelStudent4.Controls.Add(this.label33);
-            this.PanelStudent4.Controls.Add(this.textBox23);
-            this.PanelStudent4.Controls.Add(this.textBox24);
-            this.PanelStudent4.Controls.Add(this.textBox25);
-            this.PanelStudent4.Controls.Add(this.textBox26);
-            this.PanelStudent4.Controls.Add(this.textBox27);
-            this.PanelStudent4.Controls.Add(this.textBox28);
-            this.PanelStudent4.Controls.Add(this.textBox29);
-            this.PanelStudent4.Controls.Add(this.textBox30);
-            this.PanelStudent4.Controls.Add(this.textBox31);
-            this.PanelStudent4.Controls.Add(this.textBox32);
-            this.PanelStudent4.Controls.Add(this.textBox33);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio18);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio20);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio19);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent23);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent22);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent21);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio17);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio16);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent20);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent19);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent18);
             this.PanelStudent4.Location = new System.Drawing.Point(1, 66);
             this.PanelStudent4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelStudent4.Name = "PanelStudent4";
@@ -1593,93 +1673,93 @@ namespace QuanLyHocSinh
             this.label33.TabIndex = 11;
             this.label33.Text = "Tổng số HS";
             // 
-            // textBox23
+            // textBoxRatio18
             // 
-            this.textBox23.Location = new System.Drawing.Point(951, 12);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(100, 22);
-            this.textBox23.TabIndex = 10;
+            this.textBoxRatio18.Location = new System.Drawing.Point(951, 12);
+            this.textBoxRatio18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio18.Name = "textBoxRatio18";
+            this.textBoxRatio18.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio18.TabIndex = 10;
             // 
-            // textBox24
+            // textBoxRatio20
             // 
-            this.textBox24.Location = new System.Drawing.Point(951, 101);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(100, 22);
-            this.textBox24.TabIndex = 9;
+            this.textBoxRatio20.Location = new System.Drawing.Point(951, 101);
+            this.textBoxRatio20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio20.Name = "textBoxRatio20";
+            this.textBoxRatio20.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio20.TabIndex = 9;
             // 
-            // textBox25
+            // textBoxRatio19
             // 
-            this.textBox25.Location = new System.Drawing.Point(951, 53);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(100, 22);
-            this.textBox25.TabIndex = 8;
+            this.textBoxRatio19.Location = new System.Drawing.Point(951, 53);
+            this.textBoxRatio19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio19.Name = "textBoxRatio19";
+            this.textBoxRatio19.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio19.TabIndex = 8;
             // 
-            // textBox26
+            // textBoxStudent23
             // 
-            this.textBox26.Location = new System.Drawing.Point(747, 101);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(100, 22);
-            this.textBox26.TabIndex = 7;
+            this.textBoxStudent23.Location = new System.Drawing.Point(747, 101);
+            this.textBoxStudent23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent23.Name = "textBoxStudent23";
+            this.textBoxStudent23.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent23.TabIndex = 7;
             // 
-            // textBox27
+            // textBoxStudent22
             // 
-            this.textBox27.Location = new System.Drawing.Point(747, 53);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(100, 22);
-            this.textBox27.TabIndex = 6;
+            this.textBoxStudent22.Location = new System.Drawing.Point(747, 53);
+            this.textBoxStudent22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent22.Name = "textBoxStudent22";
+            this.textBoxStudent22.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent22.TabIndex = 6;
             // 
-            // textBox28
+            // textBoxStudent21
             // 
-            this.textBox28.Location = new System.Drawing.Point(747, 12);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(100, 22);
-            this.textBox28.TabIndex = 5;
+            this.textBoxStudent21.Location = new System.Drawing.Point(747, 12);
+            this.textBoxStudent21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent21.Name = "textBoxStudent21";
+            this.textBoxStudent21.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent21.TabIndex = 5;
             // 
-            // textBox29
+            // textBoxRatio17
             // 
-            this.textBox29.Location = new System.Drawing.Point(347, 100);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(100, 22);
-            this.textBox29.TabIndex = 4;
+            this.textBoxRatio17.Location = new System.Drawing.Point(347, 100);
+            this.textBoxRatio17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio17.Name = "textBoxRatio17";
+            this.textBoxRatio17.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio17.TabIndex = 4;
             // 
-            // textBox30
+            // textBoxRatio16
             // 
-            this.textBox30.Location = new System.Drawing.Point(347, 49);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(100, 22);
-            this.textBox30.TabIndex = 3;
+            this.textBoxRatio16.Location = new System.Drawing.Point(347, 49);
+            this.textBoxRatio16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio16.Name = "textBoxRatio16";
+            this.textBoxRatio16.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio16.TabIndex = 3;
             // 
-            // textBox31
+            // textBoxStudent20
             // 
-            this.textBox31.Location = new System.Drawing.Point(163, 100);
-            this.textBox31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(100, 22);
-            this.textBox31.TabIndex = 2;
+            this.textBoxStudent20.Location = new System.Drawing.Point(163, 100);
+            this.textBoxStudent20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent20.Name = "textBoxStudent20";
+            this.textBoxStudent20.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent20.TabIndex = 2;
             // 
-            // textBox32
+            // textBoxStudent19
             // 
-            this.textBox32.Location = new System.Drawing.Point(163, 52);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(100, 22);
-            this.textBox32.TabIndex = 1;
+            this.textBoxStudent19.Location = new System.Drawing.Point(163, 52);
+            this.textBoxStudent19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent19.Name = "textBoxStudent19";
+            this.textBoxStudent19.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent19.TabIndex = 1;
             // 
-            // textBox33
+            // textBoxStudent18
             // 
-            this.textBox33.Location = new System.Drawing.Point(163, 10);
-            this.textBox33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(100, 22);
-            this.textBox33.TabIndex = 0;
+            this.textBoxStudent18.Location = new System.Drawing.Point(163, 10);
+            this.textBoxStudent18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent18.Name = "textBoxStudent18";
+            this.textBoxStudent18.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent18.TabIndex = 0;
             // 
             // panelYears
             // 
@@ -1727,65 +1807,65 @@ namespace QuanLyHocSinh
             this.comboBoxYears4.Size = new System.Drawing.Size(148, 24);
             this.comboBoxYears4.TabIndex = 1;
             // 
-            // Column17
+            // Column25
             // 
-            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column17.DataPropertyName = "STT";
-            this.Column17.HeaderText = "STT";
-            this.Column17.MinimumWidth = 6;
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 64;
+            this.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column25.DataPropertyName = "STT";
+            this.Column25.HeaderText = "STT";
+            this.Column25.MinimumWidth = 6;
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 64;
             // 
-            // Column18
+            // Column26
             // 
-            this.Column18.DataPropertyName = "LOP";
-            this.Column18.HeaderText = "Lớp";
-            this.Column18.MinimumWidth = 6;
-            this.Column18.Name = "Column18";
+            this.Column26.DataPropertyName = "LOP";
+            this.Column26.HeaderText = "Lớp";
+            this.Column26.MinimumWidth = 6;
+            this.Column26.Name = "Column26";
             // 
-            // Column19
+            // Column27
             // 
-            this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column19.DataPropertyName = "SISO";
-            this.Column19.HeaderText = "Sĩ số";
-            this.Column19.MinimumWidth = 6;
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 64;
+            this.Column27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column27.DataPropertyName = "SISO";
+            this.Column27.HeaderText = "Sĩ số";
+            this.Column27.MinimumWidth = 6;
+            this.Column27.Name = "Column27";
+            this.Column27.Width = 64;
             // 
-            // Column20
+            // Column28
             // 
-            this.Column20.DataPropertyName = "GIOI";
-            this.Column20.HeaderText = "Số lượng HS Giỏi";
-            this.Column20.MinimumWidth = 6;
-            this.Column20.Name = "Column20";
+            this.Column28.DataPropertyName = "GIOI";
+            this.Column28.HeaderText = "Số lượng HS Giỏi";
+            this.Column28.MinimumWidth = 6;
+            this.Column28.Name = "Column28";
             // 
-            // Column21
+            // Column29
             // 
-            this.Column21.DataPropertyName = "KHA";
-            this.Column21.HeaderText = "Số lượng HS Khá";
-            this.Column21.MinimumWidth = 6;
-            this.Column21.Name = "Column21";
+            this.Column29.DataPropertyName = "KHA";
+            this.Column29.HeaderText = "Số lượng HS Khá";
+            this.Column29.MinimumWidth = 6;
+            this.Column29.Name = "Column29";
             // 
-            // Column22
+            // Column30
             // 
-            this.Column22.DataPropertyName = "TB";
-            this.Column22.HeaderText = "Số lượng HS TB";
-            this.Column22.MinimumWidth = 6;
-            this.Column22.Name = "Column22";
+            this.Column30.DataPropertyName = "TB";
+            this.Column30.HeaderText = "Số lượng HS TB";
+            this.Column30.MinimumWidth = 6;
+            this.Column30.Name = "Column30";
             // 
-            // Column23
+            // Column31
             // 
-            this.Column23.DataPropertyName = "YEU";
-            this.Column23.HeaderText = "Số lượng HS Yếu";
-            this.Column23.MinimumWidth = 6;
-            this.Column23.Name = "Column23";
+            this.Column31.DataPropertyName = "YEU";
+            this.Column31.HeaderText = "Số lượng HS Yếu";
+            this.Column31.MinimumWidth = 6;
+            this.Column31.Name = "Column31";
             // 
-            // Column24
+            // Column32
             // 
-            this.Column24.DataPropertyName = "KEM";
-            this.Column24.HeaderText = "Số lượng HS Kém";
-            this.Column24.MinimumWidth = 6;
-            this.Column24.Name = "Column24";
+            this.Column32.DataPropertyName = "KEM";
+            this.Column32.HeaderText = "Số lượng HS Kém";
+            this.Column32.MinimumWidth = 6;
+            this.Column32.Name = "Column32";
             // 
             // BaoCaoTongKet
             // 
@@ -1949,17 +2029,17 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBoxRatio18;
+        private System.Windows.Forms.TextBox textBoxRatio20;
+        private System.Windows.Forms.TextBox textBoxRatio19;
+        private System.Windows.Forms.TextBox textBoxStudent23;
+        private System.Windows.Forms.TextBox textBoxStudent22;
+        private System.Windows.Forms.TextBox textBoxStudent21;
+        private System.Windows.Forms.TextBox textBoxRatio17;
+        private System.Windows.Forms.TextBox textBoxRatio16;
+        private System.Windows.Forms.TextBox textBoxStudent20;
+        private System.Windows.Forms.TextBox textBoxStudent19;
+        private System.Windows.Forms.TextBox textBoxStudent18;
         private System.Windows.Forms.Panel panelYears;
         private System.Windows.Forms.Label labelYears4;
         private System.Windows.Forms.Button buttonReport4;
@@ -1988,5 +2068,13 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
     }
 }
