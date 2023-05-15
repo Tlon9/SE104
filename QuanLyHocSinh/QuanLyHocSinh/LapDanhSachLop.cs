@@ -16,5 +16,15 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

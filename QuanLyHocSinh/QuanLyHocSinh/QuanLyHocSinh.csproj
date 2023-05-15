@@ -148,6 +148,9 @@
       <DependentUpon>BaoCaoTongKet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapBangDiemMonHocCuaLopNamHoc.resx" />
+    <EmbeddedResource Include="LapDanhSachLop.resx">
+      <DependentUpon>LapDanhSachLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhapBangDiemMonHoc.resx">
       <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>

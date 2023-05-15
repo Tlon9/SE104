@@ -31,6 +31,7 @@ namespace QuanLyHocSinh
         public virtual DbSet<KHOI> KHOIs { get; set; }
         public virtual DbSet<LOP> LOPs { get; set; }
         public virtual DbSet<MONHOC> MONHOCs { get; set; }
+        //public virtual DbSet<THAMSO> THAMSOs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }
