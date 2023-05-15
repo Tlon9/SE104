@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyHocSinh
@@ -70,7 +71,13 @@ namespace QuanLyHocSinh
                     tbHoTen.Text = item.name;
                     tbLop.Text = item.class_name;
                     tbGioiTinh.Text = item.sex;
-                    tbNgaySinh.Text = item.dob.ToString();
+
+                    //Xử lý ngày tháng năm trong chuỗi có kiểu dữ liệu Datetime
+                    string temp = item.dob.ToString();
+                    Regex re = new Regex(@"[^ ]*"); 
+                    Match m = re.Match(temp);
+                    tbNgaySinh.Text = m.Groups[0].Value;
+
                     tbDanToc.Text = item.ethnic;
                     tbTonGiao.Text = item.religion;
                     tbQueQuan.Text = item.hometown;
