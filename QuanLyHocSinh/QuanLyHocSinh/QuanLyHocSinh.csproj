@@ -103,6 +103,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LapBangDiemMonHocCuaLopNamHoc.Designer.cs" />
+    <Compile Include="LapDanhSachLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LapDanhSachLop.Designer.cs">
+      <DependentUpon>LapDanhSachLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="LOP.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
@@ -142,6 +148,9 @@
       <DependentUpon>BaoCaoTongKet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapBangDiemMonHocCuaLopNamHoc.resx" />
+    <EmbeddedResource Include="LapDanhSachLop.resx">
+      <DependentUpon>LapDanhSachLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhapBangDiemMonHoc.resx">
       <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>

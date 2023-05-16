@@ -67,6 +67,14 @@ namespace QuanLyHocSinh
             this.textBoxStudent1 = new System.Windows.Forms.TextBox();
             this.textBoxStudent = new System.Windows.Forms.TextBox();
             this.dataGridViewReport2 = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelSubjectsSummary2 = new System.Windows.Forms.Panel();
             this.labelYears2 = new System.Windows.Forms.Label();
             this.labelSubjects2 = new System.Windows.Forms.Label();
@@ -97,19 +105,27 @@ namespace QuanLyHocSinh
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio8 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio10 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio9 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent11 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent10 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent9 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio7 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio6 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent8 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent7 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent6 = new System.Windows.Forms.TextBox();
             this.tabPageSemesters = new System.Windows.Forms.TabPage();
             this.dataGridViewReport3 = new System.Windows.Forms.DataGridView();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelStudent3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -122,17 +138,17 @@ namespace QuanLyHocSinh
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio13 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio15 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio14 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent17 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent16 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent15 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio12 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio11 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent14 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent13 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent12 = new System.Windows.Forms.TextBox();
             this.panelSemesters = new System.Windows.Forms.Panel();
             this.comboBoxSemesters2 = new System.Windows.Forms.ComboBox();
             this.labelYears3 = new System.Windows.Forms.Label();
@@ -153,21 +169,29 @@ namespace QuanLyHocSinh
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio18 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio20 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio19 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent23 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent22 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent21 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio17 = new System.Windows.Forms.TextBox();
+            this.textBoxRatio16 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent20 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent19 = new System.Windows.Forms.TextBox();
+            this.textBoxStudent18 = new System.Windows.Forms.TextBox();
             this.panelYears = new System.Windows.Forms.Panel();
             this.labelYears4 = new System.Windows.Forms.Label();
             this.buttonReport4 = new System.Windows.Forms.Button();
             this.comboBoxYears4 = new System.Windows.Forms.ComboBox();
+            this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
@@ -559,15 +583,87 @@ namespace QuanLyHocSinh
             // 
             // dataGridViewReport2
             // 
+            this.dataGridViewReport2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReport2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReport2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReport2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReport2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16});
             this.dataGridViewReport2.Location = new System.Drawing.Point(3, 213);
             this.dataGridViewReport2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewReport2.Name = "dataGridViewReport2";
+            this.dataGridViewReport2.RowHeadersVisible = false;
             this.dataGridViewReport2.RowHeadersWidth = 51;
             this.dataGridViewReport2.RowTemplate.Height = 24;
             this.dataGridViewReport2.Size = new System.Drawing.Size(1061, 314);
             this.dataGridViewReport2.TabIndex = 5;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column9.DataPropertyName = "STT";
+            this.Column9.HeaderText = "STT";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 64;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "LOP";
+            this.Column10.HeaderText = "Lớp";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column11.DataPropertyName = "SISO";
+            this.Column11.HeaderText = "Sĩ số";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 64;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "GIOI";
+            this.Column12.HeaderText = "Số lượng HS Giỏi";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.DataPropertyName = "KHA";
+            this.Column13.HeaderText = "Số lượng HS Khá";
+            this.Column13.MinimumWidth = 6;
+            this.Column13.Name = "Column13";
+            // 
+            // Column14
+            // 
+            this.Column14.DataPropertyName = "TB";
+            this.Column14.HeaderText = "Số lượng HS TB";
+            this.Column14.MinimumWidth = 6;
+            this.Column14.Name = "Column14";
+            // 
+            // Column15
+            // 
+            this.Column15.DataPropertyName = "YEU";
+            this.Column15.HeaderText = "Số lượng HS Yếu";
+            this.Column15.MinimumWidth = 6;
+            this.Column15.Name = "Column15";
+            // 
+            // Column16
+            // 
+            this.Column16.DataPropertyName = "KEM";
+            this.Column16.HeaderText = "Số lượng HS Kém";
+            this.Column16.MinimumWidth = 6;
+            this.Column16.Name = "Column16";
             // 
             // PanelSubjectsSummary2
             // 
@@ -670,7 +766,7 @@ namespace QuanLyHocSinh
             // dataGridViewReport
             // 
             this.dataGridViewReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewReport.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReport.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -687,6 +783,7 @@ namespace QuanLyHocSinh
             this.dataGridViewReport.Location = new System.Drawing.Point(5, 213);
             this.dataGridViewReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewReport.Name = "dataGridViewReport";
+            this.dataGridViewReport.RowHeadersVisible = false;
             this.dataGridViewReport.RowHeadersWidth = 51;
             this.dataGridViewReport.RowTemplate.Height = 24;
             this.dataGridViewReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -695,6 +792,7 @@ namespace QuanLyHocSinh
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column1.DataPropertyName = "STT";
             this.Column1.FillWeight = 342.246F;
             this.Column1.HeaderText = "STT";
@@ -709,10 +807,10 @@ namespace QuanLyHocSinh
             this.Column2.HeaderText = "Lớp";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 61;
             // 
             // Column3
             // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Column3.DataPropertyName = "SISO";
             this.Column3.FillWeight = 65.39342F;
             this.Column3.HeaderText = "Sĩ số ";
@@ -727,7 +825,6 @@ namespace QuanLyHocSinh
             this.Column4.HeaderText = "Số lượng HS Giỏi ";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 110;
             // 
             // Column5
             // 
@@ -736,7 +833,6 @@ namespace QuanLyHocSinh
             this.Column5.HeaderText = "Số lượng HS Khá";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 110;
             // 
             // Column6
             // 
@@ -745,7 +841,6 @@ namespace QuanLyHocSinh
             this.Column6.HeaderText = "Số lượng HS TB";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 110;
             // 
             // Column7
             // 
@@ -754,7 +849,6 @@ namespace QuanLyHocSinh
             this.Column7.HeaderText = "Số lượng HS Yếu";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
-            this.Column7.Width = 110;
             // 
             // Column8
             // 
@@ -763,10 +857,10 @@ namespace QuanLyHocSinh
             this.Column8.HeaderText = "Số lượng HS Kém";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
-            this.Column8.Width = 110;
             // 
             // tabPageSubjectsSummary2
             // 
+            this.tabPageSubjectsSummary2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tabPageSubjectsSummary2.Controls.Add(this.PanelStudent2);
             this.tabPageSubjectsSummary2.Controls.Add(this.dataGridViewReport2);
             this.tabPageSubjectsSummary2.Controls.Add(this.PanelSubjectsSummary2);
@@ -776,7 +870,6 @@ namespace QuanLyHocSinh
             this.tabPageSubjectsSummary2.Size = new System.Drawing.Size(1253, 541);
             this.tabPageSubjectsSummary2.TabIndex = 1;
             this.tabPageSubjectsSummary2.Text = "Tổng kết môn năm học";
-            this.tabPageSubjectsSummary2.UseVisualStyleBackColor = true;
             // 
             // PanelStudent2
             // 
@@ -791,17 +884,17 @@ namespace QuanLyHocSinh
             this.PanelStudent2.Controls.Add(this.label9);
             this.PanelStudent2.Controls.Add(this.label10);
             this.PanelStudent2.Controls.Add(this.label11);
-            this.PanelStudent2.Controls.Add(this.textBox1);
-            this.PanelStudent2.Controls.Add(this.textBox2);
-            this.PanelStudent2.Controls.Add(this.textBox3);
-            this.PanelStudent2.Controls.Add(this.textBox4);
-            this.PanelStudent2.Controls.Add(this.textBox5);
-            this.PanelStudent2.Controls.Add(this.textBox6);
-            this.PanelStudent2.Controls.Add(this.textBox7);
-            this.PanelStudent2.Controls.Add(this.textBox8);
-            this.PanelStudent2.Controls.Add(this.textBox9);
-            this.PanelStudent2.Controls.Add(this.textBox10);
-            this.PanelStudent2.Controls.Add(this.textBox11);
+            this.PanelStudent2.Controls.Add(this.textBoxRatio8);
+            this.PanelStudent2.Controls.Add(this.textBoxRatio10);
+            this.PanelStudent2.Controls.Add(this.textBoxRatio9);
+            this.PanelStudent2.Controls.Add(this.textBoxStudent11);
+            this.PanelStudent2.Controls.Add(this.textBoxStudent10);
+            this.PanelStudent2.Controls.Add(this.textBoxStudent9);
+            this.PanelStudent2.Controls.Add(this.textBoxRatio7);
+            this.PanelStudent2.Controls.Add(this.textBoxRatio6);
+            this.PanelStudent2.Controls.Add(this.textBoxStudent8);
+            this.PanelStudent2.Controls.Add(this.textBoxStudent7);
+            this.PanelStudent2.Controls.Add(this.textBoxStudent6);
             this.PanelStudent2.Location = new System.Drawing.Point(0, 70);
             this.PanelStudent2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelStudent2.Name = "PanelStudent2";
@@ -918,96 +1011,97 @@ namespace QuanLyHocSinh
             this.label11.TabIndex = 11;
             this.label11.Text = "Tổng số HS";
             // 
-            // textBox1
+            // textBoxRatio8
             // 
-            this.textBox1.Location = new System.Drawing.Point(951, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 10;
+            this.textBoxRatio8.Location = new System.Drawing.Point(951, 12);
+            this.textBoxRatio8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio8.Name = "textBoxRatio8";
+            this.textBoxRatio8.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio8.TabIndex = 10;
             // 
-            // textBox2
+            // textBoxRatio10
             // 
-            this.textBox2.Location = new System.Drawing.Point(951, 101);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 9;
+            this.textBoxRatio10.Location = new System.Drawing.Point(951, 101);
+            this.textBoxRatio10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio10.Name = "textBoxRatio10";
+            this.textBoxRatio10.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio10.TabIndex = 9;
             // 
-            // textBox3
+            // textBoxRatio9
             // 
-            this.textBox3.Location = new System.Drawing.Point(951, 53);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 8;
+            this.textBoxRatio9.Location = new System.Drawing.Point(951, 53);
+            this.textBoxRatio9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio9.Name = "textBoxRatio9";
+            this.textBoxRatio9.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio9.TabIndex = 8;
             // 
-            // textBox4
+            // textBoxStudent11
             // 
-            this.textBox4.Location = new System.Drawing.Point(747, 101);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 7;
+            this.textBoxStudent11.Location = new System.Drawing.Point(747, 101);
+            this.textBoxStudent11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent11.Name = "textBoxStudent11";
+            this.textBoxStudent11.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent11.TabIndex = 7;
             // 
-            // textBox5
+            // textBoxStudent10
             // 
-            this.textBox5.Location = new System.Drawing.Point(747, 53);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 6;
+            this.textBoxStudent10.Location = new System.Drawing.Point(747, 53);
+            this.textBoxStudent10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent10.Name = "textBoxStudent10";
+            this.textBoxStudent10.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent10.TabIndex = 6;
             // 
-            // textBox6
+            // textBoxStudent9
             // 
-            this.textBox6.Location = new System.Drawing.Point(747, 12);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 5;
+            this.textBoxStudent9.Location = new System.Drawing.Point(747, 12);
+            this.textBoxStudent9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent9.Name = "textBoxStudent9";
+            this.textBoxStudent9.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent9.TabIndex = 5;
             // 
-            // textBox7
+            // textBoxRatio7
             // 
-            this.textBox7.Location = new System.Drawing.Point(347, 100);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 4;
+            this.textBoxRatio7.Location = new System.Drawing.Point(347, 100);
+            this.textBoxRatio7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio7.Name = "textBoxRatio7";
+            this.textBoxRatio7.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio7.TabIndex = 4;
             // 
-            // textBox8
+            // textBoxRatio6
             // 
-            this.textBox8.Location = new System.Drawing.Point(347, 49);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 3;
+            this.textBoxRatio6.Location = new System.Drawing.Point(347, 49);
+            this.textBoxRatio6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio6.Name = "textBoxRatio6";
+            this.textBoxRatio6.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio6.TabIndex = 3;
             // 
-            // textBox9
+            // textBoxStudent8
             // 
-            this.textBox9.Location = new System.Drawing.Point(163, 100);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 22);
-            this.textBox9.TabIndex = 2;
+            this.textBoxStudent8.Location = new System.Drawing.Point(163, 100);
+            this.textBoxStudent8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent8.Name = "textBoxStudent8";
+            this.textBoxStudent8.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent8.TabIndex = 2;
             // 
-            // textBox10
+            // textBoxStudent7
             // 
-            this.textBox10.Location = new System.Drawing.Point(163, 52);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 22);
-            this.textBox10.TabIndex = 1;
+            this.textBoxStudent7.Location = new System.Drawing.Point(163, 52);
+            this.textBoxStudent7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent7.Name = "textBoxStudent7";
+            this.textBoxStudent7.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent7.TabIndex = 1;
             // 
-            // textBox11
+            // textBoxStudent6
             // 
-            this.textBox11.Location = new System.Drawing.Point(163, 10);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 22);
-            this.textBox11.TabIndex = 0;
+            this.textBoxStudent6.Location = new System.Drawing.Point(163, 10);
+            this.textBoxStudent6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent6.Name = "textBoxStudent6";
+            this.textBoxStudent6.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent6.TabIndex = 0;
             // 
             // tabPageSemesters
             // 
+            this.tabPageSemesters.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tabPageSemesters.Controls.Add(this.dataGridViewReport3);
             this.tabPageSemesters.Controls.Add(this.PanelStudent3);
             this.tabPageSemesters.Controls.Add(this.panelSemesters);
@@ -1017,22 +1111,94 @@ namespace QuanLyHocSinh
             this.tabPageSemesters.Size = new System.Drawing.Size(1253, 541);
             this.tabPageSemesters.TabIndex = 2;
             this.tabPageSemesters.Text = "Tổng kết học kì";
-            this.tabPageSemesters.UseVisualStyleBackColor = true;
             // 
             // dataGridViewReport3
             // 
+            this.dataGridViewReport3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReport3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReport3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReport3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReport3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24});
             this.dataGridViewReport3.Location = new System.Drawing.Point(5, 209);
             this.dataGridViewReport3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewReport3.Name = "dataGridViewReport3";
+            this.dataGridViewReport3.RowHeadersVisible = false;
             this.dataGridViewReport3.RowHeadersWidth = 51;
             this.dataGridViewReport3.RowTemplate.Height = 24;
             this.dataGridViewReport3.Size = new System.Drawing.Size(1061, 325);
             this.dataGridViewReport3.TabIndex = 10;
             // 
+            // Column17
+            // 
+            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column17.DataPropertyName = "STT";
+            this.Column17.HeaderText = "STT";
+            this.Column17.MinimumWidth = 6;
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 64;
+            // 
+            // Column18
+            // 
+            this.Column18.DataPropertyName = "LOP";
+            this.Column18.HeaderText = "Lớp";
+            this.Column18.MinimumWidth = 6;
+            this.Column18.Name = "Column18";
+            // 
+            // Column19
+            // 
+            this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column19.DataPropertyName = "SISO";
+            this.Column19.HeaderText = "Sĩ số";
+            this.Column19.MinimumWidth = 6;
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 64;
+            // 
+            // Column20
+            // 
+            this.Column20.DataPropertyName = "GIOI";
+            this.Column20.HeaderText = "Số lượng HS Giỏi";
+            this.Column20.MinimumWidth = 6;
+            this.Column20.Name = "Column20";
+            // 
+            // Column21
+            // 
+            this.Column21.DataPropertyName = "KHA";
+            this.Column21.HeaderText = "Số lượng HS Khá";
+            this.Column21.MinimumWidth = 6;
+            this.Column21.Name = "Column21";
+            // 
+            // Column22
+            // 
+            this.Column22.DataPropertyName = "TB";
+            this.Column22.HeaderText = "Số lượng HS TB";
+            this.Column22.MinimumWidth = 6;
+            this.Column22.Name = "Column22";
+            // 
+            // Column23
+            // 
+            this.Column23.DataPropertyName = "YEU";
+            this.Column23.HeaderText = "Số lượng HS Yếu";
+            this.Column23.MinimumWidth = 6;
+            this.Column23.Name = "Column23";
+            // 
+            // Column24
+            // 
+            this.Column24.DataPropertyName = "KEM";
+            this.Column24.HeaderText = "Số lượng HS Kém";
+            this.Column24.MinimumWidth = 6;
+            this.Column24.Name = "Column24";
+            // 
             // PanelStudent3
             // 
+            this.PanelStudent3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PanelStudent3.Controls.Add(this.label12);
             this.PanelStudent3.Controls.Add(this.label13);
             this.PanelStudent3.Controls.Add(this.label14);
@@ -1044,17 +1210,17 @@ namespace QuanLyHocSinh
             this.PanelStudent3.Controls.Add(this.label20);
             this.PanelStudent3.Controls.Add(this.label21);
             this.PanelStudent3.Controls.Add(this.label22);
-            this.PanelStudent3.Controls.Add(this.textBox12);
-            this.PanelStudent3.Controls.Add(this.textBox13);
-            this.PanelStudent3.Controls.Add(this.textBox14);
-            this.PanelStudent3.Controls.Add(this.textBox15);
-            this.PanelStudent3.Controls.Add(this.textBox16);
-            this.PanelStudent3.Controls.Add(this.textBox17);
-            this.PanelStudent3.Controls.Add(this.textBox18);
-            this.PanelStudent3.Controls.Add(this.textBox19);
-            this.PanelStudent3.Controls.Add(this.textBox20);
-            this.PanelStudent3.Controls.Add(this.textBox21);
-            this.PanelStudent3.Controls.Add(this.textBox22);
+            this.PanelStudent3.Controls.Add(this.textBoxRatio13);
+            this.PanelStudent3.Controls.Add(this.textBoxRatio15);
+            this.PanelStudent3.Controls.Add(this.textBoxRatio14);
+            this.PanelStudent3.Controls.Add(this.textBoxStudent17);
+            this.PanelStudent3.Controls.Add(this.textBoxStudent16);
+            this.PanelStudent3.Controls.Add(this.textBoxStudent15);
+            this.PanelStudent3.Controls.Add(this.textBoxRatio12);
+            this.PanelStudent3.Controls.Add(this.textBoxRatio11);
+            this.PanelStudent3.Controls.Add(this.textBoxStudent14);
+            this.PanelStudent3.Controls.Add(this.textBoxStudent13);
+            this.PanelStudent3.Controls.Add(this.textBoxStudent12);
             this.PanelStudent3.Location = new System.Drawing.Point(4, 66);
             this.PanelStudent3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelStudent3.Name = "PanelStudent3";
@@ -1171,93 +1337,93 @@ namespace QuanLyHocSinh
             this.label22.TabIndex = 11;
             this.label22.Text = "Tổng số HS";
             // 
-            // textBox12
+            // textBoxRatio13
             // 
-            this.textBox12.Location = new System.Drawing.Point(951, 12);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 22);
-            this.textBox12.TabIndex = 10;
+            this.textBoxRatio13.Location = new System.Drawing.Point(951, 12);
+            this.textBoxRatio13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio13.Name = "textBoxRatio13";
+            this.textBoxRatio13.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio13.TabIndex = 10;
             // 
-            // textBox13
+            // textBoxRatio15
             // 
-            this.textBox13.Location = new System.Drawing.Point(951, 101);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 22);
-            this.textBox13.TabIndex = 9;
+            this.textBoxRatio15.Location = new System.Drawing.Point(951, 101);
+            this.textBoxRatio15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio15.Name = "textBoxRatio15";
+            this.textBoxRatio15.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio15.TabIndex = 9;
             // 
-            // textBox14
+            // textBoxRatio14
             // 
-            this.textBox14.Location = new System.Drawing.Point(951, 53);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 22);
-            this.textBox14.TabIndex = 8;
+            this.textBoxRatio14.Location = new System.Drawing.Point(951, 53);
+            this.textBoxRatio14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio14.Name = "textBoxRatio14";
+            this.textBoxRatio14.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio14.TabIndex = 8;
             // 
-            // textBox15
+            // textBoxStudent17
             // 
-            this.textBox15.Location = new System.Drawing.Point(747, 101);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 22);
-            this.textBox15.TabIndex = 7;
+            this.textBoxStudent17.Location = new System.Drawing.Point(747, 101);
+            this.textBoxStudent17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent17.Name = "textBoxStudent17";
+            this.textBoxStudent17.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent17.TabIndex = 7;
             // 
-            // textBox16
+            // textBoxStudent16
             // 
-            this.textBox16.Location = new System.Drawing.Point(747, 53);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 22);
-            this.textBox16.TabIndex = 6;
+            this.textBoxStudent16.Location = new System.Drawing.Point(747, 53);
+            this.textBoxStudent16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent16.Name = "textBoxStudent16";
+            this.textBoxStudent16.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent16.TabIndex = 6;
             // 
-            // textBox17
+            // textBoxStudent15
             // 
-            this.textBox17.Location = new System.Drawing.Point(747, 12);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 22);
-            this.textBox17.TabIndex = 5;
+            this.textBoxStudent15.Location = new System.Drawing.Point(747, 12);
+            this.textBoxStudent15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent15.Name = "textBoxStudent15";
+            this.textBoxStudent15.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent15.TabIndex = 5;
             // 
-            // textBox18
+            // textBoxRatio12
             // 
-            this.textBox18.Location = new System.Drawing.Point(347, 100);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(100, 22);
-            this.textBox18.TabIndex = 4;
+            this.textBoxRatio12.Location = new System.Drawing.Point(347, 100);
+            this.textBoxRatio12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio12.Name = "textBoxRatio12";
+            this.textBoxRatio12.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio12.TabIndex = 4;
             // 
-            // textBox19
+            // textBoxRatio11
             // 
-            this.textBox19.Location = new System.Drawing.Point(347, 49);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(100, 22);
-            this.textBox19.TabIndex = 3;
+            this.textBoxRatio11.Location = new System.Drawing.Point(347, 49);
+            this.textBoxRatio11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio11.Name = "textBoxRatio11";
+            this.textBoxRatio11.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio11.TabIndex = 3;
             // 
-            // textBox20
+            // textBoxStudent14
             // 
-            this.textBox20.Location = new System.Drawing.Point(163, 100);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(100, 22);
-            this.textBox20.TabIndex = 2;
+            this.textBoxStudent14.Location = new System.Drawing.Point(163, 100);
+            this.textBoxStudent14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent14.Name = "textBoxStudent14";
+            this.textBoxStudent14.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent14.TabIndex = 2;
             // 
-            // textBox21
+            // textBoxStudent13
             // 
-            this.textBox21.Location = new System.Drawing.Point(163, 52);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(100, 22);
-            this.textBox21.TabIndex = 1;
+            this.textBoxStudent13.Location = new System.Drawing.Point(163, 52);
+            this.textBoxStudent13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent13.Name = "textBoxStudent13";
+            this.textBoxStudent13.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent13.TabIndex = 1;
             // 
-            // textBox22
+            // textBoxStudent12
             // 
-            this.textBox22.Location = new System.Drawing.Point(163, 10);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(100, 22);
-            this.textBox22.TabIndex = 0;
+            this.textBoxStudent12.Location = new System.Drawing.Point(163, 10);
+            this.textBoxStudent12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent12.Name = "textBoxStudent12";
+            this.textBoxStudent12.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent12.TabIndex = 0;
             // 
             // panelSemesters
             // 
@@ -1332,6 +1498,7 @@ namespace QuanLyHocSinh
             // 
             // tabPageYears
             // 
+            this.tabPageYears.BackColor = System.Drawing.SystemColors.ControlLight;
             this.tabPageYears.Controls.Add(this.dataGridViewReport4);
             this.tabPageYears.Controls.Add(this.PanelStudent4);
             this.tabPageYears.Controls.Add(this.panelYears);
@@ -1341,15 +1508,26 @@ namespace QuanLyHocSinh
             this.tabPageYears.Size = new System.Drawing.Size(1253, 541);
             this.tabPageYears.TabIndex = 3;
             this.tabPageYears.Text = "Tổng kết năm học";
-            this.tabPageYears.UseVisualStyleBackColor = true;
             // 
             // dataGridViewReport4
             // 
+            this.dataGridViewReport4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReport4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewReport4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewReport4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReport4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column25,
+            this.Column26,
+            this.Column27,
+            this.Column28,
+            this.Column29,
+            this.Column30,
+            this.Column31,
+            this.Column32});
             this.dataGridViewReport4.Location = new System.Drawing.Point(2, 209);
             this.dataGridViewReport4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewReport4.Name = "dataGridViewReport4";
+            this.dataGridViewReport4.RowHeadersVisible = false;
             this.dataGridViewReport4.RowHeadersWidth = 51;
             this.dataGridViewReport4.RowTemplate.Height = 24;
             this.dataGridViewReport4.Size = new System.Drawing.Size(1061, 314);
@@ -1368,17 +1546,17 @@ namespace QuanLyHocSinh
             this.PanelStudent4.Controls.Add(this.label31);
             this.PanelStudent4.Controls.Add(this.label32);
             this.PanelStudent4.Controls.Add(this.label33);
-            this.PanelStudent4.Controls.Add(this.textBox23);
-            this.PanelStudent4.Controls.Add(this.textBox24);
-            this.PanelStudent4.Controls.Add(this.textBox25);
-            this.PanelStudent4.Controls.Add(this.textBox26);
-            this.PanelStudent4.Controls.Add(this.textBox27);
-            this.PanelStudent4.Controls.Add(this.textBox28);
-            this.PanelStudent4.Controls.Add(this.textBox29);
-            this.PanelStudent4.Controls.Add(this.textBox30);
-            this.PanelStudent4.Controls.Add(this.textBox31);
-            this.PanelStudent4.Controls.Add(this.textBox32);
-            this.PanelStudent4.Controls.Add(this.textBox33);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio18);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio20);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio19);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent23);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent22);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent21);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio17);
+            this.PanelStudent4.Controls.Add(this.textBoxRatio16);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent20);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent19);
+            this.PanelStudent4.Controls.Add(this.textBoxStudent18);
             this.PanelStudent4.Location = new System.Drawing.Point(1, 66);
             this.PanelStudent4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelStudent4.Name = "PanelStudent4";
@@ -1495,93 +1673,93 @@ namespace QuanLyHocSinh
             this.label33.TabIndex = 11;
             this.label33.Text = "Tổng số HS";
             // 
-            // textBox23
+            // textBoxRatio18
             // 
-            this.textBox23.Location = new System.Drawing.Point(951, 12);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(100, 22);
-            this.textBox23.TabIndex = 10;
+            this.textBoxRatio18.Location = new System.Drawing.Point(951, 12);
+            this.textBoxRatio18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio18.Name = "textBoxRatio18";
+            this.textBoxRatio18.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio18.TabIndex = 10;
             // 
-            // textBox24
+            // textBoxRatio20
             // 
-            this.textBox24.Location = new System.Drawing.Point(951, 101);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(100, 22);
-            this.textBox24.TabIndex = 9;
+            this.textBoxRatio20.Location = new System.Drawing.Point(951, 101);
+            this.textBoxRatio20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio20.Name = "textBoxRatio20";
+            this.textBoxRatio20.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio20.TabIndex = 9;
             // 
-            // textBox25
+            // textBoxRatio19
             // 
-            this.textBox25.Location = new System.Drawing.Point(951, 53);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(100, 22);
-            this.textBox25.TabIndex = 8;
+            this.textBoxRatio19.Location = new System.Drawing.Point(951, 53);
+            this.textBoxRatio19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio19.Name = "textBoxRatio19";
+            this.textBoxRatio19.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio19.TabIndex = 8;
             // 
-            // textBox26
+            // textBoxStudent23
             // 
-            this.textBox26.Location = new System.Drawing.Point(747, 101);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(100, 22);
-            this.textBox26.TabIndex = 7;
+            this.textBoxStudent23.Location = new System.Drawing.Point(747, 101);
+            this.textBoxStudent23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent23.Name = "textBoxStudent23";
+            this.textBoxStudent23.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent23.TabIndex = 7;
             // 
-            // textBox27
+            // textBoxStudent22
             // 
-            this.textBox27.Location = new System.Drawing.Point(747, 53);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(100, 22);
-            this.textBox27.TabIndex = 6;
+            this.textBoxStudent22.Location = new System.Drawing.Point(747, 53);
+            this.textBoxStudent22.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent22.Name = "textBoxStudent22";
+            this.textBoxStudent22.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent22.TabIndex = 6;
             // 
-            // textBox28
+            // textBoxStudent21
             // 
-            this.textBox28.Location = new System.Drawing.Point(747, 12);
-            this.textBox28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(100, 22);
-            this.textBox28.TabIndex = 5;
+            this.textBoxStudent21.Location = new System.Drawing.Point(747, 12);
+            this.textBoxStudent21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent21.Name = "textBoxStudent21";
+            this.textBoxStudent21.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent21.TabIndex = 5;
             // 
-            // textBox29
+            // textBoxRatio17
             // 
-            this.textBox29.Location = new System.Drawing.Point(347, 100);
-            this.textBox29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(100, 22);
-            this.textBox29.TabIndex = 4;
+            this.textBoxRatio17.Location = new System.Drawing.Point(347, 100);
+            this.textBoxRatio17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio17.Name = "textBoxRatio17";
+            this.textBoxRatio17.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio17.TabIndex = 4;
             // 
-            // textBox30
+            // textBoxRatio16
             // 
-            this.textBox30.Location = new System.Drawing.Point(347, 49);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(100, 22);
-            this.textBox30.TabIndex = 3;
+            this.textBoxRatio16.Location = new System.Drawing.Point(347, 49);
+            this.textBoxRatio16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxRatio16.Name = "textBoxRatio16";
+            this.textBoxRatio16.Size = new System.Drawing.Size(100, 22);
+            this.textBoxRatio16.TabIndex = 3;
             // 
-            // textBox31
+            // textBoxStudent20
             // 
-            this.textBox31.Location = new System.Drawing.Point(163, 100);
-            this.textBox31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(100, 22);
-            this.textBox31.TabIndex = 2;
+            this.textBoxStudent20.Location = new System.Drawing.Point(163, 100);
+            this.textBoxStudent20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent20.Name = "textBoxStudent20";
+            this.textBoxStudent20.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent20.TabIndex = 2;
             // 
-            // textBox32
+            // textBoxStudent19
             // 
-            this.textBox32.Location = new System.Drawing.Point(163, 52);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(100, 22);
-            this.textBox32.TabIndex = 1;
+            this.textBoxStudent19.Location = new System.Drawing.Point(163, 52);
+            this.textBoxStudent19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent19.Name = "textBoxStudent19";
+            this.textBoxStudent19.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent19.TabIndex = 1;
             // 
-            // textBox33
+            // textBoxStudent18
             // 
-            this.textBox33.Location = new System.Drawing.Point(163, 10);
-            this.textBox33.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(100, 22);
-            this.textBox33.TabIndex = 0;
+            this.textBoxStudent18.Location = new System.Drawing.Point(163, 10);
+            this.textBoxStudent18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxStudent18.Name = "textBoxStudent18";
+            this.textBoxStudent18.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStudent18.TabIndex = 0;
             // 
             // panelYears
             // 
@@ -1629,12 +1807,72 @@ namespace QuanLyHocSinh
             this.comboBoxYears4.Size = new System.Drawing.Size(148, 24);
             this.comboBoxYears4.TabIndex = 1;
             // 
+            // Column25
+            // 
+            this.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column25.DataPropertyName = "STT";
+            this.Column25.HeaderText = "STT";
+            this.Column25.MinimumWidth = 6;
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 64;
+            // 
+            // Column26
+            // 
+            this.Column26.DataPropertyName = "LOP";
+            this.Column26.HeaderText = "Lớp";
+            this.Column26.MinimumWidth = 6;
+            this.Column26.Name = "Column26";
+            // 
+            // Column27
+            // 
+            this.Column27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column27.DataPropertyName = "SISO";
+            this.Column27.HeaderText = "Sĩ số";
+            this.Column27.MinimumWidth = 6;
+            this.Column27.Name = "Column27";
+            this.Column27.Width = 64;
+            // 
+            // Column28
+            // 
+            this.Column28.DataPropertyName = "GIOI";
+            this.Column28.HeaderText = "Số lượng HS Giỏi";
+            this.Column28.MinimumWidth = 6;
+            this.Column28.Name = "Column28";
+            // 
+            // Column29
+            // 
+            this.Column29.DataPropertyName = "KHA";
+            this.Column29.HeaderText = "Số lượng HS Khá";
+            this.Column29.MinimumWidth = 6;
+            this.Column29.Name = "Column29";
+            // 
+            // Column30
+            // 
+            this.Column30.DataPropertyName = "TB";
+            this.Column30.HeaderText = "Số lượng HS TB";
+            this.Column30.MinimumWidth = 6;
+            this.Column30.Name = "Column30";
+            // 
+            // Column31
+            // 
+            this.Column31.DataPropertyName = "YEU";
+            this.Column31.HeaderText = "Số lượng HS Yếu";
+            this.Column31.MinimumWidth = 6;
+            this.Column31.Name = "Column31";
+            // 
+            // Column32
+            // 
+            this.Column32.DataPropertyName = "KEM";
+            this.Column32.HeaderText = "Số lượng HS Kém";
+            this.Column32.MinimumWidth = 6;
+            this.Column32.Name = "Column32";
+            // 
             // BaoCaoTongKet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1334, 661);
+            this.ClientSize = new System.Drawing.Size(1376, 661);
             this.Controls.Add(this.tabControlReport);
             this.Controls.Add(this.PanelTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1736,17 +1974,17 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBoxRatio8;
+        private System.Windows.Forms.TextBox textBoxRatio10;
+        private System.Windows.Forms.TextBox textBoxRatio9;
+        private System.Windows.Forms.TextBox textBoxStudent11;
+        private System.Windows.Forms.TextBox textBoxStudent10;
+        private System.Windows.Forms.TextBox textBoxStudent9;
+        private System.Windows.Forms.TextBox textBoxRatio7;
+        private System.Windows.Forms.TextBox textBoxRatio6;
+        private System.Windows.Forms.TextBox textBoxStudent8;
+        private System.Windows.Forms.TextBox textBoxStudent7;
+        private System.Windows.Forms.TextBox textBoxStudent6;
         private System.Windows.Forms.DataGridView dataGridViewReport;
         private System.Windows.Forms.DataGridView dataGridViewReport3;
         private System.Windows.Forms.Panel PanelStudent3;
@@ -1761,17 +1999,17 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBoxRatio13;
+        private System.Windows.Forms.TextBox textBoxRatio15;
+        private System.Windows.Forms.TextBox textBoxRatio14;
+        private System.Windows.Forms.TextBox textBoxStudent17;
+        private System.Windows.Forms.TextBox textBoxStudent16;
+        private System.Windows.Forms.TextBox textBoxStudent15;
+        private System.Windows.Forms.TextBox textBoxRatio12;
+        private System.Windows.Forms.TextBox textBoxRatio11;
+        private System.Windows.Forms.TextBox textBoxStudent14;
+        private System.Windows.Forms.TextBox textBoxStudent13;
+        private System.Windows.Forms.TextBox textBoxStudent12;
         private System.Windows.Forms.Panel panelSemesters;
         private System.Windows.Forms.Label labelYears3;
         private System.Windows.Forms.Label labelSemesters2;
@@ -1791,17 +2029,17 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox textBoxRatio18;
+        private System.Windows.Forms.TextBox textBoxRatio20;
+        private System.Windows.Forms.TextBox textBoxRatio19;
+        private System.Windows.Forms.TextBox textBoxStudent23;
+        private System.Windows.Forms.TextBox textBoxStudent22;
+        private System.Windows.Forms.TextBox textBoxStudent21;
+        private System.Windows.Forms.TextBox textBoxRatio17;
+        private System.Windows.Forms.TextBox textBoxRatio16;
+        private System.Windows.Forms.TextBox textBoxStudent20;
+        private System.Windows.Forms.TextBox textBoxStudent19;
+        private System.Windows.Forms.TextBox textBoxStudent18;
         private System.Windows.Forms.Panel panelYears;
         private System.Windows.Forms.Label labelYears4;
         private System.Windows.Forms.Button buttonReport4;
@@ -1814,5 +2052,29 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
     }
 }

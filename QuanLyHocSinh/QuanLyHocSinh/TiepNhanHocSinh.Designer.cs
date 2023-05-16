@@ -54,31 +54,36 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.HoTen = new System.Windows.Forms.TextBox();
+            this.CCCD = new System.Windows.Forms.TextBox();
+            this.DanToc = new System.Windows.Forms.TextBox();
+            this.QueQuan = new System.Windows.Forms.TextBox();
+            this.DiaChi = new System.Windows.Forms.TextBox();
+            this.SDT = new System.Windows.Forms.TextBox();
+            this.HoTenCha = new System.Windows.Forms.TextBox();
+            this.CCCDCha = new System.Windows.Forms.TextBox();
+            this.NgheNghiepCha = new System.Windows.Forms.TextBox();
+            this.HoTenMe = new System.Windows.Forms.TextBox();
+            this.CCCDMe = new System.Windows.Forms.TextBox();
+            this.NgheNghiepMe = new System.Windows.Forms.TextBox();
+            this.HoTenGiamHo = new System.Windows.Forms.TextBox();
+            this.CCCDGiamHo = new System.Windows.Forms.TextBox();
+            this.NgheNghiepGiamHo = new System.Windows.Forms.TextBox();
+            this.SDTGiamHo = new System.Windows.Forms.TextBox();
+            this.NamSinhGiamHo = new System.Windows.Forms.TextBox();
+            this.SDTMe = new System.Windows.Forms.TextBox();
+            this.NamSinhMe = new System.Windows.Forms.TextBox();
+            this.SDTCha = new System.Windows.Forms.TextBox();
+            this.NamSinhCha = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.TonGiao = new System.Windows.Forms.TextBox();
+            this.NgaySinh = new System.Windows.Forms.TextBox();
+            this.GioiTinh = new System.Windows.Forms.TextBox();
+            this.Them = new System.Windows.Forms.Button();
+            this.Xoa = new System.Windows.Forms.Button();
+            this.Sua = new System.Windows.Forms.Button();
+            this.Luu = new System.Windows.Forms.Button();
+            this.Huy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -318,211 +323,261 @@
             this.label26.TabIndex = 21;
             this.label26.Text = "Họ tên người giám hộ (nếu có)";
             // 
-            // textBox1
+            // HoTen
             // 
-            this.textBox1.Location = new System.Drawing.Point(337, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(252, 26);
-            this.textBox1.TabIndex = 26;
+            this.HoTen.Location = new System.Drawing.Point(337, 110);
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Size = new System.Drawing.Size(252, 26);
+            this.HoTen.TabIndex = 26;
             // 
-            // textBox2
+            // CCCD
             // 
-            this.textBox2.Location = new System.Drawing.Point(337, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(252, 26);
-            this.textBox2.TabIndex = 27;
+            this.CCCD.Location = new System.Drawing.Point(337, 150);
+            this.CCCD.Name = "CCCD";
+            this.CCCD.Size = new System.Drawing.Size(252, 26);
+            this.CCCD.TabIndex = 27;
             // 
-            // textBox3
+            // DanToc
             // 
-            this.textBox3.Location = new System.Drawing.Point(337, 191);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(252, 26);
-            this.textBox3.TabIndex = 28;
+            this.DanToc.Location = new System.Drawing.Point(337, 191);
+            this.DanToc.Name = "DanToc";
+            this.DanToc.Size = new System.Drawing.Size(252, 26);
+            this.DanToc.TabIndex = 28;
             // 
-            // textBox4
+            // QueQuan
             // 
-            this.textBox4.Location = new System.Drawing.Point(337, 237);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(252, 26);
-            this.textBox4.TabIndex = 29;
+            this.QueQuan.Location = new System.Drawing.Point(337, 237);
+            this.QueQuan.Name = "QueQuan";
+            this.QueQuan.Size = new System.Drawing.Size(252, 26);
+            this.QueQuan.TabIndex = 29;
             // 
-            // textBox5
+            // DiaChi
             // 
-            this.textBox5.Location = new System.Drawing.Point(337, 277);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(516, 26);
-            this.textBox5.TabIndex = 30;
+            this.DiaChi.Location = new System.Drawing.Point(337, 277);
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Size = new System.Drawing.Size(516, 26);
+            this.DiaChi.TabIndex = 30;
             // 
-            // textBox6
+            // SDT
             // 
-            this.textBox6.Location = new System.Drawing.Point(337, 315);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(252, 26);
-            this.textBox6.TabIndex = 31;
+            this.SDT.Location = new System.Drawing.Point(337, 315);
+            this.SDT.Name = "SDT";
+            this.SDT.Size = new System.Drawing.Size(252, 26);
+            this.SDT.TabIndex = 31;
             // 
-            // textBox7
+            // HoTenCha
             // 
-            this.textBox7.Location = new System.Drawing.Point(337, 353);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(252, 26);
-            this.textBox7.TabIndex = 32;
+            this.HoTenCha.Location = new System.Drawing.Point(337, 353);
+            this.HoTenCha.Name = "HoTenCha";
+            this.HoTenCha.Size = new System.Drawing.Size(252, 26);
+            this.HoTenCha.TabIndex = 32;
             // 
-            // textBox8
+            // CCCDCha
             // 
-            this.textBox8.Location = new System.Drawing.Point(337, 392);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(252, 26);
-            this.textBox8.TabIndex = 33;
+            this.CCCDCha.Location = new System.Drawing.Point(337, 392);
+            this.CCCDCha.Name = "CCCDCha";
+            this.CCCDCha.Size = new System.Drawing.Size(252, 26);
+            this.CCCDCha.TabIndex = 33;
             // 
-            // textBox9
+            // NgheNghiepCha
             // 
-            this.textBox9.Location = new System.Drawing.Point(337, 429);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(252, 26);
-            this.textBox9.TabIndex = 34;
+            this.NgheNghiepCha.Location = new System.Drawing.Point(337, 429);
+            this.NgheNghiepCha.Name = "NgheNghiepCha";
+            this.NgheNghiepCha.Size = new System.Drawing.Size(252, 26);
+            this.NgheNghiepCha.TabIndex = 34;
             // 
-            // textBox10
+            // HoTenMe
             // 
-            this.textBox10.Location = new System.Drawing.Point(337, 465);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(252, 26);
-            this.textBox10.TabIndex = 35;
+            this.HoTenMe.Location = new System.Drawing.Point(337, 465);
+            this.HoTenMe.Name = "HoTenMe";
+            this.HoTenMe.Size = new System.Drawing.Size(252, 26);
+            this.HoTenMe.TabIndex = 35;
             // 
-            // textBox11
+            // CCCDMe
             // 
-            this.textBox11.Location = new System.Drawing.Point(337, 504);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(252, 26);
-            this.textBox11.TabIndex = 36;
+            this.CCCDMe.Location = new System.Drawing.Point(337, 504);
+            this.CCCDMe.Name = "CCCDMe";
+            this.CCCDMe.Size = new System.Drawing.Size(252, 26);
+            this.CCCDMe.TabIndex = 36;
             // 
-            // textBox12
+            // NgheNghiepMe
             // 
-            this.textBox12.Location = new System.Drawing.Point(337, 541);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(252, 26);
-            this.textBox12.TabIndex = 37;
+            this.NgheNghiepMe.Location = new System.Drawing.Point(337, 541);
+            this.NgheNghiepMe.Name = "NgheNghiepMe";
+            this.NgheNghiepMe.Size = new System.Drawing.Size(252, 26);
+            this.NgheNghiepMe.TabIndex = 37;
             // 
-            // textBox13
+            // HoTenGiamHo
             // 
-            this.textBox13.Location = new System.Drawing.Point(337, 579);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(252, 26);
-            this.textBox13.TabIndex = 38;
+            this.HoTenGiamHo.Location = new System.Drawing.Point(337, 579);
+            this.HoTenGiamHo.Name = "HoTenGiamHo";
+            this.HoTenGiamHo.Size = new System.Drawing.Size(252, 26);
+            this.HoTenGiamHo.TabIndex = 38;
             // 
-            // textBox14
+            // CCCDGiamHo
             // 
-            this.textBox14.Location = new System.Drawing.Point(337, 615);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(252, 26);
-            this.textBox14.TabIndex = 39;
+            this.CCCDGiamHo.Location = new System.Drawing.Point(337, 615);
+            this.CCCDGiamHo.Name = "CCCDGiamHo";
+            this.CCCDGiamHo.Size = new System.Drawing.Size(252, 26);
+            this.CCCDGiamHo.TabIndex = 39;
             // 
-            // textBox15
+            // NgheNghiepGiamHo
             // 
-            this.textBox15.Location = new System.Drawing.Point(337, 652);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(252, 26);
-            this.textBox15.TabIndex = 40;
+            this.NgheNghiepGiamHo.Location = new System.Drawing.Point(337, 652);
+            this.NgheNghiepGiamHo.Name = "NgheNghiepGiamHo";
+            this.NgheNghiepGiamHo.Size = new System.Drawing.Size(252, 26);
+            this.NgheNghiepGiamHo.TabIndex = 40;
             // 
-            // textBox16
+            // SDTGiamHo
             // 
-            this.textBox16.Location = new System.Drawing.Point(692, 612);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(161, 26);
-            this.textBox16.TabIndex = 50;
+            this.SDTGiamHo.Location = new System.Drawing.Point(692, 612);
+            this.SDTGiamHo.Name = "SDTGiamHo";
+            this.SDTGiamHo.Size = new System.Drawing.Size(161, 26);
+            this.SDTGiamHo.TabIndex = 50;
             // 
-            // textBox17
+            // NamSinhGiamHo
             // 
-            this.textBox17.Location = new System.Drawing.Point(692, 576);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(161, 26);
-            this.textBox17.TabIndex = 49;
+            this.NamSinhGiamHo.Location = new System.Drawing.Point(692, 576);
+            this.NamSinhGiamHo.Name = "NamSinhGiamHo";
+            this.NamSinhGiamHo.Size = new System.Drawing.Size(161, 26);
+            this.NamSinhGiamHo.TabIndex = 49;
             // 
-            // textBox18
+            // SDTMe
             // 
-            this.textBox18.Location = new System.Drawing.Point(692, 501);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(161, 26);
-            this.textBox18.TabIndex = 48;
+            this.SDTMe.Location = new System.Drawing.Point(692, 501);
+            this.SDTMe.Name = "SDTMe";
+            this.SDTMe.Size = new System.Drawing.Size(161, 26);
+            this.SDTMe.TabIndex = 48;
             // 
-            // textBox19
+            // NamSinhMe
             // 
-            this.textBox19.Location = new System.Drawing.Point(692, 462);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(161, 26);
-            this.textBox19.TabIndex = 47;
+            this.NamSinhMe.Location = new System.Drawing.Point(692, 462);
+            this.NamSinhMe.Name = "NamSinhMe";
+            this.NamSinhMe.Size = new System.Drawing.Size(161, 26);
+            this.NamSinhMe.TabIndex = 47;
             // 
-            // textBox20
+            // SDTCha
             // 
-            this.textBox20.Location = new System.Drawing.Point(692, 389);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(161, 26);
-            this.textBox20.TabIndex = 46;
+            this.SDTCha.Location = new System.Drawing.Point(692, 389);
+            this.SDTCha.Name = "SDTCha";
+            this.SDTCha.Size = new System.Drawing.Size(161, 26);
+            this.SDTCha.TabIndex = 46;
             // 
-            // textBox21
+            // NamSinhCha
             // 
-            this.textBox21.Location = new System.Drawing.Point(692, 350);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(161, 26);
-            this.textBox21.TabIndex = 45;
+            this.NamSinhCha.Location = new System.Drawing.Point(692, 350);
+            this.NamSinhCha.Name = "NamSinhCha";
+            this.NamSinhCha.Size = new System.Drawing.Size(161, 26);
+            this.NamSinhCha.TabIndex = 45;
             // 
-            // textBox22
+            // Email
             // 
-            this.textBox22.Location = new System.Drawing.Point(692, 312);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(161, 26);
-            this.textBox22.TabIndex = 44;
+            this.Email.Location = new System.Drawing.Point(692, 312);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(161, 26);
+            this.Email.TabIndex = 44;
             // 
-            // textBox23
+            // TonGiao
             // 
-            this.textBox23.Location = new System.Drawing.Point(692, 188);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(161, 26);
-            this.textBox23.TabIndex = 43;
+            this.TonGiao.Location = new System.Drawing.Point(692, 188);
+            this.TonGiao.Name = "TonGiao";
+            this.TonGiao.Size = new System.Drawing.Size(161, 26);
+            this.TonGiao.TabIndex = 43;
             // 
-            // textBox24
+            // NgaySinh
             // 
-            this.textBox24.Location = new System.Drawing.Point(692, 147);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(161, 26);
-            this.textBox24.TabIndex = 42;
+            this.NgaySinh.Location = new System.Drawing.Point(692, 147);
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Size = new System.Drawing.Size(161, 26);
+            this.NgaySinh.TabIndex = 42;
             // 
-            // textBox25
+            // GioiTinh
             // 
-            this.textBox25.Location = new System.Drawing.Point(692, 107);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(161, 26);
-            this.textBox25.TabIndex = 41;
+            this.GioiTinh.Location = new System.Drawing.Point(692, 107);
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Size = new System.Drawing.Size(161, 26);
+            this.GioiTinh.TabIndex = 41;
+            // 
+            // Them
+            // 
+            this.Them.Location = new System.Drawing.Point(101, 694);
+            this.Them.Name = "Them";
+            this.Them.Size = new System.Drawing.Size(73, 34);
+            this.Them.TabIndex = 51;
+            this.Them.Text = "Thêm";
+            this.Them.UseVisualStyleBackColor = true;
+            // 
+            // Xoa
+            // 
+            this.Xoa.Location = new System.Drawing.Point(456, 695);
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Size = new System.Drawing.Size(66, 33);
+            this.Xoa.TabIndex = 52;
+            this.Xoa.Text = "Xoá";
+            this.Xoa.UseVisualStyleBackColor = true;
+            // 
+            // Sua
+            // 
+            this.Sua.Location = new System.Drawing.Point(278, 695);
+            this.Sua.Name = "Sua";
+            this.Sua.Size = new System.Drawing.Size(63, 33);
+            this.Sua.TabIndex = 53;
+            this.Sua.Text = "Sửa";
+            this.Sua.UseVisualStyleBackColor = true;
+            // 
+            // Luu
+            // 
+            this.Luu.Location = new System.Drawing.Point(616, 694);
+            this.Luu.Name = "Luu";
+            this.Luu.Size = new System.Drawing.Size(75, 34);
+            this.Luu.TabIndex = 54;
+            this.Luu.Text = "Lưu";
+            this.Luu.UseVisualStyleBackColor = true;
+            // 
+            // Huy
+            // 
+            this.Huy.Location = new System.Drawing.Point(766, 694);
+            this.Huy.Name = "Huy";
+            this.Huy.Size = new System.Drawing.Size(75, 34);
+            this.Huy.TabIndex = 55;
+            this.Huy.Text = "Huỷ";
+            this.Huy.UseVisualStyleBackColor = true;
             // 
             // TiepNhanHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 719);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox17);
-            this.Controls.Add(this.textBox18);
-            this.Controls.Add(this.textBox19);
-            this.Controls.Add(this.textBox20);
-            this.Controls.Add(this.textBox21);
-            this.Controls.Add(this.textBox22);
-            this.Controls.Add(this.textBox23);
-            this.Controls.Add(this.textBox24);
-            this.Controls.Add(this.textBox25);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.textBox13);
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(969, 740);
+            this.Controls.Add(this.Huy);
+            this.Controls.Add(this.Luu);
+            this.Controls.Add(this.Sua);
+            this.Controls.Add(this.Xoa);
+            this.Controls.Add(this.Them);
+            this.Controls.Add(this.SDTGiamHo);
+            this.Controls.Add(this.NamSinhGiamHo);
+            this.Controls.Add(this.SDTMe);
+            this.Controls.Add(this.NamSinhMe);
+            this.Controls.Add(this.SDTCha);
+            this.Controls.Add(this.NamSinhCha);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.TonGiao);
+            this.Controls.Add(this.NgaySinh);
+            this.Controls.Add(this.GioiTinh);
+            this.Controls.Add(this.NgheNghiepGiamHo);
+            this.Controls.Add(this.CCCDGiamHo);
+            this.Controls.Add(this.HoTenGiamHo);
+            this.Controls.Add(this.NgheNghiepMe);
+            this.Controls.Add(this.CCCDMe);
+            this.Controls.Add(this.HoTenMe);
+            this.Controls.Add(this.NgheNghiepCha);
+            this.Controls.Add(this.CCCDCha);
+            this.Controls.Add(this.HoTenCha);
+            this.Controls.Add(this.SDT);
+            this.Controls.Add(this.DiaChi);
+            this.Controls.Add(this.QueQuan);
+            this.Controls.Add(this.DanToc);
+            this.Controls.Add(this.CCCD);
+            this.Controls.Add(this.HoTen);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label24);
@@ -584,30 +639,35 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox HoTen;
+        private System.Windows.Forms.TextBox CCCD;
+        private System.Windows.Forms.TextBox DanToc;
+        private System.Windows.Forms.TextBox QueQuan;
+        private System.Windows.Forms.TextBox DiaChi;
+        private System.Windows.Forms.TextBox SDT;
+        private System.Windows.Forms.TextBox HoTenCha;
+        private System.Windows.Forms.TextBox CCCDCha;
+        private System.Windows.Forms.TextBox NgheNghiepCha;
+        private System.Windows.Forms.TextBox HoTenMe;
+        private System.Windows.Forms.TextBox CCCDMe;
+        private System.Windows.Forms.TextBox NgheNghiepMe;
+        private System.Windows.Forms.TextBox HoTenGiamHo;
+        private System.Windows.Forms.TextBox CCCDGiamHo;
+        private System.Windows.Forms.TextBox NgheNghiepGiamHo;
+        private System.Windows.Forms.TextBox SDTGiamHo;
+        private System.Windows.Forms.TextBox NamSinhGiamHo;
+        private System.Windows.Forms.TextBox SDTMe;
+        private System.Windows.Forms.TextBox NamSinhMe;
+        private System.Windows.Forms.TextBox SDTCha;
+        private System.Windows.Forms.TextBox NamSinhCha;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox TonGiao;
+        private System.Windows.Forms.TextBox NgaySinh;
+        private System.Windows.Forms.TextBox GioiTinh;
+        private System.Windows.Forms.Button Them;
+        private System.Windows.Forms.Button Xoa;
+        private System.Windows.Forms.Button Sua;
+        private System.Windows.Forms.Button Luu;
+        private System.Windows.Forms.Button Huy;
     }
 }
