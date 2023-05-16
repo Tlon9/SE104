@@ -65,5 +65,13 @@ namespace QuanLyHocSinh
             newform.ShowDialog();
             this.Show();
         }
+
+        private void MenuItemClassScore_Click(object sender, EventArgs e)
+        {
+            BangDiemTongKetLop newform = new BangDiemTongKetLop();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
     }
 }
