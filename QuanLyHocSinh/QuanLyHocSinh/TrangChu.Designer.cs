@@ -34,11 +34,12 @@ namespace QuanLyHocSinh
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemHome = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemAddStudent = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFindStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSubjectScore = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemScoreBoard = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSubjectScoreYear = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemFindStudent = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemClassScore = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelTitle.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,18 +48,20 @@ namespace QuanLyHocSinh
             // 
             this.LabelNameProject.AutoSize = true;
             this.LabelNameProject.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNameProject.Location = new System.Drawing.Point(34, 19);
+            this.LabelNameProject.Location = new System.Drawing.Point(26, 15);
+            this.LabelNameProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelNameProject.Name = "LabelNameProject";
-            this.LabelNameProject.Size = new System.Drawing.Size(561, 68);
+            this.LabelNameProject.Size = new System.Drawing.Size(458, 55);
             this.LabelNameProject.TabIndex = 0;
             this.LabelNameProject.Text = "QUẢN LÍ HỌC SINH";
             // 
             // PanelTitle
             // 
             this.PanelTitle.Controls.Add(this.LabelNameProject);
-            this.PanelTitle.Location = new System.Drawing.Point(8, 9);
+            this.PanelTitle.Location = new System.Drawing.Point(6, 7);
+            this.PanelTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PanelTitle.Name = "PanelTitle";
-            this.PanelTitle.Size = new System.Drawing.Size(747, 107);
+            this.PanelTitle.Size = new System.Drawing.Size(560, 87);
             this.PanelTitle.TabIndex = 1;
             // 
             // menuStrip1
@@ -72,69 +75,79 @@ namespace QuanLyHocSinh
             this.MenuItemSubjectScore,
             this.MenuItemScoreBoard,
             this.MenuItemSubjectScoreYear,
-            this.MenuItemFinalReport});
-            this.menuStrip1.Location = new System.Drawing.Point(8, 135);
+            this.MenuItemFinalReport,
+            this.MenuItemClassScore});
+            this.menuStrip1.Location = new System.Drawing.Point(6, 110);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1300, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1191, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // MenuItemHome
             // 
             this.MenuItemHome.Name = "MenuItemHome";
-            this.MenuItemHome.Size = new System.Drawing.Size(91, 24);
+            this.MenuItemHome.Size = new System.Drawing.Size(74, 20);
             this.MenuItemHome.Text = "Trang chủ ";
             // 
             // MenuItemAddStudent
             // 
             this.MenuItemAddStudent.Name = "MenuItemAddStudent";
-            this.MenuItemAddStudent.Size = new System.Drawing.Size(146, 24);
+            this.MenuItemAddStudent.Size = new System.Drawing.Size(119, 20);
             this.MenuItemAddStudent.Text = "Tiếp nhận học sinh";
             this.MenuItemAddStudent.Click += new System.EventHandler(this.MenuItemAddStudent_Click);
+            // 
+            // MenuItemFindStudent
+            // 
+            this.MenuItemFindStudent.Name = "MenuItemFindStudent";
+            this.MenuItemFindStudent.Size = new System.Drawing.Size(105, 20);
+            this.MenuItemFindStudent.Text = "Tra cứu học sinh";
+            this.MenuItemFindStudent.Click += new System.EventHandler(this.MenuItemFindStudent_Click);
             // 
             // MenuItemSubjectScore
             // 
             this.MenuItemSubjectScore.Name = "MenuItemSubjectScore";
-            this.MenuItemSubjectScore.Size = new System.Drawing.Size(197, 24);
+            this.MenuItemSubjectScore.Size = new System.Drawing.Size(159, 20);
             this.MenuItemSubjectScore.Text = "Nhập bảng điểm môn học";
             this.MenuItemSubjectScore.Click += new System.EventHandler(this.MenuItemSubjectScore_Click);
             // 
             // MenuItemScoreBoard
             // 
             this.MenuItemScoreBoard.Name = "MenuItemScoreBoard";
-            this.MenuItemScoreBoard.Size = new System.Drawing.Size(153, 24);
+            this.MenuItemScoreBoard.Size = new System.Drawing.Size(124, 20);
             this.MenuItemScoreBoard.Text = "Bảng điểm học sinh";
             this.MenuItemScoreBoard.Click += new System.EventHandler(this.MenuItemScoreBoard_Click);
             // 
             // MenuItemSubjectScoreYear
             // 
             this.MenuItemSubjectScoreYear.Name = "MenuItemSubjectScoreYear";
-            this.MenuItemSubjectScoreYear.Size = new System.Drawing.Size(290, 24);
+            this.MenuItemSubjectScoreYear.Size = new System.Drawing.Size(233, 20);
             this.MenuItemSubjectScoreYear.Text = "Lập bảng điểm môn học của lớp cả năm";
             this.MenuItemSubjectScoreYear.Click += new System.EventHandler(this.MenuItemSubjectScoreYear_Click);
             // 
             // MenuItemFinalReport
             // 
             this.MenuItemFinalReport.Name = "MenuItemFinalReport";
-            this.MenuItemFinalReport.Size = new System.Drawing.Size(136, 24);
+            this.MenuItemFinalReport.Size = new System.Drawing.Size(108, 20);
             this.MenuItemFinalReport.Text = "Báo cáo tổng kết";
             this.MenuItemFinalReport.Click += new System.EventHandler(this.MenuItemFinalReport_Click);
             // 
-            // MenuItemFindStudent
+            // MenuItemClassScore
             // 
-            this.MenuItemFindStudent.Name = "MenuItemFindStudent";
-            this.MenuItemFindStudent.Size = new System.Drawing.Size(129, 24);
-            this.MenuItemFindStudent.Text = "Tra cứu học sinh";
-            this.MenuItemFindStudent.Click += new System.EventHandler(this.MenuItemFindStudent_Click);
+            this.MenuItemClassScore.Name = "MenuItemClassScore";
+            this.MenuItemClassScore.Size = new System.Drawing.Size(143, 20);
+            this.MenuItemClassScore.Text = "Bảng điểm tổng kết lớp";
+            this.MenuItemClassScore.Click += new System.EventHandler(this.MenuItemClassScore_Click);
             // 
             // TrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 450);
+            this.ClientSize = new System.Drawing.Size(1125, 366);
             this.Controls.Add(this.PanelTitle);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TrangChu";
             this.Text = "Form1";
             this.PanelTitle.ResumeLayout(false);
@@ -158,5 +171,6 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.ToolStripMenuItem MenuItemSubjectScoreYear;
         private System.Windows.Forms.ToolStripMenuItem MenuItemAddStudent;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFindStudent;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemClassScore;
     }
 }

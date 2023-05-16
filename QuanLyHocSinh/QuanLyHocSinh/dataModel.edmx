@@ -26,7 +26,7 @@
           <Property Name="DiemGK" Type="float" />
           <Property Name="DiemCK" Type="float" />
           <Property Name="DiemTB" Type="float" />
-          <Property Name="XepLoai" Type="nchar" MaxLength="10" />
+          <Property Name="MaXepLoai" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="HOCSINH">
           <Key>
@@ -42,6 +42,16 @@
           <Property Name="TonGiao" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="HoTenCha" Type="nvarchar" MaxLength="50" />
+          <Property Name="NamSinh_Cha" Type="int" />
+          <Property Name="CCCD_Cha" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT_Cha" Type="nvarchar" MaxLength="10" />
+          <Property Name="NgheNghiep_Cha" Type="nvarchar" MaxLength="50" />
+          <Property Name="HoTenMe" Type="nvarchar" MaxLength="50" />
+          <Property Name="NamSinh_Me" Type="int" />
+          <Property Name="CCCD_Me" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT_Me" Type="nvarchar" MaxLength="10" />
+          <Property Name="NgheNghiep_Me" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="KHOI">
           <Key>
@@ -67,30 +77,28 @@
           <Property Name="MaMonHoc" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="THAMSO">
+          <Key>
+            <PropertyRef Name="MaThamSo" />
+          </Key>
+          <Property Name="MaThamSo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TuoiToiThieu" Type="tinyint" />
           <Property Name="TuoiToiDa" Type="tinyint" />
           <Property Name="SiSoToiDa" Type="smallint" />
           <Property Name="TsTX" Type="float" />
           <Property Name="TsGK" Type="float" />
-          <Property Name="tsCK" Type="float" />
-          <Property Name="LoaiGioi" Type="float" />
-          <Property Name="LoaiKha" Type="float" />
-          <Property Name="LoaiTb" Type="float" />
-          <Property Name="LoaiYeu" Type="float" />
-        </EntityType>-->
+          <Property Name="TsCK" Type="float" />
+        </EntityType>
+        <EntityType Name="XEPLOAI">
+          <Key>
+            <PropertyRef Name="MaXepLoai" />
+          </Key>
+          <Property Name="MaXepLoai" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenXepLoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiemToiThieu" Type="float" />
+          <Property Name="DiemToiDa" Type="float" />
+          <Property Name="DiemKhongChe" Type="float" />
+        </EntityType>
         <Association Name="fk_ctl_hs">
           <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1" />
           <End Role="CTLOP" Type="Self.CTLOP" Multiplicity="*" />
@@ -139,6 +147,18 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_diem_xl">
+          <End Role="XEPLOAI" Type="Self.XEPLOAI" Multiplicity="0..1" />
+          <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XEPLOAI">
+              <PropertyRef Name="MaXepLoai" />
+            </Principal>
+            <Dependent Role="DIEM">
+              <PropertyRef Name="MaXepLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_mk">
           <End Role="KHOI" Type="Self.KHOI" Multiplicity="1" />
           <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
@@ -158,7 +178,8 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           <EntitySet Name="KHOI" EntityType="Self.KHOI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XEPLOAI" EntityType="Self.XEPLOAI" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_ctl_hs" Association="Self.fk_ctl_hs">
             <End Role="HOCSINH" EntitySet="HOCSINH" />
             <End Role="CTLOP" EntitySet="CTLOP" />
@@ -173,6 +194,10 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           </AssociationSet>
           <AssociationSet Name="fk_diem_mmh" Association="Self.fk_diem_mmh">
             <End Role="MONHOC" EntitySet="MONHOC" />
+            <End Role="DIEM" EntitySet="DIEM" />
+          </AssociationSet>
+          <AssociationSet Name="fk_diem_xl" Association="Self.fk_diem_xl">
+            <End Role="XEPLOAI" EntitySet="XEPLOAI" />
             <End Role="DIEM" EntitySet="DIEM" />
           </AssociationSet>
           <AssociationSet Name="fk_mk" Association="Self.fk_mk">
@@ -191,7 +216,8 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           <EntitySet Name="KHOIs" EntityType="dataModel.KHOI" />
           <EntitySet Name="LOPs" EntityType="dataModel.LOP" />
           <EntitySet Name="MONHOCs" EntityType="dataModel.MONHOC" />
-          <EntitySet Name="sysdiagrams" EntityType="dataModel.sysdiagram" />
+          <EntitySet Name="THAMSOes" EntityType="dataModel.THAMSO" />
+          <EntitySet Name="XEPLOAIs" EntityType="dataModel.XEPLOAI" />
           <AssociationSet Name="fk_ctl_hs" Association="dataModel.fk_ctl_hs">
             <End Role="HOCSINH" EntitySet="HOCSINHs" />
             <End Role="CTLOP" EntitySet="CTLOPs" />
@@ -206,6 +232,10 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           </AssociationSet>
           <AssociationSet Name="fk_diem_mmh" Association="dataModel.fk_diem_mmh">
             <End Role="MONHOC" EntitySet="MONHOCs" />
+            <End Role="DIEM" EntitySet="DIEMs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_diem_xl" Association="dataModel.fk_diem_xl">
+            <End Role="XEPLOAI" EntitySet="XEPLOAIs" />
             <End Role="DIEM" EntitySet="DIEMs" />
           </AssociationSet>
           <AssociationSet Name="fk_mk" Association="dataModel.fk_mk">
@@ -236,9 +266,10 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           <Property Name="DiemGK" Type="Double" />
           <Property Name="DiemCK" Type="Double" />
           <Property Name="DiemTB" Type="Double" />
-          <Property Name="XepLoai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MaXepLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HOCSINH" Relationship="dataModel.fk_diem_hs" FromRole="DIEM" ToRole="HOCSINH" />
           <NavigationProperty Name="MONHOC" Relationship="dataModel.fk_diem_mmh" FromRole="DIEM" ToRole="MONHOC" />
+          <NavigationProperty Name="XEPLOAI" Relationship="dataModel.fk_diem_xl" FromRole="DIEM" ToRole="XEPLOAI" />
         </EntityType>
         <EntityType Name="HOCSINH">
           <Key>
@@ -254,6 +285,16 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           <Property Name="TonGiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HoTenCha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NamSinh_Cha" Type="Int32" />
+          <Property Name="CCCD_Cha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT_Cha" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NgheNghiep_Cha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HoTenMe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NamSinh_Me" Type="Int32" />
+          <Property Name="CCCD_Me" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT_Me" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NgheNghiep_Me" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CTLOPs" Relationship="dataModel.fk_ctl_hs" FromRole="HOCSINH" ToRole="CTLOP" />
           <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_hs" FromRole="HOCSINH" ToRole="DIEM" />
         </EntityType>
@@ -285,15 +326,28 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_mmh" FromRole="MONHOC" ToRole="DIEM" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="THAMSO">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="MaThamSo" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="MaThamSo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TuoiToiThieu" Type="Byte" />
+          <Property Name="TuoiToiDa" Type="Byte" />
+          <Property Name="SiSoToiDa" Type="Int16" />
+          <Property Name="TsTX" Type="Double" />
+          <Property Name="TsGK" Type="Double" />
+          <Property Name="TsCK" Type="Double" />
+        </EntityType>
+        <EntityType Name="XEPLOAI">
+          <Key>
+            <PropertyRef Name="MaXepLoai" />
+          </Key>
+          <Property Name="MaXepLoai" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenXepLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiemToiThieu" Type="Double" />
+          <Property Name="DiemToiDa" Type="Double" />
+          <Property Name="DiemKhongChe" Type="Double" />
+          <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_xl" FromRole="XEPLOAI" ToRole="DIEM" />
         </EntityType>
         <Association Name="fk_ctl_hs">
           <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
@@ -343,6 +397,18 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_diem_xl">
+          <End Type="dataModel.XEPLOAI" Role="XEPLOAI" Multiplicity="0..1" />
+          <End Type="dataModel.DIEM" Role="DIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XEPLOAI">
+              <PropertyRef Name="MaXepLoai" />
+            </Principal>
+            <Dependent Role="DIEM">
+              <PropertyRef Name="MaXepLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_mk">
           <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="1" />
           <End Type="dataModel.LOP" Role="LOP" Multiplicity="*" />
@@ -355,7 +421,7 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -373,7 +439,7 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           <EntitySetMapping Name="DIEMs">
             <EntityTypeMapping TypeName="dataModel.DIEM">
               <MappingFragment StoreEntitySet="DIEM">
-                <ScalarProperty Name="XepLoai" ColumnName="XepLoai" />
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
                 <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
                 <ScalarProperty Name="DiemCK" ColumnName="DiemCK" />
                 <ScalarProperty Name="DiemGK" ColumnName="DiemGK" />
@@ -389,6 +455,16 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
           <EntitySetMapping Name="HOCSINHs">
             <EntityTypeMapping TypeName="dataModel.HOCSINH">
               <MappingFragment StoreEntitySet="HOCSINH">
+                <ScalarProperty Name="NgheNghiep_Me" ColumnName="NgheNghiep_Me" />
+                <ScalarProperty Name="SDT_Me" ColumnName="SDT_Me" />
+                <ScalarProperty Name="CCCD_Me" ColumnName="CCCD_Me" />
+                <ScalarProperty Name="NamSinh_Me" ColumnName="NamSinh_Me" />
+                <ScalarProperty Name="HoTenMe" ColumnName="HoTenMe" />
+                <ScalarProperty Name="NgheNghiep_Cha" ColumnName="NgheNghiep_Cha" />
+                <ScalarProperty Name="SDT_Cha" ColumnName="SDT_Cha" />
+                <ScalarProperty Name="CCCD_Cha" ColumnName="CCCD_Cha" />
+                <ScalarProperty Name="NamSinh_Cha" ColumnName="NamSinh_Cha" />
+                <ScalarProperty Name="HoTenCha" ColumnName="HoTenCha" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
@@ -429,14 +505,27 @@ warning 6013: The table/view 'QUANLYHOCSINH.dbo.THAMSO' does not have a primary 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="dataModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
+          <EntitySetMapping Name="THAMSOes">
+            <EntityTypeMapping TypeName="dataModel.THAMSO">
+              <MappingFragment StoreEntitySet="THAMSO">
+                <ScalarProperty Name="TsCK" ColumnName="TsCK" />
+                <ScalarProperty Name="TsGK" ColumnName="TsGK" />
+                <ScalarProperty Name="TsTX" ColumnName="TsTX" />
+                <ScalarProperty Name="SiSoToiDa" ColumnName="SiSoToiDa" />
+                <ScalarProperty Name="TuoiToiDa" ColumnName="TuoiToiDa" />
+                <ScalarProperty Name="TuoiToiThieu" ColumnName="TuoiToiThieu" />
+                <ScalarProperty Name="MaThamSo" ColumnName="MaThamSo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XEPLOAIs">
+            <EntityTypeMapping TypeName="dataModel.XEPLOAI">
+              <MappingFragment StoreEntitySet="XEPLOAI">
+                <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
+                <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+                <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+                <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

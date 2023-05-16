@@ -13,7 +13,7 @@
     <EntitySetMapping Name="DIEMs">
       <EntityTypeMapping TypeName="dataModel.DIEM">
         <MappingFragment StoreEntitySet="DIEM">
-          <ScalarProperty Name="XepLoai" ColumnName="XepLoai" />
+          <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
           <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
           <ScalarProperty Name="DiemCK" ColumnName="DiemCK" />
           <ScalarProperty Name="DiemGK" ColumnName="DiemGK" />
@@ -29,6 +29,16 @@
     <EntitySetMapping Name="HOCSINHs">
       <EntityTypeMapping TypeName="dataModel.HOCSINH">
         <MappingFragment StoreEntitySet="HOCSINH">
+          <ScalarProperty Name="NgheNghiep_Me" ColumnName="NgheNghiep_Me" />
+          <ScalarProperty Name="SDT_Me" ColumnName="SDT_Me" />
+          <ScalarProperty Name="CCCD_Me" ColumnName="CCCD_Me" />
+          <ScalarProperty Name="NamSinh_Me" ColumnName="NamSinh_Me" />
+          <ScalarProperty Name="HoTenMe" ColumnName="HoTenMe" />
+          <ScalarProperty Name="NgheNghiep_Cha" ColumnName="NgheNghiep_Cha" />
+          <ScalarProperty Name="SDT_Cha" ColumnName="SDT_Cha" />
+          <ScalarProperty Name="CCCD_Cha" ColumnName="CCCD_Cha" />
+          <ScalarProperty Name="NamSinh_Cha" ColumnName="NamSinh_Cha" />
+          <ScalarProperty Name="HoTenCha" ColumnName="HoTenCha" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
@@ -69,14 +79,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="dataModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
+    <EntitySetMapping Name="THAMSOes">
+      <EntityTypeMapping TypeName="dataModel.THAMSO">
+        <MappingFragment StoreEntitySet="THAMSO">
+          <ScalarProperty Name="TsCK" ColumnName="TsCK" />
+          <ScalarProperty Name="TsGK" ColumnName="TsGK" />
+          <ScalarProperty Name="TsTX" ColumnName="TsTX" />
+          <ScalarProperty Name="SiSoToiDa" ColumnName="SiSoToiDa" />
+          <ScalarProperty Name="TuoiToiDa" ColumnName="TuoiToiDa" />
+          <ScalarProperty Name="TuoiToiThieu" ColumnName="TuoiToiThieu" />
+          <ScalarProperty Name="MaThamSo" ColumnName="MaThamSo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XEPLOAIs">
+      <EntityTypeMapping TypeName="dataModel.XEPLOAI">
+        <MappingFragment StoreEntitySet="XEPLOAI">
+          <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
+          <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+          <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+          <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
+          <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

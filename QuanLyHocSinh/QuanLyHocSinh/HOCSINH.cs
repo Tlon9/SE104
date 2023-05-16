@@ -31,6 +31,16 @@ namespace QuanLyHocSinh
         public string TonGiao { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
+        public string HoTenCha { get; set; }
+        public Nullable<int> NamSinh_Cha { get; set; }
+        public string CCCD_Cha { get; set; }
+        public string SDT_Cha { get; set; }
+        public string NgheNghiep_Cha { get; set; }
+        public string HoTenMe { get; set; }
+        public Nullable<int> NamSinh_Me { get; set; }
+        public string CCCD_Me { get; set; }
+        public string SDT_Me { get; set; }
+        public string NgheNghiep_Me { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTLOP> CTLOPs { get; set; }
