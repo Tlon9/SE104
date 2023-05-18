@@ -86,6 +86,8 @@ CREATE TABLE THAMSO
 	TsTX float default 0.3,
 	TsGK float default 0.2,
 	TsCK float default 0.5,
+	TsHKI float default 1,
+	TsHKII float default 2,
 	Constraint pk_ts primary key (MaThamSo)
 )
 
@@ -246,7 +248,12 @@ INSERT INTO XEPLOAI VALUES ('HSK',N'Khá',6.5,7.9,5.0)
 INSERT INTO XEPLOAI VALUES ('HSTB',N'Trung bình',5.0,6.4,3.5)
 INSERT INTO XEPLOAI VALUES ('HSY',N'Yếu',3.5,4.9,2.0)
 INSERT INTO XEPLOAI VALUES ('HSKEM',N'Kém',0,3.4,0.0)
-delete from DIEM
+INSERT INTO XEPLOAI VALUES ('HSR',N'Không',-1,-1,-1)
+
+UPDATE XEPLOAI
+SET DiemToiDa = null, DiemToiThieu = NULL,DiemKhongChe=NULL
+WHERE MaXepLoai = 'HSR'
+
 
 UPDATE LOP
 SET NamHoc = '2022-2023'
@@ -279,4 +286,4 @@ WHERE DiemTB < 3.5
 
 
 --THAM SO
-INSERT INTO THAMSO VALUES('TS1',15,20,40,0.3,0.2,0.5)
+INSERT INTO THAMSO VALUES('TS1',15,20,40,0.3,0.2,0.5,1,2)
