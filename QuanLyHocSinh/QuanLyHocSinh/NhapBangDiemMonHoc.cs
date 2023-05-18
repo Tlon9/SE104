@@ -48,7 +48,7 @@ namespace QuanLyHocSinh
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in data.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
                             where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == comboBoxSemester.Text
-                            select new { MaHocSinh = scr.MaHocSinh, DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, Diemcuoiky = scr.DiemCK, DiemTB = scr.DiemTB, Xeploai = scr.MaXepLoai };
+                            select new { Madiem = scr.MaDiem};
             if (reSource1.Count() == 0) MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
             else
             {
@@ -65,35 +65,40 @@ namespace QuanLyHocSinh
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in data.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
                             where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == comboBoxSemester.Text
-                            select new { MaHocSinh = scr.MaHocSinh, Hoten = cls1.HoTen, DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, Diemcuoiky = scr.DiemCK, DiemTB = scr.DiemTB, Xeploai = scr.MaXepLoai };
+                            select new { MaHocSinh = scr.MaHocSinh, Hoten = cls1.HoTen, DiemTX = scr.DiemTX.ToString(), DiemGK = scr.DiemGK.ToString(), Diemcuoiky = scr.DiemCK.ToString(), DiemTB = scr.DiemTB.ToString(), Xeploai = scr.MaXepLoai };
             var reSource1 = from scr in reSource
                       join cls in data.XEPLOAIs on scr.Xeploai equals cls.MaXepLoai
-                      select new { MaHocSinh = scr.MaHocSinh, Hoten = scr.Hoten, DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, Diemcuoiky = scr.Diemcuoiky, DiemTB = scr.DiemTB, Xeploai = cls.TenXepLoai };
-            if (reSource1.Count() == 0) MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
+                      select new { MaHocSinh = scr.MaHocSinh, Hoten = scr.Hoten, DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, Diemcuoiky = scr.Diemcuoiky, DiemTB = scr.DiemTB, Xeploai = (cls.TenXepLoai == "Không" ? string.Empty : cls.TenXepLoai) };
+            if (reSource.Count() == 0) MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
             else
             {
-                int total = reSource.Count();
+                //int total = Convert.ToInt32(data.LOPs.Where(p => p.MaLop == comboBoxClass.Text).Select(p => p.SiSo).SingleOrDefault());
+                int total = reSource.Count(p => p.Xeploai != "HSR");
                 int good = reSource.Count(p => p.Xeploai == "HSG");
                 textBoxNumberOfExcellent.Text = good.ToString();
-                int ratio = good * 100 / total;
+                double ratio = good * 100 / total;
+                ratio = Math.Round(ratio, 2);
                 textBoxRatioOfExcellent.Text = ratio.ToString() + "%";
                 good = reSource.Count(p => p.Xeploai == "HSK");
                 textBoxNumberOfGood.Text = good.ToString();
                 ratio = good * 100 / total;
+                ratio = Math.Round(ratio, 2);
                 textBoxRatioOfGood.Text = ratio.ToString() + "%";
                 good = reSource.Count(p => p.Xeploai == "HSTB");
                 textBoxNumberOfAverage.Text = good.ToString();
                 ratio = good * 100 / total;
+                ratio = Math.Round(ratio, 2);
                 textBoxRatioOfAverage.Text = ratio.ToString() + "%";
                 good = reSource.Count(p => p.Xeploai == "HSY");
                 textBoxNumberOfB_Average.Text = good.ToString();
                 ratio = good * 100 / total;
+                ratio = Math.Round(ratio, 2);
                 textBoxRatioOfB_Average.Text = ratio.ToString() + "%";
                 good = reSource.Count(p => p.Xeploai == "HSKEM");
                 textBoxNumberOfPoor.Text = good.ToString();
                 ratio = good * 100 / total;
+                ratio = Math.Round(ratio, 2);
                 textBoxRatioOfPoor.Text = ratio.ToString() + "%";
-
                 dataGridView2.DataSource = reSource1.ToList();
                 dataGridView2.Columns[0].HeaderCell.Value = "Mã học sinh";
                 dataGridView2.Columns[1].HeaderCell.Value = "Họ tên học sinh";
@@ -107,10 +112,15 @@ namespace QuanLyHocSinh
                 dataGridView2.Show();
             }
         }
-        string funcXepLoai(double a)
+        string funcXepLoai(string t)
         {
             var reSource = from r in data.XEPLOAIs
                            select r;
+            double a;
+            if (t != string.Empty)
+                a = Convert.ToDouble(t);
+            else
+                return "HSR";
             foreach (var item in reSource)
             {
                 if (a >= Convert.ToDouble(item.DiemToiThieu) && a <= Convert.ToDouble(item.DiemToiDa))
@@ -118,7 +128,7 @@ namespace QuanLyHocSinh
                     return item.MaXepLoai;
                 }
             }
-            return string.Empty;
+            return "HSR";
         }
         private void comboBoxID_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -128,13 +138,13 @@ namespace QuanLyHocSinh
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in data.XEPLOAIs on scr.MaXepLoai equals cls1.MaXepLoai
                             where comboBoxID.Text == scr.MaHocSinh && comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && comboBoxSemester.Text == scr.HocKy && cls.MaLop == comboBoxClass.Text
-                            select new { DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, DiemCK = scr.DiemCK, DiemTB = scr.DiemTB, Xeploai = cls1.TenXepLoai };
+                            select new { DiemTX = scr.DiemTX.ToString(), DiemGK = scr.DiemGK.ToString(), Diemcuoiky = scr.DiemCK.ToString(), DiemTB = scr.DiemTB.ToString(), Xeploai = (cls1.TenXepLoai == "Không" ? string.Empty : cls1.TenXepLoai) };
             if (reSource1.Count() != 0)
             {
-                textBoxScore_1.Text = reSource1.ToList().SingleOrDefault().DiemTX.Value.ToString();
-                textBoxScore_2.Text = reSource1.ToList().SingleOrDefault().DiemGK.Value.ToString();
-                textBoxScore_3.Text = reSource1.ToList().SingleOrDefault().DiemCK.Value.ToString();
-                textBoxAverageScore.Text = reSource1.ToList().SingleOrDefault().DiemTB.Value.ToString();
+                textBoxScore_1.Text = reSource1.ToList().SingleOrDefault().DiemTX;
+                textBoxScore_2.Text = reSource1.ToList().SingleOrDefault().DiemGK;
+                textBoxScore_3.Text = reSource1.ToList().SingleOrDefault().Diemcuoiky;
+                textBoxAverageScore.Text = reSource1.ToList().SingleOrDefault().DiemTB;
                 textBoxClassify.Text = reSource1.ToList().SingleOrDefault().Xeploai.ToString();
             }
             else
@@ -152,11 +162,11 @@ namespace QuanLyHocSinh
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in data.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
                             where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == comboBoxSemester.Text
-                            select new { MaHocSinh = scr.MaHocSinh, TenHocSinh = cls1.HoTen, DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, Diemcuoiky = scr.DiemCK, DiemTB = scr.DiemTB, Xeploai = scr.MaXepLoai };
+                            select new { MaHocSinh = scr.MaHocSinh, TenHocSinh = cls1.HoTen, DiemTX = scr.DiemTX.ToString(), DiemGK = scr.DiemGK.ToString(), Diemcuoiky = scr.DiemCK.ToString(), DiemTB = scr.DiemTB.ToString(), Xeploai = scr.MaXepLoai };
             var reSource1 = from scr in reSource
                            join cls in data.XEPLOAIs on scr.Xeploai equals cls.MaXepLoai
-                           select new { MaHocSinh = scr.MaHocSinh, TenHocSinh = scr.TenHocSinh, DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, Diemcuoiky = scr.Diemcuoiky, DiemTB = scr.DiemTB, Xeploai = cls.TenXepLoai };
-            if (reSource1.Count() == 0) MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
+                           select new { MaHocSinh = scr.MaHocSinh, TenHocSinh = scr.TenHocSinh, DiemTX = scr.DiemTX, DiemGK = scr.DiemGK, Diemcuoiky = scr.Diemcuoiky, DiemTB = scr.DiemTB, Xeploai = (cls.TenXepLoai == "Không"? string.Empty: cls.TenXepLoai) };
+            if (reSource.Count() == 0) MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
             else
             {
                 dataGridView1.DataSource = reSource1.ToList();
@@ -174,11 +184,16 @@ namespace QuanLyHocSinh
         {
             ShowGrid();
         }
-        private void buttonSave_Click(object sender, EventArgs e)
+        THAMSO getTHAMSO()
         {
             var ratio = from r in data.THAMSOes
-                        select new { tsTX = r.TsTX, tsGK = r.TsGK, tsCK = r.TsCK };
+                        select new { TuoiToiThieu = r.TuoiToiThieu, TuoiToiDa = r.TuoiToiDa, SiSoToiDa = r.SiSoToiDa, tsTX = r.TsTX, tsGK = r.TsGK, tsCK = r.TsCK };
             var ratio2 = ratio.ToList().SingleOrDefault();
+            THAMSO v = new THAMSO() { TuoiToiThieu = ratio2.TuoiToiThieu, TuoiToiDa = ratio2.TuoiToiDa, SiSoToiDa = ratio2.SiSoToiDa, TsTX = ratio2.tsTX, TsGK = ratio2.tsGK, TsCK = ratio2.tsCK };
+            return v;
+        }
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
             var reSource1 = from scr in data.DIEMs
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             where comboBoxID.Text == scr.MaHocSinh && comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && comboBoxSemester.Text == scr.HocKy && cls.MaLop == comboBoxClass.Text
@@ -187,55 +202,81 @@ namespace QuanLyHocSinh
                        select scr.MaDiem;
             
             int index = temp.Select(int.Parse).ToList().Max();
+            DIEM new_hs;
             DIEM new_diem = new DIEM();
             if (reSource1.Count() == 0)
             {
-                DIEM new_hs = new DIEM() { MaDiem = (index + 1).ToString(), MaMonHoc = comboBoxSubject.SelectedValue.ToString(), MaHocSinh = comboBoxID.Text, NamHoc = comboBoxYear.Text, HocKy = comboBoxSemester.Text, DiemTX = Convert.ToDouble(textBoxScore_1.Text), DiemGK = Convert.ToDouble(textBoxScore_2.Text), DiemCK = Convert.ToDouble(textBoxScore_3.Text) };
-                //if (Double.TryParse(textBoxScore_1.Text, out double score_1) && Double.TryParse(textBoxScore_1.Text, out double score_2) && Double.TryParse(textBoxScore_1.Text, out double score_3))
-                new_hs.DiemTB = ratio2.tsTX * new_hs.DiemTX.Value + ratio2.tsGK * new_hs.DiemGK.Value + new_hs.DiemCK.Value * ratio2.tsCK;
-                    //new_hs.MaXepLoai = funcXepLoai(new_hs.DiemTB.Value);
-                new_hs.MaXepLoai = funcXepLoai(new_hs.DiemTB.Value);
+                new_hs = new DIEM() { MaDiem = (index + 1).ToString(), MaMonHoc = comboBoxSubject.SelectedValue.ToString(), MaHocSinh = comboBoxID.Text, NamHoc = comboBoxYear.Text, HocKy = comboBoxSemester.Text};
+                if (textBoxScore_1.Text == string.Empty)
+                    new_hs.DiemTX = null;
+                else
+                    new_hs.DiemTX = Convert.ToDouble(textBoxScore_1.Text);
+                if (textBoxScore_2.Text == string.Empty)
+                    new_hs.DiemGK = null;
+                else
+                    new_hs.DiemGK = Convert.ToDouble(textBoxScore_2.Text);
+                if (textBoxScore_3.Text == string.Empty)
+                    new_hs.DiemCK = null;
+                else
+                    new_hs.DiemCK = Convert.ToDouble(textBoxScore_3.Text);
                 data.DIEMs.Add(new_hs);
-                try
-                {
-                    data.SaveChanges();
-                }
-                catch (DbEntityValidationException e1)
-                {
-                    Console.WriteLine(e1);
-                }
-                new_diem = new_hs;
             }
             else
             {
                 string ID = reSource1.ToList().SingleOrDefault();
-                DIEM new_hs = data.DIEMs.Where(p => p.MaDiem == ID).FirstOrDefault();
-                if (Convert.ToDouble(textBoxScore_1.Text) != new_hs.DiemTX.Value)
+                new_hs = data.DIEMs.Where(p => p.MaDiem == ID).FirstOrDefault();
+                bool tx, gk, ck;
+                tx = Double.TryParse(textBoxScore_1.Text, out double score_1) ? true : false;
+                gk = Double.TryParse(textBoxScore_2.Text, out double score_2) ? true : false;
+                ck = Double.TryParse(textBoxScore_3.Text, out double score_3) ? true : false;
+                if (score_1 != new_hs.DiemTX)
                 {
-                    new_hs.DiemTX = Convert.ToDouble(textBoxScore_1.Text);
+                    if (tx == false)
+                        new_hs.DiemTX = null;
+                    else
+                        new_hs.DiemTX = Convert.ToDouble(textBoxScore_1.Text);
                 }
-                if (Convert.ToDouble(textBoxScore_2.Text) != new_hs.DiemGK.Value)
+                if (score_2 != new_hs.DiemGK)
                 {
-                    new_hs.DiemGK = Convert.ToDouble(textBoxScore_2.Text);
+                    if (gk == false)
+                        new_hs.DiemGK = null;
+                    else
+                        new_hs.DiemGK = Convert.ToDouble(textBoxScore_2.Text);
                 }
-                if (Convert.ToDouble(textBoxScore_3.Text) != new_hs.DiemCK.Value)
+                if (score_3 != new_hs.DiemCK)
                 {
-                    new_hs.DiemCK = Convert.ToDouble(textBoxScore_3.Text);
+                    if (ck == false)
+                        new_hs.DiemCK = null;
+                    else
+                        new_hs.DiemCK = Convert.ToDouble(textBoxScore_3.Text);
                 }
-            
-                new_hs.DiemTB = ratio2.tsTX * new_hs.DiemTX + ratio2.tsGK * new_hs.DiemGK + new_hs.DiemCK * ratio2.tsCK;
-                new_hs.MaXepLoai = funcXepLoai(Convert.ToDouble(new_hs.DiemTB));
-                data.SaveChanges();
-                new_diem = new_hs;
             }
-            /*comboBoxID.Text = string.Empty;
-            textBoxName.Text = string.Empty;
-            textBoxScore_1.Text = null;
-            textBoxScore_2.Text = null;
-            textBoxScore_3.Text = null;*/
-            textBoxAverageScore.Text = new_diem.DiemTB.ToString();
-            string tenxl = data.XEPLOAIs.Where(p => p.MaXepLoai == new_diem.MaXepLoai).Select(p => p.TenXepLoai).SingleOrDefault().ToString();
-            textBoxClassify.Text = tenxl;
+
+            if (new_hs.DiemTX == null || new_hs.DiemGK == null || new_hs.DiemCK == null)
+            {
+                new_hs.DiemTB = null;
+                textBoxAverageScore.Text = string.Empty;
+            }
+            else
+            {
+                THAMSO v = getTHAMSO();
+                new_hs.DiemTB = v.TsTX * new_hs.DiemTX.Value + v.TsGK * new_hs.DiemGK.Value + new_hs.DiemCK.Value * v.TsCK;
+                textBoxAverageScore.Text = new_diem.DiemTB.ToString();
+            }
+            new_hs.MaXepLoai = funcXepLoai(new_hs.DiemTB.ToString());
+            try
+            {
+                data.SaveChanges();
+            }
+            catch (DbEntityValidationException e1)
+            {
+                Console.WriteLine(e1);
+            }
+            string tenxl = data.XEPLOAIs.Where(p => p.MaXepLoai == new_hs.MaXepLoai).Select(p => p.TenXepLoai).SingleOrDefault().ToString();
+            if (tenxl != "Không")
+                textBoxClassify.Text = tenxl;
+            else
+                textBoxClassify.Text = string.Empty;
             ShowGrid();
         }
 
@@ -274,12 +315,17 @@ namespace QuanLyHocSinh
 
         private void textBoxScore_1_TextChanged(object sender, EventArgs e)
         {
+            THAMSO v = getTHAMSO();
             if (Double.TryParse(textBoxScore_1.Text, out double score))
             {
                 if (score < 0 || score > 10)
                 {
                     MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else if (textBoxScore_1.Text != string.Empty)
+            {
+                MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void textBoxScore_2_TextChanged(object sender, EventArgs e)
@@ -291,6 +337,10 @@ namespace QuanLyHocSinh
                     MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            else if (textBoxScore_2.Text != string.Empty)
+            {
+                MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void textBoxScore_3_TextChanged(object sender, EventArgs e)
         {
@@ -300,6 +350,10 @@ namespace QuanLyHocSinh
                 {
                     MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+            else if (textBoxScore_3.Text != string.Empty)
+            {
+                MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

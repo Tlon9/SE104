@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyHocSinh.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,12 +49,12 @@ namespace QuanLyHocSinh
             var reSource1 = from scr in dtb.DIEMs
                             join cls in dtb.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in dtb.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
-                            where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == "1"
+                            where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == "1" && scr.DiemTB != null
                             select new { Mahocsinh = cls.MaHocSinh, Hotenhocsinh = cls1.HoTen, DiemTBHK1 = scr.DiemTB };
             var reSource2 = from scr in dtb.DIEMs
                             join cls in dtb.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in dtb.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
-                            where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == "2"
+                            where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == "2" && scr.DiemTB != null
                             select new { Mahocsinh = cls.MaHocSinh, DiemTBHK2 = scr.DiemTB };
             var reSource4 = from r in reSource1.ToList()
                             join r1 in reSource2.ToList() on r.Mahocsinh equals r1.Mahocsinh
@@ -64,10 +65,11 @@ namespace QuanLyHocSinh
             if (reSource1.Count() == 0) MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
             else
             {
-                int total = reSource4.Count();
+                //int total = Convert.ToInt32(dtb.LOPs.Where(p => p.MaLop==comboBoxClass.Text).Select(p => p.SiSo).SingleOrDefault());
+                int total = reSource4.Count(p => p.Xeploai != "HSR");
                 int good = reSource4.Count(p => p.Xeploai == "HSG");
                 textBoxNumberOfExcellent.Text = good.ToString();
-                int ratio = good * 100 / total;
+                double ratio = good * 100 / total;
                 textBoxRatioOfExcellent.Text = ratio.ToString() + "%";
                 good = reSource4.Count(p => p.Xeploai == "HSK");
                 textBoxNumberOfGood.Text = good.ToString();

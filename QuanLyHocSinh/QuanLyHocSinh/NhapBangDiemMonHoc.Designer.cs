@@ -80,17 +80,20 @@
             this.labelNumberOfExcellent = new System.Windows.Forms.Label();
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
+            this.PanelTitle = new System.Windows.Forms.Panel();
+            this.LabelNameProject = new System.Windows.Forms.Label();
             this.panelInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelPrint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.PanelTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelSemester
             // 
             this.labelSemester.AutoSize = true;
             this.labelSemester.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSemester.Location = new System.Drawing.Point(81, 79);
+            this.labelSemester.Location = new System.Drawing.Point(311, 242);
             this.labelSemester.Name = "labelSemester";
             this.labelSemester.Size = new System.Drawing.Size(55, 18);
             this.labelSemester.TabIndex = 1;
@@ -100,7 +103,7 @@
             // 
             this.labelClass.AutoSize = true;
             this.labelClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClass.Location = new System.Drawing.Point(100, 30);
+            this.labelClass.Location = new System.Drawing.Point(330, 193);
             this.labelClass.Name = "labelClass";
             this.labelClass.Size = new System.Drawing.Size(33, 18);
             this.labelClass.TabIndex = 3;
@@ -110,7 +113,7 @@
             // 
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelYear.Location = new System.Drawing.Point(448, 79);
+            this.labelYear.Location = new System.Drawing.Point(678, 242);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(69, 18);
             this.labelYear.TabIndex = 4;
@@ -120,7 +123,7 @@
             // 
             this.labelSubject.AutoSize = true;
             this.labelSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubject.Location = new System.Drawing.Point(448, 30);
+            this.labelSubject.Location = new System.Drawing.Point(678, 193);
             this.labelSubject.Name = "labelSubject";
             this.labelSubject.Size = new System.Drawing.Size(67, 18);
             this.labelSubject.TabIndex = 12;
@@ -132,7 +135,7 @@
             this.comboBoxSemester.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBoxSemester.Location = new System.Drawing.Point(159, 76);
+            this.comboBoxSemester.Location = new System.Drawing.Point(389, 239);
             this.comboBoxSemester.Name = "comboBoxSemester";
             this.comboBoxSemester.Size = new System.Drawing.Size(231, 24);
             this.comboBoxSemester.TabIndex = 30;
@@ -144,7 +147,7 @@
             this.comboBoxSubject.DisplayMember = "TenLop";
             this.comboBoxSubject.FormattingEnabled = true;
             this.comboBoxSubject.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.comboBoxSubject.Location = new System.Drawing.Point(529, 24);
+            this.comboBoxSubject.Location = new System.Drawing.Point(759, 187);
             this.comboBoxSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxSubject.MaxDropDownItems = 4;
             this.comboBoxSubject.Name = "comboBoxSubject";
@@ -156,7 +159,7 @@
             // buttonPrint
             // 
             this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(444, 140);
+            this.buttonPrint.Location = new System.Drawing.Point(665, 304);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(130, 44);
             this.buttonPrint.TabIndex = 47;
@@ -167,7 +170,7 @@
             // buttonInput
             // 
             this.buttonInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInput.Location = new System.Drawing.Point(317, 140);
+            this.buttonInput.Location = new System.Drawing.Point(531, 304);
             this.buttonInput.Name = "buttonInput";
             this.buttonInput.Size = new System.Drawing.Size(130, 44);
             this.buttonInput.TabIndex = 48;
@@ -195,7 +198,7 @@
             this.panelInput.Controls.Add(this.labelName);
             this.panelInput.Controls.Add(this.labelID);
             this.panelInput.Controls.Add(this.buttonSave);
-            this.panelInput.Location = new System.Drawing.Point(84, 203);
+            this.panelInput.Location = new System.Drawing.Point(114, 390);
             this.panelInput.Name = "panelInput";
             this.panelInput.Size = new System.Drawing.Size(1167, 307);
             this.panelInput.TabIndex = 49;
@@ -404,7 +407,7 @@
             this.panelPrint.Controls.Add(this.textBoxNumberOfExcellent);
             this.panelPrint.Controls.Add(this.labelRatioOfExcellent);
             this.panelPrint.Controls.Add(this.labelNumberOfExcellent);
-            this.panelPrint.Location = new System.Drawing.Point(81, 203);
+            this.panelPrint.Location = new System.Drawing.Point(111, 390);
             this.panelPrint.Name = "panelPrint";
             this.panelPrint.Size = new System.Drawing.Size(1167, 455);
             this.panelPrint.TabIndex = 50;
@@ -620,7 +623,7 @@
             "2020-2021",
             "2021-2022",
             "2022-2023"});
-            this.comboBoxYear.Location = new System.Drawing.Point(529, 76);
+            this.comboBoxYear.Location = new System.Drawing.Point(759, 239);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(231, 24);
             this.comboBoxYear.TabIndex = 51;
@@ -631,7 +634,7 @@
             this.comboBoxClass.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.comboBoxClass.FormattingEnabled = true;
             this.comboBoxClass.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.comboBoxClass.Location = new System.Drawing.Point(159, 27);
+            this.comboBoxClass.Location = new System.Drawing.Point(389, 190);
             this.comboBoxClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxClass.MaxDropDownItems = 4;
             this.comboBoxClass.Name = "comboBoxClass";
@@ -639,11 +642,31 @@
             this.comboBoxClass.TabIndex = 52;
             this.comboBoxClass.Tag = "";
             // 
+            // PanelTitle
+            // 
+            this.PanelTitle.Controls.Add(this.LabelNameProject);
+            this.PanelTitle.Location = new System.Drawing.Point(164, 62);
+            this.PanelTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelTitle.Name = "PanelTitle";
+            this.PanelTitle.Size = new System.Drawing.Size(1051, 86);
+            this.PanelTitle.TabIndex = 53;
+            // 
+            // LabelNameProject
+            // 
+            this.LabelNameProject.AutoSize = true;
+            this.LabelNameProject.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNameProject.Location = new System.Drawing.Point(307, 20);
+            this.LabelNameProject.Name = "LabelNameProject";
+            this.LabelNameProject.Size = new System.Drawing.Size(435, 46);
+            this.LabelNameProject.TabIndex = 0;
+            this.LabelNameProject.Text = "NHẬP ĐIỂM HỌC SINH";
+            // 
             // LapBangDiemMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1360, 997);
+            this.Controls.Add(this.PanelTitle);
             this.Controls.Add(this.comboBoxClass);
             this.Controls.Add(this.comboBoxYear);
             this.Controls.Add(this.panelPrint);
@@ -664,6 +687,8 @@
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.PanelTitle.ResumeLayout(false);
+            this.PanelTitle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -722,6 +747,8 @@
         private System.Windows.Forms.TextBox textBoxScore_3;
         private System.Windows.Forms.TextBox textBoxScore_2;
         private System.Windows.Forms.TextBox textBoxScore_1;
+        private System.Windows.Forms.Panel PanelTitle;
+        private System.Windows.Forms.Label LabelNameProject;
     }
     
     /*partial class LapBangDiemMonHoc

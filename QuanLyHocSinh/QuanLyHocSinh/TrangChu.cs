@@ -1,4 +1,4 @@
-﻿using LapBangDiemMonHocCuaLopNamHoc;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +44,7 @@ namespace QuanLyHocSinh
 
         private void MenuItemSubjectScoreYear_Click(object sender, EventArgs e)
         {
-            LapBangDiemMonHocCuaLopTrongNamHoc newform = new LapBangDiemMonHocCuaLopTrongNamHoc();
+            LapBangDiemMonHocCuaLopNamHoc newform = new LapBangDiemMonHocCuaLopNamHoc();
             this.Hide();
             newform.ShowDialog();
             this.Show();

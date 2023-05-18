@@ -72,18 +72,21 @@
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
+            this.PanelTitle = new System.Windows.Forms.Panel();
+            this.LabelNameProject = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownScore_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownScore_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownScore_1)).BeginInit();
             this.panelPrint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.PanelTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelClass
             // 
             this.labelClass.AutoSize = true;
             this.labelClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClass.Location = new System.Drawing.Point(283, 62);
+            this.labelClass.Location = new System.Drawing.Point(310, 158);
             this.labelClass.Name = "labelClass";
             this.labelClass.Size = new System.Drawing.Size(33, 18);
             this.labelClass.TabIndex = 3;
@@ -93,7 +96,7 @@
             // 
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelYear.Location = new System.Drawing.Point(252, 111);
+            this.labelYear.Location = new System.Drawing.Point(279, 207);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(69, 18);
             this.labelYear.TabIndex = 4;
@@ -103,7 +106,7 @@
             // 
             this.labelSubject.AutoSize = true;
             this.labelSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubject.Location = new System.Drawing.Point(631, 62);
+            this.labelSubject.Location = new System.Drawing.Point(658, 158);
             this.labelSubject.Name = "labelSubject";
             this.labelSubject.Size = new System.Drawing.Size(67, 18);
             this.labelSubject.TabIndex = 12;
@@ -117,7 +120,7 @@
             this.comboBoxSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSubject.FormattingEnabled = true;
             this.comboBoxSubject.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.comboBoxSubject.Location = new System.Drawing.Point(712, 54);
+            this.comboBoxSubject.Location = new System.Drawing.Point(739, 150);
             this.comboBoxSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxSubject.MaxDropDownItems = 4;
             this.comboBoxSubject.Name = "comboBoxSubject";
@@ -254,25 +257,25 @@
             this.panelPrint.Controls.Add(this.textBoxNumberOfExcellent);
             this.panelPrint.Controls.Add(this.labelRatioOfExcellent);
             this.panelPrint.Controls.Add(this.labelNumberOfExcellent);
-            this.panelPrint.Location = new System.Drawing.Point(80, 212);
+            this.panelPrint.Location = new System.Drawing.Point(107, 306);
             this.panelPrint.Name = "panelPrint";
-            this.panelPrint.Size = new System.Drawing.Size(1082, 547);
+            this.panelPrint.Size = new System.Drawing.Size(1083, 558);
             this.panelPrint.TabIndex = 50;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(41, 262);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 262);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1001, 285);
+            this.dataGridView1.Size = new System.Drawing.Size(1001, 293);
             this.dataGridView1.TabIndex = 111;
             // 
             // textBoxRatioOfPoor
             // 
             this.textBoxRatioOfPoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRatioOfPoor.Location = new System.Drawing.Point(632, 218);
+            this.textBoxRatioOfPoor.Location = new System.Drawing.Point(649, 220);
             this.textBoxRatioOfPoor.Name = "textBoxRatioOfPoor";
             this.textBoxRatioOfPoor.ReadOnly = true;
             this.textBoxRatioOfPoor.Size = new System.Drawing.Size(231, 24);
@@ -281,7 +284,7 @@
             // textBoxRatioOfB_Average
             // 
             this.textBoxRatioOfB_Average.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRatioOfB_Average.Location = new System.Drawing.Point(632, 165);
+            this.textBoxRatioOfB_Average.Location = new System.Drawing.Point(649, 167);
             this.textBoxRatioOfB_Average.Name = "textBoxRatioOfB_Average";
             this.textBoxRatioOfB_Average.ReadOnly = true;
             this.textBoxRatioOfB_Average.Size = new System.Drawing.Size(231, 24);
@@ -290,7 +293,7 @@
             // textBoxRatioOfAverage
             // 
             this.textBoxRatioOfAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRatioOfAverage.Location = new System.Drawing.Point(632, 116);
+            this.textBoxRatioOfAverage.Location = new System.Drawing.Point(649, 118);
             this.textBoxRatioOfAverage.Name = "textBoxRatioOfAverage";
             this.textBoxRatioOfAverage.ReadOnly = true;
             this.textBoxRatioOfAverage.Size = new System.Drawing.Size(231, 24);
@@ -299,7 +302,7 @@
             // textBoxRatioOfGood
             // 
             this.textBoxRatioOfGood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRatioOfGood.Location = new System.Drawing.Point(632, 68);
+            this.textBoxRatioOfGood.Location = new System.Drawing.Point(649, 70);
             this.textBoxRatioOfGood.Name = "textBoxRatioOfGood";
             this.textBoxRatioOfGood.ReadOnly = true;
             this.textBoxRatioOfGood.Size = new System.Drawing.Size(231, 24);
@@ -309,7 +312,7 @@
             // 
             this.labelRatioOfPoor.AutoSize = true;
             this.labelRatioOfPoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRatioOfPoor.Location = new System.Drawing.Point(551, 221);
+            this.labelRatioOfPoor.Location = new System.Drawing.Point(568, 223);
             this.labelRatioOfPoor.Name = "labelRatioOfPoor";
             this.labelRatioOfPoor.Size = new System.Drawing.Size(35, 18);
             this.labelRatioOfPoor.TabIndex = 104;
@@ -319,7 +322,7 @@
             // 
             this.labelRatioOfB_Average.AutoSize = true;
             this.labelRatioOfB_Average.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRatioOfB_Average.Location = new System.Drawing.Point(551, 171);
+            this.labelRatioOfB_Average.Location = new System.Drawing.Point(568, 173);
             this.labelRatioOfB_Average.Name = "labelRatioOfB_Average";
             this.labelRatioOfB_Average.Size = new System.Drawing.Size(35, 18);
             this.labelRatioOfB_Average.TabIndex = 103;
@@ -329,7 +332,7 @@
             // 
             this.labelRatioOfAverage.AutoSize = true;
             this.labelRatioOfAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRatioOfAverage.Location = new System.Drawing.Point(551, 122);
+            this.labelRatioOfAverage.Location = new System.Drawing.Point(568, 124);
             this.labelRatioOfAverage.Name = "labelRatioOfAverage";
             this.labelRatioOfAverage.Size = new System.Drawing.Size(35, 18);
             this.labelRatioOfAverage.TabIndex = 102;
@@ -339,7 +342,7 @@
             // 
             this.labelRatioOfGood.AutoSize = true;
             this.labelRatioOfGood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRatioOfGood.Location = new System.Drawing.Point(551, 71);
+            this.labelRatioOfGood.Location = new System.Drawing.Point(568, 73);
             this.labelRatioOfGood.Name = "labelRatioOfGood";
             this.labelRatioOfGood.Size = new System.Drawing.Size(35, 18);
             this.labelRatioOfGood.TabIndex = 101;
@@ -348,7 +351,7 @@
             // textBoxNumberOfPoor
             // 
             this.textBoxNumberOfPoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumberOfPoor.Location = new System.Drawing.Point(262, 215);
+            this.textBoxNumberOfPoor.Location = new System.Drawing.Point(279, 217);
             this.textBoxNumberOfPoor.Name = "textBoxNumberOfPoor";
             this.textBoxNumberOfPoor.ReadOnly = true;
             this.textBoxNumberOfPoor.Size = new System.Drawing.Size(231, 24);
@@ -357,7 +360,7 @@
             // textBoxNumberOfB_Average
             // 
             this.textBoxNumberOfB_Average.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumberOfB_Average.Location = new System.Drawing.Point(262, 165);
+            this.textBoxNumberOfB_Average.Location = new System.Drawing.Point(279, 167);
             this.textBoxNumberOfB_Average.Name = "textBoxNumberOfB_Average";
             this.textBoxNumberOfB_Average.ReadOnly = true;
             this.textBoxNumberOfB_Average.Size = new System.Drawing.Size(231, 24);
@@ -366,7 +369,7 @@
             // textBoxNumberOfAverage
             // 
             this.textBoxNumberOfAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumberOfAverage.Location = new System.Drawing.Point(262, 116);
+            this.textBoxNumberOfAverage.Location = new System.Drawing.Point(279, 118);
             this.textBoxNumberOfAverage.Name = "textBoxNumberOfAverage";
             this.textBoxNumberOfAverage.ReadOnly = true;
             this.textBoxNumberOfAverage.Size = new System.Drawing.Size(231, 24);
@@ -375,7 +378,7 @@
             // textBoxNumberOfGood
             // 
             this.textBoxNumberOfGood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumberOfGood.Location = new System.Drawing.Point(262, 65);
+            this.textBoxNumberOfGood.Location = new System.Drawing.Point(279, 67);
             this.textBoxNumberOfGood.Name = "textBoxNumberOfGood";
             this.textBoxNumberOfGood.ReadOnly = true;
             this.textBoxNumberOfGood.Size = new System.Drawing.Size(231, 24);
@@ -385,7 +388,7 @@
             // 
             this.labelNumberOfPoor.AutoSize = true;
             this.labelNumberOfPoor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfPoor.Location = new System.Drawing.Point(126, 221);
+            this.labelNumberOfPoor.Location = new System.Drawing.Point(143, 223);
             this.labelNumberOfPoor.Name = "labelNumberOfPoor";
             this.labelNumberOfPoor.Size = new System.Drawing.Size(125, 18);
             this.labelNumberOfPoor.TabIndex = 96;
@@ -395,7 +398,7 @@
             // 
             this.labelNumberOfB_Average.AutoSize = true;
             this.labelNumberOfB_Average.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfB_Average.Location = new System.Drawing.Point(126, 171);
+            this.labelNumberOfB_Average.Location = new System.Drawing.Point(143, 173);
             this.labelNumberOfB_Average.Name = "labelNumberOfB_Average";
             this.labelNumberOfB_Average.Size = new System.Drawing.Size(119, 18);
             this.labelNumberOfB_Average.TabIndex = 95;
@@ -405,7 +408,7 @@
             // 
             this.labelNumberOfAverage.AutoSize = true;
             this.labelNumberOfAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfAverage.Location = new System.Drawing.Point(126, 122);
+            this.labelNumberOfAverage.Location = new System.Drawing.Point(143, 124);
             this.labelNumberOfAverage.Name = "labelNumberOfAverage";
             this.labelNumberOfAverage.Size = new System.Drawing.Size(115, 18);
             this.labelNumberOfAverage.TabIndex = 94;
@@ -415,7 +418,7 @@
             // 
             this.labelNumberOfGood.AutoSize = true;
             this.labelNumberOfGood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfGood.Location = new System.Drawing.Point(126, 71);
+            this.labelNumberOfGood.Location = new System.Drawing.Point(143, 73);
             this.labelNumberOfGood.Name = "labelNumberOfGood";
             this.labelNumberOfGood.Size = new System.Drawing.Size(120, 18);
             this.labelNumberOfGood.TabIndex = 93;
@@ -424,7 +427,7 @@
             // textBoxRatioOfExcellent
             // 
             this.textBoxRatioOfExcellent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRatioOfExcellent.Location = new System.Drawing.Point(632, 13);
+            this.textBoxRatioOfExcellent.Location = new System.Drawing.Point(649, 15);
             this.textBoxRatioOfExcellent.Name = "textBoxRatioOfExcellent";
             this.textBoxRatioOfExcellent.ReadOnly = true;
             this.textBoxRatioOfExcellent.Size = new System.Drawing.Size(231, 24);
@@ -433,7 +436,7 @@
             // textBoxNumberOfExcellent
             // 
             this.textBoxNumberOfExcellent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumberOfExcellent.Location = new System.Drawing.Point(262, 13);
+            this.textBoxNumberOfExcellent.Location = new System.Drawing.Point(279, 15);
             this.textBoxNumberOfExcellent.Name = "textBoxNumberOfExcellent";
             this.textBoxNumberOfExcellent.ReadOnly = true;
             this.textBoxNumberOfExcellent.Size = new System.Drawing.Size(231, 24);
@@ -443,7 +446,7 @@
             // 
             this.labelRatioOfExcellent.AutoSize = true;
             this.labelRatioOfExcellent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRatioOfExcellent.Location = new System.Drawing.Point(551, 19);
+            this.labelRatioOfExcellent.Location = new System.Drawing.Point(568, 21);
             this.labelRatioOfExcellent.Name = "labelRatioOfExcellent";
             this.labelRatioOfExcellent.Size = new System.Drawing.Size(35, 18);
             this.labelRatioOfExcellent.TabIndex = 90;
@@ -453,7 +456,7 @@
             // 
             this.labelNumberOfExcellent.AutoSize = true;
             this.labelNumberOfExcellent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumberOfExcellent.Location = new System.Drawing.Point(126, 19);
+            this.labelNumberOfExcellent.Location = new System.Drawing.Point(143, 21);
             this.labelNumberOfExcellent.Name = "labelNumberOfExcellent";
             this.labelNumberOfExcellent.Size = new System.Drawing.Size(119, 18);
             this.labelNumberOfExcellent.TabIndex = 89;
@@ -470,7 +473,7 @@
             "2020-2021",
             "2021-2022",
             "2022-2023"});
-            this.comboBoxYear.Location = new System.Drawing.Point(342, 103);
+            this.comboBoxYear.Location = new System.Drawing.Point(369, 199);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(231, 26);
             this.comboBoxYear.TabIndex = 51;
@@ -478,7 +481,7 @@
             // buttonPrint
             // 
             this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.Location = new System.Drawing.Point(839, 140);
+            this.buttonPrint.Location = new System.Drawing.Point(865, 235);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(105, 40);
             this.buttonPrint.TabIndex = 52;
@@ -493,7 +496,7 @@
             this.comboBoxClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxClass.FormattingEnabled = true;
             this.comboBoxClass.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.comboBoxClass.Location = new System.Drawing.Point(342, 54);
+            this.comboBoxClass.Location = new System.Drawing.Point(369, 150);
             this.comboBoxClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxClass.MaxDropDownItems = 4;
             this.comboBoxClass.Name = "comboBoxClass";
@@ -501,11 +504,31 @@
             this.comboBoxClass.TabIndex = 53;
             this.comboBoxClass.Tag = "";
             // 
+            // PanelTitle
+            // 
+            this.PanelTitle.Controls.Add(this.LabelNameProject);
+            this.PanelTitle.Location = new System.Drawing.Point(116, 32);
+            this.PanelTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelTitle.Name = "PanelTitle";
+            this.PanelTitle.Size = new System.Drawing.Size(1051, 86);
+            this.PanelTitle.TabIndex = 54;
+            // 
+            // LabelNameProject
+            // 
+            this.LabelNameProject.AutoSize = true;
+            this.LabelNameProject.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNameProject.Location = new System.Drawing.Point(146, 21);
+            this.LabelNameProject.Name = "LabelNameProject";
+            this.LabelNameProject.Size = new System.Drawing.Size(772, 46);
+            this.LabelNameProject.TabIndex = 0;
+            this.LabelNameProject.Text = "TỔNG KẾT ĐIỂM MÔN HỌC TRONG NĂM";
+            // 
             // LapBangDiemMonHocCuaLopNamHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1247, 771);
+            this.ClientSize = new System.Drawing.Size(1257, 883);
+            this.Controls.Add(this.PanelTitle);
             this.Controls.Add(this.comboBoxClass);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.comboBoxYear);
@@ -522,6 +545,8 @@
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.PanelTitle.ResumeLayout(false);
+            this.PanelTitle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -572,5 +597,7 @@
         private System.Windows.Forms.TextBox textBoxNumberOfExcellent;
         private System.Windows.Forms.ComboBox comboBoxClass;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel PanelTitle;
+        private System.Windows.Forms.Label LabelNameProject;
     }
 }
