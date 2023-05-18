@@ -12,12 +12,14 @@ namespace QuanLyHocSinh
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class THAMSO
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string MaThamSo { get; set; }
+        public Nullable<byte> TuoiToiThieu { get; set; }
+        public Nullable<byte> TuoiToiDa { get; set; }
+        public Nullable<short> SiSoToiDa { get; set; }
+        public Nullable<double> TsTX { get; set; }
+        public Nullable<double> TsGK { get; set; }
+        public Nullable<double> TsCK { get; set; }
     }
 }

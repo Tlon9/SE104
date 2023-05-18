@@ -23,9 +23,10 @@ namespace QuanLyHocSinh
         public Nullable<double> DiemGK { get; set; }
         public Nullable<double> DiemCK { get; set; }
         public Nullable<double> DiemTB { get; set; }
-        public string XepLoai { get; set; }
+        public string MaXepLoai { get; set; }
     
         public virtual HOCSINH HOCSINH { get; set; }
         public virtual MONHOC MONHOC { get; set; }
+        public virtual XEPLOAI XEPLOAI { get; set; }
     }
 }

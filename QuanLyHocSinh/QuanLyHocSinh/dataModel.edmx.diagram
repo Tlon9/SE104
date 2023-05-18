@@ -5,17 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="23b122e6f68a4cc091e2db11b74229c0" Name="Diagram1">
-        <EntityTypeShape EntityType="dataModel.CTLOP" Width="1.5" PointX="5.25" PointY="1.125" />
-        <EntityTypeShape EntityType="dataModel.DIEM" Width="1.5" PointX="5.25" PointY="6.25" />
-        <EntityTypeShape EntityType="dataModel.HOCSINH" Width="1.5" PointX="3" PointY="6.25" />
-        <EntityTypeShape EntityType="dataModel.KHOI" Width="1.5" PointX="0.75" PointY="1.375" />
-        <EntityTypeShape EntityType="dataModel.LOP" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="dataModel.MONHOC" Width="1.5" PointX="3" PointY="11.125" />
-        <EntityTypeShape EntityType="dataModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="dataModel.CTLOP" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="dataModel.DIEM" Width="1.5" PointX="6" PointY="3.25" />
+        <EntityTypeShape EntityType="dataModel.HOCSINH" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="dataModel.KHOI" Width="1.5" PointX="1.5" PointY="13.25" />
+        <EntityTypeShape EntityType="dataModel.LOP" Width="1.5" PointX="0.75" PointY="9.875" />
+        <EntityTypeShape EntityType="dataModel.MONHOC" Width="1.5" PointX="3.75" PointY="7.625" />
+        <EntityTypeShape EntityType="dataModel.THAMSO" Width="1.5" PointX="5.75" PointY="8.5" />
+        <EntityTypeShape EntityType="dataModel.XEPLOAI" Width="1.5" PointX="3.75" PointY="0.75" />
         <AssociationConnector Association="dataModel.fk_ctl_hs" />
         <AssociationConnector Association="dataModel.fk_ctl_ml" />
         <AssociationConnector Association="dataModel.fk_diem_hs" />
         <AssociationConnector Association="dataModel.fk_diem_mmh" />
+        <AssociationConnector Association="dataModel.fk_diem_xl" />
         <AssociationConnector Association="dataModel.fk_mk" />
       </Diagram>
     </edmx:Diagrams>
