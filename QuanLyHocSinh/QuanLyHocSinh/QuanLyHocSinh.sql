@@ -64,7 +64,7 @@ CREATE TABLE MONHOC
 
 CREATE TABLE CTLOP
 (	MaCTL nvarchar(20) not null,
-	MaHocSinh nvarchar(20) not null,
+	MaHocSinh nvarchar(10) not null,
 	MaLop nvarchar(20) not null,
 	constraint pk_ctl primary key(MaCTL)
 )
@@ -86,7 +86,7 @@ CREATE TABLE THANHPHAN (
 
 CREATE TABLE KETQUA_MONHOC_HOCSINH (
 	MaKetQua nvarchar(20) not null,
-	MaHocSinh nvarchar(20) not null,
+	MaHocSinh nvarchar(10) not null,
 	MaNamHoc nvarchar(20) not null,
 	MaHocKy nvarchar(20) not null,
 	MaMonHoc nvarchar(20) not null,
