@@ -1,7 +1,7 @@
-﻿CREATE DATABASE QUANLYHOCSINH
+﻿--CREATE DATABASE QUANLYHOCSINH
 --DROP DATABASE QUANLYHOCSINH 
 
-USE QUANLYHOCSINH
+--USE QUANLYHOCSINH
 
 --TAO BANG
 CREATE TABLE HOCSINH
@@ -29,8 +29,8 @@ CREATE TABLE HOCSINH
 )
 
 CREATE TABLE KHOI	
-(	MaKhoi nvarchar(20) not null,
-	TenKhoi nvarchar(30),
+(	MaKhoi	nvarchar(20)	not null,
+	TenKhoi	nvarchar(30),
 	constraint pk_mk primary key(MaKhoi)
 )
 
@@ -57,8 +57,8 @@ CREATE TABLE HOCKY (
 )
 
 CREATE TABLE MONHOC
-(	MaMonHoc nvarchar(20) not null,
-	TenMonHoc nvarchar(50),
+(	MaMonHoc	nvarchar(20) not null,
+	TenMonHoc	nvarchar(50),
 	constraint pk_mmh primary key(MaMonHoc)
 )
 
@@ -107,11 +107,11 @@ CREATE TABLE XEPLOAI
 
 CREATE TABLE THAMSO
 (	
-	MaThamSo nvarchar (20) not null,
+	MaThamSo nvarchar (20) not null default 'TS',
 	TuoiToiThieu tinyint default 15,
 	TuoiToiDa tinyint default 20,
 	SiSoToiDa smallint default 40,
-	DiemToiDaMH float default 10.0,
+	DiemToiDa float default 10.0,
 	DiemToiThieu float default 0.0,
 	Constraint pk_ts primary key (MaThamSo)
 )

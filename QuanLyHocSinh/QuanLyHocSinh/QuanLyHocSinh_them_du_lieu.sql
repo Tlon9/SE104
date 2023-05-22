@@ -1,7 +1,7 @@
 ﻿set dateformat DMY
 
 --THAM SO
-INSERT INTO THAMSO VALUES('TS1', 15, 20, 40, 10.0, 0.0)
+INSERT INTO THAMSO DEFAULT VALUES
 
 --HOC SINH
 INSERT INTO HOCSINH VALUES ('22111000',N'Nguyễn Văn Tài','Nam','01/01/2006','731 Tran Hung Dao, Q5, TpHCM','TpHCM','Kinh','Khong','0972030034','NguyenVanA@gmail.com',N'Nguyễn Anh Hùng',1970,'096302000894','0932178385',N'Giáo viên',N'Thái Văn Nga',1974,'096102000745','0873965179',N'Công nhân - Viên chức')
