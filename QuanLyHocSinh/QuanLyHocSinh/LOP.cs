@@ -24,10 +24,11 @@ namespace QuanLyHocSinh
         public string TenLop { get; set; }
         public string MaKhoi { get; set; }
         public Nullable<byte> SiSo { get; set; }
-        public string NamHoc { get; set; }
+        public string MaNamHoc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTLOP> CTLOPs { get; set; }
         public virtual KHOI KHOI { get; set; }
+        public virtual NAMHOC NAMHOC { get; set; }
     }
 }
