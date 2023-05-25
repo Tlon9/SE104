@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraCuuHocSinh));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnFindInfoStudent = new System.Windows.Forms.Button();
@@ -79,9 +80,23 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lbThongTinPhuHuynh = new System.Windows.Forms.Label();
+            this.pnFindInfoStudent = new System.Windows.Forms.Panel();
+            this.cbLop = new System.Windows.Forms.ComboBox();
+            this.cbKhoi = new System.Windows.Forms.ComboBox();
+            this.tbFindEmail = new System.Windows.Forms.TextBox();
+            this.tbFindPhoneNum = new System.Windows.Forms.TextBox();
+            this.tbFindName = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
             this.pnStudent_info.SuspendLayout();
             this.pnDadofStudent_Info.SuspendLayout();
             this.pnMomOfStudent_Info.SuspendLayout();
+            this.pnFindInfoStudent.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -99,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(19, 86);
+            this.label2.Location = new System.Drawing.Point(13, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 20);
             this.label2.TabIndex = 1;
@@ -107,19 +122,25 @@
             // 
             // BtnFindInfoStudent
             // 
+            this.BtnFindInfoStudent.BackColor = System.Drawing.SystemColors.Window;
+            this.BtnFindInfoStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnFindInfoStudent.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.BtnFindInfoStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.BtnFindInfoStudent.Location = new System.Drawing.Point(518, 74);
+            this.BtnFindInfoStudent.Image = ((System.Drawing.Image)(resources.GetObject("BtnFindInfoStudent.Image")));
+            this.BtnFindInfoStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnFindInfoStudent.Location = new System.Drawing.Point(871, 118);
             this.BtnFindInfoStudent.Name = "BtnFindInfoStudent";
-            this.BtnFindInfoStudent.Size = new System.Drawing.Size(126, 44);
+            this.BtnFindInfoStudent.Size = new System.Drawing.Size(114, 44);
             this.BtnFindInfoStudent.TabIndex = 2;
             this.BtnFindInfoStudent.Text = "Tìm kiếm";
-            this.BtnFindInfoStudent.UseVisualStyleBackColor = true;
+            this.BtnFindInfoStudent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnFindInfoStudent.UseVisualStyleBackColor = false;
             this.BtnFindInfoStudent.Click += new System.EventHandler(this.BtnFindInfoStudent_Click);
             // 
             // tbStudentID
             // 
             this.tbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbStudentID.Location = new System.Drawing.Point(196, 84);
+            this.tbStudentID.Location = new System.Drawing.Point(190, 12);
             this.tbStudentID.Name = "tbStudentID";
             this.tbStudentID.Size = new System.Drawing.Size(213, 27);
             this.tbStudentID.TabIndex = 3;
@@ -147,7 +168,7 @@
             this.pnStudent_info.Controls.Add(this.tbHoTen);
             this.pnStudent_info.Controls.Add(this.label4);
             this.pnStudent_info.Controls.Add(this.label3);
-            this.pnStudent_info.Location = new System.Drawing.Point(23, 135);
+            this.pnStudent_info.Location = new System.Drawing.Point(34, 302);
             this.pnStudent_info.Name = "pnStudent_info";
             this.pnStudent_info.Size = new System.Drawing.Size(1178, 243);
             this.pnStudent_info.TabIndex = 4;
@@ -365,7 +386,7 @@
             this.pnDadofStudent_Info.Controls.Add(this.label16);
             this.pnDadofStudent_Info.Controls.Add(this.tbHoTenCha);
             this.pnDadofStudent_Info.Controls.Add(this.label14);
-            this.pnDadofStudent_Info.Location = new System.Drawing.Point(23, 463);
+            this.pnDadofStudent_Info.Location = new System.Drawing.Point(34, 630);
             this.pnDadofStudent_Info.Name = "pnDadofStudent_Info";
             this.pnDadofStudent_Info.Size = new System.Drawing.Size(551, 261);
             this.pnDadofStudent_Info.TabIndex = 5;
@@ -488,7 +509,7 @@
             this.pnMomOfStudent_Info.Controls.Add(this.tbHoTenMe);
             this.pnMomOfStudent_Info.Controls.Add(this.label21);
             this.pnMomOfStudent_Info.Controls.Add(this.label15);
-            this.pnMomOfStudent_Info.Location = new System.Drawing.Point(651, 463);
+            this.pnMomOfStudent_Info.Location = new System.Drawing.Point(662, 630);
             this.pnMomOfStudent_Info.Name = "pnMomOfStudent_Info";
             this.pnMomOfStudent_Info.Size = new System.Drawing.Size(550, 261);
             this.pnMomOfStudent_Info.TabIndex = 6;
@@ -602,25 +623,166 @@
             // 
             this.lbThongTinPhuHuynh.AutoSize = true;
             this.lbThongTinPhuHuynh.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(447, 400);
+            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(458, 567);
             this.lbThongTinPhuHuynh.Name = "lbThongTinPhuHuynh";
             this.lbThongTinPhuHuynh.Size = new System.Drawing.Size(386, 32);
             this.lbThongTinPhuHuynh.TabIndex = 7;
             this.lbThongTinPhuHuynh.Text = "Thông tin phụ huynh học sinh";
+            // 
+            // pnFindInfoStudent
+            // 
+            this.pnFindInfoStudent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnFindInfoStudent.Controls.Add(this.cbLop);
+            this.pnFindInfoStudent.Controls.Add(this.cbKhoi);
+            this.pnFindInfoStudent.Controls.Add(this.tbFindEmail);
+            this.pnFindInfoStudent.Controls.Add(this.tbFindPhoneNum);
+            this.pnFindInfoStudent.Controls.Add(this.tbFindName);
+            this.pnFindInfoStudent.Controls.Add(this.label30);
+            this.pnFindInfoStudent.Controls.Add(this.label29);
+            this.pnFindInfoStudent.Controls.Add(this.label28);
+            this.pnFindInfoStudent.Controls.Add(this.label27);
+            this.pnFindInfoStudent.Controls.Add(this.label26);
+            this.pnFindInfoStudent.Controls.Add(this.label2);
+            this.pnFindInfoStudent.Controls.Add(this.tbStudentID);
+            this.pnFindInfoStudent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 88);
+            this.pnFindInfoStudent.Name = "pnFindInfoStudent";
+            this.pnFindInfoStudent.Size = new System.Drawing.Size(739, 174);
+            this.pnFindInfoStudent.TabIndex = 8;
+            // 
+            // cbLop
+            // 
+            this.cbLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(406, 54);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(166, 28);
+            this.cbLop.TabIndex = 14;
+            this.cbLop.Text = "----- Chọn lớp -----";
+            // 
+            // cbKhoi
+            // 
+            this.cbKhoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbKhoi.FormattingEnabled = true;
+            this.cbKhoi.Location = new System.Drawing.Point(82, 55);
+            this.cbKhoi.Name = "cbKhoi";
+            this.cbKhoi.Size = new System.Drawing.Size(170, 28);
+            this.cbKhoi.TabIndex = 13;
+            this.cbKhoi.Text = "----- Chọn khối -----";
+            this.cbKhoi.SelectedValueChanged += new System.EventHandler(this.cbKhoi_SelectedValueChanged);
+            // 
+            // tbFindEmail
+            // 
+            this.tbFindEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbFindEmail.Location = new System.Drawing.Point(460, 132);
+            this.tbFindEmail.Name = "tbFindEmail";
+            this.tbFindEmail.Size = new System.Drawing.Size(228, 27);
+            this.tbFindEmail.TabIndex = 11;
+            // 
+            // tbFindPhoneNum
+            // 
+            this.tbFindPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbFindPhoneNum.Location = new System.Drawing.Point(138, 132);
+            this.tbFindPhoneNum.Name = "tbFindPhoneNum";
+            this.tbFindPhoneNum.Size = new System.Drawing.Size(197, 27);
+            this.tbFindPhoneNum.TabIndex = 10;
+            // 
+            // tbFindName
+            // 
+            this.tbFindName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbFindName.Location = new System.Drawing.Point(100, 94);
+            this.tbFindName.Name = "tbFindName";
+            this.tbFindName.Size = new System.Drawing.Size(329, 27);
+            this.tbFindName.TabIndex = 9;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label30.Location = new System.Drawing.Point(379, 135);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(61, 20);
+            this.label30.TabIndex = 8;
+            this.label30.Text = "Email: ";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label29.Location = new System.Drawing.Point(13, 132);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(116, 20);
+            this.label29.TabIndex = 7;
+            this.label29.Text = "Số điện thoại: ";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label28.Location = new System.Drawing.Point(13, 94);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(69, 20);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "Họ tên: ";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label27.Location = new System.Drawing.Point(334, 54);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(47, 20);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Lớp: ";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label26.Location = new System.Drawing.Point(13, 54);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(52, 20);
+            this.label26.TabIndex = 4;
+            this.label26.Text = "Khối: ";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(871, 186);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(126, 44);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Nhập lại";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label31.Location = new System.Drawing.Point(30, 265);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(662, 20);
+            this.label31.TabIndex = 10;
+            this.label31.Text = "Lưu ý: Cần nhập ít nhất 4 trường dữ liệu gồm Mã học sinh, Khối, Lớp, Họ Tên để tr" +
+    "a cứu.";
             // 
             // TraCuuHocSinh
             // 
             this.AcceptButton = this.BtnFindInfoStudent;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1426, 916);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pnFindInfoStudent);
             this.Controls.Add(this.lbThongTinPhuHuynh);
             this.Controls.Add(this.pnMomOfStudent_Info);
             this.Controls.Add(this.pnDadofStudent_Info);
             this.Controls.Add(this.pnStudent_info);
-            this.Controls.Add(this.tbStudentID);
             this.Controls.Add(this.BtnFindInfoStudent);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TraCuuHocSinh";
             this.Text = "TraCuuHocSinh";
@@ -630,6 +792,8 @@
             this.pnDadofStudent_Info.PerformLayout();
             this.pnMomOfStudent_Info.ResumeLayout(false);
             this.pnMomOfStudent_Info.PerformLayout();
+            this.pnFindInfoStudent.ResumeLayout(false);
+            this.pnFindInfoStudent.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -688,5 +852,18 @@
         private System.Windows.Forms.TextBox tbHoTenMe;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lbThongTinPhuHuynh;
+        private System.Windows.Forms.Panel pnFindInfoStudent;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox tbFindEmail;
+        private System.Windows.Forms.TextBox tbFindPhoneNum;
+        private System.Windows.Forms.TextBox tbFindName;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbLop;
+        private System.Windows.Forms.ComboBox cbKhoi;
+        private System.Windows.Forms.Label label31;
     }
 }
