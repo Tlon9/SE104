@@ -78,9 +78,9 @@ CREATE TABLE DIEM
 )
 
 CREATE TABLE THANHPHAN (
-	MaThanhPhan nvarchar(20) not null,
-	TenThanhPhan nvarchar(30),
-	TrongSo float,
+	MaThanhPhan		nvarchar(20) not null,
+	TenThanhPhan	nvarchar(30),
+	TrongSo			float,
 	constraint pk_mtp primary key(MaThanhPhan)
 )
 
@@ -97,22 +97,22 @@ CREATE TABLE KETQUA_MONHOC_HOCSINH (
 
 CREATE TABLE XEPLOAI
 (
-	MaXepLoai nvarchar (20) not null,
-	TenXepLoai nvarchar (30),
-	DiemToiThieu float,
-	DiemToiDa float,
-	DiemKhongChe float, -- Ap dung khi xet Diem
+	MaXepLoai		nvarchar (20) not null,
+	TenXepLoai		nvarchar (30),
+	DiemToiThieu	float,
+	DiemToiDa		float,
+	DiemKhongChe	float, -- Ap dung khi xet Diem
 	Constraint pk_xl primary key (MaXepLoai)
 )
 
 CREATE TABLE THAMSO
 (	
-	MaThamSo nvarchar (20) not null default 'TS',
-	TuoiToiThieu tinyint default 15,
-	TuoiToiDa tinyint default 20,
-	SiSoToiDa smallint default 40,
-	DiemToiDa float default 10.0,
-	DiemToiThieu float default 0.0,
+	MaThamSo		nvarchar(20)	default 'TS'	not null,
+	TuoiToiThieu	tinyint			default 15,
+	TuoiToiDa		tinyint			default 20,
+	SiSoToiDa		smallint		default 40,
+	DiemToiDa		float			default 10.0,
+	DiemToiThieu	float			default 0.0,
 	Constraint pk_ts primary key (MaThamSo)
 )
 
@@ -123,9 +123,9 @@ CREATE TABLE PHANQUYEN (
 )
 
 CREATE TABLE TAIKHOAN (
-	MaTaiKhoan nvarchar(20) not null,
-	TenDangNhap nvarchar(60),
-	MatKhau nvarchar(60)
+	MaTaiKhoan	nvarchar(20)	not null,
+	TenDangNhap	nvarchar(60),
+	MatKhau		nvarchar(60)
 )
 
 --TAO KHOA NGOAI
