@@ -17,7 +17,7 @@ namespace QuanLyHocSinh
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public XEPLOAI()
         {
-            this.DIEMs = new HashSet<DIEM>();
+            this.KETQUA_MONHOC_HOCSINH = new HashSet<KETQUA_MONHOC_HOCSINH>();
         }
     
         public string MaXepLoai { get; set; }
@@ -27,6 +27,6 @@ namespace QuanLyHocSinh
         public Nullable<double> DiemKhongChe { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DIEM> DIEMs { get; set; }
+        public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace QuanLyHocSinh
         public HOCSINH()
         {
             this.CTLOPs = new HashSet<CTLOP>();
-            this.DIEMs = new HashSet<DIEM>();
+            this.KETQUA_MONHOC_HOCSINH = new HashSet<KETQUA_MONHOC_HOCSINH>();
         }
     
         public string MaHocSinh { get; set; }
@@ -32,12 +32,12 @@ namespace QuanLyHocSinh
         public string SDT { get; set; }
         public string Email { get; set; }
         public string HoTenCha { get; set; }
-        public Nullable<int> NamSinh_Cha { get; set; }
+        public Nullable<short> NamSinh_Cha { get; set; }
         public string CCCD_Cha { get; set; }
         public string SDT_Cha { get; set; }
         public string NgheNghiep_Cha { get; set; }
         public string HoTenMe { get; set; }
-        public Nullable<int> NamSinh_Me { get; set; }
+        public Nullable<short> NamSinh_Me { get; set; }
         public string CCCD_Me { get; set; }
         public string SDT_Me { get; set; }
         public string NgheNghiep_Me { get; set; }
@@ -45,6 +45,6 @@ namespace QuanLyHocSinh
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTLOP> CTLOPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DIEM> DIEMs { get; set; }
+        public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
     }
 }

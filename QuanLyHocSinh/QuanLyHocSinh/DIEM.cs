@@ -15,18 +15,11 @@ namespace QuanLyHocSinh
     public partial class DIEM
     {
         public string MaDiem { get; set; }
-        public string MaMonHoc { get; set; }
-        public string MaHocSinh { get; set; }
-        public string NamHoc { get; set; }
-        public string HocKy { get; set; }
-        public Nullable<double> DiemTX { get; set; }
-        public Nullable<double> DiemGK { get; set; }
-        public Nullable<double> DiemCK { get; set; }
-        public Nullable<double> DiemTB { get; set; }
-        public string MaXepLoai { get; set; }
+        public string MaKetQua { get; set; }
+        public string MaThanhPhan { get; set; }
+        public Nullable<double> Diem1 { get; set; }
     
-        public virtual HOCSINH HOCSINH { get; set; }
-        public virtual MONHOC MONHOC { get; set; }
-        public virtual XEPLOAI XEPLOAI { get; set; }
+        public virtual KETQUA_MONHOC_HOCSINH KETQUA_MONHOC_HOCSINH { get; set; }
+        public virtual THANHPHAN THANHPHAN { get; set; }
     }
 }

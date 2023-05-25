@@ -158,3 +158,18 @@ ALTER TABLE DIEM ADD CONSTRAINT fk_diem_kq
 	FOREIGN KEY(MaKetQua) REFERENCES KETQUA_MONHOC_HOCSINH(MaKetQua)
 ALTER TABLE DIEM ADD CONSTRAINT fk_diem_tp
 	FOREIGN KEY(MaThanhPhan) REFERENCES THANHPHAN(MaThanhPhan)
+
+
+--Tong Ket Mon Hoc Ky
+CREATE PROCEDURE TongKetMonHocKy 
+	@MaMonHoc nvarchar(20),
+	@MaHocKy nvarchar(20) ,
+	@MaNamHoc nvarchar(20)
+AS
+BEGIN
+	select TenLop, MaXepLoai, Count(KQ.MaHocSinh) as SoLuong
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
+			and KQ.MaMonHoc = @MaMonHoc and KQ.MaNamHoc = @MaNamHoc and KQ.MaHocKy = @MaHocKy and L.MaNamHoc = @MaNamHoc
+	group by CT.MaLop, L.TenLop, KQ.MaXepLoai
+END
