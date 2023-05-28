@@ -17,5 +17,8 @@ namespace QuanLyHocSinh
         public string MaTaiKhoan { get; set; }
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
+        public string MaPhanQuyen { get; set; }
+    
+        public virtual PHANQUYEN PHANQUYEN { get; set; }
     }
 }

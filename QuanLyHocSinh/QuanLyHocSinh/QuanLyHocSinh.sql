@@ -78,9 +78,9 @@ CREATE TABLE DIEM
 )
 
 CREATE TABLE THANHPHAN (
-	MaThanhPhan		nvarchar(20) not null,
-	TenThanhPhan	nvarchar(30),
-	TrongSo			float,
+	MaThanhPhan nvarchar(20) not null,
+	TenThanhPhan nvarchar(30),
+	TrongSo float,
 	constraint pk_mtp primary key(MaThanhPhan)
 )
 
@@ -97,24 +97,30 @@ CREATE TABLE KETQUA_MONHOC_HOCSINH (
 
 CREATE TABLE XEPLOAI
 (
-	MaXepLoai		nvarchar (20) not null,
-	TenXepLoai		nvarchar (30),
-	DiemToiThieu	float,
-	DiemToiDa		float,
-	DiemKhongChe	float, -- Ap dung khi xet Diem
+	MaXepLoai nvarchar (20) not null,
+	TenXepLoai nvarchar (30),
+	DiemToiThieu float,
+	DiemToiDa float,
+	DiemKhongChe float, -- Ap dung khi xet Diem
 	Constraint pk_xl primary key (MaXepLoai)
 )
 
+UPDATE XEPLOAI
+ORDER BY DiemToiThieu DESC
+
+
 CREATE TABLE THAMSO
 (	
-	MaThamSo		nvarchar(20)	default 'TS'	not null,
-	TuoiToiThieu	tinyint			default 15,
-	TuoiToiDa		tinyint			default 20,
-	SiSoToiDa		smallint		default 40,
-	DiemToiDa		float			default 10.0,
-	DiemToiThieu	float			default 0.0,
+	MaThamSo nvarchar (20) not null default 'TS',
+	TuoiToiThieu tinyint default 15,
+	TuoiToiDa tinyint default 20,
+	SiSoToiDa smallint default 40,
+	DiemToiDa float default 10.0,
+	DiemToiThieu float default 0.0,
 	Constraint pk_ts primary key (MaThamSo)
 )
+
+DROP TABLE TAIKHOAN
 
 CREATE TABLE PHANQUYEN (
 	MaPhanQuyen nvarchar(20) not null,
@@ -123,10 +129,15 @@ CREATE TABLE PHANQUYEN (
 )
 
 CREATE TABLE TAIKHOAN (
-	MaTaiKhoan	nvarchar(20)	not null,
-	TenDangNhap	nvarchar(60),
-	MatKhau		nvarchar(60)
+	MaTaiKhoan nvarchar(20) not null,
+	TenDangNhap nvarchar(60),
+	MatKhau nvarchar(60),
+	MaPhanQuyen nvarchar(20) not null
+	constraint pk_tk primary key(MaTaiKhoan)
 )
+
+ALTER TABLE TAIKHOAN ADD CONSTRAINT fk_tk_pq
+	FOREIGN KEY(MaPhanQuyen) REFERENCES PHANQUYEN(MaPhanQuyen) 
 
 --TAO KHOA NGOAI
 --Bang LOP
@@ -159,7 +170,6 @@ ALTER TABLE DIEM ADD CONSTRAINT fk_diem_kq
 ALTER TABLE DIEM ADD CONSTRAINT fk_diem_tp
 	FOREIGN KEY(MaThanhPhan) REFERENCES THANHPHAN(MaThanhPhan)
 
-
 --Tong Ket Mon Hoc Ky
 CREATE PROCEDURE TongKetMonHocKy 
 	@MaMonHoc nvarchar(20),
@@ -172,4 +182,52 @@ BEGIN
 	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
 			and KQ.MaMonHoc = @MaMonHoc and KQ.MaNamHoc = @MaNamHoc and KQ.MaHocKy = @MaHocKy and L.MaNamHoc = @MaNamHoc
 	group by CT.MaLop, L.TenLop, KQ.MaXepLoai
+	order by TenLop
 END
+
+--Tong Ket Mon Nam Hoc
+CREATE PROCEDURE TongKetMonNamHoc
+	@MaMonHoc nvarchar(20),
+	@MaNamHoc nvarchar(20)
+AS
+BEGIN
+	select TenLop, KQ.MaHocSinh, MaHocKy as HocKy, sum(DiemTB) as  DiemTB
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where kq.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop  
+			and KQ.MaMonHoc = @MaMonHoc and KQ.MaNamHoc = @MaNamHoc and L.MaNamHoc = @MaNamHoc
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
+	order by TenLop
+END
+
+select TenLop, KQ.MaHocSinh, MaHocKy as HocKy, sum(DiemTB) as  DiemTB
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where kq.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop  
+			and KQ.MaMonHoc = 'DL10' and KQ.MaNamHoc = 'NH2223' and L.MaNamHoc = 'NH2223'
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
+	order by TenLop
+
+
+--Tong Ket Hoc Ky
+CREATE PROCEDURE TongKetHocKy
+	@MaHocKy nvarchar(20),
+	@MaNamHoc nvarchar(20)
+AS
+BEGIN
+	select TenLop, KQ.MaHocSinh, sum(KQ.DiemTB) as DiemTB, min(KQ.DiemTB) as DiemKC, count(KQ.MaMonHoc) as SoLuong
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
+			and KQ.MaNamHoc = @MaNamHoc and KQ.MaHocKy = @MaHocKy and L.MaNamHoc = @MaNamHoc
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh
+	order by TenLop
+END
+
+select TenLop, KQ.MaHocSinh, KQ.MaHocKy, sum(KQ.DiemTB) as DiemTB, min(KQ.DiemTB) as DiemKC, count(KQ.MaMonHoc) as SoLuong
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
+			and KQ.MaNamHoc = 'NH2223'  and L.MaNamHoc = 'NH2223'
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
+	order by TenLop
+
+select 
+from 
+where 

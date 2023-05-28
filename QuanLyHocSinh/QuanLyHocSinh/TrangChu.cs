@@ -26,33 +26,19 @@ namespace QuanLyHocSinh
             this.Show();
         }
 
-        private void MenuItemSubjectScore_Click(object sender, EventArgs e)
-        {
-            LapBangDiemMonHoc newform = new LapBangDiemMonHoc();
-            this.Hide();
-            newform.ShowDialog();
-            this.Show();
-        }
-
-        private void MenuItemScoreBoard_Click(object sender, EventArgs e)
-        {
-            BangDiemHocSinh newform = new BangDiemHocSinh();
-            this.Hide();
-            newform.ShowDialog();
-            this.Show();
-        }
-
-        private void MenuItemSubjectScoreYear_Click(object sender, EventArgs e)
-        {
-            LapBangDiemMonHocCuaLopNamHoc newform = new LapBangDiemMonHocCuaLopNamHoc();
-            this.Hide();
-            newform.ShowDialog();
-            this.Show();
-        }
 
         private void MenuItemAddStudent_Click(object sender, EventArgs e)
         {
             TiepNhanHocSinh newform = new TiepNhanHocSinh();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
+
+
+        private void MenuItemClassScore_Click(object sender, EventArgs e)
+        {
+            BangDiemTongKetLop newform = new BangDiemTongKetLop();
             this.Hide();
             newform.ShowDialog();
             this.Show();
@@ -66,12 +52,25 @@ namespace QuanLyHocSinh
             this.Show();
         }
 
-        private void MenuItemClassScore_Click(object sender, EventArgs e)
+        private void MenuItemScoreBoard_Click(object sender, EventArgs e)
         {
-            BangDiemTongKetLop newform = new BangDiemTongKetLop();
+            BangDiemHocSinh newform = new BangDiemHocSinh();
             this.Hide();
             newform.ShowDialog();
             this.Show();
+        }
+
+        private void MenuItemSubjectScore_Click(object sender, EventArgs e)
+        {
+            LapBangDiemMonHoc newform = new LapBangDiemMonHoc();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
+
+        private void MenuItemSubjectScoreYear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
