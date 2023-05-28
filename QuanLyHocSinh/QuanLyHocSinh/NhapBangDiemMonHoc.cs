@@ -40,7 +40,7 @@ namespace QuanLyHocSinh
 
         private void buttonInput_Click(object sender, EventArgs e)
         {
-            if (panelPrint.Visible) { panelPrint.Hide(); }
+            /*if (panelPrint.Visible) { panelPrint.Hide(); }
             if (panelInput.Visible) { panelInput.Hide(); }
             var comboxID = from obj in data.CTLOPs where obj.MaLop == comboBoxClass.SelectedValue.ToString() select obj.MaHocSinh;
             comboBoxID.DataSource = comboxID.ToList();
@@ -54,12 +54,12 @@ namespace QuanLyHocSinh
             {
                 ShowGrid();
                 panelInput.Show();
-            }
+            }*/
             
         }
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            if (panelInput.Visible) { panelInput.Hide(); }
+            /*if (panelInput.Visible) { panelInput.Hide(); }
             if (panelPrint.Visible) { panelPrint.Hide(); }
             var reSource = from scr in data.DIEMs
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
@@ -110,9 +110,9 @@ namespace QuanLyHocSinh
 
                 panelPrint.Show();
                 dataGridView2.Show();
-            }
+            }*/
         }
-        string funcXepLoai(string t)
+        /*string funcXepLoai(string t)
         {
             var reSource = from r in data.XEPLOAIs
                            select r;
@@ -129,10 +129,10 @@ namespace QuanLyHocSinh
                 }
             }
             return "HSR";
-        }
+        }*/
         private void comboBoxID_SelectedValueChanged(object sender, EventArgs e)
         {
-            var a = from obj in data.HOCSINHs where obj.MaHocSinh == comboBoxID.Text select obj.HoTen;
+            /*var a = from obj in data.HOCSINHs where obj.MaHocSinh == comboBoxID.Text select obj.HoTen;
             textBoxName.Text = a.ToList().SingleOrDefault();
             var reSource1 = from scr in data.DIEMs
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
@@ -154,11 +154,11 @@ namespace QuanLyHocSinh
                 textBoxScore_3.Text = null;
                 textBoxAverageScore.Text = null;
                 textBoxClassify.Text = null;
-            }
+            }*/
         }
         void ShowGrid()
         {
-            var reSource = from scr in data.DIEMs
+            /*var reSource = from scr in data.DIEMs
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in data.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
                             where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && cls.MaLop == comboBoxClass.Text && scr.HocKy == comboBoxSemester.Text
@@ -178,23 +178,23 @@ namespace QuanLyHocSinh
                 dataGridView1.Columns[5].HeaderCell.Value = "Điểm TB";
                 dataGridView1.Columns[6].HeaderCell.Value = "Xếp loại";
                 dataGridView1.Show();
-            }
+            }*/
         }
         private void buttonLook_Click(object sender, EventArgs e)
         {
-            ShowGrid();
+            //ShowGrid();
         }
-        THAMSO getTHAMSO()
+        /*THAMSO getTHAMSO()
         {
             var ratio = from r in data.THAMSOes
                         select new { TuoiToiThieu = r.TuoiToiThieu, TuoiToiDa = r.TuoiToiDa, SiSoToiDa = r.SiSoToiDa, tsTX = r.TsTX, tsGK = r.TsGK, tsCK = r.TsCK };
             var ratio2 = ratio.ToList().SingleOrDefault();
             THAMSO v = new THAMSO() { TuoiToiThieu = ratio2.TuoiToiThieu, TuoiToiDa = ratio2.TuoiToiDa, SiSoToiDa = ratio2.SiSoToiDa, TsTX = ratio2.tsTX, TsGK = ratio2.tsGK, TsCK = ratio2.tsCK };
             return v;
-        }
+        }*/
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var reSource1 = from scr in data.DIEMs
+            /*var reSource1 = from scr in data.DIEMs
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             where comboBoxID.Text == scr.MaHocSinh && comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && comboBoxSemester.Text == scr.HocKy && cls.MaLop == comboBoxClass.Text
                             select scr.MaDiem;
@@ -277,14 +277,14 @@ namespace QuanLyHocSinh
                 textBoxClassify.Text = tenxl;
             else
                 textBoxClassify.Text = string.Empty;
-            ShowGrid();
+            ShowGrid();*/
         }
 
 
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            var reSource1 = from scr in data.DIEMs
+            /*var reSource1 = from scr in data.DIEMs
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             where comboBoxID.Text == scr.MaHocSinh && comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedItem == scr.NamHoc && comboBoxSemester.Text == scr.HocKy && cls.MaLop == comboBoxClass.Text
                             select scr.MaDiem;
@@ -299,23 +299,23 @@ namespace QuanLyHocSinh
             textBoxScore_3.Text = null;
             textBoxAverageScore.Text = string.Empty;
             textBoxClassify.Text = string.Empty;
-            ShowGrid();
+            ShowGrid();*/
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string name;
+            /*string name;
             if (e.RowIndex > -1 && dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
             {
                 name = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 comboBoxID.Text = name;
-            }
+            }*/
 
         }
 
         private void textBoxScore_1_TextChanged(object sender, EventArgs e)
         {
-            THAMSO v = getTHAMSO();
+            /*THAMSO v = getTHAMSO();
             if (Double.TryParse(textBoxScore_1.Text, out double score))
             {
                 if (score < 0 || score > 10)
@@ -326,7 +326,7 @@ namespace QuanLyHocSinh
             else if (textBoxScore_1.Text != string.Empty)
             {
                 MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            }*/
         }
         private void textBoxScore_2_TextChanged(object sender, EventArgs e)
         {

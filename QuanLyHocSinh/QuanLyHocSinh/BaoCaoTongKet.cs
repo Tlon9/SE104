@@ -36,122 +36,154 @@ namespace QuanLyHocSinh
         public BaoCaoTongKet()
         {
             InitializeComponent();
-            PanelStudent.Hide();
-            PanelStudent2.Hide();
-            PanelStudent3.Hide();
             PanelStudent4.Hide();
-            dataGridViewReport.Hide();
-            dataGridViewReport2.Hide();
-            dataGridViewReport3.Hide();
             dataGridViewReport4.Hide();
             dataEntities data = new dataEntities();
+            //Get source
             var ComboBoxSubjectsSource = from obj in data.MONHOCs
-                           select obj;
+                                      select obj;
+
+            var ComboBoxYearsSource = from obj in data.NAMHOCs
+                                      select obj;
+
+            var ComboBoxSemestersSource = from obj in data.HOCKies
+                                          select obj;
+
             ComboBoxSubjects.DataSource = ComboBoxSubjectsSource.ToList();
             ComboBoxSubjects.DisplayMember = "TenMonHoc";
             ComboBoxSubjects.ValueMember = "MaMonHoc";
+
             ComboBoxSubjects2.DataSource = ComboBoxSubjectsSource.ToList();
             ComboBoxSubjects2.DisplayMember = "TenMonHoc";
             ComboBoxSubjects.ValueMember = "MaMonHoc";
+
+            ComboBoxYears.DataSource = ComboBoxYearsSource.ToList();
+            ComboBoxYears.DisplayMember = "NamHoc1";
+            ComboBoxYears.ValueMember = "MaNamHoc";
+
+            ComboBoxYears2.DataSource = ComboBoxYearsSource.ToList();
+            ComboBoxYears2.DisplayMember = "NamHoc1";
+            ComboBoxYears2.ValueMember = "MaNamHoc";
+
+            ComboBoxYears3.DataSource = ComboBoxYearsSource.ToList();
+            ComboBoxYears3.DisplayMember = "NamHoc1";
+            ComboBoxYears3.ValueMember = "MaNamHoc";
+
+            ComboBoxYears4.DataSource = ComboBoxYearsSource.ToList();
+            ComboBoxYears4.DisplayMember = "NamHoc1";
+            ComboBoxYears4.ValueMember = "MaNamHoc";
+
+            ComboBoxSemesters.DataSource = ComboBoxSemestersSource.ToList();
+            ComboBoxSemesters.DisplayMember = "HocKy1";
+            ComboBoxSemesters.ValueMember = "MaHocKy";
+
+            ComboBoxSemesters2.DataSource = ComboBoxSemestersSource.ToList();
+            ComboBoxSemesters2.DisplayMember = "HocKy1";
+            ComboBoxSemesters2.ValueMember = "MaHocKy";
+
         }
 
 
         private void ButtonReport_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            var Source = from scr in dtb.DIEMs
-                           join cls_detail in dtb.CTLOPs on scr.MaHocSinh equals cls_detail.MaHocSinh
-                           join cls in dtb.LOPs on cls_detail.MaLop equals cls.MaLop
-                           where ComboBoxSubjects.SelectedValue == scr.MaMonHoc && ComboBoxYears.SelectedItem == scr.NamHoc 
-                                 && ComboBoxSemesters.SelectedItem == scr.HocKy && scr.NamHoc == cls.NamHoc
-                           group new {cls_detail, cls, scr }
-                           by new { cls_detail.MaLop, cls.TenLop, scr.MaXepLoai}
-                           into grp
-                           select new { Tenlop = grp.Key.TenLop, XepLoai = grp.Key.MaXepLoai, Soluong = grp.Count()};
-            if (Source.Count() == 0)
+            DataTable tbl = new DataTable();
+            
+            var Source = dtb.TongKetMonHocKy(ComboBoxSubjects.SelectedValue.ToString(),ComboBoxSemesters.SelectedValue.ToString(),ComboBoxYears.SelectedValue.ToString());
+            var reSource = Source.ToList();
+            var sum = 0;
+            
+
+            if (reSource.Count() == 0)
             {
                 MessageBox.Show("Không có dữ liệu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                var reSource = new List<reportformat>();
-                var temp = new reportformat();
-                var index = -1;
-                foreach (var item in Source)
+                tbl.Columns.Add("STT", typeof(string));
+                tbl.Columns.Add("Lớp", typeof(string));
+                tbl.Columns.Add("Sĩ số", typeof(int));
+                foreach (var item in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
                 {
-                    if (index == -1 || (index != -1 && reSource[index].LOP != item.Tenlop))
-                    {
-                        index += 1;
-                        temp.STT = index + 1;
-                        temp.LOP = item.Tenlop;
-                        temp.SISO = 0;
-                        temp.GIOI = 0;
-                        temp.KHA = 0;
-                        temp.TB = 0;
-                        temp.YEU = 0;
-                        temp.KEM = 0;
-                        reSource.Add(temp);
-                    }
-                    temp = reSource[index];
-                    switch (item.XepLoai.ToString())
-                    {
-                        case "HSG":
-                            temp.GIOI += item.Soluong;
-                            break;
-                        case "HSK":
-                            temp.KHA += item.Soluong;
-                            break;
-                        case "HSTB":
-                            temp.TB += item.Soluong;
-                            break;
-                        case "HSY":
-                            temp.YEU += item.Soluong;
-                            break;
-                        case "HSKEM":
-                            temp.KEM += item.Soluong;
-                            break;
-                    }
-                    temp.SISO += item.Soluong;
-                    reSource[index] = temp;
+                    tbl.Columns.Add(item.TenXepLoai, typeof(int));
                 }
-                int Gioi = 0;
-                int Kha = 0;
-                int Tb = 0;
-                int Yeu = 0;
-                int Kem = 0;
-                int TongSo = 0;
+                var index = -1;
+                string cls = "";
+                int num = 0;
                 foreach (var item in reSource)
                 {
-                    Gioi += item.GIOI;
-                    Kha += item.KHA;
-                    Tb += item.TB;
-                    Yeu += item.YEU;
-                    Kem += item.KEM;
-                    TongSo += item.SISO;
+                    sum += item.SoLuong.GetValueOrDefault();
+                    if (index == -1 || (index != -1 && cls != item.TenLop))
+                    {
+                        DataRow row = tbl.NewRow();
+                        cls = item.TenLop;
+                        num = item.SoLuong.GetValueOrDefault();
+                        index += 1;
+                        row["STT"] = index+1;
+                        row["Lớp"] = item.TenLop;
+                        row["Sĩ số"] = num;
+                        foreach (var item2 in dtb.XEPLOAIs)
+                        {
+                            row[item2.TenXepLoai] = 0;
+                        }
+                        var TenXepLoai = from obj in dtb.XEPLOAIs
+                                         where obj.MaXepLoai == item.MaXepLoai
+                                         select obj.TenXepLoai;
+                        row[TenXepLoai.FirstOrDefault().ToString()] = item.SoLuong;
+                        tbl.Rows.Add(row);
+                    }
+                    else
+                    {
+                        var TenXepLoai = from obj in dtb.XEPLOAIs
+                                         where obj.MaXepLoai == item.MaXepLoai
+                                         select obj.TenXepLoai;
+                        
+                        tbl.Rows[index][TenXepLoai.FirstOrDefault().ToString()] = item.SoLuong;
+                        num += item.SoLuong.GetValueOrDefault();
+                        tbl.Rows[index]["Sĩ số"] = num;
+                    }
                 }
-                double ratio1 = 100 * Gioi / TongSo;
-                double ratio2 = 100 * Kha / TongSo;
-                double ratio3 = 100 * Tb / TongSo;
-                double ratio4 = 100 * Yeu / TongSo;
-                double ratio5 = 100 * Kem / TongSo;
+                DataTable ratio_Source = new DataTable();
+                ratio_Source.Columns.Add("Xếp loại", typeof(string));
+                ratio_Source.Columns.Add("Số lượng", typeof(int));
+                ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
+                foreach (var item in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
+                {
+                    DataRow row_ratio = ratio_Source.NewRow();
+                    row_ratio["Xếp loại"] = item.TenXepLoai;
+                    int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
+                    row_ratio["Số lượng"] = count;
+                    row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * count / sum), 2);
+                    ratio_Source.Rows.Add(row_ratio);
+                }
+                
+                var TenMonHoc = from obj in dtb.MONHOCs
+                                where obj.MaMonHoc == ComboBoxSubjects.SelectedValue
+                                select obj.TenMonHoc;
+                var NamHoc = from obj in dtb.NAMHOCs
+                                where obj.MaNamHoc == ComboBoxYears.SelectedValue
+                                select obj.NamHoc1;
+                
+              
+                LabelNameReportGridview.Text = $"BẢNG THỐNG KÊ MÔN {TenMonHoc.FirstOrDefault().ToString().ToUpper()} HỌC KỲ {ComboBoxSemesters.SelectedValue.ToString()} NĂM {NamHoc.FirstOrDefault().ToString().ToUpper()}";
+                LabelNameReportGridview.Show();
 
-                textBoxStudent.Text = TongSo.ToString();
-                textBoxStudent1.Text = Gioi.ToString();
-                textBoxStudent2.Text = Kha.ToString();
-                textBoxStudent3.Text = Tb.ToString();
-                textBoxStudent4.Text = Yeu.ToString();
-                textBoxStudent5.Text = Kem.ToString();
+                LabelNameRatio.Show();
 
-                textBoxRatio1.Text = Math.Round(ratio1, 2).ToString() + '%';
-                textBoxRatio2.Text = Math.Round(ratio2, 2).ToString() + '%';
-                textBoxRatio3.Text = Math.Round(ratio3, 2).ToString() + '%';
-                textBoxRatio4.Text = Math.Round(ratio4, 2).ToString() + '%';
-                textBoxRatio5.Text = Math.Round(ratio5, 2).ToString() + '%';
+                dataGridViewRatio.DataSource = ratio_Source;
+                dataGridViewRatio.Show();
 
-                dataGridViewReport.DataSource = reSource;
-                PanelStudent.Show();
+
+                ChartRatio.DataSource = ratio_Source;
+                ChartRatio.Series[0].XValueMember = "Xếp loại";
+                ChartRatio.Series[0].YValueMembers = "Tỉ lệ (%)";
+                ChartRatio.Series[0].IsValueShownAsLabel = true;
+                ChartRatio.Show();
+
+                dataGridViewReport.DataSource = tbl;
                 dataGridViewReport.Show();
             }
+            
         }
 
 
@@ -159,22 +191,37 @@ namespace QuanLyHocSinh
         private void ButtonReport2_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            var Source = from scr in dtb.DIEMs
-                         join cls_detail in dtb.CTLOPs on scr.MaHocSinh equals cls_detail.MaHocSinh
-                         join cls in dtb.LOPs on cls_detail.MaLop equals cls.MaLop
-                         where ComboBoxSubjects2.SelectedValue == scr.MaMonHoc && ComboBoxYears2.SelectedItem == scr.NamHoc
-                               && scr.NamHoc == cls.NamHoc
-                         group new { cls_detail, cls, scr }
-                         by new { cls_detail.MaLop, cls.TenLop, scr.MaHocSinh}
-                         into grp
-                         select new { Tenlop = grp.Key.TenLop, DiemTb = grp.Sum(row => row.scr.DiemTB), Soluong = grp.Count() };
+            DataTable tbl = new DataTable();
+
+            var Source = dtb.TongKetMonNamHoc(ComboBoxSubjects2.SelectedValue.ToString(), ComboBoxYears2.SelectedValue.ToString());
+            var reSource = Source.ToList();
+
             bool check = false;
-            foreach(var item in Source)
+            var HK = dtb.HOCKies.Count();
+            int check_num = 0;
+            string old_id = "";
+            string old_cls = "";
+            IDictionary<string,int> check_dir = new Dictionary<string,int>();
+            foreach(var item in reSource)
             {
-                if (item.Soluong==2)
+                if (old_cls == ""|| old_cls!=item.TenLop )
                 {
-                    check = true;
-                    break;
+                    old_cls = item.TenLop;
+                    check_dir[item.TenLop] = 0;
+                }
+                if (old_id == "" || old_id!=item.MaHocSinh)
+                {
+                    check_num = 1;
+                    old_id = item.MaHocSinh;
+                }
+                else
+                {
+                    check_num += 1;
+                    if (check_num == HK)
+                    {
+                        check = true;
+                        check_dir[item.TenLop] += 1;
+                    }    
                 }
             }
             if (!check)
@@ -183,107 +230,130 @@ namespace QuanLyHocSinh
             }
             else
             {
-                var reSource = new List<reportformat>();
-                var temp = new reportformat();
-                var index = -1;
-                foreach (var item in Source)
+                tbl.Columns.Add("STT", typeof(string));
+                tbl.Columns.Add("Lớp", typeof(string));
+                tbl.Columns.Add("Sĩ số", typeof(int));
+                foreach (var item in dtb.XEPLOAIs.OrderByDescending(r=>r.DiemToiThieu))
                 {
-                    if (item.Soluong == 2)
+                    tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                }
+                int sum = 0;
+                old_cls = "";
+                int num_cls = 0;
+                old_id = "";
+                check_num = 0;
+                double score = 0;
+                int index = -1;
+                double sum_TS =(double) dtb.HOCKies.Sum(r => r.TrongSo);
+                foreach(var item in reSource)
+                {
+                    if (check_dir[item.TenLop] != 0)
                     {
-                        if (index == -1 || (index != -1 && reSource[index].LOP != item.Tenlop))
+                        if (old_cls == "" || old_cls != item.TenLop)
                         {
+                            num_cls = 0;
+                            old_cls = item.TenLop;
+                            DataRow row = tbl.NewRow();
                             index += 1;
-                            temp.STT = index + 1;
-                            temp.LOP = item.Tenlop;
-                            temp.SISO = 0;
-                            temp.GIOI = 0;
-                            temp.KHA = 0;
-                            temp.TB = 0;
-                            temp.YEU = 0;
-                            temp.KEM = 0;
-                            reSource.Add(temp);
+                            row["STT"] = index + 1;
+                            row["Lớp"] = item.TenLop;
+                            row["Sĩ số"] = 0;
+                            foreach (var item2 in dtb.XEPLOAIs)
+                            {
+                                row[item2.TenXepLoai] = 0;
+                            }
+                            tbl.Rows.Add(row);
                         }
-                        temp = reSource[index];
+                        if (old_id == "" || old_id != item.MaHocSinh)
+                        {
+                            check_num = 1;
+                            old_id = item.MaHocSinh;
+                            score = 0;
+                        }
+                        else 
+                        {
+                            check_num += 1;
+                        }
+                        var TS = from obj in dtb.HOCKies
+                                 where obj.MaHocKy == item.HocKy
+                                 select obj.TrongSo;
+                        score += (double)item.DiemTB * (double)TS.FirstOrDefault();
+                        
+                        if (check_num == HK)
+                        {
+                            sum += 1;
+                            num_cls += 1;
+                            tbl.Rows[index]["Sĩ số"] = num_cls;
 
-                        var HSG = (from xl in dtb.XEPLOAIs
-                                  where xl.MaXepLoai == "HSG"
-                                  select xl.DiemToiThieu).FirstOrDefault() ;
-                        var HSK = (from xl in dtb.XEPLOAIs
-                                  where xl.MaXepLoai == "HSK"
-                                  select xl.DiemToiThieu).FirstOrDefault();
-                        var HSTB = (from xl in dtb.XEPLOAIs
-                                   where xl.MaXepLoai == "HSTB"
-                                   select xl.DiemToiThieu).FirstOrDefault();
-                        var HSY = (from xl in dtb.XEPLOAIs
-                                  where xl.MaXepLoai == "HSY"
-                                  select xl.DiemToiThieu).FirstOrDefault();
-
-                        var DTBnh = Math.Round((double)item.DiemTb/2, 2);
-                        if (DTBnh >= HSG) temp.GIOI += 1;
-                        else if (DTBnh >= HSK) temp.KHA += 1;
-                        else if (DTBnh >= HSTB) temp.TB += 1;
-                        else if (DTBnh >= HSY) temp.YEU += 1;
-                        else temp.KEM += 1;
-                        temp.SISO += 1;
-                        reSource[index] = temp;
+                            score = Math.Round(score / sum_TS, 2);
+                            foreach (var item2 in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
+                            {
+                                if (score >= item2.DiemToiThieu)
+                                {
+                                    var temp = tbl.Rows[index][item2.TenXepLoai];
+                                    temp = (int)temp+1;
+                                    tbl.Rows[index][item2.TenXepLoai] = temp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
-                int Gioi = 0;
-                int Kha = 0;
-                int Tb = 0;
-                int Yeu = 0;
-                int Kem = 0;
-                int TongSo = 0;
-                foreach (var item in reSource)
+                DataTable ratio_Source = new DataTable();
+                ratio_Source.Columns.Add("Xếp loại", typeof(string));
+                ratio_Source.Columns.Add("Số lượng", typeof(int));
+                ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
+                foreach (var item in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
                 {
-                    Gioi += item.GIOI;
-                    Kha += item.KHA;
-                    Tb += item.TB;
-                    Yeu += item.YEU;
-                    Kem += item.KEM;
-                    TongSo += item.SISO;
+                    DataRow row_ratio = ratio_Source.NewRow();
+                    row_ratio["Xếp loại"] = item.TenXepLoai;
+                    int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
+                    row_ratio["Số lượng"] = count;
+                    row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * count / sum), 2);
+                    ratio_Source.Rows.Add(row_ratio);
                 }
-                double ratio6 = 100 * Gioi / TongSo;
-                double ratio7 = 100 * Kha / TongSo;
-                double ratio8 = 100 * Tb / TongSo;
-                double ratio9 = 100 * Yeu / TongSo;
-                double ratio10 = 100 * Kem / TongSo;
 
-                textBoxStudent6.Text = TongSo.ToString();
-                textBoxStudent7.Text = Gioi.ToString();
-                textBoxStudent8.Text = Kha.ToString();
-                textBoxStudent9.Text = Tb.ToString();
-                textBoxStudent10.Text = Yeu.ToString();
-                textBoxStudent11.Text = Kem.ToString();
+                var TenMonHoc = from obj in dtb.MONHOCs
+                                where obj.MaMonHoc == ComboBoxSubjects2.SelectedValue
+                                select obj.TenMonHoc;
+                var NamHoc = from obj in dtb.NAMHOCs
+                             where obj.MaNamHoc == ComboBoxYears2.SelectedValue
+                             select obj.NamHoc1;
 
-                textBoxRatio6.Text = Math.Round(ratio6, 2).ToString() + '%';
-                textBoxRatio7.Text = Math.Round(ratio7, 2).ToString() + '%';
-                textBoxRatio8.Text = Math.Round(ratio8, 2).ToString() + '%';
-                textBoxRatio9.Text = Math.Round(ratio9, 2).ToString() + '%';
-                textBoxRatio10.Text = Math.Round(ratio10, 2).ToString() + '%';
 
-                dataGridViewReport2.DataSource = reSource;
-                PanelStudent2.Show();
+                LabelNameReportGridview2.Text = $"BẢNG THỐNG KÊ MÔN {TenMonHoc.FirstOrDefault().ToString().ToUpper()} NĂM {NamHoc.FirstOrDefault().ToString().ToUpper()}";
+                LabelNameReportGridview2.Show();
+
+                LabelNameRatio2.Show();
+
+
+                dataGridViewRatio2.DataSource = ratio_Source;
+                dataGridViewRatio2.Show();
+
+
+                ChartRatio2.DataSource = ratio_Source;
+                ChartRatio2.Series[0].XValueMember = "Xếp loại";
+                ChartRatio2.Series[0].YValueMembers = "Tỉ lệ (%)";
+                ChartRatio2.Series[0].IsValueShownAsLabel = true;
+                ChartRatio2.Show();
+
+                dataGridViewReport2.DataSource = tbl;
                 dataGridViewReport2.Show();
+                
             }
         }
 
         private void buttonReport3_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            var Source = from scr in dtb.DIEMs
-                         join cls_detail in dtb.CTLOPs on scr.MaHocSinh equals cls_detail.MaHocSinh
-                         join cls in dtb.LOPs on cls_detail.MaLop equals cls.MaLop
-                         where comboBoxSemesters2.SelectedItem == scr.HocKy && comboBoxYears3.SelectedItem == scr.NamHoc
-                               && scr.NamHoc == cls.NamHoc  
-                         group new { cls_detail, cls, scr }
-                         by new { cls_detail.MaLop, cls.TenLop, scr.MaHocSinh }
-                         into grp
-                         select new { Tenlop = grp.Key.TenLop, DiemTb = grp.Sum(row => row.scr.DiemTB),DiemKC = grp.Min(row => row.scr.DiemTB), Soluong = grp.Count() };
+            DataTable tbl = new DataTable();
+            var Source = dtb.TongKetHocKy(ComboBoxSemesters2.SelectedValue.ToString(), ComboBoxYears3.SelectedValue.ToString());
+            var reSource = Source.ToList();
+
             bool check = false;
-            foreach (var item in Source)
+            foreach (var item in reSource)
             {
-                if (item.Soluong == 13)
+                if (item.SoLuong == dtb.MONHOCs.Count()/3)
                 {
                     check = true;
                     break;
@@ -295,144 +365,119 @@ namespace QuanLyHocSinh
             }
             else
             {
-                var reSource = new List<reportformat>();
-                var temp = new reportformat();
-                var index = -1;
-                foreach (var item in Source)
+                tbl.Columns.Add("STT", typeof(string));
+                tbl.Columns.Add("Lớp", typeof(string));
+                tbl.Columns.Add("Sĩ số", typeof(int));
+                foreach (var item in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
                 {
-                    if (item.Soluong == 13)
-                    {
-                        if (index == -1 || (index != -1 && reSource[index].LOP != item.Tenlop))
-                        {
-                            index += 1;
-                            temp.STT = index + 1;
-                            temp.LOP = item.Tenlop;
-                            temp.SISO = 0;
-                            temp.GIOI = 0;
-                            temp.KHA = 0;
-                            temp.TB = 0;
-                            temp.YEU = 0;
-                            temp.KEM = 0;
-                            reSource.Add(temp);
-                        }
-                        temp = reSource[index];
-
-                        var HSG = (from xl in dtb.XEPLOAIs
-                                   where xl.MaXepLoai == "HSG"
-                                   select new { xl.DiemToiThieu, xl.DiemKhongChe }).FirstOrDefault();
-                        var HSK = (from xl in dtb.XEPLOAIs
-                                   where xl.MaXepLoai == "HSK"
-                                   select new { xl.DiemToiThieu, xl.DiemKhongChe }).FirstOrDefault();
-                        var HSTB = (from xl in dtb.XEPLOAIs
-                                    where xl.MaXepLoai == "HSTB"
-                                    select new { xl.DiemToiThieu, xl.DiemKhongChe }).FirstOrDefault();
-                        var HSY = (from xl in dtb.XEPLOAIs
-                                   where xl.MaXepLoai == "HSY"
-                                   select new { xl.DiemToiThieu, xl.DiemKhongChe }).FirstOrDefault();
-
-                        var DTBnh = Math.Round((double)item.DiemTb / 13, 2);
-                        if (DTBnh >= HSG.DiemToiThieu)
-                        {
-                            if (item.DiemKC >= HSG.DiemKhongChe)
-                            {
-                                temp.GIOI += 1;
-                            }
-                            else if (item.DiemKC >= HSTB.DiemToiThieu)
-                            {
-                                temp.KHA += 1;
-                            }
-                            else
-                            {
-                                temp.TB += 1;
-                            }
-
-                        }
-                        else if (DTBnh >= HSK.DiemToiThieu)
-                        {
-                            if (item.DiemKC >= HSK.DiemKhongChe)
-                            {
-                                temp.KHA += 1;
-                            }
-                            else if (item.DiemKC >= HSY.DiemToiThieu)
-                            {
-                                temp.TB += 1;
-                            }
-                            else
-                            {
-                                temp.YEU += 1;
-                            }
-                        }
-                        else if (DTBnh >= HSTB.DiemToiThieu)
-                        {
-                            if (item.DiemKC >= HSTB.DiemKhongChe)
-                            {
-                                temp.TB += 1;
-                            }
-                            else
-                            {
-                                temp.YEU += 1;
-                            }
-                        }
-                        else if (DTBnh >= HSY.DiemToiThieu)
-                        {
-                            if (item.DiemKC >= HSY.DiemKhongChe)
-                            {
-                                temp.YEU += 1;
-                            }
-                            else
-                            {
-                                temp.KEM += 1;
-                            }
-                        }
-                        else temp.KEM += 1;
-                        temp.SISO += 1;
-                        reSource[index] = temp;
-                    }
+                    tbl.Columns.Add(item.TenXepLoai, typeof(int));
                 }
-                int Gioi = 0;
-                int Kha = 0;
-                int Tb = 0;
-                int Yeu = 0;
-                int Kem = 0;
-                int TongSo = 0;
+                var index = -1;
+                string cls = "";
+                int sum = 0;
                 foreach (var item in reSource)
                 {
-                    Gioi += item.GIOI;
-                    Kha += item.KHA;
-                    Tb += item.TB;
-                    Yeu += item.YEU;
-                    Kem += item.KEM;
-                    TongSo += item.SISO;
+                    if (item.SoLuong == dtb.MONHOCs.Count()/3)
+                    {
+                        sum += 1;
+                        if (cls == "" || cls != item.TenLop)
+                        {
+                            DataRow row = tbl.NewRow();
+                            cls = item.TenLop;
+                            index += 1;
+                            row["STT"] = index + 1;
+                            row["Lớp"] = item.TenLop;
+                            row["Sĩ số"] = 1;
+                            foreach (var item2 in dtb.XEPLOAIs)
+                            {
+                                row[item2.TenXepLoai] = 0;
+                            }
+                            tbl.Rows.Add(row);
+                        }
+                        double score = Math.Round((double)(item.DiemTB/item.SoLuong), 2);
+                        foreach (var item2 in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
+                        {
+                            if (score >= item2.DiemToiThieu )
+                            {
+                                if (item.DiemKC > item2.DiemKhongChe)
+                                {
+                                    var temp = tbl.Rows[index][item2.TenXepLoai];
+                                    temp = (int)temp + 1;
+                                    tbl.Rows[index][item2.TenXepLoai] = temp;
+                                }
+                                else
+                                {
+                                    bool find = false;
+                                    var item3 = dtb.XEPLOAIs.FirstOrDefault();
+                                    foreach (var item4 in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
+                                    {
+                                        if (score >= item4.DiemToiThieu)
+                                        {
+                                            if (find)
+                                            {
+                                                item3 = item4;
+                                                break;
+                                            }
+                                            if (item.DiemKC <= item4.DiemKhongChe)
+                                            { find = true; }
+                                        }
+                                    }
+                                    var temp = tbl.Rows[index][item3.TenXepLoai];
+                                    temp = (int)temp + 1;
+                                    tbl.Rows[index][item3.TenXepLoai] = temp;
+                                }
+                                break;
+                            }
+                        }
+                    }
                 }
-                double ratio11 = 100 * Gioi / TongSo;
-                double ratio12 = 100 * Kha / TongSo;
-                double ratio13 = 100 * Tb / TongSo;
-                double ratio14 = 100 * Yeu / TongSo;
-                double ratio15 = 100 * Kem / TongSo;
 
-                textBoxStudent12.Text = TongSo.ToString();
-                textBoxStudent13.Text = Gioi.ToString();
-                textBoxStudent14.Text = Kha.ToString();
-                textBoxStudent15.Text = Tb.ToString();
-                textBoxStudent16.Text = Yeu.ToString();
-                textBoxStudent17.Text = Kem.ToString();
+                DataTable ratio_Source = new DataTable();
+                ratio_Source.Columns.Add("Xếp loại", typeof(string));
+                ratio_Source.Columns.Add("Số lượng", typeof(int));
+                ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
+                foreach (var item in dtb.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
+                {
+                    DataRow row_ratio = ratio_Source.NewRow();
+                    row_ratio["Xếp loại"] = item.TenXepLoai;
+                    int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
+                    row_ratio["Số lượng"] = count;
+                    row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * count / sum), 2);
+                    ratio_Source.Rows.Add(row_ratio);
+                }
 
-                textBoxRatio11.Text = Math.Round(ratio11, 2).ToString() + '%';
-                textBoxRatio12.Text = Math.Round(ratio12, 2).ToString() + '%';
-                textBoxRatio13.Text = Math.Round(ratio13, 2).ToString() + '%';
-                textBoxRatio14.Text = Math.Round(ratio14, 2).ToString() + '%';
-                textBoxRatio15.Text = Math.Round(ratio15, 2).ToString() + '%';
+                
+                var NamHoc = from obj in dtb.NAMHOCs
+                             where obj.MaNamHoc == ComboBoxYears3.SelectedValue
+                             select obj.NamHoc1;
 
-                dataGridViewReport3.DataSource = reSource;
-                PanelStudent3.Show();
+
+                LabelNameReportGridview3.Text = $"BẢNG THỐNG KÊ HỌC KỲ {ComboBoxSemesters2.SelectedValue.ToString()} NĂM {NamHoc.FirstOrDefault().ToString().ToUpper()}";
+                LabelNameReportGridview3.Show();
+
+                LabelNameRatio3.Show();
+
+
+                dataGridViewRatio3.DataSource = ratio_Source;
+                dataGridViewRatio3.Show();
+
+
+                ChartRatio3.DataSource = ratio_Source;
+                ChartRatio3.Series[0].XValueMember = "Xếp loại";
+                ChartRatio3.Series[0].YValueMembers = "Tỉ lệ (%)";
+                ChartRatio3.Series[0].IsValueShownAsLabel = true;
+                ChartRatio3.Show();
+
+                dataGridViewReport3.DataSource = tbl;
                 dataGridViewReport3.Show();
             }
+
         }
 
         private void buttonReport4_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            var Source = from scr in dtb.DIEMs
+            /*var Source = from scr in dtb.DIEMs
                          join cls_detail in dtb.CTLOPs on scr.MaHocSinh equals cls_detail.MaHocSinh
                          join cls in dtb.LOPs on cls_detail.MaLop equals cls.MaLop
                          where comboBoxYears4.SelectedItem == scr.NamHoc && scr.NamHoc == cls.NamHoc
@@ -594,9 +639,8 @@ namespace QuanLyHocSinh
                 dataGridViewReport4.DataSource = reSource;
                 PanelStudent4.Show();
                 dataGridViewReport4.Show();
-            }
+            }*/
         }
 
-  
     }
 }

@@ -28,7 +28,7 @@ namespace QuanLyHocSinh
             dataEntities data = new dataEntities();
             var CBKhoi = from obj in data.KHOIs
                          select obj;
-            cbKhoi.DataSource = CBKhoi.ToString();
+            cbKhoi.DataSource = CBKhoi.ToList();
             cbKhoi.DisplayMember = "TenKhoi";
             cbKhoi.ValueMember = "TenKhoi";
 
@@ -215,7 +215,7 @@ namespace QuanLyHocSinh
                 var CBLop = from iter1 in db.KHOIs
                             join iter2 in db.LOPs on iter1.MaKhoi equals iter2.MaKhoi
                              select iter2.TenLop;
-                cbLop.DataSource = CBLop.ToString();
+                cbLop.DataSource = CBLop.ToList();
             }    
         }
 

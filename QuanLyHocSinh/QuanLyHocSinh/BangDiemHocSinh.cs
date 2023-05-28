@@ -30,7 +30,7 @@ namespace QuanLyHocSinh
                         select h.HoTen;
             return HoTen.First();
         }
-        string GetLop(string MaLop,string HK, string Nam, dataEntities dtb)
+        /*string GetLop(string MaLop,string HK, string Nam, dataEntities dtb)
         {
             var Lop = from src in dtb.CTLOPs
                       join cls in dtb.DIEMs on src.MaHocSinh equals cls.MaHocSinh
@@ -38,10 +38,10 @@ namespace QuanLyHocSinh
                       where src.MaHocSinh == MaLop && cls.HocKy == HK && Nam == cls.NamHoc
                       select l.TenLop;
             return Lop.First();
-        }
+        }*/
         void TraCuuDiemHocKy()
         {
-            dataEntities dtb = new dataEntities();
+            /*dataEntities dtb = new dataEntities();
             var result = from c in dtb.DIEMs
                          where c.MaHocSinh == MHStextbox_hk.Text && c.HocKy == HocKyCbb.Text && c.NamHoc == NamHocCbb_hk.Text
                          select new {c.MaMonHoc,c.MONHOC.TenMonHoc, c.DiemTX, c.DiemGK, c.DiemCK, c.DiemTB };
@@ -85,11 +85,11 @@ namespace QuanLyHocSinh
                 else if (DTBHK >= 5) XepLoaiTextBox.Text = "Trung Bình";
                 else if (DTBHK >= 3.5) XepLoaiTextBox.Text = "Yếu";
                 else XepLoaiTextBox.Text = "Kém";
-            }
+            }*/
         }
         void TraCuuDiemNamHoc()
         {
-            dataEntities dtb = new dataEntities();
+            /*dataEntities dtb = new dataEntities();
             var MaMonHoc = from c in dtb.DIEMs
                            where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "1"
                            select c.MaMonHoc;
@@ -137,7 +137,7 @@ namespace QuanLyHocSinh
             else if (DTBnh >= 6.5) XepLoaiTxtBox_nh.Text = "Khá";
             else if (DTBnh >= 5) XepLoaiTxtBox_nh.Text = "Trung Bình";
             else if (DTBnh >= 3.5) XepLoaiTxtBox_nh.Text = "Yếu";
-            else XepLoaiTxtBox_nh.Text = "Kém";
+            else XepLoaiTxtBox_nh.Text = "Kém";*/
 
         }
 
