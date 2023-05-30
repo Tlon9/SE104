@@ -105,8 +105,6 @@
           <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="VaiTro" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TAIKHOAN">
           <Key>
             <PropertyRef Name="MaTaiKhoan" />
@@ -114,6 +112,7 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
           <Property Name="MaTaiKhoan" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="TenDangNhap" Type="nvarchar" MaxLength="60" />
           <Property Name="MatKhau" Type="nvarchar" MaxLength="60" />
+          <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="THANHPHAN">
           <Key>
@@ -265,6 +264,25 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_tk_pq">
+          <End Role="PHANQUYEN" Type="Self.PHANQUYEN" Multiplicity="1" />
+          <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHANQUYEN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Principal>
+            <Dependent Role="TAIKHOAN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SuaThamSo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TuoiToiThieu" Type="tinyint" Mode="In" />
+          <Parameter Name="TuoiToiDa" Type="tinyint" Mode="In" />
+          <Parameter Name="SiSoToiDa" Type="smallint" Mode="In" />
+          <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+          <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+        </Function>
         <Function Name="ThemHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
           <Parameter Name="HocKy" Type="nvarchar" Mode="In" />
@@ -310,9 +328,34 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
           <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
           <Parameter Name="NamHoc" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="ThemTaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTaiKhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenDangNhap" Type="nvarchar" Mode="In" />
+          <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemThanhPhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaThanhPhan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenThanhPhan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrongSo" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThemXepLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaXepLoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenXepLoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+          <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+          <Parameter Name="DiemKhongChe" Type="float" Mode="In" />
+        </Function>
+        <Function Name="TongKetHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="TongKetMonHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
           <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TongKetMonNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
           <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="dataModelStoreContainer">
@@ -326,15 +369,9 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
           <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NAMHOC" EntityType="Self.NAMHOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHANQUYEN" EntityType="Self.PHANQUYEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THANHPHAN" EntityType="Self.THANHPHAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XEPLOAI" EntityType="Self.XEPLOAI" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TAIKHOAN].[MaTaiKhoan] AS [MaTaiKhoan], 
-    [TAIKHOAN].[TenDangNhap] AS [TenDangNhap], 
-    [TAIKHOAN].[MatKhau] AS [MatKhau]
-    FROM [dbo].[TAIKHOAN] AS [TAIKHOAN]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="fk_ctl_hs" Association="Self.fk_ctl_hs">
             <End Role="HOCSINH" EntitySet="HOCSINH" />
             <End Role="CTLOP" EntitySet="CTLOP" />
@@ -379,12 +416,66 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
             <End Role="NAMHOC" EntitySet="NAMHOC" />
             <End Role="LOP" EntitySet="LOP" />
           </AssociationSet>
+          <AssociationSet Name="fk_tk_pq" Association="Self.fk_tk_pq">
+            <End Role="PHANQUYEN" EntitySet="PHANQUYEN" />
+            <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="ThemHocKy">
+            <Parameter Name="MaHocKy" Mode="In" Type="String" />
+            <Parameter Name="HocKy" Mode="In" Type="String" />
+            <Parameter Name="TrongSo" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="TongKetMonHocKy" ReturnType="Collection(dataModel.TongKetMonHocKy_Result)">
+            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+            <Parameter Name="MaHocKy" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemHocSinh">
+            <Parameter Name="MaHocSinh" Mode="In" Type="String" />
+            <Parameter Name="HoTen" Mode="In" Type="String" />
+            <Parameter Name="GioiTinh" Mode="In" Type="String" />
+            <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="QueQuan" Mode="In" Type="String" />
+            <Parameter Name="DanToc" Mode="In" Type="String" />
+            <Parameter Name="TonGiao" Mode="In" Type="String" />
+            <Parameter Name="SDT" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="HoTenCha" Mode="In" Type="String" />
+            <Parameter Name="NamSinh_Cha" Mode="In" Type="Int16" />
+            <Parameter Name="CCCD_Cha" Mode="In" Type="String" />
+            <Parameter Name="SDT_Cha" Mode="In" Type="String" />
+            <Parameter Name="NgheNghiep_Cha" Mode="In" Type="String" />
+            <Parameter Name="HoTenMe" Mode="In" Type="String" />
+            <Parameter Name="NamSinh_Me" Mode="In" Type="Int16" />
+            <Parameter Name="CCCD_Me" Mode="In" Type="String" />
+            <Parameter Name="SDT_Me" Mode="In" Type="String" />
+            <Parameter Name="NgheNghiep_Me" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemKhoi">
+            <Parameter Name="MaKhoi" Mode="In" Type="String" />
+            <Parameter Name="TenKhoi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemLop">
+            <Parameter Name="MaLop" Mode="In" Type="String" />
+            <Parameter Name="TenLop" Mode="In" Type="String" />
+            <Parameter Name="MaKhoi" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemMonHoc">
+            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+            <Parameter Name="TenMonHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemNamHoc">
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+            <Parameter Name="NamHoc" Mode="In" Type="String" />
+          </FunctionImport>
           <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
           <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
           <EntitySet Name="HOCKies" EntityType="dataModel.HOCKY" />
@@ -442,57 +533,48 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
             <End Role="NAMHOC" EntitySet="NAMHOCs" />
             <End Role="LOP" EntitySet="LOPs" />
           </AssociationSet>
-          <FunctionImport Name="ThemHocKy">
+          <FunctionImport Name="TongKetMonNamHoc" ReturnType="Collection(dataModel.TongKetMonNamHoc_Result)">
+            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TongKetHocKy" ReturnType="Collection(dataModel.TongKetHocKy_Result)">
             <Parameter Name="MaHocKy" Mode="In" Type="String" />
-            <Parameter Name="HocKy" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="fk_tk_pq" Association="dataModel.fk_tk_pq">
+            <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
+            <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+          </AssociationSet>
+          <FunctionImport Name="SuaThamSo">
+            <Parameter Name="TuoiToiThieu" Mode="In" Type="Byte" />
+            <Parameter Name="TuoiToiDa" Mode="In" Type="Byte" />
+            <Parameter Name="SiSoToiDa" Mode="In" Type="Int16" />
+            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="ThemTaiKhoan">
+            <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
+            <Parameter Name="TenDangNhap" Mode="In" Type="String" />
+            <Parameter Name="MatKhau" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemThanhPhan">
+            <Parameter Name="MaThanhPhan" Mode="In" Type="String" />
+            <Parameter Name="TenThanhPhan" Mode="In" Type="String" />
             <Parameter Name="TrongSo" Mode="In" Type="Double" />
           </FunctionImport>
-          <FunctionImport Name="TongKetMonHocKy" ReturnType="Collection(dataModel.TongKetMonHocKy_Result)">
-            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
-            <Parameter Name="MaHocKy" Mode="In" Type="String" />
-            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemHocSinh">
-            <Parameter Name="MaHocSinh" Mode="In" Type="String" />
-            <Parameter Name="HoTen" Mode="In" Type="String" />
-            <Parameter Name="GioiTinh" Mode="In" Type="String" />
-            <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
-            <Parameter Name="DiaChi" Mode="In" Type="String" />
-            <Parameter Name="QueQuan" Mode="In" Type="String" />
-            <Parameter Name="DanToc" Mode="In" Type="String" />
-            <Parameter Name="TonGiao" Mode="In" Type="String" />
-            <Parameter Name="SDT" Mode="In" Type="String" />
-            <Parameter Name="Email" Mode="In" Type="String" />
-            <Parameter Name="HoTenCha" Mode="In" Type="String" />
-            <Parameter Name="NamSinh_Cha" Mode="In" Type="Int16" />
-            <Parameter Name="CCCD_Cha" Mode="In" Type="String" />
-            <Parameter Name="SDT_Cha" Mode="In" Type="String" />
-            <Parameter Name="NgheNghiep_Cha" Mode="In" Type="String" />
-            <Parameter Name="HoTenMe" Mode="In" Type="String" />
-            <Parameter Name="NamSinh_Me" Mode="In" Type="Int16" />
-            <Parameter Name="CCCD_Me" Mode="In" Type="String" />
-            <Parameter Name="SDT_Me" Mode="In" Type="String" />
-            <Parameter Name="NgheNghiep_Me" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemKhoi">
-            <Parameter Name="MaKhoi" Mode="In" Type="String" />
-            <Parameter Name="TenKhoi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemLop">
-            <Parameter Name="MaLop" Mode="In" Type="String" />
-            <Parameter Name="TenLop" Mode="In" Type="String" />
-            <Parameter Name="MaKhoi" Mode="In" Type="String" />
-            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemMonHoc">
-            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
-            <Parameter Name="TenMonHoc" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemNamHoc">
-            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-            <Parameter Name="NamHoc" Mode="In" Type="String" />
+          <FunctionImport Name="ThemXepLoai">
+            <Parameter Name="MaXepLoai" Mode="In" Type="String" />
+            <Parameter Name="TenXepLoai" Mode="In" Type="String" />
+            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+            <Parameter Name="DiemKhongChe" Mode="In" Type="Double" />
           </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="TongKetMonHocKy_Result">
+          <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaXepLoai" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+        </ComplexType>
         <EntityType Name="CTLOP">
           <Key>
             <PropertyRef Name="MaCTL" />
@@ -612,6 +694,7 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
           </Key>
           <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="VaiTro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TAIKHOANs" Relationship="dataModel.fk_tk_pq" FromRole="PHANQUYEN" ToRole="TAIKHOAN" />
         </EntityType>
         <EntityType Name="THANHPHAN">
           <Key>
@@ -640,6 +723,8 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
           <Property Name="MaTaiKhoan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TenDangNhap" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="MatKhau" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHANQUYEN" Relationship="dataModel.fk_tk_pq" FromRole="TAIKHOAN" ToRole="PHANQUYEN" />
         </EntityType>
         <Association Name="fk_ctl_hs">
           <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
@@ -773,17 +858,52 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="TongKetMonHocKy_Result">
+        <ComplexType Name="TongKetMonNamHoc_Result">
           <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
-          <Property Type="String" Name="MaXepLoai" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="HocKy" Nullable="false" MaxLength="20" />
+          <Property Type="Double" Name="DiemTB" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TongKetHocKy_Result">
+          <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+          <Property Type="Double" Name="DiemTB" Nullable="true" />
+          <Property Type="Double" Name="DiemKC" Nullable="true" />
           <Property Type="Int32" Name="SoLuong" Nullable="true" />
         </ComplexType>
+        <Association Name="fk_tk_pq">
+          <End Type="dataModel.PHANQUYEN" Role="PHANQUYEN" Multiplicity="1" />
+          <End Type="dataModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHANQUYEN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Principal>
+            <Dependent Role="TAIKHOAN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dataModelStoreContainer" CdmEntityContainer="dataEntities">
+          <FunctionImportMapping FunctionImportName="ThemHocKy" FunctionName="dataModel.Store.ThemHocKy" />
+          <FunctionImportMapping FunctionImportName="TongKetMonHocKy" FunctionName="dataModel.Store.TongKetMonHocKy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.TongKetMonHocKy_Result">
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ThemHocSinh" FunctionName="dataModel.Store.ThemHocSinh" />
+          <FunctionImportMapping FunctionImportName="ThemKhoi" FunctionName="dataModel.Store.ThemKhoi" />
+          <FunctionImportMapping FunctionImportName="ThemLop" FunctionName="dataModel.Store.ThemLop" />
+          <FunctionImportMapping FunctionImportName="ThemMonHoc" FunctionName="dataModel.Store.ThemMonHoc" />
+          <FunctionImportMapping FunctionImportName="ThemNamHoc" FunctionName="dataModel.Store.ThemNamHoc" />
           <EntitySetMapping Name="CTLOPs">
             <EntityTypeMapping TypeName="dataModel.CTLOP">
               <MappingFragment StoreEntitySet="CTLOP">
@@ -917,27 +1037,38 @@ warning 6002: The table/view 'QUANLYHOCSINH.dbo.TAIKHOAN' does not have a primar
           <EntitySetMapping Name="TAIKHOANs">
             <EntityTypeMapping TypeName="dataModel.TAIKHOAN">
               <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
                 <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
                 <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="ThemHocKy" FunctionName="dataModel.Store.ThemHocKy" />
-          <FunctionImportMapping FunctionImportName="TongKetMonHocKy" FunctionName="dataModel.Store.TongKetMonHocKy">
+          <FunctionImportMapping FunctionImportName="TongKetMonNamHoc" FunctionName="dataModel.Store.TongKetMonNamHoc">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="dataModel.TongKetMonHocKy_Result">
+              <ComplexTypeMapping TypeName="dataModel.TongKetMonNamHoc_Result">
                 <ScalarProperty Name="TenLop" ColumnName="TenLop" />
-                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TongKetHocKy" FunctionName="dataModel.Store.TongKetHocKy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.TongKetHocKy_Result">
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+                <ScalarProperty Name="DiemKC" ColumnName="DiemKC" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="ThemHocSinh" FunctionName="dataModel.Store.ThemHocSinh" />
-          <FunctionImportMapping FunctionImportName="ThemKhoi" FunctionName="dataModel.Store.ThemKhoi" />
-          <FunctionImportMapping FunctionImportName="ThemLop" FunctionName="dataModel.Store.ThemLop" />
-          <FunctionImportMapping FunctionImportName="ThemMonHoc" FunctionName="dataModel.Store.ThemMonHoc" />
-          <FunctionImportMapping FunctionImportName="ThemNamHoc" FunctionName="dataModel.Store.ThemNamHoc" />
+          <FunctionImportMapping FunctionImportName="SuaThamSo" FunctionName="dataModel.Store.SuaThamSo" />
+          <FunctionImportMapping FunctionImportName="ThemTaiKhoan" FunctionName="dataModel.Store.ThemTaiKhoan" />
+          <FunctionImportMapping FunctionImportName="ThemThanhPhan" FunctionName="dataModel.Store.ThemThanhPhan" />
+          <FunctionImportMapping FunctionImportName="ThemXepLoai" FunctionName="dataModel.Store.ThemXepLoai" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -44,6 +44,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +77,12 @@
     <Compile Include="CTLOP.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="dataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,7 +106,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DuLieu.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HOCKY.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="HOCSINH.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KETQUA_MONHOC_HOCSINH.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="KHOI.cs">
@@ -109,6 +122,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LapBangDiemMonHocCuaLopNamHoc.Designer.cs" />
+    <Compile Include="LapBangDiemMonHocCuaLopNamHoc1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LapBangDiemMonHocCuaLopNamHoc.resx</DependentUpon>
+    </Compile>
     <Compile Include="LapDanhSachLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,13 +139,22 @@
     <Compile Include="MONHOC.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="NAMHOC.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="NhapBangDiemMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhapBangDiemMonHoc.Designer.cs">
       <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="THAMSO.cs">
+    <Compile Include="PHANQUYEN.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THANHPHAN.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TiepNhanHocSinh.cs">
@@ -135,6 +162,15 @@
     </Compile>
     <Compile Include="TiepNhanHocSinh.Designer.cs">
       <DependentUpon>TiepNhanHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TongKetHocKy_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TongKetMonHocKy_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TongKetMonNamHoc_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TraCuuHocSinh.cs">
       <SubType>Form</SubType>
@@ -156,7 +192,13 @@
     <EmbeddedResource Include="BaoCaoTongKet.resx">
       <DependentUpon>BaoCaoTongKet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LapBangDiemMonHocCuaLopNamHoc.resx" />
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LapBangDiemMonHocCuaLopNamHoc.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LapBangDiemMonHocCuaLopNamHoc1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="LapDanhSachLop.resx">
       <DependentUpon>LapDanhSachLop.cs</DependentUpon>
     </EmbeddedResource>

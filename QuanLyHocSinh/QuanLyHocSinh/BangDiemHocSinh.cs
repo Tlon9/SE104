@@ -32,7 +32,11 @@ namespace QuanLyHocSinh
                         select h.HoTen;
             return HoTen.First();
         }
+<<<<<<< HEAD
         string GetLop(string MaLop,string HK, string NH, dataEntities dtb)
+=======
+        /*string GetLop(string MaLop,string HK, string Nam, dataEntities dtb)
+>>>>>>> 6a709344071403f5e3781826145849662f76719b
         {
             var Lop = from ctl in dtb.CTLOPs
                       join kq in dtb.KETQUA_MONHOC_HOCSINH on ctl.MaHocSinh equals kq.MaHocSinh
@@ -42,6 +46,7 @@ namespace QuanLyHocSinh
                       where kq.MaHocSinh == MaLop && hk.HocKy1 == HK && nh.NamHoc1 == NH
                       select l.TenLop;
             return Lop.First();
+<<<<<<< HEAD
         }
         Array DIEM_TP(string MHS, string HK, string NH, string TP)
         {
@@ -74,6 +79,19 @@ namespace QuanLyHocSinh
                           select hk.HocKy1;
             bool checkMaHS = false;
             foreach (var d in DsHocSinh)
+=======
+        }*/
+        void TraCuuDiemHocKy()
+        {
+            /*dataEntities dtb = new dataEntities();
+            var result = from c in dtb.DIEMs
+                         where c.MaHocSinh == MHStextbox_hk.Text && c.HocKy == HocKyCbb.Text && c.NamHoc == NamHocCbb_hk.Text
+                         select new {c.MaMonHoc,c.MONHOC.TenMonHoc, c.DiemTX, c.DiemGK, c.DiemCK, c.DiemTB };
+
+                        
+            //Nhap sai
+            if (result.Count() == 0)
+>>>>>>> 6a709344071403f5e3781826145849662f76719b
             {
                 if (d == MHS)
                 {
@@ -185,12 +203,39 @@ namespace QuanLyHocSinh
                 else if (DTBHK >= 5) XepLoaiTextBox.Text = "Trung Bình";
                 else if (DTBHK >= 3.5) XepLoaiTextBox.Text = "Yếu";
                 else XepLoaiTextBox.Text = "Kém";
+<<<<<<< HEAD
             } 
         }
         void TraCuuDiemNamHoc()
         {
             //Nhap sai
             if (Kiemtra_input(MHStextbox_nh.Text," ", NamHocCbb_nh.Text))
+=======
+            }*/
+        }
+        void TraCuuDiemNamHoc()
+        {
+            /*dataEntities dtb = new dataEntities();
+            var MaMonHoc = from c in dtb.DIEMs
+                           where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "1"
+                           select c.MaMonHoc;
+            var TenMonHoc = from c in dtb.DIEMs
+                            join g in dtb.MONHOCs on c.MaMonHoc equals g.MaMonHoc
+                            where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "1"
+                            select c.MONHOC.TenMonHoc;
+            var DiemTBhk1 = from c in dtb.DIEMs
+                            where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "1"
+                            select c.DiemTB;
+            var DiemTbhk2 = from c in dtb.DIEMs
+                            where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text && c.HocKy == "2"
+                            select c.DiemTB;
+            var DiemTbnh = from c in dtb.DIEMs
+                           where c.MaHocSinh == MHStextbox_nh.Text && c.NamHoc == NamHocCbb_nh.Text
+                           group c by new { c.MaHocSinh, c.NamHoc, c.MaMonHoc } into g
+                           select g.Sum(row => row.DiemTB);
+            DNHGridView.Rows.Clear();
+            for (int i = 0; i < MaMonHoc.Count(); i++)
+>>>>>>> 6a709344071403f5e3781826145849662f76719b
             {
                 dataEntities dtb = new dataEntities();
                 var MaMonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
@@ -252,9 +297,23 @@ namespace QuanLyHocSinh
                 LopTxtBox_nh.Text = GetLop(MHStextbox_nh.Text, "HKI", NamHocCbb_nh.Text, dtb);
 
 
+<<<<<<< HEAD
                 //Diem trung binh nam hoc
                 var DiemTB = Tong_DiemTB / Math.Max(DiemTBhk1.Count(row => row != null), DiemTBhk2.Count(row => row != null));
                 DTBNHTxtBox.Text = DiemTB.ToString();
+=======
+            //Diem trung binh nam hoc
+            var DTBnh = DiemTbnh.Sum(row=>row)/13;
+            DTBnh = Math.Round((double)DTBnh/2, 2);
+            DTBNHTxtBox.Text = DTBnh.ToString();
+
+            //XepLoai
+            if (DTBnh >= 8) XepLoaiTxtBox_nh.Text = "Giỏi";
+            else if (DTBnh >= 6.5) XepLoaiTxtBox_nh.Text = "Khá";
+            else if (DTBnh >= 5) XepLoaiTxtBox_nh.Text = "Trung Bình";
+            else if (DTBnh >= 3.5) XepLoaiTxtBox_nh.Text = "Yếu";
+            else XepLoaiTxtBox_nh.Text = "Kém";*/
+>>>>>>> 6a709344071403f5e3781826145849662f76719b
 
                 //XepLoai
                 if (DiemTB >= 8) XepLoaiTxtBox_nh.Text = "Giỏi";

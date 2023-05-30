@@ -219,5 +219,115 @@ namespace QuanLyHocSinh
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemNamHoc", maNamHocParameter, namHocParameter);
         }
+    
+        public virtual ObjectResult<TongKetMonNamHoc_Result> TongKetMonNamHoc(string maMonHoc, string maNamHoc)
+        {
+            var maMonHocParameter = maMonHoc != null ?
+                new ObjectParameter("MaMonHoc", maMonHoc) :
+                new ObjectParameter("MaMonHoc", typeof(string));
+    
+            var maNamHocParameter = maNamHoc != null ?
+                new ObjectParameter("MaNamHoc", maNamHoc) :
+                new ObjectParameter("MaNamHoc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TongKetMonNamHoc_Result>("TongKetMonNamHoc", maMonHocParameter, maNamHocParameter);
+        }
+    
+        public virtual ObjectResult<TongKetHocKy_Result> TongKetHocKy(string maHocKy, string maNamHoc)
+        {
+            var maHocKyParameter = maHocKy != null ?
+                new ObjectParameter("MaHocKy", maHocKy) :
+                new ObjectParameter("MaHocKy", typeof(string));
+    
+            var maNamHocParameter = maNamHoc != null ?
+                new ObjectParameter("MaNamHoc", maNamHoc) :
+                new ObjectParameter("MaNamHoc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TongKetHocKy_Result>("TongKetHocKy", maHocKyParameter, maNamHocParameter);
+        }
+    
+        public virtual int SuaThamSo(Nullable<byte> tuoiToiThieu, Nullable<byte> tuoiToiDa, Nullable<short> siSoToiDa, Nullable<double> diemToiDa, Nullable<double> diemToiThieu)
+        {
+            var tuoiToiThieuParameter = tuoiToiThieu.HasValue ?
+                new ObjectParameter("TuoiToiThieu", tuoiToiThieu) :
+                new ObjectParameter("TuoiToiThieu", typeof(byte));
+    
+            var tuoiToiDaParameter = tuoiToiDa.HasValue ?
+                new ObjectParameter("TuoiToiDa", tuoiToiDa) :
+                new ObjectParameter("TuoiToiDa", typeof(byte));
+    
+            var siSoToiDaParameter = siSoToiDa.HasValue ?
+                new ObjectParameter("SiSoToiDa", siSoToiDa) :
+                new ObjectParameter("SiSoToiDa", typeof(short));
+    
+            var diemToiDaParameter = diemToiDa.HasValue ?
+                new ObjectParameter("DiemToiDa", diemToiDa) :
+                new ObjectParameter("DiemToiDa", typeof(double));
+    
+            var diemToiThieuParameter = diemToiThieu.HasValue ?
+                new ObjectParameter("DiemToiThieu", diemToiThieu) :
+                new ObjectParameter("DiemToiThieu", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SuaThamSo", tuoiToiThieuParameter, tuoiToiDaParameter, siSoToiDaParameter, diemToiDaParameter, diemToiThieuParameter);
+        }
+    
+        public virtual int ThemTaiKhoan(string maTaiKhoan, string tenDangNhap, string matKhau)
+        {
+            var maTaiKhoanParameter = maTaiKhoan != null ?
+                new ObjectParameter("MaTaiKhoan", maTaiKhoan) :
+                new ObjectParameter("MaTaiKhoan", typeof(string));
+    
+            var tenDangNhapParameter = tenDangNhap != null ?
+                new ObjectParameter("TenDangNhap", tenDangNhap) :
+                new ObjectParameter("TenDangNhap", typeof(string));
+    
+            var matKhauParameter = matKhau != null ?
+                new ObjectParameter("MatKhau", matKhau) :
+                new ObjectParameter("MatKhau", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemTaiKhoan", maTaiKhoanParameter, tenDangNhapParameter, matKhauParameter);
+        }
+    
+        public virtual int ThemThanhPhan(string maThanhPhan, string tenThanhPhan, Nullable<double> trongSo)
+        {
+            var maThanhPhanParameter = maThanhPhan != null ?
+                new ObjectParameter("MaThanhPhan", maThanhPhan) :
+                new ObjectParameter("MaThanhPhan", typeof(string));
+    
+            var tenThanhPhanParameter = tenThanhPhan != null ?
+                new ObjectParameter("TenThanhPhan", tenThanhPhan) :
+                new ObjectParameter("TenThanhPhan", typeof(string));
+    
+            var trongSoParameter = trongSo.HasValue ?
+                new ObjectParameter("TrongSo", trongSo) :
+                new ObjectParameter("TrongSo", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemThanhPhan", maThanhPhanParameter, tenThanhPhanParameter, trongSoParameter);
+        }
+    
+        public virtual int ThemXepLoai(string maXepLoai, string tenXepLoai, Nullable<double> diemToiThieu, Nullable<double> diemToiDa, Nullable<double> diemKhongChe)
+        {
+            var maXepLoaiParameter = maXepLoai != null ?
+                new ObjectParameter("MaXepLoai", maXepLoai) :
+                new ObjectParameter("MaXepLoai", typeof(string));
+    
+            var tenXepLoaiParameter = tenXepLoai != null ?
+                new ObjectParameter("TenXepLoai", tenXepLoai) :
+                new ObjectParameter("TenXepLoai", typeof(string));
+    
+            var diemToiThieuParameter = diemToiThieu.HasValue ?
+                new ObjectParameter("DiemToiThieu", diemToiThieu) :
+                new ObjectParameter("DiemToiThieu", typeof(double));
+    
+            var diemToiDaParameter = diemToiDa.HasValue ?
+                new ObjectParameter("DiemToiDa", diemToiDa) :
+                new ObjectParameter("DiemToiDa", typeof(double));
+    
+            var diemKhongCheParameter = diemKhongChe.HasValue ?
+                new ObjectParameter("DiemKhongChe", diemKhongChe) :
+                new ObjectParameter("DiemKhongChe", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemXepLoai", maXepLoaiParameter, tenXepLoaiParameter, diemToiThieuParameter, diemToiDaParameter, diemKhongCheParameter);
+        }
     }
 }

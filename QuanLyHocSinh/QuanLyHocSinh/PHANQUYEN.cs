@@ -14,7 +14,16 @@ namespace QuanLyHocSinh
     
     public partial class PHANQUYEN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PHANQUYEN()
+        {
+            this.TAIKHOANs = new HashSet<TAIKHOAN>();
+        }
+    
         public string MaPhanQuyen { get; set; }
         public string VaiTro { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TAIKHOAN> TAIKHOANs { get; set; }
     }
 }
