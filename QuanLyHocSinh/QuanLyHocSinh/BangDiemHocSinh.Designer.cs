@@ -44,6 +44,16 @@
             this.label12 = new System.Windows.Forms.Label();
             this.TracuuHKTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.PanelDHK = new System.Windows.Forms.Panel();
+            this.XepLoaiTextBox = new System.Windows.Forms.TextBox();
+            this.DTBHKTextBox = new System.Windows.Forms.TextBox();
+            this.LopTextBox = new System.Windows.Forms.TextBox();
+            this.HoTenTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DHKGridView = new System.Windows.Forms.DataGridView();
             this.MaMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +67,7 @@
             this.TraCuuButton_hk = new System.Windows.Forms.Button();
             this.MHStextbox_hk = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.DNHGridView = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,32 +82,21 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.NamHocCbb_nh = new System.Windows.Forms.ComboBox();
-            this.PanelDHK = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.HoTenTextBox = new System.Windows.Forms.TextBox();
-            this.LopTextBox = new System.Windows.Forms.TextBox();
-            this.DTBHKTextBox = new System.Windows.Forms.TextBox();
-            this.XepLoaiTextBox = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panelDNH.SuspendLayout();
             this.TracuuHKTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.PanelDHK.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DHKGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.InputHKpanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DNHGridView)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.InputNHpanel.SuspendLayout();
-            this.PanelDHK.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -138,7 +138,7 @@
             this.HocKyCbb.Location = new System.Drawing.Point(119, 85);
             this.HocKyCbb.Name = "HocKyCbb";
             this.HocKyCbb.Size = new System.Drawing.Size(85, 25);
-            this.HocKyCbb.TabIndex = 9;
+            this.HocKyCbb.TabIndex = 2;
             // 
             // NamHocCbb_hk
             // 
@@ -150,7 +150,7 @@
             this.NamHocCbb_hk.Location = new System.Drawing.Point(6, 85);
             this.NamHocCbb_hk.Name = "NamHocCbb_hk";
             this.NamHocCbb_hk.Size = new System.Drawing.Size(85, 25);
-            this.NamHocCbb_hk.TabIndex = 10;
+            this.NamHocCbb_hk.TabIndex = 1;
             // 
             // panelDNH
             // 
@@ -260,6 +260,100 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tra cứu điểm học kỳ";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.PanelDHK);
+            this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.Location = new System.Drawing.Point(386, 12);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(523, 147);
+            this.groupBox5.TabIndex = 28;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Kết quả tổng kết";
+            // 
+            // PanelDHK
+            // 
+            this.PanelDHK.Controls.Add(this.XepLoaiTextBox);
+            this.PanelDHK.Controls.Add(this.DTBHKTextBox);
+            this.PanelDHK.Controls.Add(this.LopTextBox);
+            this.PanelDHK.Controls.Add(this.HoTenTextBox);
+            this.PanelDHK.Controls.Add(this.label8);
+            this.PanelDHK.Controls.Add(this.label7);
+            this.PanelDHK.Controls.Add(this.label6);
+            this.PanelDHK.Controls.Add(this.label5);
+            this.PanelDHK.Location = new System.Drawing.Point(6, 19);
+            this.PanelDHK.Name = "PanelDHK";
+            this.PanelDHK.Size = new System.Drawing.Size(511, 122);
+            this.PanelDHK.TabIndex = 0;
+            // 
+            // XepLoaiTextBox
+            // 
+            this.XepLoaiTextBox.Location = new System.Drawing.Point(216, 88);
+            this.XepLoaiTextBox.Name = "XepLoaiTextBox";
+            this.XepLoaiTextBox.Size = new System.Drawing.Size(100, 25);
+            this.XepLoaiTextBox.TabIndex = 5;
+            // 
+            // DTBHKTextBox
+            // 
+            this.DTBHKTextBox.Location = new System.Drawing.Point(216, 60);
+            this.DTBHKTextBox.Name = "DTBHKTextBox";
+            this.DTBHKTextBox.Size = new System.Drawing.Size(100, 25);
+            this.DTBHKTextBox.TabIndex = 0;
+            // 
+            // LopTextBox
+            // 
+            this.LopTextBox.Location = new System.Drawing.Point(216, 29);
+            this.LopTextBox.Name = "LopTextBox";
+            this.LopTextBox.Size = new System.Drawing.Size(100, 25);
+            this.LopTextBox.TabIndex = 4;
+            // 
+            // HoTenTextBox
+            // 
+            this.HoTenTextBox.Location = new System.Drawing.Point(216, 2);
+            this.HoTenTextBox.Name = "HoTenTextBox";
+            this.HoTenTextBox.Size = new System.Drawing.Size(100, 25);
+            this.HoTenTextBox.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(134, 90);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 19);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Xếp loại";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(90, 62);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 19);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Điểm trung bình";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(162, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Lớp";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(128, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 19);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Họ và tên";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.DHKGridView);
@@ -367,7 +461,7 @@
             this.MHStextbox_hk.Location = new System.Drawing.Point(6, 30);
             this.MHStextbox_hk.Name = "MHStextbox_hk";
             this.MHStextbox_hk.Size = new System.Drawing.Size(101, 25);
-            this.MHStextbox_hk.TabIndex = 25;
+            this.MHStextbox_hk.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -382,6 +476,17 @@
             this.tabPage2.Size = new System.Drawing.Size(931, 600);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tra cứu điểm năm học";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.panelDNH);
+            this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(386, 12);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(523, 147);
+            this.groupBox6.TabIndex = 29;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Kết quả tổng kết";
             // 
             // groupBox4
             // 
@@ -509,111 +614,6 @@
             this.NamHocCbb_nh.Size = new System.Drawing.Size(85, 25);
             this.NamHocCbb_nh.TabIndex = 10;
             // 
-            // PanelDHK
-            // 
-            this.PanelDHK.Controls.Add(this.XepLoaiTextBox);
-            this.PanelDHK.Controls.Add(this.DTBHKTextBox);
-            this.PanelDHK.Controls.Add(this.LopTextBox);
-            this.PanelDHK.Controls.Add(this.HoTenTextBox);
-            this.PanelDHK.Controls.Add(this.label8);
-            this.PanelDHK.Controls.Add(this.label7);
-            this.PanelDHK.Controls.Add(this.label6);
-            this.PanelDHK.Controls.Add(this.label5);
-            this.PanelDHK.Location = new System.Drawing.Point(6, 19);
-            this.PanelDHK.Name = "PanelDHK";
-            this.PanelDHK.Size = new System.Drawing.Size(511, 122);
-            this.PanelDHK.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(128, 7);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 19);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Họ và tên";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(162, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 19);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Lớp";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(90, 62);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 19);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Điểm trung bình";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(134, 90);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 19);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Xếp loại";
-            // 
-            // HoTenTextBox
-            // 
-            this.HoTenTextBox.Location = new System.Drawing.Point(216, 2);
-            this.HoTenTextBox.Name = "HoTenTextBox";
-            this.HoTenTextBox.Size = new System.Drawing.Size(100, 25);
-            this.HoTenTextBox.TabIndex = 15;
-            // 
-            // LopTextBox
-            // 
-            this.LopTextBox.Location = new System.Drawing.Point(216, 29);
-            this.LopTextBox.Name = "LopTextBox";
-            this.LopTextBox.Size = new System.Drawing.Size(100, 25);
-            this.LopTextBox.TabIndex = 16;
-            // 
-            // DTBHKTextBox
-            // 
-            this.DTBHKTextBox.Location = new System.Drawing.Point(216, 60);
-            this.DTBHKTextBox.Name = "DTBHKTextBox";
-            this.DTBHKTextBox.Size = new System.Drawing.Size(100, 25);
-            this.DTBHKTextBox.TabIndex = 17;
-            // 
-            // XepLoaiTextBox
-            // 
-            this.XepLoaiTextBox.Location = new System.Drawing.Point(216, 88);
-            this.XepLoaiTextBox.Name = "XepLoaiTextBox";
-            this.XepLoaiTextBox.Size = new System.Drawing.Size(100, 25);
-            this.XepLoaiTextBox.TabIndex = 18;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.PanelDHK);
-            this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(386, 12);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(523, 147);
-            this.groupBox5.TabIndex = 28;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Kết quả tổng kết";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.panelDNH);
-            this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(386, 12);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(523, 147);
-            this.groupBox6.TabIndex = 29;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Kết quả tổng kết";
-            // 
             // BangDiemHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -626,21 +626,21 @@
             this.panelDNH.PerformLayout();
             this.TracuuHKTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.PanelDHK.ResumeLayout(false);
+            this.PanelDHK.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DHKGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.InputHKpanel.ResumeLayout(false);
             this.InputHKpanel.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DNHGridView)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.InputNHpanel.ResumeLayout(false);
             this.InputNHpanel.PerformLayout();
-            this.PanelDHK.ResumeLayout(false);
-            this.PanelDHK.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
