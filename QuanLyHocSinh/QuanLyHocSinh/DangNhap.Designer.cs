@@ -29,17 +29,19 @@ namespace QuanLyHocSinh
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.labelWrong = new System.Windows.Forms.Label();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.textBoxUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,21 +77,6 @@ namespace QuanLyHocSinh
             this.labelWrong.ForeColor = System.Drawing.Color.Red;
             this.labelWrong.Name = "labelWrong";
             // 
-            // guna2CircleButton1
-            // 
-            this.guna2CircleButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.guna2CircleButton1, "guna2CircleButton1");
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
-            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
-            // 
             // textBoxUsername
             // 
             this.textBoxUsername.BorderRadius = 18;
@@ -107,7 +94,7 @@ namespace QuanLyHocSinh
             this.textBoxUsername.IconLeftSize = new System.Drawing.Size(30, 30);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.PasswordChar = '\0';
-            this.textBoxUsername.PlaceholderText = "User name";
+            this.textBoxUsername.PlaceholderText = "Tên đăng nhập";
             this.textBoxUsername.SelectedText = "";
             // 
             // textBoxPassword
@@ -127,32 +114,46 @@ namespace QuanLyHocSinh
             this.textBoxPassword.IconLeftSize = new System.Drawing.Size(30, 30);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '●';
-            this.textBoxPassword.PlaceholderText = "Password";
+            this.textBoxPassword.PlaceholderText = "Mật khẩu";
             this.textBoxPassword.SelectedText = "";
             this.textBoxPassword.UseSystemPasswordChar = true;
-            // 
-            // guna2CircleButton2
-            // 
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.guna2CircleButton2, "guna2CircleButton2");
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton2.Image")));
-            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Click += new System.EventHandler(this.guna2CircleButton2_Click);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2Panel1.Controls.Add(this.guna2CircleButton2);
-            this.guna2Panel1.Controls.Add(this.guna2CircleButton1);
+            this.guna2Panel1.Controls.Add(this.guna2Button1);
+            this.guna2Panel1.Controls.Add(this.guna2Button2);
             resources.ApplyResources(this.guna2Panel1, "guna2Panel1");
             this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.SystemColors.MenuHighlight;
+            resources.ApplyResources(this.guna2Button2, "guna2Button2");
+            this.guna2Button2.ForeColor = System.Drawing.Color.AliceBlue;
+            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.SystemColors.MenuHighlight;
+            resources.ApplyResources(this.guna2Button1, "guna2Button1");
+            this.guna2Button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // DangNhap
             // 
@@ -180,10 +181,11 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelWrong;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2TextBox textBoxUsername;
         private Guna.UI2.WinForms.Guna2TextBox textBoxPassword;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
