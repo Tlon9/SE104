@@ -62,6 +62,10 @@ CREATE TABLE MONHOC
 	constraint pk_mmh primary key(MaMonHoc)
 )
 
+ALTER TABLE MONHOC ADD NamApDung nvarchar(20)
+UPDATE MONHOC
+SET NamApDung = 'NH2223'
+
 CREATE TABLE CTLOP
 (	MaCTL nvarchar(20) not null,
 	MaHocSinh nvarchar(10) not null,
@@ -83,6 +87,9 @@ CREATE TABLE THANHPHAN (
 	TrongSo float,
 	constraint pk_mtp primary key(MaThanhPhan)
 )
+ALTER TABLE THANHPHAN ADD NamApDung nvarchar(20)
+UPDATE THANHPHAN
+SET NamApDung = 'NH2223'
 
 CREATE TABLE KETQUA_MONHOC_HOCSINH (
 	MaKetQua nvarchar(20) not null,
@@ -104,6 +111,9 @@ CREATE TABLE XEPLOAI
 	DiemKhongChe float, -- Ap dung khi xet Diem
 	Constraint pk_xl primary key (MaXepLoai)
 )
+ALTER TABLE XEPLOAI ADD NamApDung nvarchar(20)
+UPDATE XEPLOAI 
+SET NamApDung = 'NH2223'
 
 UPDATE XEPLOAI
 ORDER BY DiemToiThieu DESC
@@ -120,7 +130,6 @@ CREATE TABLE THAMSO
 	Constraint pk_ts primary key (MaThamSo)
 )
 
-DROP TABLE TAIKHOAN
 
 CREATE TABLE PHANQUYEN (
 	MaPhanQuyen nvarchar(20) not null,
@@ -221,13 +230,50 @@ BEGIN
 	order by TenLop
 END
 
-select TenLop, KQ.MaHocSinh, KQ.MaHocKy, sum(KQ.DiemTB) as DiemTB, min(KQ.DiemTB) as DiemKC, count(KQ.MaMonHoc) as SoLuong
+select TenLop, KQ.MaHocSinh, sum(KQ.DiemTB) as DiemTB, min(KQ.DiemTB) as DiemKC, count(KQ.MaMonHoc) as SoLuong
 	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
 	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
-			and KQ.MaNamHoc = 'NH2223'  and L.MaNamHoc = 'NH2223'
+			and KQ.MaNamHoc = 'NH2223' and KQ.MaHocKy = '1' and L.MaNamHoc = 'NH2223'
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh
+	order by TenLop
+
+
+--Tong Ket Nam Hoc
+CREATE PROCEDURE TongKetNamHoc
+	@MaNamHoc nvarchar(20)
+AS
+BEGIN
+	select TenLop, KQ.MaHocSinh, KQ.MaHocKy, avg(KQ.DiemTB) as DiemTB,count(MaMonHoc) as SoLuongMon
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
+			and KQ.MaNamHoc = @MaNamHoc  and L.MaNamHoc = @MaNamHoc
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
+	order by TenLop
+END
+
+
+select TenLop, KQ.MaHocSinh, KQ.MaHocKy, avg(KQ.DiemTB) as DiemTB,count(MaMonHoc) as SoLuongMon
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
+			and KQ.MaNamHoc ='NH2223'  and L.MaNamHoc = 'NH2223'
 	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
 	order by TenLop
 
-select 
-from 
-where 
+
+
+--Tong Ket Mon - Hoc Sinh
+CREATE PROCEDURE TongKetMon_HocSinh
+	@MaNamHoc nvarchar(20),
+	@MaHocSinh nvarchar(10)
+AS
+BEGIN
+	select MaMonHoc, MaHocKy, DiemTB
+	from KETQUA_MONHOC_HOCSINH
+	where MaNamHoc = @MaNamHoc and MaHocSinh = @MaHocSinh
+	order by MaMonHoc
+END
+
+select MaMonHoc, MaHocKy, DiemTB
+	from KETQUA_MONHOC_HOCSINH
+	where MaNamHoc = 'NH2223' and MaHocSinh = '22100100'
+	order by MaMonHoc
