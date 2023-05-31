@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Entity.Core.Common.CommandTrees;
 using System.Diagnostics.Eventing.Reader;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace QuanLyHocSinh
 {
     public partial class BangDiemHocSinh : Form
@@ -205,7 +205,6 @@ namespace QuanLyHocSinh
                         break;
                     }
                 }
-
             }
         }
         void TraCuuDiemNamHoc()
@@ -309,14 +308,51 @@ namespace QuanLyHocSinh
             }
         }
 
+
+        private void ExportToExcel(DataGridView dataGridView)
+        {
+            Excel.Application excel = new Excel.Application();
+            excel.Visible = true;
+            Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
+            Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
+            for (int i = 1; i <= dataGridView.Columns.Count; i++)
+            {
+                worksheet.Cells[1, i] = dataGridView.Columns[i - 1].HeaderText;
+            } 
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                {
+                    if(dataGridView.Rows[i].Cells[j].Value != null)
+                        worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
+                }
+            }    
+            /*workbook.SaveAs("output.xlsx", Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing, Type.Missing,
+                Excel.XlSaveAsAccessMode.xlExclusive,
+                Type.Missing, Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing);*/
+            workbook.Close();
+            excel.Quit();
+        }
+        private void TraCuuButton_nh_Click(object sender, EventArgs e)
+        {
+            TraCuuDiemNamHoc();
+        }
+
         private void TraCuuButton_hk_Click(object sender, EventArgs e)
         {
             TraCuuDiemHocKy();
         }
 
-        private void TraCuuButton_nh_Click(object sender, EventArgs e)
+        private void InBangDiembutton_Click(object sender, EventArgs e)
         {
-            TraCuuDiemNamHoc();
+            ExportToExcel(DHKGridView);
+        }
+
+        private void InBangDiembutton1_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(DNHGridView);
         }
     }
 }
