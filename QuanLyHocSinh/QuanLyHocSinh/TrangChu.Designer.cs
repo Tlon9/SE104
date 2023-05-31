@@ -37,11 +37,11 @@ namespace QuanLyHocSinh
             this.bảngĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFindStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemScoreBoard = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemClassScore = new System.Windows.Forms.ToolStripMenuItem();
             this.bảngĐiểmToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSubjectScore = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSubjectScoreYear = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemClassScore = new System.Windows.Forms.ToolStripMenuItem();
             this.PanelTitle.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -119,20 +119,6 @@ namespace QuanLyHocSinh
             this.MenuItemScoreBoard.Text = "Tra cứu bảng điểm";
             this.MenuItemScoreBoard.Click += new System.EventHandler(this.MenuItemScoreBoard_Click);
             // 
-            // MenuItemFinalReport
-            // 
-            this.MenuItemFinalReport.Name = "MenuItemFinalReport";
-            this.MenuItemFinalReport.Size = new System.Drawing.Size(136, 24);
-            this.MenuItemFinalReport.Text = "Báo cáo tổng kết";
-            this.MenuItemFinalReport.Click += new System.EventHandler(this.MenuItemFinalReport_Click);
-            // 
-            // MenuItemClassScore
-            // 
-            this.MenuItemClassScore.Name = "MenuItemClassScore";
-            this.MenuItemClassScore.Size = new System.Drawing.Size(180, 24);
-            this.MenuItemClassScore.Text = "Bảng điểm tổng kết lớp";
-            this.MenuItemClassScore.Click += new System.EventHandler(this.MenuItemClassScore_Click);
-            // 
             // bảngĐiểmToolStripMenuItem1
             // 
             this.bảngĐiểmToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -155,6 +141,20 @@ namespace QuanLyHocSinh
             this.MenuItemSubjectScoreYear.Size = new System.Drawing.Size(266, 26);
             this.MenuItemSubjectScoreYear.Text = "Xuất bảng điểm môn học";
             this.MenuItemSubjectScoreYear.Click += new System.EventHandler(this.MenuItemSubjectScoreYear_Click);
+            // 
+            // MenuItemFinalReport
+            // 
+            this.MenuItemFinalReport.Name = "MenuItemFinalReport";
+            this.MenuItemFinalReport.Size = new System.Drawing.Size(136, 24);
+            this.MenuItemFinalReport.Text = "Báo cáo tổng kết";
+            this.MenuItemFinalReport.Click += new System.EventHandler(this.MenuItemFinalReport_Click);
+            // 
+            // MenuItemClassScore
+            // 
+            this.MenuItemClassScore.Name = "MenuItemClassScore";
+            this.MenuItemClassScore.Size = new System.Drawing.Size(180, 24);
+            this.MenuItemClassScore.Text = "Bảng điểm tổng kết lớp";
+            this.MenuItemClassScore.Click += new System.EventHandler(this.MenuItemClassScore_Click);
             // 
             // TrangChu
             // 
