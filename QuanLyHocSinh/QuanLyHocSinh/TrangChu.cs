@@ -70,7 +70,10 @@ namespace QuanLyHocSinh
 
         private void MenuItemSubjectScoreYear_Click(object sender, EventArgs e)
         {
-
+            BangDiemMonHocCuaLopTrongNam newform = new BangDiemMonHocCuaLopTrongNam();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
         }
     }
 }
