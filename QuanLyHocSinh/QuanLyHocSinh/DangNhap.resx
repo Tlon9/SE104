@@ -118,56 +118,363 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 161</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 1</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 167</value>
+  </data>
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 2</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 248</value>
+  </data>
+  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 2</value>
+  </data>
+  <data name="panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel3.Name" xml:space="preserve">
+    <value>panel3</value>
+  </data>
+  <data name="&gt;&gt;panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonLogin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 19.8pt, style=Bold</value>
+  </data>
+  <data name="buttonLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 273</value>
+  </data>
+  <data name="buttonLogin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="buttonLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 47</value>
+  </data>
+  <data name="buttonLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="buttonLogin.Text" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.Name" xml:space="preserve">
+    <value>buttonLogin</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labelWrong.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10.2pt</value>
+  </data>
+  <data name="labelWrong.Location" type="System.Drawing.Point, System.Drawing">
+    <value>32, 330</value>
+  </data>
+  <data name="labelWrong.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
+  </data>
+  <data name="labelWrong.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 20</value>
+  </data>
+  <data name="labelWrong.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="labelWrong.Text" xml:space="preserve">
+    <value>Thông tin đăng nhập sai, mời nhập lại</value>
+  </data>
+  <data name="labelWrong.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;labelWrong.Name" xml:space="preserve">
+    <value>labelWrong</value>
+  </data>
+  <data name="&gt;&gt;labelWrong.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelWrong.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelWrong.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="guna2CircleButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="guna2CircleButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="guna2CircleButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>297, 3</value>
+  </data>
+  <data name="guna2CircleButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 32</value>
+  </data>
+  <data name="guna2CircleButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.Name" xml:space="preserve">
+    <value>guna2CircleButton1</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.Parent" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textBoxUsername.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="textBoxUsername.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAzZJREFUeF7tmstrE1EUxqPiwjcoWCvVZqaK4taNgg/UhbgWF6Lg1heoRRdCsaIg
-        5k5SLAjiwp24KC5ExJ2PFnz8AbqQimjNmbQqKmp1Y4zfTU5LbE6T1k7u3IT7gw+a3jP3fufMzJ3TZhIO
-        h8PhcDgcceBf/rxEiz82OYXCLC9FW/2AMp6il34QjkIF1qgX0AtfUdpP0xY+onlozwxvQpIDZQlXl6Ln
-        yVS4nQ9vYPRZD+i8mOQU5KmwN9FdmM2zNRYbrxfm+iq8KyU2HXlBeEfPxdM2DrjPr0kJ/adu8LSNAQwf
-        mpDAjIXb4SBPbzdtmaF5uGzfS0nMRChAtrWb5vMy9oLkT0kJjEvRH+wNN/UjsSXILdBKBuE2JHirOCYd
-        M6Y0neBl7EU/wkTzWop+I4n9HFqBl6YDxRjpWAjFfcqhdrK650MrGp28ZF4Lj8QLHDop2DwvSseWRHnv
-        ynALh9qHn87uko1DKvy5LvVxEYdOypreT4sR/6vi+HHldnKofeidWjYNKernsJogftKu0eqnAZI8KZku
-        iW5zWE10rDwHhDU4zD5wdjpF00VRH4fVRMfKcxSvgE4Osw9XgCoFwO5+f23PsD8V6VhpDi1rC7Aq9W5l
-        FH/81BTW0I9bXtYOYGwPLtuvFWbrJRV+SaZpNy8fLx0quxk78w/RaD2FvkK30GwjHnRjg+RD0aAZ0Yar
-        IwvZjnnQ2h4XTJmVCo+wHfNU262NSdE9tmMePJIGRVMmpcJXbMc89fjHx3SlPbAd87gCuAK4AlQrAKE7
-        DErSP0c+XpSdBVD0pi0ztJTDEusvZZfhd28jGy+TlQVIqvA0h4zjB7kzUY2Xy9IroLI7Q+zRyMbLZGUB
-        0CA9+edLzb7CHFzCz6IaL5eVBdBCm/wAiewtiR5FPT4mawtgSq4ArgCuAHEWgF5LpkwKm+Qg2zEP2tTH
-        kimTwkl4yHbMAwNdEw2ZFgpwlu2YB+3pchj4JhkzIfQH39vVyAq2Ew+eyh2TzBnSYbYRLzByDq1q9ddb
-        olRprS5e3g70m50wNVDfQlAe8/fr94t4WfvQ39t1pHI7cGvsi1J6ztjvd4fD4XA4HA5H05BI/AUTyMGu
-        xqnf5AAAAABJRU5ErkJggg==
+        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
 </value>
+  </data>
+  <data name="textBoxUsername.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 123</value>
+  </data>
+  <data name="textBoxUsername.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 39</value>
+  </data>
+  <data name="textBoxUsername.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;textBoxUsername.Name" xml:space="preserve">
+    <value>textBoxUsername</value>
+  </data>
+  <data name="&gt;&gt;textBoxUsername.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;textBoxUsername.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxUsername.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBoxPassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="textBoxPassword.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAM2SURBVHhe7ZrLaxNRFMaj4sI3KFgr1WamiuLWjYIP1IW4
+        Fhei4NYXqEUXQrGiIOZOUiwI4sKduCguRMSdjxZ8/AG6kIpozZm0KipqdWOM301OS2xOk9ZO7tyE+4MP
+        mt4z937nzMyd02YSDofD4XA4HHHgX/68RIs/NjmFwiwvRVv9gDKeopd+EI5CBdaoF9ALX1HaT9MWPqJ5
+        aM8Mb0KSA2UJV5ei58lUuJ0Pb2D0WQ/ovJjkFOSpsDfRXZjNszUWG68X5voqvCslNh15QXhHz8XTNg64
+        z69JCf2nbvC0jQEMH5qQwIyF2+EgT283bZmhebhs30tJzEQoQLa1m+bzMvaC5E9JCYxL0R/sDTf1I7El
+        yC3QSgbhNiR4qzgmHTOmNJ3gZexFP8JE81qKfiOJ/RxagZemA8UY6VgIxX3KoXayuudDKxqdvGReC4/E
+        Cxw6Kdg8L0rHlkR578pwC4fah5/O7pKNQyr8uS71cRGHTsqa3k+LEf+r4vhx5XZyqH3onVo2DSnq57Ca
+        IH7SrtHqpwGSPCmZLoluc1hNdKw8B4Q1OMw+cHY6RdNFUR+H1UTHynMUr4BODrMPV4AqBcDufn9tz7A/
+        FelYaQ4tawuwKvVuZRR//NQU1tCPW17WDmBsDy7brxVm6yUVfkmmaTcvHy8dKrsZO/MP0Wg9hb5Ct9Bs
+        Ix50Y4PkQ9GgGdGGqyML2Y550NoeF0yZlQqPsB3zVNutjUnRPbZjHjySBkVTJqXCV2zHPPX4x8d0pT2w
+        HfO4ArgCuAJUKwChOwxK0j9HPl6UnQVQ9KYtM7SUwxLrL2WX4XdvIxsvk5UFSKrwNIeM4we5M1GNl8vS
+        K6CyO0Ps0cjGy2RlAdAgPfnnS82+whxcws+iGi+XlQXQQpv8AInsLYkeRT0+JmsLYEquAK4ArgBxFoBe
+        S6ZMCpvkINsxD9rUx5Ipk8JJeMh2zAMDXRMNmRYKcJbtmAft6XIY+CYZMyH0B9/b1cgKthMPnsodk8wZ
+        0mG2ES8wcg6tavXXW6JUaa0uXt4O9JudMDVQ30JQHvP36/eLeFn70N/bdaRyO3Br7ItSes7Y73eHw+Fw
+        OBwOR9OQSPwFE8jBrsap3+QAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="textBoxPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 204</value>
+  </data>
+  <data name="textBoxPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 39</value>
+  </data>
+  <data name="textBoxPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;textBoxPassword.Name" xml:space="preserve">
+    <value>textBoxPassword</value>
+  </data>
+  <data name="&gt;&gt;textBoxPassword.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;textBoxPassword.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxPassword.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="guna2CircleButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="guna2CircleButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFZSURBVGhD7ZlBbsIwAATzlKTfKaiPqir1ATi/oe1X+oTY
+        9ArYaA8W2sOSVF4OHmmOrEeRuSRDp9PpPDfjIb5Nc/rJnrKXRp6mEL+nsOyRsY489Hk33NwxpA/kPAae
+        PB1t77JDlk7+Ybk2ZMxh/EKWzjinxMfam69RRJYOG3KKLB024hRZOmzEKbJ02IhTZOmwEafI0mEjTpGl
+        w0acIkuHjThFlg4bcYosHTbiFFk6bMQpsnTYiFNk6bARp8jSYSNOkaXDRpwiS4eNOEWWDhtxiiwdNuIU
+        WTpsxCmydNhI7e/f+V9lZ9QiS4eN1LKILbIzapGlw0ZqWcQW2Rm1yNJhI7UsYovsjFpk6bARp8jSYSNO
+        kaXDRpwiS+epXi3OaUGWzu39PBlzOIZ4RJZO+bjAxhy+hOUVWY9RPi6wwaaG9I6cdZSPC+X9fMv/RDmr
+        XJvVT77T6XQaMQxXGFmrfBoFQ0oAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="guna2CircleButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 3</value>
+  </data>
+  <data name="guna2CircleButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 32</value>
+  </data>
+  <data name="guna2CircleButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton2.Name" xml:space="preserve">
+    <value>guna2CircleButton2</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton2.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton2.Parent" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2CircleButton2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="guna2Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-2, 0</value>
+  </data>
+  <data name="guna2Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>337, 40</value>
+  </data>
+  <data name="guna2Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.Name" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Panel, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>334, 389</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>DangNhap</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DangNhap</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
