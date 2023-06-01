@@ -590,11 +590,14 @@ namespace QuanLyHocSinh
                 ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
                 foreach (var item in list_txb_xeploai)
                 {
-                    DataRow row_ratio = ratio_Source.NewRow();
-                    row_ratio["Xếp loại"] = item.Name;
-                    row_ratio["Số lượng"] = list_xeploai[keyValuePairs[item.Name]].ToString();
-                    row_ratio["Tỉ lệ (%)"] = (list_xeploai[keyValuePairs[item.Name]] * 100 / numberofClass);
-                    ratio_Source.Rows.Add(row_ratio);
+                    if (list_xeploai[keyValuePairs[item.Name]] > 0)
+                    {
+                        DataRow row_ratio = ratio_Source.NewRow();
+                        row_ratio["Xếp loại"] = item.Name;
+                        row_ratio["Số lượng"] = list_xeploai[keyValuePairs[item.Name]].ToString();
+                        row_ratio["Tỉ lệ (%)"] = (list_xeploai[keyValuePairs[item.Name]] * 100 / numberofClass);
+                        ratio_Source.Rows.Add(row_ratio);
+                    }
                 }
                 chartRatio.DataSource = ratio_Source;
                 chartRatio.Series[0].XValueMember = "Xếp loại";

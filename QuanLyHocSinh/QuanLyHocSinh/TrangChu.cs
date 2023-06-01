@@ -62,7 +62,7 @@ namespace QuanLyHocSinh
 
         private void MenuItemSubjectScore_Click(object sender, EventArgs e)
         {
-            LapBangDiemMonHoc newform = new LapBangDiemMonHoc();
+            LapBangDiemMonHoc newform = new LapBangDiemMonHoc(this);
             this.Hide();
             newform.ShowDialog();
             this.Show();
@@ -70,7 +70,7 @@ namespace QuanLyHocSinh
 
         private void MenuItemSubjectScoreYear_Click(object sender, EventArgs e)
         {
-            BangDiemMonHocCuaLopTrongNam newform = new BangDiemMonHocCuaLopTrongNam();
+            BangDiemMonHocCuaLopTrongNam newform = new BangDiemMonHocCuaLopTrongNam(this);
             this.Hide();
             newform.ShowDialog();
             this.Show();

@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangDiemMonHocCuaLopTrongNam));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelSubject = new System.Windows.Forms.Label();
             this.panelPrint = new System.Windows.Forms.Panel();
+            this.chartRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ButtonExportExcel = new Guna.UI2.WinForms.Guna2Button();
             this.labelNameOfGrid1 = new System.Windows.Forms.Label();
             this.panelClassifyYear = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PanelTitle = new System.Windows.Forms.Panel();
             this.LabelNameProject = new System.Windows.Forms.Label();
             this.comboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -47,11 +50,11 @@
             this.labelClass = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.buttonPrint = new Guna.UI2.WinForms.Guna2Button();
             this.BtnHomeScreen = new System.Windows.Forms.Button();
-            this.chartRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panelPrint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.PanelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).BeginInit();
+            this.PanelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelYear
@@ -76,15 +79,32 @@
             // 
             // panelPrint
             // 
+            this.panelPrint.Controls.Add(this.dataGridView1);
             this.panelPrint.Controls.Add(this.chartRatio);
             this.panelPrint.Controls.Add(this.ButtonExportExcel);
             this.panelPrint.Controls.Add(this.labelNameOfGrid1);
             this.panelPrint.Controls.Add(this.panelClassifyYear);
-            this.panelPrint.Controls.Add(this.dataGridView1);
             this.panelPrint.Location = new System.Drawing.Point(116, 295);
             this.panelPrint.Name = "panelPrint";
             this.panelPrint.Size = new System.Drawing.Size(1460, 632);
             this.panelPrint.TabIndex = 50;
+            // 
+            // chartRatio
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartRatio.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartRatio.Legends.Add(legend1);
+            this.chartRatio.Location = new System.Drawing.Point(1107, 245);
+            this.chartRatio.Name = "chartRatio";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartRatio.Series.Add(series1);
+            this.chartRatio.Size = new System.Drawing.Size(350, 314);
+            this.chartRatio.TabIndex = 137;
+            this.chartRatio.Text = "chart1";
             // 
             // ButtonExportExcel
             // 
@@ -117,16 +137,6 @@
             this.panelClassifyYear.Name = "panelClassifyYear";
             this.panelClassifyYear.Size = new System.Drawing.Size(925, 236);
             this.panelClassifyYear.TabIndex = 112;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 245);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1083, 293);
-            this.dataGridView1.TabIndex = 111;
             // 
             // PanelTitle
             // 
@@ -237,22 +247,60 @@
             this.BtnHomeScreen.UseVisualStyleBackColor = false;
             this.BtnHomeScreen.Click += new System.EventHandler(this.BtnHomeScreen_Click);
             // 
-            // chartRatio
+            // dataGridView1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartRatio.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartRatio.Legends.Add(legend2);
-            this.chartRatio.Location = new System.Drawing.Point(1107, 245);
-            this.chartRatio.Name = "chartRatio";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartRatio.Series.Add(series2);
-            this.chartRatio.Size = new System.Drawing.Size(350, 314);
-            this.chartRatio.TabIndex = 137;
-            this.chartRatio.Text = "chart1";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.ColumnHeadersHeight = 40;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView1.Location = new System.Drawing.Point(17, 245);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1084, 273);
+            this.dataGridView1.TabIndex = 138;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridView1.ThemeStyle.HeaderStyle.Height = 40;
+            this.dataGridView1.ThemeStyle.ReadOnly = true;
+            this.dataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridView1.ThemeStyle.RowsStyle.Height = 24;
+            this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridView1.Visible = false;
             // 
             // BangDiemMonHocCuaLopTrongNam
             // 
@@ -274,10 +322,10 @@
             this.Text = "XuatBangDiemMonHocCuaLopTrongNamHoc";
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).EndInit();
             this.PanelTitle.ResumeLayout(false);
             this.PanelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +333,6 @@
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Label labelSubject;
         private System.Windows.Forms.Panel panelPrint;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel PanelTitle;
         private System.Windows.Forms.Label LabelNameProject;
         private System.Windows.Forms.Panel panelClassifyYear;
@@ -300,5 +347,6 @@
         private Guna.UI2.WinForms.Guna2Button ButtonExportExcel;
         private System.Windows.Forms.Button BtnHomeScreen;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRatio;
+        private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
     }
 }
