@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using System.Data.Entity.Core.Common.CommandTrees;
 using System.Diagnostics.Eventing.Reader;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+
 namespace QuanLyHocSinh
 {
     public partial class BangDiemHocSinh : Form
@@ -21,8 +23,22 @@ namespace QuanLyHocSinh
             InitializeComponent();
             DHKGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DHKGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            DNHGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DNHGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DHKGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DHKGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataEntities data = new dataEntities();
+            List<string> dsNamhoc = new List<string>();
+            foreach(var d in data.NAMHOCs)
+            {
+                dsNamhoc.Add(d.NamHoc1.ToString());
+            }
+            List<string> dsHocky = new List<string>();
+            foreach(var d in data.HOCKies)
+            {
+                dsHocky.Add(d.HocKy1.ToString());
+            }
+            NamHocCbb_nh.DataSource = dsNamhoc;
+            NamHocCbb_hk.DataSource = dsNamhoc;
+            HocKyCbb.DataSource = dsHocky;
         }
 
         string GetHoTen(string MaHS, dataEntities dtb)
@@ -164,12 +180,13 @@ namespace QuanLyHocSinh
                     string Mamh = MaMonHoc.ToList()[i].ToString();
                     DataGridViewRow newRow = new DataGridViewRow();
                     newRow.CreateCells(DHKGridView);
-                    newRow.Cells[0].Value = MaMonHoc.ToList()[i];
-                    newRow.Cells[1].Value = TenMonHoc.ToList()[i];
-                    if (i < DIEMTX.Length) newRow.Cells[2].Value = DIEMTX.GetValue(i);
-                    if (i < DIEMGK.Length) newRow.Cells[3].Value = DIEMGK.GetValue(i);
-                    if (i < DIEMCK.Length) newRow.Cells[4].Value = DIEMCK.GetValue(i);
-                    newRow.Cells[5].Value = DIEMTB.ToList()[i];
+                    newRow.Cells[0].Value = i + 1;
+                    newRow.Cells[1].Value = MaMonHoc.ToList()[i];
+                    newRow.Cells[2].Value = TenMonHoc.ToList()[i];
+                    if (i < DIEMTX.Length) newRow.Cells[3].Value = DIEMTX.GetValue(i);
+                    if (i < DIEMGK.Length) newRow.Cells[4].Value = DIEMGK.GetValue(i);
+                    if (i < DIEMCK.Length) newRow.Cells[5].Value = DIEMCK.GetValue(i);
+                    newRow.Cells[6].Value = DIEMTB.ToList()[i];
                     DHKGridView.Rows.Add(newRow);
                 }
                 //Ho Ten
@@ -184,24 +201,18 @@ namespace QuanLyHocSinh
                 DTBHKTextBox.Text = DTBHK.ToString();
 
                 //XepLoai
-                var DiemToiThieu = from d in dtb.XEPLOAIs
-                                   orderby d.DiemToiThieu descending
-                                   select d.DiemToiThieu;
-                var TenXepLoai = from t in dtb.XEPLOAIs
-                                 orderby t.DiemToiThieu descending
-                                 select t.TenXepLoai;
-                var DiemKhongChe = from d in dtb.XEPLOAIs
-                                   orderby d.DiemToiThieu descending
-                                   select d.DiemKhongChe;
-                for (int i = 0; i < DiemToiThieu.Count(); i++)
+                var MaNamHoc = from n in dtb.NAMHOCs
+                            where n.NamHoc1 == NamHocCbb_hk.Text
+                            select n.MaNamHoc;
+                foreach(var item in dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
                 {
-                    if (DTBHK >= DiemToiThieu.ToList()[i])
+                    if (DTBHK >= item.DiemToiThieu)
                     {
-                        if (DIEMTB.Min() < DiemKhongChe.ToList()[i])
+                        if (DIEMTB.Min() < item.DiemKhongChe)
                         {
-                            XepLoaiTextBox.Text = TenXepLoai.ToList()[i + 1].ToString();
+                            XepLoaiTextBox.Text = item.TenXepLoai;
                         }
-                        else XepLoaiTextBox.Text = TenXepLoai.ToList()[i].ToString();
+                        else XepLoaiTextBox.Text = item.TenXepLoai;
                         break;
                     }
                 }
@@ -241,10 +252,11 @@ namespace QuanLyHocSinh
 
                     DataGridViewRow newRow = new DataGridViewRow();
                     newRow.CreateCells(DNHGridView);
-                    newRow.Cells[0].Value = MaMonHoc.ToList()[i];
-                    newRow.Cells[1].Value = TenMonHoc.ToList()[i];
-                    newRow.Cells[2].Value = DiemTBhk1.ToArray().GetValue(i);
-                    if (DiemTBhk2.Count() != 0 && i < DiemTBhk2.ToList().Count()) newRow.Cells[3].Value = DiemTBhk2.ToList()[i];
+                    newRow.Cells[0].Value = i + 1;
+                    newRow.Cells[1].Value = MaMonHoc.ToList()[i];
+                    newRow.Cells[2].Value = TenMonHoc.ToList()[i];
+                    newRow.Cells[3].Value = DiemTBhk1.ToArray().GetValue(i);
+                    if (DiemTBhk2.Count() != 0 && i < DiemTBhk2.ToList().Count()) newRow.Cells[4].Value = DiemTBhk2.ToList()[i];
                     if (i < DiemTBhk1.Count() && i < DiemTBhk2.Count())
                     {
                         var trong_so_hk1 = from t in dtb.HOCKies
@@ -255,7 +267,7 @@ namespace QuanLyHocSinh
                                            select t.TrongSo; 
                         var DiemTbmon = DiemTBhk1.ToList()[i] * trong_so_hk1.ToList()[0] + DiemTBhk2.ToList()[i] * trong_so_hk2.ToList()[0];
 
-                        newRow.Cells[4].Value = Math.Round((double)DiemTbmon / (double)(trong_so_hk1.ToList()[0] + trong_so_hk2.ToList()[0]), 2);
+                        newRow.Cells[5].Value = Math.Round((double)DiemTbmon / (double)(trong_so_hk1.ToList()[0] + trong_so_hk2.ToList()[0]), 2);
 
                     }
                     else if (i >= DiemTBhk1.Count())
@@ -281,25 +293,19 @@ namespace QuanLyHocSinh
 
 
                 double DiemTB = Math.Round(Tong_DiemTB / Math.Max(DiemTBhk1.Count(row => row != null), DiemTBhk2.Count(row => row != null)), 2);
-                DTBNHTxtBox.Text = DiemTB.ToString();
-                var DiemToiThieu = from d in dtb.XEPLOAIs
-                                   orderby d.DiemToiThieu descending
-                                   select d.DiemToiThieu;
-                var TenXepLoai = from t in dtb.XEPLOAIs
-                                 orderby t.DiemToiThieu descending
-                                 select t.TenXepLoai;
-                var DiemKhongChe = from d in dtb.XEPLOAIs
-                                   orderby d.DiemToiThieu descending
-                                   select d.DiemKhongChe;
-                for (int i = 0; i < DiemToiThieu.Count(); i++)
+                DTBNHTextBox.Text = DiemTB.ToString();
+                var MaNamHoc = from n in dtb.NAMHOCs
+                               where n.NamHoc1 == NamHocCbb_nh.Text
+                               select n.MaNamHoc;
+                foreach (var item in dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
                 {
-                    if (DiemTB >= DiemToiThieu.ToList()[i])
+                    if (DiemTB >= item.DiemToiThieu)
                     {
-                        if (Min_DiemTB < DiemKhongChe.ToList()[i])
+                        if (Min_DiemTB < item.DiemKhongChe)
                         {
-                            XepLoaiTxtBox_nh.Text = TenXepLoai.ToList()[i + 1].ToString();
+                            XepLoaiTxtBox_nh.Text = item.TenXepLoai;
                         }
-                        else XepLoaiTxtBox_nh.Text = TenXepLoai.ToList()[i].ToString();
+                        else XepLoaiTxtBox_nh.Text = item.TenXepLoai;
                         break;
                     }
                 }
@@ -335,9 +341,10 @@ namespace QuanLyHocSinh
             workbook.Close();
             excel.Quit();
         }
-        private void TraCuuButton_nh_Click(object sender, EventArgs e)
+
+        private void label12_Click(object sender, EventArgs e)
         {
-            TraCuuDiemNamHoc();
+
         }
 
         private void TraCuuButton_hk_Click(object sender, EventArgs e)
@@ -345,14 +352,55 @@ namespace QuanLyHocSinh
             TraCuuDiemHocKy();
         }
 
-        private void InBangDiembutton_Click(object sender, EventArgs e)
+        private void TraCuuButton_nh_Click(object sender, EventArgs e)
+        {
+            TraCuuDiemNamHoc();
+        }
+
+        private void guna2ImageButtonMinimize1_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void guna2ImageButtonClose1_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void guna2ImageButtonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             ExportToExcel(DHKGridView);
         }
 
-        private void InBangDiembutton1_Click(object sender, EventArgs e)
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            ExportToExcel(DNHGridView);
+            ExportToExcel(DHKGridView);
+        }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            TrangCaNhan newform = new TrangCaNhan();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
+
+        private void guna2Panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
     }
 }
