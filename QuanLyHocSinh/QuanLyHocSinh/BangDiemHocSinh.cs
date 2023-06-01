@@ -204,7 +204,7 @@ namespace QuanLyHocSinh
                 var MaNamHoc = from n in dtb.NAMHOCs
                             where n.NamHoc1 == NamHocCbb_hk.Text
                             select n.MaNamHoc;
-                foreach(var item in dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                foreach(var item in dtb.XepLoai_NamApDung1(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
                 {
                     if (DTBHK >= item.DiemToiThieu)
                     {
@@ -297,7 +297,7 @@ namespace QuanLyHocSinh
                 var MaNamHoc = from n in dtb.NAMHOCs
                                where n.NamHoc1 == NamHocCbb_nh.Text
                                select n.MaNamHoc;
-                foreach (var item in dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                foreach (var item in dtb.XepLoai_NamApDung1(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
                 {
                     if (DiemTB >= item.DiemToiThieu)
                     {
