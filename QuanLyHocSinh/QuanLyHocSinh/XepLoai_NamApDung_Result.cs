@@ -10,24 +10,14 @@
 namespace QuanLyHocSinh
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class XEPLOAI
+    public partial class XepLoai_NamApDung_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public XEPLOAI()
-        {
-            this.KETQUA_MONHOC_HOCSINH = new HashSet<KETQUA_MONHOC_HOCSINH>();
-        }
-    
         public string MaXepLoai { get; set; }
         public string TenXepLoai { get; set; }
         public Nullable<double> DiemToiThieu { get; set; }
         public Nullable<double> DiemToiDa { get; set; }
         public Nullable<double> DiemKhongChe { get; set; }
         public string NamApDung { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
     }
 }

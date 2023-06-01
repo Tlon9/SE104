@@ -23,6 +23,7 @@ namespace QuanLyHocSinh
         public string MaThanhPhan { get; set; }
         public string TenThanhPhan { get; set; }
         public Nullable<double> TrongSo { get; set; }
+        public string NamApDung { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DIEM> DIEMs { get; set; }

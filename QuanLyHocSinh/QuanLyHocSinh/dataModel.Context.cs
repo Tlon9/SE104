@@ -329,5 +329,36 @@ namespace QuanLyHocSinh
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemXepLoai", maXepLoaiParameter, tenXepLoaiParameter, diemToiThieuParameter, diemToiDaParameter, diemKhongCheParameter);
         }
+    
+        public virtual ObjectResult<TongKetMon_HocSinh_Result> TongKetMon_HocSinh(string maNamHoc, string maHocSinh)
+        {
+            var maNamHocParameter = maNamHoc != null ?
+                new ObjectParameter("MaNamHoc", maNamHoc) :
+                new ObjectParameter("MaNamHoc", typeof(string));
+    
+            var maHocSinhParameter = maHocSinh != null ?
+                new ObjectParameter("MaHocSinh", maHocSinh) :
+                new ObjectParameter("MaHocSinh", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TongKetMon_HocSinh_Result>("TongKetMon_HocSinh", maNamHocParameter, maHocSinhParameter);
+        }
+    
+        public virtual ObjectResult<TongKetNamHoc_Result> TongKetNamHoc(string maNamHoc)
+        {
+            var maNamHocParameter = maNamHoc != null ?
+                new ObjectParameter("MaNamHoc", maNamHoc) :
+                new ObjectParameter("MaNamHoc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TongKetNamHoc_Result>("TongKetNamHoc", maNamHocParameter);
+        }
+    
+        public virtual ObjectResult<XepLoai_NamApDung_Result> XepLoai_NamApDung(string namApDung)
+        {
+            var namApDungParameter = namApDung != null ?
+                new ObjectParameter("NamApDung", namApDung) :
+                new ObjectParameter("NamApDung", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<XepLoai_NamApDung_Result>("XepLoai_NamApDung", namApDungParameter);
+        }
     }
 }

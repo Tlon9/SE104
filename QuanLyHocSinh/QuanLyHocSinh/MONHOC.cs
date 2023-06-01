@@ -22,6 +22,7 @@ namespace QuanLyHocSinh
     
         public string MaMonHoc { get; set; }
         public string TenMonHoc { get; set; }
+        public string NamApDung { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
