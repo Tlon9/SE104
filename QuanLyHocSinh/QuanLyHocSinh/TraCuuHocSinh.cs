@@ -47,6 +47,12 @@ namespace QuanLyHocSinh
 
         void TraCuuHS ()
         {
+            tbFindName.ReadOnly = true;
+            tbStudentID.ReadOnly = true;
+            cbGrade.Enabled = false;
+            cbClass.Enabled = false;
+            tbFindEmail.ReadOnly = true;
+            tbFindPhoneNum.ReadOnly = true;
             dataEntities db = new dataEntities();
 
             if (tbStudentID.Text != "" && tbFindName.Text != "")
@@ -259,55 +265,64 @@ namespace QuanLyHocSinh
                 pnMomOfStudent_Info.Show();
             }
 
-        private void BtnFindInfoStudent_Click(object sender, EventArgs e)
+        private void BtnFindInfoStu_Click(object sender, EventArgs e)
         {
             TraCuuHS();
         }
 
-        private void cbKhoi_SelectedValueChanged(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ComboBox cb = sender as System.Windows.Forms.ComboBox;
-            if (cb.SelectedValue != null)
-            {
-                var temp = cb.SelectedValue.ToString();
-                dataEntities db = new dataEntities();
-            
-                var CBLop = from iter1 in db.LOPs
-                            join iter2 in db.KHOIs on iter1.MaKhoi equals iter2.MaKhoi
-                            where iter2.TenKhoi.ToString() == temp
-                            select iter1.TenLop;
-                
-                cbClass.DataSource = CBLop.ToList();
-                cbClass.DisplayMember = "TenLop";
-            }    
-        }
-
-        private void BtnHomeScreen_Click(object sender, EventArgs e)
-        {
-            (this.formTraCuu as TrangChu).Show();
-            this.Close();
-        }
-
-        private void BtnRefresh_Click(object sender, EventArgs e)
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
             tbStudentID.Clear();
+            tbStudentID.ReadOnly = false;
             tbStudentID.Text = "";
+
             tbFindName.Clear();
+            tbFindName.ReadOnly = false;
             tbFindName.Text = "";
+
             tbFindEmail.Clear();
+            tbFindEmail.ReadOnly = false;
             tbFindEmail.Text = "";
+
             tbFindPhoneNum.Clear();
+            tbFindPhoneNum.ReadOnly = false;
             tbFindPhoneNum.Text = "";
 
             cbGrade.ResetText();
             cbGrade.SelectedIndex = -1;
             cbClass.ResetText();
             cbClass.SelectedIndex = -1;
-            
+            cbGrade.Enabled = true;
+            cbClass.Enabled = true;
+
             pnStudent_info.Hide();
             lbThongTinPhuHuynh.Hide();
             pnDadofStudent_Info.Hide();
             pnMomOfStudent_Info.Hide();
+        }
+
+        private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox cb = sender as System.Windows.Forms.ComboBox;
+            if (cb.SelectedValue != null)
+            {
+                var temp = cb.SelectedValue.ToString();
+                dataEntities db = new dataEntities();
+
+                var CBLop = from iter1 in db.LOPs
+                            join iter2 in db.KHOIs on iter1.MaKhoi equals iter2.MaKhoi
+                            where iter2.TenKhoi.ToString() == temp
+                            select iter1.TenLop;
+
+                cbClass.DataSource = CBLop.ToList();
+                cbClass.DisplayMember = "TenLop";
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            (this.formTraCuu as TrangChu).Show();
+            this.Close();
         }
     }
 }
