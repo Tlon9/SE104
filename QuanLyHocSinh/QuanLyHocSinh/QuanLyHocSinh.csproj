@@ -39,11 +39,20 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,6 +70,12 @@
     </Compile>
     <Compile Include="BangDiemHocSinh.Designer.cs">
       <DependentUpon>BangDiemHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BangDiemMonHocCuaLopTrongNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BangDiemMonHocCuaLopTrongNam.Designer.cs">
+      <DependentUpon>BangDiemMonHocCuaLopTrongNam.cs</DependentUpon>
     </Compile>
     <Compile Include="BangDiemTongKetLop.cs">
       <SubType>Form</SubType>
@@ -172,11 +187,23 @@
     <Compile Include="TongKetMonNamHoc_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TongKetMon_HocSinh_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TongKetNamHoc_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="TraCuuHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TraCuuHocSinh.Designer.cs">
       <DependentUpon>TraCuuHocSinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrangCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangCaNhan.Designer.cs">
+      <DependentUpon>TrangCaNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
@@ -189,6 +216,12 @@
     <Compile Include="XEPLOAI.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="XepLoai_NamApDung_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BangDiemMonHocCuaLopTrongNam.resx">
+      <DependentUpon>BangDiemMonHocCuaLopTrongNam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoTongKet.resx">
       <DependentUpon>BaoCaoTongKet.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuHocSinh.resx">
       <DependentUpon>TraCuuHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrangCaNhan.resx">
+      <DependentUpon>TrangCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

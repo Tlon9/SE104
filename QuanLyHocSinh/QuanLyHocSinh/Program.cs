@@ -6,6 +6,12 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh
 {
+    public class Account
+    {
+        public static string TenDangNhap;
+        public static string MatKhau;
+        public static string VaiTro;
+    }
     static class Program
     {
         /// <summary>

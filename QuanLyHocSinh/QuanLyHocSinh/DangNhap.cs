@@ -25,6 +25,9 @@ namespace QuanLyHocSinh
             {
                 if (item.TenDangNhap == textBoxUsername.Text && item.MatKhau == textBoxPassword.Text)
                 {
+                    Account.TenDangNhap = item.TenDangNhap.ToString();
+                    Account.MatKhau = item.MatKhau.ToString();
+                    Account.VaiTro = item.PHANQUYEN.VaiTro.ToString();
                     TrangChu newform = new TrangChu();
                     this.Hide();
                     newform.ShowDialog();
@@ -48,16 +51,15 @@ namespace QuanLyHocSinh
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
 
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
 
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

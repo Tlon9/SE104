@@ -34,14 +34,14 @@ namespace QuanLyHocSinh
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonLogin = new System.Windows.Forms.Button();
             this.labelWrong = new System.Windows.Forms.Label();
             this.textBoxUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBoxPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonLogin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,15 +61,6 @@ namespace QuanLyHocSinh
             this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            // 
-            // buttonLogin
-            // 
-            this.buttonLogin.BackColor = System.Drawing.SystemColors.Highlight;
-            resources.ApplyResources(this.buttonLogin, "buttonLogin");
-            this.buttonLogin.ForeColor = System.Drawing.SystemColors.Window;
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // labelWrong
             // 
@@ -120,51 +111,64 @@ namespace QuanLyHocSinh
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.guna2Button2);
+            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.guna2Panel1.Controls.Add(this.guna2ImageButtonClose1);
+            this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
             resources.ApplyResources(this.guna2Panel1, "guna2Panel1");
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
-            // guna2Button2
+            // guna2ImageButtonClose1
             // 
-            this.guna2Button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.SystemColors.MenuHighlight;
-            resources.ApplyResources(this.guna2Button2, "guna2Button2");
-            this.guna2Button2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.guna2ImageButtonClose1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonClose1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonClose1.Image")));
+            this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButtonClose1.ImageRotate = 0F;
+            this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
+            resources.ApplyResources(this.guna2ImageButtonClose1, "guna2ImageButtonClose1");
+            this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
+            this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
-            // guna2Button1
+            // guna2ImageButtonMinimize1
             // 
-            this.guna2Button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.SystemColors.MenuHighlight;
-            resources.ApplyResources(this.guna2Button1, "guna2Button1");
-            this.guna2Button1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2ImageButtonMinimize1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.guna2ImageButtonMinimize1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonMinimize1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonMinimize1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonMinimize1.Image")));
+            this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButtonMinimize1.ImageRotate = 0F;
+            this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
+            resources.ApplyResources(this.guna2ImageButtonMinimize1, "guna2ImageButtonMinimize1");
+            this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
+            this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            // 
+            // buttonLogin
+            // 
+            this.buttonLogin.AutoRoundedCorners = true;
+            this.buttonLogin.BorderRadius = 21;
+            this.buttonLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonLogin.FillColor = System.Drawing.SystemColors.MenuHighlight;
+            resources.ApplyResources(this.buttonLogin, "buttonLogin");
+            this.buttonLogin.ForeColor = System.Drawing.Color.White;
+            this.buttonLogin.Name = "buttonLogin";
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // DangNhap
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
+            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.labelWrong);
-            this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -179,13 +183,13 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelWrong;
         private Guna.UI2.WinForms.Guna2TextBox textBoxUsername;
         private Guna.UI2.WinForms.Guna2TextBox textBoxPassword;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
+        private Guna.UI2.WinForms.Guna2Button buttonLogin;
     }
 }

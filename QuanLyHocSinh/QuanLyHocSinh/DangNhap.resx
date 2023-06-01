@@ -192,36 +192,6 @@
   <data name="&gt;&gt;panel3.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="buttonLogin.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 19.8pt, style=Bold</value>
-  </data>
-  <data name="buttonLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 273</value>
-  </data>
-  <data name="buttonLogin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="buttonLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 47</value>
-  </data>
-  <data name="buttonLogin.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="buttonLogin.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="&gt;&gt;buttonLogin.Name" xml:space="preserve">
-    <value>buttonLogin</value>
-  </data>
-  <data name="&gt;&gt;buttonLogin.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonLogin.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;buttonLogin.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="labelWrong.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
@@ -253,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelWrong.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="textBoxUsername.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -309,7 +279,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxUsername.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="textBoxPassword.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -353,70 +323,72 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxPassword.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="guna2ImageButtonClose1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAbhJREFUaEPt2W1qAkEMxnFv0yK9SSs9VBF6AHscbU9T2o99+W7z1P+KiAmzM1NM
+        ZX8QEHkyJOy6Is4mk0md7XZ7b/Vi9W11bprh2WrBeGWs4VHdSS0ZM2ZBXYns7hjXZyHdTtltGNdnoa9d
+        NrVPxvURTI9xfeTSY1wfufQY10cuPcb1kUuPcX3k0mNcH7kxnqzedi+rqFdnjMK4PnKlVvTMrWqWUc+c
+        M1a/7xRST4hcqXerG/qurF71ZqHD3murMb1/cmvVLNO0hKg3RG6sMcs0LyHqD5GrUbJMlyVEZ4TI1YqW
+        6baE6JwQuRanlum6hOisELlWh49VPZoPX7d85+zpvBC5HvZXQex1lysx4FgfuR6OFyl9NBfhWB+5Vhdx
+        a536YJ96ADTRWSFytaKnU9dldE6IXI1oiUG3ZXRGiNxYJUsMuiyj/hC5McYsMWheRr0hcqVqlhg0LaO+
+        ELlSF/PDSi7ip+7ZMK6PXHqM6yOXHuP6yKXHuD5y6TGuj1x6jOuzzH/4o+eDcX0W0r+n2a0Z12ehxS6b
+        2i3jxiy43OVTemDMMtZwZ7WxyvCZ0Qxrq7IrMZlMjsxmP795bl6Vk46sAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="guna2ImageButtonClose1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 5</value>
+  </data>
+  <data name="guna2ImageButtonClose1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 35</value>
+  </data>
+  <data name="guna2ImageButtonClose1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="guna2Button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Name" xml:space="preserve">
+    <value>guna2ImageButtonClose1</value>
   </data>
-  <data name="guna2Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAkSURBVEhLYxgFo2AUjALSwX8qYZwAm2Jy8CgYBaNgFBAP
-        GBgA6Rwj3cI4MzQAAAAASUVORK5CYII=
-</value>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
   </data>
-  <data name="guna2Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, -1</value>
-  </data>
-  <data name="guna2Button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 32</value>
-  </data>
-  <data name="guna2Button1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;guna2Button1.Name" xml:space="preserve">
-    <value>guna2Button1</value>
-  </data>
-  <data name="&gt;&gt;guna2Button1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
-  </data>
-  <data name="&gt;&gt;guna2Button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;guna2ImageButtonClose1.Parent" xml:space="preserve">
     <value>guna2Panel1</value>
   </data>
-  <data name="&gt;&gt;guna2Button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;guna2ImageButtonClose1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="guna2Button2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="guna2Button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="guna2ImageButtonMinimize1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAACQSURBVEhL7ZRLCoAwDER7CUWPqMfVhcfRGSQQpMb0Jy58
-        MNhFMlNMaPj5LBPUn0cXrGWPixnaoRXyhLCGtexh7yMdtEBs2KARuuNaO0AuPCHZ5oIVUmwuxEKqmQt6
-        iPzqc8qmmehbV7u5JhZgbVcSTX9RbKCxwWdhbUtxiGUuZId4zIWskOaPHWn6XP+8SQgHi2NLMvBiaeUA
-        AAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAATxJREFUaEPt2VFKw0AYReGsS+oKbHFRUnBTrW6p6nv8hzlPwpkGafEK88G8nSQX
+        0j5lmabpd9Z1fa7zXuerzl9rG97qHJi3TV3w2q4OdWTmWIXtTaTbM9dV1H5O6c7MdRV99jbaB3MdYTzm
+        Orp4zHV08Zjr6OIx19HFY66ji8dcRxePuY4uHnMdXTzmOrp4zHV08Zjr6OIx19HFY66ji8dcRxePuY4u
+        HnMdXTzmOrp4zHV08Zjr6OIx19HFY66ji8dcRxePuY4uHnMd3TUP5DdX9971R4yRO7oh0rvhMUOkjm6I
+        9G54zBCpo7tmR35zde/H/ogxckcXj7mOLh5zHV085jq6eMx11fyHDz0X5rqK2tfTdCfmuooOvY32xNyx
+        Co+9j/TCzG3qgn2dc52E/0zbcKqz7U1M0/TDsnwDLQLKnTC09TMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="guna2Button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>301, 0</value>
+  <data name="guna2ImageButtonMinimize1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 5</value>
   </data>
-  <data name="guna2Button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 32</value>
+  <data name="guna2ImageButtonMinimize1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 35</value>
   </data>
-  <data name="guna2Button2.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="guna2ImageButtonMinimize1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;guna2Button2.Name" xml:space="preserve">
-    <value>guna2Button2</value>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Name" xml:space="preserve">
+    <value>guna2ImageButtonMinimize1</value>
   </data>
-  <data name="&gt;&gt;guna2Button2.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
   </data>
-  <data name="&gt;&gt;guna2Button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Parent" xml:space="preserve">
     <value>guna2Panel1</value>
   </data>
-  <data name="&gt;&gt;guna2Button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="guna2Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -426,7 +398,7 @@
     <value>0, 0</value>
   </data>
   <data name="guna2Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 34</value>
+    <value>334, 43</value>
   </data>
   <data name="guna2Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -441,11 +413,38 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;guna2Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="buttonLogin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="buttonLogin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 269</value>
+  </data>
+  <data name="buttonLogin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 45</value>
+  </data>
+  <data name="buttonLogin.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="buttonLogin.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.Name" xml:space="preserve">
+    <value>buttonLogin</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonLogin.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
