@@ -47,12 +47,6 @@ namespace QuanLyHocSinh
 
         void TraCuuHS ()
         {
-            tbFindName.ReadOnly = true;
-            tbStudentID.ReadOnly = true;
-            cbGrade.Enabled = false;
-            cbClass.Enabled = false;
-            tbFindEmail.ReadOnly = true;
-            tbFindPhoneNum.ReadOnly = true;
             dataEntities db = new dataEntities();
 
             if (tbStudentID.Text != "" && tbFindName.Text != "")
@@ -174,7 +168,13 @@ namespace QuanLyHocSinh
             }
 
             // Sau khi kiểm tra đúng thì lấy thông tin của học sinh được tìm thấy
-             var result1 = from iter1 in db.HOCSINHs
+            tbFindName.ReadOnly = true;
+            tbStudentID.ReadOnly = true;
+            cbGrade.Enabled = false;
+            cbClass.Enabled = false;
+            tbFindEmail.ReadOnly = true;
+            tbFindPhoneNum.ReadOnly = true;
+            var result1 = from iter1 in db.HOCSINHs
                           join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
                           join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
                           where iter1.MaHocSinh == tbStudentID.Text && iter1.HoTen == tbFindName.Text
@@ -270,7 +270,25 @@ namespace QuanLyHocSinh
             TraCuuHS();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox cb = sender as System.Windows.Forms.ComboBox;
+            if (cb.SelectedValue != null)
+            {
+                var temp = cb.SelectedValue.ToString();
+                dataEntities db = new dataEntities();
+
+                var CBLop = from iter1 in db.LOPs
+                            join iter2 in db.KHOIs on iter1.MaKhoi equals iter2.MaKhoi
+                            where iter2.TenKhoi.ToString() == temp
+                            select iter1.TenLop;
+
+                cbClass.DataSource = CBLop.ToList();
+                cbClass.DisplayMember = "TenLop";
+            }
+        }
+
+        private void BtnRefresh1_Click(object sender, EventArgs e)
         {
             tbStudentID.Clear();
             tbStudentID.ReadOnly = false;
@@ -301,25 +319,7 @@ namespace QuanLyHocSinh
             pnMomOfStudent_Info.Hide();
         }
 
-        private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            System.Windows.Forms.ComboBox cb = sender as System.Windows.Forms.ComboBox;
-            if (cb.SelectedValue != null)
-            {
-                var temp = cb.SelectedValue.ToString();
-                dataEntities db = new dataEntities();
-
-                var CBLop = from iter1 in db.LOPs
-                            join iter2 in db.KHOIs on iter1.MaKhoi equals iter2.MaKhoi
-                            where iter2.TenKhoi.ToString() == temp
-                            select iter1.TenLop;
-
-                cbClass.DataSource = CBLop.ToList();
-                cbClass.DisplayMember = "TenLop";
-            }
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private void BtnHomeScreen_Click(object sender, EventArgs e)
         {
             (this.formTraCuu as TrangChu).Show();
             this.Close();

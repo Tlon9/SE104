@@ -82,21 +82,21 @@
             this.tbNgaySinh = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbGioiTinh = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbLop = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbMaSoHS = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbHoTen = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbMaSoHS = new Guna.UI2.WinForms.Guna2TextBox();
             this.BtnHomeScreen = new Guna.UI2.WinForms.Guna2Button();
             this.pnDadofStudent_Info = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.tbHoTenCha = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbCCCD_Cha = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbSDT_Cha = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbNgheNghiep_Cha = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbNamSinh_Cha = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbNgheNghiep_Cha = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbSDT_Cha = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbCCCD_Cha = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbHoTenCha = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnMomOfStudent_Info = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.tbHoTenMe = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbCCCD_Me = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbSDT_Me = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbNgheNghiepMe = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbNamSinhMe = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbNgheNghiepMe = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbSDT_Me = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbCCCD_Me = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbHoTenMe = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnFindInfoStudent.SuspendLayout();
             this.pnStudent_info.SuspendLayout();
             this.pnDadofStudent_Info.SuspendLayout();
@@ -138,7 +138,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbEmail.Location = new System.Drawing.Point(507, 267);
+            this.lbEmail.Location = new System.Drawing.Point(452, 267);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(61, 20);
             this.lbEmail.TabIndex = 20;
@@ -148,7 +148,7 @@
             // 
             this.lbDiaChi.AutoSize = true;
             this.lbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDiaChi.Location = new System.Drawing.Point(497, 213);
+            this.lbDiaChi.Location = new System.Drawing.Point(452, 213);
             this.lbDiaChi.Name = "lbDiaChi";
             this.lbDiaChi.Size = new System.Drawing.Size(71, 20);
             this.lbDiaChi.TabIndex = 18;
@@ -158,7 +158,7 @@
             // 
             this.lbTonGiao.AutoSize = true;
             this.lbTonGiao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTonGiao.Location = new System.Drawing.Point(756, 163);
+            this.lbTonGiao.Location = new System.Drawing.Point(706, 163);
             this.lbTonGiao.Name = "lbTonGiao";
             this.lbTonGiao.Size = new System.Drawing.Size(83, 20);
             this.lbTonGiao.TabIndex = 16;
@@ -168,7 +168,7 @@
             // 
             this.lbDanToc.AutoSize = true;
             this.lbDanToc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDanToc.Location = new System.Drawing.Point(396, 163);
+            this.lbDanToc.Location = new System.Drawing.Point(371, 163);
             this.lbDanToc.Name = "lbDanToc";
             this.lbDanToc.Size = new System.Drawing.Size(78, 20);
             this.lbDanToc.TabIndex = 15;
@@ -178,7 +178,7 @@
             // 
             this.lbGioiTinh.AutoSize = true;
             this.lbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbGioiTinh.Location = new System.Drawing.Point(359, 116);
+            this.lbGioiTinh.Location = new System.Drawing.Point(335, 116);
             this.lbGioiTinh.Name = "lbGioiTinh";
             this.lbGioiTinh.Size = new System.Drawing.Size(81, 20);
             this.lbGioiTinh.TabIndex = 5;
@@ -368,7 +368,7 @@
             // 
             this.lbThongTinPhuHuynh.AutoSize = true;
             this.lbThongTinPhuHuynh.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(463, 630);
+            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(431, 631);
             this.lbThongTinPhuHuynh.Name = "lbThongTinPhuHuynh";
             this.lbThongTinPhuHuynh.Size = new System.Drawing.Size(386, 32);
             this.lbThongTinPhuHuynh.TabIndex = 7;
@@ -495,7 +495,7 @@
             this.BtnRefresh.TabIndex = 7;
             this.BtnRefresh.Text = "Nhập lại";
             this.BtnRefresh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BtnRefresh.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh1_Click);
             // 
             // pnFindInfoStudent
             // 
@@ -688,7 +688,7 @@
             this.tbTonGiao.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbTonGiao.ForeColor = System.Drawing.Color.Black;
             this.tbTonGiao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTonGiao.Location = new System.Drawing.Point(858, 154);
+            this.tbTonGiao.Location = new System.Drawing.Point(808, 154);
             this.tbTonGiao.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbTonGiao.Name = "tbTonGiao";
             this.tbTonGiao.PasswordChar = '\0';
@@ -710,7 +710,7 @@
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.Location = new System.Drawing.Point(582, 258);
+            this.tbEmail.Location = new System.Drawing.Point(527, 258);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
@@ -754,7 +754,7 @@
             this.tbDiaChi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbDiaChi.ForeColor = System.Drawing.Color.Black;
             this.tbDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDiaChi.Location = new System.Drawing.Point(582, 209);
+            this.tbDiaChi.Location = new System.Drawing.Point(537, 209);
             this.tbDiaChi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbDiaChi.Name = "tbDiaChi";
             this.tbDiaChi.PasswordChar = '\0';
@@ -798,7 +798,7 @@
             this.tbDanToc.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbDanToc.ForeColor = System.Drawing.Color.Black;
             this.tbDanToc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDanToc.Location = new System.Drawing.Point(489, 154);
+            this.tbDanToc.Location = new System.Drawing.Point(464, 154);
             this.tbDanToc.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbDanToc.Name = "tbDanToc";
             this.tbDanToc.PasswordChar = '\0';
@@ -842,7 +842,7 @@
             this.tbGioiTinh.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbGioiTinh.ForeColor = System.Drawing.Color.Black;
             this.tbGioiTinh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGioiTinh.Location = new System.Drawing.Point(456, 109);
+            this.tbGioiTinh.Location = new System.Drawing.Point(432, 109);
             this.tbGioiTinh.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbGioiTinh.Name = "tbGioiTinh";
             this.tbGioiTinh.PasswordChar = '\0';
@@ -874,28 +874,6 @@
             this.tbLop.Size = new System.Drawing.Size(151, 27);
             this.tbLop.TabIndex = 23;
             // 
-            // tbMaSoHS
-            // 
-            this.tbMaSoHS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbMaSoHS.DefaultText = "";
-            this.tbMaSoHS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbMaSoHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbMaSoHS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbMaSoHS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbMaSoHS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMaSoHS.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbMaSoHS.ForeColor = System.Drawing.Color.Black;
-            this.tbMaSoHS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMaSoHS.Location = new System.Drawing.Point(683, 60);
-            this.tbMaSoHS.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbMaSoHS.Name = "tbMaSoHS";
-            this.tbMaSoHS.PasswordChar = '\0';
-            this.tbMaSoHS.PlaceholderText = "";
-            this.tbMaSoHS.ReadOnly = true;
-            this.tbMaSoHS.SelectedText = "";
-            this.tbMaSoHS.Size = new System.Drawing.Size(224, 27);
-            this.tbMaSoHS.TabIndex = 22;
-            // 
             // tbHoTen
             // 
             this.tbHoTen.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -917,6 +895,28 @@
             this.tbHoTen.SelectedText = "";
             this.tbHoTen.Size = new System.Drawing.Size(328, 27);
             this.tbHoTen.TabIndex = 20;
+            // 
+            // tbMaSoHS
+            // 
+            this.tbMaSoHS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbMaSoHS.DefaultText = "";
+            this.tbMaSoHS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbMaSoHS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbMaSoHS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbMaSoHS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbMaSoHS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbMaSoHS.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbMaSoHS.ForeColor = System.Drawing.Color.Black;
+            this.tbMaSoHS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbMaSoHS.Location = new System.Drawing.Point(683, 60);
+            this.tbMaSoHS.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbMaSoHS.Name = "tbMaSoHS";
+            this.tbMaSoHS.PasswordChar = '\0';
+            this.tbMaSoHS.PlaceholderText = "";
+            this.tbMaSoHS.ReadOnly = true;
+            this.tbMaSoHS.SelectedText = "";
+            this.tbMaSoHS.Size = new System.Drawing.Size(224, 27);
+            this.tbMaSoHS.TabIndex = 22;
             // 
             // BtnHomeScreen
             // 
@@ -947,7 +947,7 @@
             this.BtnHomeScreen.TabIndex = 25;
             this.BtnHomeScreen.Text = "Trang chủ";
             this.BtnHomeScreen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BtnHomeScreen.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.BtnHomeScreen.Click += new System.EventHandler(this.BtnHomeScreen_Click);
             // 
             // pnDadofStudent_Info
             // 
@@ -966,94 +966,6 @@
             this.pnDadofStudent_Info.Name = "pnDadofStudent_Info";
             this.pnDadofStudent_Info.Size = new System.Drawing.Size(586, 304);
             this.pnDadofStudent_Info.TabIndex = 27;
-            // 
-            // tbHoTenCha
-            // 
-            this.tbHoTenCha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbHoTenCha.DefaultText = "";
-            this.tbHoTenCha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbHoTenCha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbHoTenCha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbHoTenCha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbHoTenCha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbHoTenCha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbHoTenCha.ForeColor = System.Drawing.Color.Black;
-            this.tbHoTenCha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbHoTenCha.Location = new System.Drawing.Point(147, 50);
-            this.tbHoTenCha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbHoTenCha.Name = "tbHoTenCha";
-            this.tbHoTenCha.PasswordChar = '\0';
-            this.tbHoTenCha.PlaceholderText = "";
-            this.tbHoTenCha.ReadOnly = true;
-            this.tbHoTenCha.SelectedText = "";
-            this.tbHoTenCha.Size = new System.Drawing.Size(302, 29);
-            this.tbHoTenCha.TabIndex = 8;
-            // 
-            // tbCCCD_Cha
-            // 
-            this.tbCCCD_Cha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCCCD_Cha.DefaultText = "";
-            this.tbCCCD_Cha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbCCCD_Cha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbCCCD_Cha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCCCD_Cha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCCCD_Cha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCCCD_Cha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbCCCD_Cha.ForeColor = System.Drawing.Color.Black;
-            this.tbCCCD_Cha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCCCD_Cha.Location = new System.Drawing.Point(208, 98);
-            this.tbCCCD_Cha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbCCCD_Cha.Name = "tbCCCD_Cha";
-            this.tbCCCD_Cha.PasswordChar = '\0';
-            this.tbCCCD_Cha.PlaceholderText = "";
-            this.tbCCCD_Cha.ReadOnly = true;
-            this.tbCCCD_Cha.SelectedText = "";
-            this.tbCCCD_Cha.Size = new System.Drawing.Size(258, 29);
-            this.tbCCCD_Cha.TabIndex = 9;
-            // 
-            // tbSDT_Cha
-            // 
-            this.tbSDT_Cha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSDT_Cha.DefaultText = "";
-            this.tbSDT_Cha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSDT_Cha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSDT_Cha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSDT_Cha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSDT_Cha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSDT_Cha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbSDT_Cha.ForeColor = System.Drawing.Color.Black;
-            this.tbSDT_Cha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSDT_Cha.Location = new System.Drawing.Point(162, 144);
-            this.tbSDT_Cha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbSDT_Cha.Name = "tbSDT_Cha";
-            this.tbSDT_Cha.PasswordChar = '\0';
-            this.tbSDT_Cha.PlaceholderText = "";
-            this.tbSDT_Cha.ReadOnly = true;
-            this.tbSDT_Cha.SelectedText = "";
-            this.tbSDT_Cha.Size = new System.Drawing.Size(258, 33);
-            this.tbSDT_Cha.TabIndex = 28;
-            // 
-            // tbNgheNghiep_Cha
-            // 
-            this.tbNgheNghiep_Cha.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNgheNghiep_Cha.DefaultText = "";
-            this.tbNgheNghiep_Cha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbNgheNghiep_Cha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbNgheNghiep_Cha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNgheNghiep_Cha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNgheNghiep_Cha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNgheNghiep_Cha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbNgheNghiep_Cha.ForeColor = System.Drawing.Color.Black;
-            this.tbNgheNghiep_Cha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNgheNghiep_Cha.Location = new System.Drawing.Point(162, 200);
-            this.tbNgheNghiep_Cha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbNgheNghiep_Cha.Name = "tbNgheNghiep_Cha";
-            this.tbNgheNghiep_Cha.PasswordChar = '\0';
-            this.tbNgheNghiep_Cha.PlaceholderText = "";
-            this.tbNgheNghiep_Cha.ReadOnly = true;
-            this.tbNgheNghiep_Cha.SelectedText = "";
-            this.tbNgheNghiep_Cha.Size = new System.Drawing.Size(287, 33);
-            this.tbNgheNghiep_Cha.TabIndex = 28;
             // 
             // tbNamSinh_Cha
             // 
@@ -1077,6 +989,94 @@
             this.tbNamSinh_Cha.Size = new System.Drawing.Size(243, 33);
             this.tbNamSinh_Cha.TabIndex = 28;
             // 
+            // tbNgheNghiep_Cha
+            // 
+            this.tbNgheNghiep_Cha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNgheNghiep_Cha.DefaultText = "";
+            this.tbNgheNghiep_Cha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbNgheNghiep_Cha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbNgheNghiep_Cha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNgheNghiep_Cha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNgheNghiep_Cha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNgheNghiep_Cha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbNgheNghiep_Cha.ForeColor = System.Drawing.Color.Black;
+            this.tbNgheNghiep_Cha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNgheNghiep_Cha.Location = new System.Drawing.Point(162, 200);
+            this.tbNgheNghiep_Cha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbNgheNghiep_Cha.Name = "tbNgheNghiep_Cha";
+            this.tbNgheNghiep_Cha.PasswordChar = '\0';
+            this.tbNgheNghiep_Cha.PlaceholderText = "";
+            this.tbNgheNghiep_Cha.ReadOnly = true;
+            this.tbNgheNghiep_Cha.SelectedText = "";
+            this.tbNgheNghiep_Cha.Size = new System.Drawing.Size(287, 33);
+            this.tbNgheNghiep_Cha.TabIndex = 28;
+            // 
+            // tbSDT_Cha
+            // 
+            this.tbSDT_Cha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSDT_Cha.DefaultText = "";
+            this.tbSDT_Cha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSDT_Cha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSDT_Cha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT_Cha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT_Cha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSDT_Cha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbSDT_Cha.ForeColor = System.Drawing.Color.Black;
+            this.tbSDT_Cha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSDT_Cha.Location = new System.Drawing.Point(162, 144);
+            this.tbSDT_Cha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbSDT_Cha.Name = "tbSDT_Cha";
+            this.tbSDT_Cha.PasswordChar = '\0';
+            this.tbSDT_Cha.PlaceholderText = "";
+            this.tbSDT_Cha.ReadOnly = true;
+            this.tbSDT_Cha.SelectedText = "";
+            this.tbSDT_Cha.Size = new System.Drawing.Size(258, 33);
+            this.tbSDT_Cha.TabIndex = 28;
+            // 
+            // tbCCCD_Cha
+            // 
+            this.tbCCCD_Cha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCCCD_Cha.DefaultText = "";
+            this.tbCCCD_Cha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCCCD_Cha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCCCD_Cha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCCCD_Cha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCCCD_Cha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCCCD_Cha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbCCCD_Cha.ForeColor = System.Drawing.Color.Black;
+            this.tbCCCD_Cha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCCCD_Cha.Location = new System.Drawing.Point(208, 98);
+            this.tbCCCD_Cha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbCCCD_Cha.Name = "tbCCCD_Cha";
+            this.tbCCCD_Cha.PasswordChar = '\0';
+            this.tbCCCD_Cha.PlaceholderText = "";
+            this.tbCCCD_Cha.ReadOnly = true;
+            this.tbCCCD_Cha.SelectedText = "";
+            this.tbCCCD_Cha.Size = new System.Drawing.Size(258, 29);
+            this.tbCCCD_Cha.TabIndex = 9;
+            // 
+            // tbHoTenCha
+            // 
+            this.tbHoTenCha.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbHoTenCha.DefaultText = "";
+            this.tbHoTenCha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbHoTenCha.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbHoTenCha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbHoTenCha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbHoTenCha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbHoTenCha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbHoTenCha.ForeColor = System.Drawing.Color.Black;
+            this.tbHoTenCha.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbHoTenCha.Location = new System.Drawing.Point(147, 50);
+            this.tbHoTenCha.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbHoTenCha.Name = "tbHoTenCha";
+            this.tbHoTenCha.PasswordChar = '\0';
+            this.tbHoTenCha.PlaceholderText = "";
+            this.tbHoTenCha.ReadOnly = true;
+            this.tbHoTenCha.SelectedText = "";
+            this.tbHoTenCha.Size = new System.Drawing.Size(302, 29);
+            this.tbHoTenCha.TabIndex = 8;
+            // 
             // pnMomOfStudent_Info
             // 
             this.pnMomOfStudent_Info.Controls.Add(this.tbNamSinhMe);
@@ -1095,71 +1095,27 @@
             this.pnMomOfStudent_Info.Size = new System.Drawing.Size(563, 304);
             this.pnMomOfStudent_Info.TabIndex = 28;
             // 
-            // tbHoTenMe
+            // tbNamSinhMe
             // 
-            this.tbHoTenMe.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbHoTenMe.DefaultText = "";
-            this.tbHoTenMe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbHoTenMe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbHoTenMe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbHoTenMe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbHoTenMe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbHoTenMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbHoTenMe.ForeColor = System.Drawing.Color.Black;
-            this.tbHoTenMe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbHoTenMe.Location = new System.Drawing.Point(142, 50);
-            this.tbHoTenMe.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbHoTenMe.Name = "tbHoTenMe";
-            this.tbHoTenMe.PasswordChar = '\0';
-            this.tbHoTenMe.PlaceholderText = "";
-            this.tbHoTenMe.ReadOnly = true;
-            this.tbHoTenMe.SelectedText = "";
-            this.tbHoTenMe.Size = new System.Drawing.Size(258, 29);
-            this.tbHoTenMe.TabIndex = 7;
-            // 
-            // tbCCCD_Me
-            // 
-            this.tbCCCD_Me.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCCCD_Me.DefaultText = "";
-            this.tbCCCD_Me.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbCCCD_Me.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbCCCD_Me.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCCCD_Me.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbCCCD_Me.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCCCD_Me.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbCCCD_Me.ForeColor = System.Drawing.Color.Black;
-            this.tbCCCD_Me.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbCCCD_Me.Location = new System.Drawing.Point(220, 98);
-            this.tbCCCD_Me.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbCCCD_Me.Name = "tbCCCD_Me";
-            this.tbCCCD_Me.PasswordChar = '\0';
-            this.tbCCCD_Me.PlaceholderText = "";
-            this.tbCCCD_Me.ReadOnly = true;
-            this.tbCCCD_Me.SelectedText = "";
-            this.tbCCCD_Me.Size = new System.Drawing.Size(258, 29);
-            this.tbCCCD_Me.TabIndex = 8;
-            // 
-            // tbSDT_Me
-            // 
-            this.tbSDT_Me.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbSDT_Me.DefaultText = "";
-            this.tbSDT_Me.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbSDT_Me.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbSDT_Me.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSDT_Me.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbSDT_Me.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSDT_Me.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbSDT_Me.ForeColor = System.Drawing.Color.Black;
-            this.tbSDT_Me.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbSDT_Me.Location = new System.Drawing.Point(164, 144);
-            this.tbSDT_Me.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbSDT_Me.Name = "tbSDT_Me";
-            this.tbSDT_Me.PasswordChar = '\0';
-            this.tbSDT_Me.PlaceholderText = "";
-            this.tbSDT_Me.ReadOnly = true;
-            this.tbSDT_Me.SelectedText = "";
-            this.tbSDT_Me.Size = new System.Drawing.Size(258, 33);
-            this.tbSDT_Me.TabIndex = 9;
+            this.tbNamSinhMe.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNamSinhMe.DefaultText = "";
+            this.tbNamSinhMe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbNamSinhMe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbNamSinhMe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNamSinhMe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNamSinhMe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNamSinhMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbNamSinhMe.ForeColor = System.Drawing.Color.Black;
+            this.tbNamSinhMe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNamSinhMe.Location = new System.Drawing.Point(142, 254);
+            this.tbNamSinhMe.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbNamSinhMe.Name = "tbNamSinhMe";
+            this.tbNamSinhMe.PasswordChar = '\0';
+            this.tbNamSinhMe.PlaceholderText = "";
+            this.tbNamSinhMe.ReadOnly = true;
+            this.tbNamSinhMe.SelectedText = "";
+            this.tbNamSinhMe.Size = new System.Drawing.Size(258, 29);
+            this.tbNamSinhMe.TabIndex = 11;
             // 
             // tbNgheNghiepMe
             // 
@@ -1183,27 +1139,71 @@
             this.tbNgheNghiepMe.Size = new System.Drawing.Size(258, 33);
             this.tbNgheNghiepMe.TabIndex = 10;
             // 
-            // tbNamSinhMe
+            // tbSDT_Me
             // 
-            this.tbNamSinhMe.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbNamSinhMe.DefaultText = "";
-            this.tbNamSinhMe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbNamSinhMe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbNamSinhMe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNamSinhMe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbNamSinhMe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNamSinhMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbNamSinhMe.ForeColor = System.Drawing.Color.Black;
-            this.tbNamSinhMe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNamSinhMe.Location = new System.Drawing.Point(142, 254);
-            this.tbNamSinhMe.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tbNamSinhMe.Name = "tbNamSinhMe";
-            this.tbNamSinhMe.PasswordChar = '\0';
-            this.tbNamSinhMe.PlaceholderText = "";
-            this.tbNamSinhMe.ReadOnly = true;
-            this.tbNamSinhMe.SelectedText = "";
-            this.tbNamSinhMe.Size = new System.Drawing.Size(258, 29);
-            this.tbNamSinhMe.TabIndex = 11;
+            this.tbSDT_Me.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbSDT_Me.DefaultText = "";
+            this.tbSDT_Me.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbSDT_Me.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbSDT_Me.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT_Me.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbSDT_Me.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSDT_Me.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbSDT_Me.ForeColor = System.Drawing.Color.Black;
+            this.tbSDT_Me.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbSDT_Me.Location = new System.Drawing.Point(164, 144);
+            this.tbSDT_Me.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbSDT_Me.Name = "tbSDT_Me";
+            this.tbSDT_Me.PasswordChar = '\0';
+            this.tbSDT_Me.PlaceholderText = "";
+            this.tbSDT_Me.ReadOnly = true;
+            this.tbSDT_Me.SelectedText = "";
+            this.tbSDT_Me.Size = new System.Drawing.Size(258, 33);
+            this.tbSDT_Me.TabIndex = 9;
+            // 
+            // tbCCCD_Me
+            // 
+            this.tbCCCD_Me.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbCCCD_Me.DefaultText = "";
+            this.tbCCCD_Me.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbCCCD_Me.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbCCCD_Me.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCCCD_Me.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbCCCD_Me.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCCCD_Me.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbCCCD_Me.ForeColor = System.Drawing.Color.Black;
+            this.tbCCCD_Me.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbCCCD_Me.Location = new System.Drawing.Point(220, 98);
+            this.tbCCCD_Me.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbCCCD_Me.Name = "tbCCCD_Me";
+            this.tbCCCD_Me.PasswordChar = '\0';
+            this.tbCCCD_Me.PlaceholderText = "";
+            this.tbCCCD_Me.ReadOnly = true;
+            this.tbCCCD_Me.SelectedText = "";
+            this.tbCCCD_Me.Size = new System.Drawing.Size(258, 29);
+            this.tbCCCD_Me.TabIndex = 8;
+            // 
+            // tbHoTenMe
+            // 
+            this.tbHoTenMe.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbHoTenMe.DefaultText = "";
+            this.tbHoTenMe.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbHoTenMe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbHoTenMe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbHoTenMe.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbHoTenMe.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbHoTenMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbHoTenMe.ForeColor = System.Drawing.Color.Black;
+            this.tbHoTenMe.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbHoTenMe.Location = new System.Drawing.Point(142, 50);
+            this.tbHoTenMe.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.tbHoTenMe.Name = "tbHoTenMe";
+            this.tbHoTenMe.PasswordChar = '\0';
+            this.tbHoTenMe.PlaceholderText = "";
+            this.tbHoTenMe.ReadOnly = true;
+            this.tbHoTenMe.SelectedText = "";
+            this.tbHoTenMe.Size = new System.Drawing.Size(258, 29);
+            this.tbHoTenMe.TabIndex = 7;
             // 
             // TraCuuHocSinh
             // 
