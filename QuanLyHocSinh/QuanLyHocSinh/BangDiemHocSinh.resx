@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="InBangDiembutton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAACwSURBVEhL7ZHRCcJAEETvywJMLWpK0MrUthQbMZg2dBYM
+        HDdzuV31S33wICGzc2QvfTUXeHd6hmFU0ZxhVMmcYey3VZHyBH+ABTzCEao1eLzBA7Quwj6ooVfcQ8JO
+        V2GvK7h5PlsXUQ5EXcM+eyfy8CckVOgdCRUyl7BGB9WMSQzQFSxQM1dI7KA6pEWZt/ItbDINtPDmiGnQ
+        9lwjv4MwtTtRyp23qN1JqXvnfwQpPQBvOt9c/ryyQgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="TraCuuButton_hk.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAHTSURBVEhL7VbLSgNBEMzFi4+zCIrZJBBQQUXxcfBu8Oui
+        foBXg+DZU8zsevMrzM6swQfqKZ5i1zir0vaMMSx4MAXFJlNdXZndniWlMf4fKp3sIFImrcRmUASj2HTp
+        2nDt/XCFYpNRST1vXHs/JGMRdO39kExF0LX3QzKBdLv6xGZZZduzF9kUiM8VZY5oJl4lz1e69n5IJgxb
+        Oe6uupJvWEzStZ8G0pX6wQ3YaR5a7aQLlVifRUq/WMbmvJykdWi1y3Q9tHPUBMEN1LyJdRuqzAPXiY/Q
+        rFfpY0G3hB4EN0SdbOt9XZ9x7ZO6hZrF+HZH1kcIXmr3prGOW8u1nKQ9o6ae3M1IOgg9CG4YJph2/IQa
+        TLqsjxCMI4P1iAaJax9U+hQ19nhJOhF6ENxAgYdYx/TS98dvujL3tXZ3HjV0V064nhN6ENxAwX2cU2ju
+        OLXwTEHsNA/duB5M0NRr7s+JmiAkE14OebgEhOJajbNl+kE9qYctDEEygfblQK/HapLuYuDmrvUknqm9
+        vbRThFr/VbYihdvmIXDDsLRhFGp7JGaT67Z5CNzwG9pwCo0Svcc1194PbiiKrr0fkqkIuvZ+RH/416dR
+        ZDhCq8rsu/Zj/BuUSm/DS8LGetytCgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

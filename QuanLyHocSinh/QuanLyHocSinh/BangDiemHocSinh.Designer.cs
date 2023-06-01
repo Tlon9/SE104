@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangDiemHocSinh));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,6 +66,7 @@
             this.res = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.InputHKpanel = new System.Windows.Forms.Panel();
+            this.InBangDiembutton = new System.Windows.Forms.Button();
             this.TraCuuButton_hk = new System.Windows.Forms.Button();
             this.MHStextbox_hk = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -77,11 +80,13 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.InputNHpanel = new System.Windows.Forms.Panel();
+            this.InBangDiembutton1 = new System.Windows.Forms.Button();
             this.MHStextbox_nh = new System.Windows.Forms.TextBox();
             this.TraCuuButton_nh = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.NamHocCbb_nh = new System.Windows.Forms.ComboBox();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelDNH.SuspendLayout();
             this.TracuuHKTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -432,6 +437,7 @@
             // 
             // InputHKpanel
             // 
+            this.InputHKpanel.Controls.Add(this.InBangDiembutton);
             this.InputHKpanel.Controls.Add(this.TraCuuButton_hk);
             this.InputHKpanel.Controls.Add(this.MHStextbox_hk);
             this.InputHKpanel.Controls.Add(this.label2);
@@ -445,15 +451,42 @@
             this.InputHKpanel.TabIndex = 25;
             this.InputHKpanel.Tag = "";
             // 
+            // InBangDiembutton
+            // 
+            this.InBangDiembutton.BackColor = System.Drawing.SystemColors.Window;
+            this.InBangDiembutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.InBangDiembutton.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.InBangDiembutton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.InBangDiembutton.Image = ((System.Drawing.Image)(resources.GetObject("InBangDiembutton.Image")));
+            this.InBangDiembutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.InBangDiembutton.Location = new System.Drawing.Point(225, 78);
+            this.InBangDiembutton.Margin = new System.Windows.Forms.Padding(2);
+            this.InBangDiembutton.Name = "InBangDiembutton";
+            this.InBangDiembutton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.InBangDiembutton.Size = new System.Drawing.Size(114, 31);
+            this.InBangDiembutton.TabIndex = 28;
+            this.InBangDiembutton.Text = "In bảng điểm";
+            this.InBangDiembutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.InBangDiembutton.UseVisualStyleBackColor = false;
+            this.InBangDiembutton.Click += new System.EventHandler(this.InBangDiembutton_Click);
+            // 
             // TraCuuButton_hk
             // 
-            this.TraCuuButton_hk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TraCuuButton_hk.Location = new System.Drawing.Point(239, 29);
+            this.TraCuuButton_hk.BackColor = System.Drawing.SystemColors.Window;
+            this.TraCuuButton_hk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TraCuuButton_hk.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.TraCuuButton_hk.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TraCuuButton_hk.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuButton_hk.Image")));
+            this.TraCuuButton_hk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TraCuuButton_hk.Location = new System.Drawing.Point(225, 26);
+            this.TraCuuButton_hk.Margin = new System.Windows.Forms.Padding(2);
             this.TraCuuButton_hk.Name = "TraCuuButton_hk";
-            this.TraCuuButton_hk.Size = new System.Drawing.Size(74, 24);
-            this.TraCuuButton_hk.TabIndex = 26;
-            this.TraCuuButton_hk.Text = "Tra cứu";
-            this.TraCuuButton_hk.UseVisualStyleBackColor = true;
+            this.TraCuuButton_hk.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TraCuuButton_hk.Size = new System.Drawing.Size(98, 31);
+            this.TraCuuButton_hk.TabIndex = 27;
+            this.TraCuuButton_hk.Text = "Tìm kiếm";
+            this.TraCuuButton_hk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TraCuuButton_hk.UseVisualStyleBackColor = false;
             this.TraCuuButton_hk.Click += new System.EventHandler(this.TraCuuButton_hk_Click);
             // 
             // MHStextbox_hk
@@ -554,6 +587,7 @@
             // 
             // InputNHpanel
             // 
+            this.InputNHpanel.Controls.Add(this.InBangDiembutton1);
             this.InputNHpanel.Controls.Add(this.MHStextbox_nh);
             this.InputNHpanel.Controls.Add(this.TraCuuButton_nh);
             this.InputNHpanel.Controls.Add(this.label13);
@@ -563,6 +597,24 @@
             this.InputNHpanel.Name = "InputNHpanel";
             this.InputNHpanel.Size = new System.Drawing.Size(339, 122);
             this.InputNHpanel.TabIndex = 26;
+            // 
+            // InBangDiembutton1
+            // 
+            this.InBangDiembutton1.BackColor = System.Drawing.SystemColors.Window;
+            this.InBangDiembutton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.InBangDiembutton1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.InBangDiembutton1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.InBangDiembutton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.InBangDiembutton1.Location = new System.Drawing.Point(225, 79);
+            this.InBangDiembutton1.Margin = new System.Windows.Forms.Padding(2);
+            this.InBangDiembutton1.Name = "InBangDiembutton1";
+            this.InBangDiembutton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.InBangDiembutton1.Size = new System.Drawing.Size(114, 31);
+            this.InBangDiembutton1.TabIndex = 29;
+            this.InBangDiembutton1.Text = "In bảng điểm";
+            this.InBangDiembutton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.InBangDiembutton1.UseVisualStyleBackColor = false;
+            this.InBangDiembutton1.Click += new System.EventHandler(this.InBangDiembutton1_Click);
             // 
             // MHStextbox_nh
             // 
@@ -574,11 +626,13 @@
             // TraCuuButton_nh
             // 
             this.TraCuuButton_nh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TraCuuButton_nh.Location = new System.Drawing.Point(239, 29);
+            this.TraCuuButton_nh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TraCuuButton_nh.Location = new System.Drawing.Point(225, 26);
             this.TraCuuButton_nh.Name = "TraCuuButton_nh";
-            this.TraCuuButton_nh.Size = new System.Drawing.Size(74, 24);
+            this.TraCuuButton_nh.Size = new System.Drawing.Size(98, 31);
             this.TraCuuButton_nh.TabIndex = 26;
-            this.TraCuuButton_nh.Text = "Tra cứu";
+            this.TraCuuButton_nh.Text = "Tìm kiếm";
+            this.TraCuuButton_nh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TraCuuButton_nh.UseVisualStyleBackColor = true;
             this.TraCuuButton_nh.Click += new System.EventHandler(this.TraCuuButton_nh_Click);
             // 
@@ -673,7 +727,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox NamHocCbb_nh;
-        private System.Windows.Forms.Button TraCuuButton_hk;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -700,5 +753,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button TraCuuButton_hk;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private System.Windows.Forms.Button InBangDiembutton;
+        private System.Windows.Forms.Button InBangDiembutton1;
     }
 }
