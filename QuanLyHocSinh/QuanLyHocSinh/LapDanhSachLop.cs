@@ -26,5 +26,12 @@ namespace QuanLyHocSinh
         {
 
         }
+
+        private void LapDanhSachLop_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
+            this.lOPTableAdapter.Fill(this.duLieu.LOP);
+
+        }
     }
 }
