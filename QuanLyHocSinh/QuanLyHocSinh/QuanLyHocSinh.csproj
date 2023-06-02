@@ -211,6 +211,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_ThemHocSinhMoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ThemHocSinhMoi.Designer.cs">
+      <DependentUpon>UC_ThemHocSinhMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_XemThongTinHocSinh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_XemThongTinHocSinh.Designer.cs">
+      <DependentUpon>UC_XemThongTinHocSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="XEPLOAI.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>

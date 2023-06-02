@@ -30,7 +30,7 @@ namespace QuanLyHocSinh
 
         private void MenuItemAddStudent_Click(object sender, EventArgs e)
         {
-            TiepNhanHocSinh newform = new TiepNhanHocSinh();
+            TiepNhanHocSinh newform = new TiepNhanHocSinh(this);
             this.Hide();
             newform.ShowDialog();
             this.Show();

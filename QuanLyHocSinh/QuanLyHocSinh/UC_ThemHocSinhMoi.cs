@@ -20,7 +20,7 @@ namespace QuanLyHocSinh
         private void AddNewStudent()
         {
             dataEntities db = new dataEntities();
-            
+
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
