@@ -236,6 +236,9 @@
     <EmbeddedResource Include="BangDiemMonHocCuaLopTrongNam.resx">
       <DependentUpon>BangDiemMonHocCuaLopTrongNam.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BangDiemTongKetLop.resx">
+      <DependentUpon>BangDiemTongKetLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoTongKet.resx">
       <DependentUpon>BaoCaoTongKet.cs</DependentUpon>
     </EmbeddedResource>
