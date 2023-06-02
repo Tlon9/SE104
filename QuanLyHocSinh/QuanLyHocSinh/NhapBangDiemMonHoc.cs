@@ -538,19 +538,23 @@ namespace QuanLyHocSinh
                         lb.Location = new System.Drawing.Point(x, y);
                         lb.AutoSize = true;
                         lb_ratio.Text = "Tỉ lệ học sinh xếp loại " + i.TenXepLoai;
-                        lb_ratio.Location = new System.Drawing.Point(x + 400, y);
+                        lb_ratio.Location = new System.Drawing.Point(x + 500, y);
                         lb_ratio.AutoSize = true;
+                        lb.Font = new Font("microsoft sans serif", 10);
+                        lb_ratio.Font = new Font("microsoft sans serif", 10);
                         TextBox txb = new TextBox();
                         txb.ReadOnly = true;
                         txb.Name = i.MaXepLoai;
-                        txb.Location = new System.Drawing.Point(x + 200, y);
+                        txb.Location = new System.Drawing.Point(x + 250, y);
                         txb.AutoSize = true;
+                        txb.Font = new Font("microsoft sans serif", 10);
                         list_txb_xeploai.Add(txb);
                         TextBox txb_ratio = new TextBox();
                         txb_ratio.ReadOnly = true;
                         txb_ratio.Name = i.MaXepLoai;
-                        txb_ratio.Location = new System.Drawing.Point(x + 600, y);
+                        txb_ratio.Location = new System.Drawing.Point(x + 750, y);
                         txb_ratio.AutoSize = true;
+                        txb_ratio.Font = new Font("microsoft sans serif", 10);
                         list_txb_ratio.Add(txb_ratio);
                         panelNumberOfClassify.Controls.Add(txb);
                         panelNumberOfClassify.Controls.Add(txb_ratio);
@@ -664,6 +668,21 @@ namespace QuanLyHocSinh
         {
             (this.formTraCuu as TrangChu).Show();
             this.Close();
+        }
+
+        private void guna2ImageButtonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2ImageButtonMinimize1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void guna2ImageButtonClose1_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

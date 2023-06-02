@@ -28,247 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangDiemMonHocCuaLopTrongNam));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelSubject = new System.Windows.Forms.Label();
             this.panelPrint = new System.Windows.Forms.Panel();
+            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.chartRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.ButtonExportExcel = new Guna.UI2.WinForms.Guna2Button();
             this.labelNameOfGrid1 = new System.Windows.Forms.Label();
             this.panelClassifyYear = new System.Windows.Forms.Panel();
-            this.PanelTitle = new System.Windows.Forms.Panel();
-            this.LabelNameProject = new System.Windows.Forms.Label();
             this.comboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboBoxClass = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboBoxSubject = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelClass = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.buttonPrint = new Guna.UI2.WinForms.Guna2Button();
-            this.BtnHomeScreen = new System.Windows.Forms.Button();
-            this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.TraCuuButton_hk = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panelPrint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).BeginInit();
-            this.PanelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelYear
             // 
             this.labelYear.AutoSize = true;
-            this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelYear.Location = new System.Drawing.Point(492, 208);
+            this.labelYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYear.Location = new System.Drawing.Point(777, 148);
             this.labelYear.Name = "labelYear";
-            this.labelYear.Size = new System.Drawing.Size(69, 18);
+            this.labelYear.Size = new System.Drawing.Size(76, 18);
             this.labelYear.TabIndex = 4;
             this.labelYear.Text = "Năm học";
             // 
             // labelSubject
             // 
             this.labelSubject.AutoSize = true;
-            this.labelSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubject.Location = new System.Drawing.Point(871, 159);
+            this.labelSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSubject.Location = new System.Drawing.Point(402, 148);
             this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(67, 18);
+            this.labelSubject.Size = new System.Drawing.Size(74, 18);
             this.labelSubject.TabIndex = 12;
             this.labelSubject.Text = "Môn học";
             // 
             // panelPrint
             // 
+            this.panelPrint.Controls.Add(this.guna2ImageButton2);
             this.panelPrint.Controls.Add(this.dataGridView1);
             this.panelPrint.Controls.Add(this.chartRatio);
-            this.panelPrint.Controls.Add(this.ButtonExportExcel);
             this.panelPrint.Controls.Add(this.labelNameOfGrid1);
             this.panelPrint.Controls.Add(this.panelClassifyYear);
-            this.panelPrint.Location = new System.Drawing.Point(116, 295);
+            this.panelPrint.Location = new System.Drawing.Point(35, 217);
             this.panelPrint.Name = "panelPrint";
-            this.panelPrint.Size = new System.Drawing.Size(1460, 632);
+            this.panelPrint.Size = new System.Drawing.Size(1373, 632);
             this.panelPrint.TabIndex = 50;
             // 
-            // chartRatio
+            // guna2ImageButton2
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartRatio.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartRatio.Legends.Add(legend1);
-            this.chartRatio.Location = new System.Drawing.Point(1107, 245);
-            this.chartRatio.Name = "chartRatio";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartRatio.Series.Add(series1);
-            this.chartRatio.Size = new System.Drawing.Size(350, 314);
-            this.chartRatio.TabIndex = 137;
-            this.chartRatio.Text = "chart1";
-            // 
-            // ButtonExportExcel
-            // 
-            this.ButtonExportExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.ButtonExportExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.ButtonExportExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.ButtonExportExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ButtonExportExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonExportExcel.ForeColor = System.Drawing.Color.White;
-            this.ButtonExportExcel.Location = new System.Drawing.Point(893, 560);
-            this.ButtonExportExcel.Name = "ButtonExportExcel";
-            this.ButtonExportExcel.Size = new System.Drawing.Size(105, 55);
-            this.ButtonExportExcel.TabIndex = 61;
-            this.ButtonExportExcel.Text = "In bảng điểm";
-            this.ButtonExportExcel.Click += new System.EventHandler(this.ButtonExportExcel_Click);
-            // 
-            // labelNameOfGrid1
-            // 
-            this.labelNameOfGrid1.AutoSize = true;
-            this.labelNameOfGrid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameOfGrid1.Location = new System.Drawing.Point(532, 541);
-            this.labelNameOfGrid1.Name = "labelNameOfGrid1";
-            this.labelNameOfGrid1.Size = new System.Drawing.Size(46, 18);
-            this.labelNameOfGrid1.TabIndex = 136;
-            this.labelNameOfGrid1.Text = "label1";
-            // 
-            // panelClassifyYear
-            // 
-            this.panelClassifyYear.Location = new System.Drawing.Point(298, 3);
-            this.panelClassifyYear.Name = "panelClassifyYear";
-            this.panelClassifyYear.Size = new System.Drawing.Size(925, 236);
-            this.panelClassifyYear.TabIndex = 112;
-            // 
-            // PanelTitle
-            // 
-            this.PanelTitle.Controls.Add(this.LabelNameProject);
-            this.PanelTitle.Location = new System.Drawing.Point(393, 36);
-            this.PanelTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelTitle.Name = "PanelTitle";
-            this.PanelTitle.Size = new System.Drawing.Size(968, 86);
-            this.PanelTitle.TabIndex = 54;
-            // 
-            // LabelNameProject
-            // 
-            this.LabelNameProject.AutoSize = true;
-            this.LabelNameProject.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNameProject.Location = new System.Drawing.Point(102, 21);
-            this.LabelNameProject.Name = "LabelNameProject";
-            this.LabelNameProject.Size = new System.Drawing.Size(772, 46);
-            this.LabelNameProject.TabIndex = 0;
-            this.LabelNameProject.Text = "TỔNG KẾT ĐIỂM MÔN HỌC TRONG NĂM";
-            // 
-            // comboBoxYear
-            // 
-            this.comboBoxYear.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxYear.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxYear.ItemHeight = 25;
-            this.comboBoxYear.Location = new System.Drawing.Point(582, 208);
-            this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(231, 31);
-            this.comboBoxYear.TabIndex = 55;
-            this.comboBoxYear.SelectedIndexChanged += new System.EventHandler(this.comboBoxYear_SelectedIndexChanged);
-            // 
-            // comboBoxClass
-            // 
-            this.comboBoxClass.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxClass.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxClass.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxClass.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxClass.ItemHeight = 25;
-            this.comboBoxClass.Location = new System.Drawing.Point(582, 151);
-            this.comboBoxClass.Name = "comboBoxClass";
-            this.comboBoxClass.Size = new System.Drawing.Size(231, 31);
-            this.comboBoxClass.TabIndex = 57;
-            // 
-            // comboBoxSubject
-            // 
-            this.comboBoxSubject.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxSubject.DropDownHeight = 200;
-            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSubject.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxSubject.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSubject.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxSubject.FormattingEnabled = true;
-            this.comboBoxSubject.IntegralHeight = false;
-            this.comboBoxSubject.ItemHeight = 25;
-            this.comboBoxSubject.Location = new System.Drawing.Point(970, 151);
-            this.comboBoxSubject.Name = "comboBoxSubject";
-            this.comboBoxSubject.Size = new System.Drawing.Size(231, 31);
-            this.comboBoxSubject.TabIndex = 58;
-            // 
-            // labelClass
-            // 
-            this.labelClass.BackColor = System.Drawing.Color.Transparent;
-            this.labelClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClass.Location = new System.Drawing.Point(495, 157);
-            this.labelClass.Name = "labelClass";
-            this.labelClass.Size = new System.Drawing.Size(28, 20);
-            this.labelClass.TabIndex = 59;
-            this.labelClass.Text = "Lớp";
-            // 
-            // buttonPrint
-            // 
-            this.buttonPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrint.ForeColor = System.Drawing.Color.White;
-            this.buttonPrint.Location = new System.Drawing.Point(1024, 223);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(105, 55);
-            this.buttonPrint.TabIndex = 60;
-            this.buttonPrint.Text = "Xuất";
-            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
-            // 
-            // BtnHomeScreen
-            // 
-            this.BtnHomeScreen.BackColor = System.Drawing.SystemColors.Window;
-            this.BtnHomeScreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.BtnHomeScreen.Image = ((System.Drawing.Image)(resources.GetObject("BtnHomeScreen.Image")));
-            this.BtnHomeScreen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnHomeScreen.Location = new System.Drawing.Point(116, 50);
-            this.BtnHomeScreen.Name = "BtnHomeScreen";
-            this.BtnHomeScreen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BtnHomeScreen.Size = new System.Drawing.Size(146, 53);
-            this.BtnHomeScreen.TabIndex = 61;
-            this.BtnHomeScreen.Text = "Trang chủ";
-            this.BtnHomeScreen.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnHomeScreen.UseVisualStyleBackColor = false;
-            this.BtnHomeScreen.Click += new System.EventHandler(this.BtnHomeScreen_Click);
+            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
+            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButton2.ImageRotate = 0F;
+            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(937, 541);
+            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButton2.Name = "guna2ImageButton2";
+            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(67, 62);
+            this.guna2ImageButton2.TabIndex = 139;
+            this.guna2ImageButton2.Click += new System.EventHandler(this.ButtonExportExcel_Click);
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView1.Location = new System.Drawing.Point(17, 245);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -277,7 +137,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1084, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(987, 273);
             this.dataGridView1.TabIndex = 138;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -302,30 +162,213 @@
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dataGridView1.Visible = false;
             // 
+            // chartRatio
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chartRatio.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartRatio.Legends.Add(legend6);
+            this.chartRatio.Location = new System.Drawing.Point(1011, 245);
+            this.chartRatio.Name = "chartRatio";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartRatio.Series.Add(series6);
+            this.chartRatio.Size = new System.Drawing.Size(350, 314);
+            this.chartRatio.TabIndex = 137;
+            this.chartRatio.Text = "chart1";
+            // 
+            // labelNameOfGrid1
+            // 
+            this.labelNameOfGrid1.AutoSize = true;
+            this.labelNameOfGrid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameOfGrid1.Location = new System.Drawing.Point(532, 541);
+            this.labelNameOfGrid1.Name = "labelNameOfGrid1";
+            this.labelNameOfGrid1.Size = new System.Drawing.Size(85, 29);
+            this.labelNameOfGrid1.TabIndex = 136;
+            this.labelNameOfGrid1.Text = "label1";
+            // 
+            // panelClassifyYear
+            // 
+            this.panelClassifyYear.Location = new System.Drawing.Point(236, 4);
+            this.panelClassifyYear.Name = "panelClassifyYear";
+            this.panelClassifyYear.Size = new System.Drawing.Size(925, 236);
+            this.panelClassifyYear.TabIndex = 112;
+            // 
+            // comboBoxYear
+            // 
+            this.comboBoxYear.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxYear.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxYear.ItemHeight = 25;
+            this.comboBoxYear.Location = new System.Drawing.Point(864, 140);
+            this.comboBoxYear.Name = "comboBoxYear";
+            this.comboBoxYear.Size = new System.Drawing.Size(231, 31);
+            this.comboBoxYear.TabIndex = 55;
+            this.comboBoxYear.SelectedIndexChanged += new System.EventHandler(this.comboBoxYear_SelectedIndexChanged);
+            // 
+            // comboBoxClass
+            // 
+            this.comboBoxClass.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxClass.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxClass.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxClass.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxClass.ItemHeight = 25;
+            this.comboBoxClass.Location = new System.Drawing.Point(97, 140);
+            this.comboBoxClass.Name = "comboBoxClass";
+            this.comboBoxClass.Size = new System.Drawing.Size(231, 31);
+            this.comboBoxClass.TabIndex = 57;
+            // 
+            // comboBoxSubject
+            // 
+            this.comboBoxSubject.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxSubject.DropDownHeight = 200;
+            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSubject.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxSubject.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSubject.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxSubject.FormattingEnabled = true;
+            this.comboBoxSubject.IntegralHeight = false;
+            this.comboBoxSubject.ItemHeight = 25;
+            this.comboBoxSubject.Location = new System.Drawing.Point(485, 140);
+            this.comboBoxSubject.Name = "comboBoxSubject";
+            this.comboBoxSubject.Size = new System.Drawing.Size(231, 31);
+            this.comboBoxSubject.TabIndex = 58;
+            // 
+            // labelClass
+            // 
+            this.labelClass.AutoSize = false;
+            this.labelClass.BackColor = System.Drawing.Color.Transparent;
+            this.labelClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClass.Location = new System.Drawing.Point(52, 146);
+            this.labelClass.Name = "labelClass";
+            this.labelClass.Size = new System.Drawing.Size(46, 20);
+            this.labelClass.TabIndex = 59;
+            this.labelClass.Text = "Lớp";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Controls.Add(this.guna2ImageButtonClose1);
+            this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1444, 52);
+            this.guna2Panel1.TabIndex = 62;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(587, 41);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Xuất bảng điểm môn học của lớp trong năm học";
+            // 
+            // guna2ImageButtonClose1
+            // 
+            this.guna2ImageButtonClose1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonClose1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonClose1.Image")));
+            this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButtonClose1.ImageRotate = 0F;
+            this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1361, 5);
+            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
+            this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonClose1.Size = new System.Drawing.Size(47, 43);
+            this.guna2ImageButtonClose1.TabIndex = 1;
+            this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click);
+            // 
+            // guna2ImageButtonMinimize1
+            // 
+            this.guna2ImageButtonMinimize1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.guna2ImageButtonMinimize1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonMinimize1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonMinimize1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonMinimize1.Image")));
+            this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButtonMinimize1.ImageRotate = 0F;
+            this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1306, 5);
+            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
+            this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(47, 43);
+            this.guna2ImageButtonMinimize1.TabIndex = 0;
+            this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
+            // 
+            // guna2ImageButtonHome
+            // 
+            this.guna2ImageButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonHome.Image")));
+            this.guna2ImageButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButtonHome.ImageRotate = 0F;
+            this.guna2ImageButtonHome.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2ImageButtonHome.Location = new System.Drawing.Point(35, 70);
+            this.guna2ImageButtonHome.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButtonHome.Name = "guna2ImageButtonHome";
+            this.guna2ImageButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonHome.Size = new System.Drawing.Size(67, 62);
+            this.guna2ImageButtonHome.TabIndex = 63;
+            this.guna2ImageButtonHome.Click += new System.EventHandler(this.guna2ImageButtonHome_Click);
+            // 
+            // TraCuuButton_hk
+            // 
+            this.TraCuuButton_hk.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.TraCuuButton_hk.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.TraCuuButton_hk.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuButton_hk.Image")));
+            this.TraCuuButton_hk.ImageOffset = new System.Drawing.Point(0, 0);
+            this.TraCuuButton_hk.ImageRotate = 0F;
+            this.TraCuuButton_hk.ImageSize = new System.Drawing.Size(60, 60);
+            this.TraCuuButton_hk.Location = new System.Drawing.Point(1137, 120);
+            this.TraCuuButton_hk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TraCuuButton_hk.Name = "TraCuuButton_hk";
+            this.TraCuuButton_hk.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.TraCuuButton_hk.Size = new System.Drawing.Size(64, 70);
+            this.TraCuuButton_hk.TabIndex = 64;
+            this.TraCuuButton_hk.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
             // BangDiemMonHocCuaLopTrongNam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1603, 935);
-            this.Controls.Add(this.BtnHomeScreen);
-            this.Controls.Add(this.buttonPrint);
+            this.ClientSize = new System.Drawing.Size(1444, 1053);
+            this.Controls.Add(this.TraCuuButton_hk);
+            this.Controls.Add(this.guna2ImageButtonHome);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.labelClass);
             this.Controls.Add(this.comboBoxSubject);
             this.Controls.Add(this.comboBoxClass);
             this.Controls.Add(this.comboBoxYear);
-            this.Controls.Add(this.PanelTitle);
             this.Controls.Add(this.panelPrint);
             this.Controls.Add(this.labelSubject);
             this.Controls.Add(this.labelYear);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BangDiemMonHocCuaLopTrongNam";
             this.Text = "XuatBangDiemMonHocCuaLopTrongNamHoc";
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).EndInit();
-            this.PanelTitle.ResumeLayout(false);
-            this.PanelTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,8 +376,6 @@
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Label labelSubject;
         private System.Windows.Forms.Panel panelPrint;
-        private System.Windows.Forms.Panel PanelTitle;
-        private System.Windows.Forms.Label LabelNameProject;
         private System.Windows.Forms.Panel panelClassifyYear;
         private System.Windows.Forms.Label labelNameOfGrid1;
         #endregion
@@ -343,10 +384,14 @@
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxClass;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxSubject;
         private Guna.UI2.WinForms.Guna2HtmlLabel labelClass;
-        private Guna.UI2.WinForms.Guna2Button buttonPrint;
-        private Guna.UI2.WinForms.Guna2Button ButtonExportExcel;
-        private System.Windows.Forms.Button BtnHomeScreen;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRatio;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonHome;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+        private Guna.UI2.WinForms.Guna2ImageButton TraCuuButton_hk;
     }
 }
