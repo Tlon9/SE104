@@ -148,7 +148,7 @@ namespace QuanLyHocSinh
             // buttonLogin
             // 
             this.buttonLogin.AutoRoundedCorners = true;
-            this.buttonLogin.BorderRadius = 21;
+            this.buttonLogin.BorderRadius = 26;
             this.buttonLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

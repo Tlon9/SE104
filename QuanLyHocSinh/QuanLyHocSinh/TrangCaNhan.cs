@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace QuanLyHocSinh
 {
@@ -15,10 +16,22 @@ namespace QuanLyHocSinh
         public TrangCaNhan()
         {
             InitializeComponent();
+            this.guna2TextBox1.Text = Account.HoTen;
+            this.guna2TextBox2.Text = Account.NgaySinh;
             this.guna2TextBox3.Text = Account.TenDangNhap;
             this.guna2TextBox4.Text = Account.VaiTro;
         }
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
+
+        private void guna2Panel1_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
+        }
 
         private void guna2ImageButtonMinimize_Click(object sender, EventArgs e)
         {
@@ -49,6 +62,14 @@ namespace QuanLyHocSinh
             this.Hide();
             newform.ShowDialog();
             this.Close();
+        }
+
+        private void guna2ButtonChangePass_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau newform = new DoiMatKhau();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
         }
     }
 }

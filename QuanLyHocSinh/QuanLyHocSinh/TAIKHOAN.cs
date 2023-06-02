@@ -18,6 +18,8 @@ namespace QuanLyHocSinh
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
         public string MaPhanQuyen { get; set; }
+        public string HoTen { get; set; }
+        public Nullable<System.DateTime> NgaySinh { get; set; }
     
         public virtual PHANQUYEN PHANQUYEN { get; set; }
     }

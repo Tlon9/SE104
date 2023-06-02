@@ -114,6 +114,8 @@
           <Property Name="TenDangNhap" Type="nvarchar" MaxLength="60" />
           <Property Name="MatKhau" Type="nvarchar" MaxLength="60" />
           <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
+          <Property Name="NgaySinh" Type="date" />
         </EntityType>
         <EntityType Name="THANHPHAN">
           <Key>
@@ -587,10 +589,10 @@
             <Parameter Name="MaHocSinh" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TongKetNamHoc" ReturnType="Collection(dataModel.TongKetNamHoc_Result)">
-            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          <Parameter Name="MaNamHoc" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
-            <Parameter Name="NamApDung" Mode="In" Type="String" />
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="TongKetMonHocKy_Result">
@@ -751,6 +753,8 @@
           <Property Name="MatKhau" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="PHANQUYEN" Relationship="dataModel.fk_tk_pq" FromRole="TAIKHOAN" ToRole="PHANQUYEN" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
         </EntityType>
         <Association Name="fk_ctl_hs">
           <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
@@ -1086,6 +1090,8 @@
           <EntitySetMapping Name="TAIKHOANs">
             <EntityTypeMapping TypeName="dataModel.TAIKHOAN">
               <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
                 <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
                 <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />

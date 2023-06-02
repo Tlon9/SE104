@@ -11,6 +11,9 @@ namespace QuanLyHocSinh
         public static string TenDangNhap;
         public static string MatKhau;
         public static string VaiTro;
+        public static string HoTen;
+        public static string NgaySinh;
+
     }
     static class Program
     {

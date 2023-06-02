@@ -28,6 +28,8 @@ namespace QuanLyHocSinh
                     Account.TenDangNhap = item.TenDangNhap.ToString();
                     Account.MatKhau = item.MatKhau.ToString();
                     Account.VaiTro = item.PHANQUYEN.VaiTro.ToString();
+                    Account.HoTen = item.HoTen.ToString();
+                    Account.NgaySinh = item.NgaySinh.ToString().Substring(0,9);
                     TrangChu newform = new TrangChu();
                     this.Hide();
                     newform.ShowDialog();
@@ -35,7 +37,8 @@ namespace QuanLyHocSinh
                 }
             }
             labelWrong.Show();
-
+            textBoxUsername.Text = "";
+            textBoxPassword.Text = "";
         }
 
 

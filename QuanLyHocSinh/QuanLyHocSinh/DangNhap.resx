@@ -119,14 +119,14 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 161</value>
+    <value>13, 198</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 1</value>
+    <value>359, 1</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
@@ -145,13 +145,13 @@
     <value>7</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 167</value>
+    <value>13, 206</value>
   </data>
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 2</value>
+    <value>400, 2</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -169,13 +169,13 @@
     <value>6</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 248</value>
+    <value>13, 305</value>
   </data>
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 2</value>
+    <value>400, 2</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -196,13 +196,10 @@
     <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="labelWrong.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 330</value>
-  </data>
-  <data name="labelWrong.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>43, 406</value>
   </data>
   <data name="labelWrong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 20</value>
+    <value>347, 25</value>
   </data>
   <data name="labelWrong.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -261,10 +258,13 @@
 </value>
   </data>
   <data name="textBoxUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 123</value>
+    <value>12, 151</value>
+  </data>
+  <data name="textBoxUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="textBoxUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 39</value>
+    <value>399, 48</value>
   </data>
   <data name="textBoxUsername.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -273,7 +273,7 @@
     <value>textBoxUsername</value>
   </data>
   <data name="&gt;&gt;textBoxUsername.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
   <data name="&gt;&gt;textBoxUsername.Parent" xml:space="preserve">
     <value>$this</value>
@@ -305,10 +305,13 @@
 </value>
   </data>
   <data name="textBoxPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 204</value>
+    <value>16, 251</value>
+  </data>
+  <data name="textBoxPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="textBoxPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 39</value>
+    <value>399, 48</value>
   </data>
   <data name="textBoxPassword.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -317,13 +320,64 @@
     <value>textBoxPassword</value>
   </data>
   <data name="&gt;&gt;textBoxPassword.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
   <data name="&gt;&gt;textBoxPassword.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;textBoxPassword.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Name" xml:space="preserve">
+    <value>guna2ImageButtonClose1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Parent" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Name" xml:space="preserve">
+    <value>guna2ImageButtonMinimize1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Parent" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="guna2Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="guna2Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="guna2Panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="guna2Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 53</value>
+  </data>
+  <data name="guna2Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.Name" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Panel, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;guna2Panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="guna2ImageButtonClose1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -339,10 +393,13 @@
 </value>
   </data>
   <data name="guna2ImageButtonClose1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 5</value>
+    <value>391, 6</value>
+  </data>
+  <data name="guna2ImageButtonClose1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="guna2ImageButtonClose1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 35</value>
+    <value>47, 43</value>
   </data>
   <data name="guna2ImageButtonClose1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -351,7 +408,7 @@
     <value>guna2ImageButtonClose1</value>
   </data>
   <data name="&gt;&gt;guna2ImageButtonClose1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
   <data name="&gt;&gt;guna2ImageButtonClose1.Parent" xml:space="preserve">
     <value>guna2Panel1</value>
@@ -371,10 +428,13 @@
 </value>
   </data>
   <data name="guna2ImageButtonMinimize1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 5</value>
+    <value>336, 6</value>
+  </data>
+  <data name="guna2ImageButtonMinimize1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="guna2ImageButtonMinimize1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 35</value>
+    <value>47, 43</value>
   </data>
   <data name="guna2ImageButtonMinimize1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -383,36 +443,12 @@
     <value>guna2ImageButtonMinimize1</value>
   </data>
   <data name="&gt;&gt;guna2ImageButtonMinimize1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
   <data name="&gt;&gt;guna2ImageButtonMinimize1.Parent" xml:space="preserve">
     <value>guna2Panel1</value>
   </data>
   <data name="&gt;&gt;guna2ImageButtonMinimize1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="guna2Panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="guna2Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="guna2Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>334, 43</value>
-  </data>
-  <data name="guna2Panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;guna2Panel1.Name" xml:space="preserve">
-    <value>guna2Panel1</value>
-  </data>
-  <data name="&gt;&gt;guna2Panel1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Panel, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
-  </data>
-  <data name="&gt;&gt;guna2Panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;guna2Panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -422,10 +458,13 @@
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
   <data name="buttonLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 269</value>
+    <value>84, 331</value>
+  </data>
+  <data name="buttonLogin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="buttonLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 45</value>
+    <value>240, 55</value>
   </data>
   <data name="buttonLogin.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -437,7 +476,7 @@
     <value>buttonLogin</value>
   </data>
   <data name="&gt;&gt;buttonLogin.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
   <data name="&gt;&gt;buttonLogin.Parent" xml:space="preserve">
     <value>$this</value>
@@ -449,13 +488,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>334, 389</value>
+    <value>445, 479</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>DangNhap</value>
@@ -464,7 +503,7 @@
     <value>guna2AnimateWindow1</value>
   </data>
   <data name="&gt;&gt;guna2AnimateWindow1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2AnimateWindow, Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+    <value>Guna.UI2.WinForms.Guna2AnimateWindow, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DangNhap</value>

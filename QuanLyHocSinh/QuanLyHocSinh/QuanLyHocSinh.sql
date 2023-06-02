@@ -145,6 +145,13 @@ CREATE TABLE TAIKHOAN (
 	constraint pk_tk primary key(MaTaiKhoan)
 )
 
+ALTER TABLE TAIKHOAN ADD HoTen nvarchar(30)
+ALTER TABLE TAIKHOAN ALTER COLUMN NgaySinh date
+set dateformat dmy 
+UPDATE TAIKHOAN
+SET NgaySinh = '22/01/1997'
+select NgaySinh from TAIKHOAN
+
 ALTER TABLE TAIKHOAN ADD CONSTRAINT fk_tk_pq
 	FOREIGN KEY(MaPhanQuyen) REFERENCES PHANQUYEN(MaPhanQuyen) 
 
@@ -277,3 +284,12 @@ select MaMonHoc, MaHocKy, DiemTB
 	from KETQUA_MONHOC_HOCSINH
 	where MaNamHoc = 'NH2223' and MaHocSinh = '22100100'
 	order by MaMonHoc
+
+CREATE PROCEDURE XepLoai_NamApDung
+	@NamApDung nvarchar(20)
+AS
+BEGIN
+	select *
+	from XEPLOAI
+	where NamApDung in (select top 1 NamApDung from XEPLOAI where NamApDung<=@NamApDung order by NamApDung DESC)
+END
