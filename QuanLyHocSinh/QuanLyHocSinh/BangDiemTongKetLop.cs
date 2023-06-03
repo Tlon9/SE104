@@ -10,6 +10,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 namespace QuanLyHocSinh
@@ -42,6 +43,7 @@ namespace QuanLyHocSinh
             NamHocCbb_nh.DataSource = dsNamhoc;
             NamHocCbb_hk.DataSource = dsNamhoc;
             HocKyCbb.DataSource = dsHocky;
+
         }
         List<double?> DiemTB(string ten, string hk, string nh, string lop, string mon)
         {
@@ -89,7 +91,8 @@ namespace QuanLyHocSinh
             {
                 DataGridViewColumn newcol = new DataGridViewColumn();
                 string[] split_word = TenMonHoc[i].Split();
-                string ten = "Điểm " + split_word[0] + " " + (split_word[1] != "10" ? split_word[1] : "");
+                string ten = split_word[0] + " " + (split_word[1] != "10" ? split_word[1] : "");
+                newcol.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgvHocKy.Columns.Add(ten, ten);
             }
             dgvHocKy.Columns.Add("Điểm TB", "Điểm TB");
@@ -136,13 +139,14 @@ namespace QuanLyHocSinh
                     {
                         if (diemtb_hk >= DiemToiThieu[k] && sum != 0)
                         {
-                            if (min_DiemTbmon < DiemKhongChe.ToList()[i])
+                            if (min_DiemTbmon > DiemKhongChe.ToList()[k])
                             {
-                                newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[i + 1].ToString();
+                                newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k].ToString();
                             }
-                            else newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k].ToString();
+                            else newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k+1].ToString();
                             xeploai[k] += 1;
                             break;
+
                         }
                     }
                 }
@@ -161,7 +165,8 @@ namespace QuanLyHocSinh
                 row_ratio["Xếp loại"] = item.TenXepLoai;
 
                 row_ratio["Số lượng"] = xeploai[z];
-                row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * xeploai[z] / (dgvHocKy.Rows.Count - 1)), 2);
+                if (xeploai.Sum() == 0) row_ratio["Tỉ lệ (%)"] = 0;
+                else row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * xeploai[z] / xeploai.Sum()), 2);
                 ratio_Source.Rows.Add(row_ratio);
                 z++;
             }
@@ -219,7 +224,7 @@ namespace QuanLyHocSinh
             {
                 DataGridViewColumn newcol = new DataGridViewColumn();
                 string[] split_word = TenMonHoc[i].Split();
-                string ten = "Điểm " + split_word[0] + " " + (split_word[1] != "10" ? split_word[1] : "");
+                string ten = split_word[0] + " " + (split_word[1] != "10" ? split_word[1] : "");
                 dgvNamHoc.Columns.Add(ten, ten);
             }
             dgvNamHoc.Columns.Add("Điểm TB", "Điểm TB");
@@ -281,7 +286,7 @@ namespace QuanLyHocSinh
                     {
                         if (diemtb_hk >= DiemToiThieu[k] && sum != 0)
                         {
-                            if (min_DiemTbmon < DiemKhongChe.ToList()[i])
+                            if (min_DiemTbmon <= DiemKhongChe.ToList()[i])
                             {
                                 newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[i + 1].ToString();
                             }
@@ -306,7 +311,8 @@ namespace QuanLyHocSinh
                 row_ratio["Xếp loại"] = item.TenXepLoai;
 
                 row_ratio["Số lượng"] = xeploai[z];
-                row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * xeploai[z] / (dgvNamHoc.Rows.Count - 1)), 2);
+                if (xeploai.Sum() == 0) row_ratio["Tỉ lệ (%)"] = 0;
+                else row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * xeploai[z] / xeploai.Sum()), 2);
                 ratio_Source.Rows.Add(row_ratio);
                 z++;
             }
