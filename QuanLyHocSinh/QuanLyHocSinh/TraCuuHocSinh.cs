@@ -319,10 +319,29 @@ namespace QuanLyHocSinh
             pnMomOfStudent_Info.Hide();
         }
 
-        private void BtnHomeScreen_Click(object sender, EventArgs e)
+
+        private void guna2ImageButtonHome_Click(object sender, EventArgs e)
         {
             (this.formTraCuu as TrangChu).Show();
             this.Close();
+        }
+
+        private void Btn_Minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BtnProfileAccount_Click(object sender, EventArgs e)
+        {
+            TrangCaNhan newform = new TrangCaNhan();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
         }
     }
 }

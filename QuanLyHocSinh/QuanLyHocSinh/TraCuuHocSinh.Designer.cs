@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TraCuuHocSinh));
-            this.label1 = new System.Windows.Forms.Label();
             this.lbInputIDStudent = new System.Windows.Forms.Label();
             this.lbMaSoHS = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
@@ -71,7 +70,6 @@
             this.tbFindName = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbGrade = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbStudentID = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnStudent_info = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tbTonGiao = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -84,7 +82,6 @@
             this.tbLop = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbHoTen = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbMaSoHS = new Guna.UI2.WinForms.Guna2TextBox();
-            this.BtnHomeScreen = new Guna.UI2.WinForms.Guna2Button();
             this.pnDadofStudent_Info = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.tbNamSinh_Cha = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbNgheNghiep_Cha = new Guna.UI2.WinForms.Guna2TextBox();
@@ -97,22 +94,18 @@
             this.tbSDT_Me = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbCCCD_Me = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbHoTenMe = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.Btn_Close = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.Btn_Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2ImageButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.BtnProfileAccount = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnFindInfoStudent.SuspendLayout();
             this.pnStudent_info.SuspendLayout();
             this.pnDadofStudent_Info.SuspendLayout();
             this.pnMomOfStudent_Info.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(564, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tra cứu học sinh";
             // 
             // lbInputIDStudent
             // 
@@ -368,7 +361,7 @@
             // 
             this.lbThongTinPhuHuynh.AutoSize = true;
             this.lbThongTinPhuHuynh.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(431, 631);
+            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(452, 650);
             this.lbThongTinPhuHuynh.Name = "lbThongTinPhuHuynh";
             this.lbThongTinPhuHuynh.Size = new System.Drawing.Size(386, 32);
             this.lbThongTinPhuHuynh.TabIndex = 7;
@@ -428,7 +421,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label31.Location = new System.Drawing.Point(56, 276);
+            this.label31.Location = new System.Drawing.Point(117, 89);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(583, 20);
             this.label31.TabIndex = 10;
@@ -457,7 +450,7 @@
             this.BtnFindInfoStu.Image = ((System.Drawing.Image)(resources.GetObject("BtnFindInfoStu.Image")));
             this.BtnFindInfoStu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnFindInfoStu.ImageSize = new System.Drawing.Size(50, 50);
-            this.BtnFindInfoStu.Location = new System.Drawing.Point(1166, 103);
+            this.BtnFindInfoStu.Location = new System.Drawing.Point(1134, 157);
             this.BtnFindInfoStu.Name = "BtnFindInfoStu";
             this.BtnFindInfoStu.PressedColor = System.Drawing.Color.PaleTurquoise;
             this.BtnFindInfoStu.Size = new System.Drawing.Size(180, 53);
@@ -488,7 +481,7 @@
             this.BtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.Image")));
             this.BtnRefresh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnRefresh.ImageSize = new System.Drawing.Size(50, 50);
-            this.BtnRefresh.Location = new System.Drawing.Point(1166, 188);
+            this.BtnRefresh.Location = new System.Drawing.Point(1134, 232);
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.PressedColor = System.Drawing.Color.PaleTurquoise;
             this.BtnRefresh.Size = new System.Drawing.Size(180, 53);
@@ -511,7 +504,7 @@
             this.pnFindInfoStudent.Controls.Add(this.lbInputGrade);
             this.pnFindInfoStudent.Controls.Add(this.lbInputName);
             this.pnFindInfoStudent.Controls.Add(this.label27);
-            this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 90);
+            this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 129);
             this.pnFindInfoStudent.Name = "pnFindInfoStudent";
             this.pnFindInfoStudent.Size = new System.Drawing.Size(1037, 183);
             this.pnFindInfoStudent.TabIndex = 16;
@@ -639,13 +632,6 @@
             this.tbStudentID.Size = new System.Drawing.Size(254, 27);
             this.tbStudentID.TabIndex = 0;
             // 
-            // guna2CustomGradientPanel1
-            // 
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(1593, 54);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(200, 200);
-            this.guna2CustomGradientPanel1.TabIndex = 17;
-            // 
             // pnStudent_info
             // 
             this.pnStudent_info.Controls.Add(this.tbTonGiao);
@@ -671,7 +657,7 @@
             this.pnStudent_info.Controls.Add(this.lbNgaySinh);
             this.pnStudent_info.Controls.Add(this.lbQueQuan);
             this.pnStudent_info.Controls.Add(this.lbGioiTinh);
-            this.pnStudent_info.Location = new System.Drawing.Point(34, 310);
+            this.pnStudent_info.Location = new System.Drawing.Point(34, 328);
             this.pnStudent_info.Name = "pnStudent_info";
             this.pnStudent_info.Size = new System.Drawing.Size(1169, 308);
             this.pnStudent_info.TabIndex = 23;
@@ -918,37 +904,6 @@
             this.tbMaSoHS.Size = new System.Drawing.Size(224, 27);
             this.tbMaSoHS.TabIndex = 22;
             // 
-            // BtnHomeScreen
-            // 
-            this.BtnHomeScreen.Animated = true;
-            this.BtnHomeScreen.BackColor = System.Drawing.SystemColors.Window;
-            this.BtnHomeScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnHomeScreen.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnHomeScreen.BorderRadius = 18;
-            this.BtnHomeScreen.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.BtnHomeScreen.CheckedState.BorderColor = System.Drawing.Color.White;
-            this.BtnHomeScreen.CheckedState.CustomBorderColor = System.Drawing.Color.Black;
-            this.BtnHomeScreen.CheckedState.FillColor = System.Drawing.Color.Cyan;
-            this.BtnHomeScreen.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.BtnHomeScreen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnHomeScreen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnHomeScreen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnHomeScreen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnHomeScreen.FillColor = System.Drawing.Color.LightCyan;
-            this.BtnHomeScreen.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.BtnHomeScreen.ForeColor = System.Drawing.Color.Black;
-            this.BtnHomeScreen.Image = ((System.Drawing.Image)(resources.GetObject("BtnHomeScreen.Image")));
-            this.BtnHomeScreen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.BtnHomeScreen.ImageSize = new System.Drawing.Size(50, 50);
-            this.BtnHomeScreen.Location = new System.Drawing.Point(30, 14);
-            this.BtnHomeScreen.Name = "BtnHomeScreen";
-            this.BtnHomeScreen.PressedColor = System.Drawing.Color.PaleTurquoise;
-            this.BtnHomeScreen.Size = new System.Drawing.Size(180, 53);
-            this.BtnHomeScreen.TabIndex = 25;
-            this.BtnHomeScreen.Text = "Trang chủ";
-            this.BtnHomeScreen.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.BtnHomeScreen.Click += new System.EventHandler(this.BtnHomeScreen_Click);
-            // 
             // pnDadofStudent_Info
             // 
             this.pnDadofStudent_Info.Controls.Add(this.tbNamSinh_Cha);
@@ -962,7 +917,7 @@
             this.pnDadofStudent_Info.Controls.Add(this.lbNamSinhCha);
             this.pnDadofStudent_Info.Controls.Add(this.lbSDT_Cha);
             this.pnDadofStudent_Info.Controls.Add(this.lbNgheNghiepCha);
-            this.pnDadofStudent_Info.Location = new System.Drawing.Point(34, 675);
+            this.pnDadofStudent_Info.Location = new System.Drawing.Point(34, 700);
             this.pnDadofStudent_Info.Name = "pnDadofStudent_Info";
             this.pnDadofStudent_Info.Size = new System.Drawing.Size(586, 304);
             this.pnDadofStudent_Info.TabIndex = 27;
@@ -1090,7 +1045,7 @@
             this.pnMomOfStudent_Info.Controls.Add(this.lbSDT_Me);
             this.pnMomOfStudent_Info.Controls.Add(this.lbNamSinhMe);
             this.pnMomOfStudent_Info.Controls.Add(this.lbNgheNghiepMe);
-            this.pnMomOfStudent_Info.Location = new System.Drawing.Point(640, 675);
+            this.pnMomOfStudent_Info.Location = new System.Drawing.Point(640, 700);
             this.pnMomOfStudent_Info.Name = "pnMomOfStudent_Info";
             this.pnMomOfStudent_Info.Size = new System.Drawing.Size(563, 304);
             this.pnMomOfStudent_Info.TabIndex = 28;
@@ -1205,6 +1160,95 @@
             this.tbHoTenMe.Size = new System.Drawing.Size(258, 29);
             this.tbHoTenMe.TabIndex = 7;
             // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.Btn_Close);
+            this.guna2Panel1.Controls.Add(this.Btn_Minimize);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1510, 51);
+            this.guna2Panel1.TabIndex = 29;
+            // 
+            // Btn_Close
+            // 
+            this.Btn_Close.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Btn_Close.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Close.Image")));
+            this.Btn_Close.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Btn_Close.ImageRotate = 0F;
+            this.Btn_Close.ImageSize = new System.Drawing.Size(30, 30);
+            this.Btn_Close.Location = new System.Drawing.Point(1434, 4);
+            this.Btn_Close.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Close.Name = "Btn_Close";
+            this.Btn_Close.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Btn_Close.Size = new System.Drawing.Size(47, 43);
+            this.Btn_Close.TabIndex = 3;
+            this.Btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
+            // 
+            // Btn_Minimize
+            // 
+            this.Btn_Minimize.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Btn_Minimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Btn_Minimize.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Btn_Minimize.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Minimize.Image")));
+            this.Btn_Minimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.Btn_Minimize.ImageRotate = 0F;
+            this.Btn_Minimize.ImageSize = new System.Drawing.Size(30, 30);
+            this.Btn_Minimize.Location = new System.Drawing.Point(1379, 4);
+            this.Btn_Minimize.Margin = new System.Windows.Forms.Padding(4);
+            this.Btn_Minimize.Name = "Btn_Minimize";
+            this.Btn_Minimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.Btn_Minimize.Size = new System.Drawing.Size(47, 43);
+            this.Btn_Minimize.TabIndex = 2;
+            this.Btn_Minimize.Click += new System.EventHandler(this.Btn_Minimize_Click);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(28, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(347, 47);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tra cứu thông tin học sinh";
+            // 
+            // guna2ImageButtonHome
+            // 
+            this.guna2ImageButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonHome.Image")));
+            this.guna2ImageButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.guna2ImageButtonHome.ImageRotate = 0F;
+            this.guna2ImageButtonHome.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2ImageButtonHome.Location = new System.Drawing.Point(13, 59);
+            this.guna2ImageButtonHome.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButtonHome.Name = "guna2ImageButtonHome";
+            this.guna2ImageButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.guna2ImageButtonHome.Size = new System.Drawing.Size(89, 63);
+            this.guna2ImageButtonHome.TabIndex = 31;
+            this.guna2ImageButtonHome.Click += new System.EventHandler(this.guna2ImageButtonHome_Click);
+            // 
+            // BtnProfileAccount
+            // 
+            this.BtnProfileAccount.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnProfileAccount.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnProfileAccount.Image = ((System.Drawing.Image)(resources.GetObject("BtnProfileAccount.Image")));
+            this.BtnProfileAccount.ImageOffset = new System.Drawing.Point(0, 0);
+            this.BtnProfileAccount.ImageRotate = 0F;
+            this.BtnProfileAccount.ImageSize = new System.Drawing.Size(40, 40);
+            this.BtnProfileAccount.Location = new System.Drawing.Point(1388, 68);
+            this.BtnProfileAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnProfileAccount.Name = "BtnProfileAccount";
+            this.BtnProfileAccount.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnProfileAccount.Size = new System.Drawing.Size(73, 72);
+            this.BtnProfileAccount.TabIndex = 30;
+            this.BtnProfileAccount.Click += new System.EventHandler(this.BtnProfileAccount_Click);
+            // 
             // TraCuuHocSinh
             // 
             this.AcceptButton = this.BtnFindInfoStu;
@@ -1213,18 +1257,19 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1506, 1055);
+            this.ClientSize = new System.Drawing.Size(1510, 1032);
+            this.Controls.Add(this.guna2ImageButtonHome);
+            this.Controls.Add(this.BtnProfileAccount);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.pnMomOfStudent_Info);
             this.Controls.Add(this.pnDadofStudent_Info);
-            this.Controls.Add(this.BtnHomeScreen);
             this.Controls.Add(this.pnStudent_info);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.pnFindInfoStudent);
             this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.BtnFindInfoStu);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.lbThongTinPhuHuynh);
-            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TraCuuHocSinh";
             this.Text = "TraCuuHocSinh";
             this.pnFindInfoStudent.ResumeLayout(false);
@@ -1235,14 +1280,13 @@
             this.pnDadofStudent_Info.PerformLayout();
             this.pnMomOfStudent_Info.ResumeLayout(false);
             this.pnMomOfStudent_Info.PerformLayout();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbInputIDStudent;
         private System.Windows.Forms.Label lbLop;
         private System.Windows.Forms.Label lbHoTen;
@@ -1284,9 +1328,7 @@
         private Guna.UI2.WinForms.Guna2TextBox tbFindEmail;
         private Guna.UI2.WinForms.Guna2TextBox tbFindName;
         private Guna.UI2.WinForms.Guna2TextBox tbFindPhoneNum;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnStudent_info;
-        private Guna.UI2.WinForms.Guna2Button BtnHomeScreen;
         private Guna.UI2.WinForms.Guna2TextBox tbQueQuan;
         private Guna.UI2.WinForms.Guna2TextBox tbDanToc;
         private Guna.UI2.WinForms.Guna2TextBox tbNgaySinh;
@@ -1310,5 +1352,11 @@
         private Guna.UI2.WinForms.Guna2TextBox tbSDT_Me;
         private Guna.UI2.WinForms.Guna2TextBox tbCCCD_Me;
         private Guna.UI2.WinForms.Guna2TextBox tbHoTenMe;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2ImageButton Btn_Close;
+        private Guna.UI2.WinForms.Guna2ImageButton Btn_Minimize;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonHome;
+        private Guna.UI2.WinForms.Guna2ImageButton BtnProfileAccount;
     }
 }
