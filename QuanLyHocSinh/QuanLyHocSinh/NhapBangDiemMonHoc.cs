@@ -51,7 +51,7 @@ namespace QuanLyHocSinh
             dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
         }
-        private void comboBoxYear_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
             string Last_NamApDung = getCurYear();
             var ComboBoxSubjectsSource = from obj in data.MONHOCs where obj.NamApDung == Last_NamApDung select obj;
@@ -75,9 +75,13 @@ namespace QuanLyHocSinh
             }
         }
         List<TextBox> list = new List<TextBox>();
-        private void LapBangDiemMonHoc_Load(object sender, EventArgs e)
+        void LoadPanel_Score()
         {
+            panelScores.Controls.Clear();
+            list.Clear();
+            string Last_NamApDung = getCurYear();
             var Score = from scr in data.THANHPHANs
+                        where scr.NamApDung == Last_NamApDung
                         select new { scr.MaThanhPhan, scr.TenThanhPhan };
 
             int x = 100;
@@ -90,18 +94,13 @@ namespace QuanLyHocSinh
                 lb.Text = i.TenThanhPhan.ToString();
                 textBox.Name = i.MaThanhPhan.ToString();
                 textBox.Location = new Point(x, y);
-                lb.Location = new Point(x - 100, y+5);
+                lb.Location = new Point(x - 100, y + 5);
                 textBox.TextChanged += textBoxScore_TextChanged;
                 panelScores.Controls.Add(textBox);
                 panelScores.Controls.Add(lb);
                 list.Add(textBox);
                 y += 40;
             }
-        }
-        int getNumberofThanhPhan()
-        {
-            var re = from obj in data.THANHPHANs select obj;
-            return re.Count();
         }
         struct DIEMformat
         {
@@ -151,11 +150,16 @@ namespace QuanLyHocSinh
         {
             Dictionary<string, int> ScoreDict = new Dictionary<string, int>();
             int k = 0;
+            string Last_NamApDung = getCurYear();
+            int count = 0;
             foreach (var item in data.THANHPHANs)
             {
-                ScoreDict.Add(item.MaThanhPhan.ToString(), k++);
+                if (item.NamApDung == Last_NamApDung)
+                {
+                    ScoreDict.Add(item.MaThanhPhan.ToString(), k++);
+                    count ++;
+                }    
             }
-            string Last_NamApDung = getCurYear();
             var reSourceXL_2 = from scr1 in data.XEPLOAIs.AsEnumerable()
                                where scr1.NamApDung == Last_NamApDung
                                select new {MaXepLoai = scr1.MaXepLoai,  TenXepLoai = scr1.TenXepLoai, NamApDung = scr1.NamApDung};
@@ -172,7 +176,6 @@ namespace QuanLyHocSinh
             var reSource = from scr in reSource1
                      join cls1 in reSourceXL_2 on scr.Xeploai equals cls1.MaXepLoai.ToString()
                      select new { MaKQ = scr.MaKQ, Hoten = scr.Hoten, MaHocSinh = scr.MaHocSinh, MaThanhPhan = scr.MaThanhPhan, Diem = scr.Diem, DiemTB = scr.DiemTB, Xeploai = (cls1.TenXepLoai == "Không") ? string.Empty : cls1.TenXepLoai };
-            int count = getNumberofThanhPhan();
             List<DIEMformat> reS = new List<DIEMformat> { };
             DIEMformat temp = new DIEMformat();
             int index = -1;
@@ -201,7 +204,8 @@ namespace QuanLyHocSinh
             dt.Columns.Add("Ho ten", typeof(string));
             foreach (var ktem in data.THANHPHANs)
             {
-              dt.Columns.Add(ktem.TenThanhPhan, typeof(string));
+                if (ktem.NamApDung == Last_NamApDung)
+                    dt.Columns.Add(ktem.TenThanhPhan, typeof(string));
             }    
             dt.Columns.Add("Diem TB", typeof(string));
             dt.Columns.Add("Xep loai", typeof(string));
@@ -215,8 +219,11 @@ namespace QuanLyHocSinh
                     int i_temp = 0;
                     foreach (var ktem in data.THANHPHANs)
                     {
-                        row1[ktem.TenThanhPhan] = reS[i].List_score[i_temp];
-                        i_temp++;
+                        if (ktem.NamApDung == Last_NamApDung)
+                        {
+                            row1[ktem.TenThanhPhan] = reS[i].List_score[i_temp];
+                            i_temp++;
+                        }    
                     }
                     row1["Diem TB"] = reS[i].DIEMTB;
                     row1["Xep loai"] = reS[i].XEPLOAI;
@@ -237,6 +244,7 @@ namespace QuanLyHocSinh
         {
             if (panelPrint.Visible) { panelPrint.Hide(); }
             if (panelInput.Visible) { panelInput.Hide(); }
+            LoadPanel_Score();
             var comboxID = from obj in data.CTLOPs where obj.MaLop == comboBoxClass.SelectedValue.ToString() select obj.MaHocSinh;
             comboBoxID.DataSource = comboxID.ToList();
             var reSource1 = from scr1 in data.KETQUA_MONHOC_HOCSINH
@@ -359,6 +367,7 @@ namespace QuanLyHocSinh
                             select scr.MaKetQua;
             var temp = from scr in data.DIEMs
                        select scr.MaDiem;
+            string Last_NamApDung = getCurYear();
             var temp_kq = data.KETQUA_MONHOC_HOCSINH.OrderByDescending(row => row.MaKetQua).Select(row=>row.MaKetQua).FirstOrDefault();
             var temp_index = data.DIEMs.OrderByDescending(row => row.MaDiem).Select(row => row.MaDiem).FirstOrDefault();
             string temp2_kq = temp_kq.ToString();
@@ -402,31 +411,34 @@ namespace QuanLyHocSinh
                               select new { MaThanhPhan = scr.MaThanhPhan };
                 foreach (var tb in data.THANHPHANs)
                 {
-                    int isE = 0;
-                    foreach (var t in check_E)
+                    if (tb.NamApDung == Last_NamApDung)
                     {
-                        if (tb.MaThanhPhan == t.MaThanhPhan)
-                            isE = 1;
-                    }
-                    if (isE == 0)
-                    {
-                        DIEM diemTP = new DIEM();
-                        diemTP.MaDiem = stringWithoutLastTwo_index + (++index).ToString();
-                        diemTP.MaKetQua = new_hs.MaKetQua;
-                        diemTP.MaThanhPhan = tb.MaThanhPhan;
-                        TextBox txb_temp = list.FirstOrDefault(b => b.Name == tb.MaThanhPhan);
-                        if (txb_temp.Text != string.Empty)
+                        int isE = 0;
+                        foreach (var t in check_E)
                         {
-                            diemTP.Diem1 = Convert.ToDouble(txb_temp.Text);
-                            DIEMTB += Convert.ToDouble(txb_temp.Text)*getTrongSo(tb.MaThanhPhan);
+                            if (tb.MaThanhPhan == t.MaThanhPhan)
+                                isE = 1;
                         }
-                        else
-                        { 
-                            check = 1;
-                            diemTP.Diem1 = null;
+                        if (isE == 0)
+                        {
+                            DIEM diemTP = new DIEM();
+                            diemTP.MaDiem = stringWithoutLastTwo_index + (++index).ToString();
+                            diemTP.MaKetQua = new_hs.MaKetQua;
+                            diemTP.MaThanhPhan = tb.MaThanhPhan;
+                            TextBox txb_temp = list.FirstOrDefault(b => b.Name == tb.MaThanhPhan);
+                            if (txb_temp.Text != string.Empty)
+                            {
+                                diemTP.Diem1 = Convert.ToDouble(txb_temp.Text);
+                                DIEMTB += Convert.ToDouble(txb_temp.Text) * getTrongSo(tb.MaThanhPhan);
+                            }
+                            else
+                            {
+                                check = 1;
+                                diemTP.Diem1 = null;
+                            }
+                            data.DIEMs.Add(diemTP);
                         }
-                        data.DIEMs.Add(diemTP);
-                    }
+                    }                 
                 }
                 foreach (TextBox txb in list)
                 {
@@ -683,6 +695,14 @@ namespace QuanLyHocSinh
         private void guna2ImageButtonClose1_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void guna2ImageButton4_Click(object sender, EventArgs e)
+        {
+                TrangCaNhan newform = new TrangCaNhan();
+                this.Hide();
+                newform.ShowDialog();
+                this.Show();
         }
     }
 }
