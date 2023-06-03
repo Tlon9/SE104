@@ -54,8 +54,6 @@
             this.pnDadInfo = new Guna.UI2.WinForms.Guna2Panel();
             this.lbDadInfo = new System.Windows.Forms.Label();
             this.pnStudentInfo = new System.Windows.Forms.Panel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbStudentID = new System.Windows.Forms.Label();
             this.tbReligion = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbGender = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -75,10 +73,12 @@
             this.lbGender = new System.Windows.Forms.Label();
             this.lbStudentName = new System.Windows.Forms.Label();
             this.lbStudentInfo = new System.Windows.Forms.Label();
+            this.tbStudentID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbStudentID = new System.Windows.Forms.Label();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnShowInfo = new Guna.UI2.WinForms.Guna2Button();
             this.pnMomInfo.SuspendLayout();
             this.pnDadInfo.SuspendLayout();
             this.pnStudentInfo.SuspendLayout();
@@ -476,37 +476,6 @@
             this.pnStudentInfo.Size = new System.Drawing.Size(1206, 332);
             this.pnStudentInfo.TabIndex = 26;
             // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(213, 52);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.ReadOnly = true;
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(301, 40);
-            this.guna2TextBox1.TabIndex = 22;
-            // 
-            // lbStudentID
-            // 
-            this.lbStudentID.AutoSize = true;
-            this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbStudentID.Location = new System.Drawing.Point(33, 62);
-            this.lbStudentID.Name = "lbStudentID";
-            this.lbStudentID.Size = new System.Drawing.Size(173, 25);
-            this.lbStudentID.TabIndex = 21;
-            this.lbStudentID.Text = "Nhập MS học sinh";
-            // 
             // tbReligion
             // 
             this.tbReligion.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -781,6 +750,37 @@
             this.lbStudentInfo.TabIndex = 2;
             this.lbStudentInfo.Text = "Thông tin học sinh";
             // 
+            // tbStudentID
+            // 
+            this.tbStudentID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbStudentID.DefaultText = "";
+            this.tbStudentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbStudentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbStudentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStudentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStudentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStudentID.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.tbStudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStudentID.Location = new System.Drawing.Point(213, 52);
+            this.tbStudentID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.tbStudentID.Name = "tbStudentID";
+            this.tbStudentID.PasswordChar = '\0';
+            this.tbStudentID.PlaceholderText = "";
+            this.tbStudentID.ReadOnly = true;
+            this.tbStudentID.SelectedText = "";
+            this.tbStudentID.Size = new System.Drawing.Size(301, 40);
+            this.tbStudentID.TabIndex = 22;
+            // 
+            // lbStudentID
+            // 
+            this.lbStudentID.AutoSize = true;
+            this.lbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbStudentID.Location = new System.Drawing.Point(33, 62);
+            this.lbStudentID.Name = "lbStudentID";
+            this.lbStudentID.Size = new System.Drawing.Size(173, 25);
+            this.lbStudentID.TabIndex = 21;
+            this.lbStudentID.Text = "Nhập MS học sinh";
+            // 
             // btnSave
             // 
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -794,6 +794,7 @@
             this.btnSave.Size = new System.Drawing.Size(180, 45);
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "Lưu thay đổi";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -808,6 +809,7 @@
             this.btnCancel.Size = new System.Drawing.Size(180, 45);
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Huỷ thay đổi";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -822,27 +824,29 @@
             this.btnDelete.Size = new System.Drawing.Size(180, 45);
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "Xoá học sinh";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // guna2Button1
+            // btnShowInfo
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(537, 47);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(201, 45);
-            this.guna2Button1.TabIndex = 32;
-            this.guna2Button1.Text = "Xem thông tin";
+            this.btnShowInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnShowInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnShowInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnShowInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnShowInfo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnShowInfo.ForeColor = System.Drawing.Color.White;
+            this.btnShowInfo.Location = new System.Drawing.Point(537, 47);
+            this.btnShowInfo.Name = "btnShowInfo";
+            this.btnShowInfo.Size = new System.Drawing.Size(201, 45);
+            this.btnShowInfo.TabIndex = 32;
+            this.btnShowInfo.Text = "Xem thông tin";
+            this.btnShowInfo.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // UC_XemThongTinHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.btnShowInfo);
+            this.Controls.Add(this.tbStudentID);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lbStudentID);
             this.Controls.Add(this.btnCancel);
@@ -914,8 +918,8 @@
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox tbStudentID;
         private System.Windows.Forms.Label lbStudentID;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnShowInfo;
     }
 }

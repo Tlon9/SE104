@@ -32,7 +32,8 @@ namespace QuanLyHocSinh
         {
             if(this.uC_ThemHocSinhMoi1.Visible == false)
             {
-
+                this.uC_ThemHocSinhMoi1.Visible = true;
+                this.uC_XemThongTinHocSinh1.Visible = false;
             }
         }
 
@@ -40,7 +41,8 @@ namespace QuanLyHocSinh
         {
             if(this.uC_XemThongTinHocSinh1.Visible == false)
             {
-
+                this.uC_XemThongTinHocSinh1.Visible = true;
+                this.uC_ThemHocSinhMoi1.Visible = false;
             }
         }
     }
