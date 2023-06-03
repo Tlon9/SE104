@@ -18,8 +18,7 @@ namespace QuanLyHocSinh
         public Nullable<byte> TuoiToiThieu { get; set; }
         public Nullable<byte> TuoiToiDa { get; set; }
         public Nullable<short> SiSoToiDa { get; set; }
-        public Nullable<double> TsTX { get; set; }
-        public Nullable<double> TsGK { get; set; }
-        public Nullable<double> TsCK { get; set; }
+        public Nullable<double> DiemToiDa { get; set; }
+        public Nullable<double> DiemToiThieu { get; set; }
     }
 }
