@@ -275,6 +275,9 @@
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_XemThongTinHocSinh.resx">
+      <DependentUpon>UC_XemThongTinHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="dataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>dataModel.Designer.cs</LastGenOutput>
