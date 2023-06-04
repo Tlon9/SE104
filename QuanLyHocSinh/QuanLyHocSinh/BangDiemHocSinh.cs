@@ -372,13 +372,11 @@ namespace QuanLyHocSinh
         private void guna2ImageButtonClose1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
 
         private void guna2ImageButtonHome_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)

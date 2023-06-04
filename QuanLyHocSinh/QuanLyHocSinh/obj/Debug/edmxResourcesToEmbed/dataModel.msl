@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="dataModelStoreContainer" CdmEntityContainer="dataEntities">
-    <FunctionImportMapping FunctionImportName="ThemHocKy" FunctionName="dataModel.Store.ThemHocKy" />
     <FunctionImportMapping FunctionImportName="TongKetMonHocKy" FunctionName="dataModel.Store.TongKetMonHocKy">
       <ResultMapping>
         <ComplexTypeMapping TypeName="dataModel.TongKetMonHocKy_Result">
@@ -11,11 +10,69 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="ThemHocSinh" FunctionName="dataModel.Store.ThemHocSinh" />
-    <FunctionImportMapping FunctionImportName="ThemKhoi" FunctionName="dataModel.Store.ThemKhoi" />
-    <FunctionImportMapping FunctionImportName="ThemLop" FunctionName="dataModel.Store.ThemLop" />
-    <FunctionImportMapping FunctionImportName="ThemMonHoc" FunctionName="dataModel.Store.ThemMonHoc" />
-    <FunctionImportMapping FunctionImportName="ThemNamHoc" FunctionName="dataModel.Store.ThemNamHoc" />
+    <FunctionImportMapping FunctionImportName="TongKetMonNamHoc" FunctionName="dataModel.Store.TongKetMonNamHoc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dataModel.TongKetMonNamHoc_Result">
+          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+          <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+          <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TongKetHocKy" FunctionName="dataModel.Store.TongKetHocKy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dataModel.TongKetHocKy_Result">
+          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+          <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+          <ScalarProperty Name="DiemKC" ColumnName="DiemKC" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TongKetMon_HocSinh" FunctionName="dataModel.Store.TongKetMon_HocSinh">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dataModel.TongKetMon_HocSinh_Result">
+          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+          <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TongKetNamHoc" FunctionName="dataModel.Store.TongKetNamHoc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dataModel.TongKetNamHoc_Result">
+          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+          <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+          <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+          <ScalarProperty Name="SoLuongMon" ColumnName="SoLuongMon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SuaThamSo1" FunctionName="dataModel.Store.SuaThamSo" />
+    <FunctionImportMapping FunctionImportName="ThemHocKy1" FunctionName="dataModel.Store.ThemHocKy" />
+    <FunctionImportMapping FunctionImportName="ThemHocSinh1" FunctionName="dataModel.Store.ThemHocSinh" />
+    <FunctionImportMapping FunctionImportName="ThemKhoi1" FunctionName="dataModel.Store.ThemKhoi" />
+    <FunctionImportMapping FunctionImportName="ThemLop1" FunctionName="dataModel.Store.ThemLop" />
+    <FunctionImportMapping FunctionImportName="ThemMonHoc1" FunctionName="dataModel.Store.ThemMonHoc" />
+    <FunctionImportMapping FunctionImportName="ThemNamHoc1" FunctionName="dataModel.Store.ThemNamHoc" />
+    <FunctionImportMapping FunctionImportName="ThemTaiKhoan1" FunctionName="dataModel.Store.ThemTaiKhoan" />
+    <FunctionImportMapping FunctionImportName="ThemThanhPhan1" FunctionName="dataModel.Store.ThemThanhPhan" />
+    <FunctionImportMapping FunctionImportName="ThemXepLoai1" FunctionName="dataModel.Store.ThemXepLoai" />
+    <FunctionImportMapping FunctionImportName="XepLoai_NamApDung1" FunctionName="dataModel.Store.XepLoai_NamApDung">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dataModel.XepLoai_NamApDung1_Result">
+          <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+          <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
+          <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+          <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+          <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
+          <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="CTLOPs">
       <EntityTypeMapping TypeName="dataModel.CTLOP">
         <MappingFragment StoreEntitySet="CTLOP">
@@ -127,6 +184,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TAIKHOANs">
+      <EntityTypeMapping TypeName="dataModel.TAIKHOAN">
+        <MappingFragment StoreEntitySet="TAIKHOAN">
+          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THAMSOes">
+      <EntityTypeMapping TypeName="dataModel.THAMSO">
+        <MappingFragment StoreEntitySet="THAMSO">
+          <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+          <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+          <ScalarProperty Name="SiSoToiDa" ColumnName="SiSoToiDa" />
+          <ScalarProperty Name="TuoiToiDa" ColumnName="TuoiToiDa" />
+          <ScalarProperty Name="TuoiToiThieu" ColumnName="TuoiToiThieu" />
+          <ScalarProperty Name="MaThamSo" ColumnName="MaThamSo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="THANHPHANs">
       <EntityTypeMapping TypeName="dataModel.THANHPHAN">
         <MappingFragment StoreEntitySet="THANHPHAN">
@@ -149,74 +230,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TAIKHOANs">
-      <EntityTypeMapping TypeName="dataModel.TAIKHOAN">
-        <MappingFragment StoreEntitySet="TAIKHOAN">
-          <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-          <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
-          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
-          <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="TongKetMonNamHoc" FunctionName="dataModel.Store.TongKetMonNamHoc">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dataModel.TongKetMonNamHoc_Result">
-          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
-          <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
-          <ScalarProperty Name="HocKy" ColumnName="HocKy" />
-          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="TongKetHocKy" FunctionName="dataModel.Store.TongKetHocKy">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dataModel.TongKetHocKy_Result">
-          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
-          <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
-          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
-          <ScalarProperty Name="DiemKC" ColumnName="DiemKC" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="SuaThamSo" FunctionName="dataModel.Store.SuaThamSo" />
-    <FunctionImportMapping FunctionImportName="ThemTaiKhoan" FunctionName="dataModel.Store.ThemTaiKhoan" />
-    <FunctionImportMapping FunctionImportName="ThemThanhPhan" FunctionName="dataModel.Store.ThemThanhPhan" />
-    <FunctionImportMapping FunctionImportName="ThemXepLoai" FunctionName="dataModel.Store.ThemXepLoai" />
-    <FunctionImportMapping FunctionImportName="TongKetMon_HocSinh" FunctionName="dataModel.Store.TongKetMon_HocSinh">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dataModel.TongKetMon_HocSinh_Result">
-          <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
-          <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
-          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="TongKetNamHoc" FunctionName="dataModel.Store.TongKetNamHoc">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dataModel.TongKetNamHoc_Result">
-          <ScalarProperty Name="TenLop" ColumnName="TenLop" />
-          <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
-          <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
-          <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
-          <ScalarProperty Name="SoLuongMon" ColumnName="SoLuongMon" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="XepLoai_NamApDung" FunctionName="dataModel.Store.XepLoai_NamApDung">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dataModel.XepLoai_NamApDung_Result">
-          <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
-          <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
-          <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
-          <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
-          <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
-          <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

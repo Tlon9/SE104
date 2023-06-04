@@ -128,6 +128,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DuLieu.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyQuyDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyQuyDinh.Designer.cs">
+      <DependentUpon>QuanLyQuyDinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="HOCKY.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THAMSO.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="THANHPHAN.cs">
@@ -226,6 +235,9 @@
     <Compile Include="XEPLOAI.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="XepLoai_NamApDung1_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="XepLoai_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
@@ -247,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyQuyDinh.resx">
+      <DependentUpon>QuanLyQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapDanhSachLop.resx">
       <DependentUpon>LapDanhSachLop.cs</DependentUpon>

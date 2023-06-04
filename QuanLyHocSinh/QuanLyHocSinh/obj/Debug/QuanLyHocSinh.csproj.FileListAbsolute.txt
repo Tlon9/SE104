@@ -61,7 +61,6 @@ D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resou
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
-C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHocCuaLopNamHoc.resources
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapDanhSachLop.resources
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
@@ -122,3 +121,12 @@ D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
 D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
 D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
 D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemMonHocCuaLopTrongNam.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DoiMatKhau.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll

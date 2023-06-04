@@ -112,6 +112,17 @@
     <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
     <Property Name="NgaySinh" Type="date" />
   </EntityType>
+  <EntityType Name="THAMSO">
+    <Key>
+      <PropertyRef Name="MaThamSo" />
+    </Key>
+    <Property Name="MaThamSo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TuoiToiThieu" Type="tinyint" />
+    <Property Name="TuoiToiDa" Type="tinyint" />
+    <Property Name="SiSoToiDa" Type="smallint" />
+    <Property Name="DiemToiDa" Type="float" />
+    <Property Name="DiemToiThieu" Type="float" />
+  </EntityType>
   <EntityType Name="THANHPHAN">
     <Key>
       <PropertyRef Name="MaThanhPhan" />
@@ -380,6 +391,7 @@
     <EntitySet Name="NAMHOC" EntityType="Self.NAMHOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PHANQUYEN" EntityType="Self.PHANQUYEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="THANHPHAN" EntityType="Self.THANHPHAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="XEPLOAI" EntityType="Self.XEPLOAI" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_ctl_hs" Association="Self.fk_ctl_hs">

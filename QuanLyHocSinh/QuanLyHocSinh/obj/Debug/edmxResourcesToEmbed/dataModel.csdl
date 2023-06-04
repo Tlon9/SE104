@@ -51,6 +51,120 @@
       <Parameter Name="MaNamHoc" Mode="In" Type="String" />
       <Parameter Name="NamHoc" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="TongKetMonNamHoc" ReturnType="Collection(dataModel.TongKetMonNamHoc_Result)">
+      <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TongKetHocKy" ReturnType="Collection(dataModel.TongKetHocKy_Result)">
+      <Parameter Name="MaHocKy" Mode="In" Type="String" />
+      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SuaThamSo">
+      <Parameter Name="TuoiToiThieu" Mode="In" Type="Byte" />
+      <Parameter Name="TuoiToiDa" Mode="In" Type="Byte" />
+      <Parameter Name="SiSoToiDa" Mode="In" Type="Int16" />
+      <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+      <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ThemTaiKhoan">
+      <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
+      <Parameter Name="TenDangNhap" Mode="In" Type="String" />
+      <Parameter Name="MatKhau" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemThanhPhan">
+      <Parameter Name="MaThanhPhan" Mode="In" Type="String" />
+      <Parameter Name="TenThanhPhan" Mode="In" Type="String" />
+      <Parameter Name="TrongSo" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ThemXepLoai">
+      <Parameter Name="MaXepLoai" Mode="In" Type="String" />
+      <Parameter Name="TenXepLoai" Mode="In" Type="String" />
+      <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+      <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+      <Parameter Name="DiemKhongChe" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="TongKetMon_HocSinh" ReturnType="Collection(dataModel.TongKetMon_HocSinh_Result)">
+      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+      <Parameter Name="MaHocSinh" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TongKetNamHoc" ReturnType="Collection(dataModel.TongKetNamHoc_Result)">
+      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
+      <Parameter Name="NamApDung" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SuaThamSo1">
+      <Parameter Name="TuoiToiThieu" Mode="In" Type="Byte" />
+      <Parameter Name="TuoiToiDa" Mode="In" Type="Byte" />
+      <Parameter Name="SiSoToiDa" Mode="In" Type="Int16" />
+      <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+      <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ThemHocKy1">
+      <Parameter Name="MaHocKy" Mode="In" Type="String" />
+      <Parameter Name="HocKy" Mode="In" Type="String" />
+      <Parameter Name="TrongSo" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ThemHocSinh1">
+      <Parameter Name="MaHocSinh" Mode="In" Type="String" />
+      <Parameter Name="HoTen" Mode="In" Type="String" />
+      <Parameter Name="GioiTinh" Mode="In" Type="String" />
+      <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="DiaChi" Mode="In" Type="String" />
+      <Parameter Name="QueQuan" Mode="In" Type="String" />
+      <Parameter Name="DanToc" Mode="In" Type="String" />
+      <Parameter Name="TonGiao" Mode="In" Type="String" />
+      <Parameter Name="SDT" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="HoTenCha" Mode="In" Type="String" />
+      <Parameter Name="NamSinh_Cha" Mode="In" Type="Int16" />
+      <Parameter Name="CCCD_Cha" Mode="In" Type="String" />
+      <Parameter Name="SDT_Cha" Mode="In" Type="String" />
+      <Parameter Name="NgheNghiep_Cha" Mode="In" Type="String" />
+      <Parameter Name="HoTenMe" Mode="In" Type="String" />
+      <Parameter Name="NamSinh_Me" Mode="In" Type="Int16" />
+      <Parameter Name="CCCD_Me" Mode="In" Type="String" />
+      <Parameter Name="SDT_Me" Mode="In" Type="String" />
+      <Parameter Name="NgheNghiep_Me" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemKhoi1">
+      <Parameter Name="MaKhoi" Mode="In" Type="String" />
+      <Parameter Name="TenKhoi" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemLop1">
+      <Parameter Name="MaLop" Mode="In" Type="String" />
+      <Parameter Name="TenLop" Mode="In" Type="String" />
+      <Parameter Name="MaKhoi" Mode="In" Type="String" />
+      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemMonHoc1">
+      <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+      <Parameter Name="TenMonHoc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemNamHoc1">
+      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+      <Parameter Name="NamHoc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemTaiKhoan1">
+      <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
+      <Parameter Name="TenDangNhap" Mode="In" Type="String" />
+      <Parameter Name="MatKhau" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThemThanhPhan1">
+      <Parameter Name="MaThanhPhan" Mode="In" Type="String" />
+      <Parameter Name="TenThanhPhan" Mode="In" Type="String" />
+      <Parameter Name="TrongSo" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="ThemXepLoai1">
+      <Parameter Name="MaXepLoai" Mode="In" Type="String" />
+      <Parameter Name="TenXepLoai" Mode="In" Type="String" />
+      <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+      <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+      <Parameter Name="DiemKhongChe" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="XepLoai_NamApDung1" ReturnType="Collection(dataModel.XepLoai_NamApDung1_Result)">
+      <Parameter Name="NamApDung" Mode="In" Type="String" />
+    </FunctionImport>
     <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
     <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
     <EntitySet Name="HOCKies" EntityType="dataModel.HOCKY" />
@@ -61,9 +175,10 @@
     <EntitySet Name="MONHOCs" EntityType="dataModel.MONHOC" />
     <EntitySet Name="NAMHOCs" EntityType="dataModel.NAMHOC" />
     <EntitySet Name="PHANQUYENs" EntityType="dataModel.PHANQUYEN" />
+    <EntitySet Name="TAIKHOANs" EntityType="dataModel.TAIKHOAN" />
+    <EntitySet Name="THAMSOes" EntityType="dataModel.THAMSO" />
     <EntitySet Name="THANHPHANs" EntityType="dataModel.THANHPHAN" />
     <EntitySet Name="XEPLOAIs" EntityType="dataModel.XEPLOAI" />
-    <EntitySet Name="TAIKHOANs" EntityType="dataModel.TAIKHOAN" />
     <AssociationSet Name="fk_ctl_hs" Association="dataModel.fk_ctl_hs">
       <End Role="HOCSINH" EntitySet="HOCSINHs" />
       <End Role="CTLOP" EntitySet="CTLOPs" />
@@ -108,57 +223,56 @@
       <End Role="NAMHOC" EntitySet="NAMHOCs" />
       <End Role="LOP" EntitySet="LOPs" />
     </AssociationSet>
-    <FunctionImport Name="TongKetMonNamHoc" ReturnType="Collection(dataModel.TongKetMonNamHoc_Result)">
-      <Parameter Name="MaMonHoc" Mode="In" Type="String" />
-      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="TongKetHocKy" ReturnType="Collection(dataModel.TongKetHocKy_Result)">
-      <Parameter Name="MaHocKy" Mode="In" Type="String" />
-      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-    </FunctionImport>
     <AssociationSet Name="fk_tk_pq" Association="dataModel.fk_tk_pq">
       <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
       <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
     </AssociationSet>
-    <FunctionImport Name="SuaThamSo">
-      <Parameter Name="TuoiToiThieu" Mode="In" Type="Byte" />
-      <Parameter Name="TuoiToiDa" Mode="In" Type="Byte" />
-      <Parameter Name="SiSoToiDa" Mode="In" Type="Int16" />
-      <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
-      <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
-    </FunctionImport>
-    <FunctionImport Name="ThemTaiKhoan">
-      <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
-      <Parameter Name="TenDangNhap" Mode="In" Type="String" />
-      <Parameter Name="MatKhau" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="ThemThanhPhan">
-      <Parameter Name="MaThanhPhan" Mode="In" Type="String" />
-      <Parameter Name="TenThanhPhan" Mode="In" Type="String" />
-      <Parameter Name="TrongSo" Mode="In" Type="Double" />
-    </FunctionImport>
-    <FunctionImport Name="ThemXepLoai">
-      <Parameter Name="MaXepLoai" Mode="In" Type="String" />
-      <Parameter Name="TenXepLoai" Mode="In" Type="String" />
-      <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
-      <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
-      <Parameter Name="DiemKhongChe" Mode="In" Type="Double" />
-    </FunctionImport>
-    <FunctionImport Name="TongKetMon_HocSinh" ReturnType="Collection(dataModel.TongKetMon_HocSinh_Result)">
-      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-      <Parameter Name="MaHocSinh" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="TongKetNamHoc" ReturnType="Collection(dataModel.TongKetNamHoc_Result)">
-      <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
-      <Parameter Name="NamApDung" Mode="In" Type="String" />
-    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="TongKetMonHocKy_Result">
     <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
     <Property Type="String" Name="MaXepLoai" Nullable="true" MaxLength="20" />
     <Property Type="Int32" Name="SoLuong" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TongKetMonNamHoc_Result">
+    <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="HocKy" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="DiemTB" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TongKetHocKy_Result">
+    <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+    <Property Type="Double" Name="DiemTB" Nullable="true" />
+    <Property Type="Double" Name="DiemKC" Nullable="true" />
+    <Property Type="Int32" Name="SoLuong" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TongKetMon_HocSinh_Result">
+    <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="DiemTB" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="TongKetNamHoc_Result">
+    <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="DiemTB" Nullable="true" />
+    <Property Type="Int32" Name="SoLuongMon" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="XepLoai_NamApDung_Result">
+    <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
+    <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
+    <Property Type="Double" Name="DiemToiDa" Nullable="true" />
+    <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
+    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="XepLoai_NamApDung1_Result">
+    <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
+    <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
+    <Property Type="Double" Name="DiemToiDa" Nullable="true" />
+    <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
+    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
   </ComplexType>
   <EntityType Name="CTLOP">
     <Key>
@@ -262,8 +376,8 @@
     </Key>
     <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_mh" FromRole="MONHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
     <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_mh" FromRole="MONHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
   </EntityType>
   <EntityType Name="NAMHOC">
     <Key>
@@ -282,6 +396,29 @@
     <Property Name="VaiTro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TAIKHOANs" Relationship="dataModel.fk_tk_pq" FromRole="PHANQUYEN" ToRole="TAIKHOAN" />
   </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="MatKhau" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="PHANQUYEN" Relationship="dataModel.fk_tk_pq" FromRole="TAIKHOAN" ToRole="PHANQUYEN" />
+  </EntityType>
+  <EntityType Name="THAMSO">
+    <Key>
+      <PropertyRef Name="MaThamSo" />
+    </Key>
+    <Property Name="MaThamSo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TuoiToiThieu" Type="Byte" />
+    <Property Name="TuoiToiDa" Type="Byte" />
+    <Property Name="SiSoToiDa" Type="Int16" />
+    <Property Name="DiemToiDa" Type="Double" />
+    <Property Name="DiemToiThieu" Type="Double" />
+  </EntityType>
   <EntityType Name="THANHPHAN">
     <Key>
       <PropertyRef Name="MaThanhPhan" />
@@ -289,8 +426,8 @@
     <Property Name="MaThanhPhan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="TenThanhPhan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
     <Property Name="TrongSo" Type="Double" />
-    <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_tp" FromRole="THANHPHAN" ToRole="DIEM" />
     <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_tp" FromRole="THANHPHAN" ToRole="DIEM" />
   </EntityType>
   <EntityType Name="XEPLOAI">
     <Key>
@@ -301,20 +438,8 @@
     <Property Name="DiemToiThieu" Type="Double" />
     <Property Name="DiemToiDa" Type="Double" />
     <Property Name="DiemKhongChe" Type="Double" />
-    <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_xl" FromRole="XEPLOAI" ToRole="KETQUA_MONHOC_HOCSINH" />
     <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="TAIKHOAN">
-    <Key>
-      <PropertyRef Name="MaTaiKhoan" />
-    </Key>
-    <Property Name="MaTaiKhoan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="TenDangNhap" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-    <Property Name="MatKhau" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-    <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="PHANQUYEN" Relationship="dataModel.fk_tk_pq" FromRole="TAIKHOAN" ToRole="PHANQUYEN" />
-    <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_xl" FromRole="XEPLOAI" ToRole="KETQUA_MONHOC_HOCSINH" />
   </EntityType>
   <Association Name="fk_ctl_hs">
     <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
@@ -448,19 +573,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="TongKetMonNamHoc_Result">
-    <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
-    <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="HocKy" Nullable="false" MaxLength="20" />
-    <Property Type="Double" Name="DiemTB" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="TongKetHocKy_Result">
-    <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
-    <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
-    <Property Type="Double" Name="DiemTB" Nullable="true" />
-    <Property Type="Double" Name="DiemKC" Nullable="true" />
-    <Property Type="Int32" Name="SoLuong" Nullable="true" />
-  </ComplexType>
   <Association Name="fk_tk_pq">
     <End Type="dataModel.PHANQUYEN" Role="PHANQUYEN" Multiplicity="1" />
     <End Type="dataModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="*" />
@@ -473,24 +585,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="TongKetMon_HocSinh_Result">
-    <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
-    <Property Type="Double" Name="DiemTB" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="TongKetNamHoc_Result">
-    <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
-    <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
-    <Property Type="Double" Name="DiemTB" Nullable="true" />
-    <Property Type="Int32" Name="SoLuongMon" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="XepLoai_NamApDung_Result">
-    <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
-    <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
-    <Property Type="Double" Name="DiemToiDa" Nullable="true" />
-    <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
-    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
-  </ComplexType>
 </Schema>

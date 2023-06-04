@@ -361,5 +361,260 @@ namespace QuanLyHocSinh
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<XepLoai_NamApDung_Result>("XepLoai_NamApDung", namApDungParameter);
         }
+    
+        public virtual int SuaThamSo1(Nullable<byte> tuoiToiThieu, Nullable<byte> tuoiToiDa, Nullable<short> siSoToiDa, Nullable<double> diemToiDa, Nullable<double> diemToiThieu)
+        {
+            var tuoiToiThieuParameter = tuoiToiThieu.HasValue ?
+                new ObjectParameter("TuoiToiThieu", tuoiToiThieu) :
+                new ObjectParameter("TuoiToiThieu", typeof(byte));
+    
+            var tuoiToiDaParameter = tuoiToiDa.HasValue ?
+                new ObjectParameter("TuoiToiDa", tuoiToiDa) :
+                new ObjectParameter("TuoiToiDa", typeof(byte));
+    
+            var siSoToiDaParameter = siSoToiDa.HasValue ?
+                new ObjectParameter("SiSoToiDa", siSoToiDa) :
+                new ObjectParameter("SiSoToiDa", typeof(short));
+    
+            var diemToiDaParameter = diemToiDa.HasValue ?
+                new ObjectParameter("DiemToiDa", diemToiDa) :
+                new ObjectParameter("DiemToiDa", typeof(double));
+    
+            var diemToiThieuParameter = diemToiThieu.HasValue ?
+                new ObjectParameter("DiemToiThieu", diemToiThieu) :
+                new ObjectParameter("DiemToiThieu", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SuaThamSo1", tuoiToiThieuParameter, tuoiToiDaParameter, siSoToiDaParameter, diemToiDaParameter, diemToiThieuParameter);
+        }
+    
+        public virtual int ThemHocKy1(string maHocKy, string hocKy, Nullable<double> trongSo)
+        {
+            var maHocKyParameter = maHocKy != null ?
+                new ObjectParameter("MaHocKy", maHocKy) :
+                new ObjectParameter("MaHocKy", typeof(string));
+    
+            var hocKyParameter = hocKy != null ?
+                new ObjectParameter("HocKy", hocKy) :
+                new ObjectParameter("HocKy", typeof(string));
+    
+            var trongSoParameter = trongSo.HasValue ?
+                new ObjectParameter("TrongSo", trongSo) :
+                new ObjectParameter("TrongSo", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemHocKy1", maHocKyParameter, hocKyParameter, trongSoParameter);
+        }
+    
+        public virtual int ThemHocSinh1(string maHocSinh, string hoTen, string gioiTinh, Nullable<System.DateTime> ngaySinh, string diaChi, string queQuan, string danToc, string tonGiao, string sDT, string email, string hoTenCha, Nullable<short> namSinh_Cha, string cCCD_Cha, string sDT_Cha, string ngheNghiep_Cha, string hoTenMe, Nullable<short> namSinh_Me, string cCCD_Me, string sDT_Me, string ngheNghiep_Me)
+        {
+            var maHocSinhParameter = maHocSinh != null ?
+                new ObjectParameter("MaHocSinh", maHocSinh) :
+                new ObjectParameter("MaHocSinh", typeof(string));
+    
+            var hoTenParameter = hoTen != null ?
+                new ObjectParameter("HoTen", hoTen) :
+                new ObjectParameter("HoTen", typeof(string));
+    
+            var gioiTinhParameter = gioiTinh != null ?
+                new ObjectParameter("GioiTinh", gioiTinh) :
+                new ObjectParameter("GioiTinh", typeof(string));
+    
+            var ngaySinhParameter = ngaySinh.HasValue ?
+                new ObjectParameter("NgaySinh", ngaySinh) :
+                new ObjectParameter("NgaySinh", typeof(System.DateTime));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("DiaChi", diaChi) :
+                new ObjectParameter("DiaChi", typeof(string));
+    
+            var queQuanParameter = queQuan != null ?
+                new ObjectParameter("QueQuan", queQuan) :
+                new ObjectParameter("QueQuan", typeof(string));
+    
+            var danTocParameter = danToc != null ?
+                new ObjectParameter("DanToc", danToc) :
+                new ObjectParameter("DanToc", typeof(string));
+    
+            var tonGiaoParameter = tonGiao != null ?
+                new ObjectParameter("TonGiao", tonGiao) :
+                new ObjectParameter("TonGiao", typeof(string));
+    
+            var sDTParameter = sDT != null ?
+                new ObjectParameter("SDT", sDT) :
+                new ObjectParameter("SDT", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var hoTenChaParameter = hoTenCha != null ?
+                new ObjectParameter("HoTenCha", hoTenCha) :
+                new ObjectParameter("HoTenCha", typeof(string));
+    
+            var namSinh_ChaParameter = namSinh_Cha.HasValue ?
+                new ObjectParameter("NamSinh_Cha", namSinh_Cha) :
+                new ObjectParameter("NamSinh_Cha", typeof(short));
+    
+            var cCCD_ChaParameter = cCCD_Cha != null ?
+                new ObjectParameter("CCCD_Cha", cCCD_Cha) :
+                new ObjectParameter("CCCD_Cha", typeof(string));
+    
+            var sDT_ChaParameter = sDT_Cha != null ?
+                new ObjectParameter("SDT_Cha", sDT_Cha) :
+                new ObjectParameter("SDT_Cha", typeof(string));
+    
+            var ngheNghiep_ChaParameter = ngheNghiep_Cha != null ?
+                new ObjectParameter("NgheNghiep_Cha", ngheNghiep_Cha) :
+                new ObjectParameter("NgheNghiep_Cha", typeof(string));
+    
+            var hoTenMeParameter = hoTenMe != null ?
+                new ObjectParameter("HoTenMe", hoTenMe) :
+                new ObjectParameter("HoTenMe", typeof(string));
+    
+            var namSinh_MeParameter = namSinh_Me.HasValue ?
+                new ObjectParameter("NamSinh_Me", namSinh_Me) :
+                new ObjectParameter("NamSinh_Me", typeof(short));
+    
+            var cCCD_MeParameter = cCCD_Me != null ?
+                new ObjectParameter("CCCD_Me", cCCD_Me) :
+                new ObjectParameter("CCCD_Me", typeof(string));
+    
+            var sDT_MeParameter = sDT_Me != null ?
+                new ObjectParameter("SDT_Me", sDT_Me) :
+                new ObjectParameter("SDT_Me", typeof(string));
+    
+            var ngheNghiep_MeParameter = ngheNghiep_Me != null ?
+                new ObjectParameter("NgheNghiep_Me", ngheNghiep_Me) :
+                new ObjectParameter("NgheNghiep_Me", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemHocSinh1", maHocSinhParameter, hoTenParameter, gioiTinhParameter, ngaySinhParameter, diaChiParameter, queQuanParameter, danTocParameter, tonGiaoParameter, sDTParameter, emailParameter, hoTenChaParameter, namSinh_ChaParameter, cCCD_ChaParameter, sDT_ChaParameter, ngheNghiep_ChaParameter, hoTenMeParameter, namSinh_MeParameter, cCCD_MeParameter, sDT_MeParameter, ngheNghiep_MeParameter);
+        }
+    
+        public virtual int ThemKhoi1(string maKhoi, string tenKhoi)
+        {
+            var maKhoiParameter = maKhoi != null ?
+                new ObjectParameter("MaKhoi", maKhoi) :
+                new ObjectParameter("MaKhoi", typeof(string));
+    
+            var tenKhoiParameter = tenKhoi != null ?
+                new ObjectParameter("TenKhoi", tenKhoi) :
+                new ObjectParameter("TenKhoi", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemKhoi1", maKhoiParameter, tenKhoiParameter);
+        }
+    
+        public virtual int ThemLop1(string maLop, string tenLop, string maKhoi, string maNamHoc)
+        {
+            var maLopParameter = maLop != null ?
+                new ObjectParameter("MaLop", maLop) :
+                new ObjectParameter("MaLop", typeof(string));
+    
+            var tenLopParameter = tenLop != null ?
+                new ObjectParameter("TenLop", tenLop) :
+                new ObjectParameter("TenLop", typeof(string));
+    
+            var maKhoiParameter = maKhoi != null ?
+                new ObjectParameter("MaKhoi", maKhoi) :
+                new ObjectParameter("MaKhoi", typeof(string));
+    
+            var maNamHocParameter = maNamHoc != null ?
+                new ObjectParameter("MaNamHoc", maNamHoc) :
+                new ObjectParameter("MaNamHoc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemLop1", maLopParameter, tenLopParameter, maKhoiParameter, maNamHocParameter);
+        }
+    
+        public virtual int ThemMonHoc1(string maMonHoc, string tenMonHoc)
+        {
+            var maMonHocParameter = maMonHoc != null ?
+                new ObjectParameter("MaMonHoc", maMonHoc) :
+                new ObjectParameter("MaMonHoc", typeof(string));
+    
+            var tenMonHocParameter = tenMonHoc != null ?
+                new ObjectParameter("TenMonHoc", tenMonHoc) :
+                new ObjectParameter("TenMonHoc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemMonHoc1", maMonHocParameter, tenMonHocParameter);
+        }
+    
+        public virtual int ThemNamHoc1(string maNamHoc, string namHoc)
+        {
+            var maNamHocParameter = maNamHoc != null ?
+                new ObjectParameter("MaNamHoc", maNamHoc) :
+                new ObjectParameter("MaNamHoc", typeof(string));
+    
+            var namHocParameter = namHoc != null ?
+                new ObjectParameter("NamHoc", namHoc) :
+                new ObjectParameter("NamHoc", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemNamHoc1", maNamHocParameter, namHocParameter);
+        }
+    
+        public virtual int ThemTaiKhoan1(string maTaiKhoan, string tenDangNhap, string matKhau)
+        {
+            var maTaiKhoanParameter = maTaiKhoan != null ?
+                new ObjectParameter("MaTaiKhoan", maTaiKhoan) :
+                new ObjectParameter("MaTaiKhoan", typeof(string));
+    
+            var tenDangNhapParameter = tenDangNhap != null ?
+                new ObjectParameter("TenDangNhap", tenDangNhap) :
+                new ObjectParameter("TenDangNhap", typeof(string));
+    
+            var matKhauParameter = matKhau != null ?
+                new ObjectParameter("MatKhau", matKhau) :
+                new ObjectParameter("MatKhau", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemTaiKhoan1", maTaiKhoanParameter, tenDangNhapParameter, matKhauParameter);
+        }
+    
+        public virtual int ThemThanhPhan1(string maThanhPhan, string tenThanhPhan, Nullable<double> trongSo)
+        {
+            var maThanhPhanParameter = maThanhPhan != null ?
+                new ObjectParameter("MaThanhPhan", maThanhPhan) :
+                new ObjectParameter("MaThanhPhan", typeof(string));
+    
+            var tenThanhPhanParameter = tenThanhPhan != null ?
+                new ObjectParameter("TenThanhPhan", tenThanhPhan) :
+                new ObjectParameter("TenThanhPhan", typeof(string));
+    
+            var trongSoParameter = trongSo.HasValue ?
+                new ObjectParameter("TrongSo", trongSo) :
+                new ObjectParameter("TrongSo", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemThanhPhan1", maThanhPhanParameter, tenThanhPhanParameter, trongSoParameter);
+        }
+    
+        public virtual int ThemXepLoai1(string maXepLoai, string tenXepLoai, Nullable<double> diemToiThieu, Nullable<double> diemToiDa, Nullable<double> diemKhongChe)
+        {
+            var maXepLoaiParameter = maXepLoai != null ?
+                new ObjectParameter("MaXepLoai", maXepLoai) :
+                new ObjectParameter("MaXepLoai", typeof(string));
+    
+            var tenXepLoaiParameter = tenXepLoai != null ?
+                new ObjectParameter("TenXepLoai", tenXepLoai) :
+                new ObjectParameter("TenXepLoai", typeof(string));
+    
+            var diemToiThieuParameter = diemToiThieu.HasValue ?
+                new ObjectParameter("DiemToiThieu", diemToiThieu) :
+                new ObjectParameter("DiemToiThieu", typeof(double));
+    
+            var diemToiDaParameter = diemToiDa.HasValue ?
+                new ObjectParameter("DiemToiDa", diemToiDa) :
+                new ObjectParameter("DiemToiDa", typeof(double));
+    
+            var diemKhongCheParameter = diemKhongChe.HasValue ?
+                new ObjectParameter("DiemKhongChe", diemKhongChe) :
+                new ObjectParameter("DiemKhongChe", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ThemXepLoai1", maXepLoaiParameter, tenXepLoaiParameter, diemToiThieuParameter, diemToiDaParameter, diemKhongCheParameter);
+        }
+    
+        public virtual ObjectResult<XepLoai_NamApDung1_Result> XepLoai_NamApDung1(string namApDung)
+        {
+            var namApDungParameter = namApDung != null ?
+                new ObjectParameter("NamApDung", namApDung) :
+                new ObjectParameter("NamApDung", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<XepLoai_NamApDung1_Result>("XepLoai_NamApDung1", namApDungParameter);
+        }
     }
 }

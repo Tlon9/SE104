@@ -43,6 +43,7 @@ namespace QuanLyHocSinh
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.MenuQuanLyQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,11 +59,12 @@ namespace QuanLyHocSinh
             this.MenuItemSearch,
             this.bảngĐiểmToolStripMenuItem1,
             this.MenuItemFinalReport,
-            this.MenuItemClassScore});
-            this.menuStrip1.Location = new System.Drawing.Point(8, 135);
+            this.MenuItemClassScore,
+            this.MenuQuanLyQuyDinh});
+            this.menuStrip1.Location = new System.Drawing.Point(6, 110);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1033, 50);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(938, 41);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,7 +73,7 @@ namespace QuanLyHocSinh
             this.MenuItemAddStudent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemAddStudent.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuItemAddStudent.Name = "MenuItemAddStudent";
-            this.MenuItemAddStudent.Size = new System.Drawing.Size(205, 46);
+            this.MenuItemAddStudent.Size = new System.Drawing.Size(166, 37);
             this.MenuItemAddStudent.Text = "Tiếp nhận học sinh";
             this.MenuItemAddStudent.Click += new System.EventHandler(this.MenuItemAddStudent_Click);
             // 
@@ -83,20 +85,20 @@ namespace QuanLyHocSinh
             this.MenuItemSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemSearch.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuItemSearch.Name = "MenuItemSearch";
-            this.MenuItemSearch.Size = new System.Drawing.Size(96, 46);
+            this.MenuItemSearch.Size = new System.Drawing.Size(78, 37);
             this.MenuItemSearch.Text = "Tra cứu";
             // 
             // MenuItemFindStudent
             // 
             this.MenuItemFindStudent.Name = "MenuItemFindStudent";
-            this.MenuItemFindStudent.Size = new System.Drawing.Size(275, 32);
+            this.MenuItemFindStudent.Size = new System.Drawing.Size(222, 26);
             this.MenuItemFindStudent.Text = "Tra cứu thông tin";
             this.MenuItemFindStudent.Click += new System.EventHandler(this.MenuItemFindStudent_Click);
             // 
             // MenuItemScoreBoard
             // 
             this.MenuItemScoreBoard.Name = "MenuItemScoreBoard";
-            this.MenuItemScoreBoard.Size = new System.Drawing.Size(275, 32);
+            this.MenuItemScoreBoard.Size = new System.Drawing.Size(222, 26);
             this.MenuItemScoreBoard.Text = "Tra cứu bảng điểm";
             this.MenuItemScoreBoard.Click += new System.EventHandler(this.MenuItemScoreBoard_Click);
             // 
@@ -108,20 +110,20 @@ namespace QuanLyHocSinh
             this.bảngĐiểmToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bảngĐiểmToolStripMenuItem1.ForeColor = System.Drawing.SystemColors.Window;
             this.bảngĐiểmToolStripMenuItem1.Name = "bảngĐiểmToolStripMenuItem1";
-            this.bảngĐiểmToolStripMenuItem1.Size = new System.Drawing.Size(128, 46);
+            this.bảngĐiểmToolStripMenuItem1.Size = new System.Drawing.Size(104, 37);
             this.bảngĐiểmToolStripMenuItem1.Text = "Bảng điểm";
             // 
             // MenuItemSubjectScore
             // 
             this.MenuItemSubjectScore.Name = "MenuItemSubjectScore";
-            this.MenuItemSubjectScore.Size = new System.Drawing.Size(344, 32);
+            this.MenuItemSubjectScore.Size = new System.Drawing.Size(279, 26);
             this.MenuItemSubjectScore.Text = "Nhập bảng điểm môn học";
             this.MenuItemSubjectScore.Click += new System.EventHandler(this.MenuItemSubjectScore_Click);
             // 
             // MenuItemSubjectScoreYear
             // 
             this.MenuItemSubjectScoreYear.Name = "MenuItemSubjectScoreYear";
-            this.MenuItemSubjectScoreYear.Size = new System.Drawing.Size(344, 32);
+            this.MenuItemSubjectScoreYear.Size = new System.Drawing.Size(279, 26);
             this.MenuItemSubjectScoreYear.Text = "Xuất bảng điểm môn học";
             this.MenuItemSubjectScoreYear.Click += new System.EventHandler(this.MenuItemSubjectScoreYear_Click);
             // 
@@ -130,7 +132,7 @@ namespace QuanLyHocSinh
             this.MenuItemFinalReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemFinalReport.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuItemFinalReport.Name = "MenuItemFinalReport";
-            this.MenuItemFinalReport.Size = new System.Drawing.Size(187, 46);
+            this.MenuItemFinalReport.Size = new System.Drawing.Size(150, 37);
             this.MenuItemFinalReport.Text = "Báo cáo tổng kết";
             this.MenuItemFinalReport.Click += new System.EventHandler(this.MenuItemFinalReport_Click);
             // 
@@ -151,9 +153,8 @@ namespace QuanLyHocSinh
             this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1046, 53);
+            this.guna2Panel1.Size = new System.Drawing.Size(924, 43);
             this.guna2Panel1.TabIndex = 17;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
@@ -165,11 +166,10 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonClose1.ImageRotate = 0F;
             this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(994, 0);
-            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(886, 3);
             this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
             this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Size = new System.Drawing.Size(47, 43);
+            this.guna2ImageButtonClose1.Size = new System.Drawing.Size(35, 35);
             this.guna2ImageButtonClose1.TabIndex = 1;
             this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click);
             // 
@@ -182,25 +182,33 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonMinimize1.ImageRotate = 0F;
             this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(950, 0);
-            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(845, 3);
             this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
             this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(47, 43);
+            this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(35, 35);
             this.guna2ImageButtonMinimize1.TabIndex = 0;
             this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
             // 
+            // MenuQuanLyQuyDinh
+            // 
+            this.MenuQuanLyQuyDinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuQuanLyQuyDinh.ForeColor = System.Drawing.Color.White;
+            this.MenuQuanLyQuyDinh.Name = "MenuQuanLyQuyDinh";
+            this.MenuQuanLyQuyDinh.Size = new System.Drawing.Size(153, 37);
+            this.MenuQuanLyQuyDinh.Text = "Quản lý quy định";
+            this.MenuQuanLyQuyDinh.Click += new System.EventHandler(this.MenuQuanLyQuyDinh_Click);
+            // 
             // TrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1046, 540);
+            this.ClientSize = new System.Drawing.Size(924, 439);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TrangChu";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
@@ -224,5 +232,6 @@ namespace QuanLyHocSinh
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
+        private System.Windows.Forms.ToolStripMenuItem MenuQuanLyQuyDinh;
     }
 }

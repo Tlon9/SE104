@@ -115,7 +115,7 @@
           <Property Name="MatKhau" Type="nvarchar" MaxLength="60" />
           <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
-          <Property Name="NgaySinh" Type="smalldatetime" />
+          <Property Name="NgaySinh" Type="date" />
         </EntityType>
         <EntityType Name="THAMSO">
           <Key>
@@ -292,6 +292,75 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="SuaThamSo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TuoiToiThieu" Type="tinyint" Mode="In" />
+          <Parameter Name="TuoiToiDa" Type="tinyint" Mode="In" />
+          <Parameter Name="SiSoToiDa" Type="smallint" Mode="In" />
+          <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+          <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThemHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="HocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrongSo" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThemHocSinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHocSinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="HoTen" Type="nvarchar" Mode="In" />
+          <Parameter Name="GioiTinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgaySinh" Type="smalldatetime" Mode="In" />
+          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+          <Parameter Name="QueQuan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DanToc" Type="nvarchar" Mode="In" />
+          <Parameter Name="TonGiao" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="HoTenCha" Type="nvarchar" Mode="In" />
+          <Parameter Name="NamSinh_Cha" Type="smallint" Mode="In" />
+          <Parameter Name="CCCD_Cha" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT_Cha" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgheNghiep_Cha" Type="nvarchar" Mode="In" />
+          <Parameter Name="HoTenMe" Type="nvarchar" Mode="In" />
+          <Parameter Name="NamSinh_Me" Type="smallint" Mode="In" />
+          <Parameter Name="CCCD_Me" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT_Me" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgheNghiep_Me" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemKhoi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaKhoi" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenKhoi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaLop" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenLop" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaKhoi" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemMonHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenMonHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="NamHoc" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ThemTaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTaiKhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenDangNhap" Type="nvarchar" Mode="In" />
+          <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemThanhPhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaThanhPhan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenThanhPhan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrongSo" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThemXepLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaXepLoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenXepLoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+          <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+          <Parameter Name="DiemKhongChe" Type="float" Mode="In" />
+        </Function>
         <Function Name="TongKetHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
           <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
@@ -311,6 +380,9 @@
         </Function>
         <Function Name="TongKetNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="XepLoai_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
         </Function>
         <EntityContainer Name="dataModelStoreContainer">
           <EntitySet Name="CTLOP" EntityType="Self.CTLOP" Schema="dbo" store:Type="Tables" />
@@ -473,6 +545,78 @@
           <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
           <Parameter Name="NamApDung" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="SuaThamSo1">
+            <Parameter Name="TuoiToiThieu" Mode="In" Type="Byte" />
+            <Parameter Name="TuoiToiDa" Mode="In" Type="Byte" />
+            <Parameter Name="SiSoToiDa" Mode="In" Type="Int16" />
+            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="ThemHocKy1">
+            <Parameter Name="MaHocKy" Mode="In" Type="String" />
+            <Parameter Name="HocKy" Mode="In" Type="String" />
+            <Parameter Name="TrongSo" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="ThemHocSinh1">
+            <Parameter Name="MaHocSinh" Mode="In" Type="String" />
+            <Parameter Name="HoTen" Mode="In" Type="String" />
+            <Parameter Name="GioiTinh" Mode="In" Type="String" />
+            <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="QueQuan" Mode="In" Type="String" />
+            <Parameter Name="DanToc" Mode="In" Type="String" />
+            <Parameter Name="TonGiao" Mode="In" Type="String" />
+            <Parameter Name="SDT" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="HoTenCha" Mode="In" Type="String" />
+            <Parameter Name="NamSinh_Cha" Mode="In" Type="Int16" />
+            <Parameter Name="CCCD_Cha" Mode="In" Type="String" />
+            <Parameter Name="SDT_Cha" Mode="In" Type="String" />
+            <Parameter Name="NgheNghiep_Cha" Mode="In" Type="String" />
+            <Parameter Name="HoTenMe" Mode="In" Type="String" />
+            <Parameter Name="NamSinh_Me" Mode="In" Type="Int16" />
+            <Parameter Name="CCCD_Me" Mode="In" Type="String" />
+            <Parameter Name="SDT_Me" Mode="In" Type="String" />
+            <Parameter Name="NgheNghiep_Me" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemKhoi1">
+            <Parameter Name="MaKhoi" Mode="In" Type="String" />
+            <Parameter Name="TenKhoi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemLop1">
+            <Parameter Name="MaLop" Mode="In" Type="String" />
+            <Parameter Name="TenLop" Mode="In" Type="String" />
+            <Parameter Name="MaKhoi" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemMonHoc1">
+            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+            <Parameter Name="TenMonHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemNamHoc1">
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+            <Parameter Name="NamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemTaiKhoan1">
+            <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
+            <Parameter Name="TenDangNhap" Mode="In" Type="String" />
+            <Parameter Name="MatKhau" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemThanhPhan1">
+            <Parameter Name="MaThanhPhan" Mode="In" Type="String" />
+            <Parameter Name="TenThanhPhan" Mode="In" Type="String" />
+            <Parameter Name="TrongSo" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="ThemXepLoai1">
+            <Parameter Name="MaXepLoai" Mode="In" Type="String" />
+            <Parameter Name="TenXepLoai" Mode="In" Type="String" />
+            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+            <Parameter Name="DiemKhongChe" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="XepLoai_NamApDung1" ReturnType="Collection(dataModel.XepLoai_NamApDung1_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
           <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
           <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
           <EntitySet Name="HOCKies" EntityType="dataModel.HOCKY" />
@@ -535,7 +679,7 @@
             <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
             <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <ComplexType Name="TongKetMonHocKy_Result">
           <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
           <Property Type="String" Name="MaXepLoai" Nullable="true" MaxLength="20" />
@@ -567,6 +711,14 @@
           <Property Type="Int32" Name="SoLuongMon" Nullable="true" />
         </ComplexType>
         <ComplexType Name="XepLoai_NamApDung_Result">
+          <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
+          <Property Type="Double" Name="DiemToiDa" Nullable="true" />
+          <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="XepLoai_NamApDung1_Result">
           <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
           <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
@@ -941,6 +1093,28 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SuaThamSo1" FunctionName="dataModel.Store.SuaThamSo" />
+          <FunctionImportMapping FunctionImportName="ThemHocKy1" FunctionName="dataModel.Store.ThemHocKy" />
+          <FunctionImportMapping FunctionImportName="ThemHocSinh1" FunctionName="dataModel.Store.ThemHocSinh" />
+          <FunctionImportMapping FunctionImportName="ThemKhoi1" FunctionName="dataModel.Store.ThemKhoi" />
+          <FunctionImportMapping FunctionImportName="ThemLop1" FunctionName="dataModel.Store.ThemLop" />
+          <FunctionImportMapping FunctionImportName="ThemMonHoc1" FunctionName="dataModel.Store.ThemMonHoc" />
+          <FunctionImportMapping FunctionImportName="ThemNamHoc1" FunctionName="dataModel.Store.ThemNamHoc" />
+          <FunctionImportMapping FunctionImportName="ThemTaiKhoan1" FunctionName="dataModel.Store.ThemTaiKhoan" />
+          <FunctionImportMapping FunctionImportName="ThemThanhPhan1" FunctionName="dataModel.Store.ThemThanhPhan" />
+          <FunctionImportMapping FunctionImportName="ThemXepLoai1" FunctionName="dataModel.Store.ThemXepLoai" />
+          <FunctionImportMapping FunctionImportName="XepLoai_NamApDung1" FunctionName="dataModel.Store.XepLoai_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.XepLoai_NamApDung1_Result">
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+                <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
+                <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+                <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+                <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="CTLOPs">
             <EntityTypeMapping TypeName="dataModel.CTLOP">
               <MappingFragment StoreEntitySet="CTLOP">
@@ -1098,7 +1272,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
