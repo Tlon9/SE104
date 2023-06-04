@@ -204,15 +204,18 @@ namespace QuanLyHocSinh
                 var MaNamHoc = from n in dtb.NAMHOCs
                             where n.NamHoc1 == NamHocCbb_hk.Text
                             select n.MaNamHoc;
-                foreach(var item in dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                var DiemToiThieu = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r=>r.DiemToiThieu).ToList();
+                var DiemKhongChe = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r=>r.DiemKhongChe).ToList();
+                var TenXepLoai = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r=>r.DiemToiThieu).Select(r=>r.TenXepLoai).ToList();
+                for (int k = 0; k < DiemToiThieu.Count(); k++)
                 {
-                    if (DTBHK >= item.DiemToiThieu)
+                    if (DTBHK >= DiemToiThieu[k])
                     {
-                        if (DIEMTB.Min() < item.DiemKhongChe)
+                        if (DIEMTB.Min() <= DiemKhongChe.ToList()[k])
                         {
-                            XepLoaiTextBox.Text = item.TenXepLoai;
+                            XepLoaiTextBox.Text = TenXepLoai.ToList()[k + 1].ToString();
                         }
-                        else XepLoaiTextBox.Text = item.TenXepLoai;
+                        else XepLoaiTextBox.Text = TenXepLoai.ToList()[k].ToString();
                         break;
                     }
                 }
@@ -291,25 +294,28 @@ namespace QuanLyHocSinh
                 //LOP
                 LopTxtBox_nh.Text = GetLop(MHStextbox_nh.Text, "HKI", NamHocCbb_nh.Text, dtb);
 
-
+                //Tinh Diem TB
                 double DiemTB = Math.Round(Tong_DiemTB / Math.Max(DiemTBhk1.Count(row => row != null), DiemTBhk2.Count(row => row != null)), 2);
                 DTBNHTextBox.Text = DiemTB.ToString();
                 var MaNamHoc = from n in dtb.NAMHOCs
                                where n.NamHoc1 == NamHocCbb_nh.Text
                                select n.MaNamHoc;
-                foreach (var item in dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                //Xep Loai
+                var DiemToiThieu = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r => r.DiemToiThieu).ToList();
+                var DiemKhongChe = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r => r.DiemKhongChe).ToList();
+                var TenXepLoai = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r => r.TenXepLoai).ToList();
+                for (int k = 0; k < DiemToiThieu.Count(); k++)
                 {
-                    if (DiemTB >= item.DiemToiThieu)
+                    if (DiemTB >= DiemToiThieu[k])
                     {
-                        if (Min_DiemTB < item.DiemKhongChe)
+                        if (Min_DiemTB <= DiemKhongChe.ToList()[k])
                         {
-                            XepLoaiTxtBox_nh.Text = item.TenXepLoai;
+                            XepLoaiTxtBox_nh.Text = TenXepLoai.ToList()[k + 1].ToString();
                         }
-                        else XepLoaiTxtBox_nh.Text = item.TenXepLoai;
+                        else XepLoaiTxtBox_nh.Text = TenXepLoai.ToList()[k].ToString();
                         break;
                     }
                 }
-
 
             }
         }
