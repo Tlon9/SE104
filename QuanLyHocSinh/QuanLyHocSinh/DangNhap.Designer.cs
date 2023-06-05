@@ -151,6 +151,7 @@ namespace QuanLyHocSinh
             // 
             // guna2CustomGradientPanel1
             // 
+            resources.ApplyResources(this.guna2CustomGradientPanel1, "guna2CustomGradientPanel1");
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
             this.guna2CustomGradientPanel1.Controls.Add(this.textBoxUsername);
             this.guna2CustomGradientPanel1.Controls.Add(this.buttonLogin);
@@ -162,7 +163,6 @@ namespace QuanLyHocSinh
             this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
-            resources.ApplyResources(this.guna2CustomGradientPanel1, "guna2CustomGradientPanel1");
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             // 
             // panel4
