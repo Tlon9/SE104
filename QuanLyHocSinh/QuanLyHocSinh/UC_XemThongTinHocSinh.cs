@@ -6,8 +6,10 @@ using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace QuanLyHocSinh
 {
@@ -40,6 +42,7 @@ namespace QuanLyHocSinh
         public UC_XemThongTinHocSinh()
         {
             InitializeComponent();
+            this.tbStudentID.Text = "";
             this.pnStudentInfo.Visible = false;
             this.pnDadInfo.Visible = false;
             this.pnMomInfo.Visible = false;
@@ -102,8 +105,50 @@ namespace QuanLyHocSinh
             DialogResult choose = MessageBox.Show("Lưu thay đổi?", "Lưu", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             if(choose == DialogResult.OK)
             {
+                dataEntities db = new dataEntities();
                 // Save Student Info code
+                byte sTuoiToiThieu = (byte)(from obj in db.THAMSOes
+                                            select obj.TuoiToiThieu).ToList().First();
+                byte sTuoiToiDa = (byte)(from obj in db.THAMSOes
+                                         select obj.TuoiToiDa).ToList().First();
+                byte sTuoi = (byte)(DateTime.Now.Year - dtpBirthday.Value.Year);
 
+                if (sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
+                {
+                    //db.SuaHocSinh(this.tbStudentID.Text,
+                    //            this.tbName.Text,
+                    //            this.tbGender.Text,
+                    //            this.dtpBirthday.Value,
+                    //            this.tbAddress.Text,
+                    //            this.tbOrigin.Text,
+                    //            this.tbEthnicity.Text,
+                    //            this.tbReligion.Text,
+                    //            this.tbNumPhone.Text,
+                    //            this.tbEmail.Text,
+                    //            this.tbDadName.Text,
+                    //            short.Parse(this.tbDadBirthyear.Text),
+                    //            this.tbDadID.Text,
+                    //            this.tbDadPhoneNum.Text,
+                    //            this.tbDadJob.Text,
+                    //            this.tbMomName.Text,
+                    //            short.Parse(this.tbMomBirthyear.Text),
+                    //            this.tbMomID.Text,
+                    //            this.tbMomPhoneNum.Text,
+                    //            this.tbMomJob.Text);
+                    db.SaveChanges();
+                    MessageBox.Show("Lưu thay đổi thành công",
+                                    "Lưu thành công",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Tuổi học sinh phải từ " + sTuoiToiThieu + " đến " + sTuoiToiDa + " tuổi.\n" +
+                                    "Lưu thay đổi không thành công.",
+                                    "Lỗi",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
                 // Save Student Info code
             }
         }
@@ -134,29 +179,48 @@ namespace QuanLyHocSinh
 
         private void DeleteStudent()
         {
-            // Check if the student is in a class or has grade result
-
-            // Check if the student is in a class or has grade result
-
-            DialogResult choose = MessageBox.Show("Xoá thông tin của học sinh này? Tác vụ này không thể hoàn tác",
+            dataEntities db = new dataEntities();
+            // Check if the student is in a class
+            var listStdID = (from obj in db.CTLOPs
+                             where this.tbStudentID.Text == obj.MaHocSinh
+                             select obj);
+            if(listStdID.Count() > 0)
+            {
+                DialogResult choose = MessageBox.Show("Xoá thông tin của học sinh này? Tác vụ này không thể hoàn tác",
                                                 "Xoá",
                                                 MessageBoxButtons.OKCancel,
                                                 MessageBoxIcon.Warning);
-            
-            if(choose == DialogResult.OK)
-            {
-                // Delete Student
 
-                // Delete Student
+                if (choose == DialogResult.OK)
+                {
+                    // Delete Student
+                    //db.SuaHocSinh(this.tbStudentID.Text);
+                    db.SaveChanges();
+                    // Delete Student
 
-                this.tbStudentID.Text = "";
-                this.pnStudentInfo.Visible = false;
-                this.pnDadInfo.Visible = false;
-                this.pnMomInfo.Visible = false;
-                this.btnSave.Visible = false;
-                this.btnCancel.Visible = false;
-                this.btnDelete.Visible = false;
+                    MessageBox.Show("Xoá học sinh thành công",
+                                    "Xoá thành công",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                    this.tbStudentID.Text = "";
+                    this.pnStudentInfo.Visible = false;
+                    this.pnDadInfo.Visible = false;
+                    this.pnMomInfo.Visible = false;
+                    this.btnSave.Visible = false;
+                    this.btnCancel.Visible = false;
+                    this.btnDelete.Visible = false;
+                }
             }
+            else
+            {
+                MessageBox.Show("Học sinh này đã được xếp lớp, không thể xoá",
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+
+            
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

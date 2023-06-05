@@ -1,5 +1,6 @@
 ﻿--RANG BUOC TOAN VEN
 --INSERT INTO HOCSINH
+--DROP PROCEDURE ThemHocSinh
 CREATE PROCEDURE ThemHocSinh
 	@MaHocSinh nvarchar(10),
 	@HoTen nvarchar(30),
@@ -23,64 +24,49 @@ CREATE PROCEDURE ThemHocSinh
 	@NgheNghiep_Me nvarchar (50)
 AS
 BEGIN
-	DECLARE @TuoiToiThieu TINYINT = (SELECT TuoiToiThieu FROM THAMSO);
-	DECLARE @TuoiToiDa TINYINT = (SELECT TuoiToiDa FROM THAMSO);
-	IF (
-		((YEAR(@NgaySinh) - YEAR(GETDATE())) >= @TuoiToiThieu)
-		AND 
-		((YEAR(@NgaySinh) - YEAR(GETDATE())) <= @TuoiToiDa)
+	INSERT INTO HOCSINH (
+		MaHocSinh,
+		HoTen,
+		GioiTinh,
+		NgaySinh,
+		DiaChi,
+		QueQuan,
+		DanToc,
+		TonGiao,
+		SDT,
+		Email,
+		HoTenCha,
+		NamSinh_Cha,
+		CCCD_Cha,
+		SDT_Cha,
+		NgheNghiep_Cha,
+		HoTenMe,
+		NamSinh_Me,
+		CCCD_Me,
+		SDT_Me,
+		NgheNghiep_Me
 	)
-	BEGIN
-		INSERT INTO HOCSINH (
-			MaHocSinh,
-			HoTen,
-			GioiTinh,
-			NgaySinh,
-			DiaChi,
-			QueQuan,
-			DanToc,
-			TonGiao,
-			SDT,
-			Email,
-			HoTenCha,
-			NamSinh_Cha,
-			CCCD_Cha,
-			SDT_Cha,
-			NgheNghiep_Cha,
-			HoTenMe,
-			NamSinh_Me,
-			CCCD_Me,
-			SDT_Me,
-			NgheNghiep_Me
-		)
-		VALUES
-		(
-			@MaHocSinh,
-			@HoTen,
-			@GioiTinh,
-			@NgaySinh,
-			@DiaChi,
-			@QueQuan,
-			@DanToc,
-			@TonGiao,
-			@SDT,
-			@Email,
-			@HoTenCha,
-			@NamSinh_Cha,
-			@CCCD_Cha,
-			@SDT_Cha,
-			@NgheNghiep_Cha,
-			@HoTenMe,
-			@NamSinh_Me,
-			@CCCD_Me,
-			@SDT_Me,
-			@NgheNghiep_Me
-		)
-		PRINT(N'Thêm thông tin học sinh thành công');
-	END;
-	ELSE
-	BEGIN
-		PRINT(N'Tuổi học sinh nhập vào không hợp lệ');
-		PRINT(N'Tuổi học sinh phải từ ' + @TuoiToiThieu + ' đến ' + @TuoiToiDa);
-	END;
+	VALUES
+	(
+		@MaHocSinh,
+		@HoTen,
+		@GioiTinh,
+		@NgaySinh,
+		@DiaChi,
+		@QueQuan,
+		@DanToc,
+		@TonGiao,
+		@SDT,
+		@Email,
+		@HoTenCha,
+		@NamSinh_Cha,
+		@CCCD_Cha,
+		@SDT_Cha,
+		@NgheNghiep_Cha,
+		@HoTenMe,
+		@NamSinh_Me,
+		@CCCD_Me,
+		@SDT_Me,
+		@NgheNghiep_Me
+	)
 END

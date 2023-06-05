@@ -43,7 +43,15 @@ namespace QuanLyHocSinh
                 strID = "22520001";
             }
 
-            db.ThemHocSinh( strID,
+            byte sTuoiToiThieu = (byte)(from obj in db.THAMSOes
+                                   select obj.TuoiToiThieu).ToList().First();
+            byte sTuoiToiDa = (byte)(from obj in db.THAMSOes
+                                     select obj.TuoiToiDa).ToList().First();
+            byte sTuoi = (byte)(DateTime.Now.Year - dtpBirthday.Value.Year);
+            
+            if(sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
+            {
+                db.ThemHocSinh(strID,
                             this.tbName.Text,
                             this.tbGender.Text,
                             this.dtpBirthday.Value,
@@ -63,8 +71,20 @@ namespace QuanLyHocSinh
                             this.tbMomID.Text,
                             this.tbMomPhoneNum.Text,
                             this.tbMomJob.Text);
-
-            db.SaveChanges();
+                db.SaveChanges();
+                MessageBox.Show("Thêm học sinh thành công",
+                                "Thêm thành công",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Tuổi học sinh phải từ " + sTuoiToiThieu + " đến " + sTuoiToiDa + " tuổi.\n" +
+                                "Thêm học sinh không thành công.",
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)

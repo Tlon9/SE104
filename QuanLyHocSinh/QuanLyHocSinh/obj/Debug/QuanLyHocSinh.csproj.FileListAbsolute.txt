@@ -130,3 +130,6 @@ C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Quan
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
 C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
