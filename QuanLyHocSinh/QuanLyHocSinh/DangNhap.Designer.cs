@@ -31,8 +31,6 @@ namespace QuanLyHocSinh
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labelWrong = new System.Windows.Forms.Label();
             this.textBoxUsername = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,19 +40,11 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.buttonLogin = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
+            this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
             // 
             // panel3
             // 
@@ -148,7 +138,7 @@ namespace QuanLyHocSinh
             // buttonLogin
             // 
             this.buttonLogin.AutoRoundedCorners = true;
-            this.buttonLogin.BorderRadius = 26;
+            this.buttonLogin.BorderRadius = 31;
             this.buttonLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -159,29 +149,48 @@ namespace QuanLyHocSinh
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
+            this.guna2CustomGradientPanel1.Controls.Add(this.textBoxUsername);
+            this.guna2CustomGradientPanel1.Controls.Add(this.buttonLogin);
+            this.guna2CustomGradientPanel1.Controls.Add(this.panel4);
+            this.guna2CustomGradientPanel1.Controls.Add(this.textBoxPassword);
+            this.guna2CustomGradientPanel1.Controls.Add(this.panel3);
+            this.guna2CustomGradientPanel1.Controls.Add(this.labelWrong);
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(201)))));
+            resources.ApplyResources(this.guna2CustomGradientPanel1, "guna2CustomGradientPanel1");
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Name = "panel4";
+            // 
             // DangNhap
             // 
+            this.AcceptButton = this.buttonLogin;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxUsername);
-            this.Controls.Add(this.labelWrong);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DangNhap";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelWrong;
         private Guna.UI2.WinForms.Guna2TextBox textBoxUsername;
@@ -191,5 +200,7 @@ namespace QuanLyHocSinh
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
         private Guna.UI2.WinForms.Guna2Button buttonLogin;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private System.Windows.Forms.Panel panel4;
     }
 }
