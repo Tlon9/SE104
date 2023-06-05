@@ -15,22 +15,65 @@ namespace QuanLyHocSinh
         public LapDanhSachLop()
         {
             InitializeComponent();
+            dataEntities db = new dataEntities();
+            this.cbSchoolYear.DataSource = (from obj in db.NAMHOCs
+                                            orderby obj.MaNamHoc descending
+                                            select obj.NamHoc1).ToList();
+            this.cbGrade.DataSource = (from obj in db.KHOIs
+                                       orderby obj.MaKhoi ascending
+                                       select obj.TenKhoi).ToList();
+            this.cbSchoolYear.SelectedIndex = 0;
+            this.cbGrade.SelectedIndex = 0;
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void ShowClassInfo()
         {
+            dataEntities db = new dataEntities();
+            // Show class info
 
+            // Show class info
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataEntities db = new dataEntities();
+            this.cbClass.DataSource = (from l in db.LOPs
+                                       join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                                       join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
+                                       where nh.NamHoc1 == cbSchoolYear.SelectedText
+                                       && k.TenKhoi == cbGrade.SelectedText
+                                       orderby l.MaLop ascending
+                                       select l.TenLop).ToList();
+        }
+
+        private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataEntities db = new dataEntities();
+            this.cbClass.DataSource = (from l in db.LOPs
+                                       join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                                       join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
+                                       where nh.NamHoc1 == cbSchoolYear.SelectedText
+                                       && k.TenKhoi == cbGrade.SelectedText
+                                       orderby l.MaLop ascending
+                                       select l.TenLop).ToList();
+        }
+
+        private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowClassInfo();
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
         }
 
         private void LapDanhSachLop_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.duLieu.LOP);
+            // TODO: This line of code loads data into the 'duLieu.CTLOP' table. You can move, or remove it, as needed.
+            this.cTLOPTableAdapter.Fill(this.duLieu.CTLOP);
+            // TODO: This line of code loads data into the 'duLieu.HOCSINH' table. You can move, or remove it, as needed.
+            this.hOCSINHTableAdapter.Fill(this.duLieu.HOCSINH);
 
         }
     }
