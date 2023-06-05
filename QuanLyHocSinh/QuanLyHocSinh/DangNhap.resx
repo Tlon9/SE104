@@ -122,14 +122,14 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 257</value>
+    <value>13, 209</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>549, 4</value>
+    <value>412, 3</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
@@ -154,10 +154,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="labelWrong.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 376</value>
+    <value>86, 306</value>
+  </data>
+  <data name="labelWrong.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="labelWrong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 25</value>
+    <value>260, 20</value>
   </data>
   <data name="labelWrong.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -189,7 +192,7 @@
   <data name="textBoxUsername.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABhlJREFUaEPtWkuMFFUUHf8SNf7FKNC/QXH8RhKjKzcaxcQPuhJ1aXCFgG7c2MZE
+        DQAACw0B7QfALAAABhlJREFUaEPtWkuMFFUUHf8SNf7FKNC/QXH8RhKjKzcaxcQPuhJ1aXCFgG7c2MZE
         6XnV7Sfgh2hYuDIsBZ3RhUJiHEAkaAiOiCIz/aoH8ZOYjIg6tue8ulVdM11VXfW6mYmGk9zQ3Hfvfef9
         7vvU9J3E/xW5lw9dkK/W7ysorYqO3lJU7tcF5R4tOu4xivdb74f+PdoUnPq9xcov54v73KL/1QNnFar6
         EZAbLir9Nwg3Mwl8Co4ewr8rGEvCzh5y5UNno4fXgoz2SeH/f6DHt6FRZRBbXqo0rl3yYv1i2lL4u+g0
@@ -219,13 +222,13 @@
 </value>
   </data>
   <data name="textBoxUsername.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 23</value>
+    <value>13, 19</value>
   </data>
   <data name="textBoxUsername.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 7, 6, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="textBoxUsername.Size" type="System.Drawing.Size, System.Drawing">
-    <value>549, 67</value>
+    <value>412, 54</value>
   </data>
   <data name="textBoxUsername.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -251,7 +254,7 @@
   <data name="textBoxPassword.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAAzZJREFUeF7tmstrE1EUxqPiwjcoWCvVZqaK4taNgg/UhbgWF6Lg1heoRRdCsaIg
+        DQAACw0B7QfALAAAAzZJREFUeF7tmstrE1EUxqPiwjcoWCvVZqaK4taNgg/UhbgWF6Lg1heoRRdCsaIg
         5k5SLAjiwp24KC5ExJ2PFnz8AbqQimjNmbQqKmp1Y4zfTU5LbE6T1k7u3IT7gw+a3jP3fufMzJ3TZhIO
         h8PhcDgcceBf/rxEiz82OYXCLC9FW/2AMp6il34QjkIF1qgX0AtfUdpP0xY+onlozwxvQpIDZQlXl6Ln
         yVS4nQ9vYPRZD+i8mOQU5KmwN9FdmM2zNRYbrxfm+iq8KyU2HXlBeEfPxdM2DrjPr0kJ/adu8LSNAQwf
@@ -269,13 +272,13 @@
 </value>
   </data>
   <data name="textBoxPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 181</value>
+    <value>13, 147</value>
   </data>
   <data name="textBoxPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 7, 6, 7</value>
+    <value>4, 6, 4, 6</value>
   </data>
   <data name="textBoxPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>549, 67</value>
+    <value>412, 54</value>
   </data>
   <data name="textBoxPassword.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -298,31 +301,9 @@
   <metadata name="guna2ImageButtonClose1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="guna2ImageButtonClose1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAbhJREFUaEPt2W1qAkEMxnFv0yK9SSs9VBF6AHscbU9T2o99+W7z1P+KiAmzM1NM
-        ZX8QEHkyJOy6Is4mk0md7XZ7b/Vi9W11bprh2WrBeGWs4VHdSS0ZM2ZBXYns7hjXZyHdTtltGNdnoa9d
-        NrVPxvURTI9xfeTSY1wfufQY10cuPcb1kUuPcX3k0mNcH7kxnqzedi+rqFdnjMK4PnKlVvTMrWqWUc+c
-        M1a/7xRST4hcqXerG/qurF71ZqHD3murMb1/cmvVLNO0hKg3RG6sMcs0LyHqD5GrUbJMlyVEZ4TI1YqW
-        6baE6JwQuRanlum6hOisELlWh49VPZoPX7d85+zpvBC5HvZXQex1lysx4FgfuR6OFyl9NBfhWB+5Vhdx
-        a536YJ96ADTRWSFytaKnU9dldE6IXI1oiUG3ZXRGiNxYJUsMuiyj/hC5McYsMWheRr0hcqVqlhg0LaO+
-        ELlSF/PDSi7ip+7ZMK6PXHqM6yOXHuP6yKXHuD5y6TGuj1x6jOuzzH/4o+eDcX0W0r+n2a0Z12ehxS6b
-        2i3jxiy43OVTemDMMtZwZ7WxyvCZ0Qxrq7IrMZlMjsxmP795bl6Vk46sAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="guna2ImageButtonClose1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1871, 6</value>
-  </data>
-  <data name="guna2ImageButtonClose1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="guna2ImageButtonClose1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 43</value>
-  </data>
-  <data name="guna2ImageButtonClose1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
+  <metadata name="guna2ImageButtonMinimize1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="&gt;&gt;guna2ImageButtonClose1.Name" xml:space="preserve">
     <value>guna2ImageButtonClose1</value>
   </data>
@@ -333,32 +314,6 @@
     <value>guna2Panel1</value>
   </data>
   <data name="&gt;&gt;guna2ImageButtonClose1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="guna2ImageButtonMinimize1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="guna2ImageButtonMinimize1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAATxJREFUaEPt2VFKw0AYReGsS+oKbHFRUnBTrW6p6nv8hzlPwpkGafEK88G8nSQX
-        0j5lmabpd9Z1fa7zXuerzl9rG97qHJi3TV3w2q4OdWTmWIXtTaTbM9dV1H5O6c7MdRV99jbaB3MdYTzm
-        Orp4zHV08Zjr6OIx19HFY66ji8dcRxePuY4uHnMdXTzmOrp4zHV08Zjr6OIx19HFY66ji8dcRxePuY4u
-        HnMdXTzmOrp4zHV08Zjr6OIx19HFY66ji8dcRxePuY4uHnMd3TUP5DdX9971R4yRO7oh0rvhMUOkjm6I
-        9G54zBCpo7tmR35zde/H/ogxckcXj7mOLh5zHV085jq6eMx11fyHDz0X5rqK2tfTdCfmuooOvY32xNyx
-        Co+9j/TCzG3qgn2dc52E/0zbcKqz7U1M0/TDsnwDLQLKnTC09TMAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="guna2ImageButtonMinimize1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1816, 6</value>
-  </data>
-  <data name="guna2ImageButtonMinimize1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="guna2ImageButtonMinimize1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 43</value>
-  </data>
-  <data name="guna2ImageButtonMinimize1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;guna2ImageButtonMinimize1.Name" xml:space="preserve">
@@ -379,11 +334,8 @@
   <data name="guna2Panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="guna2Panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="guna2Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1920, 53</value>
+    <value>1440, 43</value>
   </data>
   <data name="guna2Panel1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -400,6 +352,86 @@
   <data name="&gt;&gt;guna2Panel1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="guna2ImageButtonClose1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2ImageButtonClose1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="guna2ImageButtonClose1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAE8SURBVGhD7dlRSsNAGEXhrEvqCmxxUVJwU61uqep7/Ic5
+        T8KZBmnxCvPBvJ0kF9I+ZZmm6XfWdX2u817nq85faxve6hyYt01d8NquDnVk5liF7U2k2zPXVdR+TunO
+        zHUVffY22gdzHWE85jq6eMx1dPGY6+jiMdfRxWOuo4vHXEcXj7mOLh5zHV085jq6eMx1dPGY6+jiMdfR
+        xWOuo4vHXEcXj7mOLh5zHV085jq6eMx1dPGY6+jiMdfRxWOuo4vHXEcXj7mOLh5zHd01D+Q3V/fe9UeM
+        kTu6IdK74TFDpI5uiPRueMwQqaO7Zkd+c3Xvx/6IMXJHF4+5ji4ecx1dPOY6unjMddX8hw89F+a6itrX
+        03Qn5rqKDr2N9sTcsQqPvY/0wsxt6oJ9nXOdhP9M23Cqs+1NTNP0w7J8Ay0Cyp0wtPUzAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="guna2ImageButtonClose1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1370, 0</value>
+  </data>
+  <data name="guna2ImageButtonClose1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 43</value>
+  </data>
+  <data name="guna2ImageButtonClose1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Name" xml:space="preserve">
+    <value>guna2ImageButtonClose1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.Parent" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonClose1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="guna2ImageButtonMinimize1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="guna2ImageButtonMinimize1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="guna2ImageButtonMinimize1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAG4SURBVGhD7dltagJBDMZxb9MivUkrPVQRegB7HG1PU9qP
+        fflu89T/iogJszNTTGV/EBB5MiTsuiLOJpNJne12e2/1YvVtdW6a4dlqwXhlrOFR3UktGTNmQV2J7O4Y
+        12ch3U7ZbRjXZ6GvXTa1T8b1EUyPcX3k0mNcH7n0GNdHLj3G9ZFLj3F95NJjXB+5MZ6s3nYvq6hXZ4zC
+        uD5ypVb0zK1qllHPnDNWv+8UUk+IXKl3qxv6rqxe9Wahw95rqzG9f3Jr1SzTtISoN0RurDHLNC8h6g+R
+        q1GyTJclRGeEyNWKlum2hOicELkWp5bpuoTorBC5VoePVT2aD1+3fOfs6bwQuR72V0HsdZcrMeBYH7ke
+        jhcpfTQX4VgfuVYXcWud+mCfegA00VkhcrWip1PXZXROiFyNaIlBt2V0RojcWCVLDLoso/4QuTHGLDFo
+        Xka9IXKlapYYNC2jvhC5Uhfzw0ou4qfu2TCuj1x6jOsjlx7j+silx7g+cukxro9ceozrs8x/+KPng3F9
+        FtK/p9mtGddnocUum9ot48YsuNzlU3pgzDLWcGe1scrwmdEMa6uyKzGZTI7MZj+/eW5elZOOrAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="guna2ImageButtonMinimize1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1405, 0</value>
+  </data>
+  <data name="guna2ImageButtonMinimize1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 43</value>
+  </data>
+  <data name="guna2ImageButtonMinimize1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Name" xml:space="preserve">
+    <value>guna2ImageButtonMinimize1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2ImageButton, Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.Parent" xml:space="preserve">
+    <value>guna2Panel1</value>
+  </data>
+  <data name="&gt;&gt;guna2ImageButtonMinimize1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="guna2AnimateWindow1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -410,13 +442,10 @@
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
   <data name="buttonLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 289</value>
-  </data>
-  <data name="buttonLogin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>111, 235</value>
   </data>
   <data name="buttonLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>276, 64</value>
+    <value>207, 52</value>
   </data>
   <data name="buttonLogin.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -436,23 +465,20 @@
   <data name="&gt;&gt;buttonLogin.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="guna2CustomGradientPanel1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="guna2CustomGradientPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+    <value>Right</value>
   </data>
   <metadata name="panel4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 99</value>
+    <value>13, 80</value>
   </data>
   <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>549, 4</value>
+    <value>412, 3</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -470,10 +496,13 @@
     <value>2</value>
   </data>
   <data name="guna2CustomGradientPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1168, 303</value>
+    <value>796, 227</value>
+  </data>
+  <data name="guna2CustomGradientPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="guna2CustomGradientPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>583, 419</value>
+    <value>437, 340</value>
   </data>
   <data name="guna2CustomGradientPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -497,12 +526,12 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB4AAAAQ4CAYAAADo08FDAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/edzXVmW5o3136CQFCG9EdLM9NR0d/nKqvSGyTRkZjLJTJJJ7z0J
+        vwAADr8BOAVTJAAA/7JJREFUeF7s/edzXVmW5o3136CQFCG9EdLM9NR0d/nKqvSGyTRkZjLJTJJJ7z0J
         EiC8994R3tPAe+8BAnSgAeE96NKU6el3RhF6JX1R6Nuj9exzF+7GTTArq7tHMZG6H57Yfp99ztnH3PO7
         a+2/G8g/DKPCI99Tv6roKAaKj31PzO8r/Lept+DIOtll/UXchqOB4uN/VYMlJ4xelj9UenJNmqcaoErd
         GiyTeuWn1ol5G+W/TMMVp9c0Un4Gt8rPGY2Wnd1QLLtdcd7IrjdSeuZ70vprba5Km6uSvibtrko7l0Yq
@@ -46137,10 +46166,10 @@
     <value>Zoom</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1920, 1055</value>
+    <value>1440, 857</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>DangNhap</value>

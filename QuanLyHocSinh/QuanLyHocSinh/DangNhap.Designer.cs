@@ -111,12 +111,12 @@ namespace QuanLyHocSinh
             // guna2ImageButtonClose1
             // 
             this.guna2ImageButtonClose1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            resources.ApplyResources(this.guna2ImageButtonClose1, "guna2ImageButtonClose1");
             this.guna2ImageButtonClose1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonClose1.Image")));
             this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonClose1.ImageRotate = 0F;
             this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            resources.ApplyResources(this.guna2ImageButtonClose1, "guna2ImageButtonClose1");
             this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
             this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButton2_Click);
@@ -125,12 +125,12 @@ namespace QuanLyHocSinh
             // 
             this.guna2ImageButtonMinimize1.BackColor = System.Drawing.SystemColors.Highlight;
             this.guna2ImageButtonMinimize1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            resources.ApplyResources(this.guna2ImageButtonMinimize1, "guna2ImageButtonMinimize1");
             this.guna2ImageButtonMinimize1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonMinimize1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonMinimize1.Image")));
             this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonMinimize1.ImageRotate = 0F;
             this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            resources.ApplyResources(this.guna2ImageButtonMinimize1, "guna2ImageButtonMinimize1");
             this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
             this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
@@ -138,7 +138,7 @@ namespace QuanLyHocSinh
             // buttonLogin
             // 
             this.buttonLogin.AutoRoundedCorners = true;
-            this.buttonLogin.BorderRadius = 31;
+            this.buttonLogin.BorderRadius = 25;
             this.buttonLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -179,7 +179,6 @@ namespace QuanLyHocSinh
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2Panel1);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DangNhap";
             this.TopMost = true;
