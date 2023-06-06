@@ -34,6 +34,11 @@ namespace QuanLyHocSinh
 
         }
 
+        private void ThemHocSinhVaoLop()
+        {
+            
+        }
+
         private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataEntities db = new dataEntities();
@@ -60,6 +65,14 @@ namespace QuanLyHocSinh
 
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //dataEntities db = new dataEntities();
+            //this.dgvClassDetail.DataSource = from ctl in db.CTLOPs
+            //                                 join hs in db.HOCSINHs on ctl.MaHocSinh equals hs.MaHocSinh
+            //                                 join l in db.LOPs on ctl.MaLop equals l.MaLop
+            //                                 where l.MaLop == this.cbClass.Text
+            //                                 orderby hs.MaHocSinh descending
+            //                                 select ctl;
+            //this.dgvClassDetail.Columns.Clear();
 
         }
 

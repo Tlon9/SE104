@@ -49,12 +49,14 @@
             this.Btn_Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Btn_Close = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnHomeScreen = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvClassDetail = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClassDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -266,12 +268,23 @@
             this.btnHomeScreen.TabIndex = 8;
             this.btnHomeScreen.Click += new System.EventHandler(this.btnHomeScreen_Click);
             // 
+            // dgvClassDetail
+            // 
+            this.dgvClassDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClassDetail.Location = new System.Drawing.Point(22, 229);
+            this.dgvClassDetail.Name = "dgvClassDetail";
+            this.dgvClassDetail.RowHeadersWidth = 62;
+            this.dgvClassDetail.RowTemplate.Height = 28;
+            this.dgvClassDetail.Size = new System.Drawing.Size(1195, 150);
+            this.dgvClassDetail.TabIndex = 9;
+            // 
             // LapDanhSachLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1229, 648);
+            this.Controls.Add(this.dgvClassDetail);
             this.Controls.Add(this.btnHomeScreen);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -288,6 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClassDetail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +327,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbClass;
         private Guna.UI2.WinForms.Guna2ComboBox cbGrade;
         private Guna.UI2.WinForms.Guna2ComboBox cbSchoolYear;
+        private System.Windows.Forms.DataGridView dgvClassDetail;
     }
 }

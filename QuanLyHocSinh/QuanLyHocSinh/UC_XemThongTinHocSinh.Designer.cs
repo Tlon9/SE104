@@ -856,7 +856,7 @@
             this.btnShowInfo.Name = "btnShowInfo";
             this.btnShowInfo.Size = new System.Drawing.Size(201, 45);
             this.btnShowInfo.TabIndex = 32;
-            this.btnShowInfo.Text = "Xem thông tin";
+            this.btnShowInfo.Text = "Sửa thông tin";
             this.btnShowInfo.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // UC_XemThongTinHocSinh
