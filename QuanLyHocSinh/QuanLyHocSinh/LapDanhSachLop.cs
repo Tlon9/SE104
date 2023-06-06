@@ -65,14 +65,24 @@ namespace QuanLyHocSinh
 
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //dataEntities db = new dataEntities();
-            //this.dgvClassDetail.DataSource = from ctl in db.CTLOPs
-            //                                 join hs in db.HOCSINHs on ctl.MaHocSinh equals hs.MaHocSinh
-            //                                 join l in db.LOPs on ctl.MaLop equals l.MaLop
+            dataEntities db = new dataEntities();
+            //this.dgvClassDetail.DataSource = from ctl in db.CTLOPs.AsEnumerable()
+            //                                 join hs in db.HOCSINHs.AsEnumerable() on ctl.MaHocSinh equals hs.MaHocSinh
+            //                                 join l in db.LOPs.AsEnumerable() on ctl.MaLop equals l.MaLop
             //                                 where l.MaLop == this.cbClass.Text
-            //                                 orderby hs.MaHocSinh descending
-            //                                 select ctl;
-            //this.dgvClassDetail.Columns.Clear();
+            //                                 group new {ctl, hs, l}
+            //                                 by new {hs.MaHocSinh, hs.HoTen, hs.GioiTinh, hs.NgaySinh, hs.DiaChi, hs.SDT}
+            //                                 into g
+            //                                 select new
+            //                                 {
+            //                                     MaHocSinh = g.Key.MaHocSinh,
+            //                                     HoTen = g.Key.HoTen,
+            //                                     GioiTinh = g.Key.GioiTinh,
+            //                                     NgaySinh = g.Key.NgaySinh,
+            //                                     DiaChi = g.Key.DiaChi,
+            //                                     SDT = g.Key.SDT
+            //                                 };
+            
 
         }
 
