@@ -131,6 +131,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DuLieu.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HocKy_NamApDung_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MonHoc_NamApDung_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="XepLoai_NamApDung_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="XepLoai_NamApDung_Result1.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BangDiemHocSinh.resx">

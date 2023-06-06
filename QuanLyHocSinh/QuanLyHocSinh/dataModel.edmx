@@ -29,6 +29,7 @@
           <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="HocKy" Type="nvarchar" MaxLength="20" />
           <Property Name="TrongSo" Type="float" />
+          <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="HOCSINH">
           <Key>
@@ -115,7 +116,7 @@
           <Property Name="MatKhau" Type="nvarchar" MaxLength="60" />
           <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
-          <Property Name="NgaySinh" Type="date" />
+          <Property Name="NgaySinh" Type="smalldatetime" />
         </EntityType>
         <EntityType Name="THAMSO">
           <Key>
@@ -292,6 +293,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="HocKy_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="MonHoc_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="SuaThamSo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="TuoiToiThieu" Type="tinyint" Mode="In" />
           <Parameter Name="TuoiToiDa" Type="tinyint" Mode="In" />
@@ -542,81 +549,6 @@
           <FunctionImport Name="TongKetNamHoc" ReturnType="Collection(dataModel.TongKetNamHoc_Result)">
           <Parameter Name="MaNamHoc" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
-          <Parameter Name="NamApDung" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SuaThamSo1">
-            <Parameter Name="TuoiToiThieu" Mode="In" Type="Byte" />
-            <Parameter Name="TuoiToiDa" Mode="In" Type="Byte" />
-            <Parameter Name="SiSoToiDa" Mode="In" Type="Int16" />
-            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
-            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
-          </FunctionImport>
-          <FunctionImport Name="ThemHocKy1">
-            <Parameter Name="MaHocKy" Mode="In" Type="String" />
-            <Parameter Name="HocKy" Mode="In" Type="String" />
-            <Parameter Name="TrongSo" Mode="In" Type="Double" />
-          </FunctionImport>
-          <FunctionImport Name="ThemHocSinh1">
-            <Parameter Name="MaHocSinh" Mode="In" Type="String" />
-            <Parameter Name="HoTen" Mode="In" Type="String" />
-            <Parameter Name="GioiTinh" Mode="In" Type="String" />
-            <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
-            <Parameter Name="DiaChi" Mode="In" Type="String" />
-            <Parameter Name="QueQuan" Mode="In" Type="String" />
-            <Parameter Name="DanToc" Mode="In" Type="String" />
-            <Parameter Name="TonGiao" Mode="In" Type="String" />
-            <Parameter Name="SDT" Mode="In" Type="String" />
-            <Parameter Name="Email" Mode="In" Type="String" />
-            <Parameter Name="HoTenCha" Mode="In" Type="String" />
-            <Parameter Name="NamSinh_Cha" Mode="In" Type="Int16" />
-            <Parameter Name="CCCD_Cha" Mode="In" Type="String" />
-            <Parameter Name="SDT_Cha" Mode="In" Type="String" />
-            <Parameter Name="NgheNghiep_Cha" Mode="In" Type="String" />
-            <Parameter Name="HoTenMe" Mode="In" Type="String" />
-            <Parameter Name="NamSinh_Me" Mode="In" Type="Int16" />
-            <Parameter Name="CCCD_Me" Mode="In" Type="String" />
-            <Parameter Name="SDT_Me" Mode="In" Type="String" />
-            <Parameter Name="NgheNghiep_Me" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemKhoi1">
-            <Parameter Name="MaKhoi" Mode="In" Type="String" />
-            <Parameter Name="TenKhoi" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemLop1">
-            <Parameter Name="MaLop" Mode="In" Type="String" />
-            <Parameter Name="TenLop" Mode="In" Type="String" />
-            <Parameter Name="MaKhoi" Mode="In" Type="String" />
-            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemMonHoc1">
-            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
-            <Parameter Name="TenMonHoc" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemNamHoc1">
-            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
-            <Parameter Name="NamHoc" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemTaiKhoan1">
-            <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
-            <Parameter Name="TenDangNhap" Mode="In" Type="String" />
-            <Parameter Name="MatKhau" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="ThemThanhPhan1">
-            <Parameter Name="MaThanhPhan" Mode="In" Type="String" />
-            <Parameter Name="TenThanhPhan" Mode="In" Type="String" />
-            <Parameter Name="TrongSo" Mode="In" Type="Double" />
-          </FunctionImport>
-          <FunctionImport Name="ThemXepLoai1">
-            <Parameter Name="MaXepLoai" Mode="In" Type="String" />
-            <Parameter Name="TenXepLoai" Mode="In" Type="String" />
-            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
-            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
-            <Parameter Name="DiemKhongChe" Mode="In" Type="Double" />
-          </FunctionImport>
-          <FunctionImport Name="XepLoai_NamApDung1" ReturnType="Collection(dataModel.XepLoai_NamApDung1_Result)">
-          <Parameter Name="NamApDung" Mode="In" Type="String" />
-          </FunctionImport>
           <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
           <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
           <EntitySet Name="HOCKies" EntityType="dataModel.HOCKY" />
@@ -679,6 +611,15 @@
             <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
             <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
           </AssociationSet>
+          <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result1)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="HocKy_NamApDung" ReturnType="Collection(dataModel.HocKy_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MonHoc_NamApDung" ReturnType="Collection(dataModel.MonHoc_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="TongKetMonHocKy_Result">
           <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
@@ -755,6 +696,7 @@
           <Property Name="HocKy1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TrongSo" Type="Double" />
           <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hk" FromRole="HOCKY" ToRole="KETQUA_MONHOC_HOCSINH" />
+          <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="HOCSINH">
           <Key>
@@ -1037,6 +979,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="XepLoai_NamApDung_Result1">
+          <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
+          <Property Type="Double" Name="DiemToiDa" Nullable="true" />
+          <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="HocKy_NamApDung_Result">
+          <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="HocKy" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="TrongSo" Nullable="true" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="MonHoc_NamApDung_Result">
+          <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenMonHoc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1093,28 +1054,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SuaThamSo1" FunctionName="dataModel.Store.SuaThamSo" />
-          <FunctionImportMapping FunctionImportName="ThemHocKy1" FunctionName="dataModel.Store.ThemHocKy" />
-          <FunctionImportMapping FunctionImportName="ThemHocSinh1" FunctionName="dataModel.Store.ThemHocSinh" />
-          <FunctionImportMapping FunctionImportName="ThemKhoi1" FunctionName="dataModel.Store.ThemKhoi" />
-          <FunctionImportMapping FunctionImportName="ThemLop1" FunctionName="dataModel.Store.ThemLop" />
-          <FunctionImportMapping FunctionImportName="ThemMonHoc1" FunctionName="dataModel.Store.ThemMonHoc" />
-          <FunctionImportMapping FunctionImportName="ThemNamHoc1" FunctionName="dataModel.Store.ThemNamHoc" />
-          <FunctionImportMapping FunctionImportName="ThemTaiKhoan1" FunctionName="dataModel.Store.ThemTaiKhoan" />
-          <FunctionImportMapping FunctionImportName="ThemThanhPhan1" FunctionName="dataModel.Store.ThemThanhPhan" />
-          <FunctionImportMapping FunctionImportName="ThemXepLoai1" FunctionName="dataModel.Store.ThemXepLoai" />
-          <FunctionImportMapping FunctionImportName="XepLoai_NamApDung1" FunctionName="dataModel.Store.XepLoai_NamApDung">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dataModel.XepLoai_NamApDung1_Result">
-                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
-                <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
-                <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
-                <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
-                <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
-                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="CTLOPs">
             <EntityTypeMapping TypeName="dataModel.CTLOP">
               <MappingFragment StoreEntitySet="CTLOP">
@@ -1137,6 +1076,7 @@
           <EntitySetMapping Name="HOCKies">
             <EntityTypeMapping TypeName="dataModel.HOCKY">
               <MappingFragment StoreEntitySet="HOCKY">
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
                 <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
                 <ScalarProperty Name="HocKy1" ColumnName="HocKy" />
                 <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
@@ -1272,6 +1212,37 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="XepLoai_NamApDung" FunctionName="dataModel.Store.XepLoai_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.XepLoai_NamApDung_Result1">
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+                <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
+                <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+                <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+                <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HocKy_NamApDung" FunctionName="dataModel.Store.HocKy_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.HocKy_NamApDung_Result">
+                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+                <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MonHoc_NamApDung" FunctionName="dataModel.Store.MonHoc_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.MonHoc_NamApDung_Result">
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

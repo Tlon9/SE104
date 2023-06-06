@@ -19,22 +19,10 @@ namespace QuanLyHocSinh
             InitializeComponent();
             dataEntities data = new dataEntities();
             //Get source
-            var ComboBoxSubjectsSource = from obj in data.MONHOCs
-                                      select obj;
 
             var ComboBoxYearsSource = from obj in data.NAMHOCs
+                                      orderby obj.MaNamHoc descending
                                       select obj;
-
-            var ComboBoxSemestersSource = from obj in data.HOCKies
-                                          select obj;
-
-            guna2ComboBoxSubjects1.DataSource = ComboBoxSubjectsSource.ToList();
-            guna2ComboBoxSubjects1.DisplayMember = "TenMonHoc";
-            guna2ComboBoxSubjects1.ValueMember = "MaMonHoc";
-
-            guna2ComboBoxSubjects2.DataSource = ComboBoxSubjectsSource.ToList();
-            guna2ComboBoxSubjects2.DisplayMember = "TenMonHoc";
-            guna2ComboBoxSubjects2.ValueMember = "MaMonHoc";
 
             guna2ComboBoxYears1.DataSource = ComboBoxYearsSource.ToList();
             guna2ComboBoxYears1.DisplayMember = "NamHoc1";
@@ -52,13 +40,25 @@ namespace QuanLyHocSinh
             guna2ComboBoxYears4.DisplayMember = "NamHoc1";
             guna2ComboBoxYears4.ValueMember = "MaNamHoc";
 
+            /*var ComboBoxSemestersSource = data.HocKy_NamApDung(guna2ComboBoxYears1.SelectedValue.ToString());
             guna2ComboBoxSemesters1.DataSource = ComboBoxSemestersSource.ToList();
-            guna2ComboBoxSemesters1.DisplayMember = "HocKy1";
+            guna2ComboBoxSemesters1.DisplayMember = "HocKy";
             guna2ComboBoxSemesters1.ValueMember = "MaHocKy";
 
-            guna2ComboBoxSemesters2.DataSource = ComboBoxSemestersSource.ToList();
-            guna2ComboBoxSemesters2.DisplayMember = "HocKy1";
+            guna2ComboBoxSemesters2.DataSource = ComboBoxSemestersSource;
+            guna2ComboBoxSemesters2.DisplayMember = "HocKy";
             guna2ComboBoxSemesters2.ValueMember = "MaHocKy";
+
+
+
+            var ComboBoxSubjectsSource = data.MonHoc_NamApDung(guna2ComboBoxYears1.SelectedValue.ToString());
+            guna2ComboBoxSubjects1.DataSource = ComboBoxSubjectsSource.ToList();
+            guna2ComboBoxSubjects1.DisplayMember = "TenMonHoc";
+            guna2ComboBoxSubjects1.ValueMember = "MaMonHoc";
+
+            guna2ComboBoxSubjects2.DataSource = ComboBoxSubjectsSource;
+            guna2ComboBoxSubjects2.DisplayMember = "TenMonHoc";
+            guna2ComboBoxSubjects2.ValueMember = "MaMonHoc";*/
 
         }
 
@@ -184,9 +184,8 @@ namespace QuanLyHocSinh
 
             var Source = dtb.TongKetMonNamHoc(guna2ComboBoxSubjects2.SelectedValue.ToString(), guna2ComboBoxYears2.SelectedValue.ToString());
             var reSource = Source.ToList();
-
             bool check = false;
-            var HK = dtb.HOCKies.Count();
+            var HK = dtb.HocKy_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString()).Count();
             int check_num = 0;
             string old_id = "";
             string old_cls = "";
@@ -233,7 +232,7 @@ namespace QuanLyHocSinh
                 check_num = 0;
                 double score = 0;
                 int index = -1;
-                double sum_TS = (double)dtb.HOCKies.Sum(r => r.TrongSo);
+                double sum_TS = (double)dtb.HocKy_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString()).Sum(r => r.TrongSo);
                 foreach (var item in reSource)
                 {
                     if (check_dir[item.TenLop] != 0)
@@ -263,7 +262,7 @@ namespace QuanLyHocSinh
                         {
                             check_num += 1;
                         }
-                        var TS = from obj in dtb.HOCKies
+                        var TS = from obj in dtb.HocKy_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString())
                                  where obj.MaHocKy == item.HocKy
                                  select obj.TrongSo;
                         score += (double)item.DiemTB * (double)TS.FirstOrDefault();
@@ -352,7 +351,7 @@ namespace QuanLyHocSinh
             foreach (var item in reSource)
             {
                 string str = item.TenLop[1].ToString();
-                if (item.SoLuong == dtb.MONHOCs.Where(r => r.MaMonHoc.Contains(str)).Count())
+                if (item.SoLuong == dtb.MonHoc_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).Where(r => r.MaMonHoc.Contains(str)).Count())
                 {
                     check = true;
                     break;
@@ -376,7 +375,8 @@ namespace QuanLyHocSinh
                 int sum = 0;
                 foreach (var item in reSource)
                 {
-                    if (item.SoLuong == dtb.MONHOCs.Count() / 3)
+                    string str = item.TenLop[1].ToString();
+                    if (item.SoLuong == dtb.MonHoc_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).Where(r => r.MaMonHoc.Contains(str)).Count())
                     {
                         sum += 1;
                         if (cls == "" || cls != item.TenLop)
@@ -484,11 +484,11 @@ namespace QuanLyHocSinh
         {
             dataEntities dtb = new dataEntities();
             var check_source = dtb.TongKetMon_HocSinh(NamHoc, MaHS).ToList();
-            var HK = dtb.HOCKies.Count();
+            var HK = dtb.HocKy_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).Count();
             string old_sub = "";
             int check_num = 0;
             double score = 0;
-            double sum_TS = (double)dtb.HOCKies.Sum(r => r.TrongSo);
+            double sum_TS = (double)dtb.HocKy_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).Sum(r => r.TrongSo);
             foreach (var item in check_source)
             {
                 if (old_sub == "" || old_sub != item.MaMonHoc)
@@ -501,7 +501,7 @@ namespace QuanLyHocSinh
                 {
                     check_num += 1;
                 }
-                var TS = from obj in dtb.HOCKies
+                var TS = from obj in dtb.HocKy_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString())
                          where obj.MaHocKy == item.MaHocKy
                          select obj.TrongSo;
                 score += (double)item.DiemTB * (double)TS.FirstOrDefault();
@@ -524,7 +524,7 @@ namespace QuanLyHocSinh
 
             bool check = false;
             bool next = false;
-            var HK = dtb.HOCKies.Count();
+            var HK = dtb.HocKy_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).Count();
             int check_num = 0;
             string old_id = "";
             string old_cls = "";
@@ -542,7 +542,7 @@ namespace QuanLyHocSinh
                     old_id = item.MaHocSinh;
                     next = false;
                     string str = item.TenLop[1].ToString();
-                    if (item.SoLuongMon < dtb.MONHOCs.Where(r => r.MaMonHoc.Contains(str)).Count())
+                    if (item.SoLuongMon < dtb.MonHoc_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).Where(r => r.MaMonHoc.Contains(str)).Count())
                     {
                         next = true;
                         continue;
@@ -553,7 +553,7 @@ namespace QuanLyHocSinh
                 {
                     if (next) continue;
                     string str = item.TenLop[1].ToString();
-                    if (item.SoLuongMon < dtb.MONHOCs.Where(r => r.MaMonHoc.Contains(str)).Count())
+                    if (item.SoLuongMon < dtb.MonHoc_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).Where(r => r.MaMonHoc.Contains(str)).Count())
                     {
                         next = true;
                         continue;
@@ -587,7 +587,7 @@ namespace QuanLyHocSinh
                 check_num = 0;
                 double score = 0;
                 int index = -1;
-                double sum_TS = (double)dtb.HOCKies.Sum(r => r.TrongSo);
+                double sum_TS = (double)dtb.HocKy_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).Sum(r => r.TrongSo);
                 foreach (var item in reSource)
                 {
                     if (check_dir[item.TenLop] != 0)
@@ -617,7 +617,7 @@ namespace QuanLyHocSinh
                         {
                             check_num += 1;
                         }
-                        var TS = from obj in dtb.HOCKies
+                        var TS = from obj in dtb.HocKy_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString())
                                  where obj.MaHocKy == item.MaHocKy
                                  select obj.TrongSo;
                         score += (double)item.DiemTB * (double)TS.FirstOrDefault();
@@ -800,6 +800,39 @@ namespace QuanLyHocSinh
             this.Hide();
             newform.ShowDialog();
             this.Show();
+        }
+
+        private void guna2ComboBoxYears1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dataEntities dtb = new dataEntities();
+            var ComboBoxSemestersSource = dtb.HocKy_NamApDung(guna2ComboBoxYears1.SelectedValue.ToString());
+            guna2ComboBoxSemesters1.DataSource = ComboBoxSemestersSource.ToList();
+            guna2ComboBoxSemesters1.DisplayMember = "HocKy";
+            guna2ComboBoxSemesters1.ValueMember = "MaHocKy";
+
+            var ComboBoxSubjectsSource = dtb.MonHoc_NamApDung(guna2ComboBoxYears1.SelectedValue.ToString());
+            guna2ComboBoxSubjects1.DataSource = ComboBoxSubjectsSource.ToList();
+            guna2ComboBoxSubjects1.DisplayMember = "TenMonHoc";
+            guna2ComboBoxSubjects1.ValueMember = "MaMonHoc";
+        }
+
+
+        private void guna2ComboBoxYears2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dataEntities dtb = new dataEntities();
+            var ComboBoxSubjectsSource = dtb.MonHoc_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString());
+            guna2ComboBoxSubjects2.DataSource = ComboBoxSubjectsSource.ToList();
+            guna2ComboBoxSubjects2.DisplayMember = "TenMonHoc";
+            guna2ComboBoxSubjects2.ValueMember = "MaMonHoc";
+        }
+
+        private void guna2ComboBoxYears3_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dataEntities dtb = new dataEntities();
+            var ComboBoxSemestersSource = dtb.HocKy_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString());
+            guna2ComboBoxSemesters2.DataSource = ComboBoxSemestersSource.ToList();
+            guna2ComboBoxSemesters2.DisplayMember = "HocKy";
+            guna2ComboBoxSemesters2.ValueMember = "MaHocKy";
         }
     }
 }

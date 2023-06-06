@@ -23,6 +23,7 @@ namespace QuanLyHocSinh
         public string MaHocKy { get; set; }
         public string HocKy1 { get; set; }
         public Nullable<double> TrongSo { get; set; }
+        public string NamApDung { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }

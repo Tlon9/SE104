@@ -218,7 +218,7 @@ END
 select TenLop, KQ.MaHocSinh, MaHocKy as HocKy, sum(DiemTB) as  DiemTB
 	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
 	where kq.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop  
-			and KQ.MaMonHoc = 'DL10' and KQ.MaNamHoc = 'NH2223' and L.MaNamHoc = 'NH2223'
+			and KQ.MaMonHoc = 'NV10' and KQ.MaNamHoc = 'NH2223' and L.MaNamHoc = 'NH2223'
 	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
 	order by TenLop
 
@@ -302,3 +302,16 @@ BEGIN
 	from HOCKY
 	where NamApDung in (select top 1 NamApDung from HOCKY where NamApDung<=@NamApDung order by NamApDung DESC)
 END
+
+CREATE PROCEDURE MonHoc_NamApDung
+	@NamApDung nvarchar(20)
+AS
+BEGIN
+	select *
+	from MONHOC
+	where NamApDung in (select top 1 NamApDung from MONHOC where NamApDung<=@NamApDung order by NamApDung DESC)
+END
+
+select *
+	from MONHOC
+	where NamApDung in (select top 1 NamApDung from MONHOC where NamApDung<='NH2122' order by NamApDung DESC)

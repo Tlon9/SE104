@@ -17,6 +17,18 @@ namespace QuanLyHocSinh
         public TrangChu()
         {
             InitializeComponent();
+            if (Account.VaiTro == "Giáo viên")
+            {
+                this.MenuItemSubjectScore.Visible = true;
+            }
+            else if (Account.VaiTro == "Người quản lý")
+            {
+                this.MenuItemListCreate.Visible = true;
+                this.MenuItemAddStudent.Visible = true;
+                this.MenuQuanLyQuyDinh.Visible = true;
+            }
+            this.MenuItemSearch.Visible = true;
+            this.MenuItemFinalReport.Visible = true;
         }
 
         private void MenuItemFinalReport_Click(object sender, EventArgs e)
@@ -99,6 +111,14 @@ namespace QuanLyHocSinh
         private void MenuQuanLyQuyDinh_Click(object sender, EventArgs e)
         {
             QuanLyQuyDinh newform = new QuanLyQuyDinh();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
+
+        private void MenuItemListCreate_Click(object sender, EventArgs e)
+        {
+            LapDanhSachLop newform = new LapDanhSachLop();
             this.Hide();
             newform.ShowDialog();
             this.Show();
