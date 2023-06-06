@@ -293,3 +293,12 @@ BEGIN
 	from XEPLOAI
 	where NamApDung in (select top 1 NamApDung from XEPLOAI where NamApDung<=@NamApDung order by NamApDung DESC)
 END
+
+CREATE PROCEDURE HocKy_NamApDung
+	@NamApDung nvarchar(20)
+AS
+BEGIN
+	select *
+	from HOCKY
+	where NamApDung in (select top 1 NamApDung from HOCKY where NamApDung<=@NamApDung order by NamApDung DESC)
+END
