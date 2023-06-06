@@ -55,8 +55,8 @@
             this.pnDadInfo = new Guna.UI2.WinForms.Guna2Panel();
             this.lbDadInfo = new System.Windows.Forms.Label();
             this.pnStudentInfo = new System.Windows.Forms.Panel();
+            this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbReligion = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbGender = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tbEthnicity = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
@@ -453,8 +453,8 @@
             // 
             // pnStudentInfo
             // 
+            this.pnStudentInfo.Controls.Add(this.cbGender);
             this.pnStudentInfo.Controls.Add(this.tbReligion);
-            this.pnStudentInfo.Controls.Add(this.tbGender);
             this.pnStudentInfo.Controls.Add(this.dtpBirthday);
             this.pnStudentInfo.Controls.Add(this.tbEthnicity);
             this.pnStudentInfo.Controls.Add(this.tbAddress);
@@ -477,6 +477,25 @@
             this.pnStudentInfo.Size = new System.Drawing.Size(1206, 332);
             this.pnStudentInfo.TabIndex = 26;
             // 
+            // cbGender
+            // 
+            this.cbGender.BackColor = System.Drawing.Color.Transparent;
+            this.cbGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGender.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGender.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbGender.ItemHeight = 30;
+            this.cbGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Không xác định"});
+            this.cbGender.Location = new System.Drawing.Point(892, 56);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(276, 36);
+            this.cbGender.TabIndex = 20;
+            // 
             // tbReligion
             // 
             this.tbReligion.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -496,26 +515,6 @@
             this.tbReligion.SelectedText = "";
             this.tbReligion.Size = new System.Drawing.Size(200, 40);
             this.tbReligion.TabIndex = 17;
-            // 
-            // tbGender
-            // 
-            this.tbGender.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbGender.DefaultText = "";
-            this.tbGender.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbGender.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbGender.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbGender.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbGender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGender.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.tbGender.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGender.Location = new System.Drawing.Point(917, 52);
-            this.tbGender.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.tbGender.Name = "tbGender";
-            this.tbGender.PasswordChar = '\0';
-            this.tbGender.PlaceholderText = "";
-            this.tbGender.SelectedText = "";
-            this.tbGender.Size = new System.Drawing.Size(105, 40);
-            this.tbGender.TabIndex = 20;
             // 
             // dtpBirthday
             // 
@@ -916,7 +915,6 @@
         private System.Windows.Forms.Label lbDadInfo;
         private System.Windows.Forms.Panel pnStudentInfo;
         private Guna.UI2.WinForms.Guna2TextBox tbReligion;
-        private Guna.UI2.WinForms.Guna2TextBox tbGender;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpBirthday;
         private Guna.UI2.WinForms.Guna2TextBox tbEthnicity;
         private Guna.UI2.WinForms.Guna2TextBox tbAddress;
@@ -940,5 +938,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tbStudentID;
         private System.Windows.Forms.Label lbStudentID;
         private Guna.UI2.WinForms.Guna2Button btnShowInfo;
+        private Guna.UI2.WinForms.Guna2ComboBox cbGender;
     }
 }

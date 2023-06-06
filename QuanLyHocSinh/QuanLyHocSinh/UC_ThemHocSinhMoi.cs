@@ -22,7 +22,7 @@ namespace QuanLyHocSinh
         {
             dataEntities db = new dataEntities();
             List<String> listID = (from obj in db.HOCSINHs
-                               where Regex.IsMatch(obj.MaHocSinh, "2252*")
+                               where obj.MaHocSinh == "2252*"
                                orderby obj.MaHocSinh descending
                                select obj.MaHocSinh).ToList();
 
@@ -53,7 +53,7 @@ namespace QuanLyHocSinh
             {
                 db.ThemHocSinh(strID,
                             this.tbName.Text,
-                            this.tbGender.Text,
+                            this.cbGender.Text,
                             this.dtpBirthday.Value,
                             this.tbAddress.Text,
                             this.tbOrigin.Text,

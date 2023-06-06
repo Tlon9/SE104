@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThemHocSinhMoi));
             this.pnStudentInfo = new System.Windows.Forms.Panel();
             this.tbReligion = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbGender = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpBirthday = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.tbEthnicity = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbAddress = new Guna.UI2.WinForms.Guna2TextBox();
@@ -75,6 +74,7 @@
             this.lbMomName = new System.Windows.Forms.Label();
             this.lbMomInfo = new System.Windows.Forms.Label();
             this.btnAddStudent = new Guna.UI2.WinForms.Guna2Button();
+            this.cbGender = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnStudentInfo.SuspendLayout();
             this.pnDadInfo.SuspendLayout();
             this.pnMomInfo.SuspendLayout();
@@ -82,8 +82,8 @@
             // 
             // pnStudentInfo
             // 
+            this.pnStudentInfo.Controls.Add(this.cbGender);
             this.pnStudentInfo.Controls.Add(this.tbReligion);
-            this.pnStudentInfo.Controls.Add(this.tbGender);
             this.pnStudentInfo.Controls.Add(this.dtpBirthday);
             this.pnStudentInfo.Controls.Add(this.tbEthnicity);
             this.pnStudentInfo.Controls.Add(this.tbAddress);
@@ -125,26 +125,6 @@
             this.tbReligion.SelectedText = "";
             this.tbReligion.Size = new System.Drawing.Size(200, 40);
             this.tbReligion.TabIndex = 17;
-            // 
-            // tbGender
-            // 
-            this.tbGender.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbGender.DefaultText = "";
-            this.tbGender.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbGender.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbGender.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbGender.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbGender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGender.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.tbGender.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbGender.Location = new System.Drawing.Point(917, 50);
-            this.tbGender.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.tbGender.Name = "tbGender";
-            this.tbGender.PasswordChar = '\0';
-            this.tbGender.PlaceholderText = "";
-            this.tbGender.SelectedText = "";
-            this.tbGender.Size = new System.Drawing.Size(105, 40);
-            this.tbGender.TabIndex = 20;
             // 
             // dtpBirthday
             // 
@@ -767,6 +747,25 @@
             this.btnAddStudent.Text = "Thêm học sinh";
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
+            // cbGender
+            // 
+            this.cbGender.BackColor = System.Drawing.Color.Transparent;
+            this.cbGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGender.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbGender.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbGender.ItemHeight = 30;
+            this.cbGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Không xác định"});
+            this.cbGender.Location = new System.Drawing.Point(902, 54);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(266, 36);
+            this.cbGender.TabIndex = 20;
+            // 
             // UC_ThemHocSinhMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -805,7 +804,6 @@
         private System.Windows.Forms.Label lbNumPhone;
         private System.Windows.Forms.Label lbAddress;
         private Guna.UI2.WinForms.Guna2TextBox tbReligion;
-        private Guna.UI2.WinForms.Guna2TextBox tbGender;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpBirthday;
         private Guna.UI2.WinForms.Guna2TextBox tbEthnicity;
         private Guna.UI2.WinForms.Guna2TextBox tbAddress;
@@ -837,5 +835,6 @@
         private System.Windows.Forms.Label lbMomName;
         private System.Windows.Forms.Label lbMomInfo;
         private Guna.UI2.WinForms.Guna2Button btnAddStudent;
+        private Guna.UI2.WinForms.Guna2ComboBox cbGender;
     }
 }

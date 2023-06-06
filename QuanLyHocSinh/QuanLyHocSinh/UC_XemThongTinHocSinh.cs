@@ -64,7 +64,7 @@ namespace QuanLyHocSinh
                     // Student Info
                     this.strStdID           = std.MaHocSinh;
                     this.tbName.Text        = strStdName        = std.HoTen;
-                    this.tbGender.Text      = strStdGender      = std.GioiTinh;
+                    this.cbGender.Text      = strStdGender      = std.GioiTinh;
                     this.dtpBirthday.Value  = dtStdBirthday     = std.NgaySinh.Value;
                     this.tbEthnicity.Text   = strStdEthnicity   = std.DanToc;
                     this.tbReligion.Text    = strStdReligion    = std.TonGiao;
@@ -117,7 +117,7 @@ namespace QuanLyHocSinh
                 {
                     //db.SuaHocSinh(this.tbStudentID.Text,
                     //            this.tbName.Text,
-                    //            this.tbGender.Text,
+                    //            this.cbGender.Text,
                     //            this.dtpBirthday.Value,
                     //            this.tbAddress.Text,
                     //            this.tbOrigin.Text,
@@ -157,7 +157,7 @@ namespace QuanLyHocSinh
         {
             this.tbStudentID.Text = strStdID;
             this.tbName.Text = strStdName;
-            this.tbGender.Text = strStdGender;
+            this.cbGender.Text = strStdGender;
             this.dtpBirthday.Value = dtStdBirthday;
             this.tbEthnicity.Text = strStdEthnicity;
             this.tbReligion.Text = strStdReligion;
