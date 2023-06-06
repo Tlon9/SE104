@@ -31,7 +31,8 @@ namespace QuanLyHocSinh
             comboBoxClass.DisplayMember = "TenLop";
             comboBoxClass.ValueMember = "MaLop";
             var comBoxYear = from obj in data.NAMHOCs select obj;
-            comboBoxYear.DataSource = comBoxYear.ToList();
+            var comBoxYear1 = comBoxYear.OrderByDescending(p => p.MaNamHoc);
+            comboBoxYear.DataSource = comBoxYear1.ToList();
             comboBoxYear.DisplayMember = "NamHoc1";
             comboBoxYear.ValueMember = "MaNamHoc";
             var comboxClassSemester = from obj in data.HOCKies select obj;
@@ -245,7 +246,9 @@ namespace QuanLyHocSinh
             if (panelPrint.Visible) { panelPrint.Hide(); }
             if (panelInput.Visible) { panelInput.Hide(); }
             LoadPanel_Score();
-            var comboxID = from obj in data.CTLOPs where obj.MaLop == comboBoxClass.SelectedValue.ToString() select obj.MaHocSinh;
+            var comboxID = from obj in data.CTLOPs
+                           join obj1 in data.LOPs on obj.MaLop equals obj1.MaLop
+                           where obj.MaLop == comboBoxClass.SelectedValue.ToString() && obj1.MaNamHoc ==comboBoxYear.SelectedValue.ToString() select obj.MaHocSinh;
             comboBoxID.DataSource = comboxID.ToList();
             var reSource1 = from scr1 in data.KETQUA_MONHOC_HOCSINH
                            join cls in data.CTLOPs on scr1.MaHocSinh equals cls.MaHocSinh
