@@ -33,5 +33,52 @@ namespace QuanLyHocSinh
             this.lOPTableAdapter.Fill(this.duLieu.LOP);
 
         }
+
+        private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataEntities db = new dataEntities();
+            this.cbClass.DataSource = from l in db.LOPs
+                                      join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                                      join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
+                                      where nh.NamHoc1 == this.cbSchoolYear.Text
+                                      && k.TenKhoi == this.cbGrade.Text
+                                      orderby l.MaLop ascending
+                                      select l.TenLop;
+        }
+
+        private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataEntities db = new dataEntities();
+            this.cbClass.DataSource = from l in db.LOPs
+                                      join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                                      join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
+                                      where nh.NamHoc1 == this.cbSchoolYear.Text
+                                      && k.TenKhoi == this.cbGrade.Text
+                                      orderby l.MaLop ascending
+                                      select l.TenLop;
+        }
+
+        private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnHomeScreen_Click(object sender, EventArgs e)
+        {
+            TrangChu newform = new TrangChu();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
     }
 }
