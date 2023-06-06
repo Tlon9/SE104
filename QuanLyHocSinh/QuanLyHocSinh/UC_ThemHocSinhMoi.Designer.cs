@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThemHocSinhMoi));
             this.pnStudentInfo = new System.Windows.Forms.Panel();
             this.tbReligion = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbGender = new Guna.UI2.WinForms.Guna2TextBox();
@@ -372,20 +373,20 @@
             // lbStudentInfo
             // 
             this.lbStudentInfo.AutoSize = true;
-            this.lbStudentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbStudentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStudentInfo.Location = new System.Drawing.Point(475, 12);
             this.lbStudentInfo.Name = "lbStudentInfo";
-            this.lbStudentInfo.Size = new System.Drawing.Size(246, 32);
+            this.lbStudentInfo.Size = new System.Drawing.Size(264, 32);
             this.lbStudentInfo.TabIndex = 2;
             this.lbStudentInfo.Text = "Thông tin học sinh";
             // 
             // lbAddNewStudent
             // 
             this.lbAddNewStudent.AutoSize = true;
-            this.lbAddNewStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbAddNewStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddNewStudent.Location = new System.Drawing.Point(23, 29);
             this.lbAddNewStudent.Name = "lbAddNewStudent";
-            this.lbAddNewStudent.Size = new System.Drawing.Size(252, 32);
+            this.lbAddNewStudent.Size = new System.Drawing.Size(269, 32);
             this.lbAddNewStudent.TabIndex = 1;
             this.lbAddNewStudent.Text = "Thêm học sinh mới";
             // 
@@ -560,10 +561,10 @@
             // lbDadInfo
             // 
             this.lbDadInfo.AutoSize = true;
-            this.lbDadInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbDadInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDadInfo.Location = new System.Drawing.Point(195, 13);
             this.lbDadInfo.Name = "lbDadInfo";
-            this.lbDadInfo.Size = new System.Drawing.Size(186, 32);
+            this.lbDadInfo.Size = new System.Drawing.Size(199, 32);
             this.lbDadInfo.TabIndex = 21;
             this.lbDadInfo.Text = "Thông tin cha";
             // 
@@ -738,24 +739,30 @@
             // lbMomInfo
             // 
             this.lbMomInfo.AutoSize = true;
-            this.lbMomInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbMomInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMomInfo.Location = new System.Drawing.Point(211, 13);
             this.lbMomInfo.Name = "lbMomInfo";
-            this.lbMomInfo.Size = new System.Drawing.Size(179, 32);
+            this.lbMomInfo.Size = new System.Drawing.Size(191, 32);
             this.lbMomInfo.TabIndex = 21;
             this.lbMomInfo.Text = "Thông tin mẹ";
             // 
             // btnAddStudent
             // 
+            this.btnAddStudent.AutoRoundedCorners = true;
+            this.btnAddStudent.BorderRadius = 21;
+            this.btnAddStudent.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.btnAddStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAddStudent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddStudent.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnAddStudent.ForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.Location = new System.Drawing.Point(514, 737);
+            this.btnAddStudent.FillColor = System.Drawing.Color.LightCyan;
+            this.btnAddStudent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStudent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStudent.Image")));
+            this.btnAddStudent.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAddStudent.Location = new System.Drawing.Point(485, 737);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(208, 45);
+            this.btnAddStudent.Size = new System.Drawing.Size(240, 45);
             this.btnAddStudent.TabIndex = 26;
             this.btnAddStudent.Text = "Thêm học sinh";
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);

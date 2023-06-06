@@ -45,5 +45,15 @@ namespace QuanLyHocSinh
                 this.uC_ThemHocSinhMoi1.Visible = false;
             }
         }
+
+        private void Btn_Minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

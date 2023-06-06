@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_XemThongTinHocSinh));
             this.lbReadStudentInfo = new System.Windows.Forms.Label();
             this.lbDadID = new System.Windows.Forms.Label();
             this.tbDadID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -87,10 +88,10 @@
             // lbReadStudentInfo
             // 
             this.lbReadStudentInfo.AutoSize = true;
-            this.lbReadStudentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbReadStudentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbReadStudentInfo.Location = new System.Drawing.Point(32, 12);
             this.lbReadStudentInfo.Name = "lbReadStudentInfo";
-            this.lbReadStudentInfo.Size = new System.Drawing.Size(353, 32);
+            this.lbReadStudentInfo.Size = new System.Drawing.Size(380, 32);
             this.lbReadStudentInfo.TabIndex = 0;
             this.lbReadStudentInfo.Text = "Thay đổi thông tin học sinh";
             // 
@@ -365,10 +366,10 @@
             // lbMomInfo
             // 
             this.lbMomInfo.AutoSize = true;
-            this.lbMomInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbMomInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMomInfo.Location = new System.Drawing.Point(211, 13);
             this.lbMomInfo.Name = "lbMomInfo";
-            this.lbMomInfo.Size = new System.Drawing.Size(179, 32);
+            this.lbMomInfo.Size = new System.Drawing.Size(191, 32);
             this.lbMomInfo.TabIndex = 21;
             this.lbMomInfo.Text = "Thông tin mẹ";
             // 
@@ -443,10 +444,10 @@
             // lbDadInfo
             // 
             this.lbDadInfo.AutoSize = true;
-            this.lbDadInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbDadInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDadInfo.Location = new System.Drawing.Point(195, 13);
             this.lbDadInfo.Name = "lbDadInfo";
-            this.lbDadInfo.Size = new System.Drawing.Size(186, 32);
+            this.lbDadInfo.Size = new System.Drawing.Size(199, 32);
             this.lbDadInfo.TabIndex = 21;
             this.lbDadInfo.Text = "Thông tin cha";
             // 
@@ -743,10 +744,10 @@
             // lbStudentInfo
             // 
             this.lbStudentInfo.AutoSize = true;
-            this.lbStudentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbStudentInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStudentInfo.Location = new System.Drawing.Point(475, 12);
             this.lbStudentInfo.Name = "lbStudentInfo";
-            this.lbStudentInfo.Size = new System.Drawing.Size(246, 32);
+            this.lbStudentInfo.Size = new System.Drawing.Size(264, 32);
             this.lbStudentInfo.TabIndex = 2;
             this.lbStudentInfo.Text = "Thông tin học sinh";
             // 
@@ -783,56 +784,74 @@
             // 
             // btnSave
             // 
+            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BorderRadius = 25;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(146, 741);
+            this.btnSave.FillColor = System.Drawing.Color.LightCyan;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnSave.Location = new System.Drawing.Point(74, 741);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(180, 45);
+            this.btnSave.Size = new System.Drawing.Size(231, 53);
             this.btnSave.TabIndex = 29;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.AutoRoundedCorners = true;
+            this.btnCancel.BorderRadius = 25;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(537, 741);
+            this.btnCancel.FillColor = System.Drawing.Color.LightCyan;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnCancel.Location = new System.Drawing.Point(506, 741);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(180, 45);
+            this.btnCancel.Size = new System.Drawing.Size(246, 53);
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Huỷ thay đổi";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderRadius = 25;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.FillColor = System.Drawing.Color.LightCyan;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
             this.btnDelete.Location = new System.Drawing.Point(942, 741);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(180, 45);
+            this.btnDelete.Size = new System.Drawing.Size(251, 53);
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "Xoá học sinh";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShowInfo
             // 
+            this.btnShowInfo.AutoRoundedCorners = true;
+            this.btnShowInfo.BorderRadius = 21;
             this.btnShowInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnShowInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnShowInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnShowInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnShowInfo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnShowInfo.FillColor = System.Drawing.SystemColors.Highlight;
+            this.btnShowInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowInfo.ForeColor = System.Drawing.Color.White;
             this.btnShowInfo.Location = new System.Drawing.Point(537, 47);
             this.btnShowInfo.Name = "btnShowInfo";
