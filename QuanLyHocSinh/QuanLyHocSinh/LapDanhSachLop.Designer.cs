@@ -35,10 +35,10 @@
             this.cbGrade = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbSchoolYear = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbStdNum = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbStdNum = new System.Windows.Forms.Label();
+            this.lbClass = new System.Windows.Forms.Label();
+            this.lbGrade = new System.Windows.Forms.Label();
+            this.lbSchoolYear = new System.Windows.Forms.Label();
             this.duLieu = new QuanLyHocSinh.DuLieu();
             this.duLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,6 +50,16 @@
             this.Btn_Close = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnHomeScreen = new Guna.UI2.WinForms.Guna2Button();
             this.dgvClassDetail = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAddStdToClass = new Guna.UI2.WinForms.Guna2Button();
+            this.tbStdIdAdd = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbInputStdID = new System.Windows.Forms.Label();
+            this.lbAddStdToClass = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDelStdOutClass = new Guna.UI2.WinForms.Guna2Button();
+            this.tbStdIDDel = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).BeginInit();
@@ -57,21 +67,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassDetail)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightCyan;
             this.panel1.Controls.Add(this.cbClass);
             this.panel1.Controls.Add(this.cbGrade);
             this.panel1.Controls.Add(this.cbSchoolYear);
             this.panel1.Controls.Add(this.tbStdNum);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(178, 103);
+            this.panel1.Controls.Add(this.lbStdNum);
+            this.panel1.Controls.Add(this.lbClass);
+            this.panel1.Controls.Add(this.lbGrade);
+            this.panel1.Controls.Add(this.lbSchoolYear);
+            this.panel1.Location = new System.Drawing.Point(177, 96);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1039, 109);
+            this.panel1.Size = new System.Drawing.Size(1390, 123);
             this.panel1.TabIndex = 0;
             // 
             // cbClass
@@ -81,10 +94,10 @@
             this.cbClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClass.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbClass.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbClass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbClass.ItemHeight = 30;
-            this.cbClass.Location = new System.Drawing.Point(487, 58);
+            this.cbClass.Location = new System.Drawing.Point(907, 42);
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(185, 36);
             this.cbClass.TabIndex = 10;
@@ -97,10 +110,10 @@
             this.cbGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrade.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbGrade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbGrade.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbGrade.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbGrade.ItemHeight = 30;
-            this.cbGrade.Location = new System.Drawing.Point(157, 58);
+            this.cbGrade.Location = new System.Drawing.Point(529, 42);
             this.cbGrade.Name = "cbGrade";
             this.cbGrade.Size = new System.Drawing.Size(209, 36);
             this.cbGrade.TabIndex = 9;
@@ -113,10 +126,10 @@
             this.cbSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSchoolYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbSchoolYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSchoolYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSchoolYear.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbSchoolYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbSchoolYear.ItemHeight = 30;
-            this.cbSchoolYear.Location = new System.Drawing.Point(157, 7);
+            this.cbSchoolYear.Location = new System.Drawing.Point(157, 41);
             this.cbSchoolYear.Name = "cbSchoolYear";
             this.cbSchoolYear.Size = new System.Drawing.Size(209, 36);
             this.cbSchoolYear.TabIndex = 8;
@@ -124,51 +137,52 @@
             // 
             // tbStdNum
             // 
-            this.tbStdNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbStdNum.Location = new System.Drawing.Point(884, 62);
+            this.tbStdNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStdNum.Location = new System.Drawing.Point(1222, 40);
             this.tbStdNum.Name = "tbStdNum";
-            this.tbStdNum.Size = new System.Drawing.Size(88, 30);
+            this.tbStdNum.ReadOnly = true;
+            this.tbStdNum.Size = new System.Drawing.Size(88, 39);
             this.tbStdNum.TabIndex = 7;
             // 
-            // label4
+            // lbStdNum
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(811, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Sĩ số";
+            this.lbStdNum.AutoSize = true;
+            this.lbStdNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStdNum.Location = new System.Drawing.Point(1149, 43);
+            this.lbStdNum.Name = "lbStdNum";
+            this.lbStdNum.Size = new System.Drawing.Size(67, 32);
+            this.lbStdNum.TabIndex = 3;
+            this.lbStdNum.Text = "Sĩ số";
             // 
-            // label3
+            // lbClass
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(411, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Lớp";
+            this.lbClass.AutoSize = true;
+            this.lbClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClass.Location = new System.Drawing.Point(831, 43);
+            this.lbClass.Name = "lbClass";
+            this.lbClass.Size = new System.Drawing.Size(56, 32);
+            this.lbClass.TabIndex = 2;
+            this.lbClass.Text = "Lớp";
             // 
-            // label2
+            // lbGrade
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(21, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Khối";
+            this.lbGrade.AutoSize = true;
+            this.lbGrade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGrade.Location = new System.Drawing.Point(441, 43);
+            this.lbGrade.Name = "lbGrade";
+            this.lbGrade.Size = new System.Drawing.Size(66, 32);
+            this.lbGrade.TabIndex = 1;
+            this.lbGrade.Text = "Khối";
             // 
-            // label1
+            // lbSchoolYear
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(21, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Năm học";
+            this.lbSchoolYear.AutoSize = true;
+            this.lbSchoolYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSchoolYear.Location = new System.Drawing.Point(21, 43);
+            this.lbSchoolYear.Name = "lbSchoolYear";
+            this.lbSchoolYear.Size = new System.Drawing.Size(116, 32);
+            this.lbSchoolYear.TabIndex = 0;
+            this.lbSchoolYear.Text = "Năm học";
             // 
             // duLieu
             // 
@@ -202,7 +216,7 @@
             this.panel2.Controls.Add(this.Btn_Close);
             this.panel2.Location = new System.Drawing.Point(-4, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1236, 76);
+            this.panel2.Size = new System.Drawing.Size(1605, 76);
             this.panel2.TabIndex = 7;
             // 
             // mainLabelStdInfo
@@ -225,7 +239,7 @@
             this.Btn_Minimize.ImageOffset = new System.Drawing.Point(0, 0);
             this.Btn_Minimize.ImageRotate = 0F;
             this.Btn_Minimize.ImageSize = new System.Drawing.Size(30, 30);
-            this.Btn_Minimize.Location = new System.Drawing.Point(1119, 14);
+            this.Btn_Minimize.Location = new System.Drawing.Point(1473, 14);
             this.Btn_Minimize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Btn_Minimize.Name = "Btn_Minimize";
             this.Btn_Minimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -242,7 +256,7 @@
             this.Btn_Close.ImageOffset = new System.Drawing.Point(0, 0);
             this.Btn_Close.ImageRotate = 0F;
             this.Btn_Close.ImageSize = new System.Drawing.Size(30, 30);
-            this.Btn_Close.Location = new System.Drawing.Point(1180, 14);
+            this.Btn_Close.Location = new System.Drawing.Point(1534, 14);
             this.Btn_Close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Btn_Close.Name = "Btn_Close";
             this.Btn_Close.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -271,19 +285,170 @@
             // dgvClassDetail
             // 
             this.dgvClassDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClassDetail.Location = new System.Drawing.Point(22, 229);
+            this.dgvClassDetail.Location = new System.Drawing.Point(22, 366);
             this.dgvClassDetail.Name = "dgvClassDetail";
             this.dgvClassDetail.RowHeadersWidth = 62;
             this.dgvClassDetail.RowTemplate.Height = 28;
-            this.dgvClassDetail.Size = new System.Drawing.Size(1195, 150);
+            this.dgvClassDetail.Size = new System.Drawing.Size(1545, 150);
             this.dgvClassDetail.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnAddStdToClass);
+            this.panel3.Controls.Add(this.tbStdIdAdd);
+            this.panel3.Controls.Add(this.lbInputStdID);
+            this.panel3.Controls.Add(this.lbAddStdToClass);
+            this.panel3.Location = new System.Drawing.Point(22, 219);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1042, 141);
+            this.panel3.TabIndex = 10;
+            // 
+            // btnAddStdToClass
+            // 
+            this.btnAddStdToClass.AutoRoundedCorners = true;
+            this.btnAddStdToClass.BackColor = System.Drawing.Color.White;
+            this.btnAddStdToClass.BorderRadius = 26;
+            this.btnAddStdToClass.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnAddStdToClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddStdToClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddStdToClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddStdToClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddStdToClass.FillColor = System.Drawing.Color.LightCyan;
+            this.btnAddStdToClass.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnAddStdToClass.ForeColor = System.Drawing.Color.Black;
+            this.btnAddStdToClass.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStdToClass.Image")));
+            this.btnAddStdToClass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddStdToClass.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnAddStdToClass.Location = new System.Drawing.Point(811, 65);
+            this.btnAddStdToClass.Name = "btnAddStdToClass";
+            this.btnAddStdToClass.Size = new System.Drawing.Size(161, 54);
+            this.btnAddStdToClass.TabIndex = 3;
+            this.btnAddStdToClass.Text = "Thêm";
+            this.btnAddStdToClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAddStdToClass.Click += new System.EventHandler(this.btnAddStdToClass_Click);
+            // 
+            // tbStdIdAdd
+            // 
+            this.tbStdIdAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbStdIdAdd.DefaultText = "";
+            this.tbStdIdAdd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbStdIdAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbStdIdAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStdIdAdd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStdIdAdd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStdIdAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbStdIdAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStdIdAdd.Location = new System.Drawing.Point(192, 62);
+            this.tbStdIdAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbStdIdAdd.Name = "tbStdIdAdd";
+            this.tbStdIdAdd.PasswordChar = '\0';
+            this.tbStdIdAdd.PlaceholderText = "";
+            this.tbStdIdAdd.SelectedText = "";
+            this.tbStdIdAdd.Size = new System.Drawing.Size(592, 60);
+            this.tbStdIdAdd.TabIndex = 2;
+            // 
+            // lbInputStdID
+            // 
+            this.lbInputStdID.AutoSize = true;
+            this.lbInputStdID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInputStdID.Location = new System.Drawing.Point(21, 78);
+            this.lbInputStdID.Name = "lbInputStdID";
+            this.lbInputStdID.Size = new System.Drawing.Size(144, 32);
+            this.lbInputStdID.TabIndex = 1;
+            this.lbInputStdID.Text = "Nhập MSHS";
+            // 
+            // lbAddStdToClass
+            // 
+            this.lbAddStdToClass.AutoSize = true;
+            this.lbAddStdToClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAddStdToClass.Location = new System.Drawing.Point(21, 18);
+            this.lbAddStdToClass.Name = "lbAddStdToClass";
+            this.lbAddStdToClass.Size = new System.Drawing.Size(271, 32);
+            this.lbAddStdToClass.TabIndex = 0;
+            this.lbAddStdToClass.Text = "Thêm học sinh vào lớp";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnDelStdOutClass);
+            this.panel4.Controls.Add(this.tbStdIDDel);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Location = new System.Drawing.Point(1091, 219);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(476, 141);
+            this.panel4.TabIndex = 11;
+            // 
+            // btnDelStdOutClass
+            // 
+            this.btnDelStdOutClass.AutoRoundedCorners = true;
+            this.btnDelStdOutClass.BorderRadius = 26;
+            this.btnDelStdOutClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelStdOutClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelStdOutClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelStdOutClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelStdOutClass.FillColor = System.Drawing.Color.LightCyan;
+            this.btnDelStdOutClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelStdOutClass.ForeColor = System.Drawing.Color.Black;
+            this.btnDelStdOutClass.Image = ((System.Drawing.Image)(resources.GetObject("btnDelStdOutClass.Image")));
+            this.btnDelStdOutClass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDelStdOutClass.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnDelStdOutClass.Location = new System.Drawing.Point(329, 65);
+            this.btnDelStdOutClass.Name = "btnDelStdOutClass";
+            this.btnDelStdOutClass.Size = new System.Drawing.Size(125, 54);
+            this.btnDelStdOutClass.TabIndex = 4;
+            this.btnDelStdOutClass.Text = "Xoá";
+            this.btnDelStdOutClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDelStdOutClass.Click += new System.EventHandler(this.btnDelStdOutClass_Click);
+            // 
+            // tbStdIDDel
+            // 
+            this.tbStdIDDel.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbStdIDDel.DefaultText = "";
+            this.tbStdIDDel.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbStdIDDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbStdIDDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStdIDDel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbStdIDDel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStdIDDel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tbStdIDDel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbStdIDDel.Location = new System.Drawing.Point(185, 61);
+            this.tbStdIDDel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbStdIDDel.Name = "tbStdIDDel";
+            this.tbStdIDDel.PasswordChar = '\0';
+            this.tbStdIDDel.PlaceholderText = "";
+            this.tbStdIDDel.SelectedText = "";
+            this.tbStdIDDel.Size = new System.Drawing.Size(118, 60);
+            this.tbStdIDDel.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(25, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 32);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Nhập STT";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(25, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(260, 32);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Xoá học sinh khỏi lớp";
             // 
             // LapDanhSachLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1229, 648);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvClassDetail);
             this.Controls.Add(this.btnHomeScreen);
             this.Controls.Add(this.panel2);
@@ -302,6 +467,10 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClassDetail)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -310,10 +479,10 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox tbStdNum;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbStdNum;
+        private System.Windows.Forms.Label lbClass;
+        private System.Windows.Forms.Label lbGrade;
+        private System.Windows.Forms.Label lbSchoolYear;
         private System.Windows.Forms.BindingSource duLieuBindingSource;
         private DuLieu duLieu;
         private System.Windows.Forms.BindingSource lOPBindingSource;
@@ -328,5 +497,15 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbGrade;
         private Guna.UI2.WinForms.Guna2ComboBox cbSchoolYear;
         private System.Windows.Forms.DataGridView dgvClassDetail;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lbAddStdToClass;
+        private Guna.UI2.WinForms.Guna2Button btnAddStdToClass;
+        private Guna.UI2.WinForms.Guna2TextBox tbStdIdAdd;
+        private System.Windows.Forms.Label lbInputStdID;
+        private Guna.UI2.WinForms.Guna2TextBox tbStdIDDel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Button btnDelStdOutClass;
     }
 }
