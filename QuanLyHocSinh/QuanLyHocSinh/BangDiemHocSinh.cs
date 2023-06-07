@@ -26,21 +26,31 @@ namespace QuanLyHocSinh
             DHKGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DHKGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataEntities data = new dataEntities();
-            List<string> dsNamhoc = new List<string>();
-            foreach(var d in data.NAMHOCs)
-            {
-                dsNamhoc.Add(d.NamHoc1.ToString());
-            }
-            List<string> dsHocky = new List<string>();
-            foreach(var d in data.HOCKies)
-            {
-                dsHocky.Add(d.HocKy1.ToString());
-            }
-            NamHocCbb_nh.DataSource = dsNamhoc;
-            NamHocCbb_hk.DataSource = dsNamhoc;
-            HocKyCbb.DataSource = dsHocky;
-        }
+            var ComboBoxYearSource = from obj in data.NAMHOCs orderby obj.NamHoc1 descending select obj;
+            NamHocCbb_nh.DataSource = ComboBoxYearSource.ToList();
+            NamHocCbb_nh.DisplayMember = "NamHoc1";
+            NamHocCbb_nh.ValueMember = "MaNamHoc";
+            NamHocCbb_hk.DataSource = ComboBoxYearSource.ToList();
+            NamHocCbb_hk.DisplayMember = "NamHoc1";
+            NamHocCbb_hk.ValueMember = "MaNamHoc";
 
+        }
+        private void NamHocCbb_hk_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dataEntities data = new dataEntities();
+            var ComboBoxSubjectsSource = data.HocKy_NamApDung(NamHocCbb_hk.SelectedValue.ToString());
+            HocKyCbb.DataSource = ComboBoxSubjectsSource.ToList();
+            HocKyCbb.DisplayMember = "HocKy";
+            HocKyCbb.ValueMember = "MaHocKy";
+        }
+        string MaNamHoc(string namhoc)
+        {
+            dataEntities data = new dataEntities();
+            var manamhoc = from obj in data.NAMHOCs
+                           where obj.NamHoc1 == NamHocCbb_nh.Text
+                           select obj.MaNamHoc;
+            return manamhoc.ToString();
+        }
         string GetHoTen(string MaHS, dataEntities dtb)
         {
             var HoTen = from h in dtb.HOCSINHs
@@ -59,7 +69,7 @@ namespace QuanLyHocSinh
                       select l.TenLop;
             return Lop.First();
         }
-        Array DIEM_TP(string MHS, string HK, string NH, string TP)
+        Array Diem_TP(string MHS, string HK, string NH, string TP)
         {
             dataEntities dtb = new dataEntities();
             var DIEM = from d in dtb.DIEMs
@@ -68,7 +78,8 @@ namespace QuanLyHocSinh
                        join nh in dtb.NAMHOCs on kq.MaNamHoc equals nh.MaNamHoc
                        join mh in dtb.MONHOCs on kq.MaMonHoc equals mh.MaMonHoc
                        join tp in dtb.THANHPHANs on d.MaThanhPhan equals tp.MaThanhPhan
-                       where kq.MaHocSinh == MHS && hk.HocKy1 == HK && nh.NamHoc1 == NH && tp.MaThanhPhan == TP
+                       where kq.MaHocSinh == MHS && hk.HocKy1 == HK && nh.NamHoc1 == NH
+                       && tp.TenThanhPhan == TP
                        select (d.Diem1 != null ? d.Diem1 : null);
             return DIEM.ToArray();
         }
@@ -170,23 +181,32 @@ namespace QuanLyHocSinh
                                 join m in dtb.MONHOCs on c.MaMonHoc equals m.MaMonHoc
                                 where c.MaHocSinh == MHStextbox_hk.Text && g.HocKy1 == HocKyCbb.Text && k.NamHoc1 == NamHocCbb_hk.Text
                                 select m.TenMonHoc;
-
-                DHKGridView.Rows.Clear();
-                for (int i = 0; i < DIEMTB.ToList().Count; i++)
+                var ds_thanhphan = dtb.THANHPHANs.Where(r => r.NamApDung == NamHocCbb_hk.SelectedValue.ToString()).OrderByDescending(r=>r.MaThanhPhan).Select(r => r.TenThanhPhan).ToList();
+                DHKGridView.Columns.Clear();
+                DHKGridView.Columns.Add("STT", "STT");
+                DHKGridView.Columns.Add("Mã môn học", "Mã môn học");
+                DHKGridView.Columns.Add("Tên môn học", "Tên môn học");
+                for (int j = 0; j < ds_thanhphan.Count; j++)
                 {
-                    var DIEMTX = DIEM_TP(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, "TX");
-                    var DIEMGK = DIEM_TP(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, "GK");
-                    var DIEMCK = DIEM_TP(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, "CK");
+                    DHKGridView.Columns.Add(ds_thanhphan[j].ToString(),"Điểm " + ds_thanhphan[j].ToString());
+                }
+                DHKGridView.Columns.Add("Điểm TB", "Điểm TB");
+                DHKGridView.Rows.Clear();
+                for (int i = 0; i < MaMonHoc.Count(); i++)
+                {
                     string Mamh = MaMonHoc.ToList()[i].ToString();
                     DataGridViewRow newRow = new DataGridViewRow();
                     newRow.CreateCells(DHKGridView);
                     newRow.Cells[0].Value = i + 1;
                     newRow.Cells[1].Value = MaMonHoc.ToList()[i];
                     newRow.Cells[2].Value = TenMonHoc.ToList()[i];
-                    if (i < DIEMTX.Length) newRow.Cells[3].Value = DIEMTX.GetValue(i);
-                    if (i < DIEMGK.Length) newRow.Cells[4].Value = DIEMGK.GetValue(i);
-                    if (i < DIEMCK.Length) newRow.Cells[5].Value = DIEMCK.GetValue(i);
-                    newRow.Cells[6].Value = DIEMTB.ToList()[i];
+                    for(int j = 0; j < ds_thanhphan.Count; j++)
+                    {
+                        var DiemTP = Diem_TP(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, ds_thanhphan[j].ToString());
+                        if (i<DiemTP.Length) newRow.Cells[j+3].Value = DiemTP.GetValue(i);
+                    }
+
+                    newRow.Cells[ds_thanhphan.Count+3].Value = DIEMTB.ToList()[i];
                     DHKGridView.Rows.Add(newRow);
                 }
                 //Ho Ten
@@ -223,33 +243,38 @@ namespace QuanLyHocSinh
         }
         void TraCuuDiemNamHoc()
         {
+
             if (Kiemtra_input(MHStextbox_nh.Text, " ", NamHocCbb_nh.Text))
             {
                 dataEntities dtb = new dataEntities();
                 var MaMonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
                                join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
                                join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
-                               where c.MaHocSinh == MHStextbox_nh.Text && g.HocKy1 == "HKI" && k.NamHoc1 == NamHocCbb_nh.Text
+                               where c.MaHocSinh == MHStextbox_nh.Text && g.MaHocKy == "1" && k.NamHoc1 == NamHocCbb_nh.Text
                                select c.MaMonHoc;
                 var TenMonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
                                 join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
                                 join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
                                 join m in dtb.MONHOCs on c.MaMonHoc equals m.MaMonHoc
-                                where c.MaHocSinh == MHStextbox_nh.Text && g.HocKy1 == "HKI" && k.NamHoc1 == NamHocCbb_nh.Text
+                                where c.MaHocSinh == MHStextbox_nh.Text && g.MaHocKy == "1" && k.NamHoc1 == NamHocCbb_nh.Text
                                 select m.TenMonHoc;
-                var DiemTBhk1 = from c in dtb.KETQUA_MONHOC_HOCSINH
-                                join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
-                                join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
-                                where c.MaHocSinh == MHStextbox_nh.Text && g.HocKy1 == "HKI" && k.NamHoc1 == NamHocCbb_nh.Text
-                                select (c.DiemTB != null ? c.DiemTB : null);
-                var DiemTBhk2 = from c in dtb.KETQUA_MONHOC_HOCSINH
-                                join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
-                                join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
-                                where c.MaHocSinh == MHStextbox_nh.Text && g.HocKy1 == "HKII" && k.NamHoc1 == NamHocCbb_nh.Text
-                                select (c.DiemTB != null ? c.DiemTB : null);
+                var MaNamHoc = from n in dtb.NAMHOCs
+                               where n.NamHoc1 == NamHocCbb_nh.Text
+                               select n.MaNamHoc;
+                double Tong_DiemTB = 0;
+                double Min_DiemTB = 10;
+                int so_mon_da_co_diem = MaMonHoc.Count();
+                var ds_hocky = dtb.HocKy_NamApDung(NamHocCbb_nh.SelectedValue.ToString()).Select(r => r.MaHocKy).ToList();
                 DNHGridView.Rows.Clear();
-                float Tong_DiemTB = 0;
-                float Min_DiemTB = 10;
+                DNHGridView.Columns.Clear();
+                DNHGridView.Columns.Add("STT", "STT");
+                DNHGridView.Columns.Add("Mã môn học", "Mã môn học");
+                DNHGridView.Columns.Add("Tên môn học", "Tên môn học");
+                for (int j = 0; j < ds_hocky.Count; j++)
+                {
+                    DNHGridView.Columns.Add("Điểm HK " + ds_hocky[j].ToString(), "Điểm HK " + ds_hocky[j].ToString());
+                }
+                DNHGridView.Columns.Add("Điểm TB", "Điểm TB cả năm");                
                 for (int i = 0; i < MaMonHoc.Count(); i++)
                 {
 
@@ -258,34 +283,32 @@ namespace QuanLyHocSinh
                     newRow.Cells[0].Value = i + 1;
                     newRow.Cells[1].Value = MaMonHoc.ToList()[i];
                     newRow.Cells[2].Value = TenMonHoc.ToList()[i];
-                    newRow.Cells[3].Value = DiemTBhk1.ToArray().GetValue(i);
-                    if (DiemTBhk2.Count() != 0 && i < DiemTBhk2.ToList().Count()) newRow.Cells[4].Value = DiemTBhk2.ToList()[i];
-                    if (i < DiemTBhk1.Count() && i < DiemTBhk2.Count())
-                    {
-                        var trong_so_hk1 = from t in dtb.HOCKies
-                                           where t.HocKy1 == "HKI"
-                                           select t.TrongSo;
-                        var trong_so_hk2 = from t in dtb.HOCKies 
-                                           where t.HocKy1 == "HKII"
-                                           select t.TrongSo; 
-                        var DiemTbmon = DiemTBhk1.ToList()[i] * trong_so_hk1.ToList()[0] + DiemTBhk2.ToList()[i] * trong_so_hk2.ToList()[0];
+                    double tong_trong_so = 0;
+                    double Tong_DiemTB_mon = 0;
 
-                        newRow.Cells[5].Value = Math.Round((double)DiemTbmon / (double)(trong_so_hk1.ToList()[0] + trong_so_hk2.ToList()[0]), 2);
-
-                    }
-                    else if (i >= DiemTBhk1.Count())
+                    for (int j = 3; j < ds_hocky.Count+3; j++)
                     {
-                        var DiemTbmon = DiemTBhk2.ToList()[i];
-                        newRow.Cells[4].Value = DiemTbmon;
-
+                        var DiemTBhk = dtb.TongKetMon_HocSinh(MaNamHoc.ToList()[0].ToString(), MHStextbox_nh.Text).Where(r => r.MaMonHoc == MaMonHoc.ToList()[i] && r.MaHocKy == ds_hocky[j-3]).Select(r=>r.DiemTB).ToList();
+                        var trong_so_hk = dtb.HocKy_NamApDung(MaNamHoc.ToList()[0].ToString()).Where(r => r.MaHocKy == ds_hocky[j-3]).Select(r => r.TrongSo).ToList();
+                        if (DiemTBhk.Count() == 1)
+                        {
+                            newRow.Cells[j].Value = DiemTBhk[0];
+                            Tong_DiemTB_mon += (double)(DiemTBhk[0] * trong_so_hk[0]);
+                            tong_trong_so += (double)trong_so_hk[0];
+                        }
+                        else
+                        {
+                            newRow.Cells[j + 3].Value = null;
+                        }
                     }
-                    else if (i >= DiemTBhk2.Count())
-                    {
-                        var DiemTbmon = DiemTBhk1.ToList()[i];
-                        newRow.Cells[4].Value = DiemTbmon;
-                    }
-                    if (Convert.ToInt64(newRow.Cells[4].Value) < Min_DiemTB) Min_DiemTB = Convert.ToInt64(newRow.Cells[4].Value);
-                    Tong_DiemTB += Convert.ToInt64(newRow.Cells[4].Value);
+                    if (newRow.Cells[ds_hocky.Count + 2].Value != null && newRow.Cells[ds_hocky.Count + 1].Value != null)
+                        newRow.Cells[ds_hocky.Count + 3].Value = Math.Round(Tong_DiemTB_mon / tong_trong_so, 2);
+                    else if (newRow.Cells[ds_hocky.Count + 2].Value == null)
+                        newRow.Cells[ds_hocky.Count + 3].Value = newRow.Cells[ds_hocky.Count + 1].Value;
+                    else if (newRow.Cells[ds_hocky.Count + 1].Value == null)
+                        newRow.Cells[ds_hocky.Count + 3].Value = newRow.Cells[ds_hocky.Count + 2].Value;
+                    else so_mon_da_co_diem -= 1;
+                    Tong_DiemTB += Math.Round(Tong_DiemTB_mon / tong_trong_so, 2);
                     DNHGridView.Rows.Add(newRow);
                 }
                 //Ho Ten
@@ -295,12 +318,11 @@ namespace QuanLyHocSinh
                 LopTxtBox_nh.Text = GetLop(MHStextbox_nh.Text, "HKI", NamHocCbb_nh.Text, dtb);
 
                 //Tinh Diem TB
-                double DiemTB = Math.Round(Tong_DiemTB / Math.Max(DiemTBhk1.Count(row => row != null), DiemTBhk2.Count(row => row != null)), 2);
+                double DiemTB = Math.Round((double)(Tong_DiemTB / so_mon_da_co_diem),2);
                 DTBNHTextBox.Text = DiemTB.ToString();
-                var MaNamHoc = from n in dtb.NAMHOCs
-                               where n.NamHoc1 == NamHocCbb_nh.Text
-                               select n.MaNamHoc;
+
                 //Xep Loai
+                
                 var DiemToiThieu = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r => r.DiemToiThieu).ToList();
                 var DiemKhongChe = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r => r.DiemKhongChe).ToList();
                 var TenXepLoai = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r => r.TenXepLoai).ToList();
@@ -316,6 +338,7 @@ namespace QuanLyHocSinh
                         break;
                     }
                 }
+                
 
             }
         }
@@ -406,6 +429,8 @@ namespace QuanLyHocSinh
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
+
+
     }
 }
 

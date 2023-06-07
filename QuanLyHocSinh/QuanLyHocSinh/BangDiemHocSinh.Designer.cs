@@ -48,13 +48,6 @@
             this.guna2TabControlReport = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.DHKGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.XepLoaiTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.DTBHKTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -69,12 +62,6 @@
             this.NamHocCbb_hk = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.DNHGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.XepLoaiTxtBox_nh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -263,14 +250,6 @@
             this.DHKGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DHKGridView.ColumnHeadersHeight = 28;
             this.DHKGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DHKGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,41 +285,6 @@
             this.DHKGridView.ThemeStyle.RowsStyle.Height = 22;
             this.DHKGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DHKGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mã môn học";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tên môn học";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Điểm TX";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Điểm GK";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Điểm CK";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Điểm TB";
-            this.Column7.Name = "Column7";
             // 
             // guna2GroupBox1
             // 
@@ -552,6 +496,7 @@
             this.NamHocCbb_hk.Name = "NamHocCbb_hk";
             this.NamHocCbb_hk.Size = new System.Drawing.Size(146, 36);
             this.NamHocCbb_hk.TabIndex = 1;
+            this.NamHocCbb_hk.SelectedValueChanged += new System.EventHandler(this.NamHocCbb_hk_SelectedValueChanged);
             // 
             // tabPage4
             // 
@@ -582,13 +527,6 @@
             this.DNHGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DNHGridView.ColumnHeadersHeight = 28;
             this.DNHGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DNHGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
-            this.Column9,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -624,36 +562,6 @@
             this.DNHGridView.ThemeStyle.RowsStyle.Height = 22;
             this.DNHGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DNHGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "STT";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Mã môn học";
-            this.Column9.Name = "Column9";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Tên môn học";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Điểm TB HKI";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Điểm TB HKII";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Điểm TB cả năm";
-            this.Column14.Name = "Column14";
             // 
             // guna2GroupBox2
             // 
@@ -989,24 +897,11 @@
         private Guna.UI2.WinForms.Guna2ComboBox NamHocCbb_nh;
         private Guna.UI2.WinForms.Guna2TextBox HoTenTextBox;
         private Guna.UI2.WinForms.Guna2DataGridView DHKGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private Guna.UI2.WinForms.Guna2TextBox MHStextbox_hk;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonHome;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Guna.UI2.WinForms.Guna2DataGridView DNHGridView;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
     }
 }
