@@ -86,6 +86,8 @@ namespace QuanLyHocSinh
                 {
                     MessageBox.Show("Mã số học sinh không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                
             }            
         }
 
@@ -104,17 +106,32 @@ namespace QuanLyHocSinh
                 else
                 {
                     // Xoá học sinh khỏi lớp
-                    dataEntities db = new dataEntities();
-                    db.CTLOPs.Remove(db.CTLOPs.Where(
-                        p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
-                          && p.MaLop == strMaLop
-                    ).FirstOrDefault());
-                    db.SaveChanges();
-                    // Xoá học sinh khỏi lớp
+                    DialogResult choose = MessageBox.Show(
+                        "Xoá học sinh này khỏi lớp? Tác vụ này không thể hoàn tác",
+                        "Xoá học sinh khỏi lớp",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Warning
+                    );
 
-                    HienThiDanhSachLop();
-                    this.tbStdIDDel.Text = string.Empty;
-                    MessageBox.Show("Xoá học sinh khỏi lớp thành công", "Xoá thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if(choose == DialogResult.OK)
+                    {
+                        dataEntities db = new dataEntities();
+                        db.CTLOPs.Remove(db.CTLOPs.Where(
+                            p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
+                              && p.MaLop == strMaLop
+                        ).FirstOrDefault());
+                        db.SaveChanges();
+                        // Xoá học sinh khỏi lớp
+
+                        HienThiDanhSachLop();
+                        this.tbStdIDDel.Text = string.Empty;
+                        MessageBox.Show(
+                            "Xoá học sinh khỏi lớp thành công",
+                            "Xoá thành công",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
                 }
             }
             catch (ArgumentNullException)

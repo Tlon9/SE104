@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -115,26 +116,28 @@ namespace QuanLyHocSinh
 
                 if (sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
                 {
-                    //db.SuaHocSinh(this.tbStudentID.Text,
-                    //            this.tbName.Text,
-                    //            this.cbGender.Text,
-                    //            this.dtpBirthday.Value,
-                    //            this.tbAddress.Text,
-                    //            this.tbOrigin.Text,
-                    //            this.tbEthnicity.Text,
-                    //            this.tbReligion.Text,
-                    //            this.tbNumPhone.Text,
-                    //            this.tbEmail.Text,
-                    //            this.tbDadName.Text,
-                    //            short.Parse(this.tbDadBirthyear.Text),
-                    //            this.tbDadID.Text,
-                    //            this.tbDadPhoneNum.Text,
-                    //            this.tbDadJob.Text,
-                    //            this.tbMomName.Text,
-                    //            short.Parse(this.tbMomBirthyear.Text),
-                    //            this.tbMomID.Text,
-                    //            this.tbMomPhoneNum.Text,
-                    //            this.tbMomJob.Text);
+                    HOCSINH hs = new HOCSINH();
+                    hs.MaHocSinh = this.tbName.Text;
+                    hs.HoTen = this.cbGender.Text;
+                    hs.NgaySinh = this.dtpBirthday.Value;
+                    hs.DiaChi = this.tbAddress.Text;
+                    hs.QueQuan = this.tbOrigin.Text;
+                    hs.DanToc = this.tbEthnicity.Text;
+                    hs.TonGiao = this.tbReligion.Text;
+                    hs.SDT = this.tbNumPhone.Text;
+                    hs.Email = this.tbEmail.Text;
+                    hs.HoTenCha = this.tbDadName.Text;
+                    hs.NamSinh_Cha = short.Parse(this.tbDadBirthyear.Text);
+                    hs.CCCD_Cha = this.tbDadID.Text;
+                    hs.SDT_Cha = this.tbDadPhoneNum.Text;
+                    hs.NgheNghiep_Cha = this.tbDadJob.Text;
+                    hs.HoTenMe = this.tbMomName.Text;
+                    hs.NamSinh_Me = short.Parse(this.tbMomBirthyear.Text);
+                    hs.CCCD_Me = this.tbMomID.Text;
+                    hs.SDT_Me = this.tbMomPhoneNum.Text;
+                    hs.NgheNghiep_Me = this.tbMomJob.Text;
+
+                    db.HOCSINHs.AddOrUpdate(hs);
                     db.SaveChanges();
                     MessageBox.Show("Lưu thay đổi thành công",
                                     "Lưu thành công",
@@ -194,7 +197,7 @@ namespace QuanLyHocSinh
                 if (choose == DialogResult.OK)
                 {
                     // Delete Student
-                    //db.SuaHocSinh(this.tbStudentID.Text);
+                    db.HOCSINHs.Remove(db.HOCSINHs.Where(p => p.MaHocSinh == this.tbStudentID.Text).FirstOrDefault());
                     db.SaveChanges();
                     // Delete Student
 
