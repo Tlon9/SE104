@@ -12,8 +12,9 @@ namespace QuanLyHocSinh
 {
     public partial class LapDanhSachLop : Form
     {
-        private short sIndex;
+        private short sStdNum;
         private DataTable dt;
+        private String strMaLop;
 
         public LapDanhSachLop()
         {
@@ -64,9 +65,16 @@ namespace QuanLyHocSinh
                     if (stdIdNowDb.Count() == 0)
                     {
                         // Thêm học sinh vào lớp
-
+                        CTLOP cTLOP = new CTLOP();
+                        cTLOP.MaHocSinh = this.tbStdIdAdd.Text;
+                        cTLOP.MaLop = strMaLop;
+                        cTLOP.MaCTL = strMaLop + "_" + this.tbStdIdAdd.Text;
+                        db.CTLOPs.Add(cTLOP);
+                        db.SaveChanges();
                         // Thêm học sinh vào lớp
 
+                        HienThiDanhSachLop();
+                        this.tbStdIdAdd.Text = "";
                         MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -83,24 +91,29 @@ namespace QuanLyHocSinh
 
         private void XoaHocSinhKhoiLop()
         {
-            //dataEntities db = new dataEntities();
-            
             try
             {
                 if (short.Parse(this.tbStdIDDel.Text) < 1)
                 {
                     MessageBox.Show("Giá trị nhập vào không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (short.Parse(this.tbStdIDDel.Text) >= sIndex)
+                else if (short.Parse(this.tbStdIDDel.Text) >= sStdNum)
                 {
                     MessageBox.Show("Số thứ tự lớn hơn sĩ số lớp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     // Xoá học sinh khỏi lớp
-
+                    dataEntities db = new dataEntities();
+                    db.CTLOPs.Remove(db.CTLOPs.Where(
+                        p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
+                          && p.MaLop == strMaLop
+                    ).FirstOrDefault());
+                    db.SaveChanges();
                     // Xoá học sinh khỏi lớp
 
+                    HienThiDanhSachLop();
+                    this.tbStdIDDel.Text = string.Empty;
                     MessageBox.Show("Xoá học sinh khỏi lớp thành công", "Xoá thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -121,11 +134,15 @@ namespace QuanLyHocSinh
         private void HienThiDanhSachLop()
         {
             dataEntities db = new dataEntities();
+            strMaLop = (from ctl in db.CTLOPs
+                        join l in db.LOPs on ctl.MaLop equals l.MaLop
+                        join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                        where l.TenLop == this.cbClass.Text && nh.NamHoc1 == this.cbSchoolYear.Text
+                        select ctl.MaLop).ToList().First();
             var dataSource = from ctl in db.CTLOPs.AsEnumerable()
                              join hs in db.HOCSINHs.AsEnumerable() on ctl.MaHocSinh equals hs.MaHocSinh
-                             join l in db.LOPs.AsEnumerable() on ctl.MaLop equals l.MaLop
-                             where l.MaLop == this.cbClass.Text
-                             group new { ctl, hs, l }
+                             where ctl.MaLop == strMaLop
+                             group new { hs }
                              by new { hs.MaHocSinh, hs.HoTen, hs.GioiTinh, hs.NgaySinh, hs.DiaChi, hs.SDT }
                              into g
                              select new
@@ -138,11 +155,11 @@ namespace QuanLyHocSinh
                                  SDT = g.Key.SDT
                              };
 
-            sIndex = 1;
+            sStdNum = 0;
             foreach (var std in dataSource)
             {
                 DataRow row = dt.NewRow();
-                row["STT"] = sIndex;
+                row["STT"] = ++sStdNum;
                 row["MSHS"] = std.MaHocSinh;
                 row["Họ tên"] = std.HoTen;
                 row["Giới tính"] = std.GioiTinh;
@@ -151,10 +168,9 @@ namespace QuanLyHocSinh
                 row["SĐT"] = std.SDT;
 
                 dt.Rows.Add(row);
-                sIndex++;
             }
 
-            this.tbStdNum.Text = sIndex.ToString();
+            this.tbStdNum.Text = sStdNum.ToString();
             this.dgvClassDetail.DataSource = dt;
             this.dgvClassDetail.Show();
         }
