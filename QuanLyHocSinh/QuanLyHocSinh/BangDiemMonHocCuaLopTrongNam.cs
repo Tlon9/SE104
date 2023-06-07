@@ -19,15 +19,16 @@ namespace QuanLyHocSinh
             InitializeComponent();
             this.formTraCuu = mainform;
             dataEntities data = new dataEntities();
-            var comboxClassSource = from obj in data.LOPs select obj;
-            comboBoxClass.DataSource = comboxClassSource.ToList();
-            comboBoxClass.DisplayMember = "TenLop";
-            comboBoxClass.ValueMember = "MaLop";
             var comBoxYear = from obj in data.NAMHOCs select obj;
-            comboBoxYear.DataSource = comBoxYear.ToList();
+            var comBoxYear1 = comBoxYear.OrderByDescending(p => p.MaNamHoc);
+            comboBoxYear.DataSource = comBoxYear1.ToList();
             comboBoxYear.DisplayMember = "NamHoc1";
             comboBoxYear.ValueMember = "MaNamHoc";
             string Last_NamApDung = getCurYear();
+            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == Last_NamApDung select obj;
+            comboBoxClass.DataSource = comboxClassSource.ToList();
+            comboBoxClass.DisplayMember = "TenLop";
+            comboBoxClass.ValueMember = "MaLop";
             var ComboBoxSubjectsSource = from obj in data.MONHOCs where obj.NamApDung == Last_NamApDung select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
@@ -36,10 +37,14 @@ namespace QuanLyHocSinh
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
-        private void comboBoxYear_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
             dataEntities data = new dataEntities();
             string Last_NamApDung = getCurYear();
+            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == Last_NamApDung select obj;
+            comboBoxClass.DataSource = comboxClassSource.ToList();
+            comboBoxClass.DisplayMember = "TenLop";
+            comboBoxClass.ValueMember = "MaLop";
             var ComboBoxSubjectsSource = from obj in data.MONHOCs where obj.NamApDung == Last_NamApDung select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
@@ -208,6 +213,11 @@ namespace QuanLyHocSinh
             Dictionary<string, int> keyValuePairs2 = new Dictionary<string, int>();
             Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
             string Last_NamApDung = getCurYear();
+            if (comboBoxClass.Text.ToString() == string.Empty || comboBoxSubject.Text.ToString() == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập thông tin đầy đủ", "Error", MessageBoxButtons.OK);
+                //return;
+            }
             int t = 0;
             int index_ = 0;
             foreach (var i in dtb.XEPLOAIs)
@@ -218,97 +228,100 @@ namespace QuanLyHocSinh
                     index_++;
                 }
             }
+            double SumTS = 0;
             foreach (var i in dtb.HOCKies)
             {
-                keyValuePairs.Add(i.MaHocKy, t);
-                t++;
+                if (i.NamApDung == Last_NamApDung)
+                {
+                    keyValuePairs.Add(i.MaHocKy, t);
+                    t++;
+                    SumTS += Convert.ToDouble(i.TrongSo);
+                }    
             }
             var reSource = from scr in dtb.KETQUA_MONHOC_HOCSINH
                            join cls in dtb.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                            join cls1 in dtb.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
-                           where scr.MaMonHoc == comboBoxSubject.SelectedValue.ToString() && scr.MaNamHoc == comboBoxYear.SelectedValue.ToString() && cls.MaLop == comboBoxClass.SelectedValue.ToString() && scr.DiemTB != null
+                           where scr.MaMonHoc == comboBoxSubject.SelectedValue && scr.MaNamHoc == comboBoxYear.SelectedValue && cls.MaLop == comboBoxClass.SelectedValue && scr.DiemTB != null
                            group new { scr, cls, cls1 }
                            by new { scr.MaHocSinh, cls1.HoTen, scr.MaHocKy, scr.DiemTB, scr.MaXepLoai }
                            into g
                            select new { g.Key.MaHocSinh, g.Key.HoTen, g.Key.MaHocKy, g.Key.DiemTB, g.Key.MaXepLoai };
-            int index = -1;
             List<HSformat> HS_list = new List<HSformat>();
-            HSformat temp = new HSformat();
-            int numberSemester = dtb.HOCKies.Count();
-            double temp_DiemTB = 0;
-            double SumTS = 0;
-            foreach (var i in dtb.HOCKies)
-            {
-                SumTS += Convert.ToDouble(i.TrongSo);
-            }
-            int count = 0;
-            foreach (var item in reSource)
-            {
-                if (index == -1 || (index != -1 && HS_list[index].MHS != item.MaHocSinh))
-                {
-                    List<string> list_temp = new List<string>();
-                    for (int j = 0; j < numberSemester; j++)
-                        list_temp.Add(null);
-                    index += 1;
-                    temp.STT = index + 1;
-                    temp.MHS = item.MaHocSinh;
-                    temp.HOTEN = item.HoTen;
-                    temp.List_scoreAverage = list_temp;
-                    HS_list.Add(temp);
-                    count = 0;
-                    temp_DiemTB = 0;
-                }
-                temp.List_scoreAverage[keyValuePairs[item.MaHocKy]] = item.DiemTB.ToString();
-                temp_DiemTB += Convert.ToDouble(item.DiemTB) * getTS_DiemTB(item.MaHocKy);
-                count++;
-                if (count == numberSemester)
-                {
-                    temp_DiemTB = temp_DiemTB / SumTS;
-                    temp.DIEMTBCANAM = temp_DiemTB.ToString();
-                    temp.XEPLOAI = funcTenXeploai(temp_DiemTB.ToString());
-                    temp_DiemTB = 0;
-                    count = 0;
-                }
-                else
-                {
-                    if ((index + 1 == HS_list.Count()) || (index + 1 != -1 && HS_list[index + 1].MHS != item.MaHocSinh))
-                    {
-                        temp.DIEMTBCANAM = null;
-                        temp.XEPLOAI = null;
-                    }
-                }
-                HS_list[index] = temp;
-            }
             if (reSource.Count() == 0)
             {
                 MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
             }
             else
             {
+                int index = -1; 
+                HSformat temp = new HSformat();
+                var Hoc_ky = from scr in dtb.HOCKies
+                             where scr.NamApDung == Last_NamApDung
+                             select scr;
+                int numberSemester = Hoc_ky.Count();
+                double temp_DiemTB = 0;
+                int count = 0;
+                foreach (var item in reSource)
+                {
+                    if (index == -1 || (index != -1 && HS_list[index].MHS != item.MaHocSinh))
+                    {
+                        List<string> list_temp = new List<string>();
+                        for (int j = 0; j < numberSemester; j++)
+                            list_temp.Add(null);
+                        index += 1;
+                        temp.STT = index + 1;
+                        temp.MHS = item.MaHocSinh;
+                        temp.HOTEN = item.HoTen;
+                        temp.List_scoreAverage = list_temp;
+                        HS_list.Add(temp);
+                        count = 0;
+                        temp_DiemTB = 0;
+                    }
+                    temp.List_scoreAverage[keyValuePairs[item.MaHocKy]] = item.DiemTB.ToString();
+                    temp_DiemTB += Convert.ToDouble(item.DiemTB) * getTS_DiemTB(item.MaHocKy);
+                    count++;
+                    if (count == numberSemester)
+                    {
+                        temp_DiemTB = temp_DiemTB / SumTS;
+                        temp.DIEMTBCANAM = temp_DiemTB.ToString();
+                        temp.XEPLOAI = funcTenXeploai(temp_DiemTB.ToString());
+                        temp_DiemTB = 0;
+                        count = 0;
+                    }
+                    else
+                    {
+                        if ((index + 1 == HS_list.Count()) || (index + 1 != -1 && HS_list[index + 1].MHS != item.MaHocSinh))
+                        {
+                            temp.DIEMTBCANAM = null;
+                            temp.XEPLOAI = null;
+                        }
+                    }
+                    HS_list[index] = temp;
+                }
                 DataTable dt = new DataTable();
                 dt.Columns.Add("STT", typeof(int));
-                dt.Columns.Add("Ma hoc sinh", typeof(string));
-                dt.Columns.Add("Ho ten", typeof(string));
-                foreach (var ktem in dtb.HOCKies)
+                dt.Columns.Add("Mã học sinh", typeof(string));
+                dt.Columns.Add("Họ tên", typeof(string));
+                foreach (var ktem in Hoc_ky)
                 {
                     dt.Columns.Add(ktem.HocKy1, typeof(string));
                 }
-                dt.Columns.Add("TB ca nam", typeof(string));
-                dt.Columns.Add("Xep loai", typeof(string));
+                dt.Columns.Add("TB cả năm", typeof(string));
+                dt.Columns.Add("Xếp loại", typeof(string));
                 for (int i = 0; i < HS_list.Count; i++)
                 {
                     DataRow row1 = dt.NewRow();
                     row1["STT"] = HS_list[i].STT;
-                    row1["Ma hoc sinh"] = HS_list[i].MHS;
-                    row1["Ho ten"] = HS_list[i].HOTEN;
+                    row1["Mã học sinh"] = HS_list[i].MHS;
+                    row1["Họ tên"] = HS_list[i].HOTEN;
                     int i_temp = 0;
-                    foreach (var ktem in dtb.HOCKies)
+                    foreach (var ktem in Hoc_ky)
                     {
-                        row1[ktem.HocKy1] = HS_list[i].List_scoreAverage[i_temp];
-                        i_temp++;
+                            row1[ktem.HocKy1] = HS_list[i].List_scoreAverage[i_temp];
+                            i_temp++; 
                     }
-                    row1["TB ca nam"] = HS_list[i].DIEMTBCANAM;
-                    row1["Xep loai"] = HS_list[i].XEPLOAI;
+                    row1["TB cả năm"] = HS_list[i].DIEMTBCANAM;
+                    row1["Xếp loại"] = HS_list[i].XEPLOAI;
                     dt.Rows.Add(row1);
                 }
                 string nameofgrid;
@@ -417,5 +430,6 @@ namespace QuanLyHocSinh
             newform.ShowDialog();
             this.Show();
         }
+
     }
 }
