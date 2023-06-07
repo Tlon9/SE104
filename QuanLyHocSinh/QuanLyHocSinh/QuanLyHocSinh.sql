@@ -315,3 +315,13 @@ END
 select *
 	from MONHOC
 	where NamApDung in (select top 1 NamApDung from MONHOC where NamApDung<='NH2122' order by NamApDung DESC)
+CREATE PROCEDURE KhoiLop_NamApDung
+	@NamApDung nvarchar(20)
+AS
+BEGIN
+	select * from KHOI
+	where MaNamHoc in (select top 1 MaNamHoc from KHOI where MaNamHoc<=@NamApDung order by MaNamHoc DESC)
+END
+select *
+	from KHOI
+	where MaNamHoc in (select top 1 MaNamHoc from KHOI where MaNamHoc<='NH2324' order by MaNamHoc DESC)
