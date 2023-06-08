@@ -20,7 +20,10 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
-            
+            dataEntities db = new dataEntities();
+            this.cbSchoolYear.DataSource = (from obj in db.NAMHOCs select obj.NamHoc1).ToList();
+            this.cbGrade.DataSource = (from obj in db.KHOIs select obj.TenKhoi).ToList();
+
             this.dgvClassDetail.Hide();
             this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -35,12 +38,12 @@ namespace QuanLyHocSinh
             dt.Columns.Add("SĐT", typeof(String)).ReadOnly = true;
         }
 
-        private void LapDanhSachLop_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.duLieu.LOP);
+        //private void LapDanhSachLop_Load(object sender, EventArgs e)
+        //{
+        //    // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
+        //    this.lOPTableAdapter.Fill(this.duLieu.LOP);
 
-        }
+        //}
 
         private void ThemHocSinhVaoLop()
         {
