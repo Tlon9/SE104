@@ -457,7 +457,6 @@
             this.Name = "LapDanhSachLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LapDanhSachLop";
-            this.Load += new System.EventHandler(this.LapDanhSachLop_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.duLieu)).EndInit();
