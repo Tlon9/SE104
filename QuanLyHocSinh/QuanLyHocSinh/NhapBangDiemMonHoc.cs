@@ -39,7 +39,7 @@ namespace QuanLyHocSinh
             comboBoxSemester.DataSource = comboxClassSemester.ToList();
             comboBoxSemester.DisplayMember = "HocKy";
             comboBoxSemester.ValueMember = "MaHocKy";
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2) select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
@@ -61,7 +61,11 @@ namespace QuanLyHocSinh
             comboBoxSemester.DataSource = comboxClassSemester.ToList();
             comboBoxSemester.DisplayMember = "HocKy";
             comboBoxSemester.ValueMember = "MaHocKy";
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
+            string class_text = comboBoxClass.Text;
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
+                                         //where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == class_text.Substring(0, 2)
+                                         select obj;
+            //var ComboBoxSubjectsSource_2 = ComboBoxSubjectsSource.Where(p => p.MaMonHoc.Substring(p.MaMonHoc.ToString().Length - 2, 2) == comboBoxClass.Text.Substring(0, 2));
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
@@ -101,10 +105,12 @@ namespace QuanLyHocSinh
                 textBox.Location = new Point(x, y);
                 lb.Location = new Point(x - 100, y + 5);
                 textBox.TextChanged += textBoxScore_TextChanged;
+                lb.Font = new Font("Segoe UI", 10);
+                textBox.Font = new Font("Segoe UI", 10);
                 panelScores.Controls.Add(textBox);
                 panelScores.Controls.Add(lb);
                 list.Add(textBox);
-                y += 40;
+                y += 58;
             }
         }
         struct DIEMformat
@@ -127,30 +133,6 @@ namespace QuanLyHocSinh
             public string DIEMTB { get { return DiemTB; } set { DiemTB = value; } }
             public string XEPLOAI { get { return Xeploai; } set { Xeploai = value; } }
         }
-        /*string getCurYear()
-        {
-            string currYear = comboBoxYear.SelectedValue.ToString();
-            int Curr_year_int = Convert.ToInt32(currYear.Substring(currYear.Length - 4));
-            var reSourceXL = from scr in data.XEPLOAIs.AsEnumerable()
-                             group new { scr }
-                             by new {  scr.NamApDung }
-                             into g
-                             select  new { g.Key.NamApDung } ;
-            reSourceXL = reSourceXL.Reverse();
-            string Last_NamApDung = reSourceXL.LastOrDefault().NamApDung.ToString();
-            foreach (var i in reSourceXL)
-            {
-                string temp = i.ToString();
-                int Curr_year_int_ = Convert.ToInt32(temp.Substring(temp.Length - 6, 4));
-                
-                if (Curr_year_int_ <= Curr_year_int)
-                {
-                    Last_NamApDung = temp;
-                    break;
-                }
-            }
-            return Last_NamApDung.Substring(Last_NamApDung.Length - 8, 6);
-        }*/
         void ShowGrid(string i_o)
         {
             Dictionary<string, int> ScoreDict = new Dictionary<string, int>();
@@ -511,7 +493,7 @@ namespace QuanLyHocSinh
                 ShowGrid("1");
             }
         }
-
+        DataTable ratio_Source;
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             panelNumberOfClassify.Controls.Clear();
@@ -542,21 +524,21 @@ namespace QuanLyHocSinh
                         lb_ratio.Text = "Tỉ lệ học sinh xếp loại " + i.TenXepLoai;
                         lb_ratio.Location = new System.Drawing.Point(x + 500, y);
                         lb_ratio.AutoSize = true;
-                        lb.Font = new Font("microsoft sans serif", 10);
-                        lb_ratio.Font = new Font("microsoft sans serif", 10);
+                        lb.Font = new Font("Segoe UI", 10);
+                        lb_ratio.Font = new Font("Segoe UI", 10);
                         TextBox txb = new TextBox();
                         txb.ReadOnly = true;
-                        txb.Name = i.MaXepLoai;
+                        txb.Name = i.TenXepLoai;
                         txb.Location = new System.Drawing.Point(x + 250, y);
                         txb.AutoSize = true;
-                        txb.Font = new Font("microsoft sans serif", 10);
+                        txb.Font = new Font("Segoe UI", 10);
                         list_txb_xeploai.Add(txb);
                         TextBox txb_ratio = new TextBox();
                         txb_ratio.ReadOnly = true;
-                        txb_ratio.Name = i.MaXepLoai;
+                        txb_ratio.Name = i.TenXepLoai;
                         txb_ratio.Location = new System.Drawing.Point(x + 750, y);
                         txb_ratio.AutoSize = true;
-                        txb_ratio.Font = new Font("microsoft sans serif", 10);
+                        txb_ratio.Font = new Font("Segoe UI", 10);
                         list_txb_ratio.Add(txb_ratio);
                         panelNumberOfClassify.Controls.Add(txb);
                         panelNumberOfClassify.Controls.Add(txb_ratio);
@@ -564,11 +546,16 @@ namespace QuanLyHocSinh
                         panelNumberOfClassify.Controls.Add(lb_ratio);
                         y += 40;
                     }
-                    keyValuePairs.Add(i.MaXepLoai, index);
+                    keyValuePairs.Add(i.TenXepLoai, index);
                     index++;
                     list_xeploai.Add(0);
             }
-            int numberofClass = reSource.Count();
+            var numberofclass_ = from scr in reSource
+                                 join scr1 in data.XEPLOAIs on scr.Xeploai equals scr1.MaXepLoai
+                                 where scr1.TenXepLoai != "Không"
+                                 select scr;
+            int numberofClass = numberofclass_.Count();
+            ratio_Source = new DataTable();
             if (numberofClass > 0)
             {
                 foreach (var i in reSource)
@@ -577,7 +564,7 @@ namespace QuanLyHocSinh
                     {
                         if (i.Xeploai == j.MaXepLoai)
                         {
-                            list_xeploai[keyValuePairs[j.MaXepLoai]]++;
+                            list_xeploai[keyValuePairs[j.TenXepLoai]]++;
                         }
                     }
                 }
@@ -589,7 +576,6 @@ namespace QuanLyHocSinh
                 {
                     i.Text = (list_xeploai[keyValuePairs[i.Name]] * 100 / numberofClass).ToString() + "%";
                 }
-                DataTable ratio_Source = new DataTable();
                 ratio_Source.Columns.Add("Xếp loại", typeof(string));
                 ratio_Source.Columns.Add("Số lượng", typeof(int));
                 ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
@@ -627,6 +613,7 @@ namespace QuanLyHocSinh
             excel.Visible = true;
             Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
+            worksheet.Name = "Bảng điểm";
             for (int i = 1; i <= dataGridView1.Columns.Count; i++)
             {
                 worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
@@ -649,6 +636,7 @@ namespace QuanLyHocSinh
             excel.Visible = true;
             Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
+            worksheet.Name = "Bảng điểm";
             for (int i = 1; i <= dataGridView2.Columns.Count; i++)
             {
                 worksheet.Cells[1, i] = dataGridView2.Columns[i - 1].HeaderText;
@@ -661,6 +649,21 @@ namespace QuanLyHocSinh
                         worksheet.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
                 }
             }
+            workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);
+            if (ratio_Source.Rows.Count > 0)
+            {
+                Excel.Worksheet worksheet2 = (Excel.Worksheet)workbook.Sheets[2];
+                worksheet2.Name = "Tổng kết";
+                worksheet2.Cells[1, 1] = "Xếp loại";
+                worksheet2.Cells[1, 2] = "Số lượng";
+                worksheet2.Cells[1, 3] = "Tỉ lệ (%)";
+                for (int i = 0; i < ratio_Source.Rows.Count; i++)
+                {
+                    worksheet2.Cells[1][i + 2] = ratio_Source.Rows[i]["Xếp loại"];
+                    worksheet2.Cells[2][i + 2] = ratio_Source.Rows[i]["Số lượng"];
+                    worksheet2.Cells[3][i + 2] = ratio_Source.Rows[i]["Tỉ lệ (%)"];
+                }
+            }    
             workbook.Close();
             excel.Quit();
         }

@@ -126,31 +126,6 @@ namespace QuanLyHocSinh
             return result;
 
         }
-        /*string getCurYear()
-        {
-            dataEntities data = new dataEntities();
-            string currYear = comboBoxYear.SelectedValue.ToString();
-            int Curr_year_int = Convert.ToInt32(currYear.Substring(currYear.Length - 4));
-            var reSourceXL = from scr in data.XEPLOAIs.AsEnumerable()
-                             group new { scr }
-                             by new { scr.NamApDung }
-                             into g
-                             select new { g.Key.NamApDung };
-            reSourceXL = reSourceXL.Reverse();
-            string Last_NamApDung = reSourceXL.LastOrDefault().NamApDung.ToString();
-            foreach (var i in reSourceXL)
-            {
-                string temp = i.ToString();
-                int Curr_year_int_ = Convert.ToInt32(temp.Substring(temp.Length - 6, 4));
-
-                if (Curr_year_int_ <= Curr_year_int)
-                {
-                    Last_NamApDung = temp;
-                    break;
-                }
-            }
-            return Last_NamApDung.Substring(Last_NamApDung.Length - 8, 6);
-        }*/
         private void Load_Panel(List<TextBox> list_txb_ratio, List<TextBox> list_txb_xeploai)
         {
             dataEntities dtb = new dataEntities();
@@ -166,25 +141,25 @@ namespace QuanLyHocSinh
                     lb.Text = "Số học sinh xếp loại " + i.TenXepLoai;
                     lb.Location = new System.Drawing.Point(x, y);
                     lb.AutoSize = true;
-                    lb.Font = new Font("microsoft sans serif", 10);
-                    lb_ratio.Font = new Font("microsoft sans serif", 10);
+                    lb.Font = new Font("Segoe UI", 10);
+                    lb_ratio.Font = new Font("Segoe UI", 10);
                     lb_ratio.Text = "Tỉ lệ học sinh xếp loại " + i.TenXepLoai;
                     lb_ratio.Location = new System.Drawing.Point(x + 500, y);
                     lb_ratio.AutoSize = true;
                     TextBox txb = new TextBox();
                     txb.ReadOnly = true;
-                    txb.Name = i.MaXepLoai;
+                    txb.Name = i.TenXepLoai;
                     txb.Location = new System.Drawing.Point(x + 250, y);
                     txb.AutoSize = true;
                     list_txb_xeploai.Add(txb);
                     TextBox txb_ratio = new TextBox();
                     txb_ratio.ReadOnly = true;
-                    txb_ratio.Name = i.MaXepLoai;
+                    txb_ratio.Name = i.TenXepLoai;
                     txb_ratio.Location = new System.Drawing.Point(x + 750, y);
                     txb_ratio.AutoSize = true;
                     list_txb_ratio.Add(txb_ratio);
-                    txb.Font = new Font("microsoft sans serif", 10);
-                    txb_ratio.Font = new Font("microsoft sans serif", 10);
+                    txb.Font = new Font("Segoe UI", 10);
+                    txb_ratio.Font = new Font("Segoe UI", 10);
                     panelClassifyYear.Controls.Add(txb);
                     panelClassifyYear.Controls.Add(txb_ratio);
                     panelClassifyYear.Controls.Add(lb);
@@ -193,6 +168,7 @@ namespace QuanLyHocSinh
                 }
             }
         }
+        DataTable ratio_Source;
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             panelClassifyYear.Controls.Clear();
@@ -205,6 +181,7 @@ namespace QuanLyHocSinh
             if (comboBoxClass.Text.ToString() == string.Empty || comboBoxSubject.Text.ToString() == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập thông tin đầy đủ", "Error", MessageBoxButtons.OK);
+                guna2ImageButton2.Enabled = false;
                 //return;
             }
             int t = 0;
@@ -213,7 +190,7 @@ namespace QuanLyHocSinh
             {
                 if (i.TenXepLoai != "Không")
                 {
-                    keyValuePairs2.Add(i.MaXepLoai, index_);
+                    keyValuePairs2.Add(i.TenXepLoai, index_);
                     index_++;
                 }
             }
@@ -236,9 +213,11 @@ namespace QuanLyHocSinh
             if (reSource.Count() == 0)
             {
                 MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
+                guna2ImageButton2.Enabled = false;
             }
             else
             {
+                guna2ImageButton2.Enabled = true;
                 int index = -1; 
                 HSformat temp = new HSformat();
                 int numberSemester = dtb.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()).Count();
@@ -266,8 +245,8 @@ namespace QuanLyHocSinh
                     if (count == numberSemester)
                     {
                         temp_DiemTB = temp_DiemTB / SumTS;
-                        temp.DIEMTBCANAM = temp_DiemTB.ToString();
-                        temp.XEPLOAI = funcTenXeploai(temp_DiemTB.ToString());
+                        temp.DIEMTBCANAM = Math.Round(temp_DiemTB,1).ToString();
+                        temp.XEPLOAI = funcTenXeploai(Math.Round(temp_DiemTB, 1).ToString());
                         temp_DiemTB = 0;
                         count = 0;
                     }
@@ -323,7 +302,12 @@ namespace QuanLyHocSinh
                 if (i.TenXepLoai != "Không")
                     list_xeploai.Add(0);
             }
-            int numberofClass = HS_list.Count;
+            int numberofClass = 0;
+            foreach (var i in HS_list)
+            {
+                if (i.XEPLOAI != null) numberofClass ++;
+            }
+            ratio_Source = new DataTable();
             if (numberofClass > 0)
             {
                 foreach (var i in HS_list)
@@ -332,7 +316,7 @@ namespace QuanLyHocSinh
                     {
                         if (i.XEPLOAI == j.TenXepLoai)
                         {
-                            list_xeploai[keyValuePairs2[j.MaXepLoai]]++;
+                            list_xeploai[keyValuePairs2[j.TenXepLoai]]++;
                         }
                     }
                 }
@@ -344,7 +328,6 @@ namespace QuanLyHocSinh
                 {
                     i.Text = (list_xeploai[keyValuePairs2[i.Name]] * 100 / numberofClass).ToString() + "%";
                 }
-                DataTable ratio_Source = new DataTable();
                 ratio_Source.Columns.Add("Xếp loại", typeof(string));
                 ratio_Source.Columns.Add("Số lượng", typeof(int));
                 ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
@@ -375,6 +358,7 @@ namespace QuanLyHocSinh
             excel.Visible = true;
             Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
+            worksheet.Name = "Bảng điểm";
             for (int i = 1; i <= dataGridView1.Columns.Count; i++)
             {
                 worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
@@ -387,6 +371,21 @@ namespace QuanLyHocSinh
                         worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
                 }
             }
+            workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);
+            if (ratio_Source.Rows.Count > 0)
+            {
+                Excel.Worksheet worksheet2 = (Excel.Worksheet)workbook.Sheets[2];
+                worksheet2.Name = "Tổng kết";
+                worksheet2.Cells[1, 1] = "Xếp loại";
+                worksheet2.Cells[1, 2] = "Số lượng";
+                worksheet2.Cells[1, 3] = "Tỉ lệ (%)";
+                for (int i = 0; i < ratio_Source.Rows.Count; i++)
+                {
+                    worksheet2.Cells[1][i + 2] = ratio_Source.Rows[i]["Xếp loại"];
+                    worksheet2.Cells[2][i + 2] = ratio_Source.Rows[i]["Số lượng"];
+                    worksheet2.Cells[3][i + 2] = ratio_Source.Rows[i]["Tỉ lệ (%)"];
+                }
+            }    
             workbook.Close();
             excel.Quit();
         }
