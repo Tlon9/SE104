@@ -23,6 +23,8 @@ namespace QuanLyHocSinh
         protected DateTime  dtStdBirthday;
         protected String    strStdEthnicity;
         protected String    strStdReligion;
+        protected String    strStdOrigin;
+        protected String    strStdAddress;
         protected String    strStdPhoneNum;
         protected String    strStdEmail;
 
@@ -44,6 +46,7 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
             this.tbStudentID.Text = "";
+            this.tbStudentID.ReadOnly = false;
             this.pnStudentInfo.Visible = false;
             this.pnDadInfo.Visible = false;
             this.pnMomInfo.Visible = false;
@@ -69,6 +72,8 @@ namespace QuanLyHocSinh
                     this.dtpBirthday.Value  = dtStdBirthday     = std.NgaySinh.Value;
                     this.tbEthnicity.Text   = strStdEthnicity   = std.DanToc;
                     this.tbReligion.Text    = strStdReligion    = std.TonGiao;
+                    this.tbOrigin.Text      = strStdOrigin      = std.QueQuan;
+                    this.tbAddress.Text     = strStdAddress     = std.DiaChi;
                     this.tbNumPhone.Text    = strStdPhoneNum    = std.SDT;
                     this.tbEmail.Text       = strStdEmail       = std.Email;
                     this.pnStudentInfo.Visible = true;
@@ -117,8 +122,9 @@ namespace QuanLyHocSinh
                 if (sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
                 {
                     HOCSINH hs = new HOCSINH();
-                    hs.MaHocSinh = this.tbName.Text;
-                    hs.HoTen = this.cbGender.Text;
+                    hs.MaHocSinh = this.tbStudentID.Text;
+                    hs.HoTen = this.tbName.Text;
+                    hs.GioiTinh = this.cbGender.Text;
                     hs.NgaySinh = this.dtpBirthday.Value;
                     hs.DiaChi = this.tbAddress.Text;
                     hs.QueQuan = this.tbOrigin.Text;
@@ -189,6 +195,13 @@ namespace QuanLyHocSinh
                              select obj);
             if(listStdID.Count() > 0)
             {
+                MessageBox.Show("Học sinh này đã được xếp lớp, không thể xoá",
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            else
+            {
                 DialogResult choose = MessageBox.Show("Xoá thông tin của học sinh này? Tác vụ này không thể hoàn tác",
                                                 "Xoá",
                                                 MessageBoxButtons.OKCancel,
@@ -213,14 +226,7 @@ namespace QuanLyHocSinh
                     this.btnSave.Visible = false;
                     this.btnCancel.Visible = false;
                     this.btnDelete.Visible = false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Học sinh này đã được xếp lớp, không thể xoá",
-                                "Lỗi",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                }                
             }
 
             

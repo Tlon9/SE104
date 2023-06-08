@@ -10,22 +10,11 @@
 namespace QuanLyHocSinh
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class KHOI
+    public partial class KhoiLop_NamApDung_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHOI()
-        {
-            this.LOPs = new HashSet<LOP>();
-        }
-    
         public string MaKhoi { get; set; }
         public string TenKhoi { get; set; }
         public string MaNamHoc { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOP> LOPs { get; set; }
-        public virtual NAMHOC NAMHOC { get; set; }
     }
 }

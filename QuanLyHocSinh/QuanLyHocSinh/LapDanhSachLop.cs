@@ -15,14 +15,23 @@ namespace QuanLyHocSinh
         private short sStdNum;
         private DataTable dt;
         private String strMaLop;
+        private TrangChu formLapDSLop { get; set; }
 
-        public LapDanhSachLop()
+        public LapDanhSachLop(TrangChu mainform)
         {
             InitializeComponent();
+            this.formLapDSLop = mainform;
 
             dataEntities db = new dataEntities();
-            this.cbSchoolYear.DataSource = (from obj in db.NAMHOCs select obj.NamHoc1).ToList();
-            this.cbGrade.DataSource = (from obj in db.KHOIs select obj.TenKhoi).ToList();
+            var src1 = from obj in db.NAMHOCs.AsEnumerable() select obj;
+            cbSchoolYear.DataSource = src1.ToList();
+            cbSchoolYear.DisplayMember = "NamHoc1";
+            cbSchoolYear.ValueMember = "MaNamHoc";
+
+            var src2 = from obj in db.KHOIs.AsEnumerable() select obj;
+            cbGrade.DataSource = src2.ToList();
+            cbGrade.DisplayMember = "TenKhoi";
+            cbGrade.ValueMember = "MaKhoi";
 
             this.dgvClassDetail.Hide();
             this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -44,6 +53,19 @@ namespace QuanLyHocSinh
         //    this.lOPTableAdapter.Fill(this.duLieu.LOP);
 
         //}
+
+        private void SetComboboxDatasource()
+        {
+            dataEntities db = new dataEntities();
+            var src1 = from obj in db.NAMHOCs select obj;
+            cbSchoolYear.DataSource = src1.ToList();
+            cbSchoolYear.DisplayMember = "NamHoc1";
+            cbSchoolYear.ValueMember = "MaNamHoc";
+            var src2 = from obj in db.KHOIs select obj;
+            cbGrade.DataSource = src2.ToList();
+            cbGrade.DisplayMember = "TenKhoi";
+            cbGrade.ValueMember = "MaKhoi";
+        }
 
         private void ThemHocSinhVaoLop()
         {
@@ -238,10 +260,8 @@ namespace QuanLyHocSinh
 
         private void btnHomeScreen_Click(object sender, EventArgs e)
         {
-            TrangChu newform = new TrangChu();
-            this.Hide();
-            newform.ShowDialog();
-            this.Show();
+            (this.formLapDSLop as TrangChu).Show();
+            this.Close();
         }
 
         private void btnAddStdToClass_Click(object sender, EventArgs e)

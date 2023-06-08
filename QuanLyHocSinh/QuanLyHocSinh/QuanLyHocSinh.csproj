@@ -134,6 +134,9 @@
     <Compile Include="HocKy_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="KhoiLop_NamApDung_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MonHoc_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
@@ -186,6 +189,9 @@
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="THANHPHAN.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThanhPhan_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TiepNhanHocSinh.cs">

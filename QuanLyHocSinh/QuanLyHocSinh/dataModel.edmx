@@ -74,6 +74,7 @@
           </Key>
           <Property Name="MaKhoi" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="TenKhoi" Type="nvarchar" MaxLength="30" />
+          <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="LOP">
           <Key>
@@ -197,6 +198,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_khoi_mnh">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+          <End Role="KHOI" Type="Self.KHOI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="KHOI">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_kq_hk">
           <End Role="HOCKY" Type="Self.HOCKY" Multiplicity="1" />
           <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
@@ -296,6 +309,9 @@
         <Function Name="HocKy_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="KhoiLop_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="MonHoc_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
         </Function>
@@ -305,6 +321,9 @@
           <Parameter Name="SiSoToiDa" Type="smallint" Mode="In" />
           <Parameter Name="DiemToiDa" Type="float" Mode="In" />
           <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThanhPhan_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="ThemHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
@@ -421,6 +440,10 @@
           <AssociationSet Name="fk_diem_tp" Association="Self.fk_diem_tp">
             <End Role="THANHPHAN" EntitySet="THANHPHAN" />
             <End Role="DIEM" EntitySet="DIEM" />
+          </AssociationSet>
+          <AssociationSet Name="fk_khoi_mnh" Association="Self.fk_khoi_mnh">
+            <End Role="NAMHOC" EntitySet="NAMHOC" />
+            <End Role="KHOI" EntitySet="KHOI" />
           </AssociationSet>
           <AssociationSet Name="fk_kq_hk" Association="Self.fk_kq_hk">
             <End Role="HOCKY" EntitySet="HOCKY" />
@@ -620,6 +643,16 @@
           <FunctionImport Name="MonHoc_NamApDung" ReturnType="Collection(dataModel.MonHoc_NamApDung_Result)">
           <Parameter Name="NamApDung" Mode="In" Type="String" />
           </FunctionImport>
+          <AssociationSet Name="fk_khoi_mnh" Association="dataModel.fk_khoi_mnh">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="KHOI" EntitySet="KHOIs" />
+          </AssociationSet>
+          <FunctionImport Name="KhoiLop_NamApDung" ReturnType="Collection(dataModel.KhoiLop_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThanhPhan_NamApDung" ReturnType="Collection(dataModel.ThanhPhan_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="TongKetMonHocKy_Result">
           <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
@@ -750,6 +783,8 @@
           <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TenKhoi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mk" FromRole="KHOI" ToRole="LOP" />
+          <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NAMHOC" Relationship="dataModel.fk_khoi_mnh" FromRole="KHOI" ToRole="NAMHOC" />
         </EntityType>
         <EntityType Name="LOP">
           <Key>
@@ -781,6 +816,7 @@
           <Property Name="NamHoc1" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_nh" FromRole="NAMHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mnh" FromRole="NAMHOC" ToRole="LOP" />
+          <NavigationProperty Name="KHOIs" Relationship="dataModel.fk_khoi_mnh" FromRole="NAMHOC" ToRole="KHOI" />
         </EntityType>
         <EntityType Name="PHANQUYEN">
           <Key>
@@ -998,6 +1034,29 @@
           <Property Type="String" Name="TenMonHoc" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <Association Name="fk_khoi_mnh">
+          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="1" />
+          <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="KHOI">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="KhoiLop_NamApDung_Result">
+          <Property Type="String" Name="MaKhoi" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenKhoi" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaNamHoc" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="ThanhPhan_NamApDung_Result">
+          <Property Type="String" Name="MaThanhPhan" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenThanhPhan" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="TrongSo" Nullable="true" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1125,6 +1184,7 @@
           <EntitySetMapping Name="KHOIs">
             <EntityTypeMapping TypeName="dataModel.KHOI">
               <MappingFragment StoreEntitySet="KHOI">
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
                 <ScalarProperty Name="TenKhoi" ColumnName="TenKhoi" />
                 <ScalarProperty Name="MaKhoi" ColumnName="MaKhoi" />
               </MappingFragment>
@@ -1239,6 +1299,25 @@
               <ComplexTypeMapping TypeName="dataModel.MonHoc_NamApDung_Result">
                 <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
                 <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="KhoiLop_NamApDung" FunctionName="dataModel.Store.KhoiLop_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.KhoiLop_NamApDung_Result">
+                <ScalarProperty Name="MaKhoi" ColumnName="MaKhoi" />
+                <ScalarProperty Name="TenKhoi" ColumnName="TenKhoi" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ThanhPhan_NamApDung" FunctionName="dataModel.Store.ThanhPhan_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.ThanhPhan_NamApDung_Result">
+                <ScalarProperty Name="MaThanhPhan" ColumnName="MaThanhPhan" />
+                <ScalarProperty Name="TenThanhPhan" ColumnName="TenThanhPhan" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
                 <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
               </ComplexTypeMapping>
             </ResultMapping>

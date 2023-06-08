@@ -127,7 +127,7 @@ namespace QuanLyHocSinh
 
         private void MenuItemListCreate_Click(object sender, EventArgs e)
         {
-            LapDanhSachLop newform = new LapDanhSachLop();
+            LapDanhSachLop newform = new LapDanhSachLop(this);
             this.Hide();
             newform.ShowDialog();
             this.Show();
