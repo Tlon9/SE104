@@ -49,9 +49,9 @@ namespace QuanLyHocSinh
         {
             dataEntities db = new dataEntities();
 
-            if (tbStudentID.Text != "" && tbFindName.Text != "")
+            if (tbStudentID.Text != "")
             {
-                if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindEmail.Text != "" && tbFindPhoneNum.Text != "")
+                if (tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindEmail.Text != "" && tbFindPhoneNum.Text != "")
                 {
                     var case1 = from iter1 in db.HOCSINHs
                                 join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
@@ -63,8 +63,8 @@ namespace QuanLyHocSinh
                         MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                }     
-                else if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindEmail.Text != "")
+                }
+                else if (tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindEmail.Text != "")
                 {
                     var case2 = from iter1 in db.HOCSINHs
                                 join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
@@ -76,8 +76,8 @@ namespace QuanLyHocSinh
                         MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                }   
-                else if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindPhoneNum.Text != "")
+                }
+                else if (tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindPhoneNum.Text != "")
                 {
                     var case3 = from iter1 in db.HOCSINHs
                                 join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
@@ -89,8 +89,8 @@ namespace QuanLyHocSinh
                         MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                }      
-                else if (tbFindEmail.Text != "" && tbFindPhoneNum.Text != "")
+                }
+                else if (tbFindName.Text != "" && tbFindEmail.Text != "" && tbFindPhoneNum.Text != "")
                 {
                     var case4 = from iter in db.HOCSINHs
                                 where iter.MaHocSinh == tbStudentID.Text && iter.HoTen == tbFindName.Text && iter.SDT == tbFindPhoneNum.Text && iter.Email == tbFindEmail.Text
@@ -100,8 +100,8 @@ namespace QuanLyHocSinh
                         MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                }   
-                else if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1)
+                }
+                else if (tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1)
                 {
                     var case5 = from iter1 in db.HOCSINHs
                                 join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
@@ -113,8 +113,8 @@ namespace QuanLyHocSinh
                         MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                }    
-                else if (tbFindPhoneNum.Text != "")
+                }
+                else if (tbFindName.Text != "" && tbFindPhoneNum.Text != "")
                 {
                     var case6 = from iter in db.HOCSINHs
                                 where iter.MaHocSinh == tbStudentID.Text && iter.HoTen == tbFindName.Text && iter.SDT == tbFindPhoneNum.Text
@@ -125,7 +125,7 @@ namespace QuanLyHocSinh
                         return;
                     }
                 }
-                else if (tbFindEmail.Text != "")
+                else if (tbFindName.Text != "" && tbFindEmail.Text != "")
                 {
                     var case7 = from iter in db.HOCSINHs
                                 where iter.MaHocSinh == tbStudentID.Text && iter.HoTen == tbFindName.Text && iter.Email == tbFindEmail.Text
@@ -136,12 +136,108 @@ namespace QuanLyHocSinh
                         return;
                     }
                 }
-                else 
+                else if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindEmail.Text != "" && tbFindPhoneNum.Text != "")
                 {
-                    var case8 = from iter in db.HOCSINHs
-                                where iter.MaHocSinh == tbStudentID.Text && iter.HoTen == tbFindName.Text
-                                select iter.MaHocSinh;
+                    var case8 = from iter1 in db.HOCSINHs
+                                join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
+                                join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
+                                where iter1.MaHocSinh == tbStudentID.Text && iter3.TenLop == cbClass.SelectedValue.ToString() && iter1.Email == tbFindEmail.Text && iter1.SDT == tbFindPhoneNum.Text
+                                select iter1.MaHocSinh;
                     if (case8.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindEmail.Text != "")
+                {
+                    var case9 = from iter1 in db.HOCSINHs
+                                join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
+                                join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
+                                where iter1.MaHocSinh == tbStudentID.Text && iter3.TenLop == cbClass.SelectedValue.ToString() && iter1.Email == tbFindEmail.Text
+                                select iter1.MaHocSinh;
+                    if (case9.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && tbFindPhoneNum.Text != "")
+                {
+                    var case10 = from iter1 in db.HOCSINHs
+                                 join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
+                                 join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
+                                 where iter1.MaHocSinh == tbStudentID.Text && iter3.TenLop == cbClass.SelectedValue.ToString() && iter1.SDT == tbFindPhoneNum.Text
+                                 select iter1.MaHocSinh;
+                    if (case10.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (tbFindEmail.Text != "" && tbFindPhoneNum.Text != "")
+                {
+                    var case11 = from iter in db.HOCSINHs
+                                 where iter.MaHocSinh == tbStudentID.Text && iter.SDT == tbFindPhoneNum.Text && iter.Email == tbFindEmail.Text
+                                 select iter.MaHocSinh;
+                    if (case11.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (tbFindEmail.Text != "")
+                {
+                    var case12 = from iter in db.HOCSINHs
+                                 where iter.MaHocSinh == tbStudentID.Text && iter.Email == tbFindEmail.Text
+                                 select iter.MaHocSinh;
+                    if (case12.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (tbFindPhoneNum.Text != "")
+                {
+                    var case13 = from iter in db.HOCSINHs
+                                 where iter.MaHocSinh == tbStudentID.Text && iter.SDT == tbFindPhoneNum.Text
+                                 select iter.MaHocSinh;
+                    if (case13.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1)
+                {
+                    var case14 = from iter1 in db.HOCSINHs
+                                join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
+                                join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
+                                where iter1.MaHocSinh == tbStudentID.Text && iter3.TenLop == cbClass.SelectedValue.ToString()
+                                select iter1.MaHocSinh;
+                    if (case14.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else if (tbFindName.Text != "")
+                {
+                    var case15 = from iter in db.HOCSINHs
+                                 where iter.MaHocSinh == tbStudentID.Text && iter.HoTen == tbFindName.Text
+                                 select iter.MaHocSinh;
+                    if (case15.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    var case16 = from iter in db.HOCSINHs
+                                 where iter.MaHocSinh == tbStudentID.Text
+                                 select iter.MaHocSinh;
+                    if (case16.Count() == 0)
                     {
                         MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -150,7 +246,7 @@ namespace QuanLyHocSinh
             }  
             else 
             {
-                if (tbStudentID.Text == "" && tbFindEmail.Text == "" && tbFindName.Text == "" && tbFindPhoneNum.Text == "")
+                if (tbStudentID.Text == "" && tbFindEmail.Text == "" && tbFindName.Text == "" && tbFindPhoneNum.Text == "" && cbClass.SelectedIndex == -1)
                 {
                     MessageBox.Show("Không có thông tin để tra cứu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -158,11 +254,6 @@ namespace QuanLyHocSinh
                 else if (tbStudentID.Text == "")
                 {
                     MessageBox.Show("Cần nhập thông tin mã số học sinh để tra cứu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                else if (tbFindName.Text == "")
-                {
-                    MessageBox.Show("Cần nhập thông tin họ tên học sinh để tra cứu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -177,7 +268,7 @@ namespace QuanLyHocSinh
             var result1 = from iter1 in db.HOCSINHs
                           join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
                           join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
-                          where iter1.MaHocSinh == tbStudentID.Text && iter1.HoTen == tbFindName.Text
+                          where iter1.MaHocSinh == tbStudentID.Text
                           select new
                           {
                                  name = iter1.HoTen,
