@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,37 +23,37 @@ namespace QuanLyHocSinh
             dataEntities dtb = new dataEntities();
             //Danh sách lớp
             var dsLop = from obj in dtb.LOPs
-                        where obj.TenLop != null
+                        where obj.TenLop != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                         select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
             dgvDSLOP.DataSource = dsLop.ToList();
             dgvDSLOP.Show();
             //Danh sách khối
             var dsKhoi = from obj in dtb.KHOIs
-                         where obj.TenKhoi != null
-                         select new {MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
+                         where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                         select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
             dgvDSKHOI.DataSource = dsKhoi.ToList();
             dgvDSKHOI.Show();
             //Danh sách môn học
             var dsMonhoc = from obj in dtb.MONHOCs
-                           where obj.TenMonHoc != null
+                           where obj.TenMonHoc != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
             dgvDSMONHOC.DataSource = dsMonhoc.ToList();
             dgvDSMONHOC.Show();
             //Danh sách điểm thành phần
             var dsDiemTP = from obj in dtb.THANHPHANs
-                           where obj.TenThanhPhan != null
+                           where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
             dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
             dgvDiemthanhphan.Show();
             //Danh sách xếp loại
             var dsXeploai = from obj in dtb.XEPLOAIs
-                            where obj.TenXepLoai != null
+                            where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
             dgvXepLoai.Show();
             //Danh sách điểm học kỳ
             var dsDiemHK = from obj in dtb.HOCKies
-                           where obj.HocKy1 != null
+                           where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
             dgvDiemHK.DataSource = dsDiemHK.ToList();
             dgvDiemHK.Show();
@@ -67,7 +68,6 @@ namespace QuanLyHocSinh
             var max_Siso = from obj in dtb.THAMSOes
                            select obj.SiSoToiDa;
             Sisotextbox.Text = max_Siso.First().ToString();
-            
         }
 
         private void dgvDSLOP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,6 +102,8 @@ namespace QuanLyHocSinh
             TrongSoHKtextbox.Text = dgvDiemHK.CurrentRow.Cells[2].Value.ToString();
         }
         //Thêm năm học mới
+        //Lưu mã năm học mới
+        string MaNamHoc_moi;
         private void AddNamhoc_button_Click(object sender, EventArgs e)
         {
             string namhoc = Namhoctextbox.Text;
@@ -111,6 +113,7 @@ namespace QuanLyHocSinh
             if (namhoc.Length == 9 && isMatch)
             {
                 manamhoc = "NH" + namhoc[2] + namhoc[3] + namhoc[7] + namhoc[8];
+                MaNamHoc_moi = manamhoc;
                 using (var dtb = new dataEntities())
                 {
                     bool check_namhoc = true;
@@ -125,8 +128,40 @@ namespace QuanLyHocSinh
                         new_item.MaNamHoc = manamhoc;
                         new_item.NamHoc1 = namhoc;
                         dtb.NAMHOCs.Add(new_item);
-                        dtb.SaveChanges();
+                        //dtb.SaveChanges();
                         MessageBox.Show("Thêm năm học thành công!");
+                        // Xuất danh sách môn học áp dụng cho năm học
+                        var dsMonhoc = from obj in dtb.MonHoc_NamApDung(MaNamHoc_moi)
+                                       select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
+                        dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+                        dgvDSMONHOC.Show();
+                        //Thêm các lớp của năm học mới.
+                        string MaNamHoc_Truoc = dtb.NAMHOCs.AsEnumerable().LastOrDefault().MaNamHoc.ToString();
+                        foreach (var i in dtb.LOPs)
+                        {
+                            if (i.MaNamHoc == MaNamHoc_Truoc)
+                            {
+                                var check_khoi = dtb.KhoiLop_NamApDung(manamhoc).Where(p => p.TenKhoi == i.MaKhoi.Substring(2, 2));
+                                int count = check_khoi.Count();
+                                if (count > 0)
+                                {
+                                    LOP new_class = new LOP();
+                                    new_class.MaLop = manamhoc.Substring(2,2) + i.MaLop.Substring(2);
+                                    new_class.TenLop = i.TenLop;
+                                    string temp_check = dtb.KhoiLop_NamApDung(manamhoc).AsEnumerable().Where(p => p.TenKhoi == i.MaKhoi.Substring(2, 2)).FirstOrDefault().MaKhoi.ToString();
+                                    new_class.MaKhoi = temp_check;
+                                    new_class.SiSo = i.SiSo;
+                                    new_class.MaNamHoc = manamhoc;
+                                    dtb.LOPs.Add(new_class);
+                                }
+                            }
+                        }
+                        dtb.SaveChanges();
+                        var dsLop = from obj in dtb.LOPs
+                                     where obj.TenLop != null && obj.MaNamHoc == manamhoc
+                                     select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
+                        dgvDSLOP.DataSource = dsLop.ToList();
+                        dgvDSLOP.Show();
                         PanelDsQuydinh.Show();
                     }
                     else MessageBox.Show("Năm học đã tồn tại!");
@@ -163,7 +198,7 @@ namespace QuanLyHocSinh
         {
             string year = Namhoctextbox.Text;
             string tenlop = TenLoptextbox.Text;
-            string malop = "22" + TenLoptextbox.Text;
+            string malop = MaNamHoc_moi.Substring(2, 2) + TenLoptextbox.Text;
             if(tenlop.Length != 4)
             {
                 MessageBox.Show("Tên lớp không hợp lệ!");
@@ -171,38 +206,28 @@ namespace QuanLyHocSinh
             }
             using (var dtb = new dataEntities())
             {
-                var ds_malop = dtb.LOPs.Select(r=>r.MaLop).ToList();
                 var ds_tenlop = dtb.LOPs.Select(r => r.TenLop).ToList();
                 bool check_tenlop = true;
-                bool check_malop = true;
-                for(int i = 0;i < ds_malop.Count;i++)
+                for(int i = 0;i < ds_tenlop.Count;i++)
                 {
-                    if (ds_malop[i] == malop) { check_malop = false;}
                     if (ds_tenlop[i] == tenlop) { check_tenlop = false;}
                 }
-                if (check_tenlop && check_malop)
+                if (check_tenlop)
                 {
                     LOP new_item = new LOP();
-                    var makhoi = dtb.KHOIs.Where(r => r.TenKhoi == tenlop.Substring(0, 2)).First();
+                    var makhoi = dtb.KhoiLop_NamApDung(MaNamHoc_moi).Where(r => r.TenKhoi == tenlop.Substring(0, 2)).First();
                     var namhoc = dtb.NAMHOCs.Where(r => r.NamHoc1 == year).First();
                     new_item.MaLop = malop;
                     new_item.TenLop = tenlop;
                     new_item.MaKhoi = makhoi.MaKhoi;
-                    new_item.MaNamHoc = namhoc.MaNamHoc;
+                    new_item.MaNamHoc = MaNamHoc_moi;
                     dtb.LOPs.Add(new_item);
                     dtb.SaveChanges();
                     MessageBox.Show("Cập nhật danh sách lớp thành công!");
                 }
                 else if (!check_tenlop) MessageBox.Show("Tên lớp đã tồn tại!");
-                else if (!check_malop)
-                {
-                    var std = dtb.LOPs.Where(r => r.MaLop == malop).First();
-                    std.TenLop = tenlop;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách lớp thành công!");
-                }
                 var dsLop = from obj in dtb.LOPs
-                            where obj.TenLop != null
+                            where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
                 dgvDSLOP.Show();
@@ -213,13 +238,13 @@ namespace QuanLyHocSinh
             string malop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
             using (var dtb = new dataEntities())
             {
-                var std = dtb.LOPs.Where(r => r.MaLop == malop).First();
-                std.TenLop = null;
+                LOP std = dtb.LOPs.Where(r => r.MaLop == malop).First();
+                dtb.LOPs.Remove(std);
                 dtb.SaveChanges();
                 MessageBox.Show("Cập nhật danh sách lớp thành công!");
-
+                TenLoptextbox.Text = null;
                 var dsLop = from obj in dtb.LOPs
-                            where obj.TenLop != null
+                            where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
                 dgvDSLOP.Show();
@@ -251,7 +276,7 @@ namespace QuanLyHocSinh
                 }
                 else MessageBox.Show("Tên lớp đã tồn tại!");
                 var dsLop = from obj in dtb.LOPs
-                            where obj.TenLop != null
+                            where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
                 dgvDSLOP.Show();
@@ -259,55 +284,27 @@ namespace QuanLyHocSinh
         }
 
         //Thay đổi danh sách khối
-
+        List<KHOI> Copy_Khoi()
+        {
+            dataEntities dtb = new dataEntities();
+            var getMaNamHoc = from scr in dtb.NAMHOCs
+                              where scr.NamHoc1 == Namhoctextbox.Text
+                              select scr;
+            string MaNamHoc = getMaNamHoc.SingleOrDefault().MaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            List<KHOI> list = new List<KHOI>();
+            foreach (var i in dtb.KhoiLop_NamApDung(MaNamHoc))
+            {
+                KHOI item = new KHOI();
+                item.MaKhoi = subMaNamHoc + i.TenKhoi;
+                item.TenKhoi = i.TenKhoi;
+                item.MaNamHoc = MaNamHoc;
+                list.Add(item);
+            }
+            return list;
+        }
         private void AddKhoi_button_Click(object sender, EventArgs e)
         {
-            string tenkhoi = TenKhoitextbox.Text;
-            string makhoi = "22" + tenkhoi;
-            if(tenkhoi.Length==0)
-            {
-                MessageBox.Show("Tên khối không hợp lệ!");
-                return;
-            }
-            using (var dtb = new dataEntities())
-            {
-                var ds_makhoi = dtb.KHOIs.Select(r => r.MaKhoi).ToList();
-                var ds_tenkhoi = dtb.KHOIs.Select(r => r.TenKhoi).ToList();
-                bool check_tenkhoi = true;
-                bool check_makhoi = true;
-                for (int i = 0; i < ds_makhoi.Count; i++)
-                {
-                    if (ds_makhoi[i] == makhoi) { check_makhoi = false; }
-                    if (ds_tenkhoi[i] == tenkhoi) { check_tenkhoi = false; }
-                }
-                if (check_tenkhoi && check_makhoi)
-                {
-                    KHOI new_item = new KHOI();
-                    new_item.TenKhoi = tenkhoi;
-                    new_item.MaKhoi = makhoi;
-                    dtb.KHOIs.Add(new_item);
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách khối thành công!");
-
-                }
-                else if (!check_tenkhoi) MessageBox.Show("Tên khối đã tồn tại!");
-                else if (!check_makhoi)
-                {
-                    var std = dtb.KHOIs.Where(r => r.MaKhoi == makhoi).First();
-                    std.TenKhoi = tenkhoi;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách khối thành công!");
-                }
-                var dsKhoi = from obj in dtb.KHOIs
-                             where obj.TenKhoi != null
-                             select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
-                dgvDSKHOI.DataSource = dsKhoi.ToList();
-                dgvDSKHOI.Show();
-            }
-        }
-        private void EditKhoi_button_Click(object sender, EventArgs e)
-        {
-            string makhoi = dgvDSKHOI.CurrentRow.Cells[0].Value.ToString();
             string tenkhoi = TenKhoitextbox.Text;
             if (tenkhoi.Length == 0)
             {
@@ -316,159 +313,345 @@ namespace QuanLyHocSinh
             }
             using (var dtb = new dataEntities())
             {
+                var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+                string MaNamHoc = getMaNamHoc.ToString();
+                string subMaNamHoc = MaNamHoc.Substring(2, 2);
+                var ds_makhoi = dtb.KHOIs.Select(r => r.MaKhoi).ToList();
                 var ds_tenkhoi = dtb.KHOIs.Select(r => r.TenKhoi).ToList();
                 bool check_tenkhoi = true;
-                for (int i = 0; i < ds_tenkhoi.Count; i++)
+                string makhoi = subMaNamHoc + tenkhoi;
+                List<KHOI> list_khoi = new List<KHOI>();
+                var check_ = dtb.KHOIs.Where(p => p.MaNamHoc == MaNamHoc);
+                if (check_.Count() == 0)
                 {
-                    if (ds_tenkhoi[i] == tenkhoi) { check_tenkhoi = false; break; }
+                    list_khoi = Copy_Khoi();
+                }
+                for (int i = 0; i < ds_makhoi.Count; i++)
+                {
+                    if (ds_tenkhoi[i] == tenkhoi) { check_tenkhoi = false; }
                 }
                 if (check_tenkhoi)
                 {
-                    var std = dtb.KHOIs.Where(r => r.MaKhoi == makhoi).First();
-                    std.TenKhoi = TenKhoitextbox.Text;
-                    dtb.SaveChanges();
+                    KHOI new_item = new KHOI();
+                    new_item.TenKhoi = tenkhoi;
+                    new_item.MaKhoi = makhoi;
+                    new_item.MaNamHoc = MaNamHoc;
+                    dtb.KHOIs.Add(new_item);
                     MessageBox.Show("Cập nhật danh sách khối thành công!");
+
                 }
-                else MessageBox.Show("Tên khối đã tồn tại!");
+                else if (!check_tenkhoi) MessageBox.Show("Tên khối đã tồn tại!");
+                foreach (var i in list_khoi)
+                    dtb.KHOIs.Add(i);
+                dtb.SaveChanges();
                 var dsKhoi = from obj in dtb.KHOIs
-                             where obj.TenKhoi != null
+                             where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                              select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
                 dgvDSKHOI.DataSource = dsKhoi.ToList();
                 dgvDSKHOI.Show();
             }
         }
+        private void EditKhoi_button_Click(object sender, EventArgs e)
+        {
+            var dtb = new dataEntities();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            string ten_khoi = dgvDSKHOI.CurrentRow.Cells[1].Value.ToString();
+            string ma_khoi = dgvDSKHOI.CurrentRow.Cells[0].Value.ToString();
+            string tenkhoi = TenKhoitextbox.Text;
+            List<KHOI> list_khoi = new List<KHOI>();
+            if (tenkhoi.Length == 0)
+            {
+                MessageBox.Show("Tên khối không hợp lệ!");
+                return;
+            }
+            var check_ = dtb.KHOIs.Where(p => p.MaNamHoc == MaNamHoc);
+            if (check_.Count() == 0)
+            {
+                list_khoi = Copy_Khoi();
+            }
+            var ds_tenkhoi = dtb.KhoiLop_NamApDung(MaNamHoc).Select(r => r.TenKhoi).ToList();
+            bool check_tenkhoi = true;
+            for (int i = 0; i < ds_tenkhoi.Count; i++)
+            {
+                if (ds_tenkhoi[i] == tenkhoi) { check_tenkhoi = false; break; }
+            }
+            if (check_tenkhoi)
+            {
+                if (list_khoi.Count() > 0)
+                {
+                    foreach (var i in list_khoi)
+                    {
+                        if (i.TenKhoi != ten_khoi)
+                        {
+                            dtb.KHOIs.Add(i);
+                        }
+                    }
+                }
+                else
+                {
+                    var std = dtb.KHOIs.Where(r => r.MaKhoi == ma_khoi).First();
+                    std.TenKhoi = TenKhoitextbox.Text;
+                }
+                MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
+            }
+            else MessageBox.Show("Tên khối đã tồn tại!");
+            foreach (var i in list_khoi)
+                dtb.KHOIs.Add(i);
+            dtb.SaveChanges();
+            var dsKhoi = from obj in dtb.KHOIs
+                         where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                         select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
+            dgvDSKHOI.DataSource = dsKhoi.ToList();
+            dgvDSKHOI.Show();
+        }
+
         private void DeleteKhoi_button_Click(object sender, EventArgs e)
         {
-            string makhoi = dgvDSKHOI.CurrentRow.Cells[0].Value.ToString();
-            using (var dtb = new dataEntities())
+            dataEntities dtb = new dataEntities();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            var check_ = dtb.KHOIs.Where(p => p.MaNamHoc == MaNamHoc);
+            List<KHOI> list_khoi = new List<KHOI>();
+            if (check_.Count() == 0)
+            {
+                list_khoi = Copy_Khoi();
+            }
+            string makhoi = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
+            string tenkhoi = dgvDSMONHOC.CurrentRow.Cells[1].Value.ToString();
+            if (list_khoi.Count > 0)
+            {
+                foreach (var i in list_khoi)
+                {
+                    if (i.TenKhoi == tenkhoi)
+                        list_khoi.Remove(i);
+                }
+                foreach (var i in list_khoi)
+                    dtb.KHOIs.Add(i);
+            }
+            else
             {
                 var std = dtb.KHOIs.Where(r => r.MaKhoi == makhoi).First();
-                std.TenKhoi = null;
-                dtb.SaveChanges();
-                var dsKhoi = from obj in dtb.KHOIs
-                             where obj.TenKhoi != null
-                             select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
-                dgvDSKHOI.DataSource = dsKhoi.ToList();
-                dgvDSKHOI.Show();
+                dtb.KHOIs.Remove(std);
             }
-            MessageBox.Show("Cập nhật danh sách khối thành công!");
+            dtb.SaveChanges();
+            var dsKhoi = from obj in dtb.KHOIs
+                         where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                         select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
+            dgvDSKHOI.DataSource = dsKhoi.ToList();
+            dgvDSKHOI.Show();
+            MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
         }
 
         //Thay đổi danh sách môn học
-
+        List<MONHOC> Copy_Monhoc()
+        {
+            dataEntities dtb = new dataEntities();
+            var getMaNamHoc = from scr in dtb.NAMHOCs
+                    where scr.NamHoc1 == Namhoctextbox.Text
+                    select scr;
+            string MaNamHoc = getMaNamHoc.SingleOrDefault().MaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2,2);
+            List<MONHOC> list = new List<MONHOC>();
+            foreach (var i in dtb.MonHoc_NamApDung(MaNamHoc))
+            {
+                MONHOC mh = new MONHOC();
+                mh.MaMonHoc = subMaNamHoc + i.MaMonHoc;
+                mh.TenMonHoc = i.TenMonHoc;
+                mh.NamApDung = MaNamHoc;
+                list.Add(mh);
+            }
+            return list;
+        }
         private void AddMonhoc_button_Click(object sender, EventArgs e)
         {
+            if (Tenmhtextbox.Text == string.Empty)
+                return;
+            var dtb = new dataEntities();
             string tenmh = Tenmhtextbox.Text;
-            if(tenmh.Length == 0)
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            List<MONHOC> list_mh = new List<MONHOC>();
+            if (tenmh.Length == 0)
             {
                 MessageBox.Show("Tên môn học không hợp lệ!");
                 return;
             }
             string[] words = tenmh.Split(' ');
             string mamh = "";
-            if (words.Length > 2) mamh = words[0].Substring(0, 1).ToUpper() + words[1].Substring(0, 1).ToUpper() + words[words.Length-1];
-            else if (words.Length == 2) mamh = words[0].Substring(0, 2) + words[words.Length -1];
-            using (var dtb = new dataEntities())
+            if (words.Length > 2) 
+            { 
+                for (int i = 0; i < words.Length - 1; i++ )
+                    mamh = mamh + words[i].Substring(0, 1).ToUpper();
+                mamh = subMaNamHoc + mamh + words[words.Length - 1];
+            }
+            else if (words.Length == 2) mamh = subMaNamHoc + words[0].Substring(0, 2) + words[words.Length - 1];
+            var check_ = dtb.MONHOCs.Where(p => p.NamApDung == MaNamHoc);
+            if (check_.Count() == 0)
             {
-                var ds_mamh = dtb.MONHOCs.Select(r => r.MaMonHoc).ToList();
-                var ds_tenmh = dtb.MONHOCs.Select(r => r.TenMonHoc).ToList();
-                bool check_tenmh = true;
-                bool check_mamh = true;
-                for (int i = 0; i < ds_mamh.Count; i++)
-                {
-                    if (ds_mamh[i] == mamh) { check_mamh = false; }
+                    list_mh = Copy_Monhoc();
+            }
+            var ds_mamh = dtb.MonHoc_NamApDung(MaNamHoc).Select(r => r.MaMonHoc).ToList();
+            var ds_tenmh = dtb.MonHoc_NamApDung(MaNamHoc).Select(r => r.TenMonHoc).ToList();
+            bool check_tenmh = true;
+            for (int i = 0; i < ds_mamh.Count; i++)
+            {
                     if (ds_tenmh[i] == tenmh) { check_tenmh = false; }
-                }
-                if (check_tenmh && check_mamh)
-                {
+            }
+            if (check_tenmh)
+            {
                     MONHOC new_item = new MONHOC();
                     new_item.TenMonHoc = tenmh;
-                    new_item.MaMonHoc = mamh;
-                    dtb.MONHOCs.Add(new_item);
-                    dtb.SaveChanges();
+                    new_item.MaMonHoc =  mamh;
+                    new_item.NamApDung = MaNamHoc;
+                    list_mh.Add(new_item);
                     MessageBox.Show("Cập nhật danh sách môn học thành công!");
-                }
-                else if (!check_tenmh) MessageBox.Show("Tên khối đã tồn tại!");
-                else if (!check_mamh)
-                {
-                    var std = dtb.MONHOCs.Where(r => r.MaMonHoc == mamh).First();
-                    std.TenMonHoc = tenmh;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách môn học thành công!");
-                }
-                var dsMonhoc = from obj in dtb.MONHOCs
-                             where obj.TenMonHoc != null
-                             select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
-                dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-                dgvDSMONHOC.Show();
             }
+            else if (!check_tenmh) MessageBox.Show("Tên môn học đã tồn tại!");
+            foreach (var i in list_mh)
+                    dtb.MONHOCs.Add(i);
+            dtb.SaveChanges();
+            var dsMonhoc = from obj in dtb.MONHOCs
+                               where obj.TenMonHoc != null && obj.NamApDung == MaNamHoc
+                               select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
+            dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+            dgvDSMONHOC.Show();
         }
         private void EditMonhoc_button_Click(object sender, EventArgs e)
         {
-            string mamh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
+            var dtb = new dataEntities();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            string ten_mh = dgvDSMONHOC.CurrentRow.Cells[1].Value.ToString();
+            string ma_mh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
             string tenmh = Tenmhtextbox.Text;
+            List<MONHOC> list_mh = new List<MONHOC>();
             if (tenmh.Length == 0)
             {
                 MessageBox.Show("Tên môn học không hợp lệ!");
                 return;
             }
-            using (var dtb = new dataEntities())
+            var check_ = dtb.MONHOCs.Where(p => p.NamApDung == MaNamHoc);
+            if (check_.Count() == 0)
             {
-                var ds_tenmh = dtb.MONHOCs.Select(r => r.TenMonHoc).ToList();
-                bool check_tenmh = true;
-                for (int i = 0; i < ds_tenmh.Count; i++)
-                {
-                    if (ds_tenmh[i] == tenmh) { check_tenmh = false; break; }
-                }
-                if (check_tenmh)
-                {
-                    var std = dtb.MONHOCs.Where(r => r.MaMonHoc == mamh).First();
-                    std.TenMonHoc = Tenmhtextbox.Text;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách môn học thành công!");
-                }
-                else MessageBox.Show("Môn học đã tồn tại!");
-                var dsMonhoc = from obj in dtb.MONHOCs
-                               where obj.TenMonHoc != null
-                               select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
-                dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-                dgvDSMONHOC.Show();
+                list_mh = Copy_Monhoc();
             }
+            var ds_tenmh = dtb.MonHoc_NamApDung(MaNamHoc).Select(r => r.TenMonHoc).ToList();
+            bool check_tenmh = true;
+            for (int i = 0; i < ds_tenmh.Count; i++)
+            {
+                if (ds_tenmh[i] == tenmh) { check_tenmh = false; break; }
+            }
+            if (check_tenmh)
+            {
+                if (list_mh.Count() > 0)
+                {
+                    foreach (var i in list_mh)
+                    {
+                        if (i.TenMonHoc == ten_mh)
+                        {
+                            i.TenMonHoc = tenmh; break;
+                        }
+                    }
+                    foreach (var i in list_mh)
+                        dtb.MONHOCs.Add(i);
+                }
+                else
+                {
+                    var std = dtb.MONHOCs.Where(r => r.MaMonHoc == ma_mh).First();
+                    std.TenMonHoc = Tenmhtextbox.Text;
+                }
+                dtb.SaveChanges();
+                MessageBox.Show("Cập nhật danh sách môn học thành công!");
+            }
+            else MessageBox.Show("Môn học đã tồn tại!");
+            var dsMonhoc = from obj in dtb.MonHoc_NamApDung(MaNamHoc)
+                           where obj.TenMonHoc != null
+                           select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
+            dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+            dgvDSMONHOC.Show();
         }
         private void DeleteMonhoc_button_Click(object sender, EventArgs e)
         {
+            dataEntities dtb = new dataEntities();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            var check_ = dtb.MONHOCs.Where(p => p.NamApDung == MaNamHoc);
+            List<MONHOC> list_mh = new List<MONHOC>();
+            if (check_.Count() == 0)
+            {
+                list_mh = Copy_Monhoc();
+            }
             string mamh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
-            using (var dtb = new dataEntities())
+            string tenmh = dgvDSMONHOC.CurrentRow.Cells[1].Value.ToString();
+            if (list_mh.Count > 0)
+            {
+                foreach (var i in list_mh)
+                {
+                    if (i.TenMonHoc != tenmh)
+                        dtb.MONHOCs.Add(i);
+                }
+
+            }
+            else
             {
                 var std = dtb.MONHOCs.Where(r => r.MaMonHoc == mamh).First();
-                std.TenMonHoc = null;
-                dtb.SaveChanges();
-                var dsMonhoc = from obj in dtb.MONHOCs
-                             where obj.TenMonHoc != null
-                             select new { MaKhoi = obj.MaMonHoc, TenKhoi = obj.TenMonHoc };
-                dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-                dgvDSMONHOC.Show();
+                dtb.MONHOCs.Remove(std);
             }
+            dtb.SaveChanges();
+            var dsMonhoc = from obj in dtb.MONHOCs
+                           where obj.TenMonHoc != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                           select new { MaKhoi = obj.MaMonHoc, TenKhoi = obj.TenMonHoc };
+            dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+            dgvDSMONHOC.Show();
             MessageBox.Show("Cập nhật danh sách môn học thành công!");
         }
         //Thay đổi danh sách điểm thành phần
+        List<THANHPHAN> Copy_ThanhPhan()
+        {
+            dataEntities dtb = new dataEntities();
+            string subMaNamHoc = MaNamHoc_moi.Substring(2, 2);
+            List<THANHPHAN> list = new List<THANHPHAN>();
+            foreach (var i in dtb.ThanhPhan_NamApDung(MaNamHoc_moi))
+            {
+                THANHPHAN mh = new THANHPHAN();
+                mh.MaThanhPhan = subMaNamHoc + i.MaThanhPhan;
+                mh.TenThanhPhan = i.TenThanhPhan;
+                mh.TrongSo = i.TrongSo;
+                mh.NamApDung = MaNamHoc_moi;
+                list.Add(mh);
+            }
+            return list;
+        }
         private void AddDiemTP_button_Click(object sender, EventArgs e)
         {
             string tentp = TenTPtextbox.Text;
             string[] words = tentp.Split(' ');
             string matp = "";
+            string string_trongso = TrongsoTPtextbox.Text;
+            if (string_trongso == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập trọng số!");
+                return;
+            }    
             double trongso = Convert.ToDouble(TrongsoTPtextbox.Text);
             if(trongso < 0.1 || trongso > 1)
             {
                 MessageBox.Show("Trọng số không hợp lệ!");
                 return;
             }
-            if (words.Length >= 1)
+            if (words.Length > 1)
             {
                 for (int i = 0; i < words.Length; i++)
                     matp += words[i].Substring(0, 1).ToUpper();
+                matp = MaNamHoc_moi.Substring(2, 2) + matp;
             }
-            else if (words.Length == 1) matp = words[0];
+            else if (words.Length == 1) matp = MaNamHoc_moi.Substring(2, 2) + words[0];
             else
             {
                 MessageBox.Show("Tên thành phần không hợp lệ!");
@@ -477,34 +660,32 @@ namespace QuanLyHocSinh
             using (var dtb = new dataEntities())
             {
                 var ds_matp = dtb.THANHPHANs.Select(r => r.MaThanhPhan).ToList();
-                var ds_tentp = dtb.THANHPHANs.Select(r => r.TenThanhPhan).ToList();
+                var ds_tentp = dtb.ThanhPhan_NamApDung(MaNamHoc_moi).Select(r => r.TenThanhPhan).ToList();
                 bool check_tentp = true;
-                bool check_matp = true;
-                for (int i = 0; i < ds_matp.Count; i++)
+                List<THANHPHAN> list_khoi = new List<THANHPHAN>();
+                var check_ = dtb.THANHPHANs.Where(p => p.NamApDung == MaNamHoc_moi);
+                if (check_.Count() == 0)
+                    list_khoi = Copy_ThanhPhan();
+                for (int i = 0; i < ds_tentp.Count; i++)
                 {
-                    if (ds_matp[i] == matp) { check_matp = false; }
                     if (ds_tentp[i] == tentp) { check_tentp = false; }
                 }
-                if (check_tentp && check_matp)
+                if (check_tentp)
                 {
                     THANHPHAN new_item = new THANHPHAN();
                     new_item.TenThanhPhan = tentp;
                     new_item.MaThanhPhan = matp;
                     new_item.TrongSo = trongso;
+                    new_item.NamApDung = MaNamHoc_moi;
                     dtb.THANHPHANs.Add(new_item);
-                    dtb.SaveChanges();
                     MessageBox.Show("Cập nhật danh sách điểm thành phần thành công!");
                 }
-                else if (!check_tentp) MessageBox.Show("Tên khối đã tồn tại!");
-                else if (!check_matp)
-                {
-                    var std = dtb.THANHPHANs.Where(r => r.MaThanhPhan == matp).First();
-                    std.TenThanhPhan = tentp;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách điểm thành phần thành công!");
-                }
+                else if (!check_tentp) MessageBox.Show("Tên thành phần đã tồn tại!");
+                foreach (var i in list_khoi)
+                    dtb.THANHPHANs.Add(i);
+                dtb.SaveChanges();
                 var dsDiemTP = from obj in dtb.THANHPHANs
-                               where obj.TenThanhPhan != null
+                               where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                                select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
                 dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
                 dgvDiemthanhphan.Show();
@@ -512,8 +693,17 @@ namespace QuanLyHocSinh
         }
         private void EditDiemTP_button_Click(object sender, EventArgs e)
         {
+            var dtb = new dataEntities();
             string tentp = TenTPtextbox.Text;
             string matp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
+            string ten_tp = dgvDiemthanhphan.CurrentRow.Cells[1].Value.ToString();
+            List<THANHPHAN> list_tp = new List<THANHPHAN>();
+            string string_trongso = TrongsoTPtextbox.Text;
+            if (string_trongso == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập trọng số!");
+                return;
+            }
             double trongso = Convert.ToDouble(TrongsoTPtextbox.Text);
             if (trongso < 0.1 || trongso > 1)
             {
@@ -525,167 +715,291 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Tên thành phần không hợp lệ!");
                 return;
             }
-            using (var dtb = new dataEntities())
+            var check_ = dtb.THANHPHANs.Where(p => p.NamApDung == MaNamHoc_moi);
+            if (check_.Count() == 0)
             {
-                var ds_tentp = dtb.THANHPHANs.Select(r => r.TenThanhPhan).ToList();
-
-                if (tentp == dgvDiemthanhphan.CurrentRow.Cells[1].Value.ToString())
+                list_tp = Copy_ThanhPhan();
+            }
+            var ds_tentp = dtb.ThanhPhan_NamApDung(MaNamHoc_moi).ToList();
+            bool check_tentp = true;
+            for (int i = 0; i < ds_tentp.Count; i++)
+            {
+                if (ds_tentp[i].TenThanhPhan == tentp) 
+                {
+                    if (ds_tentp[i].TrongSo == trongso)
+                    {
+                        check_tentp = false; break;
+                    }    
+                }
+            }
+            if (check_tentp)
+            {
+                if (list_tp.Count() > 0)
+                {
+                    foreach (var i in list_tp)
+                    {
+                        if (i.TenThanhPhan == ten_tp)
+                        {
+                            i.MaThanhPhan = tentp;
+                            i.TenThanhPhan = tentp;
+                            i.TrongSo = trongso;
+                        }
+                    }
+                    foreach (var i in list_tp)
+                        dtb.THANHPHANs.Add(i);
+                }
+                else
                 {
                     var std = dtb.THANHPHANs.Where(r => r.MaThanhPhan == matp).First();
-                    std.TenThanhPhan = TenTPtextbox.Text;
+                    std.TenThanhPhan = tentp;
                     std.TrongSo = trongso;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách điểm thành phần thành công!");
                 }
-                else MessageBox.Show("Không thể thay đổi tên thành phần.");
-                var dsDiemTP = from obj in dtb.THANHPHANs
-                               where obj.TenThanhPhan != null
-                               select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
-                dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
-                dgvDiemthanhphan.Show();
+                MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
             }
+            else MessageBox.Show("Tên thành phần đã tồn tại!");
+            dtb.SaveChanges();
+            var dsDiemTP = from obj in dtb.THANHPHANs
+                           where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                           select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
+            dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
+            dgvDiemthanhphan.Show();
         }
         private void DeleteDiemTP_button_Click(object sender, EventArgs e)
         {
+            dataEntities dtb = new dataEntities();
+            var check_ = dtb.THANHPHANs.Where(p => p.NamApDung == MaNamHoc_moi);
+            List<THANHPHAN> list_tp = new List<THANHPHAN>();
+            if (check_.Count() == 0)
+            {
+                list_tp = Copy_ThanhPhan();
+            }
             string matp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
-            using (var dtb = new dataEntities())
+            string tentp = dgvDiemthanhphan.CurrentRow.Cells[1].Value.ToString();
+
+            if (list_tp.Count > 0)
             {
-                var std = dtb.THANHPHANs.Where(r => r.MaThanhPhan == matp).First();
-                std.TenThanhPhan = null;
-                std.TrongSo = 0;
-                dtb.SaveChanges();
-                var dsDiemTP = from obj in dtb.THANHPHANs
-                               where obj.TenThanhPhan != null
-                               select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
-                dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
-                dgvDiemthanhphan.Show();
-            }
-            MessageBox.Show("Cập nhật danh sách môn học thành công!");
-        }
-        //Thay đổi danh sách xếp loại
-        private void AddXeploai_button_Click(object sender, EventArgs e)
-        {
-            string tenxl = Tenxeploaitextbox.Text;
-            string[] words = tenxl.Split(' ');
-            string maxl = "";
-            double DiemToiThieu = Convert.ToDouble(minDiemtextbox.Text);
-            double DiemToiDa = Convert.ToDouble(maxDiemtextbox.Text);
-            double DiemKC = Convert.ToDouble(DiemKCtextbox.Text);
-            string namhoc = Namhoctextbox.Text;
-            if (DiemToiThieu < 0 || DiemToiThieu > 10 || DiemToiDa < 0 || DiemToiDa > 10 || DiemKC < 0 || DiemKC > 10)
-            {
-                MessageBox.Show("Gía trị điểm không hợp lệ");
-                return;
-            }
-            if (words.Length >= 1)
-            {
-                for (int i = 0; i < words.Length; i++)
-                    maxl += words[i].Substring(0,1).ToUpper();
+                foreach (var i in list_tp)
+                {
+                    if (i.TenThanhPhan != tentp)
+                        dtb.THANHPHANs.Add(i);
+                }
+
             }
             else
             {
-                MessageBox.Show("Tên thành phần không hợp lệ!");
+                var std = dtb.THANHPHANs.Where(r => r.MaThanhPhan == matp).First();
+                dtb.THANHPHANs.Remove(std);
+            }
+            dtb.SaveChanges();
+            var dsDiemTP = from obj in dtb.THANHPHANs
+                           where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                           select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
+            dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
+            dgvDiemthanhphan.Show();
+            MessageBox.Show("Cập nhật danh sách môn học thành công!");
+        }
+        //Thay đổi danh sách xếp loại
+        List<XEPLOAI> Copy_Xeploai()
+        {
+            dataEntities dtb = new dataEntities();
+            var getMaNamHoc = from scr in dtb.NAMHOCs
+                              where scr.NamHoc1 == Namhoctextbox.Text
+                              select scr;
+            string MaNamHoc = getMaNamHoc.SingleOrDefault().MaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2).ToUpper();
+            List<XEPLOAI> list = new List<XEPLOAI>();
+            foreach (var i in dtb.XepLoai_NamApDung(MaNamHoc))
+            {
+                XEPLOAI xl = new XEPLOAI();
+                xl.MaXepLoai = subMaNamHoc + i.MaXepLoai;
+                xl.TenXepLoai = i.TenXepLoai;
+                xl.DiemToiThieu = i.DiemToiThieu;
+                xl.DiemToiDa = i.DiemToiDa;
+                xl.DiemKhongChe = i.DiemKhongChe;
+                xl.NamApDung = MaNamHoc;
+                list.Add(xl);
+            }
+            return list;
+        }
+        private void AddXeploai_button_Click(object sender, EventArgs e)
+        {
+            if (Tenxeploaitextbox.Text == string.Empty)
+                return;
+            var dtb = new dataEntities();
+            string tenxl = Tenxeploaitextbox.Text;
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            List<XEPLOAI> list_xl = new List<XEPLOAI>();
+            if (tenxl.Length == 0)
+            {
+                MessageBox.Show("Tên học lực không hợp lệ!");
                 return;
             }
-            using (var dtb = new dataEntities())
+            string[] words = tenxl.Split(' ');
+            string maxl = "";
+            if (words.Length >= 2)
             {
-                var ds_maxl = dtb.XEPLOAIs.Select(r => r.MaXepLoai).ToList();
-                var ds_tenxl = dtb.XEPLOAIs.Select(r => r.TenXepLoai).ToList();
-                bool check_tenxl = true;
-                bool check_maxl = true;
-                for (int i = 0; i < ds_maxl.Count; i++)
-                {
-                    if (ds_maxl[i] == maxl) { check_maxl = false; }
-                    if (ds_tenxl[i] == tenxl) { check_tenxl = false; }
-                }
-                if (check_tenxl && check_maxl)
-                {
-                    XEPLOAI new_item = new XEPLOAI();
-                    new_item.TenXepLoai = tenxl;
-                    new_item.MaXepLoai = maxl;
-                    new_item.DiemToiThieu = DiemToiThieu;
-                    new_item.DiemToiDa = DiemToiDa;
-                    new_item.DiemKhongChe = DiemKC;
-                    new_item.NamApDung = "NH" + namhoc[2] + namhoc[3] + namhoc[7] + namhoc[8];
-                    dtb.XEPLOAIs.Add(new_item);
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách học lực thành công!");
-                }
-                else if (!check_tenxl) MessageBox.Show("Tên học lực đã tồn tại!");
-                else if (!check_maxl)
-                {
-                    var std = dtb.XEPLOAIs.Where(r => r.MaXepLoai == maxl).First();
-                    std.TenXepLoai = tenxl;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách học lực thành công!");
-                }
-                var dsXeploai = from obj in dtb.XEPLOAIs
-                                where obj.TenXepLoai != null
-                                select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
-                dgvXepLoai.DataSource = dsXeploai.ToList();
-                dgvXepLoai.Show();
+                for (int i = 0; i < words.Length; i++)
+                    maxl += words[i].Substring(0, 1).ToUpper();
+                maxl = subMaNamHoc + maxl;
             }
+            else if (words.Length == 1) maxl = subMaNamHoc + words[0].Substring(0, 2).ToUpper();
+            var check_ = dtb.XEPLOAIs.Where(p => p.NamApDung == MaNamHoc);
+            if (check_.Count() == 0)
+            {
+                list_xl = Copy_Xeploai();
+            }
+            var ds_maxl = dtb.XepLoai_NamApDung(MaNamHoc).Select(r => r.MaXepLoai).ToList();
+            var ds_tenxl = dtb.XepLoai_NamApDung(MaNamHoc).Select(r => r.TenXepLoai).ToList();
+            bool check_tenxl = true;
+            for (int i = 0; i < ds_maxl.Count; i++)
+            {
+                if (ds_tenxl[i] == tenxl) { check_tenxl = false; }
+            }
+            if (check_tenxl)
+            {
+                XEPLOAI new_item = new XEPLOAI();
+                new_item.TenXepLoai = tenxl;
+                new_item.MaXepLoai = maxl;
+                new_item.DiemKhongChe = Convert.ToDouble(DiemKCtextbox.Text);
+                new_item.DiemToiThieu = Convert.ToDouble(minDiemtextbox.Text);
+                new_item.DiemToiDa = Convert.ToDouble(maxDiemtextbox.Text);
+                new_item.NamApDung = MaNamHoc;
+                list_xl.Add(new_item);
+                MessageBox.Show("Cập nhật danh sách học lực thành công!");
+            }
+            else if (!check_tenxl) MessageBox.Show("Tên học lực đã tồn tại!");
+            foreach (var i in list_xl)
+                dtb.XEPLOAIs.Add(i);
+            dtb.SaveChanges();
+            var dsXeploai = from obj in dtb.XEPLOAIs
+                            where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                            select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
+            dgvXepLoai.DataSource = dsXeploai.ToList();
+            dgvXepLoai.Show();
         }
         private void EditXeploai_button_Click(object sender, EventArgs e)
         {
+            var dtb = new dataEntities();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            string ten_xl = dgvXepLoai.CurrentRow.Cells[1].Value.ToString();
+            string ma_xl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
             string tenxl = Tenxeploaitextbox.Text;
-            string maxl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
-            double DiemToiThieu = Convert.ToDouble(minDiemtextbox.Text);
-            double DiemToiDa = Convert.ToDouble(maxDiemtextbox.Text);
-            double DiemKC = Convert.ToDouble(DiemKCtextbox.Text);
-            string namhoc = Namhoctextbox.Text;
-            if (DiemToiThieu < 0 || DiemToiThieu > 10 || DiemToiDa < 0 || DiemToiDa > 10 || DiemKC < 0 || DiemKC > 10)
+            List<XEPLOAI> list_xl = new List<XEPLOAI>();
+            if (tenxl.Length == 0)
             {
-                MessageBox.Show("Gía trị điểm không hợp lệ");
+                MessageBox.Show("Tên học lực không hợp lệ!");
                 return;
             }
-            if (tenxl == "")
+            var check_ = dtb.XEPLOAIs.Where(p => p.NamApDung == MaNamHoc);
+            if (check_.Count() == 0)
             {
-                MessageBox.Show("Tên thành phần không hợp lệ!");
-                return;
+                list_xl = Copy_Xeploai();
             }
-            using (var dtb = new dataEntities())
+            var ds_tenxl = dtb.XepLoai_NamApDung(MaNamHoc).Select(r => r.TenXepLoai).ToList();
+            bool check_tenxl = true;
+            for (int i = 0; i < ds_tenxl.Count; i++)
             {
-                var ds_tenxl = dtb.XEPLOAIs.Select(r => r.TenXepLoai).ToList();
-                if(tenxl == dgvXepLoai.CurrentRow.Cells[1].Value.ToString())
+                if (ds_tenxl[i] == tenxl && ds_tenxl[i] != Tenxeploaitextbox.Text) { check_tenxl = false; break; }
+            }
+            if (check_tenxl)
+            {
+                if (list_xl.Count() > 0)
                 {
-                    var std = dtb.XEPLOAIs.Where(r => r.MaXepLoai == maxl).First();
-                    std.TenXepLoai = Tenxeploaitextbox.Text;
-                    std.MaXepLoai = maxl;
-                    std.DiemToiThieu = DiemToiThieu;
-                    std.DiemToiDa = DiemToiDa;
-                    std.DiemKhongChe = DiemKC;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách học lực thành công!");
+                    foreach (var i in list_xl)
+                    {
+                        if (i.TenXepLoai == ten_xl)
+                        {
+                            i.TenXepLoai = tenxl; break;
+                        }
+                    }
+                    foreach (var i in list_xl)
+                        dtb.XEPLOAIs.Add(i);
                 }
-                else MessageBox.Show("Không thể thay đổi tên loại học lực.");
-                var dsXeploai = from obj in dtb.XEPLOAIs
-                                where obj.TenXepLoai != null
-                                select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
-                dgvXepLoai.DataSource = dsXeploai.ToList();
-                dgvXepLoai.Show();
+                else
+                {
+                    var std = dtb.XEPLOAIs.Where(r => r.MaXepLoai == ma_xl).First();
+                    std.TenXepLoai = Tenxeploaitextbox.Text;
+                    std.DiemKhongChe = Convert.ToDouble(DiemKCtextbox.Text);
+                    std.DiemToiThieu = Convert.ToDouble(minDiemtextbox.Text);
+                    std.DiemToiDa = Convert.ToDouble(maxDiemtextbox.Text);
+                }
+                dtb.SaveChanges();
+                MessageBox.Show("Cập nhật danh sách học lực thành công!");
             }
+            var dsXeploai = from obj in dtb.XEPLOAIs
+                            where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                            select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
+            dgvXepLoai.DataSource = dsXeploai.ToList();
+            dgvXepLoai.Show();
         }
         private void DeleteXeploai_button_Click(object sender, EventArgs e)
         {
+            dataEntities dtb = new dataEntities();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string MaNamHoc = getMaNamHoc.ToString();
+            string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            var check_ = dtb.XEPLOAIs.Where(p => p.NamApDung == MaNamHoc);
+            List<XEPLOAI> list_xl = new List<XEPLOAI>();
+            if (check_.Count() == 0)
+            {
+                list_xl = Copy_Xeploai();
+            }
             string maxl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
-            using (var dtb = new dataEntities())
+            string tenxl = dgvXepLoai.CurrentRow.Cells[1].Value.ToString();
+            if (list_xl.Count > 0)
+            {
+                foreach (var i in list_xl)
+                {
+                    if (i.TenXepLoai != tenxl)
+                        dtb.XEPLOAIs.Add(i);
+                }
+            }
+            else
             {
                 var std = dtb.XEPLOAIs.Where(r => r.MaXepLoai == maxl).First();
-                std.TenXepLoai = null;
-                dtb.SaveChanges();
-                var dsXeploai = from obj in dtb.XEPLOAIs
-                                where obj.TenXepLoai != null
-                                select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
-                dgvXepLoai.DataSource = dsXeploai.ToList();
-                dgvXepLoai.Show();
+                dtb.XEPLOAIs.Remove(std);
             }
+            dtb.SaveChanges();
+            var dsXeploai = from obj in dtb.XEPLOAIs
+                            where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                            select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
+            dgvXepLoai.DataSource = dsXeploai.ToList();
+            dgvXepLoai.Show();
             MessageBox.Show("Cập nhật danh sách học lực thành công!");
         }
         //Thay đổi danh sách học kỳ
+        List<HOCKY> Copy_HocKy()
+        {
+            dataEntities dtb = new dataEntities();
+            string subMaNamHoc = MaNamHoc_moi.Substring(2, 2);
+            int mahk = dtb.HOCKies.Select(r => r).ToList().Count() + 1;
+            List<HOCKY> list = new List<HOCKY>();
+            foreach (var i in dtb.HocKy_NamApDung(MaNamHoc_moi))
+            {
+                HOCKY mh = new HOCKY();
+                mh.MaHocKy = mahk.ToString();
+                mh.HocKy1 = i.HocKy;
+                mh.TrongSo = i.TrongSo;
+                mh.NamApDung = MaNamHoc_moi;
+                mahk++;
+                list.Add(mh);
+            }
+            return list;
+        }
         private void AddHocky_button_Click(object sender, EventArgs e)
         {
+            dataEntities dtb = new dataEntities();
             string tenhk = HocKytextbox.Text;
+            string string_trongso = TrongSoHKtextbox.Text;
+            if (string_trongso == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập trọng số!");
+                return;
+            }
             double trongso = Convert.ToDouble(TrongSoHKtextbox.Text);
             if (trongso < 1)
             {
@@ -697,37 +1011,52 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Tên thành phần không hợp lệ!");
                 return;
             }
-            using (var dtb = new dataEntities())
+            var ds_tenhk = dtb.HocKy_NamApDung(MaNamHoc_moi).Select(r => r.HocKy).ToList();
+            bool check_tentp = true;
+            var check_ = dtb.HOCKies.Where(p => p.NamApDung == MaNamHoc_moi);
+            List<HOCKY> list_hk = new List<HOCKY>();
+            if (check_.Count() == 0)
             {
-                var mahk = dtb.HOCKies.Select(r => r).ToList().Count() + 1;
-                var ds_tenhk = dtb.HOCKies.Select(r => r.HocKy1).ToList();
-                bool check_tentp = true;
-                for (int i = 0; i < ds_tenhk.Count; i++)
-                {
-                    if (ds_tenhk[i] == tenhk) { check_tentp = false; }
-                }
-                if (check_tentp)
-                {
-                    HOCKY new_item = new HOCKY();
-                    new_item.HocKy1 = tenhk;
-                    new_item.MaHocKy = mahk.ToString();
-                    new_item.TrongSo = trongso;
-                    dtb.HOCKies.Add(new_item);
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách học kỳ thành công!");
-                }
-                else if (!check_tentp) MessageBox.Show("Tên học kỳ đã tồn tại!");
-                var dsDiemHK = from obj in dtb.HOCKies
-                               where obj.HocKy1 != null
-                               select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
-                dgvDiemHK.DataSource = dsDiemHK.ToList();
-                dgvDiemHK.Show();
+                list_hk = Copy_HocKy();
             }
+            var mahk = list_hk.Select(r => r).ToList().Count() + dtb.HOCKies.Select(r => r).ToList().Count() + 1;
+            for (int i = 0; i < ds_tenhk.Count; i++)
+            {
+                if (ds_tenhk[i] == tenhk) { check_tentp = false; }
+            }
+            if (check_tentp)
+            {
+                HOCKY new_item = new HOCKY();
+                new_item.HocKy1 = tenhk;
+                new_item.MaHocKy =  mahk.ToString();
+                new_item.TrongSo = trongso;
+                new_item.NamApDung = MaNamHoc_moi;
+                dtb.HOCKies.Add(new_item);
+                MessageBox.Show("Cập nhật danh sách học kỳ thành công!");
+            }
+            else if (!check_tentp) MessageBox.Show("Tên học kỳ đã tồn tại!");
+            foreach (var i in list_hk)
+                dtb.HOCKies.Add(i);
+            dtb.SaveChanges();
+            var dsDiemHK = from obj in dtb.HOCKies
+                           where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                           select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
+            dgvDiemHK.DataSource = dsDiemHK.ToList();
+            dgvDiemHK.Show();
         }
         private void EditHocky_button_Click(object sender, EventArgs e)
         {
+            var dtb = new dataEntities();
             string tenhk = HocKytextbox.Text;
+            string ten_hk = dgvDiemHK.CurrentRow.Cells[1].Value.ToString();
             string mahk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
+            var ds_tenhk = dtb.HocKy_NamApDung(MaNamHoc_moi).ToList();
+            string string_trongso = TrongSoHKtextbox.Text;
+            if (string_trongso == string.Empty)
+            {
+                MessageBox.Show("Bạn chưa nhập trọng số!");
+                return;
+            }
             double trongso = Convert.ToDouble(TrongSoHKtextbox.Text);
             if (trongso < 1)
             {
@@ -739,41 +1068,87 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Tên học kỳ không hợp lệ!");
                 return;
             }
-            using (var dtb = new dataEntities())
+            var check_ = dtb.HOCKies.Where(p => p.NamApDung == MaNamHoc_moi);
+            List<HOCKY> list_hk = new List<HOCKY>();
+            if (check_.Count() == 0)
             {
-                var ds_tenhk = dtb.HOCKies.Select(r => r.HocKy1).ToList();
-
-                if (tenhk == dgvDiemHK.CurrentRow.Cells[1].Value.ToString())
+                list_hk = Copy_HocKy();
+            }
+            bool check_tenhk = true;
+            for (int i = 0; i < ds_tenhk.Count; i++)
+            {
+                if (ds_tenhk[i].HocKy == tenhk) 
+                {
+                    if (ds_tenhk[i].TrongSo == trongso)
+                    {
+                        check_tenhk = false; break;
+                    }   
+                }
+            }
+            if (check_tenhk)
+            {
+                if (list_hk.Count() > 0)
+                {
+                    foreach (var i in list_hk)
+                    {
+                        if (i.HocKy1 == ten_hk)
+                        {
+                            i.HocKy1 = tenhk;
+                            i.TrongSo = trongso;
+                            break;
+                        }
+                    }
+                    foreach (var i in list_hk)
+                        dtb.HOCKies.Add(i);
+                }
+                else
                 {
                     var std = dtb.HOCKies.Where(r => r.MaHocKy == mahk).First();
                     std.HocKy1 = HocKytextbox.Text;
                     std.TrongSo = trongso;
-                    dtb.SaveChanges();
-                    MessageBox.Show("Cập nhật danh sách học kỳ thành công!");
                 }
-                else MessageBox.Show("Không thể thay đổi tên học kỳ.");
-                var dsDiemHK = from obj in dtb.HOCKies
-                               where obj.HocKy1 != null
-                               select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
-                dgvDiemHK.DataSource = dsDiemHK.ToList();
-                dgvDiemHK.Show();
+                dtb.SaveChanges();
+                MessageBox.Show("Cập nhật danh sách học kỳ thành công!");
             }
+            else MessageBox.Show("Học kỳ này đã tồn tại!");
+            var dsDiemHK = from obj in dtb.HOCKies
+                           where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                           select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
+            dgvDiemHK.DataSource = dsDiemHK.ToList();
+            dgvDiemHK.Show();
         }
         private void DeleteHocky_button_Click(object sender, EventArgs e)
         {
+            var dtb = new dataEntities();
             string mahk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
-            using (var dtb = new dataEntities())
+            string tenhk = dgvDiemHK.CurrentRow.Cells[1].Value.ToString();
+            var check_ = dtb.HOCKies.Where(p => p.NamApDung == MaNamHoc_moi);
+            List<HOCKY> list_hk = new List<HOCKY>();
+            if (check_.Count() == 0)
+            {
+                list_hk = Copy_HocKy();
+            }
+            if (list_hk.Count > 0)
+            {
+                foreach (var i in list_hk)
+                {
+                    if (i.HocKy1 != tenhk)
+                        dtb.HOCKies.Add(i);
+                }
+
+            }
+            else
             {
                 var std = dtb.HOCKies.Where(r => r.MaHocKy == mahk).First();
-                std.HocKy1 = null;
-                dtb.SaveChanges();
-                var dsDiemHK = from obj in dtb.HOCKies
-                               where obj.HocKy1 != null
-                               select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
-                dgvDiemHK.DataSource = dsDiemHK.ToList();
-                dgvDiemHK.Show();
+                dtb.HOCKies.Remove(std);
             }
+            dtb.SaveChanges();
             MessageBox.Show("Cập nhật danh sách học kỳ thành công!");
+            var dsDiemHK = from obj in dtb.HOCKies
+                           where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
+                           select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
+            dgvDiemHK.DataSource = dsDiemHK.ToList();
+            dgvDiemHK.Show();
         }
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {

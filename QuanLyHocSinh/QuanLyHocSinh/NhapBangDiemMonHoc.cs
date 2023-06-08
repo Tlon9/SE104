@@ -31,16 +31,15 @@ namespace QuanLyHocSinh
             comboBoxYear.DataSource = comBoxYear1.ToList();
             comboBoxYear.DisplayMember = "NamHoc1";
             comboBoxYear.ValueMember = "MaNamHoc";
-            string Last_NamApDung = getCurYear();
-            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == Last_NamApDung select obj;
+            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == comboBoxYear.SelectedValue select obj;
             comboBoxClass.DataSource = comboxClassSource.ToList();
             comboBoxClass.DisplayMember = "TenLop";
             comboBoxClass.ValueMember = "MaLop";
-            var comboxClassSemester = from obj in data.HOCKies where obj.NamApDung == Last_NamApDung select obj;
+            var comboxClassSemester = from obj in data.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
             comboBoxSemester.DataSource = comboxClassSemester.ToList();
-            comboBoxSemester.DisplayMember = "HocKy1";
+            comboBoxSemester.DisplayMember = "HocKy";
             comboBoxSemester.ValueMember = "MaHocKy";
-            var ComboBoxSubjectsSource = from obj in data.MONHOCs where obj.NamApDung == Last_NamApDung select obj;
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
@@ -54,16 +53,15 @@ namespace QuanLyHocSinh
         }
         private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
-            string Last_NamApDung = getCurYear();
-            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == Last_NamApDung select obj;
+            var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == comboBoxYear.SelectedValue.ToString() select obj;
             comboBoxClass.DataSource = comboxClassSource.ToList();
             comboBoxClass.DisplayMember = "TenLop";
             comboBoxClass.ValueMember = "MaLop";
-            var comboxClassSemester = from obj in data.HOCKies where obj.NamApDung == Last_NamApDung select obj;
+            var comboxClassSemester = from obj in data.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
             comboBoxSemester.DataSource = comboxClassSemester.ToList();
-            comboBoxSemester.DisplayMember = "HocKy1";
+            comboBoxSemester.DisplayMember = "HocKy";
             comboBoxSemester.ValueMember = "MaHocKy";
-            var ComboBoxSubjectsSource = from obj in data.MONHOCs where obj.NamApDung == Last_NamApDung select obj;
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
@@ -88,9 +86,7 @@ namespace QuanLyHocSinh
         {
             panelScores.Controls.Clear();
             list.Clear();
-            string Last_NamApDung = getCurYear();
-            var Score = from scr in data.THANHPHANs
-                        where scr.NamApDung == Last_NamApDung
+            var Score = from scr in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString())
                         select new { scr.MaThanhPhan, scr.TenThanhPhan };
 
             int x = 100;
@@ -131,7 +127,7 @@ namespace QuanLyHocSinh
             public string DIEMTB { get { return DiemTB; } set { DiemTB = value; } }
             public string XEPLOAI { get { return Xeploai; } set { Xeploai = value; } }
         }
-        string getCurYear()
+        /*string getCurYear()
         {
             string currYear = comboBoxYear.SelectedValue.ToString();
             int Curr_year_int = Convert.ToInt32(currYear.Substring(currYear.Length - 4));
@@ -154,24 +150,19 @@ namespace QuanLyHocSinh
                 }
             }
             return Last_NamApDung.Substring(Last_NamApDung.Length - 8, 6);
-        }
+        }*/
         void ShowGrid(string i_o)
         {
             Dictionary<string, int> ScoreDict = new Dictionary<string, int>();
             int k = 0;
-            string Last_NamApDung = getCurYear();
             int count = 0;
-            foreach (var item in data.THANHPHANs)
+            foreach (var item in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
             {
-                if (item.NamApDung == Last_NamApDung)
-                {
                     ScoreDict.Add(item.MaThanhPhan.ToString(), k++);
-                    count ++;
-                }    
+                    count ++;    
             }
-            var reSourceXL_2 = from scr1 in data.XEPLOAIs.AsEnumerable()
-                               where scr1.NamApDung == Last_NamApDung
-                               select new {MaXepLoai = scr1.MaXepLoai,  TenXepLoai = scr1.TenXepLoai, NamApDung = scr1.NamApDung};
+            var reSourceXL_2 = from scr1 in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()).AsEnumerable() 
+                                select new {MaXepLoai = scr1.MaXepLoai,  TenXepLoai = scr1.TenXepLoai, NamApDung = scr1.NamApDung};
             
             var reSource1 = from scr1 in data.KETQUA_MONHOC_HOCSINH.AsEnumerable()
                            join scr in data.DIEMs.AsEnumerable() on scr1.MaKetQua equals scr.MaKetQua
@@ -211,10 +202,9 @@ namespace QuanLyHocSinh
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("Mã học sinh", typeof(string));
             dt.Columns.Add("Họ tên", typeof(string));
-            foreach (var ktem in data.THANHPHANs)
+            foreach (var ktem in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
             {
-                if (ktem.NamApDung == Last_NamApDung)
-                    dt.Columns.Add(ktem.TenThanhPhan, typeof(string));
+                dt.Columns.Add(ktem.TenThanhPhan, typeof(string));
             }    
             dt.Columns.Add("Điểm TB", typeof(string));
             dt.Columns.Add("Xếp loại", typeof(string));
@@ -226,13 +216,10 @@ namespace QuanLyHocSinh
                     row1["Mã học sinh"] = reS[i].MHS;
                     row1["Họ tên"] = reS[i].HOTEN;
                     int i_temp = 0;
-                    foreach (var ktem in data.THANHPHANs)
+                    foreach (var ktem in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
                     {
-                        if (ktem.NamApDung == Last_NamApDung)
-                        {
-                            row1[ktem.TenThanhPhan] = reS[i].List_score[i_temp];
-                            i_temp++;
-                        }    
+                        row1[ktem.TenThanhPhan] = reS[i].List_score[i_temp];
+                        i_temp++;  
                     }
                     row1["Điểm TB"] = reS[i].DIEMTB;
                     row1["Xếp loại"] = reS[i].XEPLOAI;
@@ -282,7 +269,6 @@ namespace QuanLyHocSinh
             if (list.Count() == 0) return;
             var a = from obj in data.HOCSINHs where obj.MaHocSinh == comboBoxID.Text select obj.HoTen;
             textBoxName.Text = a.ToList().SingleOrDefault();
-            string Last_NamApDung = getCurYear();
             var reSource1 = from scr in data.KETQUA_MONHOC_HOCSINH
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in data.XEPLOAIs on scr.MaXepLoai equals cls1.MaXepLoai
@@ -340,9 +326,7 @@ namespace QuanLyHocSinh
         }
         string funcXepLoai(string t)
         {
-            string Last_NamApDung = getCurYear();
-            var reSource = from r in data.XEPLOAIs
-                           where r.NamApDung == Last_NamApDung
+            var reSource = from r in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString())
                            select r;
             double a;
             var str_K = reSource.Where(p => p.TenXepLoai == "Không");
@@ -351,7 +335,7 @@ namespace QuanLyHocSinh
                 a = Convert.ToDouble(t);
             else
                 return str_Khong;
-            foreach (var item in reSource)
+            foreach (var item in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
             {
                 if (a >= Convert.ToDouble(item.DiemToiThieu) && a <= Convert.ToDouble(item.DiemToiDa))
                 {
@@ -362,10 +346,9 @@ namespace QuanLyHocSinh
         }
         double getTrongSo(string a)
         {
-            string Last_NamApDung = getCurYear();
-            foreach (var item in data.THANHPHANs)
+            foreach (var item in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
             {
-                if (item.MaThanhPhan == a && item.NamApDung == Last_NamApDung)
+                if (item.MaThanhPhan == a)
                 {
                     return Convert.ToDouble(item.TrongSo);
                 }
@@ -380,7 +363,6 @@ namespace QuanLyHocSinh
                             select scr.MaKetQua;
             var temp = from scr in data.DIEMs
                        select scr.MaDiem;
-            string Last_NamApDung = getCurYear();
             var temp_kq = data.KETQUA_MONHOC_HOCSINH.OrderByDescending(row => row.MaKetQua).Select(row=>row.MaKetQua).FirstOrDefault();
             var temp_index = data.DIEMs.OrderByDescending(row => row.MaDiem).Select(row => row.MaDiem).FirstOrDefault();
             string temp2_kq = temp_kq.ToString();
@@ -422,10 +404,8 @@ namespace QuanLyHocSinh
                 var check_E = from scr in data.DIEMs
                               where scr.MaKetQua == ID
                               select new { MaThanhPhan = scr.MaThanhPhan };
-                foreach (var tb in data.THANHPHANs)
+                foreach (var tb in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
                 {
-                    if (tb.NamApDung == Last_NamApDung)
-                    {
                         int isE = 0;
                         foreach (var t in check_E)
                         {
@@ -450,8 +430,7 @@ namespace QuanLyHocSinh
                                 diemTP.Diem1 = null;
                             }
                             data.DIEMs.Add(diemTP);
-                        }
-                    }                 
+                        }               
                 }
                 foreach (TextBox txb in list)
                 {
@@ -549,12 +528,10 @@ namespace QuanLyHocSinh
             int index = 0;
             int x = 100;
             int y = 0;
-            string Last_NamApDung = getCurYear();
+            //string Last_NamApDung = getCurYear();
             panelNumberOfClassify.AutoSize = true;
-            foreach (var i in data.XEPLOAIs.OrderByDescending(r => r.DiemToiThieu))
+            foreach (var i in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
             {
-                if (i.NamApDung == Last_NamApDung)
-                {
                     if(i.TenXepLoai != "Không")
                     {
                         Label lb = new Label();
@@ -590,16 +567,15 @@ namespace QuanLyHocSinh
                     keyValuePairs.Add(i.MaXepLoai, index);
                     index++;
                     list_xeploai.Add(0);
-                }
             }
             int numberofClass = reSource.Count();
             if (numberofClass > 0)
             {
                 foreach (var i in reSource)
                 {
-                    foreach (var j in data.XEPLOAIs)
+                    foreach (var j in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
                     {
-                        if (i.Xeploai == j.MaXepLoai && j.NamApDung == Last_NamApDung)
+                        if (i.Xeploai == j.MaXepLoai)
                         {
                             list_xeploai[keyValuePairs[j.MaXepLoai]]++;
                         }
