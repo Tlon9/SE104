@@ -30,9 +30,9 @@ namespace QuanLyHocSinh
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemAddStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemListCreate = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +93,7 @@ namespace QuanLyHocSinh
             this.MenuItemAddStudent.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemAddStudent.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuItemAddStudent.Name = "MenuItemAddStudent";
-            this.MenuItemAddStudent.Size = new System.Drawing.Size(230, 50);
+            this.MenuItemAddStudent.Size = new System.Drawing.Size(200, 50);
             this.MenuItemAddStudent.Text = "Tiếp nhận học sinh";
             this.MenuItemAddStudent.Visible = false;
             this.MenuItemAddStudent.Click += new System.EventHandler(this.MenuItemAddStudent_Click);
@@ -104,7 +104,7 @@ namespace QuanLyHocSinh
             this.MenuItemListCreate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemListCreate.ForeColor = System.Drawing.Color.White;
             this.MenuItemListCreate.Name = "MenuItemListCreate";
-            this.MenuItemListCreate.Size = new System.Drawing.Size(250, 50);
+            this.MenuItemListCreate.Size = new System.Drawing.Size(200, 50);
             this.MenuItemListCreate.Text = "Lập danh sách lớp";
             this.MenuItemListCreate.Visible = false;
             this.MenuItemListCreate.Click += new System.EventHandler(this.MenuItemListCreate_Click);
@@ -118,7 +118,7 @@ namespace QuanLyHocSinh
             this.MenuItemSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemSearch.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuItemSearch.Name = "MenuItemSearch";
-            this.MenuItemSearch.Size = new System.Drawing.Size(180, 50);
+            this.MenuItemSearch.Size = new System.Drawing.Size(150, 50);
             this.MenuItemSearch.Text = "Tra cứu";
             this.MenuItemSearch.Visible = false;
             // 
@@ -145,7 +145,7 @@ namespace QuanLyHocSinh
             this.MenuItemSubjectScore.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemSubjectScore.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuItemSubjectScore.Name = "MenuItemSubjectScore";
-            this.MenuItemSubjectScore.Size = new System.Drawing.Size(200, 50);
+            this.MenuItemSubjectScore.Size = new System.Drawing.Size(180, 50);
             this.MenuItemSubjectScore.Text = "Bảng điểm";
             this.MenuItemSubjectScore.Visible = false;
             // 
@@ -172,7 +172,7 @@ namespace QuanLyHocSinh
             this.MenuItemFinalReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemFinalReport.ForeColor = System.Drawing.SystemColors.Window;
             this.MenuItemFinalReport.Name = "MenuItemFinalReport";
-            this.MenuItemFinalReport.Size = new System.Drawing.Size(250, 50);
+            this.MenuItemFinalReport.Size = new System.Drawing.Size(200, 50);
             this.MenuItemFinalReport.Text = "Báo cáo tổng kết";
             this.MenuItemFinalReport.Visible = false;
             // 
@@ -196,7 +196,7 @@ namespace QuanLyHocSinh
             this.MenuQuanLyQuyDinh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuQuanLyQuyDinh.ForeColor = System.Drawing.Color.White;
             this.MenuQuanLyQuyDinh.Name = "MenuQuanLyQuyDinh";
-            this.MenuQuanLyQuyDinh.Size = new System.Drawing.Size(250, 50);
+            this.MenuQuanLyQuyDinh.Size = new System.Drawing.Size(200, 50);
             this.MenuQuanLyQuyDinh.Text = "Quản lý quy định";
             this.MenuQuanLyQuyDinh.Visible = false;
             this.MenuQuanLyQuyDinh.Click += new System.EventHandler(this.MenuQuanLyQuyDinh_Click);
@@ -255,26 +255,26 @@ namespace QuanLyHocSinh
             // 
             // guna2DataGridView
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.guna2DataGridView.ColumnHeadersHeight = 40;
             this.guna2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.guna2DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView.Location = new System.Drawing.Point(243, 23);
             this.guna2DataGridView.Name = "guna2DataGridView";
