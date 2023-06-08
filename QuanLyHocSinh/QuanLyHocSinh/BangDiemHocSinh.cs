@@ -58,18 +58,17 @@ namespace QuanLyHocSinh
                         select h.HoTen;
             return HoTen.First();
         }
-        string GetLop(string MaLop, string HK, string NH, dataEntities dtb)
+        string GetLop(string MaLop,string NH, dataEntities dtb)
         {
             var Lop = from ctl in dtb.CTLOPs
                       join kq in dtb.KETQUA_MONHOC_HOCSINH on ctl.MaHocSinh equals kq.MaHocSinh
                       join l in dtb.LOPs on ctl.MaLop equals l.MaLop
-                      join hk in dtb.HOCKies on kq.MaHocKy equals hk.MaHocKy
                       join nh in dtb.NAMHOCs on kq.MaNamHoc equals nh.MaNamHoc
-                      where kq.MaHocSinh == MaLop && hk.HocKy1 == HK && nh.NamHoc1 == NH
+                      where kq.MaHocSinh == MaLop && nh.NamHoc1 == NH
                       select l.TenLop;
             return Lop.First();
         }
-        Array Diem_TP(string MHS, string HK, string NH, string TP)
+        List<double?> Diem_TP(string MHS, string HK, string NH, string TP,string MH)
         {
             dataEntities dtb = new dataEntities();
             var DIEM = from d in dtb.DIEMs
@@ -79,9 +78,9 @@ namespace QuanLyHocSinh
                        join mh in dtb.MONHOCs on kq.MaMonHoc equals mh.MaMonHoc
                        join tp in dtb.THANHPHANs on d.MaThanhPhan equals tp.MaThanhPhan
                        where kq.MaHocSinh == MHS && hk.HocKy1 == HK && nh.NamHoc1 == NH
-                       && tp.TenThanhPhan == TP
-                       select (d.Diem1 != null ? d.Diem1 : null);
-            return DIEM.ToArray();
+                       && tp.TenThanhPhan == TP && mh.MaMonHoc == MH
+                       select d.Diem1;
+            return DIEM.ToList();
         }
         bool Kiemtra_input(string MHS, string HK = "", string NH = "")
         {
@@ -202,8 +201,8 @@ namespace QuanLyHocSinh
                     newRow.Cells[2].Value = TenMonHoc.ToList()[i];
                     for(int j = 0; j < ds_thanhphan.Count; j++)
                     {
-                        var DiemTP = Diem_TP(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, ds_thanhphan[j].ToString());
-                        if (i<DiemTP.Length) newRow.Cells[j+3].Value = DiemTP.GetValue(i);
+                        var DiemTP = Diem_TP(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, ds_thanhphan[j].ToString(), MaMonHoc.ToList()[i]);
+                        if (DiemTP.Count != 0) newRow.Cells[j+3].Value = DiemTP[0];
                     }
 
                     newRow.Cells[ds_thanhphan.Count+3].Value = DIEMTB.ToList()[i];
@@ -213,7 +212,7 @@ namespace QuanLyHocSinh
                 HoTenTextBox.Text = GetHoTen(MHStextbox_hk.Text, dtb);
 
                 //LOP
-                LopTextBox.Text = GetLop(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, dtb);
+                LopTextBox.Text = GetLop(MHStextbox_hk.Text,NamHocCbb_hk.Text, dtb);
 
                 //Diem trung binh ca hoc ky
                 var DTBHK = DIEMTB.Sum(row => row) / DIEMTB.Count(row => row != null);
@@ -231,7 +230,7 @@ namespace QuanLyHocSinh
                 {
                     if (DTBHK >= DiemToiThieu[k])
                     {
-                        if (DIEMTB.Min() <= DiemKhongChe.ToList()[k])
+                        if (DIEMTB.Min() < DiemKhongChe.ToList()[k])
                         {
                             XepLoaiTextBox.Text = TenXepLoai.ToList()[k + 1].ToString();
                         }
@@ -295,27 +294,32 @@ namespace QuanLyHocSinh
                             newRow.Cells[j].Value = DiemTBhk[0];
                             Tong_DiemTB_mon += (double)(DiemTBhk[0] * trong_so_hk[0]);
                             tong_trong_so += (double)trong_so_hk[0];
+                            
                         }
                         else
                         {
-                            newRow.Cells[j + 3].Value = null;
+                            newRow.Cells[j].Value = null;
                         }
                     }
+                    double DiemTB_mon_namhoc = 0; 
                     if (newRow.Cells[ds_hocky.Count + 2].Value != null && newRow.Cells[ds_hocky.Count + 1].Value != null)
-                        newRow.Cells[ds_hocky.Count + 3].Value = Math.Round(Tong_DiemTB_mon / tong_trong_so, 2);
+                        DiemTB_mon_namhoc = Math.Round(Tong_DiemTB_mon / tong_trong_so, 2);
                     else if (newRow.Cells[ds_hocky.Count + 2].Value == null)
-                        newRow.Cells[ds_hocky.Count + 3].Value = newRow.Cells[ds_hocky.Count + 1].Value;
+                        DiemTB_mon_namhoc = Convert.ToDouble(newRow.Cells[ds_hocky.Count + 1].Value);
                     else if (newRow.Cells[ds_hocky.Count + 1].Value == null)
-                        newRow.Cells[ds_hocky.Count + 3].Value = newRow.Cells[ds_hocky.Count + 2].Value;
+                        DiemTB_mon_namhoc = Convert.ToDouble(newRow.Cells[ds_hocky.Count + 2].Value);
                     else so_mon_da_co_diem -= 1;
-                    Tong_DiemTB += Math.Round(Tong_DiemTB_mon / tong_trong_so, 2);
+                    if (Min_DiemTB > DiemTB_mon_namhoc) Min_DiemTB = DiemTB_mon_namhoc;
+
+                    newRow.Cells[ds_hocky.Count + 3].Value = DiemTB_mon_namhoc;
+                    Tong_DiemTB += DiemTB_mon_namhoc;
                     DNHGridView.Rows.Add(newRow);
                 }
                 //Ho Ten
                 HoTenTxtBox_nh.Text = GetHoTen(MHStextbox_nh.Text, dtb);
 
                 //LOP
-                LopTxtBox_nh.Text = GetLop(MHStextbox_nh.Text, "HKI", NamHocCbb_nh.Text, dtb);
+                LopTxtBox_nh.Text = GetLop(MHStextbox_nh.Text,NamHocCbb_nh.Text, dtb);
 
                 //Tinh Diem TB
                 double DiemTB = Math.Round((double)(Tong_DiemTB / so_mon_da_co_diem),2);
@@ -330,7 +334,7 @@ namespace QuanLyHocSinh
                 {
                     if (DiemTB >= DiemToiThieu[k])
                     {
-                        if (Min_DiemTB <= DiemKhongChe.ToList()[k])
+                        if (Min_DiemTB < DiemKhongChe.ToList()[k])
                         {
                             XepLoaiTxtBox_nh.Text = TenXepLoai.ToList()[k + 1].ToString();
                         }
@@ -409,7 +413,7 @@ namespace QuanLyHocSinh
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            ExportToExcel(DHKGridView);
+            ExportToExcel(DNHGridView);
         }
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)

@@ -436,7 +436,7 @@
             this.MHStextbox_hk.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MHStextbox_hk.ForeColor = System.Drawing.Color.Black;
             this.MHStextbox_hk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MHStextbox_hk.Location = new System.Drawing.Point(12, 10);
+            this.MHStextbox_hk.Location = new System.Drawing.Point(313, 17);
             this.MHStextbox_hk.Name = "MHStextbox_hk";
             this.MHStextbox_hk.PasswordChar = '\0';
             this.MHStextbox_hk.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -473,7 +473,7 @@
             this.HocKyCbb.ForeColor = System.Drawing.Color.Black;
             this.HocKyCbb.IntegralHeight = false;
             this.HocKyCbb.ItemHeight = 30;
-            this.HocKyCbb.Location = new System.Drawing.Point(354, 10);
+            this.HocKyCbb.Location = new System.Drawing.Point(170, 17);
             this.HocKyCbb.Margin = new System.Windows.Forms.Padding(2);
             this.HocKyCbb.Name = "HocKyCbb";
             this.HocKyCbb.Size = new System.Drawing.Size(112, 36);
@@ -491,7 +491,7 @@
             this.NamHocCbb_hk.ForeColor = System.Drawing.Color.Black;
             this.NamHocCbb_hk.IntegralHeight = false;
             this.NamHocCbb_hk.ItemHeight = 30;
-            this.NamHocCbb_hk.Location = new System.Drawing.Point(185, 10);
+            this.NamHocCbb_hk.Location = new System.Drawing.Point(2, 17);
             this.NamHocCbb_hk.Margin = new System.Windows.Forms.Padding(2);
             this.NamHocCbb_hk.Name = "NamHocCbb_hk";
             this.NamHocCbb_hk.Size = new System.Drawing.Size(146, 36);
@@ -745,7 +745,7 @@
             this.MHStextbox_nh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MHStextbox_nh.ForeColor = System.Drawing.Color.Black;
             this.MHStextbox_nh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MHStextbox_nh.Location = new System.Drawing.Point(12, 10);
+            this.MHStextbox_nh.Location = new System.Drawing.Point(170, 17);
             this.MHStextbox_nh.Name = "MHStextbox_nh";
             this.MHStextbox_nh.PasswordChar = '\0';
             this.MHStextbox_nh.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -782,7 +782,7 @@
             this.NamHocCbb_nh.ForeColor = System.Drawing.Color.Black;
             this.NamHocCbb_nh.IntegralHeight = false;
             this.NamHocCbb_nh.ItemHeight = 30;
-            this.NamHocCbb_nh.Location = new System.Drawing.Point(185, 10);
+            this.NamHocCbb_nh.Location = new System.Drawing.Point(2, 17);
             this.NamHocCbb_nh.Margin = new System.Windows.Forms.Padding(2);
             this.NamHocCbb_nh.Name = "NamHocCbb_nh";
             this.NamHocCbb_nh.Size = new System.Drawing.Size(146, 36);
