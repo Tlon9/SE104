@@ -26,12 +26,14 @@ namespace QuanLyHocSinh
                         where obj.TenLop != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                         select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
             dgvDSLOP.DataSource = dsLop.ToList();
+            dgvDSLOP.Columns[0].Visible = false;
             dgvDSLOP.Show();
             //Danh sách khối
             var dsKhoi = from obj in dtb.KHOIs
                          where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                          select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
             dgvDSKHOI.DataSource = dsKhoi.ToList();
+            dgvDSKHOI.Columns[0].Visible = false;
             dgvDSKHOI.Show();
             //Danh sách môn học
             var dsMonhoc = from obj in dtb.MONHOCs
@@ -44,18 +46,21 @@ namespace QuanLyHocSinh
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
             dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
+            dgvDiemthanhphan.Columns[0].Visible = false;
             dgvDiemthanhphan.Show();
             //Danh sách xếp loại
             var dsXeploai = from obj in dtb.XEPLOAIs
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
+            dgvXepLoai.Columns[0].Visible = false;
             dgvXepLoai.Show();
             //Danh sách điểm học kỳ
             var dsDiemHK = from obj in dtb.HOCKies
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
             dgvDiemHK.DataSource = dsDiemHK.ToList();
+            dgvDiemHK.Columns[0].Visible = false;
             dgvDiemHK.Show();
             //Load quy định tuổi tiếp nhận học sinh
             var min_Tuoi = from obj in dtb.THAMSOes
@@ -134,6 +139,7 @@ namespace QuanLyHocSinh
                         var dsMonhoc = from obj in dtb.MonHoc_NamApDung(MaNamHoc_moi)
                                        select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
                         dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+                        dgvDSMONHOC.Columns[0].Visible = false;
                         dgvDSMONHOC.Show();
                         //Thêm các lớp của năm học mới.
                         string MaNamHoc_Truoc = dtb.NAMHOCs.AsEnumerable().LastOrDefault().MaNamHoc.ToString();
@@ -161,6 +167,7 @@ namespace QuanLyHocSinh
                                      where obj.TenLop != null && obj.MaNamHoc == manamhoc
                                      select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
                         dgvDSLOP.DataSource = dsLop.ToList();
+                        dgvDSLOP.Columns[0].Visible = false;
                         dgvDSLOP.Show();
                         PanelDsQuydinh.Show();
                     }
@@ -230,6 +237,7 @@ namespace QuanLyHocSinh
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
+                dgvDSLOP.Columns[0].Visible = false;
                 dgvDSLOP.Show();
             }
         }
@@ -247,6 +255,7 @@ namespace QuanLyHocSinh
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
+                dgvDSLOP.Columns[0].Visible = false;
                 dgvDSLOP.Show();
             }
         }
@@ -279,6 +288,7 @@ namespace QuanLyHocSinh
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
+                dgvDSLOP.Columns[0].Visible = false;
                 dgvDSLOP.Show();
             }
         }
@@ -348,6 +358,7 @@ namespace QuanLyHocSinh
                              where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                              select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
                 dgvDSKHOI.DataSource = dsKhoi.ToList();
+                dgvDSKHOI.Columns[0].Visible = false;
                 dgvDSKHOI.Show();
             }
         }
@@ -404,6 +415,7 @@ namespace QuanLyHocSinh
                          where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                          select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
             dgvDSKHOI.DataSource = dsKhoi.ToList();
+            dgvDSKHOI.Columns[0].Visible = false;
             dgvDSKHOI.Show();
         }
 
@@ -441,6 +453,7 @@ namespace QuanLyHocSinh
                          where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                          select new { MaKhoi = obj.MaKhoi, TenKhoi = obj.TenKhoi };
             dgvDSKHOI.DataSource = dsKhoi.ToList();
+            dgvDSKHOI.Columns[0].Visible = false;
             dgvDSKHOI.Show();
             MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
         }
@@ -518,6 +531,7 @@ namespace QuanLyHocSinh
                                where obj.TenMonHoc != null && obj.NamApDung == MaNamHoc
                                select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
             dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+            dgvDSMONHOC.Columns[0].Visible = false;
             dgvDSMONHOC.Show();
         }
         private void EditMonhoc_button_Click(object sender, EventArgs e)
@@ -573,6 +587,7 @@ namespace QuanLyHocSinh
                            where obj.TenMonHoc != null
                            select new { MaMonHoc = obj.MaMonHoc, TenMonHoc = obj.TenMonHoc };
             dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+            dgvDSMONHOC.Columns[0].Visible = false;
             dgvDSMONHOC.Show();
         }
         private void DeleteMonhoc_button_Click(object sender, EventArgs e)
@@ -608,6 +623,7 @@ namespace QuanLyHocSinh
                            where obj.TenMonHoc != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaKhoi = obj.MaMonHoc, TenKhoi = obj.TenMonHoc };
             dgvDSMONHOC.DataSource = dsMonhoc.ToList();
+            dgvDSMONHOC.Columns[0].Visible = false;
             dgvDSMONHOC.Show();
             MessageBox.Show("Cập nhật danh sách môn học thành công!");
         }
@@ -688,6 +704,7 @@ namespace QuanLyHocSinh
                                where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                                select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
                 dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
+                dgvDiemthanhphan.Columns[0].Visible = false;
                 dgvDiemthanhphan.Show();
             }
         }
@@ -754,7 +771,7 @@ namespace QuanLyHocSinh
                     std.TenThanhPhan = tentp;
                     std.TrongSo = trongso;
                 }
-                MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
+                MessageBox.Show("Cập nhật danh sách điểm thành phần thành công!");
             }
             else MessageBox.Show("Tên thành phần đã tồn tại!");
             dtb.SaveChanges();
@@ -762,6 +779,7 @@ namespace QuanLyHocSinh
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
             dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
+            dgvDiemthanhphan.Columns[0].Visible = false;
             dgvDiemthanhphan.Show();
         }
         private void DeleteDiemTP_button_Click(object sender, EventArgs e)
@@ -795,6 +813,7 @@ namespace QuanLyHocSinh
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaThanhPhan = obj.MaThanhPhan, TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
             dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
+            dgvDiemthanhphan.Columns[0].Visible = false;
             dgvDiemthanhphan.Show();
             MessageBox.Show("Cập nhật danh sách môn học thành công!");
         }
@@ -877,6 +896,7 @@ namespace QuanLyHocSinh
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
+            dgvXepLoai.Columns[0].Visible = false;
             dgvXepLoai.Show();
         }
         private void EditXeploai_button_Click(object sender, EventArgs e)
@@ -934,6 +954,7 @@ namespace QuanLyHocSinh
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
+            dgvXepLoai.Columns[0].Visible = false;
             dgvXepLoai.Show();
         }
         private void DeleteXeploai_button_Click(object sender, EventArgs e)
@@ -968,6 +989,7 @@ namespace QuanLyHocSinh
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             select new { MaXepLoai = obj.MaXepLoai, TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
+            dgvXepLoai.Columns[0].Visible = false;
             dgvXepLoai.Show();
             MessageBox.Show("Cập nhật danh sách học lực thành công!");
         }
@@ -1042,6 +1064,7 @@ namespace QuanLyHocSinh
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
             dgvDiemHK.DataSource = dsDiemHK.ToList();
+            dgvDiemHK.Columns[0].Visible = false;
             dgvDiemHK.Show();
         }
         private void EditHocky_button_Click(object sender, EventArgs e)
@@ -1115,6 +1138,7 @@ namespace QuanLyHocSinh
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
             dgvDiemHK.DataSource = dsDiemHK.ToList();
+            dgvDiemHK.Columns[0].Visible = false;
             dgvDiemHK.Show();
         }
         private void DeleteHocky_button_Click(object sender, EventArgs e)
@@ -1148,6 +1172,7 @@ namespace QuanLyHocSinh
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { MaHocKy = obj.MaHocKy, HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
             dgvDiemHK.DataSource = dsDiemHK.ToList();
+            dgvDiemHK.Columns[0].Visible = false;
             dgvDiemHK.Show();
         }
         private void guna2ImageButton2_Click(object sender, EventArgs e)
