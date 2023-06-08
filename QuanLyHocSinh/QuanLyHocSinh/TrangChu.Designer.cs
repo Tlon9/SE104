@@ -30,9 +30,9 @@ namespace QuanLyHocSinh
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemAddStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemListCreate = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,10 +53,10 @@ namespace QuanLyHocSinh
             this.guna2DataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ButtonClass = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ButtonSubject = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ComboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2ComboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2ButtonSubject = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ButtonClass = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ImageButtonUser = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TextBoxUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.Background = new System.Windows.Forms.Panel();
@@ -80,10 +80,10 @@ namespace QuanLyHocSinh
             this.MenuItemSubjectScore,
             this.MenuItemFinalReport,
             this.MenuQuanLyQuyDinh});
-            this.menuStrip1.Location = new System.Drawing.Point(4, 208);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 208);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1304, 50);
+            this.menuStrip1.Size = new System.Drawing.Size(1312, 50);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -255,26 +255,26 @@ namespace QuanLyHocSinh
             // 
             // guna2DataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridView.ColumnHeadersHeight = 40;
             this.guna2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView.Location = new System.Drawing.Point(243, 23);
             this.guna2DataGridView.Name = "guna2DataGridView";
@@ -329,23 +329,30 @@ namespace QuanLyHocSinh
             this.guna2Panel3.Size = new System.Drawing.Size(847, 405);
             this.guna2Panel3.TabIndex = 21;
             // 
-            // guna2ButtonClass
+            // label1
             // 
-            this.guna2ButtonClass.AutoRoundedCorners = true;
-            this.guna2ButtonClass.BorderRadius = 22;
-            this.guna2ButtonClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2ButtonClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2ButtonClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2ButtonClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonClass.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.guna2ButtonClass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2ButtonClass.ForeColor = System.Drawing.Color.White;
-            this.guna2ButtonClass.Location = new System.Drawing.Point(35, 145);
-            this.guna2ButtonClass.Name = "guna2ButtonClass";
-            this.guna2ButtonClass.Size = new System.Drawing.Size(153, 47);
-            this.guna2ButtonClass.TabIndex = 20;
-            this.guna2ButtonClass.Text = "Danh sách lớp";
-            this.guna2ButtonClass.Click += new System.EventHandler(this.guna2ButtonClass_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 28);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Năm học";
+            // 
+            // guna2ComboBoxYear
+            // 
+            this.guna2ComboBoxYear.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBoxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBoxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBoxYear.ItemHeight = 30;
+            this.guna2ComboBoxYear.Location = new System.Drawing.Point(35, 70);
+            this.guna2ComboBoxYear.Name = "guna2ComboBoxYear";
+            this.guna2ComboBoxYear.Size = new System.Drawing.Size(166, 36);
+            this.guna2ComboBoxYear.TabIndex = 22;
             // 
             // guna2ButtonSubject
             // 
@@ -365,30 +372,23 @@ namespace QuanLyHocSinh
             this.guna2ButtonSubject.Text = "Danh sách môn";
             this.guna2ButtonSubject.Click += new System.EventHandler(this.guna2ButtonSubject_Click);
             // 
-            // guna2ComboBoxYear
+            // guna2ButtonClass
             // 
-            this.guna2ComboBoxYear.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBoxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBoxYear.ItemHeight = 30;
-            this.guna2ComboBoxYear.Location = new System.Drawing.Point(35, 70);
-            this.guna2ComboBoxYear.Name = "guna2ComboBoxYear";
-            this.guna2ComboBoxYear.Size = new System.Drawing.Size(166, 36);
-            this.guna2ComboBoxYear.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 28);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Năm học";
+            this.guna2ButtonClass.AutoRoundedCorners = true;
+            this.guna2ButtonClass.BorderRadius = 22;
+            this.guna2ButtonClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2ButtonClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2ButtonClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2ButtonClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2ButtonClass.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.guna2ButtonClass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2ButtonClass.ForeColor = System.Drawing.Color.White;
+            this.guna2ButtonClass.Location = new System.Drawing.Point(35, 145);
+            this.guna2ButtonClass.Name = "guna2ButtonClass";
+            this.guna2ButtonClass.Size = new System.Drawing.Size(153, 47);
+            this.guna2ButtonClass.TabIndex = 20;
+            this.guna2ButtonClass.Text = "Danh sách lớp";
+            this.guna2ButtonClass.Click += new System.EventHandler(this.guna2ButtonClass_Click);
             // 
             // guna2ImageButtonUser
             // 
@@ -433,9 +433,10 @@ namespace QuanLyHocSinh
             // Background
             // 
             this.Background.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Background.BackgroundImage")));
-            this.Background.Location = new System.Drawing.Point(4, 56);
+            this.Background.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Background.Location = new System.Drawing.Point(0, 56);
             this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1308, 149);
+            this.Background.Size = new System.Drawing.Size(1312, 149);
             this.Background.TabIndex = 24;
             // 
             // TrangChu
