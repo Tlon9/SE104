@@ -75,6 +75,7 @@ namespace QuanLyHocSinh
             dgvHocKy.Rows.Clear();
             dgvHocKy.Columns.Add("STT", "STT");
             dgvHocKy.Columns.Add("Hoten", "Họ và tên");
+            dgvHocKy.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             for (int i = 0; i < TenMonHoc.Count(); i++)
             {
                 DataGridViewColumn newcol = new DataGridViewColumn();
@@ -121,18 +122,23 @@ namespace QuanLyHocSinh
                 }
                 double diemtb_hk = (double)(sum / so_mon_da_co_diem);
                 if (sum != 0) newrow.Cells[DiemTb_index + 2].Value = Math.Round(diemtb_hk, 2);
-                if (so_mon_da_co_diem == TenMonHoc.Count())
+                if (so_mon_da_co_diem >0)
                 {
                     for (int k = 0; k < DiemToiThieu.Count(); k++)
                     {
-                        if (diemtb_hk >= DiemToiThieu[k] && sum != 0)
+                        if (diemtb_hk > DiemToiThieu[k] && sum != 0)
                         {
                             if (min_DiemTbmon > DiemKhongChe.ToList()[k])
                             {
                                 newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k].ToString();
+                                xeploai[k] += 1;
                             }
-                            else newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k+1].ToString();
-                            xeploai[k] += 1;
+                            else
+                            {
+                                newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k + 1].ToString();
+                                xeploai[k+1] += 1;
+
+                            }
                             break;
 
                         }
@@ -153,9 +159,12 @@ namespace QuanLyHocSinh
                 row_ratio["Xếp loại"] = item.TenXepLoai;
 
                 row_ratio["Số lượng"] = xeploai[z];
-                if (xeploai.Sum() == 0) row_ratio["Tỉ lệ (%)"] = 0;
-                else row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * xeploai[z] / xeploai.Sum()), 2);
-                ratio_Source.Rows.Add(row_ratio);
+                double rat = 0;
+                if (xeploai.Sum() == 0) rat = 0;
+                else rat = Math.Round((float)(100 * xeploai[z] / xeploai.Sum()), 2);
+                row_ratio["Tỉ lệ (%)"] = rat;
+                if(rat>0)
+                    ratio_Source.Rows.Add(row_ratio);
                 z++;
             }
 
@@ -234,6 +243,7 @@ namespace QuanLyHocSinh
             dgvNamHoc.Rows.Clear();
             dgvNamHoc.Columns.Add("STT", "STT");
             dgvNamHoc.Columns.Add("Hoten", "Họ và tên");
+            dgvHocKy.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             for (int i = 0; i < TenMonHoc.Count(); i++)
             {
                 DataGridViewColumn newcol = new DataGridViewColumn();
@@ -269,6 +279,7 @@ namespace QuanLyHocSinh
                     if (temp != -1)
                     {
                         newrow.Cells[j + 2].Value = temp;
+                        if(min_DiemTbmon>temp) min_DiemTbmon = temp;
                         sum += temp;
                         so_mon_da_co_diem += 1;
                     }
@@ -276,18 +287,22 @@ namespace QuanLyHocSinh
                 }
                 double diemtb_hk = (double)(sum / so_mon_da_co_diem);
                 if (sum != 0) newrow.Cells[DiemTb_index + 2].Value = Math.Round(diemtb_hk, 2);
-                if (so_mon_da_co_diem == TenMonHoc.Count())
+                if (so_mon_da_co_diem > 0)
                 {
                     for (int k = 0; k < DiemToiThieu.Count(); k++)
                     {
-                        if (diemtb_hk >= DiemToiThieu[k] && sum != 0)
+                        if (diemtb_hk > DiemToiThieu[k] && sum != 0)
                         {
-                            if (min_DiemTbmon <= DiemKhongChe.ToList()[i])
+                            if (min_DiemTbmon < DiemKhongChe.ToList()[i])
                             {
-                                newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[i + 1].ToString();
+                                newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k].ToString();
+                                xeploai[k] += 1;
+
                             }
-                            else newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k].ToString();
-                            xeploai[k] += 1;
+                            else 
+                            { 
+                                newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k+1].ToString(); xeploai[k+1] += 1;
+                            }
                             break;
                         }
                     }
@@ -307,9 +322,12 @@ namespace QuanLyHocSinh
                 row_ratio["Xếp loại"] = item.TenXepLoai;
 
                 row_ratio["Số lượng"] = xeploai[z];
-                if (xeploai.Sum() == 0) row_ratio["Tỉ lệ (%)"] = 0;
-                else row_ratio["Tỉ lệ (%)"] = Math.Round((float)(100 * xeploai[z] / xeploai.Sum()), 2);
-                ratio_Source.Rows.Add(row_ratio);
+                double rat = 0;
+                if (xeploai.Sum() == 0) rat = 0;
+                else rat = Math.Round((float)(100 * xeploai[z] / xeploai.Sum()), 2);
+                row_ratio["Tỉ lệ (%)"] = rat;
+                if(rat>0) 
+                    ratio_Source.Rows.Add(row_ratio);
                 z++;
             }
 
@@ -338,7 +356,7 @@ namespace QuanLyHocSinh
         {
             TongKetHocKy();
         }
-        private void ExportToExcel(DataGridView dataGridView)
+        private void ExportToExcel(DataGridView dataGridView,DataGridView dataGridView2)
         {
             Excel.Application excel = new Excel.Application();
             excel.Visible = true;
@@ -356,20 +374,32 @@ namespace QuanLyHocSinh
                         worksheet.Cells[i + 2, j + 1] = dataGridView.Rows[i].Cells[j].Value.ToString();
                 }
             }
-            /*workbook.SaveAs("output.xlsx", Type.Missing, Type.Missing,
-                Type.Missing, Type.Missing, Type.Missing,
-                Excel.XlSaveAsAccessMode.xlExclusive,
-                Type.Missing, Type.Missing, Type.Missing,
-                Type.Missing, Type.Missing);*/
+            workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);
+            Excel.Worksheet worksheet2 = (Excel.Worksheet)workbook.Sheets[2];
+            for (int i = 1; i <= dataGridView2.Columns.Count; i++)
+            {
+                worksheet2.Cells[1, i] = dataGridView2.Columns[i - 1].HeaderText;
+            }
+            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView2.Columns.Count; j++)
+                {
+                    if (dataGridView2.Rows[i].Cells[j].Value != null)
+                        worksheet2.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
+                }
+            }
             workbook.Close();
             excel.Quit();
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            ExportToExcel(dgvHocKy);
+            ExportToExcel(dgvHocKy,dgvRatio);
         }
-
+        private void printButton_nh_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(dgvNamHoc, dgvRatio_nh);
+        }
         private void guna2ImageButtonMinimize1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -434,5 +464,7 @@ namespace QuanLyHocSinh
             LopCbb_nh.DisplayMember = "TenLop";
             LopCbb_nh.ValueMember = "MaLop";
         }
+
+
     }
 }

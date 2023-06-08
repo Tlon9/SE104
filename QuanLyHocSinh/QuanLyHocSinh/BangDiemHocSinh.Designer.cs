@@ -134,7 +134,6 @@
             this.label12.Size = new System.Drawing.Size(68, 19);
             this.label12.TabIndex = 11;
             this.label12.Text = "Họ và tên";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // guna2Panel1
             // 
@@ -145,7 +144,7 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1006, 42);
+            this.guna2Panel1.Size = new System.Drawing.Size(1244, 42);
             this.guna2Panel1.TabIndex = 23;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown_1);
             // 
@@ -167,7 +166,7 @@
             this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonClose1.ImageRotate = 0F;
             this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(954, 5);
+            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1206, 7);
             this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
             this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonClose1.Size = new System.Drawing.Size(35, 35);
@@ -183,7 +182,7 @@
             this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonMinimize1.ImageRotate = 0F;
             this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(913, 5);
+            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1175, 7);
             this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
             this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(35, 35);
@@ -200,7 +199,7 @@
             this.guna2TabControlReport.Margin = new System.Windows.Forms.Padding(2);
             this.guna2TabControlReport.Name = "guna2TabControlReport";
             this.guna2TabControlReport.SelectedIndex = 0;
-            this.guna2TabControlReport.Size = new System.Drawing.Size(989, 560);
+            this.guna2TabControlReport.Size = new System.Drawing.Size(1222, 560);
             this.guna2TabControlReport.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControlReport.TabButtonHoverState.FillColor = System.Drawing.SystemColors.Highlight;
             this.guna2TabControlReport.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -231,7 +230,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(981, 512);
+            this.tabPage3.Size = new System.Drawing.Size(1214, 512);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Tra cứu điểm học kỳ";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -262,7 +261,7 @@
             this.DHKGridView.Location = new System.Drawing.Point(9, 79);
             this.DHKGridView.Name = "DHKGridView";
             this.DHKGridView.RowHeadersVisible = false;
-            this.DHKGridView.Size = new System.Drawing.Size(653, 393);
+            this.DHKGridView.Size = new System.Drawing.Size(931, 393);
             this.DHKGridView.TabIndex = 26;
             this.DHKGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DHKGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -297,11 +296,11 @@
             this.guna2GroupBox1.Controls.Add(this.label12);
             this.guna2GroupBox1.Controls.Add(this.label11);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.Highlight;
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(689, 79);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(946, 79);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(263, 358);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(263, 393);
             this.guna2GroupBox1.TabIndex = 25;
             this.guna2GroupBox1.Text = "Kết quả học kỳ";
             // 
@@ -508,7 +507,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Size = new System.Drawing.Size(981, 512);
+            this.tabPage4.Size = new System.Drawing.Size(1214, 512);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Tra cứu điểm năm học";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -539,7 +538,7 @@
             this.DNHGridView.Location = new System.Drawing.Point(9, 79);
             this.DNHGridView.Name = "DNHGridView";
             this.DNHGridView.RowHeadersVisible = false;
-            this.DNHGridView.Size = new System.Drawing.Size(653, 393);
+            this.DNHGridView.Size = new System.Drawing.Size(933, 393);
             this.DNHGridView.TabIndex = 28;
             this.DNHGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DNHGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -574,11 +573,11 @@
             this.guna2GroupBox2.Controls.Add(this.label4);
             this.guna2GroupBox2.Controls.Add(this.label5);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.SystemColors.Highlight;
-            this.guna2GroupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(689, 79);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(948, 79);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(263, 358);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(263, 393);
             this.guna2GroupBox2.TabIndex = 27;
             this.guna2GroupBox2.Text = "Kết quả năm học";
             // 
@@ -823,7 +822,7 @@
             this.guna2ImageButton3.ImageRotate = 0F;
             this.guna2ImageButton3.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2ImageButton3.IndicateFocus = true;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(945, 45);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(1178, 43);
             this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ImageButton3.Name = "guna2ImageButton3";
             this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -835,13 +834,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 674);
+            this.ClientSize = new System.Drawing.Size(1244, 694);
             this.Controls.Add(this.guna2ImageButton3);
             this.Controls.Add(this.guna2ImageButtonHome);
             this.Controls.Add(this.guna2TabControlReport);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BangDiemHocSinh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BangDiemHocSinh";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2TabControlReport.ResumeLayout(false);

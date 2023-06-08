@@ -375,11 +375,6 @@ namespace QuanLyHocSinh
             excel.Quit();
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TraCuuButton_hk_Click(object sender, EventArgs e)
         {
             TraCuuDiemHocKy();
