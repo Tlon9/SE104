@@ -17,6 +17,8 @@ namespace QuanLyHocSinh
         public TrangChu()
         {
             InitializeComponent();
+
+            guna2TextBoxUser.Text = Account.HoTen.ToString();
             if (Account.VaiTro == "Giáo viên")
             {
                 this.MenuItemSubjectScore.Visible = true;
@@ -29,6 +31,13 @@ namespace QuanLyHocSinh
             }
             this.MenuItemSearch.Visible = true;
             this.MenuItemFinalReport.Visible = true;
+            dataEntities dtb = new dataEntities();
+            var ComboBoxYearsSource = from obj in dtb.NAMHOCs
+                                      orderby obj.MaNamHoc descending
+                                      select obj;
+            guna2ComboBoxYear.DataSource = ComboBoxYearsSource.ToList();
+            guna2ComboBoxYear.DisplayMember = "NamHoc1";
+            guna2ComboBoxYear.ValueMember = "MaNamHoc";
         }
 
         private void MenuItemFinalReport_Click(object sender, EventArgs e)
@@ -119,6 +128,77 @@ namespace QuanLyHocSinh
         private void MenuItemListCreate_Click(object sender, EventArgs e)
         {
             LapDanhSachLop newform = new LapDanhSachLop();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
+
+        private void guna2ButtonClass_Click(object sender, EventArgs e)
+        {
+            dataEntities dtb = new dataEntities();
+            var Source = from cls in dtb.LOPs
+                         where cls.MaNamHoc == guna2ComboBoxYear.SelectedValue.ToString()
+                         join cls_dtl in dtb.CTLOPs on cls.MaLop equals cls_dtl.MaLop
+                         group new { cls, cls_dtl }
+                         by new { cls.MaLop, cls.TenLop }
+                         into grp
+                         select new { MaLop = grp.Key.MaLop, TenLop = grp.Key.TenLop, SoLuong = grp.Count() };
+            DataTable tbl = new DataTable();
+            tbl.Columns.Add("STT", typeof(int));
+            tbl.Columns.Add("Mã lớp", typeof(string));
+            tbl.Columns.Add("Tên lớp", typeof(string));
+            tbl.Columns.Add("Sĩ số", typeof(int));
+
+            int index = 0;
+            foreach(var item in Source)
+            {
+                DataRow row = tbl.NewRow();
+                index += 1;
+                row["STT"] = index;
+                row["Mã lớp"] = item.MaLop.ToString();
+                row["Tên lớp"] = item.TenLop.ToString();
+                row["Sĩ số"] = (int)item.SoLuong;
+                tbl.Rows.Add(row);
+            }
+
+            guna2DataGridView.DataSource = tbl;
+            guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+            guna2DataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+        }
+
+        private void guna2ButtonSubject_Click(object sender, EventArgs e)
+        {
+            dataEntities dtb = new dataEntities();
+            var Source = from sbj in dtb.MONHOCs
+                         where sbj.NamApDung == guna2ComboBoxYear.SelectedValue.ToString()
+                         join year in dtb.NAMHOCs on sbj.NamApDung equals year.MaNamHoc
+                         select new {MaMon = sbj.MaMonHoc, TenMon = sbj.TenMonHoc, NamApDung = year.NamHoc1};
+            DataTable tbl = new DataTable();
+            tbl.Columns.Add("STT", typeof(int));
+            tbl.Columns.Add("Mã môn", typeof(string));
+            tbl.Columns.Add("Tên môn học", typeof(string));
+            tbl.Columns.Add("Năm áp dụng", typeof(string));
+
+            int index = 0;
+            foreach (var item in Source)
+            {
+                DataRow row = tbl.NewRow();
+                index += 1;
+                row["STT"] = index;
+                row["Mã môn"] = item.MaMon.ToString();
+                row["Tên môn học"] = item.TenMon.ToString();
+                row["Năm áp dụng"] = item.NamApDung.ToString();
+                tbl.Rows.Add(row);
+            }
+
+            guna2DataGridView.DataSource = tbl;
+            guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+        }
+
+        private void guna2ImageButtonUser_Click(object sender, EventArgs e)
+        {
+            TrangCaNhan newform = new TrangCaNhan();
             this.Hide();
             newform.ShowDialog();
             this.Show();
