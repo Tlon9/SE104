@@ -343,10 +343,10 @@
             this.cbFindStudenID_2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbFindStudenID_2.ForeColor = System.Drawing.Color.Black;
             this.cbFindStudenID_2.ItemHeight = 25;
-            this.cbFindStudenID_2.Location = new System.Drawing.Point(195, 124);
+            this.cbFindStudenID_2.Location = new System.Drawing.Point(195, 126);
             this.cbFindStudenID_2.Name = "cbFindStudenID_2";
             this.cbFindStudenID_2.Size = new System.Drawing.Size(279, 31);
-            this.cbFindStudenID_2.TabIndex = 9;
+            this.cbFindStudenID_2.TabIndex = 6;
             // 
             // tbFindEmail
             // 
@@ -368,7 +368,7 @@
             this.tbFindEmail.PlaceholderText = "";
             this.tbFindEmail.SelectedText = "";
             this.tbFindEmail.Size = new System.Drawing.Size(378, 36);
-            this.tbFindEmail.TabIndex = 5;
+            this.tbFindEmail.TabIndex = 4;
             // 
             // tbFindPhoneNum
             // 
@@ -390,7 +390,7 @@
             this.tbFindPhoneNum.PlaceholderText = "";
             this.tbFindPhoneNum.SelectedText = "";
             this.tbFindPhoneNum.Size = new System.Drawing.Size(279, 36);
-            this.tbFindPhoneNum.TabIndex = 4;
+            this.tbFindPhoneNum.TabIndex = 3;
             // 
             // cbClass
             // 
@@ -428,7 +428,7 @@
             this.tbFindName.PlaceholderText = "";
             this.tbFindName.SelectedText = "";
             this.tbFindName.Size = new System.Drawing.Size(315, 36);
-            this.tbFindName.TabIndex = 3;
+            this.tbFindName.TabIndex = 0;
             // 
             // cbGrade
             // 
@@ -469,7 +469,7 @@
             this.tbStudentID.PlaceholderText = "";
             this.tbStudentID.SelectedText = "";
             this.tbStudentID.Size = new System.Drawing.Size(279, 36);
-            this.tbStudentID.TabIndex = 0;
+            this.tbStudentID.TabIndex = 5;
             // 
             // tbHoTen
             // 
