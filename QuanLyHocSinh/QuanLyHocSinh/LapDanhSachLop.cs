@@ -197,6 +197,7 @@ namespace QuanLyHocSinh
                                  SDT = g.Key.SDT
                              };
 
+            dt.Clear();
             sStdNum = 0;
             foreach (var std in dataSource)
             {
@@ -219,28 +220,30 @@ namespace QuanLyHocSinh
 
         private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dgvClassDetail.Hide();
-            dataEntities db = new dataEntities();
-            this.cbClass.DataSource = from l in db.LOPs
-                                      join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
-                                      join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
-                                      where nh.NamHoc1 == this.cbSchoolYear.Text
-                                      && k.TenKhoi == this.cbGrade.Text
-                                      orderby l.MaLop ascending
-                                      select l.TenLop;
+            //this.dgvClassDetail.Hide();
+            //dataEntities db = new dataEntities();
+            //this.cbClass.DataSource = (from l in db.LOPs
+            //                          join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+            //                          join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
+            //                          where nh.NamHoc1 == this.cbSchoolYear.Text
+            //                          && k.TenKhoi == this.cbGrade.Text
+            //                          orderby l.MaLop ascending
+            //                          select l.TenLop).ToList();
+
+            MessageBox.Show("Index: " + this.cbSchoolYear.SelectedItem);
         }
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.dgvClassDetail.Hide();
             dataEntities db = new dataEntities();
-            this.cbClass.DataSource = from l in db.LOPs
+            this.cbClass.DataSource = (from l in db.LOPs
                                       join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
                                       join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
                                       where nh.NamHoc1 == this.cbSchoolYear.Text
                                       && k.TenKhoi == this.cbGrade.Text
                                       orderby l.MaLop ascending
-                                      select l.TenLop;
+                                      select l.TenLop).ToList();
         }
 
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
