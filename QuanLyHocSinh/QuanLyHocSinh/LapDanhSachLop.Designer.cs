@@ -97,7 +97,7 @@
             this.cbClass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbClass.ItemHeight = 30;
-            this.cbClass.Location = new System.Drawing.Point(907, 42);
+            this.cbClass.Location = new System.Drawing.Point(907, 29);
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(185, 36);
             this.cbClass.TabIndex = 10;
@@ -112,7 +112,7 @@
             this.cbGrade.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbGrade.ItemHeight = 30;
-            this.cbGrade.Location = new System.Drawing.Point(529, 42);
+            this.cbGrade.Location = new System.Drawing.Point(529, 29);
             this.cbGrade.Name = "cbGrade";
             this.cbGrade.Size = new System.Drawing.Size(209, 36);
             this.cbGrade.TabIndex = 9;
@@ -127,7 +127,7 @@
             this.cbSchoolYear.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbSchoolYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbSchoolYear.ItemHeight = 30;
-            this.cbSchoolYear.Location = new System.Drawing.Point(157, 41);
+            this.cbSchoolYear.Location = new System.Drawing.Point(157, 28);
             this.cbSchoolYear.Name = "cbSchoolYear";
             this.cbSchoolYear.Size = new System.Drawing.Size(209, 36);
             this.cbSchoolYear.TabIndex = 8;
@@ -272,10 +272,10 @@
             this.btnHomeScreen.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnHomeScreen.ForeColor = System.Drawing.Color.White;
             this.btnHomeScreen.Image = ((System.Drawing.Image)(resources.GetObject("btnHomeScreen.Image")));
-            this.btnHomeScreen.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnHomeScreen.ImageSize = new System.Drawing.Size(30, 30);
             this.btnHomeScreen.Location = new System.Drawing.Point(60, 136);
             this.btnHomeScreen.Name = "btnHomeScreen";
-            this.btnHomeScreen.Size = new System.Drawing.Size(49, 45);
+            this.btnHomeScreen.Size = new System.Drawing.Size(60, 60);
             this.btnHomeScreen.TabIndex = 8;
             this.btnHomeScreen.Click += new System.EventHandler(this.btnHomeScreen_Click);
             // 
@@ -393,7 +393,7 @@
             this.btnDelStdOutClass.ImageSize = new System.Drawing.Size(30, 30);
             this.btnDelStdOutClass.Location = new System.Drawing.Point(329, 65);
             this.btnDelStdOutClass.Name = "btnDelStdOutClass";
-            this.btnDelStdOutClass.Size = new System.Drawing.Size(115, 44);
+            this.btnDelStdOutClass.Size = new System.Drawing.Size(105, 44);
             this.btnDelStdOutClass.TabIndex = 4;
             this.btnDelStdOutClass.Text = "Xoá";
             this.btnDelStdOutClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

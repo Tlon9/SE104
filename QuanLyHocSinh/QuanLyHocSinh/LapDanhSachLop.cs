@@ -15,7 +15,6 @@ namespace QuanLyHocSinh
         private TrangChu mainform { get; set; }
         private short sStdNum;
         private DataTable dt;
-        private String strMaLop;
 
         public LapDanhSachLop(TrangChu mainform)
         {
@@ -24,7 +23,7 @@ namespace QuanLyHocSinh
 
             dt = new DataTable();
             dt.Columns.Add("STT", typeof(byte)).ReadOnly = true;
-            dt.Columns.Add("MSHS", typeof(String)).ReadOnly = false;
+            dt.Columns.Add("MSHS", typeof(String)).ReadOnly = true;
             dt.Columns.Add("Họ tên", typeof(String)).ReadOnly = true;
             dt.Columns.Add("Giới tính", typeof(String)).ReadOnly = true;
             dt.Columns.Add("Ngày sinh", typeof(DateTime)).ReadOnly = true;
@@ -93,18 +92,30 @@ namespace QuanLyHocSinh
                                      select hs;
                     if (stdIdNowDb.Count() == 0)
                     {
-                        // Thêm học sinh vào lớp
-                        CTLOP cTLOP = new CTLOP();
-                        cTLOP.MaHocSinh = this.tbStdIdAdd.Text;
-                        cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
-                        cTLOP.MaCTL = this.cbClass.SelectedValue.ToString() + "_" + this.tbStdIdAdd.Text;
-                        db.CTLOPs.Add(cTLOP);
-                        db.SaveChanges();
-                        // Thêm học sinh vào lớp
+                        short SiSoToiDa = (short)(from obj in db.THAMSOes
+                                                  select obj.SiSoToiDa).ToList().First();
+                        if(sStdNum < SiSoToiDa)
+                        {
+                            // Thêm học sinh vào lớp
+                            CTLOP cTLOP = new CTLOP();
+                            cTLOP.MaHocSinh = this.tbStdIdAdd.Text;
+                            cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
+                            cTLOP.MaCTL = this.cbClass.SelectedValue.ToString() + "_" + this.tbStdIdAdd.Text;
+                            db.CTLOPs.Add(cTLOP);
+                            db.SaveChanges();
+                            // Thêm học sinh vào lớp
 
-                        HienThiDanhSachHocSinh(db);
-                        this.tbStdIdAdd.Text = "";
-                        MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            HienThiDanhSachHocSinh(db);
+                            this.tbStdIdAdd.Text = "";
+                            MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lớp đã đạt sĩ số tối đa, không thể thêm học sinh",
+                                            "Lỗi",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
@@ -145,17 +156,9 @@ namespace QuanLyHocSinh
                     if(choose == DialogResult.OK)
                     {
                         dataEntities db = new dataEntities();
-                        //List<CTLOP> src = (from ctl in db.CTLOPs
-                        //          where ctl.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
-                        //          && ctl.MaLop == this.cbClass.SelectedValue.ToString()
-                        //          select ctl).ToList();
 
-                        //CTLOP cTLOP = new CTLOP();
                         String str1 = dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString();
                         String str2 = this.cbClass.SelectedValue.ToString();
-                        //MessageBox.Show(cTLOP.MaHocSinh + "\n" + cTLOP.MaLop);
-                        //db.CTLOPs.Remove(db.CTLOPs.Where(p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
-                        //    && p.MaLop == this.cbClass.SelectedValue.ToString());
 
                         db.CTLOPs.Remove(
                             db.CTLOPs.Where(p => p.MaHocSinh == str1)

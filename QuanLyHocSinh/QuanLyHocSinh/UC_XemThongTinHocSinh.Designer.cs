@@ -116,13 +116,13 @@
             this.tbDadID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDadID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbDadID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDadID.Location = new System.Drawing.Point(219, 105);
+            this.tbDadID.Location = new System.Drawing.Point(241, 105);
             this.tbDadID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbDadID.Name = "tbDadID";
             this.tbDadID.PasswordChar = '\0';
             this.tbDadID.PlaceholderText = "";
             this.tbDadID.SelectedText = "";
-            this.tbDadID.Size = new System.Drawing.Size(346, 40);
+            this.tbDadID.Size = new System.Drawing.Size(324, 40);
             this.tbDadID.TabIndex = 22;
             // 
             // lbDadBirthyear
@@ -176,13 +176,13 @@
             this.tbDadPhoneNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDadPhoneNum.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbDadPhoneNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDadPhoneNum.Location = new System.Drawing.Point(296, 161);
+            this.tbDadPhoneNum.Location = new System.Drawing.Point(318, 161);
             this.tbDadPhoneNum.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbDadPhoneNum.Name = "tbDadPhoneNum";
             this.tbDadPhoneNum.PasswordChar = '\0';
             this.tbDadPhoneNum.PlaceholderText = "";
             this.tbDadPhoneNum.SelectedText = "";
-            this.tbDadPhoneNum.Size = new System.Drawing.Size(269, 40);
+            this.tbDadPhoneNum.Size = new System.Drawing.Size(247, 40);
             this.tbDadPhoneNum.TabIndex = 22;
             // 
             // tbDadBirthyear
@@ -196,7 +196,7 @@
             this.tbDadBirthyear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDadBirthyear.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbDadBirthyear.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDadBirthyear.Location = new System.Drawing.Point(121, 161);
+            this.tbDadBirthyear.Location = new System.Drawing.Point(132, 161);
             this.tbDadBirthyear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbDadBirthyear.Name = "tbDadBirthyear";
             this.tbDadBirthyear.PasswordChar = '\0';
@@ -254,13 +254,13 @@
             this.tbMomJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMomJob.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbMomJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMomJob.Location = new System.Drawing.Point(149, 213);
+            this.tbMomJob.Location = new System.Drawing.Point(169, 213);
             this.tbMomJob.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbMomJob.Name = "tbMomJob";
             this.tbMomJob.PasswordChar = '\0';
             this.tbMomJob.PlaceholderText = "";
             this.tbMomJob.SelectedText = "";
-            this.tbMomJob.Size = new System.Drawing.Size(416, 40);
+            this.tbMomJob.Size = new System.Drawing.Size(396, 40);
             this.tbMomJob.TabIndex = 22;
             // 
             // tbMomPhoneNum
@@ -274,13 +274,13 @@
             this.tbMomPhoneNum.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMomPhoneNum.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbMomPhoneNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMomPhoneNum.Location = new System.Drawing.Point(296, 161);
+            this.tbMomPhoneNum.Location = new System.Drawing.Point(315, 161);
             this.tbMomPhoneNum.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbMomPhoneNum.Name = "tbMomPhoneNum";
             this.tbMomPhoneNum.PasswordChar = '\0';
             this.tbMomPhoneNum.PlaceholderText = "";
             this.tbMomPhoneNum.SelectedText = "";
-            this.tbMomPhoneNum.Size = new System.Drawing.Size(269, 40);
+            this.tbMomPhoneNum.Size = new System.Drawing.Size(250, 40);
             this.tbMomPhoneNum.TabIndex = 22;
             // 
             // tbMomID
@@ -294,13 +294,13 @@
             this.tbMomID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMomID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbMomID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMomID.Location = new System.Drawing.Point(219, 105);
+            this.tbMomID.Location = new System.Drawing.Point(241, 105);
             this.tbMomID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbMomID.Name = "tbMomID";
             this.tbMomID.PasswordChar = '\0';
             this.tbMomID.PlaceholderText = "";
             this.tbMomID.SelectedText = "";
-            this.tbMomID.Size = new System.Drawing.Size(346, 40);
+            this.tbMomID.Size = new System.Drawing.Size(324, 40);
             this.tbMomID.TabIndex = 22;
             // 
             // tbMomBirthyear
@@ -314,7 +314,7 @@
             this.tbMomBirthyear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMomBirthyear.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbMomBirthyear.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMomBirthyear.Location = new System.Drawing.Point(121, 161);
+            this.tbMomBirthyear.Location = new System.Drawing.Point(128, 161);
             this.tbMomBirthyear.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbMomBirthyear.Name = "tbMomBirthyear";
             this.tbMomBirthyear.PasswordChar = '\0';
@@ -344,13 +344,13 @@
             this.tbMomName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbMomName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbMomName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbMomName.Location = new System.Drawing.Point(121, 51);
+            this.tbMomName.Location = new System.Drawing.Point(169, 51);
             this.tbMomName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbMomName.Name = "tbMomName";
             this.tbMomName.PasswordChar = '\0';
             this.tbMomName.PlaceholderText = "";
             this.tbMomName.SelectedText = "";
-            this.tbMomName.Size = new System.Drawing.Size(444, 40);
+            this.tbMomName.Size = new System.Drawing.Size(396, 40);
             this.tbMomName.TabIndex = 21;
             // 
             // lbMomName
@@ -394,13 +394,13 @@
             this.tbDadJob.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDadJob.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbDadJob.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDadJob.Location = new System.Drawing.Point(149, 213);
+            this.tbDadJob.Location = new System.Drawing.Point(173, 213);
             this.tbDadJob.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbDadJob.Name = "tbDadJob";
             this.tbDadJob.PasswordChar = '\0';
             this.tbDadJob.PlaceholderText = "";
             this.tbDadJob.SelectedText = "";
-            this.tbDadJob.Size = new System.Drawing.Size(416, 40);
+            this.tbDadJob.Size = new System.Drawing.Size(392, 40);
             this.tbDadJob.TabIndex = 22;
             // 
             // tbDadName
@@ -414,13 +414,13 @@
             this.tbDadName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbDadName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbDadName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbDadName.Location = new System.Drawing.Point(121, 51);
+            this.tbDadName.Location = new System.Drawing.Point(173, 51);
             this.tbDadName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbDadName.Name = "tbDadName";
             this.tbDadName.PasswordChar = '\0';
             this.tbDadName.PlaceholderText = "";
             this.tbDadName.SelectedText = "";
-            this.tbDadName.Size = new System.Drawing.Size(444, 40);
+            this.tbDadName.Size = new System.Drawing.Size(392, 40);
             this.tbDadName.TabIndex = 21;
             // 
             // pnDadInfo
@@ -491,7 +491,7 @@
             "Nam",
             "Nữ",
             "Không xác định"});
-            this.cbGender.Location = new System.Drawing.Point(892, 56);
+            this.cbGender.Location = new System.Drawing.Point(892, 44);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(276, 36);
             this.cbGender.TabIndex = 20;
@@ -522,7 +522,7 @@
             this.dtpBirthday.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dtpBirthday.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpBirthday.Location = new System.Drawing.Point(121, 114);
+            this.dtpBirthday.Location = new System.Drawing.Point(149, 111);
             this.dtpBirthday.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpBirthday.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
@@ -561,13 +561,13 @@
             this.tbAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.Location = new System.Drawing.Point(121, 224);
+            this.tbAddress.Location = new System.Drawing.Point(149, 224);
             this.tbAddress.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderText = "";
             this.tbAddress.SelectedText = "";
-            this.tbAddress.Size = new System.Drawing.Size(1047, 40);
+            this.tbAddress.Size = new System.Drawing.Size(1019, 40);
             this.tbAddress.TabIndex = 16;
             // 
             // tbEmail
@@ -601,13 +601,13 @@
             this.tbNumPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbNumPhone.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbNumPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbNumPhone.Location = new System.Drawing.Point(121, 278);
+            this.tbNumPhone.Location = new System.Drawing.Point(149, 278);
             this.tbNumPhone.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbNumPhone.Name = "tbNumPhone";
             this.tbNumPhone.PasswordChar = '\0';
             this.tbNumPhone.PlaceholderText = "";
             this.tbNumPhone.SelectedText = "";
-            this.tbNumPhone.Size = new System.Drawing.Size(353, 40);
+            this.tbNumPhone.Size = new System.Drawing.Size(325, 40);
             this.tbNumPhone.TabIndex = 14;
             // 
             // tbOrigin
@@ -621,17 +621,18 @@
             this.tbOrigin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbOrigin.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbOrigin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbOrigin.Location = new System.Drawing.Point(121, 168);
+            this.tbOrigin.Location = new System.Drawing.Point(149, 168);
             this.tbOrigin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbOrigin.Name = "tbOrigin";
             this.tbOrigin.PasswordChar = '\0';
             this.tbOrigin.PlaceholderText = "";
             this.tbOrigin.SelectedText = "";
-            this.tbOrigin.Size = new System.Drawing.Size(1047, 40);
+            this.tbOrigin.Size = new System.Drawing.Size(1019, 40);
             this.tbOrigin.TabIndex = 13;
             // 
             // tbName
             // 
+            this.tbName.AutoSize = true;
             this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbName.DefaultText = "";
             this.tbName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -641,13 +642,13 @@
             this.tbName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbName.Location = new System.Drawing.Point(121, 52);
+            this.tbName.Location = new System.Drawing.Point(149, 52);
             this.tbName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbName.Name = "tbName";
             this.tbName.PasswordChar = '\0';
             this.tbName.PlaceholderText = "";
             this.tbName.SelectedText = "";
-            this.tbName.Size = new System.Drawing.Size(637, 40);
+            this.tbName.Size = new System.Drawing.Size(609, 40);
             this.tbName.TabIndex = 12;
             // 
             // lbEmail
@@ -752,6 +753,7 @@
             // 
             // tbStudentID
             // 
+            this.tbStudentID.AutoSize = true;
             this.tbStudentID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbStudentID.DefaultText = "";
             this.tbStudentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -761,14 +763,14 @@
             this.tbStudentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbStudentID.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tbStudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbStudentID.Location = new System.Drawing.Point(213, 52);
+            this.tbStudentID.Location = new System.Drawing.Point(225, 52);
             this.tbStudentID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tbStudentID.Name = "tbStudentID";
             this.tbStudentID.PasswordChar = '\0';
             this.tbStudentID.PlaceholderText = "";
             this.tbStudentID.ReadOnly = true;
             this.tbStudentID.SelectedText = "";
-            this.tbStudentID.Size = new System.Drawing.Size(301, 40);
+            this.tbStudentID.Size = new System.Drawing.Size(322, 40);
             this.tbStudentID.TabIndex = 22;
             // 
             // lbStudentID
@@ -845,6 +847,7 @@
             // 
             this.btnShowInfo.AutoRoundedCorners = true;
             this.btnShowInfo.BorderRadius = 21;
+            this.btnShowInfo.DefaultAutoSize = true;
             this.btnShowInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnShowInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnShowInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -852,9 +855,9 @@
             this.btnShowInfo.FillColor = System.Drawing.SystemColors.Highlight;
             this.btnShowInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowInfo.ForeColor = System.Drawing.Color.White;
-            this.btnShowInfo.Location = new System.Drawing.Point(537, 47);
+            this.btnShowInfo.Location = new System.Drawing.Point(558, 47);
             this.btnShowInfo.Name = "btnShowInfo";
-            this.btnShowInfo.Size = new System.Drawing.Size(201, 45);
+            this.btnShowInfo.Size = new System.Drawing.Size(192, 44);
             this.btnShowInfo.TabIndex = 32;
             this.btnShowInfo.Text = "Sửa thông tin";
             this.btnShowInfo.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -863,6 +866,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.btnShowInfo);
             this.Controls.Add(this.tbStudentID);
             this.Controls.Add(this.btnDelete);
@@ -874,7 +879,7 @@
             this.Controls.Add(this.pnStudentInfo);
             this.Controls.Add(this.lbReadStudentInfo);
             this.Name = "UC_XemThongTinHocSinh";
-            this.Size = new System.Drawing.Size(1257, 811);
+            this.Size = new System.Drawing.Size(1234, 797);
             this.pnMomInfo.ResumeLayout(false);
             this.pnMomInfo.PerformLayout();
             this.pnDadInfo.ResumeLayout(false);

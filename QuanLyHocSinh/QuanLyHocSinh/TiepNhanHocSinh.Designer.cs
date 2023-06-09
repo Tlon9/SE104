@@ -56,7 +56,8 @@
             // btnInteractStudentInfo
             // 
             this.btnInteractStudentInfo.AutoRoundedCorners = true;
-            this.btnInteractStudentInfo.BorderRadius = 27;
+            this.btnInteractStudentInfo.BorderRadius = 24;
+            this.btnInteractStudentInfo.DefaultAutoSize = true;
             this.btnInteractStudentInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnInteractStudentInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnInteractStudentInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -66,7 +67,7 @@
             this.btnInteractStudentInfo.ForeColor = System.Drawing.Color.White;
             this.btnInteractStudentInfo.Location = new System.Drawing.Point(681, 19);
             this.btnInteractStudentInfo.Name = "btnInteractStudentInfo";
-            this.btnInteractStudentInfo.Size = new System.Drawing.Size(346, 57);
+            this.btnInteractStudentInfo.Size = new System.Drawing.Size(350, 50);
             this.btnInteractStudentInfo.TabIndex = 1;
             this.btnInteractStudentInfo.Text = "Xem thông tin học sinh";
             this.btnInteractStudentInfo.Click += new System.EventHandler(this.btnInteractStudentInfo_Click);
@@ -74,7 +75,8 @@
             // btnAddNewStudent
             // 
             this.btnAddNewStudent.AutoRoundedCorners = true;
-            this.btnAddNewStudent.BorderRadius = 27;
+            this.btnAddNewStudent.BorderRadius = 24;
+            this.btnAddNewStudent.DefaultAutoSize = true;
             this.btnAddNewStudent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddNewStudent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddNewStudent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -84,7 +86,7 @@
             this.btnAddNewStudent.ForeColor = System.Drawing.Color.White;
             this.btnAddNewStudent.Location = new System.Drawing.Point(167, 19);
             this.btnAddNewStudent.Name = "btnAddNewStudent";
-            this.btnAddNewStudent.Size = new System.Drawing.Size(296, 57);
+            this.btnAddNewStudent.Size = new System.Drawing.Size(292, 50);
             this.btnAddNewStudent.TabIndex = 0;
             this.btnAddNewStudent.Text = "Thêm học sinh mới";
             this.btnAddNewStudent.Click += new System.EventHandler(this.btnAddNewStudent_Click);
@@ -100,7 +102,7 @@
             this.btnHomeScreen.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnHomeScreen.ForeColor = System.Drawing.Color.White;
             this.btnHomeScreen.Image = ((System.Drawing.Image)(resources.GetObject("btnHomeScreen.Image")));
-            this.btnHomeScreen.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnHomeScreen.ImageSize = new System.Drawing.Size(30, 30);
             this.btnHomeScreen.Location = new System.Drawing.Point(64, 110);
             this.btnHomeScreen.Name = "btnHomeScreen";
             this.btnHomeScreen.Size = new System.Drawing.Size(49, 45);
@@ -183,6 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1556, 970);
             this.Controls.Add(this.panel2);
@@ -195,6 +198,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TiepNhanHocSinh";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
