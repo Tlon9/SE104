@@ -67,6 +67,7 @@ namespace QuanLyHocSinh
                 changePass.MatKhau = guna2TextBoxNewPass.Text.ToString();
                 dtb.Entry(changePass).State = System.Data.Entity.EntityState.Modified;
                 dtb.SaveChanges();
+                MessageBox.Show("Đổi mật khẩu thành công!");
                 this.Close();
             }
         }

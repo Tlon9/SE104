@@ -138,11 +138,7 @@ namespace QuanLyHocSinh
             dataEntities dtb = new dataEntities();
             var Source = from cls in dtb.LOPs
                          where cls.MaNamHoc == guna2ComboBoxYear.SelectedValue.ToString()
-                         join cls_dtl in dtb.CTLOPs on cls.MaLop equals cls_dtl.MaLop
-                         group new { cls, cls_dtl }
-                         by new { cls.MaLop, cls.TenLop }
-                         into grp
-                         select new { MaLop = grp.Key.MaLop, TenLop = grp.Key.TenLop, SoLuong = grp.Count() };
+                         select new { cls.MaLop, cls.TenLop, SoLuong = cls.SiSo };
             DataTable tbl = new DataTable();
             tbl.Columns.Add("STT", typeof(int));
             tbl.Columns.Add("Mã lớp", typeof(string));
@@ -199,6 +195,14 @@ namespace QuanLyHocSinh
         private void guna2ImageButtonUser_Click(object sender, EventArgs e)
         {
             TrangCaNhan newform = new TrangCaNhan();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
+
+        private void taojToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TaoTaiKhoan newform = new TaoTaiKhoan();
             this.Hide();
             newform.ShowDialog();
             this.Show();

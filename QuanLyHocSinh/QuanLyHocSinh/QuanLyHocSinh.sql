@@ -201,6 +201,13 @@ BEGIN
 	order by TenLop
 END
 
+select TenLop, MaXepLoai, Count(KQ.MaHocSinh) as SoLuong
+	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
+	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
+			and KQ.MaMonHoc = 'NV10' and KQ.MaNamHoc = 'NH2223' and KQ.MaHocKy = '1' and L.MaNamHoc = 'NH2223'
+	group by CT.MaLop, L.TenLop, KQ.MaXepLoai
+	order by TenLop
+
 --Tong Ket Mon Nam Hoc
 CREATE PROCEDURE TongKetMonNamHoc
 	@MaMonHoc nvarchar(20),
@@ -218,7 +225,7 @@ END
 select TenLop, KQ.MaHocSinh, MaHocKy as HocKy, sum(DiemTB) as  DiemTB
 	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
 	where kq.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop  
-			and KQ.MaMonHoc = 'NV10' and KQ.MaNamHoc = 'NH2223' and L.MaNamHoc = 'NH2223'
+			and KQ.MaMonHoc = 'TO10' and KQ.MaNamHoc = 'NH2223' and L.MaNamHoc = 'NH2223'
 	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
 	order by TenLop
 
@@ -250,20 +257,20 @@ CREATE PROCEDURE TongKetNamHoc
 	@MaNamHoc nvarchar(20)
 AS
 BEGIN
-	select TenLop, KQ.MaHocSinh, KQ.MaHocKy, avg(KQ.DiemTB) as DiemTB,count(MaMonHoc) as SoLuongMon
+	select TenLop, KQ.MaHocSinh, KQ.MaMonHoc, avg(KQ.DiemTB) as DiemTB,count(MaHocKy) as SoLuongKy
 	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
 	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
 			and KQ.MaNamHoc = @MaNamHoc  and L.MaNamHoc = @MaNamHoc
-	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaMonHoc
 	order by TenLop
 END
 
 
-select TenLop, KQ.MaHocSinh, KQ.MaHocKy, avg(KQ.DiemTB) as DiemTB,count(MaMonHoc) as SoLuongMon
+select TenLop, KQ.MaHocSinh, KQ.MaMonHoc, avg(KQ.DiemTB) as DiemTB,count(MaHocKy) as SoLuongKy
 	from KETQUA_MONHOC_HOCSINH KQ, CTLOP CT, LOP L
 	where KQ.MaHocSinh = CT.MaHocSinh and CT.MaLop = L.MaLop 
 			and KQ.MaNamHoc ='NH2223'  and L.MaNamHoc = 'NH2223'
-	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaHocKy
+	group by CT.MaLop, L.TenLop, KQ.MaHocSinh, KQ.MaMonHoc
 	order by TenLop
 
 
@@ -279,10 +286,14 @@ BEGIN
 	where MaNamHoc = @MaNamHoc and MaHocSinh = @MaHocSinh
 	order by MaMonHoc
 END
+select MaMonHoc, MaHocKy, DiemTB
+	from KETQUA_MONHOC_HOCSINH
+	where MaNamHoc = 'NH2223' and MaHocSinh = '22100113'
+	order by MaMonHoc
 
 select MaMonHoc, MaHocKy, DiemTB
 	from KETQUA_MONHOC_HOCSINH
-	where MaNamHoc = 'NH2223' and MaHocSinh = '22100100'
+	where MaNamHoc = 'NH2223' and MaHocSinh = '22101000'
 	order by MaMonHoc
 
 CREATE PROCEDURE XepLoai_NamApDung

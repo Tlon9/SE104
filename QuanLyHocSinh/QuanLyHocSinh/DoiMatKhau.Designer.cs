@@ -121,7 +121,7 @@ namespace QuanLyHocSinh
             this.guna2ButtonChangePass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2ButtonChangePass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2ButtonChangePass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonChangePass.FillColor = System.Drawing.SystemColors.MenuHighlight;
+            this.guna2ButtonChangePass.FillColor = System.Drawing.SystemColors.HotTrack;
             this.guna2ButtonChangePass.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonChangePass.ForeColor = System.Drawing.Color.White;
             this.guna2ButtonChangePass.Location = new System.Drawing.Point(404, 218);
@@ -192,7 +192,7 @@ namespace QuanLyHocSinh
             this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(655, 53);
             this.guna2Panel1.TabIndex = 16;
@@ -207,7 +207,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonClose1.ImageRotate = 0F;
             this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButtonClose1.Location = new System.Drawing.Point(604, 4);
-            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
             this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonClose1.Size = new System.Drawing.Size(47, 43);
@@ -224,7 +224,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonMinimize1.ImageRotate = 0F;
             this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(558, 4);
-            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
             this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(47, 43);
