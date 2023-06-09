@@ -128,7 +128,7 @@ namespace QuanLyHocSinh
                 {
                     MessageBox.Show("Giá trị nhập vào không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (short.Parse(this.tbStdIDDel.Text) >= sStdNum)
+                else if (short.Parse(this.tbStdIDDel.Text) > sStdNum)
                 {
                     MessageBox.Show("Số thứ tự lớn hơn sĩ số lớp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -145,11 +145,13 @@ namespace QuanLyHocSinh
                     if(choose == DialogResult.OK)
                     {
                         dataEntities db = new dataEntities();
-                        db.CTLOPs.Remove(db.CTLOPs.Where(
-                            p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
-                              && p.MaLop == this.cbClass.SelectedValue.ToString()
-                        ).FirstOrDefault());
-                        db.SaveChanges();
+                        CTLOP cTLOP = new CTLOP();
+                        cTLOP.MaHocSinh = dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString();
+                        cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
+                        MessageBox.Show(cTLOP.MaHocSinh + "\n" + cTLOP.MaLop);
+                        //db.CTLOPs.Remove(db.CTLOPs.Where(p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
+                        //    && p.MaLop == this.cbClass.SelectedValue.ToString());
+                        //db.SaveChanges();
                         // Xoá học sinh khỏi lớp
 
                         HienThiDanhSachHocSinh(db);
@@ -195,6 +197,7 @@ namespace QuanLyHocSinh
                                  SDT = g.Key.SDT
                              };
 
+            dt.Clear();
             sStdNum = 0;
             foreach (var std in dataSource)
             {

@@ -21,8 +21,8 @@ namespace QuanLyHocSinh
         protected String    strStdName;
         protected String    strStdGender;
         protected DateTime  dtStdBirthday;
-        protected String strStdAddress;
-        protected String strStdOrigin;
+        protected String    strStdAddress;
+        protected String    strStdOrigin;
         protected String    strStdEthnicity;
         protected String    strStdReligion;
         protected String    strStdPhoneNum;
@@ -46,6 +46,7 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
             this.tbStudentID.Text = "";
+            this.tbStudentID.ReadOnly = false;
             this.pnStudentInfo.Visible = false;
             this.pnDadInfo.Visible = false;
             this.pnMomInfo.Visible = false;
@@ -65,10 +66,12 @@ namespace QuanLyHocSinh
                 foreach (var std in listSearch)
                 {
                     // Student Info
-                                            this.strStdID           = std.MaHocSinh;
+                                            this.strStdID       = std.MaHocSinh;
                     this.tbName.Text        = strStdName        = std.HoTen;
                     this.cbGender.Text      = strStdGender      = std.GioiTinh;
                     this.dtpBirthday.Value  = dtStdBirthday     = std.NgaySinh.Value;
+                    this.tbOrigin.Text      = strStdOrigin      = std.QueQuan;
+                    this.tbAddress.Text     = strStdAddress     = std.DiaChi;
                     this.tbEthnicity.Text   = strStdEthnicity   = std.DanToc;
                     this.tbReligion.Text    = strStdReligion    = std.TonGiao;
                     this.tbNumPhone.Text    = strStdPhoneNum    = std.SDT;
@@ -198,6 +201,13 @@ namespace QuanLyHocSinh
                              where this.tbStudentID.Text == obj.MaHocSinh
                              select obj);
             if(listStdID.Count() > 0)
+            {                
+                MessageBox.Show("Học sinh này đã được xếp lớp, không thể xoá",
+                                "Lỗi",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            else
             {
                 DialogResult choose = MessageBox.Show("Xoá thông tin của học sinh này? Tác vụ này không thể hoàn tác",
                                                 "Xoá",
@@ -224,13 +234,6 @@ namespace QuanLyHocSinh
                     this.btnCancel.Visible = false;
                     this.btnDelete.Visible = false;
                 }
-            }
-            else
-            {
-                MessageBox.Show("Học sinh này đã được xếp lớp, không thể xoá",
-                                "Lỗi",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
             }
 
             
