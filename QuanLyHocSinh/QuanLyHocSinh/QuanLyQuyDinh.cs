@@ -191,11 +191,20 @@ namespace QuanLyHocSinh
             using(var context = new dataEntities())
             {
                 var std = context.THAMSOes.First();
-                std.TuoiToiThieu = Convert.ToByte(TuoiToiThieutxtbox.Text);
-                std.TuoiToiDa    = Convert.ToByte(TuoiToiDatxtbox.Text);
-                context.SaveChanges();
+                Byte toithieu = Convert.ToByte(TuoiToiThieutxtbox.Text);
+                Byte toida = Convert.ToByte(TuoiToiDatxtbox.Text);
+                if (toithieu > 0 && toida >0 && toithieu <= toida)
+                {
+                    std.TuoiToiThieu = Convert.ToByte(TuoiToiThieutxtbox.Text);
+                    std.TuoiToiDa = Convert.ToByte(TuoiToiDatxtbox.Text);
+                    context.SaveChanges();
+                    MessageBox.Show("Cập nhật quy định thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Tuổi phải lớn hơn 0 và tuổi tối thiểu phải bé hơn hoặc bằng tuổi tối đa!");
+                }    
             }
-            MessageBox.Show("Cập nhật quy định thành công!");
         }
         //Thay đổi quy định lập danh sách lớp
         private void updateSiso_button_Click(object sender, EventArgs e)
@@ -203,10 +212,15 @@ namespace QuanLyHocSinh
             using(var context = new dataEntities())
             {
                 var std = context.THAMSOes.First();
-                std.SiSoToiDa = Convert.ToByte(Sisotextbox.Text);
-                context.SaveChanges();
+                byte a;
+                if (Byte.TryParse(Sisotextbox.Text, out a) && Convert.ToByte(Sisotextbox.Text) > 0)
+                {
+                    std.SiSoToiDa = Convert.ToByte(Sisotextbox.Text);
+                    context.SaveChanges();
+                    MessageBox.Show("Cập nhật quy định thành công!");
+                }    
+                else MessageBox.Show("Sĩ số tối đa của lớp phải là số nguyên dương!");
             }
-            MessageBox.Show("Cập nhật quy định thành công!");
         }
 
         //Thay đổi danh sách lớp
@@ -466,13 +480,12 @@ namespace QuanLyHocSinh
                     new_item.MaMonHoc =  mamh;
                     new_item.NamApDung = MaNamHoc;
                     list_mh.Add(new_item);
+                    MessageBox.Show("Cập nhật danh sách môn học thành công!");
             }
             else if (!check_tenmh) MessageBox.Show("Tên môn học đã tồn tại!");
             foreach (var i in list_mh)
                     dtb.MONHOCs.Add(i);
             dtb.SaveChanges();
-            MessageBox.Show("Cập nhật danh sách môn học thành công!");
-
             var dsMonhoc = from obj in dtb.MONHOCs
                                where obj.TenMonHoc != null && obj.NamApDung == MaNamHoc
                                select new {TenMonHoc = obj.TenMonHoc };
@@ -520,7 +533,7 @@ namespace QuanLyHocSinh
                 }
                 else
                 {
-                    var std = dtb.MONHOCs.Where(r => r.TenMonHoc == tenmh && r.NamApDung == MaNamHoc_moi).First();
+                    var std = dtb.MONHOCs.Where(r => r.TenMonHoc == ten_mh && r.NamApDung == MaNamHoc_moi).First();
                     std.TenMonHoc = Tenmhtextbox.Text;
                 }
                 dtb.SaveChanges();
@@ -681,8 +694,8 @@ namespace QuanLyHocSinh
             for (int i = 0; i < ds_tentp.Count; i++)
             {
                 if (ds_tentp[i].TenThanhPhan == tentp) 
-                {
-                    if (ds_tentp[i].TrongSo == trongso)
+                {  
+                    if (ds_tentp[i].TrongSo == trongso || tentp != ten_tp)
                     {
                         check_tentp = false; break;
                     }    
@@ -696,13 +709,11 @@ namespace QuanLyHocSinh
                     {
                         if (i.TenThanhPhan == ten_tp)
                         {
-                            i.MaThanhPhan = tentp;
+                            //i.MaThanhPhan = tentp;
                             i.TenThanhPhan = tentp;
                             i.TrongSo = trongso;
                         }
                     }
-                    foreach (var i in list_tp)
-                        dtb.THANHPHANs.Add(i);
                 }
                 else
                 {
@@ -713,6 +724,8 @@ namespace QuanLyHocSinh
                 MessageBox.Show("Cập nhật danh sách điểm thành phần thành công!");
             }
             else MessageBox.Show("Tên thành phần đã tồn tại!");
+            foreach (var i in list_tp)
+                dtb.THANHPHANs.Add(i);
             dtb.SaveChanges();
             var dsDiemTP = from obj in dtb.THANHPHANs
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
@@ -1042,7 +1055,7 @@ namespace QuanLyHocSinh
             {
                 if (ds_tenhk[i].HocKy == tenhk) 
                 {
-                    if (ds_tenhk[i].TrongSo == trongso)
+                    if (ds_tenhk[i].TrongSo == trongso || tenhk!=ten_hk)
                     {
                         check_tenhk = false; break;
                     }   
@@ -1061,8 +1074,6 @@ namespace QuanLyHocSinh
                             break;
                         }
                     }
-                    foreach (var i in list_hk)
-                        dtb.HOCKies.Add(i);
                 }
                 else
                 {
@@ -1070,10 +1081,12 @@ namespace QuanLyHocSinh
                     std.HocKy1 = HocKytextbox.Text;
                     std.TrongSo = trongso;
                 }
-                dtb.SaveChanges();
                 MessageBox.Show("Cập nhật danh sách học kỳ thành công!");
             }
             else MessageBox.Show("Học kỳ này đã tồn tại!");
+            foreach (var i in list_hk)
+                dtb.HOCKies.Add(i);
+            dtb.SaveChanges();
             var dsDiemHK = from obj in dtb.HOCKies
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
