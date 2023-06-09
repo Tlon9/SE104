@@ -53,7 +53,7 @@ namespace QuanLyHocSinh
                 {
                     var account = new TAIKHOAN();
                     account.HoTen = guna2TextBox1.Text;
-                    account.NgaySinh = guna2TextBox2.Text;
+                    //account.NgaySinh = guna2TextBox2.Text;
                 }
             }
         }

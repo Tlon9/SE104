@@ -145,13 +145,27 @@ namespace QuanLyHocSinh
                     if(choose == DialogResult.OK)
                     {
                         dataEntities db = new dataEntities();
-                        CTLOP cTLOP = new CTLOP();
-                        cTLOP.MaHocSinh = dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString();
-                        cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
-                        MessageBox.Show(cTLOP.MaHocSinh + "\n" + cTLOP.MaLop);
+                        //List<CTLOP> src = (from ctl in db.CTLOPs
+                        //          where ctl.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
+                        //          && ctl.MaLop == this.cbClass.SelectedValue.ToString()
+                        //          select ctl).ToList();
+
+                        //CTLOP cTLOP = new CTLOP();
+                        String str1 = dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString();
+                        String str2 = this.cbClass.SelectedValue.ToString();
+                        //MessageBox.Show(cTLOP.MaHocSinh + "\n" + cTLOP.MaLop);
                         //db.CTLOPs.Remove(db.CTLOPs.Where(p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
                         //    && p.MaLop == this.cbClass.SelectedValue.ToString());
-                        //db.SaveChanges();
+
+                        db.CTLOPs.Remove(
+                            db.CTLOPs.Where(p => p.MaHocSinh == str1)
+                                .Intersect(
+                                    db.CTLOPs.Where(p => p.MaLop == str2)
+                                )
+                                .FirstOrDefault()
+                        ) ;
+                        db.SaveChanges();
+                                             
                         // Xoá học sinh khỏi lớp
 
                         HienThiDanhSachHocSinh(db);
