@@ -12,13 +12,15 @@ namespace QuanLyHocSinh
 {
     public partial class LapDanhSachLop : Form
     {
+        private TrangChu mainform { get; set; }
         private short sStdNum;
         private DataTable dt;
         private String strMaLop;
 
-        public LapDanhSachLop()
+        public LapDanhSachLop(TrangChu mainform)
         {
             InitializeComponent();
+            this.mainform = mainform;
 
             dt = new DataTable();
             dt.Columns.Add("STT", typeof(byte)).ReadOnly = true;
@@ -243,10 +245,8 @@ namespace QuanLyHocSinh
 
         private void btnHomeScreen_Click(object sender, EventArgs e)
         {
-            TrangChu newform = new TrangChu();
+            (this.mainform as TrangChu).Show();
             this.Hide();
-            newform.ShowDialog();
-            this.Show();
         }
 
         private void btnAddStdToClass_Click(object sender, EventArgs e)

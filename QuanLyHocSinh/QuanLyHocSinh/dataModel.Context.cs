@@ -353,13 +353,13 @@ namespace QuanLyHocSinh
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TongKetNamHoc_Result>("TongKetNamHoc", maNamHocParameter);
         }
     
-        public virtual ObjectResult<XepLoai_NamApDung_Result1> XepLoai_NamApDung(string namApDung)
+        public virtual ObjectResult<XepLoai_NamApDung_Result> XepLoai_NamApDung(string namApDung)
         {
             var namApDungParameter = namApDung != null ?
                 new ObjectParameter("NamApDung", namApDung) :
                 new ObjectParameter("NamApDung", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<XepLoai_NamApDung_Result1>("XepLoai_NamApDung", namApDungParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<XepLoai_NamApDung_Result>("XepLoai_NamApDung", namApDungParameter);
         }
     
         public virtual ObjectResult<HocKy_NamApDung_Result> HocKy_NamApDung(string namApDung)
