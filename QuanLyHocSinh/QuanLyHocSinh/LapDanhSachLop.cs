@@ -20,17 +20,6 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
-<<<<<<< Updated upstream
-            dataEntities db = new dataEntities();
-            this.cbSchoolYear.DataSource = (from obj in db.NAMHOCs select obj.NamHoc1).ToList();
-            this.cbGrade.DataSource = (from obj in db.KHOIs select obj.TenKhoi).ToList();
-
-            this.dgvClassDetail.Hide();
-            this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-
-=======
->>>>>>> Stashed changes
             dt = new DataTable();
             dt.Columns.Add("STT", typeof(byte)).ReadOnly = true;
             dt.Columns.Add("MSHS", typeof(String)).ReadOnly = false;
@@ -67,9 +56,8 @@ namespace QuanLyHocSinh
         //    // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
         //    this.lOPTableAdapter.Fill(this.duLieu.LOP);
 
-<<<<<<< Updated upstream
-        //}
-=======
+    //}
+
         private void CapNhatDanhSachLop(dataEntities db)
         {
             this.cbClass.DataSource = (from l in db.LOPs.AsEnumerable()
@@ -80,7 +68,6 @@ namespace QuanLyHocSinh
             this.cbClass.DisplayMember = "TenLop";
             this.cbClass.ValueMember = "MaLop";
         }
->>>>>>> Stashed changes
 
         private void ThemHocSinhVaoLop()
         {
@@ -228,38 +215,14 @@ namespace QuanLyHocSinh
 
         private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dgvClassDetail.Hide();
             dataEntities db = new dataEntities();
-<<<<<<< Updated upstream
-            this.cbClass.DataSource = from l in db.LOPs
-                                      join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
-                                      join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
-                                      where nh.NamHoc1 == this.cbSchoolYear.Text
-                                      && k.TenKhoi == this.cbGrade.Text
-                                      orderby l.MaLop ascending
-                                      select l.TenLop;
-=======
             CapNhatDanhSachLop(db);
-
-            //MessageBox.Show("Index: " + this.cbSchoolYear.SelectedItem);
->>>>>>> Stashed changes
         }
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dgvClassDetail.Hide();
             dataEntities db = new dataEntities();
-<<<<<<< Updated upstream
-            this.cbClass.DataSource = from l in db.LOPs
-                                      join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
-                                      join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
-                                      where nh.NamHoc1 == this.cbSchoolYear.Text
-                                      && k.TenKhoi == this.cbGrade.Text
-                                      orderby l.MaLop ascending
-                                      select l.TenLop;
-=======
             CapNhatDanhSachLop(db);
->>>>>>> Stashed changes
         }
 
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)

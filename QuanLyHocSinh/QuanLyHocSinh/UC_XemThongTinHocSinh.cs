@@ -21,6 +21,8 @@ namespace QuanLyHocSinh
         protected String    strStdName;
         protected String    strStdGender;
         protected DateTime  dtStdBirthday;
+        protected String strStdAddress;
+        protected String strStdOrigin;
         protected String    strStdEthnicity;
         protected String    strStdReligion;
         protected String    strStdPhoneNum;
@@ -117,27 +119,7 @@ namespace QuanLyHocSinh
                 if (sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
                 {
                     HOCSINH hs = new HOCSINH();
-<<<<<<< Updated upstream
-                    hs.MaHocSinh = this.tbName.Text;
-                    hs.HoTen = this.cbGender.Text;
-                    hs.NgaySinh = this.dtpBirthday.Value;
-                    hs.DiaChi = this.tbAddress.Text;
-                    hs.QueQuan = this.tbOrigin.Text;
-                    hs.DanToc = this.tbEthnicity.Text;
-                    hs.TonGiao = this.tbReligion.Text;
-                    hs.SDT = this.tbNumPhone.Text;
-                    hs.Email = this.tbEmail.Text;
-                    hs.HoTenCha = this.tbDadName.Text;
-                    hs.NamSinh_Cha = short.Parse(this.tbDadBirthyear.Text);
-                    hs.CCCD_Cha = this.tbDadID.Text;
-                    hs.SDT_Cha = this.tbDadPhoneNum.Text;
-                    hs.NgheNghiep_Cha = this.tbDadJob.Text;
-                    hs.HoTenMe = this.tbMomName.Text;
-                    hs.NamSinh_Me = short.Parse(this.tbMomBirthyear.Text);
-                    hs.CCCD_Me = this.tbMomID.Text;
-                    hs.SDT_Me = this.tbMomPhoneNum.Text;
-                    hs.NgheNghiep_Me = this.tbMomJob.Text;
-=======
+
                     hs.MaHocSinh       = this.strStdID   = this.tbStudentID.Text;
                     hs.HoTen           = strStdName      = this.tbName.Text;
                     hs.GioiTinh        = strStdGender    = this.cbGender.Text;
@@ -162,7 +144,6 @@ namespace QuanLyHocSinh
                     hs.NamSinh_Me      = short.Parse(this.tbMomBirthyear.Text);
                     hs.SDT_Me          = strMomPhoneNum  = this.tbMomPhoneNum.Text;
                     hs.NgheNghiep_Me   = strMomJob       = this.tbMomJob.Text;
->>>>>>> Stashed changes
 
                     db.HOCSINHs.AddOrUpdate(hs);
                     db.SaveChanges();
@@ -189,6 +170,8 @@ namespace QuanLyHocSinh
             this.tbName.Text = strStdName;
             this.cbGender.Text = strStdGender;
             this.dtpBirthday.Value = dtStdBirthday;
+            this.tbAddress.Text = strStdAddress;
+            this.tbOrigin.Text = strStdOrigin;
             this.tbEthnicity.Text = strStdEthnicity;
             this.tbReligion.Text = strStdReligion;
             this.tbNumPhone.Text = strStdPhoneNum;
