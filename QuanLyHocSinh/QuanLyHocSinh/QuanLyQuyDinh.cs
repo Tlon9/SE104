@@ -159,10 +159,9 @@ namespace QuanLyHocSinh
                                 {
                                     LOP new_class = new LOP();
                                     new_class.MaLop = manamhoc.Substring(2,2) + i.MaLop.Substring(2);
-                                    new_class.TenLop = i.TenLop;
-                                    string temp_check = dtb.KhoiLop_NamApDung(manamhoc).AsEnumerable().Where(p => p.TenKhoi == i.MaKhoi.Substring(2, 2)).FirstOrDefault().MaKhoi.ToString();
-                                    new_class.MaKhoi = temp_check;
-                                    new_class.SiSo = i.SiSo;
+                                    new_class.TenLop = i.TenLop;                     
+                                    new_class.MaKhoi = manamhoc.Substring(2,2)+i.MaKhoi.Substring(2,2);
+                                    new_class.SiSo = 0;
                                     new_class.MaNamHoc = manamhoc;
                                     dtb.LOPs.Add(new_class);
                                 }
@@ -835,7 +834,7 @@ namespace QuanLyHocSinh
             var dsXeploai = from obj in dtb.XEPLOAIs
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             && obj.TenXepLoai != "Không"
-                            orderby DiemToiThieu descending
+                            orderby obj.DiemToiThieu descending
                             select new {TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
             dgvXepLoai.Show();
