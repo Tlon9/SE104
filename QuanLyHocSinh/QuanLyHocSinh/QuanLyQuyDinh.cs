@@ -231,9 +231,14 @@ namespace QuanLyHocSinh
                 }
                 if (check_tenlop)
                 {
-                    LOP new_item = new LOP();
-                    var makhoi = dtb.KhoiLop_NamApDung(MaNamHoc_moi).Where(r => r.TenKhoi == tenlop.Substring(0, 2)).First();
+                    var makhoi = dtb.KhoiLop_NamApDung(MaNamHoc_moi).Where(r => r.TenKhoi == tenlop.Substring(0, 2)).FirstOrDefault();
+                    if(makhoi == null)
+                    {
+                        MessageBox.Show("Không tồn tại khối " + tenlop.Substring(0, 2));
+                        return;
+                    }
                     var namhoc = dtb.NAMHOCs.Where(r => r.NamHoc1 == year).First();
+                    LOP new_item = new LOP();
                     new_item.MaLop = malop;
                     new_item.TenLop = tenlop;
                     new_item.MaKhoi = makhoi.MaKhoi;
@@ -248,30 +253,28 @@ namespace QuanLyHocSinh
                             select new { TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
                 dgvDSLOP.Show();
-                dgvDSLOP.Show();
             }
         }
         private void DeleteLop_button_Click(object sender, EventArgs e)
         {
-            string malop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
+            string ten_lop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
             using (var dtb = new dataEntities())
             {
-                LOP std = dtb.LOPs.Where(r => r.MaLop == malop).First();
+                LOP std = dtb.LOPs.Where(r => r.TenLop == ten_lop && r.MaNamHoc == MaNamHoc_moi).First();
                 dtb.LOPs.Remove(std);
                 dtb.SaveChanges();
                 MessageBox.Show("Cập nhật danh sách lớp thành công!");
                 TenLoptextbox.Text = null;
                 var dsLop = from obj in dtb.LOPs
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
-                            select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
+                            select new {TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
-                dgvDSLOP.Columns[0].Visible = false;
                 dgvDSLOP.Show();
             }
         }
         private void EditLop_button_Click(object sender, EventArgs e)
         {
-            string malop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
+            string ten_lop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
             string tenlop = TenLoptextbox.Text;
             if (tenlop.Length != 4)
             {
@@ -288,7 +291,7 @@ namespace QuanLyHocSinh
                 }
                 if (check_tenlop)
                 {
-                    var std = dtb.LOPs.Where(r => r.MaLop == malop).First();
+                    var std = dtb.LOPs.Where(r => r.TenLop == ten_lop && r.MaNamHoc==MaNamHoc_moi).First();
                     std.TenLop = TenLoptextbox.Text;
                     dtb.SaveChanges();
                     MessageBox.Show("Cập nhật danh sách lớp thành công!");
@@ -296,9 +299,8 @@ namespace QuanLyHocSinh
                 else MessageBox.Show("Tên lớp đã tồn tại!");
                 var dsLop = from obj in dtb.LOPs
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
-                            select new { MaLop = obj.MaLop, TenLop = obj.TenLop };
+                            select new {TenLop = obj.TenLop };
                 dgvDSLOP.DataSource = dsLop.ToList();
-                dgvDSLOP.Columns[0].Visible = false;
                 dgvDSLOP.Show();
             }
         }
@@ -384,12 +386,21 @@ namespace QuanLyHocSinh
             string makhoi = MaNamHoc_moi.Substring(2,2)+tenkhoi;
             var std = dtb.KHOIs.Where(r => r.MaKhoi == makhoi).First();
             dtb.KHOIs.Remove(std);
+            foreach (var item in dtb.LOPs.Where(r=>r.MaKhoi == makhoi))
+            {
+                dtb.LOPs.Remove(item);
+            }
             dtb.SaveChanges();
             var dsKhoi = from obj in dtb.KHOIs
                          where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                          select new {TenKhoi = obj.TenKhoi};
             dgvDSKHOI.DataSource = dsKhoi.ToList();
             dgvDSKHOI.Show();
+            var dsLop = from obj in dtb.LOPs
+                        where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
+                        select new { TenLop = obj.TenLop };
+            dgvDSLOP.DataSource = dsLop.ToList();
+            dgvDSLOP.Show();
             MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
         }
 
@@ -456,12 +467,13 @@ namespace QuanLyHocSinh
                     new_item.MaMonHoc =  mamh;
                     new_item.NamApDung = MaNamHoc;
                     list_mh.Add(new_item);
-                    MessageBox.Show("Cập nhật danh sách môn học thành công!");
             }
             else if (!check_tenmh) MessageBox.Show("Tên môn học đã tồn tại!");
             foreach (var i in list_mh)
                     dtb.MONHOCs.Add(i);
             dtb.SaveChanges();
+            MessageBox.Show("Cập nhật danh sách môn học thành công!");
+
             var dsMonhoc = from obj in dtb.MONHOCs
                                where obj.TenMonHoc != null && obj.NamApDung == MaNamHoc
                                select new {TenMonHoc = obj.TenMonHoc };
@@ -474,8 +486,7 @@ namespace QuanLyHocSinh
             var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
-            string ten_mh = dgvDSMONHOC.CurrentRow.Cells[1].Value.ToString();
-            string ma_mh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
+            string ten_mh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
             string tenmh = Tenmhtextbox.Text;
             List<MONHOC> list_mh = new List<MONHOC>();
             if (tenmh.Length == 0)
@@ -510,7 +521,7 @@ namespace QuanLyHocSinh
                 }
                 else
                 {
-                    var std = dtb.MONHOCs.Where(r => r.MaMonHoc == ma_mh).First();
+                    var std = dtb.MONHOCs.Where(r => r.TenMonHoc == tenmh && r.NamApDung == MaNamHoc_moi).First();
                     std.TenMonHoc = Tenmhtextbox.Text;
                 }
                 dtb.SaveChanges();
@@ -535,8 +546,7 @@ namespace QuanLyHocSinh
             {
                 list_mh = Copy_Monhoc();
             }
-            string mamh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
-            string tenmh = dgvDSMONHOC.CurrentRow.Cells[1].Value.ToString();
+            string tenmh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
             if (list_mh.Count > 0)
             {
                 foreach (var i in list_mh)
@@ -548,7 +558,7 @@ namespace QuanLyHocSinh
             }
             else
             {
-                var std = dtb.MONHOCs.Where(r => r.MaMonHoc == mamh).First();
+                var std = dtb.MONHOCs.Where(r => r.TenMonHoc == tenmh && r.NamApDung == MaNamHoc_moi).First();
                 dtb.MONHOCs.Remove(std);
             }
             dtb.SaveChanges();
@@ -643,8 +653,7 @@ namespace QuanLyHocSinh
         {
             var dtb = new dataEntities();
             string tentp = TenTPtextbox.Text;
-            string matp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
-            string ten_tp = dgvDiemthanhphan.CurrentRow.Cells[1].Value.ToString();
+            string ten_tp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
             List<THANHPHAN> list_tp = new List<THANHPHAN>();
             string string_trongso = TrongsoTPtextbox.Text;
             if (string_trongso == string.Empty)
@@ -698,7 +707,7 @@ namespace QuanLyHocSinh
                 }
                 else
                 {
-                    var std = dtb.THANHPHANs.Where(r => r.MaThanhPhan == matp).First();
+                    var std = dtb.THANHPHANs.Where(r => r.TenThanhPhan == ten_tp && r.NamApDung == MaNamHoc_moi).First();
                     std.TenThanhPhan = tentp;
                     std.TrongSo = trongso;
                 }
@@ -721,8 +730,7 @@ namespace QuanLyHocSinh
             {
                 list_tp = Copy_ThanhPhan();
             }
-            string matp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
-            string tentp = dgvDiemthanhphan.CurrentRow.Cells[1].Value.ToString();
+            string tentp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
 
             if (list_tp.Count > 0)
             {
@@ -735,7 +743,7 @@ namespace QuanLyHocSinh
             }
             else
             {
-                var std = dtb.THANHPHANs.Where(r => r.MaThanhPhan == matp).First();
+                var std = dtb.THANHPHANs.Where(r => r.TenThanhPhan == tentp && r.NamApDung == MaNamHoc_moi).First();
                 dtb.THANHPHANs.Remove(std);
             }
             dtb.SaveChanges();
@@ -771,19 +779,22 @@ namespace QuanLyHocSinh
         }
         private void AddXeploai_button_Click(object sender, EventArgs e)
         {
-            if (Tenxeploaitextbox.Text == string.Empty)
+            if (Tenxeploaitextbox.Text == string.Empty || DiemKCtextbox.Text == string.Empty || minDiemtextbox.Text == string.Empty || maxDiemtextbox.Text == string.Empty)  
                 return;
+            double diem_kc = Convert.ToDouble(DiemKCtextbox.Text);
+            double diem_min = Convert.ToDouble(minDiemtextbox.Text);
+            double diem_max = Convert.ToDouble(maxDiemtextbox.Text);
+            if(diem_kc > 10 || diem_kc < 0 || diem_min > 10 || diem_min < 0 || diem_max > 10 || diem_max < 0)
+            {
+                MessageBox.Show("Gía trị điểm không hợp lệ!", "Error");
+                return;
+            }
             var dtb = new dataEntities();
             string tenxl = Tenxeploaitextbox.Text;
             var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
             List<XEPLOAI> list_xl = new List<XEPLOAI>();
-            if (tenxl.Length == 0)
-            {
-                MessageBox.Show("Tên học lực không hợp lệ!");
-                return;
-            }
             string[] words = tenxl.Split(' ');
             string maxl = "";
             if (words.Length >= 2)
@@ -824,31 +835,33 @@ namespace QuanLyHocSinh
             var dsXeploai = from obj in dtb.XEPLOAIs
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             && obj.TenXepLoai != "Không"
+                            orderby DiemToiThieu descending
                             select new {TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
             dgvXepLoai.Show();
         }
         private void EditXeploai_button_Click(object sender, EventArgs e)
         {
-            var dtb = new dataEntities();
-            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
-            string MaNamHoc = getMaNamHoc.ToString();
-            string subMaNamHoc = MaNamHoc.Substring(2, 2);
-            string ten_xl = dgvXepLoai.CurrentRow.Cells[1].Value.ToString();
-            string ma_xl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
-            string tenxl = Tenxeploaitextbox.Text;
-            List<XEPLOAI> list_xl = new List<XEPLOAI>();
-            if (tenxl.Length == 0)
+            if (Tenxeploaitextbox.Text == string.Empty || DiemKCtextbox.Text == string.Empty || minDiemtextbox.Text == string.Empty || maxDiemtextbox.Text == string.Empty)
+                return;
+            double diem_kc = Convert.ToDouble(DiemKCtextbox.Text);
+            double diem_min = Convert.ToDouble(minDiemtextbox.Text);
+            double diem_max = Convert.ToDouble(maxDiemtextbox.Text);
+            if (diem_kc > 10 || diem_kc < 0 || diem_min > 10 || diem_min < 0 || diem_max > 10 || diem_max < 0)
             {
-                MessageBox.Show("Tên học lực không hợp lệ!");
+                MessageBox.Show("Gía trị điểm không hợp lệ!", "Error");
                 return;
             }
-            var check_ = dtb.XEPLOAIs.Where(p => p.NamApDung == MaNamHoc);
+            var dtb = new dataEntities();
+            string ten_xl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
+            string tenxl = Tenxeploaitextbox.Text;
+            List<XEPLOAI> list_xl = new List<XEPLOAI>();
+            var check_ = dtb.XEPLOAIs.Where(p => p.NamApDung == MaNamHoc_moi);
             if (check_.Count() == 0)
             {
                 list_xl = Copy_Xeploai();
             }
-            var ds_tenxl = dtb.XepLoai_NamApDung(MaNamHoc).Select(r => r.TenXepLoai).ToList();
+            var ds_tenxl = dtb.XepLoai_NamApDung(MaNamHoc_moi).Select(r => r.TenXepLoai).ToList();
             bool check_tenxl = true;
             for (int i = 0; i < ds_tenxl.Count; i++)
             {
@@ -870,7 +883,7 @@ namespace QuanLyHocSinh
                 }
                 else
                 {
-                    var std = dtb.XEPLOAIs.Where(r => r.MaXepLoai == ma_xl).First();
+                    var std = dtb.XEPLOAIs.Where(r => r.TenXepLoai == ten_xl && r.NamApDung == MaNamHoc_moi).First();
                     std.TenXepLoai = Tenxeploaitextbox.Text;
                     std.DiemKhongChe = Convert.ToDouble(DiemKCtextbox.Text);
                     std.DiemToiThieu = Convert.ToDouble(minDiemtextbox.Text);
@@ -882,6 +895,7 @@ namespace QuanLyHocSinh
             var dsXeploai = from obj in dtb.XEPLOAIs
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             && obj.TenXepLoai != "Không"
+                            orderby obj.DiemToiThieu descending
                             select new {TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
             dgvXepLoai.Show();
@@ -898,8 +912,7 @@ namespace QuanLyHocSinh
             {
                 list_xl = Copy_Xeploai();
             }
-            string maxl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
-            string tenxl = dgvXepLoai.CurrentRow.Cells[1].Value.ToString();
+            string tenxl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
             if (list_xl.Count > 0)
             {
                 foreach (var i in list_xl)
@@ -910,13 +923,14 @@ namespace QuanLyHocSinh
             }
             else
             {
-                var std = dtb.XEPLOAIs.Where(r => r.MaXepLoai == maxl).First();
+                var std = dtb.XEPLOAIs.Where(r => r.TenXepLoai == tenxl && r.NamApDung == MaNamHoc_moi).First();
                 dtb.XEPLOAIs.Remove(std);
             }
             dtb.SaveChanges();
             var dsXeploai = from obj in dtb.XEPLOAIs
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             && obj.TenXepLoai != "Không"
+                            orderby obj.DiemToiThieu descending
                             select new {TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
             dgvXepLoai.DataSource = dsXeploai.ToList();
             dgvXepLoai.Show();
@@ -999,8 +1013,7 @@ namespace QuanLyHocSinh
         {
             var dtb = new dataEntities();
             string tenhk = HocKytextbox.Text;
-            string ten_hk = dgvDiemHK.CurrentRow.Cells[1].Value.ToString();
-            string mahk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
+            string ten_hk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
             var ds_tenhk = dtb.HocKy_NamApDung(MaNamHoc_moi).ToList();
             string string_trongso = TrongSoHKtextbox.Text;
             if (string_trongso == string.Empty)
@@ -1054,7 +1067,7 @@ namespace QuanLyHocSinh
                 }
                 else
                 {
-                    var std = dtb.HOCKies.Where(r => r.MaHocKy == mahk).First();
+                    var std = dtb.HOCKies.Where(r => r.HocKy1 == tenhk && r.NamApDung == MaNamHoc_moi).First();
                     std.HocKy1 = HocKytextbox.Text;
                     std.TrongSo = trongso;
                 }
@@ -1071,8 +1084,7 @@ namespace QuanLyHocSinh
         private void DeleteHocky_button_Click(object sender, EventArgs e)
         {
             var dtb = new dataEntities();
-            string mahk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
-            string tenhk = dgvDiemHK.CurrentRow.Cells[1].Value.ToString();
+            string tenhk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
             var check_ = dtb.HOCKies.Where(p => p.NamApDung == MaNamHoc_moi);
             List<HOCKY> list_hk = new List<HOCKY>();
             if (check_.Count() == 0)
@@ -1090,7 +1102,7 @@ namespace QuanLyHocSinh
             }
             else
             {
-                var std = dtb.HOCKies.Where(r => r.MaHocKy == mahk).First();
+                var std = dtb.HOCKies.Where(r => r.HocKy1 == tenhk && r.NamApDung == MaNamHoc_moi).First();
                 dtb.HOCKies.Remove(std);
             }
             dtb.SaveChanges();
