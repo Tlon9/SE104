@@ -52,8 +52,9 @@ namespace QuanLyHocSinh
             if(sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
             {
                 HOCSINH hs = new HOCSINH();
-                hs.MaHocSinh        = this.tbName.Text;
-                hs.HoTen            = this.cbGender.Text;
+                hs.MaHocSinh        = strID;
+                hs.HoTen            = this.tbName.Text;
+                hs.GioiTinh         = this.cbGender.Text;
                 hs.NgaySinh         = this.dtpBirthday.Value;
                 hs.DiaChi           = this.tbAddress.Text;
                 hs.QueQuan          = this.tbOrigin.Text;

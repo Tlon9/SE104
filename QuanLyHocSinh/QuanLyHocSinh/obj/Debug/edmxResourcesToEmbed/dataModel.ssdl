@@ -24,6 +24,7 @@
     <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="HocKy" Type="nvarchar" MaxLength="20" />
     <Property Name="TrongSo" Type="float" />
+    <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="HOCSINH">
     <Key>
@@ -68,6 +69,7 @@
     </Key>
     <Property Name="MaKhoi" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="TenKhoi" Type="nvarchar" MaxLength="30" />
+    <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="LOP">
     <Key>
@@ -110,7 +112,7 @@
     <Property Name="MatKhau" Type="nvarchar" MaxLength="60" />
     <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
-    <Property Name="NgaySinh" Type="date" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
   </EntityType>
   <EntityType Name="THAMSO">
     <Key>
@@ -188,6 +190,18 @@
       </Principal>
       <Dependent Role="DIEM">
         <PropertyRef Name="MaThanhPhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_khoi_mnh">
+    <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+    <End Role="KHOI" Type="Self.KHOI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NAMHOC">
+        <PropertyRef Name="MaNamHoc" />
+      </Principal>
+      <Dependent Role="KHOI">
+        <PropertyRef Name="MaNamHoc" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -287,12 +301,24 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="HocKy_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="KhoiLop_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="MonHoc_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="SuaThamSo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="TuoiToiThieu" Type="tinyint" Mode="In" />
     <Parameter Name="TuoiToiDa" Type="tinyint" Mode="In" />
     <Parameter Name="SiSoToiDa" Type="smallint" Mode="In" />
     <Parameter Name="DiemToiDa" Type="float" Mode="In" />
     <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+  </Function>
+  <Function Name="ThanhPhan_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="ThemHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
@@ -409,6 +435,10 @@
     <AssociationSet Name="fk_diem_tp" Association="Self.fk_diem_tp">
       <End Role="THANHPHAN" EntitySet="THANHPHAN" />
       <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="fk_khoi_mnh" Association="Self.fk_khoi_mnh">
+      <End Role="NAMHOC" EntitySet="NAMHOC" />
+      <End Role="KHOI" EntitySet="KHOI" />
     </AssociationSet>
     <AssociationSet Name="fk_kq_hk" Association="Self.fk_kq_hk">
       <End Role="HOCKY" EntitySet="HOCKY" />

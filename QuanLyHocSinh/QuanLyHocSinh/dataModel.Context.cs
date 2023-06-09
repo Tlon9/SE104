@@ -379,5 +379,23 @@ namespace QuanLyHocSinh
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MonHoc_NamApDung_Result>("MonHoc_NamApDung", namApDungParameter);
         }
+    
+        public virtual ObjectResult<KhoiLop_NamApDung_Result> KhoiLop_NamApDung(string namApDung)
+        {
+            var namApDungParameter = namApDung != null ?
+                new ObjectParameter("NamApDung", namApDung) :
+                new ObjectParameter("NamApDung", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhoiLop_NamApDung_Result>("KhoiLop_NamApDung", namApDungParameter);
+        }
+    
+        public virtual ObjectResult<ThanhPhan_NamApDung_Result> ThanhPhan_NamApDung(string namApDung)
+        {
+            var namApDungParameter = namApDung != null ?
+                new ObjectParameter("NamApDung", namApDung) :
+                new ObjectParameter("NamApDung", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ThanhPhan_NamApDung_Result>("ThanhPhan_NamApDung", namApDungParameter);
+        }
     }
 }

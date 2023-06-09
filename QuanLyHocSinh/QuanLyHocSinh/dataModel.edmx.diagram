@@ -31,6 +31,7 @@
         <AssociationConnector Association="dataModel.fk_lop_mk" />
         <AssociationConnector Association="dataModel.fk_lop_mnh" />
         <AssociationConnector Association="dataModel.fk_tk_pq" />
+        <AssociationConnector Association="dataModel.fk_khoi_mnh" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
