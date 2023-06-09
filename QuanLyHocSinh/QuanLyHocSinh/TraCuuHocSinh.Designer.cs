@@ -50,6 +50,7 @@
             this.lbInputGrade = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.pnFindInfoStudent = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.cbFindStudenID_2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbFindEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbFindPhoneNum = new Guna.UI2.WinForms.Guna2TextBox();
             this.cbClass = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -100,18 +101,20 @@
             this.pnStudent_info = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.BtnFindInfoStu = new Guna.UI2.WinForms.Guna2ImageButton();
             this.BtnRefresh = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pnParentInfo = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnFindInfoStudent.SuspendLayout();
             this.pnDadofStudent_Info.SuspendLayout();
             this.pnMomOfStudent_Info.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.pnStudent_info.SuspendLayout();
+            this.pnParentInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbInputIDStudent
             // 
             this.lbInputIDStudent.AutoSize = true;
             this.lbInputIDStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbInputIDStudent.Location = new System.Drawing.Point(22, 21);
+            this.lbInputIDStudent.Location = new System.Drawing.Point(22, 135);
             this.lbInputIDStudent.Name = "lbInputIDStudent";
             this.lbInputIDStudent.Size = new System.Drawing.Size(133, 20);
             this.lbInputIDStudent.TabIndex = 1;
@@ -241,7 +244,7 @@
             // 
             this.lbThongTinPhuHuynh.AutoSize = true;
             this.lbThongTinPhuHuynh.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(452, 617);
+            this.lbThongTinPhuHuynh.Location = new System.Drawing.Point(422, 18);
             this.lbThongTinPhuHuynh.Name = "lbThongTinPhuHuynh";
             this.lbThongTinPhuHuynh.Size = new System.Drawing.Size(386, 32);
             this.lbThongTinPhuHuynh.TabIndex = 7;
@@ -251,7 +254,7 @@
             // 
             this.lbInputEmail.AutoSize = true;
             this.lbInputEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbInputEmail.Location = new System.Drawing.Point(556, 126);
+            this.lbInputEmail.Location = new System.Drawing.Point(556, 75);
             this.lbInputEmail.Name = "lbInputEmail";
             this.lbInputEmail.Size = new System.Drawing.Size(61, 20);
             this.lbInputEmail.TabIndex = 8;
@@ -261,7 +264,7 @@
             // 
             this.lbInputPhoneNum.AutoSize = true;
             this.lbInputPhoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbInputPhoneNum.Location = new System.Drawing.Point(22, 126);
+            this.lbInputPhoneNum.Location = new System.Drawing.Point(22, 75);
             this.lbInputPhoneNum.Name = "lbInputPhoneNum";
             this.lbInputPhoneNum.Size = new System.Drawing.Size(116, 20);
             this.lbInputPhoneNum.TabIndex = 7;
@@ -271,7 +274,7 @@
             // 
             this.lbInputName.AutoSize = true;
             this.lbInputName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbInputName.Location = new System.Drawing.Point(22, 71);
+            this.lbInputName.Location = new System.Drawing.Point(22, 21);
             this.lbInputName.Name = "lbInputName";
             this.lbInputName.Size = new System.Drawing.Size(137, 20);
             this.lbInputName.TabIndex = 6;
@@ -309,6 +312,8 @@
             // 
             // pnFindInfoStudent
             // 
+            this.pnFindInfoStudent.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.pnFindInfoStudent.Controls.Add(this.cbFindStudenID_2);
             this.pnFindInfoStudent.Controls.Add(this.tbFindEmail);
             this.pnFindInfoStudent.Controls.Add(this.tbFindPhoneNum);
             this.pnFindInfoStudent.Controls.Add(this.cbClass);
@@ -321,10 +326,27 @@
             this.pnFindInfoStudent.Controls.Add(this.lbInputGrade);
             this.pnFindInfoStudent.Controls.Add(this.lbInputName);
             this.pnFindInfoStudent.Controls.Add(this.label27);
+            this.pnFindInfoStudent.CustomBorderColor = System.Drawing.Color.Blue;
+            this.pnFindInfoStudent.CustomBorderThickness = new System.Windows.Forms.Padding(4);
             this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 129);
             this.pnFindInfoStudent.Name = "pnFindInfoStudent";
-            this.pnFindInfoStudent.Size = new System.Drawing.Size(1040, 170);
+            this.pnFindInfoStudent.Size = new System.Drawing.Size(1040, 182);
             this.pnFindInfoStudent.TabIndex = 16;
+            // 
+            // cbFindStudenID_2
+            // 
+            this.cbFindStudenID_2.BackColor = System.Drawing.Color.Transparent;
+            this.cbFindStudenID_2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbFindStudenID_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFindStudenID_2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFindStudenID_2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbFindStudenID_2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbFindStudenID_2.ForeColor = System.Drawing.Color.Black;
+            this.cbFindStudenID_2.ItemHeight = 25;
+            this.cbFindStudenID_2.Location = new System.Drawing.Point(195, 124);
+            this.cbFindStudenID_2.Name = "cbFindStudenID_2";
+            this.cbFindStudenID_2.Size = new System.Drawing.Size(279, 31);
+            this.cbFindStudenID_2.TabIndex = 9;
             // 
             // tbFindEmail
             // 
@@ -339,13 +361,13 @@
             this.tbFindEmail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbFindEmail.ForeColor = System.Drawing.Color.Black;
             this.tbFindEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbFindEmail.Location = new System.Drawing.Point(633, 117);
+            this.tbFindEmail.Location = new System.Drawing.Point(633, 66);
             this.tbFindEmail.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbFindEmail.Name = "tbFindEmail";
             this.tbFindEmail.PasswordChar = '\0';
             this.tbFindEmail.PlaceholderText = "";
             this.tbFindEmail.SelectedText = "";
-            this.tbFindEmail.Size = new System.Drawing.Size(258, 36);
+            this.tbFindEmail.Size = new System.Drawing.Size(378, 36);
             this.tbFindEmail.TabIndex = 5;
             // 
             // tbFindPhoneNum
@@ -361,7 +383,7 @@
             this.tbFindPhoneNum.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbFindPhoneNum.ForeColor = System.Drawing.Color.Black;
             this.tbFindPhoneNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbFindPhoneNum.Location = new System.Drawing.Point(195, 117);
+            this.tbFindPhoneNum.Location = new System.Drawing.Point(195, 66);
             this.tbFindPhoneNum.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbFindPhoneNum.Name = "tbFindPhoneNum";
             this.tbFindPhoneNum.PasswordChar = '\0';
@@ -380,10 +402,10 @@
             this.cbClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbClass.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbClass.ForeColor = System.Drawing.Color.Black;
-            this.cbClass.ItemHeight = 30;
-            this.cbClass.Location = new System.Drawing.Point(877, 12);
+            this.cbClass.ItemHeight = 25;
+            this.cbClass.Location = new System.Drawing.Point(878, 12);
             this.cbClass.Name = "cbClass";
-            this.cbClass.Size = new System.Drawing.Size(133, 36);
+            this.cbClass.Size = new System.Drawing.Size(133, 31);
             this.cbClass.TabIndex = 2;
             // 
             // tbFindName
@@ -399,7 +421,7 @@
             this.tbFindName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbFindName.ForeColor = System.Drawing.Color.Black;
             this.tbFindName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbFindName.Location = new System.Drawing.Point(195, 62);
+            this.tbFindName.Location = new System.Drawing.Point(195, 12);
             this.tbFindName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbFindName.Name = "tbFindName";
             this.tbFindName.PasswordChar = '\0';
@@ -418,10 +440,10 @@
             this.cbGrade.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbGrade.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbGrade.ForeColor = System.Drawing.Color.Black;
-            this.cbGrade.ItemHeight = 30;
+            this.cbGrade.ItemHeight = 25;
             this.cbGrade.Location = new System.Drawing.Point(633, 12);
             this.cbGrade.Name = "cbGrade";
-            this.cbGrade.Size = new System.Drawing.Size(125, 36);
+            this.cbGrade.Size = new System.Drawing.Size(125, 31);
             this.cbGrade.TabIndex = 1;
             this.cbGrade.SelectedIndexChanged += new System.EventHandler(this.cbGrade_SelectedIndexChanged);
             // 
@@ -440,7 +462,7 @@
             this.tbStudentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tbStudentID.ForeColor = System.Drawing.Color.Black;
             this.tbStudentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbStudentID.Location = new System.Drawing.Point(195, 12);
+            this.tbStudentID.Location = new System.Drawing.Point(195, 126);
             this.tbStudentID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbStudentID.Name = "tbStudentID";
             this.tbStudentID.PasswordChar = '\0';
@@ -484,7 +506,7 @@
             this.pnDadofStudent_Info.Controls.Add(this.lbNamSinhCha);
             this.pnDadofStudent_Info.Controls.Add(this.lbSDT_Cha);
             this.pnDadofStudent_Info.Controls.Add(this.lbNgheNghiepCha);
-            this.pnDadofStudent_Info.Location = new System.Drawing.Point(34, 666);
+            this.pnDadofStudent_Info.Location = new System.Drawing.Point(4, 67);
             this.pnDadofStudent_Info.Name = "pnDadofStudent_Info";
             this.pnDadofStudent_Info.Size = new System.Drawing.Size(586, 304);
             this.pnDadofStudent_Info.TabIndex = 27;
@@ -612,7 +634,7 @@
             this.pnMomOfStudent_Info.Controls.Add(this.lbSDT_Me);
             this.pnMomOfStudent_Info.Controls.Add(this.lbNamSinhMe);
             this.pnMomOfStudent_Info.Controls.Add(this.lbNgheNghiepMe);
-            this.pnMomOfStudent_Info.Location = new System.Drawing.Point(648, 666);
+            this.pnMomOfStudent_Info.Location = new System.Drawing.Point(618, 67);
             this.pnMomOfStudent_Info.Name = "pnMomOfStudent_Info";
             this.pnMomOfStudent_Info.Size = new System.Drawing.Size(563, 304);
             this.pnMomOfStudent_Info.TabIndex = 28;
@@ -737,8 +759,9 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1381, 51);
+            this.guna2Panel1.Size = new System.Drawing.Size(1319, 51);
             this.guna2Panel1.TabIndex = 29;
+            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TraCuuHocSinh_MouseDown);
             // 
             // label2
             // 
@@ -759,7 +782,7 @@
             this.Btn_Close.ImageOffset = new System.Drawing.Point(0, 0);
             this.Btn_Close.ImageRotate = 0F;
             this.Btn_Close.ImageSize = new System.Drawing.Size(30, 30);
-            this.Btn_Close.Location = new System.Drawing.Point(1296, 4);
+            this.Btn_Close.Location = new System.Drawing.Point(1259, 4);
             this.Btn_Close.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Close.Name = "Btn_Close";
             this.Btn_Close.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -776,7 +799,7 @@
             this.Btn_Minimize.ImageOffset = new System.Drawing.Point(0, 0);
             this.Btn_Minimize.ImageRotate = 0F;
             this.Btn_Minimize.ImageSize = new System.Drawing.Size(30, 30);
-            this.Btn_Minimize.Location = new System.Drawing.Point(1241, 4);
+            this.Btn_Minimize.Location = new System.Drawing.Point(1204, 4);
             this.Btn_Minimize.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_Minimize.Name = "Btn_Minimize";
             this.Btn_Minimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -808,7 +831,7 @@
             this.BtnProfileAccount.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnProfileAccount.ImageRotate = 0F;
             this.BtnProfileAccount.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnProfileAccount.Location = new System.Drawing.Point(1241, 59);
+            this.BtnProfileAccount.Location = new System.Drawing.Point(1233, 63);
             this.BtnProfileAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnProfileAccount.Name = "BtnProfileAccount";
             this.BtnProfileAccount.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -1181,7 +1204,9 @@
             this.pnStudent_info.Controls.Add(this.lbNgaySinh);
             this.pnStudent_info.Controls.Add(this.lbQueQuan);
             this.pnStudent_info.Controls.Add(this.lbGioiTinh);
-            this.pnStudent_info.Location = new System.Drawing.Point(34, 306);
+            this.pnStudent_info.CustomBorderColor = System.Drawing.Color.Blue;
+            this.pnStudent_info.CustomBorderThickness = new System.Windows.Forms.Padding(4);
+            this.pnStudent_info.Location = new System.Drawing.Point(34, 335);
             this.pnStudent_info.Name = "pnStudent_info";
             this.pnStudent_info.Size = new System.Drawing.Size(1217, 308);
             this.pnStudent_info.TabIndex = 23;
@@ -1193,8 +1218,8 @@
             this.BtnFindInfoStu.Image = ((System.Drawing.Image)(resources.GetObject("BtnFindInfoStu.Image")));
             this.BtnFindInfoStu.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnFindInfoStu.ImageRotate = 0F;
-            this.BtnFindInfoStu.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnFindInfoStu.Location = new System.Drawing.Point(1162, 141);
+            this.BtnFindInfoStu.ImageSize = new System.Drawing.Size(50, 50);
+            this.BtnFindInfoStu.Location = new System.Drawing.Point(1127, 150);
             this.BtnFindInfoStu.Margin = new System.Windows.Forms.Padding(4);
             this.BtnFindInfoStu.Name = "BtnFindInfoStu";
             this.BtnFindInfoStu.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -1209,8 +1234,8 @@
             this.BtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("BtnRefresh.Image")));
             this.BtnRefresh.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnRefresh.ImageRotate = 0F;
-            this.BtnRefresh.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnRefresh.Location = new System.Drawing.Point(1162, 236);
+            this.BtnRefresh.ImageSize = new System.Drawing.Size(50, 50);
+            this.BtnRefresh.Location = new System.Drawing.Point(1127, 228);
             this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -1218,31 +1243,40 @@
             this.BtnRefresh.TabIndex = 35;
             this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh1_Click);
             // 
+            // pnParentInfo
+            // 
+            this.pnParentInfo.Controls.Add(this.lbThongTinPhuHuynh);
+            this.pnParentInfo.Controls.Add(this.pnDadofStudent_Info);
+            this.pnParentInfo.Controls.Add(this.pnMomOfStudent_Info);
+            this.pnParentInfo.CustomBorderColor = System.Drawing.Color.Blue;
+            this.pnParentInfo.CustomBorderThickness = new System.Windows.Forms.Padding(4);
+            this.pnParentInfo.Location = new System.Drawing.Point(35, 658);
+            this.pnParentInfo.Name = "pnParentInfo";
+            this.pnParentInfo.Size = new System.Drawing.Size(1216, 385);
+            this.pnParentInfo.TabIndex = 36;
+            // 
             // TraCuuHocSinh
             // 
+            this.AcceptButton = this.BtnFindInfoStu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1381, 1012);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1319, 1068);
+            this.Controls.Add(this.pnParentInfo);
             this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.BtnFindInfoStu);
             this.Controls.Add(this.guna2ImageButtonHome);
             this.Controls.Add(this.BtnProfileAccount);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.pnMomOfStudent_Info);
-            this.Controls.Add(this.pnDadofStudent_Info);
             this.Controls.Add(this.pnStudent_info);
             this.Controls.Add(this.pnFindInfoStudent);
             this.Controls.Add(this.label31);
-            this.Controls.Add(this.lbThongTinPhuHuynh);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TraCuuHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TraCuuHocSinh";
-            this.TopMost = true;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TraCuuHocSinh_MouseDown);
             this.pnFindInfoStudent.ResumeLayout(false);
             this.pnFindInfoStudent.PerformLayout();
             this.pnDadofStudent_Info.ResumeLayout(false);
@@ -1252,6 +1286,8 @@
             this.guna2Panel1.ResumeLayout(false);
             this.pnStudent_info.ResumeLayout(false);
             this.pnStudent_info.PerformLayout();
+            this.pnParentInfo.ResumeLayout(false);
+            this.pnParentInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1329,5 +1365,7 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnStudent_info;
         private Guna.UI2.WinForms.Guna2ImageButton BtnFindInfoStu;
         private Guna.UI2.WinForms.Guna2ImageButton BtnRefresh;
+        private Guna.UI2.WinForms.Guna2ComboBox cbFindStudenID_2;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnParentInfo;
     }
 }
