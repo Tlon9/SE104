@@ -63,7 +63,7 @@ namespace QuanLyHocSinh
                 foreach (var std in listSearch)
                 {
                     // Student Info
-                    this.strStdID           = std.MaHocSinh;
+                                            this.strStdID           = std.MaHocSinh;
                     this.tbName.Text        = strStdName        = std.HoTen;
                     this.cbGender.Text      = strStdGender      = std.GioiTinh;
                     this.dtpBirthday.Value  = dtStdBirthday     = std.NgaySinh.Value;
@@ -117,6 +117,7 @@ namespace QuanLyHocSinh
                 if (sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
                 {
                     HOCSINH hs = new HOCSINH();
+<<<<<<< Updated upstream
                     hs.MaHocSinh = this.tbName.Text;
                     hs.HoTen = this.cbGender.Text;
                     hs.NgaySinh = this.dtpBirthday.Value;
@@ -136,6 +137,32 @@ namespace QuanLyHocSinh
                     hs.CCCD_Me = this.tbMomID.Text;
                     hs.SDT_Me = this.tbMomPhoneNum.Text;
                     hs.NgheNghiep_Me = this.tbMomJob.Text;
+=======
+                    hs.MaHocSinh       = this.strStdID   = this.tbStudentID.Text;
+                    hs.HoTen           = strStdName      = this.tbName.Text;
+                    hs.GioiTinh        = strStdGender    = this.cbGender.Text;
+                    hs.NgaySinh        = dtStdBirthday   = this.dtpBirthday.Value;
+                    hs.DiaChi          = strStdAddress = this.tbAddress.Text;
+                    hs.QueQuan         = strStdOrigin  = this.tbOrigin.Text;
+                    hs.DanToc          = strStdEthnicity    = this.tbEthnicity.Text;
+                    hs.TonGiao         = strStdReligion   = this.tbReligion.Text;
+                    hs.SDT             = strStdPhoneNum  = this.tbNumPhone.Text;
+                    hs.Email           = strStdEmail     = this.tbEmail.Text;
+
+                    hs.HoTenCha        = strDadName = this.tbDadName.Text;
+                    hs.CCCD_Cha        = strDadID        = this.tbDadID.Text;
+                    strDadBirthyear    = this.tbDadBirthyear.Text;
+                    hs.NamSinh_Cha     = short.Parse(this.tbDadBirthyear.Text);
+                    hs.SDT_Cha         = strDadPhoneNum  = this.tbDadPhoneNum.Text;
+                    hs.NgheNghiep_Cha  = strDadJob       = this.tbDadJob.Text;
+
+                    hs.HoTenMe         = strMomName = this.tbMomName.Text;
+                    hs.CCCD_Me         = strMomID        = this.tbMomID.Text;
+                    strMomBirthyear    = this.tbMomBirthyear.Text;
+                    hs.NamSinh_Me      = short.Parse(this.tbMomBirthyear.Text);
+                    hs.SDT_Me          = strMomPhoneNum  = this.tbMomPhoneNum.Text;
+                    hs.NgheNghiep_Me   = strMomJob       = this.tbMomJob.Text;
+>>>>>>> Stashed changes
 
                     db.HOCSINHs.AddOrUpdate(hs);
                     db.SaveChanges();

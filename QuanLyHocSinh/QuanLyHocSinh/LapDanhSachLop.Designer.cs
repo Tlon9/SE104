@@ -101,7 +101,6 @@
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(185, 36);
             this.cbClass.TabIndex = 10;
-            this.cbClass.SelectedIndexChanged += new System.EventHandler(this.cbClass_SelectedIndexChanged);
             // 
             // cbGrade
             // 
@@ -117,7 +116,6 @@
             this.cbGrade.Name = "cbGrade";
             this.cbGrade.Size = new System.Drawing.Size(209, 36);
             this.cbGrade.TabIndex = 9;
-            this.cbGrade.SelectedIndexChanged += new System.EventHandler(this.cbGrade_SelectedIndexChanged);
             // 
             // cbSchoolYear
             // 
@@ -133,7 +131,6 @@
             this.cbSchoolYear.Name = "cbSchoolYear";
             this.cbSchoolYear.Size = new System.Drawing.Size(209, 36);
             this.cbSchoolYear.TabIndex = 8;
-            this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
             // 
             // tbStdNum
             // 
@@ -307,8 +304,9 @@
             // 
             this.btnAddStdToClass.AutoRoundedCorners = true;
             this.btnAddStdToClass.BackColor = System.Drawing.Color.White;
-            this.btnAddStdToClass.BorderRadius = 26;
+            this.btnAddStdToClass.BorderRadius = 21;
             this.btnAddStdToClass.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            this.btnAddStdToClass.DefaultAutoSize = true;
             this.btnAddStdToClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAddStdToClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAddStdToClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -318,10 +316,10 @@
             this.btnAddStdToClass.ForeColor = System.Drawing.Color.Black;
             this.btnAddStdToClass.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStdToClass.Image")));
             this.btnAddStdToClass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddStdToClass.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnAddStdToClass.ImageSize = new System.Drawing.Size(30, 30);
             this.btnAddStdToClass.Location = new System.Drawing.Point(811, 65);
             this.btnAddStdToClass.Name = "btnAddStdToClass";
-            this.btnAddStdToClass.Size = new System.Drawing.Size(161, 54);
+            this.btnAddStdToClass.Size = new System.Drawing.Size(125, 44);
             this.btnAddStdToClass.TabIndex = 3;
             this.btnAddStdToClass.Text = "Thêm";
             this.btnAddStdToClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -381,7 +379,8 @@
             // btnDelStdOutClass
             // 
             this.btnDelStdOutClass.AutoRoundedCorners = true;
-            this.btnDelStdOutClass.BorderRadius = 26;
+            this.btnDelStdOutClass.BorderRadius = 21;
+            this.btnDelStdOutClass.DefaultAutoSize = true;
             this.btnDelStdOutClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelStdOutClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelStdOutClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -391,10 +390,10 @@
             this.btnDelStdOutClass.ForeColor = System.Drawing.Color.Black;
             this.btnDelStdOutClass.Image = ((System.Drawing.Image)(resources.GetObject("btnDelStdOutClass.Image")));
             this.btnDelStdOutClass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDelStdOutClass.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnDelStdOutClass.ImageSize = new System.Drawing.Size(30, 30);
             this.btnDelStdOutClass.Location = new System.Drawing.Point(329, 65);
             this.btnDelStdOutClass.Name = "btnDelStdOutClass";
-            this.btnDelStdOutClass.Size = new System.Drawing.Size(125, 54);
+            this.btnDelStdOutClass.Size = new System.Drawing.Size(115, 44);
             this.btnDelStdOutClass.TabIndex = 4;
             this.btnDelStdOutClass.Text = "Xoá";
             this.btnDelStdOutClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -445,6 +444,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.panel4);

@@ -20,6 +20,7 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
 
+<<<<<<< Updated upstream
             dataEntities db = new dataEntities();
             this.cbSchoolYear.DataSource = (from obj in db.NAMHOCs select obj.NamHoc1).ToList();
             this.cbGrade.DataSource = (from obj in db.KHOIs select obj.TenKhoi).ToList();
@@ -28,6 +29,8 @@ namespace QuanLyHocSinh
             this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
+=======
+>>>>>>> Stashed changes
             dt = new DataTable();
             dt.Columns.Add("STT", typeof(byte)).ReadOnly = true;
             dt.Columns.Add("MSHS", typeof(String)).ReadOnly = false;
@@ -36,6 +39,27 @@ namespace QuanLyHocSinh
             dt.Columns.Add("Ngày sinh", typeof(DateTime)).ReadOnly = true;
             dt.Columns.Add("Địa chỉ", typeof(String)).ReadOnly = true;
             dt.Columns.Add("SĐT", typeof(String)).ReadOnly = true;
+
+            dataEntities db = new dataEntities();
+            cbSchoolYear.DataSource = (from obj in db.NAMHOCs.AsEnumerable()
+                                       orderby obj.MaNamHoc descending
+                                       select obj).ToList();
+            cbSchoolYear.DisplayMember = "NamHoc1";
+            cbSchoolYear.ValueMember = "MaNamHoc";
+
+            cbGrade.DataSource = (from obj in db.KHOIs.AsEnumerable() select obj).ToList();
+            cbGrade.DisplayMember = "TenKhoi";
+            cbGrade.ValueMember = "MaKhoi";
+
+            CapNhatDanhSachLop(db);
+            HienThiDanhSachHocSinh(db);
+
+            this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
+            this.cbGrade.SelectedIndexChanged += new System.EventHandler(this.cbGrade_SelectedIndexChanged);
+            this.cbClass.SelectedIndexChanged += new System.EventHandler(this.cbClass_SelectedIndexChanged);
+ 
+            this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
         //private void LapDanhSachLop_Load(object sender, EventArgs e)
@@ -43,7 +67,20 @@ namespace QuanLyHocSinh
         //    // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
         //    this.lOPTableAdapter.Fill(this.duLieu.LOP);
 
+<<<<<<< Updated upstream
         //}
+=======
+        private void CapNhatDanhSachLop(dataEntities db)
+        {
+            this.cbClass.DataSource = (from l in db.LOPs.AsEnumerable()
+                                       where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                                       && l.MaKhoi == this.cbGrade.SelectedValue.ToString()
+                                       orderby l.MaLop ascending
+                                       select l).ToList();
+            this.cbClass.DisplayMember = "TenLop";
+            this.cbClass.ValueMember = "MaLop";
+        }
+>>>>>>> Stashed changes
 
         private void ThemHocSinhVaoLop()
         {
@@ -63,20 +100,20 @@ namespace QuanLyHocSinh
                                      join ctl in db.CTLOPs on hs.MaHocSinh equals ctl.MaHocSinh
                                      join l in db.LOPs on ctl.MaLop equals l.MaLop
                                      join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
-                                     where nh.NamHoc1 == this.cbSchoolYear.Text
+                                     where nh.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
                                      select hs;
                     if (stdIdNowDb.Count() == 0)
                     {
                         // Thêm học sinh vào lớp
                         CTLOP cTLOP = new CTLOP();
                         cTLOP.MaHocSinh = this.tbStdIdAdd.Text;
-                        cTLOP.MaLop = strMaLop;
-                        cTLOP.MaCTL = strMaLop + "_" + this.tbStdIdAdd.Text;
+                        cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
+                        cTLOP.MaCTL = this.cbClass.SelectedValue.ToString() + "_" + this.tbStdIdAdd.Text;
                         db.CTLOPs.Add(cTLOP);
                         db.SaveChanges();
                         // Thêm học sinh vào lớp
 
-                        HienThiDanhSachLop();
+                        HienThiDanhSachHocSinh(db);
                         this.tbStdIdAdd.Text = "";
                         MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -121,12 +158,12 @@ namespace QuanLyHocSinh
                         dataEntities db = new dataEntities();
                         db.CTLOPs.Remove(db.CTLOPs.Where(
                             p => p.MaHocSinh == dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString()
-                              && p.MaLop == strMaLop
+                              && p.MaLop == this.cbClass.SelectedValue.ToString()
                         ).FirstOrDefault());
                         db.SaveChanges();
                         // Xoá học sinh khỏi lớp
 
-                        HienThiDanhSachLop();
+                        HienThiDanhSachHocSinh(db);
                         this.tbStdIDDel.Text = string.Empty;
                         MessageBox.Show(
                             "Xoá học sinh khỏi lớp thành công",
@@ -151,17 +188,11 @@ namespace QuanLyHocSinh
             }
         }
 
-        private void HienThiDanhSachLop()
+        private void HienThiDanhSachHocSinh(dataEntities db)
         {
-            dataEntities db = new dataEntities();
-            strMaLop = (from ctl in db.CTLOPs
-                        join l in db.LOPs on ctl.MaLop equals l.MaLop
-                        join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
-                        where l.TenLop == this.cbClass.Text && nh.NamHoc1 == this.cbSchoolYear.Text
-                        select ctl.MaLop).ToList().First();
             var dataSource = from ctl in db.CTLOPs.AsEnumerable()
                              join hs in db.HOCSINHs.AsEnumerable() on ctl.MaHocSinh equals hs.MaHocSinh
-                             where ctl.MaLop == strMaLop
+                             where ctl.MaLop == this.cbClass.SelectedValue.ToString()
                              group new { hs }
                              by new { hs.MaHocSinh, hs.HoTen, hs.GioiTinh, hs.NgaySinh, hs.DiaChi, hs.SDT }
                              into g
@@ -199,6 +230,7 @@ namespace QuanLyHocSinh
         {
             this.dgvClassDetail.Hide();
             dataEntities db = new dataEntities();
+<<<<<<< Updated upstream
             this.cbClass.DataSource = from l in db.LOPs
                                       join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
                                       join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
@@ -206,12 +238,18 @@ namespace QuanLyHocSinh
                                       && k.TenKhoi == this.cbGrade.Text
                                       orderby l.MaLop ascending
                                       select l.TenLop;
+=======
+            CapNhatDanhSachLop(db);
+
+            //MessageBox.Show("Index: " + this.cbSchoolYear.SelectedItem);
+>>>>>>> Stashed changes
         }
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.dgvClassDetail.Hide();
             dataEntities db = new dataEntities();
+<<<<<<< Updated upstream
             this.cbClass.DataSource = from l in db.LOPs
                                       join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
                                       join k in db.KHOIs on l.MaKhoi equals k.MaKhoi
@@ -219,11 +257,15 @@ namespace QuanLyHocSinh
                                       && k.TenKhoi == this.cbGrade.Text
                                       orderby l.MaLop ascending
                                       select l.TenLop;
+=======
+            CapNhatDanhSachLop(db);
+>>>>>>> Stashed changes
         }
 
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HienThiDanhSachLop();
+            dataEntities db = new dataEntities();
+            HienThiDanhSachHocSinh(db);
         }
 
         private void Btn_Minimize_Click(object sender, EventArgs e)

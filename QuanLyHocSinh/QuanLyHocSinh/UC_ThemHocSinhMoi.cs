@@ -74,7 +74,7 @@ namespace QuanLyHocSinh
 
                 db.HOCSINHs.Add(hs);
                 db.SaveChanges();
-                MessageBox.Show("Thêm học sinh thành công",
+                MessageBox.Show("Thêm học sinh thành công\nMSHS là " + strID,
                                 "Thêm thành công",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);

@@ -33,12 +33,12 @@
             this.btnInteractStudentInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddNewStudent = new Guna.UI2.WinForms.Guna2Button();
             this.btnHomeScreen = new Guna.UI2.WinForms.Guna2Button();
-            this.uC_ThemHocSinhMoi1 = new QuanLyHocSinh.UC_ThemHocSinhMoi();
-            this.uC_XemThongTinHocSinh1 = new QuanLyHocSinh.UC_XemThongTinHocSinh();
             this.Btn_Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Btn_Close = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainLabelStdInfo = new System.Windows.Forms.Label();
+            this.uC_XemThongTinHocSinh1 = new QuanLyHocSinh.UC_XemThongTinHocSinh();
+            this.uC_ThemHocSinhMoi1 = new QuanLyHocSinh.UC_ThemHocSinhMoi();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -107,20 +107,6 @@
             this.btnHomeScreen.TabIndex = 1;
             this.btnHomeScreen.Click += new System.EventHandler(this.btnHomeScreen_Click);
             // 
-            // uC_ThemHocSinhMoi1
-            // 
-            this.uC_ThemHocSinhMoi1.Location = new System.Drawing.Point(76, 194);
-            this.uC_ThemHocSinhMoi1.Name = "uC_ThemHocSinhMoi1";
-            this.uC_ThemHocSinhMoi1.Size = new System.Drawing.Size(1257, 811);
-            this.uC_ThemHocSinhMoi1.TabIndex = 2;
-            // 
-            // uC_XemThongTinHocSinh1
-            // 
-            this.uC_XemThongTinHocSinh1.Location = new System.Drawing.Point(80, 188);
-            this.uC_XemThongTinHocSinh1.Name = "uC_XemThongTinHocSinh1";
-            this.uC_XemThongTinHocSinh1.Size = new System.Drawing.Size(1257, 811);
-            this.uC_XemThongTinHocSinh1.TabIndex = 3;
-            // 
             // Btn_Minimize
             // 
             this.Btn_Minimize.BackColor = System.Drawing.SystemColors.Highlight;
@@ -177,13 +163,28 @@
             this.mainLabelStdInfo.TabIndex = 6;
             this.mainLabelStdInfo.Text = "Hồ sơ học sinh";
             // 
+            // uC_XemThongTinHocSinh1
+            // 
+            this.uC_XemThongTinHocSinh1.Location = new System.Drawing.Point(80, 188);
+            this.uC_XemThongTinHocSinh1.Name = "uC_XemThongTinHocSinh1";
+            this.uC_XemThongTinHocSinh1.Size = new System.Drawing.Size(1257, 811);
+            this.uC_XemThongTinHocSinh1.TabIndex = 3;
+            // 
+            // uC_ThemHocSinhMoi1
+            // 
+            this.uC_ThemHocSinhMoi1.Location = new System.Drawing.Point(76, 194);
+            this.uC_ThemHocSinhMoi1.Name = "uC_ThemHocSinhMoi1";
+            this.uC_ThemHocSinhMoi1.Size = new System.Drawing.Size(1257, 811);
+            this.uC_ThemHocSinhMoi1.TabIndex = 2;
+            // 
             // TiepNhanHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1478, 944);
+            this.ClientSize = new System.Drawing.Size(1556, 970);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.uC_XemThongTinHocSinh1);
             this.Controls.Add(this.uC_ThemHocSinhMoi1);
