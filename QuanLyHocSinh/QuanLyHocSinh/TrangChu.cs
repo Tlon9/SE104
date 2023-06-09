@@ -22,15 +22,16 @@ namespace QuanLyHocSinh
             if (Account.VaiTro == "Giáo viên")
             {
                 this.MenuItemSubjectScore.Visible = true;
+                this.MenuItemFinalReport.Visible = true;
             }
             else if (Account.VaiTro == "Người quản lý")
             {
                 this.MenuItemListCreate.Visible = true;
                 this.MenuItemAddStudent.Visible = true;
                 this.MenuQuanLyQuyDinh.Visible = true;
+                this.ToolStripMenuItemAccount.Visible = true;
             }
             this.MenuItemSearch.Visible = true;
-            this.MenuItemFinalReport.Visible = true;
             dataEntities dtb = new dataEntities();
             var ComboBoxYearsSource = from obj in dtb.NAMHOCs
                                       orderby obj.MaNamHoc descending
@@ -135,61 +136,75 @@ namespace QuanLyHocSinh
 
         private void guna2ButtonClass_Click(object sender, EventArgs e)
         {
-            dataEntities dtb = new dataEntities();
-            var Source = from cls in dtb.LOPs
-                         where cls.MaNamHoc == guna2ComboBoxYear.SelectedValue.ToString()
-                         select new { cls.MaLop, cls.TenLop, SoLuong = cls.SiSo };
-            DataTable tbl = new DataTable();
-            tbl.Columns.Add("STT", typeof(int));
-            tbl.Columns.Add("Mã lớp", typeof(string));
-            tbl.Columns.Add("Tên lớp", typeof(string));
-            tbl.Columns.Add("Sĩ số", typeof(int));
-
-            int index = 0;
-            foreach(var item in Source)
+            try
             {
-                DataRow row = tbl.NewRow();
-                index += 1;
-                row["STT"] = index;
-                row["Mã lớp"] = item.MaLop.ToString();
-                row["Tên lớp"] = item.TenLop.ToString();
-                row["Sĩ số"] = (int)item.SoLuong;
-                tbl.Rows.Add(row);
+                dataEntities dtb = new dataEntities();
+                var Source = from cls in dtb.LOPs
+                             where cls.MaNamHoc == guna2ComboBoxYear.SelectedValue.ToString()
+                             select new { cls.MaLop, cls.TenLop, SoLuong = cls.SiSo };
+                DataTable tbl = new DataTable();
+                tbl.Columns.Add("STT", typeof(int));
+                tbl.Columns.Add("Mã lớp", typeof(string));
+                tbl.Columns.Add("Tên lớp", typeof(string));
+                tbl.Columns.Add("Sĩ số", typeof(int));
+
+                int index = 0;
+                foreach (var item in Source)
+                {
+                    DataRow row = tbl.NewRow();
+                    index += 1;
+                    row["STT"] = index;
+                    row["Mã lớp"] = item.MaLop.ToString();
+                    row["Tên lớp"] = item.TenLop.ToString();
+                    row["Sĩ số"] = (int)item.SoLuong;
+                    tbl.Rows.Add(row);
+                }
+
+                guna2DataGridView.DataSource = tbl;
+                guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+                guna2DataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             }
-
-            guna2DataGridView.DataSource = tbl;
-            guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-
-            guna2DataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            catch
+            {
+                MessageBox.Show("Thao tác xảy ra lỗi, mời thực hiện lại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2ButtonSubject_Click(object sender, EventArgs e)
         {
-            dataEntities dtb = new dataEntities();
-            var Source = from sbj in dtb.MONHOCs
-                         where sbj.NamApDung == guna2ComboBoxYear.SelectedValue.ToString()
-                         join year in dtb.NAMHOCs on sbj.NamApDung equals year.MaNamHoc
-                         select new {MaMon = sbj.MaMonHoc, TenMon = sbj.TenMonHoc, NamApDung = year.NamHoc1};
-            DataTable tbl = new DataTable();
-            tbl.Columns.Add("STT", typeof(int));
-            tbl.Columns.Add("Mã môn", typeof(string));
-            tbl.Columns.Add("Tên môn học", typeof(string));
-            tbl.Columns.Add("Năm áp dụng", typeof(string));
-
-            int index = 0;
-            foreach (var item in Source)
+            try
             {
-                DataRow row = tbl.NewRow();
-                index += 1;
-                row["STT"] = index;
-                row["Mã môn"] = item.MaMon.ToString();
-                row["Tên môn học"] = item.TenMon.ToString();
-                row["Năm áp dụng"] = item.NamApDung.ToString();
-                tbl.Rows.Add(row);
-            }
+                dataEntities dtb = new dataEntities();
+                var Source = from sbj in dtb.MONHOCs
+                             where sbj.NamApDung == guna2ComboBoxYear.SelectedValue.ToString()
+                             join year in dtb.NAMHOCs on sbj.NamApDung equals year.MaNamHoc
+                             select new { MaMon = sbj.MaMonHoc, TenMon = sbj.TenMonHoc, NamApDung = year.NamHoc1 };
+                DataTable tbl = new DataTable();
+                tbl.Columns.Add("STT", typeof(int));
+                tbl.Columns.Add("Mã môn", typeof(string));
+                tbl.Columns.Add("Tên môn học", typeof(string));
+                tbl.Columns.Add("Năm áp dụng", typeof(string));
 
-            guna2DataGridView.DataSource = tbl;
-            guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+                int index = 0;
+                foreach (var item in Source)
+                {
+                    DataRow row = tbl.NewRow();
+                    index += 1;
+                    row["STT"] = index;
+                    row["Mã môn"] = item.MaMon.ToString();
+                    row["Tên môn học"] = item.TenMon.ToString();
+                    row["Năm áp dụng"] = item.NamApDung.ToString();
+                    tbl.Rows.Add(row);
+                }
+
+                guna2DataGridView.DataSource = tbl;
+                guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            }
+            catch
+            {
+                MessageBox.Show("Thao tác xảy ra lỗi, mời thực hiện lại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2ImageButtonUser_Click(object sender, EventArgs e)

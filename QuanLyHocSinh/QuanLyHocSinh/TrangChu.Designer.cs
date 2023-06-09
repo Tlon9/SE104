@@ -30,9 +30,9 @@ namespace QuanLyHocSinh
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemAddStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemListCreate = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +46,7 @@ namespace QuanLyHocSinh
             this.ToolStripMenuItemClassReport = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuQuanLyQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
-            this.taojToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -81,7 +81,7 @@ namespace QuanLyHocSinh
             this.MenuItemSubjectScore,
             this.MenuItemFinalReport,
             this.MenuQuanLyQuyDinh,
-            this.taojToolStripMenuItem});
+            this.ToolStripMenuItemAccount});
             this.menuStrip1.Location = new System.Drawing.Point(0, 208);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -203,14 +203,15 @@ namespace QuanLyHocSinh
             this.MenuQuanLyQuyDinh.Visible = false;
             this.MenuQuanLyQuyDinh.Click += new System.EventHandler(this.MenuQuanLyQuyDinh_Click);
             // 
-            // taojToolStripMenuItem
+            // ToolStripMenuItemAccount
             // 
-            this.taojToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taojToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.taojToolStripMenuItem.Name = "taojToolStripMenuItem";
-            this.taojToolStripMenuItem.Size = new System.Drawing.Size(156, 46);
-            this.taojToolStripMenuItem.Text = "Tạo tài khoản";
-            this.taojToolStripMenuItem.Click += new System.EventHandler(this.taojToolStripMenuItem_Click);
+            this.ToolStripMenuItemAccount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToolStripMenuItemAccount.ForeColor = System.Drawing.Color.White;
+            this.ToolStripMenuItemAccount.Name = "ToolStripMenuItemAccount";
+            this.ToolStripMenuItemAccount.Size = new System.Drawing.Size(156, 46);
+            this.ToolStripMenuItemAccount.Text = "Tạo tài khoản";
+            this.ToolStripMenuItemAccount.Visible = false;
+            this.ToolStripMenuItemAccount.Click += new System.EventHandler(this.taojToolStripMenuItem_Click);
             // 
             // guna2Panel1
             // 
@@ -266,26 +267,26 @@ namespace QuanLyHocSinh
             // 
             // guna2DataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.guna2DataGridView.ColumnHeadersHeight = 40;
             this.guna2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView.Location = new System.Drawing.Point(243, 23);
             this.guna2DataGridView.Name = "guna2DataGridView";
@@ -437,6 +438,7 @@ namespace QuanLyHocSinh
             this.guna2TextBoxUser.PasswordChar = '\0';
             this.guna2TextBoxUser.PlaceholderForeColor = System.Drawing.Color.Black;
             this.guna2TextBoxUser.PlaceholderText = "";
+            this.guna2TextBoxUser.ReadOnly = true;
             this.guna2TextBoxUser.SelectedText = "";
             this.guna2TextBoxUser.Size = new System.Drawing.Size(274, 57);
             this.guna2TextBoxUser.TabIndex = 23;
@@ -508,6 +510,6 @@ namespace QuanLyHocSinh
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonUser;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxUser;
         private System.Windows.Forms.Panel Background;
-        private System.Windows.Forms.ToolStripMenuItem taojToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAccount;
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Runtime.InteropServices;
 
 namespace QuanLyHocSinh
 {
@@ -51,11 +53,54 @@ namespace QuanLyHocSinh
                 }
                 if (check)
                 {
-                    var account = new TAIKHOAN();
-                    account.HoTen = guna2TextBox1.Text;
-                    //account.NgaySinh = guna2TextBox2.Text;
+                    try
+                    {
+                        var account = new TAIKHOAN();
+                        account.HoTen = guna2TextBox1.Text;
+                        CultureInfo provider = CultureInfo.InvariantCulture;
+                        account.NgaySinh = DateTime.ParseExact(guna2TextBox2.Text, "dd/mm/yyyy", provider);
+                        account.MaPhanQuyen = guna2ComboBox1.SelectedValue.ToString();
+                        account.TenDangNhap = guna2TextBox3.Text;
+                        account.MatKhau = guna2TextBox4.Text;
+                        var MaTK = dtb.TAIKHOANs.Where(r => r.MaPhanQuyen == account.MaPhanQuyen).OrderByDescending(r => r.MaTaiKhoan).Select(r => r.MaTaiKhoan).FirstOrDefault();
+                        
+                        int num = Convert.ToInt32(MaTK.Substring(2));
+                        num += 1;
+                        account.MaTaiKhoan = MaTK.Substring(0,2) + num.ToString();
+                        dtb.TAIKHOANs.Add(account);
+                        dtb.SaveChanges();
+                        MessageBox.Show("Tạo tài khoản thành công!");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Mời nhập đúng định dạng ngày sinh!");
+                    }
                 }
             }
+        }
+
+        private void guna2ImageButtonMinimize1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void guna2ImageButtonClose1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
+        private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
+        private void guna2ImageButtonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
