@@ -403,12 +403,12 @@ namespace QuanLyHocSinh
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            ExportToExcel(DHKGridView);
+            ExportToExcel(DNHGridView);
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {
-            ExportToExcel(DNHGridView);
+            ExportToExcel(DHKGridView);
         }
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
