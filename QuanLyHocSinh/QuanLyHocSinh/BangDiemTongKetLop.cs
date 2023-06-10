@@ -124,7 +124,7 @@ namespace QuanLyHocSinh
                     {
                         if (diemtb_hk > DiemToiThieu[k] && sum != 0)
                         {
-                            if (min_DiemTbmon > DiemKhongChe.ToList()[k])
+                            if (min_DiemTbmon >= DiemKhongChe.ToList()[k])
                             {
                                 newrow.Cells[Xeploai_index + 2].Value = TenXepLoai.ToList()[k].ToString();
                                 xeploai[k] += 1;
