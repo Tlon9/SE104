@@ -84,44 +84,57 @@ namespace QuanLyHocSinh
                               select hs;
                 if (stdIdDb.Count() > 0)
                 {
-                    var stdIdNowDb = from hs in stdIdDb
-                                     join ctl in db.CTLOPs on hs.MaHocSinh equals ctl.MaHocSinh
-                                     join l in db.LOPs on ctl.MaLop equals l.MaLop
-                                     join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
-                                     where nh.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
-                                     select hs;
-                    if (stdIdNowDb.Count() == 0)
+                    bool isAvailable = true;
+                    foreach (var std in stdIdDb)
                     {
-                        short SiSoToiDa = (short)(from obj in db.THAMSOes
-                                                  select obj.SiSoToiDa).ToList().First();
-                        if(sStdNum < SiSoToiDa)
+                        if (std.HoTen == null)
                         {
-                            // Thêm học sinh vào lớp
-                            CTLOP cTLOP = new CTLOP();
-                            cTLOP.MaHocSinh = this.tbStdIdAdd.Text;
-                            cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
-                            cTLOP.MaCTL = this.cbClass.SelectedValue.ToString() + "_" + this.tbStdIdAdd.Text;
-                            db.CTLOPs.Add(cTLOP);
-                            db.SaveChanges();
-                            // Thêm học sinh vào lớp
+                            isAvailable = false;
+                            MessageBox.Show("Thông tin của học sinh này không còn tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                        }
+                    }
+                    if(isAvailable)
+                    {
+                        var stdIdNowDb = from hs in stdIdDb
+                                         join ctl in db.CTLOPs on hs.MaHocSinh equals ctl.MaHocSinh
+                                         join l in db.LOPs on ctl.MaLop equals l.MaLop
+                                         join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                                         where nh.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                                         select hs;
+                        if (stdIdNowDb.Count() == 0)
+                        {
+                            short SiSoToiDa = (short)(from obj in db.THAMSOes
+                                                      select obj.SiSoToiDa).ToList().First();
+                            if (sStdNum < SiSoToiDa)
+                            {
+                                // Thêm học sinh vào lớp
+                                CTLOP cTLOP = new CTLOP();
+                                cTLOP.MaHocSinh = this.tbStdIdAdd.Text;
+                                cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
+                                cTLOP.MaCTL = this.cbClass.SelectedValue.ToString() + "_" + this.tbStdIdAdd.Text;
+                                db.CTLOPs.Add(cTLOP);
+                                db.SaveChanges();
+                                // Thêm học sinh vào lớp
 
-                            HienThiDanhSachHocSinh(db);
-                            this.tbStdIdAdd.Text = "";
-                            MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                HienThiDanhSachHocSinh(db);
+                                this.tbStdIdAdd.Text = "";
+                                MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Lớp đã đạt sĩ số tối đa, không thể thêm học sinh",
+                                                "Lỗi",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Lớp đã đạt sĩ số tối đa, không thể thêm học sinh",
-                                            "Lỗi",
-                                            MessageBoxButtons.OK,
-                                            MessageBoxIcon.Error);
+                            MessageBox.Show("Học sinh này đã được xếp lớp ở năm học này, không thể thêm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Học sinh này đã được xếp lớp ở năm học này, không thể thêm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
+                    }    
+                } 
                 else
                 {
                     MessageBox.Show("Mã số học sinh không tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -232,17 +245,22 @@ namespace QuanLyHocSinh
 
             this.tbStdNum.Text = sStdNum.ToString();
             this.dgvClassDetail.DataSource = dt;
+            this.dgvClassDetail.AutoResizeColumns();
             this.dgvClassDetail.Show();
         }
 
         private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.dgvClassDetail.Visible = false;
+            this.tbStdNum.Text = "";
             dataEntities db = new dataEntities();
             CapNhatDanhSachLop(db);
         }
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.dgvClassDetail.Visible = false;
+            this.tbStdNum.Text = "";
             dataEntities db = new dataEntities();
             CapNhatDanhSachLop(db);
         }

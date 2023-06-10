@@ -75,6 +75,12 @@
             this.lbMomName = new System.Windows.Forms.Label();
             this.lbMomInfo = new System.Windows.Forms.Label();
             this.btnAddStudent = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnStudentInfo.SuspendLayout();
             this.pnDadInfo.SuspendLayout();
             this.pnMomInfo.SuspendLayout();
@@ -82,6 +88,12 @@
             // 
             // pnStudentInfo
             // 
+            this.pnStudentInfo.Controls.Add(this.label6);
+            this.pnStudentInfo.Controls.Add(this.label5);
+            this.pnStudentInfo.Controls.Add(this.label4);
+            this.pnStudentInfo.Controls.Add(this.label3);
+            this.pnStudentInfo.Controls.Add(this.label2);
+            this.pnStudentInfo.Controls.Add(this.label1);
             this.pnStudentInfo.Controls.Add(this.cbGender);
             this.pnStudentInfo.Controls.Add(this.tbReligion);
             this.pnStudentInfo.Controls.Add(this.dtpBirthday);
@@ -120,9 +132,9 @@
             "Nam",
             "Nữ",
             "Không xác định"});
-            this.cbGender.Location = new System.Drawing.Point(902, 42);
+            this.cbGender.Location = new System.Drawing.Point(925, 42);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(266, 36);
+            this.cbGender.Size = new System.Drawing.Size(243, 36);
             this.cbGender.TabIndex = 20;
             // 
             // tbReligion
@@ -293,7 +305,7 @@
             // 
             this.lbNumPhone.AutoSize = true;
             this.lbNumPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbNumPhone.Location = new System.Drawing.Point(19, 291);
+            this.lbNumPhone.Location = new System.Drawing.Point(7, 291);
             this.lbNumPhone.Name = "lbNumPhone";
             this.lbNumPhone.Size = new System.Drawing.Size(53, 25);
             this.lbNumPhone.TabIndex = 10;
@@ -303,7 +315,7 @@
             // 
             this.lbAddress.AutoSize = true;
             this.lbAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbAddress.Location = new System.Drawing.Point(19, 237);
+            this.lbAddress.Location = new System.Drawing.Point(7, 237);
             this.lbAddress.Name = "lbAddress";
             this.lbAddress.Size = new System.Drawing.Size(71, 25);
             this.lbAddress.TabIndex = 9;
@@ -313,7 +325,7 @@
             // 
             this.lbOrigin.AutoSize = true;
             this.lbOrigin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbOrigin.Location = new System.Drawing.Point(19, 181);
+            this.lbOrigin.Location = new System.Drawing.Point(5, 181);
             this.lbOrigin.Name = "lbOrigin";
             this.lbOrigin.Size = new System.Drawing.Size(99, 25);
             this.lbOrigin.TabIndex = 8;
@@ -343,7 +355,7 @@
             // 
             this.lbBirthday.AutoSize = true;
             this.lbBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbBirthday.Location = new System.Drawing.Point(19, 120);
+            this.lbBirthday.Location = new System.Drawing.Point(7, 120);
             this.lbBirthday.Name = "lbBirthday";
             this.lbBirthday.Size = new System.Drawing.Size(99, 25);
             this.lbBirthday.TabIndex = 5;
@@ -353,7 +365,7 @@
             // 
             this.lbGender.AutoSize = true;
             this.lbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbGender.Location = new System.Drawing.Point(804, 60);
+            this.lbGender.Location = new System.Drawing.Point(793, 60);
             this.lbGender.Name = "lbGender";
             this.lbGender.Size = new System.Drawing.Size(82, 25);
             this.lbGender.TabIndex = 4;
@@ -363,7 +375,7 @@
             // 
             this.lbStudentName.AutoSize = true;
             this.lbStudentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lbStudentName.Location = new System.Drawing.Point(19, 60);
+            this.lbStudentName.Location = new System.Drawing.Point(7, 60);
             this.lbStudentName.Name = "lbStudentName";
             this.lbStudentName.Size = new System.Drawing.Size(95, 25);
             this.lbStudentName.TabIndex = 3;
@@ -766,6 +778,78 @@
             this.btnAddStudent.Text = "Thêm học sinh";
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(110, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 28);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(882, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 28);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(110, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 28);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(110, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(20, 28);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "*";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(89, 222);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 28);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(68, 276);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 28);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "*";
+            // 
             // UC_ThemHocSinhMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -836,5 +920,11 @@
         private System.Windows.Forms.Label lbMomInfo;
         private Guna.UI2.WinForms.Guna2Button btnAddStudent;
         private Guna.UI2.WinForms.Guna2ComboBox cbGender;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

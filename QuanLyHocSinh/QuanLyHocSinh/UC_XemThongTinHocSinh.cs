@@ -53,6 +53,9 @@ namespace QuanLyHocSinh
             this.btnSave.Visible = false;
             this.btnCancel.Visible = false;
             this.btnDelete.Visible = false;
+
+            this.dtpBirthday.CustomFormat = "dd/MM/yyyy";
+            this.dtpBirthday.Format = DateTimePickerFormat.Custom;
         }
 
         private void SearchStudentInfo()
@@ -65,39 +68,47 @@ namespace QuanLyHocSinh
             {
                 foreach (var std in listSearch)
                 {
-                    // Student Info
-                                            this.strStdID       = std.MaHocSinh;
-                    this.tbName.Text        = strStdName        = std.HoTen;
-                    this.cbGender.Text      = strStdGender      = std.GioiTinh;
-                    this.dtpBirthday.Value  = dtStdBirthday     = std.NgaySinh.Value;
-                    this.tbOrigin.Text      = strStdOrigin      = std.QueQuan;
-                    this.tbAddress.Text     = strStdAddress     = std.DiaChi;
-                    this.tbEthnicity.Text   = strStdEthnicity   = std.DanToc;
-                    this.tbReligion.Text    = strStdReligion    = std.TonGiao;
-                    this.tbNumPhone.Text    = strStdPhoneNum    = std.SDT;
-                    this.tbEmail.Text       = strStdEmail       = std.Email;
-                    this.pnStudentInfo.Visible = true;
+                    if(std.HoTen == null)
+                    {
+                        MessageBox.Show("Thông tin của học sinh này không còn tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                    else
+                    {
+                        // Student Info
+                        this.strStdID = std.MaHocSinh;
+                        this.tbName.Text = strStdName = std.HoTen;
+                        this.cbGender.Text = strStdGender = std.GioiTinh;
+                        this.dtpBirthday.Value = dtStdBirthday = std.NgaySinh.Value;
+                        this.tbOrigin.Text = strStdOrigin = std.QueQuan;
+                        this.tbAddress.Text = strStdAddress = std.DiaChi;
+                        this.tbEthnicity.Text = strStdEthnicity = std.DanToc;
+                        this.tbReligion.Text = strStdReligion = std.TonGiao;
+                        this.tbNumPhone.Text = strStdPhoneNum = std.SDT;
+                        this.tbEmail.Text = strStdEmail = std.Email;
+                        this.pnStudentInfo.Visible = true;
 
-                    // Dad Info
-                    this.tbDadName.Text         = strDadName        = std.HoTenCha;
-                    this.tbDadID.Text           = strDadID          = std.CCCD_Cha;
-                    this.tbDadBirthyear.Text    = strDadBirthyear   = std.NamSinh_Cha.ToString();
-                    this.tbDadPhoneNum.Text     = strDadPhoneNum    = std.SDT_Cha;
-                    this.tbDadJob.Text          = strDadJob         = std.NgheNghiep_Cha;
-                    this.pnDadInfo.Visible = true;
+                        // Dad Info
+                        this.tbDadName.Text = strDadName = std.HoTenCha;
+                        this.tbDadID.Text = strDadID = std.CCCD_Cha;
+                        this.tbDadBirthyear.Text = strDadBirthyear = std.NamSinh_Cha.ToString();
+                        this.tbDadPhoneNum.Text = strDadPhoneNum = std.SDT_Cha;
+                        this.tbDadJob.Text = strDadJob = std.NgheNghiep_Cha;
+                        this.pnDadInfo.Visible = true;
 
-                    // Mom Info
-                    this.tbMomName.Text         = strMomName        = std.HoTenMe;
-                    this.tbMomID.Text           = strMomID          = std.CCCD_Me;
-                    this.tbMomBirthyear.Text    = strMomBirthyear   = std.NamSinh_Me.ToString();
-                    this.tbMomPhoneNum.Text     = strMomPhoneNum    = std.SDT_Me;
-                    this.tbMomJob.Text          = strMomJob         = std.NgheNghiep_Me;
-                    this.pnMomInfo.Visible = true;
+                        // Mom Info
+                        this.tbMomName.Text = strMomName = std.HoTenMe;
+                        this.tbMomID.Text = strMomID = std.CCCD_Me;
+                        this.tbMomBirthyear.Text = strMomBirthyear = std.NamSinh_Me.ToString();
+                        this.tbMomPhoneNum.Text = strMomPhoneNum = std.SDT_Me;
+                        this.tbMomJob.Text = strMomJob = std.NgheNghiep_Me;
+                        this.pnMomInfo.Visible = true;
 
-                    // Buttons
-                    this.btnSave.Visible = true;
-                    this.btnCancel.Visible = true;
-                    this.btnDelete.Visible = true;
+                        // Buttons
+                        this.btnSave.Visible = true;
+                        this.btnCancel.Visible = true;
+                        this.btnDelete.Visible = true;
+                    }                   
                 }
             }
             else
@@ -106,65 +117,125 @@ namespace QuanLyHocSinh
             }
         }
 
+        private bool IsOnlySpace(String str)
+        {
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != ' ')
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void SaveStudentInfo()
         {
-            DialogResult choose = MessageBox.Show("Lưu thay đổi?", "Lưu", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-            if(choose == DialogResult.OK)
+            this.tbName.Text.Trim();
+            this.tbOrigin.Text.Trim();
+            this.tbAddress.Text.Trim();
+            this.tbNumPhone.Text.Trim();
+
+            if (tbName.Text.Length > 0
+                && tbOrigin.Text.Length > 0
+                && tbAddress.Text.Length > 0
+                && tbNumPhone.Text.Length > 0
+                && !IsOnlySpace(tbName.Text)
+                && !IsOnlySpace(tbOrigin.Text)
+                && !IsOnlySpace(tbAddress.Text)
+                && !IsOnlySpace(tbNumPhone.Text))
             {
-                dataEntities db = new dataEntities();
-                // Save Student Info code
-                byte sTuoiToiThieu = (byte)(from obj in db.THAMSOes
-                                            select obj.TuoiToiThieu).ToList().First();
-                byte sTuoiToiDa = (byte)(from obj in db.THAMSOes
-                                         select obj.TuoiToiDa).ToList().First();
-                byte sTuoi = (byte)(DateTime.Now.Year - dtpBirthday.Value.Year);
-
-                if (sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
+                try
                 {
-                    HOCSINH hs = new HOCSINH();
+                    short sNamSinhCha = 0;
+                    short sNamSinhMe = 0;
+                    if (this.tbDadBirthyear.Text != "")
+                    {
+                        sNamSinhCha = short.Parse(this.tbDadBirthyear.Text);
+                        
+                    }
+                    if(this.tbMomBirthyear.Text != "")
+                    {
+                        sNamSinhMe = short.Parse(this.tbMomBirthyear.Text);
+                    }
 
-                    hs.MaHocSinh       = this.strStdID   = this.tbStudentID.Text;
-                    hs.HoTen           = strStdName      = this.tbName.Text;
-                    hs.GioiTinh        = strStdGender    = this.cbGender.Text;
-                    hs.NgaySinh        = dtStdBirthday   = this.dtpBirthday.Value;
-                    hs.DiaChi          = strStdAddress = this.tbAddress.Text;
-                    hs.QueQuan         = strStdOrigin  = this.tbOrigin.Text;
-                    hs.DanToc          = strStdEthnicity    = this.tbEthnicity.Text;
-                    hs.TonGiao         = strStdReligion   = this.tbReligion.Text;
-                    hs.SDT             = strStdPhoneNum  = this.tbNumPhone.Text;
-                    hs.Email           = strStdEmail     = this.tbEmail.Text;
+                    DialogResult choose = MessageBox.Show("Lưu thay đổi?", "Lưu", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (choose == DialogResult.OK)
+                    {
+                        dataEntities db = new dataEntities();
+                        // Save Student Info code
+                        byte sTuoiToiThieu = (byte)(from obj in db.THAMSOes
+                                                    select obj.TuoiToiThieu).ToList().First();
+                        byte sTuoiToiDa = (byte)(from obj in db.THAMSOes
+                                                 select obj.TuoiToiDa).ToList().First();
+                        byte sTuoi = (byte)(DateTime.Now.Year - dtpBirthday.Value.Year);
 
-                    hs.HoTenCha        = strDadName = this.tbDadName.Text;
-                    hs.CCCD_Cha        = strDadID        = this.tbDadID.Text;
-                    strDadBirthyear    = this.tbDadBirthyear.Text;
-                    hs.NamSinh_Cha     = short.Parse(this.tbDadBirthyear.Text);
-                    hs.SDT_Cha         = strDadPhoneNum  = this.tbDadPhoneNum.Text;
-                    hs.NgheNghiep_Cha  = strDadJob       = this.tbDadJob.Text;
+                        if (sTuoi >= sTuoiToiThieu && sTuoi <= sTuoiToiDa)
+                        {
+                            HOCSINH hs = new HOCSINH();
 
-                    hs.HoTenMe         = strMomName = this.tbMomName.Text;
-                    hs.CCCD_Me         = strMomID        = this.tbMomID.Text;
-                    strMomBirthyear    = this.tbMomBirthyear.Text;
-                    hs.NamSinh_Me      = short.Parse(this.tbMomBirthyear.Text);
-                    hs.SDT_Me          = strMomPhoneNum  = this.tbMomPhoneNum.Text;
-                    hs.NgheNghiep_Me   = strMomJob       = this.tbMomJob.Text;
+                            hs.MaHocSinh = this.strStdID = this.tbStudentID.Text;
+                            hs.HoTen = strStdName = this.tbName.Text;
+                            hs.GioiTinh = strStdGender = this.cbGender.Text;
+                            hs.NgaySinh = dtStdBirthday = this.dtpBirthday.Value;
+                            hs.DiaChi = strStdAddress = this.tbAddress.Text;
+                            hs.QueQuan = strStdOrigin = this.tbOrigin.Text;
+                            hs.DanToc = strStdEthnicity = this.tbEthnicity.Text;
+                            hs.TonGiao = strStdReligion = this.tbReligion.Text;
+                            hs.SDT = strStdPhoneNum = this.tbNumPhone.Text;
+                            hs.Email = strStdEmail = this.tbEmail.Text;
 
-                    db.HOCSINHs.AddOrUpdate(hs);
-                    db.SaveChanges();
-                    MessageBox.Show("Lưu thay đổi thành công",
-                                    "Lưu thành công",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                            hs.HoTenCha = strDadName = this.tbDadName.Text;
+                            hs.CCCD_Cha = strDadID = this.tbDadID.Text;
+                            strDadBirthyear = this.tbDadBirthyear.Text;
+                            if(strDadBirthyear != "")
+                            {
+                                hs.NamSinh_Cha = short.Parse(this.tbDadBirthyear.Text);
+                            }
+                            hs.SDT_Cha = strDadPhoneNum = this.tbDadPhoneNum.Text;
+                            hs.NgheNghiep_Cha = strDadJob = this.tbDadJob.Text;
+
+                            hs.HoTenMe = strMomName = this.tbMomName.Text;
+                            hs.CCCD_Me = strMomID = this.tbMomID.Text;
+                            strMomBirthyear = this.tbMomBirthyear.Text;
+                            if(strMomBirthyear != "")
+                            {
+                                hs.NamSinh_Me = short.Parse(this.tbMomBirthyear.Text);
+                            }                            
+                            hs.SDT_Me = strMomPhoneNum = this.tbMomPhoneNum.Text;
+                            hs.NgheNghiep_Me = strMomJob = this.tbMomJob.Text;
+
+                            db.HOCSINHs.AddOrUpdate(hs);
+                            db.SaveChanges();
+                            MessageBox.Show("Lưu thay đổi thành công",
+                                            "Lưu thành công",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tuổi học sinh phải từ " + sTuoiToiThieu + " đến " + sTuoiToiDa + " tuổi.\n" +
+                                            "Lưu thay đổi không thành công.",
+                                            "Lỗi",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                        }
+                    }
                 }
-                else
+                catch (FormatException)
                 {
-                    MessageBox.Show("Tuổi học sinh phải từ " + sTuoiToiThieu + " đến " + sTuoiToiDa + " tuổi.\n" +
-                                    "Lưu thay đổi không thành công.",
-                                    "Lỗi",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    MessageBox.Show("Giá trị nhập vào cho năm sinh không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                // Save Student Info code
+                catch (OverflowException)
+                {
+                    MessageBox.Show("Giá trị nhập vào cho năm sinh vượt quá giới hạn lưu trữ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+            else
+            {
+                MessageBox.Show("Các trường bắt buộc không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void CancelChanges()
@@ -217,7 +288,9 @@ namespace QuanLyHocSinh
                 if (choose == DialogResult.OK)
                 {
                     // Delete Student
-                    db.HOCSINHs.Remove(db.HOCSINHs.Where(p => p.MaHocSinh == this.tbStudentID.Text).FirstOrDefault());
+                    HOCSINH hs = new HOCSINH();
+                    hs.MaHocSinh = this.tbStudentID.Text;
+                    db.HOCSINHs.AddOrUpdate(hs);
                     db.SaveChanges();
                     // Delete Student
 

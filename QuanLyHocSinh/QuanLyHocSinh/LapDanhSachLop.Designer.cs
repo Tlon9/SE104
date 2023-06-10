@@ -49,7 +49,7 @@
             this.Btn_Minimize = new Guna.UI2.WinForms.Guna2ImageButton();
             this.Btn_Close = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnHomeScreen = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvClassDetail = new System.Windows.Forms.DataGridView();
+            this.dgvClassDetail = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAddStdToClass = new Guna.UI2.WinForms.Guna2Button();
             this.tbStdIdAdd = new Guna.UI2.WinForms.Guna2TextBox();
@@ -286,8 +286,33 @@
             this.dgvClassDetail.Name = "dgvClassDetail";
             this.dgvClassDetail.RowHeadersWidth = 62;
             this.dgvClassDetail.RowTemplate.Height = 28;
-            this.dgvClassDetail.Size = new System.Drawing.Size(1545, 150);
+            this.dgvClassDetail.Size = new System.Drawing.Size(1545, 300);
             this.dgvClassDetail.TabIndex = 9;
+            this.dgvClassDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvClassDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvClassDetail.ReadOnly = true;
+            //this.dgvClassDetail.RowHeadersVisible = false;
+            this.dgvClassDetail.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvClassDetail.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvClassDetail.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvClassDetail.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvClassDetail.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvClassDetail.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvClassDetail.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvClassDetail.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvClassDetail.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvClassDetail.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClassDetail.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvClassDetail.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvClassDetail.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvClassDetail.ThemeStyle.ReadOnly = true;
+            this.dgvClassDetail.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvClassDetail.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvClassDetail.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClassDetail.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvClassDetail.ThemeStyle.RowsStyle.Height = 24;
+            this.dgvClassDetail.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvClassDetail.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // panel3
             // 
@@ -496,7 +521,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbClass;
         private Guna.UI2.WinForms.Guna2ComboBox cbGrade;
         private Guna.UI2.WinForms.Guna2ComboBox cbSchoolYear;
-        private System.Windows.Forms.DataGridView dgvClassDetail;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvClassDetail;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbAddStdToClass;
