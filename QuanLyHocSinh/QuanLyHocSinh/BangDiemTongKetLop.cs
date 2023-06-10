@@ -43,38 +43,31 @@ namespace QuanLyHocSinh
                          join mh in dtb.MONHOCs on kq.MaMonHoc equals mh.MaMonHoc
                          join ctl in dtb.CTLOPs on hs.MaHocSinh equals ctl.MaHocSinh
                          join l in dtb.LOPs on ctl.MaLop equals l.MaLop
-                         where hs.HoTen == ten && h.HocKy1 == hk && n.NamHoc1 == nh && l.TenLop == lop && mh.MaMonHoc == mon
+                         where hs.MaHocSinh == ten && h.HocKy1 == hk && n.NamHoc1 == nh && mh.MaMonHoc == mon
                          select kq.DiemTB;
             return DiemTB.ToList();
         }
         void TongKetHocKy()
         {
             dataEntities dtb = new dataEntities();
-            /*var TenMonHoc = dtb.KETQUA_MONHOC_HOCSINH
-                            .Join(dtb.HOCKies, kq => kq.MaHocKy, hk => hk.MaHocKy, (kq, hk) => new { kq, hk })
-                            .Join(dtb.NAMHOCs, kqhk => kqhk.kq.MaNamHoc, nh => nh.MaNamHoc, (kqhk, nh) => new { kqhk.kq, kqhk.hk, nh })
-                            .Join(dtb.MONHOCs, kqhknh => kqhknh.kq.MaMonHoc, mh => mh.MaMonHoc, (kqhknh, mh) => new { kqhknh.kq, kqhknh.hk, kqhknh.nh, mh })
-                            .GroupBy(kqhknhmh => kqhknhmh.mh.TenMonHoc)
-                            .Select(g => g.Key)
-                            .ToList();
-            var MaMonHoc = dtb.KETQUA_MONHOC_HOCSINH
-                .Join(dtb.HOCKies, kq => kq.MaHocKy, hk => hk.MaHocKy, (kq, hk) => new { kq, hk })
-                .Join(dtb.NAMHOCs, kqhk => kqhk.kq.MaNamHoc, nh => nh.MaNamHoc, (kqhk, nh) => new { kqhk.kq, kqhk.hk, nh })
-                .Join(dtb.MONHOCs, kqhknh => kqhknh.kq.MaMonHoc, mh => mh.MaMonHoc, (kqhknh, mh) => new { kqhknh.kq, kqhknh.hk, kqhknh.nh, mh })
-                .GroupBy(kqhknhmh => kqhknhmh.mh.MaMonHoc)
-                .Select(g => g.Key)
-                .ToList();*/
             var MaNamHoc = from obj in dtb.NAMHOCs
                            where obj.NamHoc1 == NamHocCbb_hk.Text
                            select obj.MaNamHoc;
-            var TenMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToString()).Where(r => r.TenMonHoc.Split().Last() == LopCbb_hk.Text.Substring(0, 2)).Select(r => r.TenMonHoc).ToList();
-            var MaMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToString()).Where(r => r.TenMonHoc.Split().Last() == LopCbb_hk.Text.Substring(0, 2)).Select(r => r.MaMonHoc).ToList();
+            var TenMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToList()[0]).Where(r => r.MaMonHoc.Substring(r.MaMonHoc.Length - 2) == LopCbb_hk.Text.Substring(0, 2)).Select(r => r.TenMonHoc).ToList();
+            var MaMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToList()[0]).Where(r => r.MaMonHoc.Substring(r.MaMonHoc.Length - 2) == LopCbb_hk.Text.Substring(0, 2)).Select(r => r.MaMonHoc).ToList();
+
             var HoTen = from ctl in dtb.CTLOPs
                         join l in dtb.LOPs on ctl.MaLop equals l.MaLop
+                        join nh in dtb.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
                         join hs in dtb.HOCSINHs on ctl.MaHocSinh equals hs.MaHocSinh
-                        where l.TenLop == LopCbb_hk.Text
+                        where l.TenLop == LopCbb_hk.Text && nh.NamHoc1 == NamHocCbb_hk.Text
                         select hs.HoTen;
-
+            var MHS = from ctl in dtb.CTLOPs
+                      join l in dtb.LOPs on ctl.MaLop equals l.MaLop
+                      join nh in dtb.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                      join hs in dtb.HOCSINHs on ctl.MaHocSinh equals hs.MaHocSinh
+                      where l.TenLop == LopCbb_hk.Text && nh.NamHoc1 == NamHocCbb_hk.Text
+                      select hs.MaHocSinh;
             dgvHocKy.Columns.Clear();
             dgvHocKy.Rows.Clear();
             dgvHocKy.Columns.Add("STT", "STT");
@@ -98,6 +91,7 @@ namespace QuanLyHocSinh
             int DiemTb_index = TenMonHoc.Count();
             int Xeploai_index = DiemTb_index + 1;
             int[] xeploai = new int[TenXepLoai.Count()];
+            if (HoTen.Count() == 0) return;
             for (int i = 0; i < HoTen.Count(); i++)
             {
                 double min_DiemTbmon = 10;
@@ -108,16 +102,15 @@ namespace QuanLyHocSinh
                 double?[] diem = new double?[TenMonHoc.Count];
                 double? sum = 0;
                 int so_mon_da_co_diem = 0;
-
+                string mhs = MHS.ToList()[i].ToString();
                 for (int j = 0; j < TenMonHoc.Count(); j++)
                 {
-                    string ten = HoTen.ToList()[i].ToString();
                     string mon = MaMonHoc[j].ToString();
-                    int diemtbmon_ketqua = DiemTB(ten, HocKyCbb.Text, NamHocCbb_hk.Text, LopCbb_hk.Text, mon).ToList().Count();
+                    int diemtbmon_ketqua = DiemTB(mhs, HocKyCbb.Text, NamHocCbb_hk.Text, LopCbb_hk.Text, mon).ToList().Count();
                     if (diemtbmon_ketqua != 0)
                     {
                         so_mon_da_co_diem += 1;
-                        double? diemtb_mon = DiemTB(ten, HocKyCbb.Text, NamHocCbb_hk.Text, LopCbb_hk.Text, mon).ToList()[0];
+                        double? diemtb_mon = DiemTB(mhs, HocKyCbb.Text, NamHocCbb_hk.Text, LopCbb_hk.Text, mon).ToList()[0];
                         newrow.Cells[j + 2].Value = diemtb_mon;
                         if (diemtb_mon < min_DiemTbmon) min_DiemTbmon = (double)diemtb_mon;
                         sum += diemtb_mon;
@@ -149,7 +142,6 @@ namespace QuanLyHocSinh
                 }
                 dgvHocKy.Rows.Add(newrow);
             }
-
             dgvHocKy.Show();
             DataTable ratio_Source = new DataTable();
             ratio_Source.Columns.Add("Xếp loại", typeof(string));
@@ -221,19 +213,21 @@ namespace QuanLyHocSinh
         {
             dataEntities dtb = new dataEntities();
             var MaNamHoc = from obj in dtb.NAMHOCs
-                           where obj.NamHoc1 == NamHocCbb_hk.Text
+                           where obj.NamHoc1 == NamHocCbb_nh.Text
                            select obj.MaNamHoc;
-            var TenMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToString()).Where(r => r.TenMonHoc.Split().Last() == LopCbb_hk.Text.Substring(0, 2)).Select(r => r.TenMonHoc).ToList();
-            var MaMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToString()).Where(r => r.TenMonHoc.Split().Last() == LopCbb_hk.Text.Substring(0, 2)).Select(r => r.MaMonHoc).ToList();
+            var TenMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToList()[0]).Where(r => r.MaMonHoc.Substring(r.MaMonHoc.Length - 2) == LopCbb_nh.Text.Substring(0, 2)).Select(r => r.TenMonHoc).ToList();
+            var MaMonHoc = dtb.MonHoc_NamApDung(MaNamHoc.ToList()[0]).Where(r => r.MaMonHoc.Substring(r.MaMonHoc.Length - 2) == LopCbb_nh.Text.Substring(0, 2)).Select(r => r.MaMonHoc).ToList();
             var HoTen = from ctl in dtb.CTLOPs
                         join l in dtb.LOPs on ctl.MaLop equals l.MaLop
+                        join nh in dtb.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
                         join hs in dtb.HOCSINHs on ctl.MaHocSinh equals hs.MaHocSinh
-                        where l.TenLop == LopCbb_nh.Text
+                        where l.TenLop == LopCbb_nh.Text && nh.NamHoc1 == NamHocCbb_nh.Text
                         select hs.HoTen;
             var MHS = from ctl in dtb.CTLOPs
                       join l in dtb.LOPs on ctl.MaLop equals l.MaLop
+                      join nh in dtb.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
                       join hs in dtb.HOCSINHs on ctl.MaHocSinh equals hs.MaHocSinh
-                      where l.TenLop == LopCbb_nh.Text
+                      where l.TenLop == LopCbb_nh.Text && nh.NamHoc1 == NamHocCbb_nh.Text
                       select hs.MaHocSinh;
 
             dgvNamHoc.Columns.Clear();
