@@ -87,8 +87,23 @@
       <Parameter Name="MaNamHoc" Mode="In" Type="String" />
       <Parameter Name="MaHocSinh" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="HocKy_NamApDung" ReturnType="Collection(dataModel.HocKy_NamApDung_Result)">
+      <Parameter Name="NamApDung" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="MonHoc_NamApDung" ReturnType="Collection(dataModel.MonHoc_NamApDung_Result)">
+      <Parameter Name="NamApDung" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="KhoiLop_NamApDung" ReturnType="Collection(dataModel.KhoiLop_NamApDung_Result)">
+      <Parameter Name="NamApDung" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ThanhPhan_NamApDung" ReturnType="Collection(dataModel.ThanhPhan_NamApDung_Result)">
+      <Parameter Name="NamApDung" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="TongKetNamHoc" ReturnType="Collection(dataModel.TongKetNamHoc_Result)">
       <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
+      <Parameter Name="NamApDung" Mode="In" Type="String" />
     </FunctionImport>
     <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
     <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
@@ -140,6 +155,10 @@
       <End Role="XEPLOAI" EntitySet="XEPLOAIs" />
       <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
     </AssociationSet>
+    <AssociationSet Name="fk_khoi_mnh" Association="dataModel.fk_khoi_mnh">
+      <End Role="NAMHOC" EntitySet="NAMHOCs" />
+      <End Role="KHOI" EntitySet="KHOIs" />
+    </AssociationSet>
     <AssociationSet Name="fk_lop_mk" Association="dataModel.fk_lop_mk">
       <End Role="KHOI" EntitySet="KHOIs" />
       <End Role="LOP" EntitySet="LOPs" />
@@ -152,25 +171,6 @@
       <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
       <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
     </AssociationSet>
-    <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result1)">
-      <Parameter Name="NamApDung" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="HocKy_NamApDung" ReturnType="Collection(dataModel.HocKy_NamApDung_Result)">
-      <Parameter Name="NamApDung" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="MonHoc_NamApDung" ReturnType="Collection(dataModel.MonHoc_NamApDung_Result)">
-      <Parameter Name="NamApDung" Mode="In" Type="String" />
-    </FunctionImport>
-    <AssociationSet Name="fk_khoi_mnh" Association="dataModel.fk_khoi_mnh">
-      <End Role="NAMHOC" EntitySet="NAMHOCs" />
-      <End Role="KHOI" EntitySet="KHOIs" />
-    </AssociationSet>
-    <FunctionImport Name="KhoiLop_NamApDung" ReturnType="Collection(dataModel.KhoiLop_NamApDung_Result)">
-      <Parameter Name="NamApDung" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="ThanhPhan_NamApDung" ReturnType="Collection(dataModel.ThanhPhan_NamApDung_Result)">
-      <Parameter Name="NamApDung" Mode="In" Type="String" />
-    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="TongKetMonHocKy_Result">
     <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
@@ -195,22 +195,36 @@
     <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
     <Property Type="Double" Name="DiemTB" Nullable="true" />
   </ComplexType>
+  <ComplexType Name="HocKy_NamApDung_Result">
+    <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="HocKy" Nullable="true" MaxLength="20" />
+    <Property Type="Double" Name="TrongSo" Nullable="true" />
+    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="MonHoc_NamApDung_Result">
+    <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="TenMonHoc" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="KhoiLop_NamApDung_Result">
+    <Property Type="String" Name="MaKhoi" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="TenKhoi" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="MaNamHoc" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="ThanhPhan_NamApDung_Result">
+    <Property Type="String" Name="MaThanhPhan" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="TenThanhPhan" Nullable="true" MaxLength="30" />
+    <Property Type="Double" Name="TrongSo" Nullable="true" />
+    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+  </ComplexType>
   <ComplexType Name="TongKetNamHoc_Result">
     <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
     <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
     <Property Type="Double" Name="DiemTB" Nullable="true" />
-    <Property Type="Int32" Name="SoLuongMon" Nullable="true" />
+    <Property Type="Int32" Name="SoLuongKy" Nullable="true" />
   </ComplexType>
   <ComplexType Name="XepLoai_NamApDung_Result">
-    <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
-    <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
-    <Property Type="Double" Name="DiemToiDa" Nullable="true" />
-    <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
-    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
-  </ComplexType>
-  <ComplexType Name="XepLoai_NamApDung1_Result">
     <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
     <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
     <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
@@ -246,8 +260,8 @@
     <Property Name="MaHocKy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="HocKy1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="TrongSo" Type="Double" />
-    <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hk" FromRole="HOCKY" ToRole="KETQUA_MONHOC_HOCSINH" />
     <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hk" FromRole="HOCKY" ToRole="KETQUA_MONHOC_HOCSINH" />
   </EntityType>
   <EntityType Name="HOCSINH">
     <Key>
@@ -300,9 +314,9 @@
     </Key>
     <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="TenKhoi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mk" FromRole="KHOI" ToRole="LOP" />
     <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="NAMHOC" Relationship="dataModel.fk_khoi_mnh" FromRole="KHOI" ToRole="NAMHOC" />
+    <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mk" FromRole="KHOI" ToRole="LOP" />
   </EntityType>
   <EntityType Name="LOP">
     <Key>
@@ -333,8 +347,8 @@
     <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="NamHoc1" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_nh" FromRole="NAMHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
-    <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mnh" FromRole="NAMHOC" ToRole="LOP" />
     <NavigationProperty Name="KHOIs" Relationship="dataModel.fk_khoi_mnh" FromRole="NAMHOC" ToRole="KHOI" />
+    <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mnh" FromRole="NAMHOC" ToRole="LOP" />
   </EntityType>
   <EntityType Name="PHANQUYEN">
     <Key>
@@ -497,6 +511,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_khoi_mnh">
+    <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="1" />
+    <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NAMHOC">
+        <PropertyRef Name="MaNamHoc" />
+      </Principal>
+      <Dependent Role="KHOI">
+        <PropertyRef Name="MaNamHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_lop_mk">
     <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="1" />
     <End Type="dataModel.LOP" Role="LOP" Multiplicity="*" />
@@ -533,46 +559,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <ComplexType Name="XepLoai_NamApDung_Result1">
-    <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
-    <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
-    <Property Type="Double" Name="DiemToiDa" Nullable="true" />
-    <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
-    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
-  </ComplexType>
-  <ComplexType Name="HocKy_NamApDung_Result">
-    <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="HocKy" Nullable="true" MaxLength="20" />
-    <Property Type="Double" Name="TrongSo" Nullable="true" />
-    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
-  </ComplexType>
-  <ComplexType Name="MonHoc_NamApDung_Result">
-    <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="TenMonHoc" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
-  </ComplexType>
-  <Association Name="fk_khoi_mnh">
-    <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="1" />
-    <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NAMHOC">
-        <PropertyRef Name="MaNamHoc" />
-      </Principal>
-      <Dependent Role="KHOI">
-        <PropertyRef Name="MaNamHoc" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <ComplexType Name="KhoiLop_NamApDung_Result">
-    <Property Type="String" Name="MaKhoi" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="TenKhoi" Nullable="true" MaxLength="30" />
-    <Property Type="String" Name="MaNamHoc" Nullable="false" MaxLength="20" />
-  </ComplexType>
-  <ComplexType Name="ThanhPhan_NamApDung_Result">
-    <Property Type="String" Name="MaThanhPhan" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="TenThanhPhan" Nullable="true" MaxLength="30" />
-    <Property Type="Double" Name="TrongSo" Nullable="true" />
-    <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
-  </ComplexType>
 </Schema>

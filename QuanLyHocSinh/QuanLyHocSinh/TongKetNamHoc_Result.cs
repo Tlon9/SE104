@@ -15,8 +15,8 @@ namespace QuanLyHocSinh
     {
         public string TenLop { get; set; }
         public string MaHocSinh { get; set; }
-        public string MaHocKy { get; set; }
+        public string MaMonHoc { get; set; }
         public Nullable<double> DiemTB { get; set; }
-        public Nullable<int> SoLuongMon { get; set; }
+        public Nullable<int> SoLuongKy { get; set; }
     }
 }
