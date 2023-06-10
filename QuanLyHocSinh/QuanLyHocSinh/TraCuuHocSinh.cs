@@ -42,6 +42,7 @@ namespace QuanLyHocSinh
             cbClass.SelectedIndex = -1;
             cbFindStudenID_2.Hide();
             cbFindStudenID_2.SelectedIndex = -1;
+            pnHuongDanTraCuu.Hide();
         }
         void ThongTinHS_byID (string id = "")
         {
@@ -146,6 +147,9 @@ namespace QuanLyHocSinh
                 else tbNamSinhMe.Text = "Không có thông tin";
             }
             pnStudent_info.Show();
+            lbThongTinHocSinh.Show();
+            pnDadofStudent_Info.Show();
+            pnMomOfStudent_Info.Show();
             pnParentInfo.Show();
         }
 
@@ -199,7 +203,8 @@ namespace QuanLyHocSinh
                 tbLop.Text = item.class_name;
                 tbGioiTinh.Text = item.sex;
                 tbDiaChi.Text = item.address;
-                tbSDT.Text = item.phone_num;
+                //tbSDT.Text = item.phone_num;
+                tbEmail.Text = item.email;
 
                 //Xử lý ngày tháng năm trong chuỗi có kiểu dữ liệu Datetime
                 string temp = item.dob.ToString();
@@ -216,8 +221,8 @@ namespace QuanLyHocSinh
                 if (item.hometown != null) tbQueQuan.Text = item.hometown;
                 else tbQueQuan.Text = "Không có thông tin";
 
-                if (item.email != null) tbEmail.Text = item.email;
-                else tbEmail.Text = "Không có thông tin";
+                if (item.phone_num != null) tbSDT.Text = item.phone_num;
+                else tbSDT.Text = "Không có thông tin";
 
                 //Thông tin của cha của học sinh
                 if (item.name_dad != null) tbHoTenCha.Text = item.name_dad;
@@ -252,6 +257,9 @@ namespace QuanLyHocSinh
                 else tbNamSinhMe.Text = "Không có thông tin";
             }
             pnStudent_info.Show();
+            lbThongTinHocSinh.Show();
+            pnDadofStudent_Info.Show();
+            pnMomOfStudent_Info.Show();
             pnParentInfo.Show();
         }
         void TraCuuHS()
@@ -577,7 +585,16 @@ namespace QuanLyHocSinh
         }
         private void BtnFindInfoStu_Click(object sender, EventArgs e)
         {
-            TraCuuHS();
+            try
+            {
+                TraCuuHS();
+            }
+            catch
+            {
+                MessageBox.Show("Thao tác tra cứu thông tin học sinh đã xảy ra lỗi. Mời nhập lại. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
         }
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
@@ -627,6 +644,7 @@ namespace QuanLyHocSinh
             cbFindStudenID_2.Hide();
 
             pnStudent_info.Hide();
+            pnParentInfo.Hide();
             lbThongTinPhuHuynh.Hide();
             pnDadofStudent_Info.Hide();
             pnMomOfStudent_Info.Hide();
@@ -665,6 +683,19 @@ namespace QuanLyHocSinh
         {
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
+        private void BtnHuongDanTraCuu_Click(object sender, EventArgs e)
+        {
+            pnHuongDanTraCuu.Show();
+            lbHuongDanTraCuu.Text = "Hướng dẫn Tra cứu: Có 2 cách tra cứu\n1.Tra cứu theo Mã số học sinh: Bạn cần nhập ít nhất thông tin Mã số học sinh để tra cứu" +
+                "\n2.Tra cứu theo Họ tên (Không nhập Mã số học sinh): Bạn cần nhập ít nhất các thông tin sau: " +
+                "\nHọ tên học sinh, Khối, Lớp và 1 trong 2 thông tin SĐT hoặc Email ";    
+        }
+
+        private void BtnCloseHuongDanTraCuu_Click(object sender, EventArgs e)
+        {
+            pnHuongDanTraCuu.Hide();
         }
     }
 }

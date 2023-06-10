@@ -102,12 +102,17 @@
             this.BtnFindInfoStu = new Guna.UI2.WinForms.Guna2ImageButton();
             this.BtnRefresh = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnParentInfo = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbHuongDanTraCuu = new System.Windows.Forms.Label();
+            this.pnHuongDanTraCuu = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.BtnClose_HuongDanTraCuu = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.BtnHuongDanTraCuu = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnFindInfoStudent.SuspendLayout();
             this.pnDadofStudent_Info.SuspendLayout();
             this.pnMomOfStudent_Info.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.pnStudent_info.SuspendLayout();
             this.pnParentInfo.SuspendLayout();
+            this.pnHuongDanTraCuu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbInputIDStudent
@@ -306,9 +311,10 @@
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label31.Location = new System.Drawing.Point(115, 82);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(491, 20);
+            this.label31.Size = new System.Drawing.Size(787, 20);
             this.label31.TabIndex = 10;
-            this.label31.Text = "Lưu ý: Cần nhập ít nhất trường dữ liệu Mã số học sinh để tra cứu.";
+            this.label31.Text = "Lưu ý: Cần nhập ít nhất trường dữ liệu Mã số học sinh hoặc xem hướng dẫn để tra c" +
+    "ứu thông tin học sinh.";
             // 
             // pnFindInfoStudent
             // 
@@ -328,7 +334,7 @@
             this.pnFindInfoStudent.Controls.Add(this.label27);
             this.pnFindInfoStudent.CustomBorderColor = System.Drawing.Color.Blue;
             this.pnFindInfoStudent.CustomBorderThickness = new System.Windows.Forms.Padding(4);
-            this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 129);
+            this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 176);
             this.pnFindInfoStudent.Name = "pnFindInfoStudent";
             this.pnFindInfoStudent.Size = new System.Drawing.Size(1040, 182);
             this.pnFindInfoStudent.TabIndex = 16;
@@ -531,7 +537,7 @@
             this.tbNamSinh_Cha.ReadOnly = true;
             this.tbNamSinh_Cha.SelectedText = "";
             this.tbNamSinh_Cha.Size = new System.Drawing.Size(302, 33);
-            this.tbNamSinh_Cha.TabIndex = 28;
+            this.tbNamSinh_Cha.TabIndex = 39;
             // 
             // tbNgheNghiep_Cha
             // 
@@ -553,7 +559,7 @@
             this.tbNgheNghiep_Cha.ReadOnly = true;
             this.tbNgheNghiep_Cha.SelectedText = "";
             this.tbNgheNghiep_Cha.Size = new System.Drawing.Size(302, 33);
-            this.tbNgheNghiep_Cha.TabIndex = 28;
+            this.tbNgheNghiep_Cha.TabIndex = 37;
             // 
             // tbSDT_Cha
             // 
@@ -575,7 +581,7 @@
             this.tbSDT_Cha.ReadOnly = true;
             this.tbSDT_Cha.SelectedText = "";
             this.tbSDT_Cha.Size = new System.Drawing.Size(302, 33);
-            this.tbSDT_Cha.TabIndex = 28;
+            this.tbSDT_Cha.TabIndex = 35;
             // 
             // tbCCCD_Cha
             // 
@@ -597,7 +603,7 @@
             this.tbCCCD_Cha.ReadOnly = true;
             this.tbCCCD_Cha.SelectedText = "";
             this.tbCCCD_Cha.Size = new System.Drawing.Size(302, 29);
-            this.tbCCCD_Cha.TabIndex = 9;
+            this.tbCCCD_Cha.TabIndex = 33;
             // 
             // tbHoTenCha
             // 
@@ -619,7 +625,7 @@
             this.tbHoTenCha.ReadOnly = true;
             this.tbHoTenCha.SelectedText = "";
             this.tbHoTenCha.Size = new System.Drawing.Size(302, 29);
-            this.tbHoTenCha.TabIndex = 8;
+            this.tbHoTenCha.TabIndex = 31;
             // 
             // pnMomOfStudent_Info
             // 
@@ -659,7 +665,7 @@
             this.tbNamSinhMe.ReadOnly = true;
             this.tbNamSinhMe.SelectedText = "";
             this.tbNamSinhMe.Size = new System.Drawing.Size(302, 29);
-            this.tbNamSinhMe.TabIndex = 11;
+            this.tbNamSinhMe.TabIndex = 40;
             // 
             // tbNgheNghiepMe
             // 
@@ -681,7 +687,7 @@
             this.tbNgheNghiepMe.ReadOnly = true;
             this.tbNgheNghiepMe.SelectedText = "";
             this.tbNgheNghiepMe.Size = new System.Drawing.Size(302, 33);
-            this.tbNgheNghiepMe.TabIndex = 10;
+            this.tbNgheNghiepMe.TabIndex = 38;
             // 
             // tbSDT_Me
             // 
@@ -703,7 +709,7 @@
             this.tbSDT_Me.ReadOnly = true;
             this.tbSDT_Me.SelectedText = "";
             this.tbSDT_Me.Size = new System.Drawing.Size(302, 33);
-            this.tbSDT_Me.TabIndex = 9;
+            this.tbSDT_Me.TabIndex = 36;
             // 
             // tbCCCD_Me
             // 
@@ -725,7 +731,7 @@
             this.tbCCCD_Me.ReadOnly = true;
             this.tbCCCD_Me.SelectedText = "";
             this.tbCCCD_Me.Size = new System.Drawing.Size(302, 29);
-            this.tbCCCD_Me.TabIndex = 8;
+            this.tbCCCD_Me.TabIndex = 34;
             // 
             // tbHoTenMe
             // 
@@ -747,7 +753,7 @@
             this.tbHoTenMe.ReadOnly = true;
             this.tbHoTenMe.SelectedText = "";
             this.tbHoTenMe.Size = new System.Drawing.Size(302, 29);
-            this.tbHoTenMe.TabIndex = 7;
+            this.tbHoTenMe.TabIndex = 32;
             // 
             // guna2Panel1
             // 
@@ -759,7 +765,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1319, 51);
+            this.guna2Panel1.Size = new System.Drawing.Size(1327, 51);
             this.guna2Panel1.TabIndex = 29;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TraCuuHocSinh_MouseDown);
             // 
@@ -831,11 +837,11 @@
             this.BtnProfileAccount.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnProfileAccount.ImageRotate = 0F;
             this.BtnProfileAccount.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnProfileAccount.Location = new System.Drawing.Point(1233, 63);
+            this.BtnProfileAccount.Location = new System.Drawing.Point(1233, 68);
             this.BtnProfileAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnProfileAccount.Name = "BtnProfileAccount";
             this.BtnProfileAccount.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.BtnProfileAccount.Size = new System.Drawing.Size(73, 72);
+            this.BtnProfileAccount.Size = new System.Drawing.Size(82, 78);
             this.BtnProfileAccount.TabIndex = 30;
             this.BtnProfileAccount.Click += new System.EventHandler(this.BtnProfileAccount_Click);
             // 
@@ -939,7 +945,7 @@
             this.tbMaSoHS.ReadOnly = true;
             this.tbMaSoHS.SelectedText = "";
             this.tbMaSoHS.Size = new System.Drawing.Size(149, 29);
-            this.tbMaSoHS.TabIndex = 22;
+            this.tbMaSoHS.TabIndex = 21;
             // 
             // lbDanToc
             // 
@@ -971,7 +977,7 @@
             this.tbLop.ReadOnly = true;
             this.tbLop.SelectedText = "";
             this.tbLop.Size = new System.Drawing.Size(234, 29);
-            this.tbLop.TabIndex = 23;
+            this.tbLop.TabIndex = 22;
             // 
             // tbGioiTinh
             // 
@@ -993,7 +999,7 @@
             this.tbGioiTinh.ReadOnly = true;
             this.tbGioiTinh.SelectedText = "";
             this.tbGioiTinh.Size = new System.Drawing.Size(149, 27);
-            this.tbGioiTinh.TabIndex = 24;
+            this.tbGioiTinh.TabIndex = 23;
             // 
             // tbNgaySinh
             // 
@@ -1015,7 +1021,7 @@
             this.tbNgaySinh.ReadOnly = true;
             this.tbNgaySinh.SelectedText = "";
             this.tbNgaySinh.Size = new System.Drawing.Size(234, 29);
-            this.tbNgaySinh.TabIndex = 25;
+            this.tbNgaySinh.TabIndex = 24;
             // 
             // tbDanToc
             // 
@@ -1037,7 +1043,7 @@
             this.tbDanToc.ReadOnly = true;
             this.tbDanToc.SelectedText = "";
             this.tbDanToc.Size = new System.Drawing.Size(149, 29);
-            this.tbDanToc.TabIndex = 26;
+            this.tbDanToc.TabIndex = 25;
             // 
             // lbDiaChi
             // 
@@ -1177,7 +1183,7 @@
             this.tbTonGiao.ReadOnly = true;
             this.tbTonGiao.SelectedText = "";
             this.tbTonGiao.Size = new System.Drawing.Size(140, 29);
-            this.tbTonGiao.TabIndex = 31;
+            this.tbTonGiao.TabIndex = 26;
             // 
             // pnStudent_info
             // 
@@ -1206,7 +1212,7 @@
             this.pnStudent_info.Controls.Add(this.lbGioiTinh);
             this.pnStudent_info.CustomBorderColor = System.Drawing.Color.Blue;
             this.pnStudent_info.CustomBorderThickness = new System.Windows.Forms.Padding(4);
-            this.pnStudent_info.Location = new System.Drawing.Point(34, 335);
+            this.pnStudent_info.Location = new System.Drawing.Point(34, 381);
             this.pnStudent_info.Name = "pnStudent_info";
             this.pnStudent_info.Size = new System.Drawing.Size(1217, 308);
             this.pnStudent_info.TabIndex = 23;
@@ -1219,7 +1225,7 @@
             this.BtnFindInfoStu.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnFindInfoStu.ImageRotate = 0F;
             this.BtnFindInfoStu.ImageSize = new System.Drawing.Size(50, 50);
-            this.BtnFindInfoStu.Location = new System.Drawing.Point(1127, 150);
+            this.BtnFindInfoStu.Location = new System.Drawing.Point(1138, 188);
             this.BtnFindInfoStu.Margin = new System.Windows.Forms.Padding(4);
             this.BtnFindInfoStu.Name = "BtnFindInfoStu";
             this.BtnFindInfoStu.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -1235,7 +1241,7 @@
             this.BtnRefresh.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnRefresh.ImageRotate = 0F;
             this.BtnRefresh.ImageSize = new System.Drawing.Size(50, 50);
-            this.BtnRefresh.Location = new System.Drawing.Point(1127, 228);
+            this.BtnRefresh.Location = new System.Drawing.Point(1138, 275);
             this.BtnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.BtnRefresh.Name = "BtnRefresh";
             this.BtnRefresh.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -1250,19 +1256,76 @@
             this.pnParentInfo.Controls.Add(this.pnMomOfStudent_Info);
             this.pnParentInfo.CustomBorderColor = System.Drawing.Color.Blue;
             this.pnParentInfo.CustomBorderThickness = new System.Windows.Forms.Padding(4);
-            this.pnParentInfo.Location = new System.Drawing.Point(35, 658);
+            this.pnParentInfo.Location = new System.Drawing.Point(34, 695);
             this.pnParentInfo.Name = "pnParentInfo";
             this.pnParentInfo.Size = new System.Drawing.Size(1216, 385);
             this.pnParentInfo.TabIndex = 36;
+            // 
+            // lbHuongDanTraCuu
+            // 
+            this.lbHuongDanTraCuu.AutoSize = true;
+            this.lbHuongDanTraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbHuongDanTraCuu.Location = new System.Drawing.Point(27, 9);
+            this.lbHuongDanTraCuu.Name = "lbHuongDanTraCuu";
+            this.lbHuongDanTraCuu.Size = new System.Drawing.Size(53, 20);
+            this.lbHuongDanTraCuu.TabIndex = 37;
+            this.lbHuongDanTraCuu.Text = "label1";
+            // 
+            // pnHuongDanTraCuu
+            // 
+            this.pnHuongDanTraCuu.BorderColor = System.Drawing.Color.Blue;
+            this.pnHuongDanTraCuu.BorderThickness = 4;
+            this.pnHuongDanTraCuu.Controls.Add(this.BtnClose_HuongDanTraCuu);
+            this.pnHuongDanTraCuu.Controls.Add(this.lbHuongDanTraCuu);
+            this.pnHuongDanTraCuu.Location = new System.Drawing.Point(109, 59);
+            this.pnHuongDanTraCuu.Name = "pnHuongDanTraCuu";
+            this.pnHuongDanTraCuu.Size = new System.Drawing.Size(1011, 100);
+            this.pnHuongDanTraCuu.TabIndex = 39;
+            // 
+            // BtnClose_HuongDanTraCuu
+            // 
+            this.BtnClose_HuongDanTraCuu.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnClose_HuongDanTraCuu.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnClose_HuongDanTraCuu.Image = ((System.Drawing.Image)(resources.GetObject("BtnClose_HuongDanTraCuu.Image")));
+            this.BtnClose_HuongDanTraCuu.ImageOffset = new System.Drawing.Point(0, 0);
+            this.BtnClose_HuongDanTraCuu.ImageRotate = 0F;
+            this.BtnClose_HuongDanTraCuu.ImageSize = new System.Drawing.Size(40, 40);
+            this.BtnClose_HuongDanTraCuu.Location = new System.Drawing.Point(911, 9);
+            this.BtnClose_HuongDanTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnClose_HuongDanTraCuu.Name = "BtnClose_HuongDanTraCuu";
+            this.BtnClose_HuongDanTraCuu.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnClose_HuongDanTraCuu.Size = new System.Drawing.Size(88, 78);
+            this.BtnClose_HuongDanTraCuu.TabIndex = 38;
+            this.BtnClose_HuongDanTraCuu.Click += new System.EventHandler(this.BtnCloseHuongDanTraCuu_Click);
+            // 
+            // BtnHuongDanTraCuu
+            // 
+            this.BtnHuongDanTraCuu.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnHuongDanTraCuu.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnHuongDanTraCuu.Image = ((System.Drawing.Image)(resources.GetObject("BtnHuongDanTraCuu.Image")));
+            this.BtnHuongDanTraCuu.ImageOffset = new System.Drawing.Point(0, 0);
+            this.BtnHuongDanTraCuu.ImageRotate = 0F;
+            this.BtnHuongDanTraCuu.ImageSize = new System.Drawing.Size(40, 40);
+            this.BtnHuongDanTraCuu.Location = new System.Drawing.Point(1142, 68);
+            this.BtnHuongDanTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnHuongDanTraCuu.Name = "BtnHuongDanTraCuu";
+            this.BtnHuongDanTraCuu.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.BtnHuongDanTraCuu.Size = new System.Drawing.Size(85, 78);
+            this.BtnHuongDanTraCuu.TabIndex = 39;
+            this.BtnHuongDanTraCuu.Click += new System.EventHandler(this.BtnHuongDanTraCuu_Click);
             // 
             // TraCuuHocSinh
             // 
             this.AcceptButton = this.BtnFindInfoStu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1319, 1068);
+            this.ClientSize = new System.Drawing.Size(1327, 1092);
+            this.Controls.Add(this.BtnHuongDanTraCuu);
+            this.Controls.Add(this.pnHuongDanTraCuu);
             this.Controls.Add(this.pnParentInfo);
             this.Controls.Add(this.BtnRefresh);
             this.Controls.Add(this.BtnFindInfoStu);
@@ -1276,6 +1339,7 @@
             this.Name = "TraCuuHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TraCuuHocSinh";
+            this.TopMost = true;
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TraCuuHocSinh_MouseDown);
             this.pnFindInfoStudent.ResumeLayout(false);
             this.pnFindInfoStudent.PerformLayout();
@@ -1288,6 +1352,8 @@
             this.pnStudent_info.PerformLayout();
             this.pnParentInfo.ResumeLayout(false);
             this.pnParentInfo.PerformLayout();
+            this.pnHuongDanTraCuu.ResumeLayout(false);
+            this.pnHuongDanTraCuu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1367,5 +1433,9 @@
         private Guna.UI2.WinForms.Guna2ImageButton BtnRefresh;
         private Guna.UI2.WinForms.Guna2ComboBox cbFindStudenID_2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnParentInfo;
+        private System.Windows.Forms.Label lbHuongDanTraCuu;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnHuongDanTraCuu;
+        private Guna.UI2.WinForms.Guna2ImageButton BtnClose_HuongDanTraCuu;
+        private Guna.UI2.WinForms.Guna2ImageButton BtnHuongDanTraCuu;
     }
 }
