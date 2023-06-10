@@ -349,10 +349,10 @@ namespace QuanLyHocSinh
             var temp_index = data.DIEMs.OrderByDescending(row => row.MaDiem).Select(row => row.MaDiem).FirstOrDefault();
             string temp2_kq = temp_kq.ToString();
             string temp2_index = temp_index.ToString();
-            int index_kq = Convert.ToInt32(temp2_kq.Substring(temp2_kq.Length - 2));
-            string stringWithoutLastTwo = temp2_kq.Substring(0, temp2_kq.Length - 2);
-            int index = Convert.ToInt32(temp2_index.Substring(temp2_index.Length - 4));
-            string stringWithoutLastTwo_index = temp2_index.Substring(0, temp2_index.Length - 4);
+            int index_kq = Convert.ToInt32(temp2_kq.Substring(2));
+            string stringWithoutLastTwo = temp2_kq.Substring(0, 2);
+            int index = Convert.ToInt32(temp2_index.Substring(1));
+            string stringWithoutLastTwo_index = temp2_index.Substring(0, 1);
             KETQUA_MONHOC_HOCSINH new_hs;
             double DIEMTB = 0;
             int check = 0;
