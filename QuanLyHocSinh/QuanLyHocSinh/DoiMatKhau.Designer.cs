@@ -249,6 +249,7 @@ namespace QuanLyHocSinh
             this.Controls.Add(this.labelPass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DoiMatKhau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DoiMatKhau";
             this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);

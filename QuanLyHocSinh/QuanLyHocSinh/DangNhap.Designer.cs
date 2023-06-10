@@ -138,7 +138,7 @@ namespace QuanLyHocSinh
             // buttonLogin
             // 
             this.buttonLogin.AutoRoundedCorners = true;
-            this.buttonLogin.BorderRadius = 25;
+            this.buttonLogin.BorderRadius = 31;
             this.buttonLogin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.buttonLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -179,6 +179,7 @@ namespace QuanLyHocSinh
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2Panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DangNhap";
             this.TopMost = true;

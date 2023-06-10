@@ -204,7 +204,7 @@ namespace QuanLyHocSinh
             this.guna2ButtonChangePass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonChangePass.ForeColor = System.Drawing.Color.White;
             this.guna2ButtonChangePass.Location = new System.Drawing.Point(76, 569);
-            this.guna2ButtonChangePass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ButtonChangePass.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ButtonChangePass.Name = "guna2ButtonChangePass";
             this.guna2ButtonChangePass.Size = new System.Drawing.Size(152, 43);
             this.guna2ButtonChangePass.TabIndex = 28;
@@ -223,7 +223,7 @@ namespace QuanLyHocSinh
             this.guna2ButtonLogout.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2ButtonLogout.ForeColor = System.Drawing.Color.White;
             this.guna2ButtonLogout.Location = new System.Drawing.Point(323, 569);
-            this.guna2ButtonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ButtonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ButtonLogout.Name = "guna2ButtonLogout";
             this.guna2ButtonLogout.Size = new System.Drawing.Size(152, 43);
             this.guna2ButtonLogout.TabIndex = 29;
@@ -234,7 +234,7 @@ namespace QuanLyHocSinh
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Location = new System.Drawing.Point(127, 295);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(324, 6);
             this.panel1.TabIndex = 30;
@@ -247,7 +247,7 @@ namespace QuanLyHocSinh
             this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(545, 62);
             this.guna2Panel1.TabIndex = 32;
@@ -273,7 +273,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonClose.ImageRotate = 0F;
             this.guna2ImageButtonClose.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButtonClose.Location = new System.Drawing.Point(483, 10);
-            this.guna2ImageButtonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonClose.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonClose.Name = "guna2ImageButtonClose";
             this.guna2ImageButtonClose.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonClose.Size = new System.Drawing.Size(47, 43);
@@ -290,7 +290,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonMinimize.ImageRotate = 0F;
             this.guna2ImageButtonMinimize.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButtonMinimize.Location = new System.Drawing.Point(428, 10);
-            this.guna2ImageButtonMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonMinimize.Name = "guna2ImageButtonMinimize";
             this.guna2ImageButtonMinimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonMinimize.Size = new System.Drawing.Size(47, 43);
@@ -316,7 +316,7 @@ namespace QuanLyHocSinh
             this.guna2Panel3.Controls.Add(this.guna2ImageButtonHome);
             this.guna2Panel3.CustomBorderColor = System.Drawing.Color.PaleTurquoise;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 60);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(545, 215);
             this.guna2Panel3.TabIndex = 33;
@@ -326,7 +326,7 @@ namespace QuanLyHocSinh
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
             this.guna2PictureBox2.Location = new System.Drawing.Point(204, 89);
-            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.Size = new System.Drawing.Size(133, 123);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -342,7 +342,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonBack.ImageRotate = 0F;
             this.guna2ImageButtonBack.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2ImageButtonBack.Location = new System.Drawing.Point(4, 4);
-            this.guna2ImageButtonBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonBack.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonBack.Name = "guna2ImageButtonBack";
             this.guna2ImageButtonBack.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonBack.Size = new System.Drawing.Size(67, 62);
@@ -358,7 +358,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonHome.ImageRotate = 0F;
             this.guna2ImageButtonHome.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2ImageButtonHome.Location = new System.Drawing.Point(79, 4);
-            this.guna2ImageButtonHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonHome.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonHome.Name = "guna2ImageButtonHome";
             this.guna2ImageButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonHome.Size = new System.Drawing.Size(67, 62);
@@ -385,8 +385,9 @@ namespace QuanLyHocSinh
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TrangCaNhan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrangCaNhan";
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
