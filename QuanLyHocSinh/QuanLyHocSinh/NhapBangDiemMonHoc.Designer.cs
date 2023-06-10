@@ -44,6 +44,8 @@
             this.labelYear = new System.Windows.Forms.Label();
             this.labelSubject = new System.Windows.Forms.Label();
             this.panelInput = new System.Windows.Forms.Panel();
+            this.textBoxClassify = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxAverageScore = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pictureBoxView = new System.Windows.Forms.PictureBox();
@@ -78,8 +80,6 @@
             this.TraCuuButton_hk = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.textBoxAverageScore = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textBoxClassify = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -155,6 +155,52 @@
             this.panelInput.Name = "panelInput";
             this.panelInput.Size = new System.Drawing.Size(1469, 593);
             this.panelInput.TabIndex = 49;
+            // 
+            // textBoxClassify
+            // 
+            this.textBoxClassify.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxClassify.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
+            this.textBoxClassify.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxClassify.DefaultText = "";
+            this.textBoxClassify.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxClassify.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxClassify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxClassify.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxClassify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxClassify.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxClassify.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxClassify.Location = new System.Drawing.Point(785, 50);
+            this.textBoxClassify.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textBoxClassify.Name = "textBoxClassify";
+            this.textBoxClassify.PasswordChar = '\0';
+            this.textBoxClassify.PlaceholderText = "";
+            this.textBoxClassify.ReadOnly = true;
+            this.textBoxClassify.SelectedText = "";
+            this.textBoxClassify.Size = new System.Drawing.Size(152, 28);
+            this.textBoxClassify.TabIndex = 147;
+            // 
+            // textBoxAverageScore
+            // 
+            this.textBoxAverageScore.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxAverageScore.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
+            this.textBoxAverageScore.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxAverageScore.DefaultText = "";
+            this.textBoxAverageScore.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxAverageScore.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxAverageScore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxAverageScore.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxAverageScore.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxAverageScore.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxAverageScore.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxAverageScore.Location = new System.Drawing.Point(532, 50);
+            this.textBoxAverageScore.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.textBoxAverageScore.Name = "textBoxAverageScore";
+            this.textBoxAverageScore.PasswordChar = '\0';
+            this.textBoxAverageScore.PlaceholderText = "";
+            this.textBoxAverageScore.ReadOnly = true;
+            this.textBoxAverageScore.SelectedText = "";
+            this.textBoxAverageScore.Size = new System.Drawing.Size(152, 28);
+            this.textBoxAverageScore.TabIndex = 146;
             // 
             // guna2ImageButton2
             // 
@@ -537,6 +583,7 @@
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(231, 31);
             this.comboBoxClass.TabIndex = 58;
+            this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.comboBoxClass_SelectedIndexChanged);
             // 
             // comboBoxSemester
             // 
@@ -709,52 +756,6 @@
             this.guna2ImageButton4.TabIndex = 69;
             this.guna2ImageButton4.Click += new System.EventHandler(this.guna2ImageButton4_Click);
             // 
-            // textBoxAverageScore
-            // 
-            this.textBoxAverageScore.BackColor = System.Drawing.Color.Transparent;
-            this.textBoxAverageScore.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
-            this.textBoxAverageScore.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxAverageScore.DefaultText = "";
-            this.textBoxAverageScore.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxAverageScore.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxAverageScore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxAverageScore.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxAverageScore.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxAverageScore.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxAverageScore.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxAverageScore.Location = new System.Drawing.Point(532, 50);
-            this.textBoxAverageScore.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBoxAverageScore.Name = "textBoxAverageScore";
-            this.textBoxAverageScore.PasswordChar = '\0';
-            this.textBoxAverageScore.PlaceholderText = "";
-            this.textBoxAverageScore.ReadOnly = true;
-            this.textBoxAverageScore.SelectedText = "";
-            this.textBoxAverageScore.Size = new System.Drawing.Size(152, 28);
-            this.textBoxAverageScore.TabIndex = 146;
-            // 
-            // textBoxClassify
-            // 
-            this.textBoxClassify.BackColor = System.Drawing.Color.Transparent;
-            this.textBoxClassify.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(221)))), ((int)(((byte)(226)))));
-            this.textBoxClassify.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxClassify.DefaultText = "";
-            this.textBoxClassify.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxClassify.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxClassify.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxClassify.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxClassify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxClassify.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.textBoxClassify.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxClassify.Location = new System.Drawing.Point(785, 50);
-            this.textBoxClassify.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBoxClassify.Name = "textBoxClassify";
-            this.textBoxClassify.PasswordChar = '\0';
-            this.textBoxClassify.PlaceholderText = "";
-            this.textBoxClassify.ReadOnly = true;
-            this.textBoxClassify.SelectedText = "";
-            this.textBoxClassify.Size = new System.Drawing.Size(152, 28);
-            this.textBoxClassify.TabIndex = 147;
-            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
@@ -769,7 +770,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1503, 879);
+            this.ClientSize = new System.Drawing.Size(1503, 910);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2ImageButton4);
             this.Controls.Add(this.guna2ImageButton1);
@@ -788,6 +789,7 @@
             this.Controls.Add(this.labelSemester);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LapBangDiemMonHoc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhapBangDiemMonHocLop/HK";
             this.panelInput.ResumeLayout(false);
             this.panelInput.PerformLayout();

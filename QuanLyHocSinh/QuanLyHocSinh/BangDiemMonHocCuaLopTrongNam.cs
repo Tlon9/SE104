@@ -28,7 +28,9 @@ namespace QuanLyHocSinh
             comboBoxClass.DataSource = comboxClassSource.ToList();
             comboBoxClass.DisplayMember = "TenLop";
             comboBoxClass.ValueMember = "MaLop";
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
+                                         select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
@@ -44,6 +46,16 @@ namespace QuanLyHocSinh
             comboBoxClass.DisplayMember = "TenLop";
             comboBoxClass.ValueMember = "MaLop";
             var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
+            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            comboBoxSubject.DisplayMember = "TenMonHoc";
+            comboBoxSubject.ValueMember = "MaMonHoc";
+        }
+        private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataEntities data = new dataEntities();
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
+                                         select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
@@ -412,6 +424,5 @@ namespace QuanLyHocSinh
             newform.ShowDialog();
             this.Show();
         }
-
     }
 }

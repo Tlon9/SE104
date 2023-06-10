@@ -39,7 +39,9 @@ namespace QuanLyHocSinh
             comboBoxSemester.DataSource = comboxClassSemester.ToList();
             comboBoxSemester.DisplayMember = "HocKy";
             comboBoxSemester.ValueMember = "MaHocKy";
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
+                                         select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
@@ -63,7 +65,15 @@ namespace QuanLyHocSinh
             comboBoxSemester.ValueMember = "MaHocKy";
             string class_text = comboBoxClass.Text;
             var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
-                                         //where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == class_text.Substring(0, 2)
+                                         select obj;
+            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            comboBoxSubject.DisplayMember = "TenMonHoc";
+            comboBoxSubject.ValueMember = "MaMonHoc";
+        }
+        private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
                                          select obj;
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
@@ -557,6 +567,7 @@ namespace QuanLyHocSinh
             ratio_Source = new DataTable();
             if (numberofClass > 0)
             {
+                guna2ImageButton3.Enabled = true;
                 foreach (var i in reSource)
                 {
                     foreach (var j in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
@@ -595,6 +606,7 @@ namespace QuanLyHocSinh
                 chartRatio.Series[0].IsValueShownAsLabel = true;
                 chartRatio.Show();
             }
+            else guna2ImageButton3.Enabled = false;
             string nameofgrid;
             nameofgrid = "Bảng điểm môn " + comboBoxSubject.Text.ToString() + " của lớp " + comboBoxClass.Text.ToString() + " học kỳ " + comboBoxSemester.Text.ToString() + " năm học " + comboBoxYear.Text.ToString();
             labelNameOfGrid2.Text = nameofgrid;
@@ -695,5 +707,6 @@ namespace QuanLyHocSinh
                 newform.ShowDialog();
                 this.Show();
         }
+
     }
 }

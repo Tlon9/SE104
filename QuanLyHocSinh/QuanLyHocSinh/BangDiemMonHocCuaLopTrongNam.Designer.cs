@@ -228,6 +228,7 @@
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(231, 31);
             this.comboBoxClass.TabIndex = 57;
+            this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.comboBoxClass_SelectedIndexChanged);
             // 
             // comboBoxSubject
             // 
@@ -378,7 +379,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1444, 854);
+            this.ClientSize = new System.Drawing.Size(1444, 900);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.TraCuuButton_hk);
@@ -393,6 +394,7 @@
             this.Controls.Add(this.labelYear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BangDiemMonHocCuaLopTrongNam";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XuatBangDiemMonHocCuaLopTrongNamHoc";
             this.panelPrint.ResumeLayout(false);
             this.panelPrint.PerformLayout();
