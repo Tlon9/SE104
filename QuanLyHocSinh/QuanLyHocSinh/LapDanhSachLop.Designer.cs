@@ -215,6 +215,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1605, 76);
             this.panel2.TabIndex = 7;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // mainLabelStdInfo
             // 
@@ -226,6 +227,7 @@
             this.mainLabelStdInfo.Size = new System.Drawing.Size(231, 45);
             this.mainLabelStdInfo.TabIndex = 6;
             this.mainLabelStdInfo.Text = "Danh sách lớp";
+            this.mainLabelStdInfo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainLabelStdInfo_MouseDown);
             // 
             // Btn_Minimize
             // 

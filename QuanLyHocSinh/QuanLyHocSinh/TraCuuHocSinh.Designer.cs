@@ -332,9 +332,9 @@
             this.pnFindInfoStudent.Controls.Add(this.lbInputGrade);
             this.pnFindInfoStudent.Controls.Add(this.lbInputName);
             this.pnFindInfoStudent.Controls.Add(this.label27);
-            this.pnFindInfoStudent.CustomBorderColor = System.Drawing.Color.Blue;
+            this.pnFindInfoStudent.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
             this.pnFindInfoStudent.CustomBorderThickness = new System.Windows.Forms.Padding(4);
-            this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 176);
+            this.pnFindInfoStudent.Location = new System.Drawing.Point(34, 175);
             this.pnFindInfoStudent.Name = "pnFindInfoStudent";
             this.pnFindInfoStudent.Size = new System.Drawing.Size(1040, 182);
             this.pnFindInfoStudent.TabIndex = 16;
@@ -1210,9 +1210,9 @@
             this.pnStudent_info.Controls.Add(this.lbNgaySinh);
             this.pnStudent_info.Controls.Add(this.lbQueQuan);
             this.pnStudent_info.Controls.Add(this.lbGioiTinh);
-            this.pnStudent_info.CustomBorderColor = System.Drawing.Color.Blue;
+            this.pnStudent_info.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
             this.pnStudent_info.CustomBorderThickness = new System.Windows.Forms.Padding(4);
-            this.pnStudent_info.Location = new System.Drawing.Point(34, 381);
+            this.pnStudent_info.Location = new System.Drawing.Point(33, 372);
             this.pnStudent_info.Name = "pnStudent_info";
             this.pnStudent_info.Size = new System.Drawing.Size(1217, 308);
             this.pnStudent_info.TabIndex = 23;
@@ -1254,9 +1254,9 @@
             this.pnParentInfo.Controls.Add(this.lbThongTinPhuHuynh);
             this.pnParentInfo.Controls.Add(this.pnDadofStudent_Info);
             this.pnParentInfo.Controls.Add(this.pnMomOfStudent_Info);
-            this.pnParentInfo.CustomBorderColor = System.Drawing.Color.Blue;
+            this.pnParentInfo.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
             this.pnParentInfo.CustomBorderThickness = new System.Windows.Forms.Padding(4);
-            this.pnParentInfo.Location = new System.Drawing.Point(34, 695);
+            this.pnParentInfo.Location = new System.Drawing.Point(34, 696);
             this.pnParentInfo.Name = "pnParentInfo";
             this.pnParentInfo.Size = new System.Drawing.Size(1216, 385);
             this.pnParentInfo.TabIndex = 36;
@@ -1273,10 +1273,12 @@
             // 
             // pnHuongDanTraCuu
             // 
-            this.pnHuongDanTraCuu.BorderColor = System.Drawing.Color.Blue;
+            this.pnHuongDanTraCuu.BorderColor = System.Drawing.Color.Transparent;
             this.pnHuongDanTraCuu.BorderThickness = 4;
             this.pnHuongDanTraCuu.Controls.Add(this.BtnClose_HuongDanTraCuu);
             this.pnHuongDanTraCuu.Controls.Add(this.lbHuongDanTraCuu);
+            this.pnHuongDanTraCuu.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
+            this.pnHuongDanTraCuu.CustomBorderThickness = new System.Windows.Forms.Padding(4);
             this.pnHuongDanTraCuu.Location = new System.Drawing.Point(109, 59);
             this.pnHuongDanTraCuu.Name = "pnHuongDanTraCuu";
             this.pnHuongDanTraCuu.Size = new System.Drawing.Size(1011, 100);
@@ -1323,7 +1325,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1327, 1092);
+            this.ClientSize = new System.Drawing.Size(1327, 1102);
             this.Controls.Add(this.BtnHuongDanTraCuu);
             this.Controls.Add(this.pnHuongDanTraCuu);
             this.Controls.Add(this.pnParentInfo);
