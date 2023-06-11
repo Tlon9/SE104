@@ -153,6 +153,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1481, 76);
             this.panel2.TabIndex = 6;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // mainLabelStdInfo
             // 
@@ -164,6 +165,7 @@
             this.mainLabelStdInfo.Size = new System.Drawing.Size(241, 45);
             this.mainLabelStdInfo.TabIndex = 6;
             this.mainLabelStdInfo.Text = "Hồ sơ học sinh";
+            this.mainLabelStdInfo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainLabelStdInfo_MouseDown);
             // 
             // uC_XemThongTinHocSinh1
             // 
