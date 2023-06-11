@@ -81,6 +81,7 @@
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label26 = new System.Windows.Forms.Label();
             this.panelInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxView)).BeginInit();
@@ -168,6 +169,7 @@
             this.textBoxClassify.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxClassify.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxClassify.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxClassify.ForeColor = System.Drawing.Color.Black;
             this.textBoxClassify.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxClassify.Location = new System.Drawing.Point(785, 50);
             this.textBoxClassify.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -191,6 +193,7 @@
             this.textBoxAverageScore.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxAverageScore.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxAverageScore.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxAverageScore.ForeColor = System.Drawing.Color.Black;
             this.textBoxAverageScore.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxAverageScore.Location = new System.Drawing.Point(532, 50);
             this.textBoxAverageScore.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -210,11 +213,11 @@
             this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton2.ImageRotate = 0F;
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(1386, 341);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(1323, 353);
             this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(67, 56);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(113, 95);
             this.guna2ImageButton2.TabIndex = 140;
             this.guna2ImageButton2.Click += new System.EventHandler(this.ButtonExportExcel_Click);
             // 
@@ -241,14 +244,14 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView1.Location = new System.Drawing.Point(337, 123);
+            this.dataGridView1.Location = new System.Drawing.Point(337, 143);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(970, 365);
+            this.dataGridView1.Size = new System.Drawing.Size(970, 305);
             this.dataGridView1.TabIndex = 145;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -278,7 +281,7 @@
             // 
             this.pictureBoxView.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxView.BackgroundImage")));
             this.pictureBoxView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxView.Location = new System.Drawing.Point(1331, 227);
+            this.pictureBoxView.Location = new System.Drawing.Point(1323, 290);
             this.pictureBoxView.Name = "pictureBoxView";
             this.pictureBoxView.Size = new System.Drawing.Size(35, 34);
             this.pictureBoxView.TabIndex = 144;
@@ -288,7 +291,7 @@
             // 
             this.pictureBoxDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDelete.BackgroundImage")));
             this.pictureBoxDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxDelete.Location = new System.Drawing.Point(1331, 176);
+            this.pictureBoxDelete.Location = new System.Drawing.Point(1323, 218);
             this.pictureBoxDelete.Name = "pictureBoxDelete";
             this.pictureBoxDelete.Size = new System.Drawing.Size(35, 34);
             this.pictureBoxDelete.TabIndex = 143;
@@ -298,7 +301,7 @@
             // 
             this.pictureBoxAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxAdd.BackgroundImage")));
             this.pictureBoxAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxAdd.Location = new System.Drawing.Point(1331, 123);
+            this.pictureBoxAdd.Location = new System.Drawing.Point(1323, 143);
             this.pictureBoxAdd.Name = "pictureBoxAdd";
             this.pictureBoxAdd.Size = new System.Drawing.Size(35, 34);
             this.pictureBoxAdd.TabIndex = 142;
@@ -314,7 +317,7 @@
             this.buttonLook.FillColor = System.Drawing.SystemColors.Highlight;
             this.buttonLook.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonLook.ForeColor = System.Drawing.Color.White;
-            this.buttonLook.Location = new System.Drawing.Point(1372, 227);
+            this.buttonLook.Location = new System.Drawing.Point(1364, 290);
             this.buttonLook.Name = "buttonLook";
             this.buttonLook.Size = new System.Drawing.Size(81, 34);
             this.buttonLook.TabIndex = 138;
@@ -331,7 +334,7 @@
             this.buttonDelete.FillColor = System.Drawing.SystemColors.Highlight;
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonDelete.ForeColor = System.Drawing.Color.White;
-            this.buttonDelete.Location = new System.Drawing.Point(1372, 176);
+            this.buttonDelete.Location = new System.Drawing.Point(1364, 218);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(81, 34);
             this.buttonDelete.TabIndex = 137;
@@ -348,7 +351,7 @@
             this.buttonSave.FillColor = System.Drawing.SystemColors.Highlight;
             this.buttonSave.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(1372, 123);
+            this.buttonSave.Location = new System.Drawing.Point(1364, 143);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(81, 34);
             this.buttonSave.TabIndex = 136;
@@ -399,7 +402,7 @@
             // 
             this.labelNameOfGrid1.AutoSize = true;
             this.labelNameOfGrid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameOfGrid1.Location = new System.Drawing.Point(665, 518);
+            this.labelNameOfGrid1.Location = new System.Drawing.Point(706, 494);
             this.labelNameOfGrid1.Name = "labelNameOfGrid1";
             this.labelNameOfGrid1.Size = new System.Drawing.Size(231, 29);
             this.labelNameOfGrid1.TabIndex = 134;
@@ -407,9 +410,9 @@
             // 
             // panelScores
             // 
-            this.panelScores.Location = new System.Drawing.Point(19, 123);
+            this.panelScores.Location = new System.Drawing.Point(19, 143);
             this.panelScores.Name = "panelScores";
-            this.panelScores.Size = new System.Drawing.Size(255, 395);
+            this.panelScores.Size = new System.Drawing.Size(255, 414);
             this.panelScores.TabIndex = 130;
             // 
             // labelClassify
@@ -459,7 +462,7 @@
             this.panelPrint.Controls.Add(this.chartRatio);
             this.panelPrint.Controls.Add(this.labelNameOfGrid2);
             this.panelPrint.Controls.Add(this.panelNumberOfClassify);
-            this.panelPrint.Location = new System.Drawing.Point(22, 282);
+            this.panelPrint.Location = new System.Drawing.Point(19, 282);
             this.panelPrint.Name = "panelPrint";
             this.panelPrint.Size = new System.Drawing.Size(1469, 593);
             this.panelPrint.TabIndex = 50;
@@ -564,7 +567,7 @@
             // 
             // panelNumberOfClassify
             // 
-            this.panelNumberOfClassify.Location = new System.Drawing.Point(3, 14);
+            this.panelNumberOfClassify.Location = new System.Drawing.Point(54, 3);
             this.panelNumberOfClassify.Name = "panelNumberOfClassify";
             this.panelNumberOfClassify.Size = new System.Drawing.Size(1220, 249);
             this.panelNumberOfClassify.TabIndex = 126;
@@ -584,6 +587,7 @@
             this.comboBoxClass.Size = new System.Drawing.Size(231, 31);
             this.comboBoxClass.TabIndex = 58;
             this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.comboBoxClass_SelectedIndexChanged);
+            this.comboBoxClass.Click += new System.EventHandler(this.comboBoxClass_Click);
             // 
             // comboBoxSemester
             // 
@@ -647,6 +651,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1503, 52);
             this.guna2Panel1.TabIndex = 65;
+            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
             // label1
             // 
@@ -716,7 +721,7 @@
             this.TraCuuButton_hk.ImageOffset = new System.Drawing.Point(0, 0);
             this.TraCuuButton_hk.ImageRotate = 0F;
             this.TraCuuButton_hk.ImageSize = new System.Drawing.Size(60, 60);
-            this.TraCuuButton_hk.Location = new System.Drawing.Point(1255, 187);
+            this.TraCuuButton_hk.Location = new System.Drawing.Point(1188, 186);
             this.TraCuuButton_hk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TraCuuButton_hk.Name = "TraCuuButton_hk";
             this.TraCuuButton_hk.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -732,7 +737,7 @@
             this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton1.ImageRotate = 0F;
             this.guna2ImageButton1.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(1315, 187);
+            this.guna2ImageButton1.Location = new System.Drawing.Point(1265, 186);
             this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -766,11 +771,26 @@
             this.guna2HtmlLabel1.TabIndex = 70;
             this.guna2HtmlLabel1.Text = "-----------------------------------------------------------------------------";
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.White;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(136, 256);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(207, 20);
+            this.label26.TabIndex = 97;
+            this.label26.Text = "*Lưu ý: Vui lòng chọn lớp trước";
+            // 
             // LapBangDiemMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1503, 910);
+            this.Controls.Add(this.label26);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2ImageButton4);
             this.Controls.Add(this.guna2ImageButton1);
@@ -851,6 +871,7 @@
         private Guna.UI2.WinForms.Guna2TextBox textBoxAverageScore;
         private Guna.UI2.WinForms.Guna2TextBox textBoxClassify;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.Label label26;
     }
     
     /*partial class LapBangDiemMonHoc

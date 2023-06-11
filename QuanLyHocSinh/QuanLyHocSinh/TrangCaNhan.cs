@@ -17,7 +17,7 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
             this.guna2TextBox1.Text = Account.HoTen;
-            this.guna2TextBox2.Text = Account.NgaySinh;
+            this.guna2TextBox2.Text = Account.NgaySinh.ToString();
             this.guna2TextBox3.Text = Account.TenDangNhap;
             this.guna2TextBox4.Text = Account.VaiTro;
         }

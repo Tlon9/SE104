@@ -64,7 +64,10 @@ namespace QuanLyHocSinh
                     tbl.Columns.Add("Sĩ số", typeof(int));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears1.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        }
                     }
                     var index = -1;
                     foreach (var item in cls_list)
@@ -77,7 +80,10 @@ namespace QuanLyHocSinh
                         row["Lớp"] = item.ToString();
                         foreach (var item2 in dtb.XepLoai_NamApDung(guna2ComboBoxYears1.SelectedValue.ToString()))
                         {
-                            row[item2.TenXepLoai] = "0";
+                            if (item2.MaXepLoai != "HSR")
+                            {
+                                row[item2.TenXepLoai] = "0";
+                            }
                         }
                         foreach (var item2 in cls)
                         {
@@ -99,14 +105,17 @@ namespace QuanLyHocSinh
                     ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears1.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        DataRow row_ratio = ratio_Source.NewRow();
-                        row_ratio["Xếp loại"] = item.TenXepLoai;
-                        int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
-                        row_ratio["Số lượng"] = count;
-                        double rat = Math.Round((float)(100 * count / sum), 2);
-                        row_ratio["Tỉ lệ (%)"] = rat;
-                        if (rat > 0)
-                            ratio_Source.Rows.Add(row_ratio);
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            DataRow row_ratio = ratio_Source.NewRow();
+                            row_ratio["Xếp loại"] = item.TenXepLoai;
+                            int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
+                            row_ratio["Số lượng"] = count;
+                            double rat = Math.Round((float)(100 * count / sum), 2);
+                            row_ratio["Tỉ lệ (%)"] = rat;
+                            if (rat > 0)
+                                ratio_Source.Rows.Add(row_ratio);
+                        }
                     }
 
 
@@ -168,7 +177,10 @@ namespace QuanLyHocSinh
                     tbl.Columns.Add("Sĩ số", typeof(int));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        }
                     }
                     int sum = 0;
                     int index = -1;
@@ -180,7 +192,10 @@ namespace QuanLyHocSinh
                         row["Lớp"] = item.ToString();
                         foreach (var item2 in dtb.XepLoai_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString()))
                         {
-                            row[item2.TenXepLoai] = 0;
+                            if (item2.MaXepLoai != "HSR")
+                            {
+                                row[item2.TenXepLoai] = 0;
+                            }
                         }
                         var std_list = dtb.TongKetMonNamHoc(guna2ComboBoxSubjects2.SelectedValue.ToString(), guna2ComboBoxYears2.SelectedValue.ToString()).Where(r => r.TenLop == item.ToString()).Select(r => r.MaHocSinh).Distinct().ToList();
                         sum += std_list.Count();
@@ -203,13 +218,13 @@ namespace QuanLyHocSinh
                             score = Math.Round(score / sum_TS, 2);
                             foreach (var item3 in dtb.XepLoai_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                             {
-                                if (score >= item3.DiemToiThieu)
-                                {
-                                    var temp = tbl.Rows[index][item3.TenXepLoai];
-                                    temp = (int)temp + 1;
-                                    tbl.Rows[index][item3.TenXepLoai] = temp;
-                                    break;
-                                }
+                                    if (score >= item3.DiemToiThieu)
+                                    {
+                                        var temp = tbl.Rows[index][item3.TenXepLoai];
+                                        temp = (int)temp + 1;
+                                        tbl.Rows[index][item3.TenXepLoai] = temp;
+                                        break;
+                                    }
                             }
                         }
                     }
@@ -219,14 +234,17 @@ namespace QuanLyHocSinh
                     ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears2.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        DataRow row_ratio = ratio_Source.NewRow();
-                        row_ratio["Xếp loại"] = item.TenXepLoai;
-                        int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
-                        row_ratio["Số lượng"] = count;
-                        double rat = Math.Round((float)(100 * count / sum), 2);
-                        row_ratio["Tỉ lệ (%)"] = rat;
-                        if (rat > 0)
-                            ratio_Source.Rows.Add(row_ratio);
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            DataRow row_ratio = ratio_Source.NewRow();
+                            row_ratio["Xếp loại"] = item.TenXepLoai;
+                            int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
+                            row_ratio["Số lượng"] = count;
+                            double rat = Math.Round((float)(100 * count / sum), 2);
+                            row_ratio["Tỉ lệ (%)"] = rat;
+                            if (rat > 0)
+                                ratio_Source.Rows.Add(row_ratio);
+                        }
                     }
 
                     var TenMonHoc = from obj in dtb.MONHOCs
@@ -290,7 +308,10 @@ namespace QuanLyHocSinh
                     tbl.Columns.Add("Sĩ số", typeof(int));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        }
                     }
                     var index = -1;
                     int sum = 0;
@@ -302,7 +323,10 @@ namespace QuanLyHocSinh
                         row["Lớp"] = item.ToString();
                         foreach (var item2 in dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()))
                         {
-                            row[item2.TenXepLoai] = 0;
+                            if (item2.MaXepLoai != "HSR")
+                            {
+                                row[item2.TenXepLoai] = 0;
+                            }
                         }
                         var std_list = dtb.TongKetHocKy(guna2ComboBoxSemesters2.SelectedValue.ToString(), guna2ComboBoxYears3.SelectedValue.ToString()).Where(r => r.TenLop == item.ToString()).Select(r => r.MaHocSinh).ToList();
                         sum += std_list.Count();
@@ -314,36 +338,36 @@ namespace QuanLyHocSinh
                             double score = Math.Round((double)(std.DiemTB / std.SoLuong), 2);
                             foreach (var item3 in dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                             {
-                                if (score >= item3.DiemToiThieu)
-                                {
-                                    if (std.DiemKC >= item3.DiemKhongChe)
+                                    if (score >= item3.DiemToiThieu)
                                     {
-                                        var temp = tbl.Rows[index][item3.TenXepLoai];
-                                        temp = (int)temp + 1;
-                                        tbl.Rows[index][item3.TenXepLoai] = temp;
-                                    }
-                                    else
-                                    {
-                                        bool find = false;
-                                        var item4 = dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).FirstOrDefault();
-                                        foreach (var item5 in dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                                        if (std.DiemKC >= item3.DiemKhongChe)
                                         {
-                                            if (score >= item5.DiemToiThieu)
-                                            {
-                                                if (find)
-                                                {
-                                                    item4 = item5;
-                                                    break;
-                                                }
-                                                find = true;
-                                            }
+                                            var temp = tbl.Rows[index][item3.TenXepLoai];
+                                            temp = (int)temp + 1;
+                                            tbl.Rows[index][item3.TenXepLoai] = temp;
                                         }
-                                        var temp = tbl.Rows[index][item4.TenXepLoai];
-                                        temp = (int)temp + 1;
-                                        tbl.Rows[index][item4.TenXepLoai] = temp;
+                                        else
+                                        {
+                                            bool find = false;
+                                            var item4 = dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).FirstOrDefault();
+                                            foreach (var item5 in dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                                            {
+                                                if (score >= item5.DiemToiThieu)
+                                                {
+                                                    if (find)
+                                                    {
+                                                        item4 = item5;
+                                                        break;
+                                                    }
+                                                    find = true;
+                                                }
+                                            }
+                                            var temp = tbl.Rows[index][item4.TenXepLoai];
+                                            temp = (int)temp + 1;
+                                            tbl.Rows[index][item4.TenXepLoai] = temp;
+                                        }
+                                        break;
                                     }
-                                    break;
-                                }
                             }
                         }
                     }
@@ -354,14 +378,17 @@ namespace QuanLyHocSinh
                     ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears3.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        DataRow row_ratio = ratio_Source.NewRow();
-                        row_ratio["Xếp loại"] = item.TenXepLoai;
-                        int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
-                        row_ratio["Số lượng"] = count;
-                        double rat = Math.Round((float)(100 * count / sum), 2);
-                        row_ratio["Tỉ lệ (%)"] = rat;
-                        if (rat > 0)
-                            ratio_Source.Rows.Add(row_ratio);
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            DataRow row_ratio = ratio_Source.NewRow();
+                            row_ratio["Xếp loại"] = item.TenXepLoai;
+                            int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
+                            row_ratio["Số lượng"] = count;
+                            double rat = Math.Round((float)(100 * count / sum), 2);
+                            row_ratio["Tỉ lệ (%)"] = rat;
+                            if (rat > 0)
+                                ratio_Source.Rows.Add(row_ratio);
+                        }
                     }
 
 
@@ -449,7 +476,10 @@ namespace QuanLyHocSinh
                     tbl.Columns.Add("Sĩ số", typeof(int));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            tbl.Columns.Add(item.TenXepLoai, typeof(int));
+                        }
                     }
                     foreach (var item in cls_list)
                     {
@@ -459,7 +489,10 @@ namespace QuanLyHocSinh
                         row["Lớp"] = item.ToString();
                         foreach (var item2 in dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()))
                         {
-                            row[item2.TenXepLoai] = 0;
+                            if (item2.MaXepLoai != "HSR")
+                            {
+                                row[item2.TenXepLoai] = 0;
+                            }
                         }
                         var std_list = dtb.TongKetNamHoc(guna2ComboBoxYears4.SelectedValue.ToString()).Where(r => r.TenLop == item.ToString()).Select(r => r.MaHocSinh).Distinct().ToList();
                         sum += std_list.Count();
@@ -491,36 +524,36 @@ namespace QuanLyHocSinh
                             score = Math.Round(score / sub_list.Count(), 2);
                             foreach (var item3 in dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                             {
-                                if (score >= item3.DiemToiThieu)
-                                {
-                                    if (CheckDiemKC(item2.ToString(), guna2ComboBoxYears4.SelectedValue.ToString(), (double)item3.DiemKhongChe))
+                                    if (score >= item3.DiemToiThieu)
                                     {
-                                        var temp = tbl.Rows[index][item3.TenXepLoai];
-                                        temp = (int)temp + 1;
-                                        tbl.Rows[index][item3.TenXepLoai] = temp;
-                                    }
-                                    else
-                                    {
-                                        bool find = false;
-                                        var item4 = dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).FirstOrDefault();
-                                        foreach (var item5 in dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                                        if (CheckDiemKC(item2.ToString(), guna2ComboBoxYears4.SelectedValue.ToString(), (double)item3.DiemKhongChe))
                                         {
-                                            if (score >= item5.DiemToiThieu)
-                                            {
-                                                if (find)
-                                                {
-                                                    item4 = item5;
-                                                    break;
-                                                }
-                                                find = true;
-                                            }
+                                            var temp = tbl.Rows[index][item3.TenXepLoai];
+                                            temp = (int)temp + 1;
+                                            tbl.Rows[index][item3.TenXepLoai] = temp;
                                         }
-                                        var temp = tbl.Rows[index][item4.TenXepLoai];
-                                        temp = (int)temp + 1;
-                                        tbl.Rows[index][item4.TenXepLoai] = temp;
+                                        else
+                                        {
+                                            bool find = false;
+                                            var item4 = dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).FirstOrDefault();
+                                            foreach (var item5 in dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
+                                            {
+                                                if (score >= item5.DiemToiThieu)
+                                                {
+                                                    if (find)
+                                                    {
+                                                        item4 = item5;
+                                                        break;
+                                                    }
+                                                    find = true;
+                                                }
+                                            }
+                                            var temp = tbl.Rows[index][item4.TenXepLoai];
+                                            temp = (int)temp + 1;
+                                            tbl.Rows[index][item4.TenXepLoai] = temp;
+                                        }
+                                        break;
                                     }
-                                    break;
-                                }
                             }
                         }
                     }
@@ -530,14 +563,17 @@ namespace QuanLyHocSinh
                     ratio_Source.Columns.Add("Tỉ lệ (%)", typeof(float));
                     foreach (var item in dtb.XepLoai_NamApDung(guna2ComboBoxYears4.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
                     {
-                        DataRow row_ratio = ratio_Source.NewRow();
-                        row_ratio["Xếp loại"] = item.TenXepLoai;
-                        int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
-                        row_ratio["Số lượng"] = count;
-                        double rat = Math.Round((float)(100 * count / sum), 2);
-                        row_ratio["Tỉ lệ (%)"] = rat;
-                        if (rat > 0)
-                            ratio_Source.Rows.Add(row_ratio);
+                        if (item.MaXepLoai != "HSR")
+                        {
+                            DataRow row_ratio = ratio_Source.NewRow();
+                            row_ratio["Xếp loại"] = item.TenXepLoai;
+                            int count = Convert.ToInt32(tbl.Compute($"SUM([{item.TenXepLoai}])", string.Empty));
+                            row_ratio["Số lượng"] = count;
+                            double rat = Math.Round((float)(100 * count / sum), 2);
+                            row_ratio["Tỉ lệ (%)"] = rat;
+                            if (rat > 0)
+                                ratio_Source.Rows.Add(row_ratio);
+                        }
                     }
 
 

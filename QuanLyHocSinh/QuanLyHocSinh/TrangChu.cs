@@ -183,13 +183,10 @@ namespace QuanLyHocSinh
             try
             {
                 dataEntities dtb = new dataEntities();
-                var Source = from sbj in dtb.MONHOCs
-                             where sbj.NamApDung == guna2ComboBoxYear.SelectedValue.ToString()
-                             join year in dtb.NAMHOCs on sbj.NamApDung equals year.MaNamHoc
-                             select new { MaMon = sbj.MaMonHoc, TenMon = sbj.TenMonHoc, NamApDung = year.NamHoc1 };
+                var Source = dtb.MonHoc_NamApDung(guna2ComboBoxYear.SelectedValue.ToString()).Select(r => new { r.TenMonHoc, r.NamApDung });
+                    
                 DataTable tbl = new DataTable();
                 tbl.Columns.Add("STT", typeof(int));
-                tbl.Columns.Add("Mã môn", typeof(string));
                 tbl.Columns.Add("Tên môn học", typeof(string));
                 tbl.Columns.Add("Năm áp dụng", typeof(string));
 
@@ -199,8 +196,7 @@ namespace QuanLyHocSinh
                     DataRow row = tbl.NewRow();
                     index += 1;
                     row["STT"] = index;
-                    row["Mã môn"] = item.MaMon.ToString();
-                    row["Tên môn học"] = item.TenMon.ToString();
+                    row["Tên môn học"] = item.TenMonHoc.ToString();
                     row["Năm áp dụng"] = item.NamApDung.ToString();
                     tbl.Rows.Add(row);
                 }
