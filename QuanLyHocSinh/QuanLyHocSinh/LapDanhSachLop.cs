@@ -16,13 +16,15 @@ namespace QuanLyHocSinh
         private TrangChu mainform { get; set; }
         private short sStdNum;
         private DataTable dt;
+        private int iNamHoc;
+        private int iKhoi;
+        private int iLop;
 
         public LapDanhSachLop(TrangChu mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
 
-            this.dgvClassDetail.Hide();
             this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
@@ -36,45 +38,92 @@ namespace QuanLyHocSinh
             dt.Columns.Add("SĐT", typeof(String)).ReadOnly = true;
 
             dataEntities db = new dataEntities();
-            cbSchoolYear.DataSource = (from obj in db.NAMHOCs.AsEnumerable()
-                                       orderby obj.MaNamHoc descending
-                                       select obj).ToList();
-            cbSchoolYear.DisplayMember = "NamHoc1";
-            cbSchoolYear.ValueMember = "MaNamHoc";
-
-            cbGrade.DataSource = (from obj in db.KHOIs.AsEnumerable() select obj).ToList();
-            cbGrade.DisplayMember = "TenKhoi";
-            cbGrade.ValueMember = "MaKhoi";
-
-            if(CapNhatDanhSachLop(db) > 0)
-            {
-                HienThiDanhSachHocSinh(db);
-            }            
+            CapNhatDanhSachNamHoc(db);
+            CapNhatDanhSachKhoi(db);
+            CapNhatDanhSachLop(db);
+            HienThiDanhSachHocSinh(db);
 
             this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
             this.cbGrade.SelectedIndexChanged += new System.EventHandler(this.cbGrade_SelectedIndexChanged);
             this.cbClass.SelectedIndexChanged += new System.EventHandler(this.cbClass_SelectedIndexChanged);
-         }
+        }
 
         //private void LapDanhSachLop_Load(object sender, EventArgs e)
         //{
         //    // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
         //    this.lOPTableAdapter.Fill(this.duLieu.LOP);
 
-    //}
+        //}
 
-        private int CapNhatDanhSachLop(dataEntities db)
+        private void CapNhatDanhSachNamHoc(dataEntities db)
         {
-            List<LOP> list = (from l in db.LOPs.AsEnumerable()
-                              where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
-                              && l.MaKhoi == this.cbGrade.SelectedValue.ToString()
-                              orderby l.MaLop ascending
-                              select l).ToList();
-            this.cbClass.DataSource = list;
-            this.cbClass.DisplayMember = "TenLop";
-            this.cbClass.ValueMember = "MaLop";
+            List<NAMHOC> list = (from obj in db.NAMHOCs.AsEnumerable()
+                                 orderby obj.MaNamHoc descending
+                                 select obj).ToList();
+            iNamHoc = list.Count();
+            cbSchoolYear.DataSource = list;
+            cbSchoolYear.DisplayMember = "NamHoc1";
+            cbSchoolYear.ValueMember = "MaNamHoc";            
+        }
 
-            return list.Count();
+        private void CapNhatDanhSachKhoi(dataEntities db)
+        {
+            try
+            {
+                List<KHOI> list = (from obj in db.KHOIs.AsEnumerable()
+                                   where obj.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                                   select obj).ToList();
+                iKhoi = list.Count();
+                cbGrade.DataSource = list;
+                cbGrade.DisplayMember = "TenKhoi";
+                cbGrade.ValueMember = "MaKhoi";
+
+                if (iKhoi == 0)
+                {
+                    List<LOP> lop = new List<LOP>();
+                    cbClass.DataSource = lop;
+                    tbStdNum.Text = "";
+                    dgvClassDetail.Hide();
+                }
+            }
+            catch(InvalidOperationException)
+            {
+                List<KHOI> khoi = new List<KHOI>();
+                cbGrade.DataSource = khoi;
+                List<LOP> lop = new List<LOP>();
+                cbClass.DataSource = lop;
+                tbStdNum.Text = "";
+                dgvClassDetail.Hide();
+            }
+        }
+
+        private void CapNhatDanhSachLop(dataEntities db)
+        {
+            try
+            {
+                List<LOP> list = (from l in db.LOPs.AsEnumerable()
+                                  where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                                  && l.MaKhoi == this.cbGrade.SelectedValue.ToString()
+                                  orderby l.MaLop ascending
+                                  select l).ToList();
+                iLop = list.Count();
+                this.cbClass.DataSource = list;
+                this.cbClass.DisplayMember = "TenLop";
+                this.cbClass.ValueMember = "MaLop";
+
+                if (iLop == 0)
+                {
+                    tbStdNum.Text = "";
+                    dgvClassDetail.Hide();
+                }
+            }
+            catch(InvalidOperationException) 
+            {
+                List<LOP> lop = new List<LOP>();
+                cbClass.DataSource = lop;
+                tbStdNum.Text = "";
+                dgvClassDetail.Hide();
+            }           
         }
 
         private void ThemHocSinhVaoLop()
@@ -218,64 +267,69 @@ namespace QuanLyHocSinh
 
         private void HienThiDanhSachHocSinh(dataEntities db)
         {
-            var dataSource = from ctl in db.CTLOPs.AsEnumerable()
-                             join hs in db.HOCSINHs.AsEnumerable() on ctl.MaHocSinh equals hs.MaHocSinh
-                             where ctl.MaLop == this.cbClass.SelectedValue.ToString()
-                             group new { hs }
-                             by new { hs.MaHocSinh, hs.HoTen, hs.GioiTinh, hs.NgaySinh, hs.DiaChi, hs.SDT }
-                             into g
-                             select new
-                             {
-                                 MaHocSinh = g.Key.MaHocSinh,
-                                 HoTen = g.Key.HoTen,
-                                 GioiTinh = g.Key.GioiTinh,
-                                 NgaySinh = g.Key.NgaySinh,
-                                 DiaChi = g.Key.DiaChi,
-                                 SDT = g.Key.SDT
-                             };
-
-            dt.Clear();
-            sStdNum = 0;
-            foreach (var std in dataSource)
+            try
             {
-                DataRow row = dt.NewRow();
-                row["STT"] = ++sStdNum;
-                row["MSHS"] = std.MaHocSinh;
-                row["Họ tên"] = std.HoTen;
-                row["Giới tính"] = std.GioiTinh;
-                row["Ngày sinh"] = std.NgaySinh;
-                row["Địa chỉ"] = std.DiaChi;
-                row["SĐT"] = std.SDT;
+                var dataSource = from ctl in db.CTLOPs.AsEnumerable()
+                                 join hs in db.HOCSINHs.AsEnumerable() on ctl.MaHocSinh equals hs.MaHocSinh
+                                 where ctl.MaLop == this.cbClass.SelectedValue.ToString()
+                                 group new { hs }
+                                 by new { hs.MaHocSinh, hs.HoTen, hs.GioiTinh, hs.NgaySinh, hs.DiaChi, hs.SDT }
+                             into g
+                                 select new
+                                 {
+                                     MaHocSinh = g.Key.MaHocSinh,
+                                     HoTen = g.Key.HoTen,
+                                     GioiTinh = g.Key.GioiTinh,
+                                     NgaySinh = g.Key.NgaySinh,
+                                     DiaChi = g.Key.DiaChi,
+                                     SDT = g.Key.SDT
+                                 };
 
-                dt.Rows.Add(row);
+                dt.Clear();
+                sStdNum = 0;
+                foreach (var std in dataSource)
+                {
+                    DataRow row = dt.NewRow();
+                    row["STT"] = ++sStdNum;
+                    row["MSHS"] = std.MaHocSinh;
+                    row["Họ tên"] = std.HoTen;
+                    row["Giới tính"] = std.GioiTinh;
+                    row["Ngày sinh"] = std.NgaySinh;
+                    row["Địa chỉ"] = std.DiaChi;
+                    row["SĐT"] = std.SDT;
+
+                    dt.Rows.Add(row);
+                }
+
+                this.tbStdNum.Text = sStdNum.ToString();
+                this.dgvClassDetail.DataSource = dt;
+                this.dgvClassDetail.AutoResizeColumns();
+                this.dgvClassDetail.Show();
             }
-
-            this.tbStdNum.Text = sStdNum.ToString();
-            this.dgvClassDetail.DataSource = dt;
-            this.dgvClassDetail.AutoResizeColumns();
-            this.dgvClassDetail.Show();
+            catch(InvalidOperationException)
+            {
+                tbStdNum.Text = "";
+                dgvClassDetail.Hide();
+            }
+            
         }
 
         private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dgvClassDetail.Visible = false;
-            this.tbStdNum.Text = "";
             dataEntities db = new dataEntities();
-            CapNhatDanhSachLop(db);
+            CapNhatDanhSachKhoi(db);
         }
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.dgvClassDetail.Visible = false;
-            this.tbStdNum.Text = "";
             dataEntities db = new dataEntities();
             CapNhatDanhSachLop(db);
         }
 
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataEntities db = new dataEntities();
-            HienThiDanhSachHocSinh(db);
+            dataEntities db = new dataEntities();            
+            HienThiDanhSachHocSinh(db);                    
         }
 
         private void Btn_Minimize_Click(object sender, EventArgs e)
