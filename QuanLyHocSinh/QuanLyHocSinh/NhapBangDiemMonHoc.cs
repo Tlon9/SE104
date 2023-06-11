@@ -583,6 +583,8 @@ namespace QuanLyHocSinh
                         txb_ratio.AutoSize = true;
                         txb_ratio.Font = new Font("Segoe UI", 10);
                         list_txb_ratio.Add(txb_ratio);
+                        txb.BackColor = Color.White;
+                        txb_ratio.BackColor = Color.White;
                         panelNumberOfClassify.Controls.Add(txb);
                         panelNumberOfClassify.Controls.Add(txb_ratio);
                         panelNumberOfClassify.Controls.Add(lb);

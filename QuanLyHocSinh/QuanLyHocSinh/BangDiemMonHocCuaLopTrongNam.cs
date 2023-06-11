@@ -183,6 +183,8 @@ namespace QuanLyHocSinh
                     list_txb_ratio.Add(txb_ratio);
                     txb.Font = new Font("Segoe UI", 10);
                     txb_ratio.Font = new Font("Segoe UI", 10);
+                    txb.BackColor = Color.White;
+                    txb_ratio.BackColor = Color.White;
                     panelClassifyYear.Controls.Add(txb);
                     panelClassifyYear.Controls.Add(txb_ratio);
                     panelClassifyYear.Controls.Add(lb);
