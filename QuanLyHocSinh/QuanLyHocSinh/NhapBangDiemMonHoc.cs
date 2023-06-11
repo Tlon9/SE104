@@ -51,10 +51,7 @@ namespace QuanLyHocSinh
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            var comBoxYear_new = from obj in data.NAMHOCs select obj;
-            string new_comBoxYear = comBoxYear_new.OrderByDescending(p => p.MaNamHoc).FirstOrDefault().MaNamHoc.ToString();
-            LoadPanel_Score(new_comBoxYear);
+            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; 
 
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -68,7 +65,7 @@ namespace QuanLyHocSinh
         }
         private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
-            comboBoxSubject.Visible = false;
+            comboBoxSubject.Enabled = false;
             var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == comboBoxYear.SelectedValue.ToString() select obj;
             comboBoxClass.DataSource = comboxClassSource.ToList();
             comboBoxClass.DisplayMember = "TenLop";
@@ -83,17 +80,6 @@ namespace QuanLyHocSinh
             comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             comboBoxSubject.DisplayMember = "TenMonHoc";
             comboBoxSubject.ValueMember = "MaMonHoc";
-            var comBoxYear = from obj in data.NAMHOCs select obj;
-            string new_comBoxYear = comBoxYear.OrderByDescending(p => p.MaNamHoc).FirstOrDefault().MaNamHoc.ToString();
-            if (new_comBoxYear != comboBoxYear.SelectedValue.ToString())
-            {
-                panelInput.Visible = false;
-                TraCuuButton_hk.Enabled = false;
-            }
-            else
-            {
-                TraCuuButton_hk.Enabled = true;
-            }
         }
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -106,7 +92,7 @@ namespace QuanLyHocSinh
         }
         private void comboBoxClass_Click(object sender, EventArgs e)
         {
-            comboBoxSubject.Visible = true;
+            comboBoxSubject.Enabled = true;
         }
         private void textBoxScore_TextChanged(object sender, EventArgs e)
         {
@@ -124,11 +110,11 @@ namespace QuanLyHocSinh
             }
         }
         List<TextBox> list = new List<TextBox>();
-        void LoadPanel_Score(string new_comBoxYear)
+        void LoadPanel_Score()
         {
             panelScores.Controls.Clear();
             list.Clear();
-            var Score = from scr in data.ThanhPhan_NamApDung(new_comBoxYear)
+            var Score = from scr in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString())
                         select new { scr.MaThanhPhan, scr.TenThanhPhan };
             int x = 120;
             int y = 0;
@@ -148,7 +134,7 @@ namespace QuanLyHocSinh
                 panelScores.Controls.Add(textBox);
                 panelScores.Controls.Add(lb);
                 list.Add(textBox);
-                y += 58;
+                y += 65;
             }
         }
         struct DIEMformat
@@ -247,26 +233,30 @@ namespace QuanLyHocSinh
             }
             if (i_o == "1")
             {
+                dataGridView1.DataSource = null;
                 dataGridView1.Controls.Clear();
+                dataGridView1.Refresh();
                     dataGridView1.DataSource = dt;
                     dataGridView1.Show(); 
             }
             else
             {
+                dataGridView2.DataSource = null;
                 dataGridView2.Controls.Clear();
+                dataGridView2.Refresh();
                 dataGridView2.DataSource = dt;
                     dataGridView2.Show();
             }
         }
         private void buttonInput_Click(object sender, EventArgs e)
         {
-            if (comboBoxSubject.Visible == false)
+            if (comboBoxSubject.Enabled == false)
             {
                 MessageBox.Show("Vui lòng chọn lớp trước", "Error", MessageBoxButtons.OK);
                 return;
             }    
             if (panelPrint.Visible) { panelPrint.Hide(); }
-            //LoadPanel_Score();
+            LoadPanel_Score();
             if (comboBoxClass.Text.ToString() == string.Empty || comboBoxSubject.Text.ToString() == string.Empty || comboBoxSemester.Text.ToString() == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập thông tin đầy đủ", "Error", MessageBoxButtons.OK);
@@ -285,6 +275,12 @@ namespace QuanLyHocSinh
                 x -= labelNameOfGrid1.Width / 2;
                 int y = dataGridView1.Location.Y + dataGridView1.Height + 20;
                 labelNameOfGrid1.Location = new System.Drawing.Point(x, y);
+                if(comboBoxID.Text == string.Empty)
+                {
+                    textBoxName.Text = string.Empty;
+                    textBoxAverageScore.Text = string.Empty;
+                    textBoxClassify.Text = string.Empty;
+                }    
                 ShowGrid("1");
                 panelInput.Show();
             }
@@ -540,7 +536,7 @@ namespace QuanLyHocSinh
         DataTable ratio_Source;
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            if (comboBoxSubject.Visible == false)
+            if (comboBoxSubject.Enabled == false)
             {
                 MessageBox.Show("Vui lòng chọn lớp trước", "Error", MessageBoxButtons.OK);
                 return;
@@ -558,7 +554,6 @@ namespace QuanLyHocSinh
             int index = 0;
             int x = 100;
             int y = 0;
-            //string Last_NamApDung = getCurYear();
             panelNumberOfClassify.AutoSize = true;
             foreach (var i in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
             {

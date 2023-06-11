@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangDiemMonHocCuaLopTrongNam));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelSubject = new System.Windows.Forms.Label();
             this.panelPrint = new System.Windows.Forms.Panel();
@@ -66,7 +66,7 @@
             // 
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelYear.Location = new System.Drawing.Point(174, 119);
+            this.labelYear.Location = new System.Drawing.Point(176, 92);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(80, 23);
             this.labelYear.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             this.labelSubject.AutoSize = true;
             this.labelSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelSubject.Location = new System.Drawing.Point(563, 168);
+            this.labelSubject.Location = new System.Drawing.Point(565, 141);
             this.labelSubject.Name = "labelSubject";
             this.labelSubject.Size = new System.Drawing.Size(78, 23);
             this.labelSubject.TabIndex = 12;
@@ -102,36 +102,36 @@
             this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButton2.ImageRotate = 0F;
             this.guna2ImageButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(937, 523);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(937, 491);
             this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(67, 62);
+            this.guna2ImageButton2.Size = new System.Drawing.Size(87, 88);
             this.guna2ImageButton2.TabIndex = 139;
             this.guna2ImageButton2.Click += new System.EventHandler(this.ButtonExportExcel_Click);
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 40;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView1.Location = new System.Drawing.Point(3, 244);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -167,17 +167,17 @@
             // 
             // chartRatio
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chartRatio.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chartRatio.Legends.Add(legend10);
+            chartArea2.Name = "ChartArea1";
+            this.chartRatio.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartRatio.Legends.Add(legend2);
             this.chartRatio.Location = new System.Drawing.Point(1011, 244);
             this.chartRatio.Name = "chartRatio";
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chartRatio.Series.Add(series10);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartRatio.Series.Add(series2);
             this.chartRatio.Size = new System.Drawing.Size(350, 314);
             this.chartRatio.TabIndex = 137;
             this.chartRatio.Text = "chart1";
@@ -194,7 +194,7 @@
             // 
             // panelClassifyYear
             // 
-            this.panelClassifyYear.Location = new System.Drawing.Point(99, 3);
+            this.panelClassifyYear.Location = new System.Drawing.Point(88, 3);
             this.panelClassifyYear.Name = "panelClassifyYear";
             this.panelClassifyYear.Size = new System.Drawing.Size(925, 236);
             this.panelClassifyYear.TabIndex = 112;
@@ -209,7 +209,7 @@
             this.comboBoxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBoxYear.ForeColor = System.Drawing.Color.Black;
             this.comboBoxYear.ItemHeight = 25;
-            this.comboBoxYear.Location = new System.Drawing.Point(260, 119);
+            this.comboBoxYear.Location = new System.Drawing.Point(262, 92);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(231, 31);
             this.comboBoxYear.TabIndex = 55;
@@ -225,7 +225,7 @@
             this.comboBoxClass.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.comboBoxClass.ForeColor = System.Drawing.Color.Black;
             this.comboBoxClass.ItemHeight = 25;
-            this.comboBoxClass.Location = new System.Drawing.Point(260, 168);
+            this.comboBoxClass.Location = new System.Drawing.Point(262, 141);
             this.comboBoxClass.Name = "comboBoxClass";
             this.comboBoxClass.Size = new System.Drawing.Size(231, 31);
             this.comboBoxClass.TabIndex = 57;
@@ -245,7 +245,7 @@
             this.comboBoxSubject.FormattingEnabled = true;
             this.comboBoxSubject.IntegralHeight = false;
             this.comboBoxSubject.ItemHeight = 25;
-            this.comboBoxSubject.Location = new System.Drawing.Point(647, 168);
+            this.comboBoxSubject.Location = new System.Drawing.Point(649, 141);
             this.comboBoxSubject.Name = "comboBoxSubject";
             this.comboBoxSubject.Size = new System.Drawing.Size(231, 31);
             this.comboBoxSubject.TabIndex = 58;
@@ -255,7 +255,7 @@
             this.labelClass.AutoSize = false;
             this.labelClass.BackColor = System.Drawing.Color.Transparent;
             this.labelClass.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelClass.Location = new System.Drawing.Point(207, 168);
+            this.labelClass.Location = new System.Drawing.Point(209, 141);
             this.labelClass.Name = "labelClass";
             this.labelClass.Size = new System.Drawing.Size(46, 31);
             this.labelClass.TabIndex = 59;
@@ -343,11 +343,11 @@
             this.TraCuuButton_hk.ImageOffset = new System.Drawing.Point(0, 0);
             this.TraCuuButton_hk.ImageRotate = 0F;
             this.TraCuuButton_hk.ImageSize = new System.Drawing.Size(60, 60);
-            this.TraCuuButton_hk.Location = new System.Drawing.Point(1141, 129);
+            this.TraCuuButton_hk.Location = new System.Drawing.Point(1073, 120);
             this.TraCuuButton_hk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TraCuuButton_hk.Name = "TraCuuButton_hk";
             this.TraCuuButton_hk.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.Size = new System.Drawing.Size(64, 70);
+            this.TraCuuButton_hk.Size = new System.Drawing.Size(75, 82);
             this.TraCuuButton_hk.TabIndex = 64;
             this.TraCuuButton_hk.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
@@ -383,7 +383,7 @@
             this.label26.BackColor = System.Drawing.Color.White;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(268, 209);
+            this.label26.Location = new System.Drawing.Point(273, 191);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(207, 20);
