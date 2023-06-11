@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,8 +39,18 @@ namespace QuanLyHocSinh
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
+        private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
+        }
         private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
+            comboBoxSubject.Visible = false;
             dataEntities data = new dataEntities();
             var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == comboBoxYear.SelectedValue.ToString() select obj;
             comboBoxClass.DataSource = comboxClassSource.ToList();
@@ -183,6 +194,11 @@ namespace QuanLyHocSinh
         DataTable ratio_Source;
         private void buttonPrint_Click(object sender, EventArgs e)
         {
+            if (comboBoxSubject.Visible == false)
+            {
+                MessageBox.Show("Vui lòng chọn lớp trước", "Error", MessageBoxButtons.OK);
+                return;
+            }
             panelClassifyYear.Controls.Clear();
             List<TextBox> list_txb_xeploai = new List<TextBox>();
             List<TextBox> list_txb_ratio = new List<TextBox>();
@@ -423,6 +439,11 @@ namespace QuanLyHocSinh
             this.Hide();
             newform.ShowDialog();
             this.Show();
+        }
+
+        private void comboBoxClass_Click(object sender, EventArgs e)
+        {
+            comboBoxSubject.Visible = true;
         }
     }
 }
