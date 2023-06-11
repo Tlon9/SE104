@@ -17,7 +17,11 @@ namespace QuanLyHocSinh
         public TrangChu()
         {
             InitializeComponent();
+            initialize();
+        }
 
+        void initialize()
+        {
             guna2TextBoxUser.Text = Account.HoTen.ToString();
             if (Account.VaiTro == "Giáo viên")
             {
@@ -55,6 +59,7 @@ namespace QuanLyHocSinh
             TiepNhanHocSinh newform = new TiepNhanHocSinh(this);
             this.Hide();
             newform.ShowDialog();
+            initialize();
             this.Show();
         }
 
@@ -123,6 +128,7 @@ namespace QuanLyHocSinh
             QuanLyQuyDinh newform = new QuanLyQuyDinh();
             this.Hide();
             newform.ShowDialog();
+            initialize();
             this.Show();
         }
 
@@ -131,6 +137,7 @@ namespace QuanLyHocSinh
             LapDanhSachLop newform = new LapDanhSachLop(this);
             this.Hide();
             newform.ShowDialog();
+            initialize();
             this.Show();
         }
 
