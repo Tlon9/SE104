@@ -44,7 +44,7 @@ namespace QuanLyHocSinh
             }
             catch 
             {
-                MessageBox.Show("Đăng nhập vào phần mềm xảy ra lỗi, mời thực hiện lại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBox.Show("Thao tác trên phần mềm xảy ra lỗi, mời thực hiện lại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
             }    
         }
