@@ -414,7 +414,7 @@ namespace QuanLyHocSinh
                         select new { TenLop = obj.TenLop };
             dgvDSLOP.DataSource = dsLop.ToList();
             dgvDSLOP.Show();
-            MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
+            MessageBox.Show("Cập nhật danh sách khối lớp thành công! Đã xóa các lớp của khối "+tenkhoi);
         }
 
         //Thay đổi danh sách môn học
