@@ -328,6 +328,7 @@ namespace QuanLyHocSinh
             // 
             // TaoTaiKhoan
             // 
+            this.AcceptButton = this.guna2ButtonAccount;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(742, 482);

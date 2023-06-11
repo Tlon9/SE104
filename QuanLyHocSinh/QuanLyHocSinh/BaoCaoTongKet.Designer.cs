@@ -218,7 +218,7 @@ namespace QuanLyHocSinh
             this.ChartRatio.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.ChartRatio.Legends.Add(legend1);
-            this.ChartRatio.Location = new System.Drawing.Point(877, 320);
+            this.ChartRatio.Location = new System.Drawing.Point(877, 379);
             this.ChartRatio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChartRatio.Name = "ChartRatio";
             series1.ChartArea = "ChartArea1";
@@ -227,7 +227,7 @@ namespace QuanLyHocSinh
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.ChartRatio.Series.Add(series1);
-            this.ChartRatio.Size = new System.Drawing.Size(399, 284);
+            this.ChartRatio.Size = new System.Drawing.Size(399, 225);
             this.ChartRatio.TabIndex = 11;
             this.ChartRatio.Text = "chart1";
             this.ChartRatio.Visible = false;
@@ -261,7 +261,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio1.RowHeadersVisible = false;
             this.guna2DataGridViewRatio1.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio1.RowTemplate.Height = 24;
-            this.guna2DataGridViewRatio1.Size = new System.Drawing.Size(396, 146);
+            this.guna2DataGridViewRatio1.Size = new System.Drawing.Size(396, 201);
             this.guna2DataGridViewRatio1.TabIndex = 2;
             this.guna2DataGridViewRatio1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -408,7 +408,6 @@ namespace QuanLyHocSinh
             // 
             this.guna2ComboBoxYears1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ComboBoxYears1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBoxYears1.DropDownHeight = 100;
             this.guna2ComboBoxYears1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.guna2ComboBoxYears1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBoxYears1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -486,7 +485,7 @@ namespace QuanLyHocSinh
             this.ChartRatio2.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.ChartRatio2.Legends.Add(legend2);
-            this.ChartRatio2.Location = new System.Drawing.Point(867, 320);
+            this.ChartRatio2.Location = new System.Drawing.Point(867, 378);
             this.ChartRatio2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChartRatio2.Name = "ChartRatio2";
             series2.ChartArea = "ChartArea1";
@@ -495,7 +494,7 @@ namespace QuanLyHocSinh
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.ChartRatio2.Series.Add(series2);
-            this.ChartRatio2.Size = new System.Drawing.Size(409, 284);
+            this.ChartRatio2.Size = new System.Drawing.Size(409, 226);
             this.ChartRatio2.TabIndex = 15;
             this.ChartRatio2.Text = "chart1";
             this.ChartRatio2.Visible = false;
@@ -529,7 +528,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio2.RowHeadersVisible = false;
             this.guna2DataGridViewRatio2.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio2.RowTemplate.Height = 24;
-            this.guna2DataGridViewRatio2.Size = new System.Drawing.Size(405, 143);
+            this.guna2DataGridViewRatio2.Size = new System.Drawing.Size(405, 203);
             this.guna2DataGridViewRatio2.TabIndex = 14;
             this.guna2DataGridViewRatio2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio2.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -732,7 +731,7 @@ namespace QuanLyHocSinh
             this.ChartRatio3.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.ChartRatio3.Legends.Add(legend3);
-            this.ChartRatio3.Location = new System.Drawing.Point(863, 318);
+            this.ChartRatio3.Location = new System.Drawing.Point(863, 374);
             this.ChartRatio3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChartRatio3.Name = "ChartRatio3";
             series3.ChartArea = "ChartArea1";
@@ -741,7 +740,7 @@ namespace QuanLyHocSinh
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.ChartRatio3.Series.Add(series3);
-            this.ChartRatio3.Size = new System.Drawing.Size(411, 284);
+            this.ChartRatio3.Size = new System.Drawing.Size(411, 228);
             this.ChartRatio3.TabIndex = 19;
             this.ChartRatio3.Text = "chart1";
             this.ChartRatio3.Visible = false;
@@ -775,7 +774,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio3.RowHeadersVisible = false;
             this.guna2DataGridViewRatio3.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio3.RowTemplate.Height = 24;
-            this.guna2DataGridViewRatio3.Size = new System.Drawing.Size(413, 142);
+            this.guna2DataGridViewRatio3.Size = new System.Drawing.Size(413, 200);
             this.guna2DataGridViewRatio3.TabIndex = 18;
             this.guna2DataGridViewRatio3.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio3.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -975,7 +974,7 @@ namespace QuanLyHocSinh
             this.ChartRatio4.ChartAreas.Add(chartArea4);
             legend4.Name = "Legend1";
             this.ChartRatio4.Legends.Add(legend4);
-            this.ChartRatio4.Location = new System.Drawing.Point(875, 318);
+            this.ChartRatio4.Location = new System.Drawing.Point(875, 380);
             this.ChartRatio4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChartRatio4.Name = "ChartRatio4";
             series4.ChartArea = "ChartArea1";
@@ -984,7 +983,7 @@ namespace QuanLyHocSinh
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.ChartRatio4.Series.Add(series4);
-            this.ChartRatio4.Size = new System.Drawing.Size(399, 284);
+            this.ChartRatio4.Size = new System.Drawing.Size(399, 222);
             this.ChartRatio4.TabIndex = 23;
             this.ChartRatio4.Text = "chart1";
             this.ChartRatio4.Visible = false;
@@ -1018,7 +1017,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio4.RowHeadersVisible = false;
             this.guna2DataGridViewRatio4.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio4.RowTemplate.Height = 24;
-            this.guna2DataGridViewRatio4.Size = new System.Drawing.Size(399, 151);
+            this.guna2DataGridViewRatio4.Size = new System.Drawing.Size(399, 202);
             this.guna2DataGridViewRatio4.TabIndex = 22;
             this.guna2DataGridViewRatio4.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio4.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1041,6 +1040,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio4.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridViewRatio4.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridViewRatio4.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridViewRatio4.Visible = false;
             // 
             // guna2DataGridViewReport4
             // 
@@ -1094,6 +1094,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport4.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridViewReport4.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridViewReport4.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridViewReport4.Visible = false;
             // 
             // guna2GradientPanel4
             // 
@@ -1181,7 +1182,7 @@ namespace QuanLyHocSinh
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1330, 53);
+            this.guna2Panel1.Size = new System.Drawing.Size(1334, 53);
             this.guna2Panel1.TabIndex = 16;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
@@ -1251,7 +1252,7 @@ namespace QuanLyHocSinh
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1330, 830);
+            this.ClientSize = new System.Drawing.Size(1334, 830);
             this.Controls.Add(this.guna2ImageButtonHome);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2ImageButton2);

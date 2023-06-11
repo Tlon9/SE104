@@ -58,7 +58,7 @@ namespace QuanLyHocSinh
                         var account = new TAIKHOAN();
                         account.HoTen = guna2TextBox1.Text;
                         CultureInfo provider = CultureInfo.InvariantCulture;
-                        account.NgaySinh = DateTime.ParseExact(guna2TextBox2.Text, "dd/mm/yyyy", provider);
+                        account.NgaySinh = DateTime.ParseExact(guna2TextBox2.Text, "dd/MM/yyyy", provider);
                         account.MaPhanQuyen = guna2ComboBox1.SelectedValue.ToString();
                         account.TenDangNhap = guna2TextBox3.Text;
                         account.MatKhau = guna2TextBox4.Text;
