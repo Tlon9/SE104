@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace QuanLyHocSinh
 {
@@ -31,7 +32,10 @@ namespace QuanLyHocSinh
                         Account.MatKhau = item.MatKhau.ToString();
                         Account.VaiTro = item.PHANQUYEN.VaiTro.ToString();
                         Account.HoTen = item.HoTen.ToString();
-                        Account.NgaySinh = item.NgaySinh.ToString().Substring(0, 9);
+                        string temp = item.NgaySinh.ToString();
+                        Regex re = new Regex(@"[^ ]*");
+                        Match m = re.Match(temp);
+                        Account.NgaySinh = m.Groups[0].Value;
                         TrangChu newform = new TrangChu();
                         this.Hide();
                         newform.ShowDialog();
