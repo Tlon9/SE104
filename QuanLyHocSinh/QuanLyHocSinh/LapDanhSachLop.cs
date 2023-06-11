@@ -21,6 +21,10 @@ namespace QuanLyHocSinh
             InitializeComponent();
             this.mainform = mainform;
 
+            this.dgvClassDetail.Hide();
+            this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             dt = new DataTable();
             dt.Columns.Add("STT", typeof(byte)).ReadOnly = true;
             dt.Columns.Add("MSHS", typeof(String)).ReadOnly = true;
@@ -41,16 +45,15 @@ namespace QuanLyHocSinh
             cbGrade.DisplayMember = "TenKhoi";
             cbGrade.ValueMember = "MaKhoi";
 
-            CapNhatDanhSachLop(db);
-            HienThiDanhSachHocSinh(db);
+            if(CapNhatDanhSachLop(db) > 0)
+            {
+                HienThiDanhSachHocSinh(db);
+            }            
 
             this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
             this.cbGrade.SelectedIndexChanged += new System.EventHandler(this.cbGrade_SelectedIndexChanged);
             this.cbClass.SelectedIndexChanged += new System.EventHandler(this.cbClass_SelectedIndexChanged);
- 
-            this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-        }
+         }
 
         //private void LapDanhSachLop_Load(object sender, EventArgs e)
         //{
@@ -59,15 +62,18 @@ namespace QuanLyHocSinh
 
     //}
 
-        private void CapNhatDanhSachLop(dataEntities db)
+        private int CapNhatDanhSachLop(dataEntities db)
         {
-            this.cbClass.DataSource = (from l in db.LOPs.AsEnumerable()
-                                       where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
-                                       && l.MaKhoi == this.cbGrade.SelectedValue.ToString()
-                                       orderby l.MaLop ascending
-                                       select l).ToList();
+            List<LOP> list = (from l in db.LOPs.AsEnumerable()
+                              where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                              && l.MaKhoi == this.cbGrade.SelectedValue.ToString()
+                              orderby l.MaLop ascending
+                              select l).ToList();
+            this.cbClass.DataSource = list;
             this.cbClass.DisplayMember = "TenLop";
             this.cbClass.ValueMember = "MaLop";
+
+            return list.Count();
         }
 
         private void ThemHocSinhVaoLop()
