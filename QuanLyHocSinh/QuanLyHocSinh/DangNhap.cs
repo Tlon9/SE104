@@ -20,28 +20,34 @@ namespace QuanLyHocSinh
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            dataEntities dtb = new dataEntities();
-            foreach(var item in dtb.TAIKHOANs)
+            try
             {
-                if (item.TenDangNhap == textBoxUsername.Text && item.MatKhau == textBoxPassword.Text)
+                dataEntities dtb = new dataEntities();
+                foreach (var item in dtb.TAIKHOANs)
                 {
-                    Account.TenDangNhap = item.TenDangNhap.ToString();
-                    Account.MatKhau = item.MatKhau.ToString();
-                    Account.VaiTro = item.PHANQUYEN.VaiTro.ToString();
-                    Account.HoTen = item.HoTen.ToString();
-                    Account.NgaySinh = item.NgaySinh.ToString().Substring(0,9);
-                    TrangChu newform = new TrangChu();
-                    this.Hide();
-                    newform.ShowDialog();
-                    this.Close();
+                    if (item.TenDangNhap == textBoxUsername.Text && item.MatKhau == textBoxPassword.Text)
+                    {
+                        Account.TenDangNhap = item.TenDangNhap.ToString();
+                        Account.MatKhau = item.MatKhau.ToString();
+                        Account.VaiTro = item.PHANQUYEN.VaiTro.ToString();
+                        Account.HoTen = item.HoTen.ToString();
+                        Account.NgaySinh = item.NgaySinh.ToString().Substring(0, 9);
+                        TrangChu newform = new TrangChu();
+                        this.Hide();
+                        newform.ShowDialog();
+                        this.Close();
+                    }
                 }
+                labelWrong.Show();
+                textBoxUsername.Text = "";
+                textBoxPassword.Text = "";
             }
-            labelWrong.Show();
-            textBoxUsername.Text = "";
-            textBoxPassword.Text = "";
+            catch 
+            {
+                MessageBox.Show("Đăng nhập vào phần mềm xảy ra lỗi, mời thực hiện lại!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }    
         }
-
-
 
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
