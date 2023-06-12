@@ -738,7 +738,7 @@ namespace QuanLyHocSinh
             pnHuongDanTraCuu.Show();
             lbHuongDanTraCuu.Text = "Hướng dẫn Tra cứu: Có 2 cách tra cứu\n1.Tra cứu theo Mã số học sinh: Bạn cần nhập ít nhất thông tin Mã số học sinh để tra cứu" +
                 "\n2.Tra cứu theo Họ tên (Không cần nhập Mã số học sinh): Bạn cần nhập ít nhất các thông tin sau: " +
-                "\nHọ tên học sinh, Năm học hiện tại, Khối, Lớp hiện tại và 1 trong 2 thông tin SĐT hoặc Email ";    
+                "\nHọ tên học sinh, Năm học hiện tại, Khối, Lớp hiện tại";    
         }
 
         private void BtnCloseHuongDanTraCuu_Click(object sender, EventArgs e)
