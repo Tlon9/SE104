@@ -483,7 +483,7 @@ namespace QuanLyHocSinh
                 }
             }
             //Tra cứu theo Họ tên + Lớp + SĐT/Email
-            else if (cbFindStudenID_2.SelectedIndex == -1 && tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && (tbFindEmail.Text != "" || tbFindPhoneNum.Text != ""))
+            else if (cbFindStudenID_2.SelectedIndex == -1 && tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1)
             {
                 if (tbFindEmail.Text != "" && tbFindPhoneNum.Text != "")
                 {
@@ -564,13 +564,40 @@ namespace QuanLyHocSinh
                         ThongTinHS_byName(tbFindName.Text);
                     }
                 }
+                else
+                {
+                    var case4 = from iter1 in db.HOCSINHs
+                                join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
+                                join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
+                                where iter1.HoTen == tbFindName.Text && iter3.TenLop == cbClass.SelectedValue.ToString()
+                                select iter1.MaHocSinh;
+                    if (case4.Count() == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy học sinh phù hợp với thông tin đã nhập", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (case4.Count() > 1)
+                    {
+                        MessageBox.Show("Có nhiều hơn 1 học sinh trùng với thông tin đã nhập. Hãy chọn mã số học sinh muốn tra cứu.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        tbStudentID.Hide();
+                        cbFindStudenID_2.Show();
+                        cbFindStudenID_2.DataSource = case4.ToList();
+                        cbFindStudenID_2.DisplayMember = "MaHocSinh";
+                        cbFindStudenID_2.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        ThongTinHS_byName(tbFindName.Text);
+                    }
+                } 
+                    
                 return;   
             }
-            else if (cbFindStudenID_2.SelectedIndex != -1 && tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1 && (tbFindEmail.Text != "" || tbFindPhoneNum.Text != ""))
+            else if (cbFindStudenID_2.SelectedIndex != -1 && tbFindName.Text != "" && cbGrade.SelectedIndex != -1 && cbClass.SelectedIndex != -1)
             {
                 ThongTinHS_byID(cbFindStudenID_2.SelectedValue.ToString());
             }    
-            else if (tbFindName.Text == "" || (tbFindEmail.Text == "" || tbFindPhoneNum.Text == "") || cbClass.SelectedIndex == -1)
+            else if (tbFindName.Text == "" || cbClass.SelectedIndex == -1)
             {
                 MessageBox.Show("Cần nhập thêm thông tin để tra cứu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
