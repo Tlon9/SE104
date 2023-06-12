@@ -50,7 +50,7 @@ namespace QuanLyHocSinh
         }
         private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
-            comboBoxSubject.Visible = false;
+            comboBoxSubject.Enabled = false;
             dataEntities data = new dataEntities();
             var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == comboBoxYear.SelectedValue.ToString() select obj;
             comboBoxClass.DataSource = comboxClassSource.ToList();
@@ -183,6 +183,8 @@ namespace QuanLyHocSinh
                     list_txb_ratio.Add(txb_ratio);
                     txb.Font = new Font("Segoe UI", 10);
                     txb_ratio.Font = new Font("Segoe UI", 10);
+                    txb.BackColor = Color.White;
+                    txb_ratio.BackColor = Color.White;
                     panelClassifyYear.Controls.Add(txb);
                     panelClassifyYear.Controls.Add(txb_ratio);
                     panelClassifyYear.Controls.Add(lb);
@@ -194,7 +196,7 @@ namespace QuanLyHocSinh
         DataTable ratio_Source;
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            if (comboBoxSubject.Visible == false)
+            if (comboBoxSubject.Enabled == false)
             {
                 MessageBox.Show("Vui lòng chọn lớp trước", "Error", MessageBoxButtons.OK);
                 return;
@@ -443,7 +445,7 @@ namespace QuanLyHocSinh
 
         private void comboBoxClass_Click(object sender, EventArgs e)
         {
-            comboBoxSubject.Visible = true;
+            comboBoxSubject.Enabled = true;
         }
     }
 }

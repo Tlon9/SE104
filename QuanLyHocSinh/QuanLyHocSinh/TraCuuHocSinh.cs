@@ -31,13 +31,14 @@ namespace QuanLyHocSinh
             pnParentInfo.Hide();
 
             dataEntities data = new dataEntities();
-            var CBKhoi = from obj in data.KHOIs
-                         select obj;
-            cbGrade.DataSource = CBKhoi.ToList();
-            cbGrade.DisplayMember = "TenKhoi";
-            cbGrade.ValueMember = "TenKhoi";
+            var CBNamHoc = from obj in data.NAMHOCs
+                           select obj;
+            cbSchoolYear.DataSource = CBNamHoc.ToList();
+            cbSchoolYear.ValueMember = "NamHoc1";
+
             cbGrade.ResetText();
             cbClass.ResetText();
+            cbSchoolYear.SelectedIndex = -1;
             cbGrade.SelectedIndex = -1;
             cbClass.SelectedIndex = -1;
             cbFindStudenID_2.Hide();
@@ -602,19 +603,39 @@ namespace QuanLyHocSinh
             System.Windows.Forms.ComboBox cb = sender as System.Windows.Forms.ComboBox;
             if (cb.SelectedValue != null)
             {
-                var temp = cb.SelectedValue.ToString();
+                var temp1 = cb.SelectedValue.ToString();
+                var temp2 = cbSchoolYear.SelectedValue.ToString();
+
                 dataEntities db = new dataEntities();
 
                 var CBLop = from iter1 in db.LOPs
                             join iter2 in db.KHOIs on iter1.MaKhoi equals iter2.MaKhoi
-                            where iter2.TenKhoi.ToString() == temp
+                            join iter3 in db.NAMHOCs on iter1.MaNamHoc equals iter3.MaNamHoc
+                            where iter2.TenKhoi.ToString() == temp1 && iter3.NamHoc1 == temp2
                             select iter1.TenLop;
 
                 cbClass.DataSource = CBLop.ToList();
                 cbClass.DisplayMember = "TenLop";
             }
         }
+        private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox cb1 = sender as System.Windows.Forms.ComboBox;
+            if (cb1.SelectedValue != null)
+            {
+                var temp = cb1.SelectedValue.ToString();
+                dataEntities db = new dataEntities();
 
+                var CBKhoi = from iter1 in db.KHOIs
+                             join iter2 in db.NAMHOCs on iter1.MaNamHoc equals iter2.MaNamHoc
+                             where iter2.NamHoc1 == temp
+                             select iter1.TenKhoi;
+
+                cbGrade.DataSource = CBKhoi.ToList();
+                cbGrade.DisplayMember = "TenKhoi";
+            }    
+            
+        }
         private void BtnRefresh1_Click(object sender, EventArgs e)
         {
             tbStudentID.Clear();
@@ -645,7 +666,7 @@ namespace QuanLyHocSinh
 
             pnStudent_info.Hide();
             pnParentInfo.Hide();
-            lbThongTinPhuHuynh.Hide();
+            //lbThongTinPhuHuynh.Hide();
             pnDadofStudent_Info.Hide();
             pnMomOfStudent_Info.Hide();
         }
@@ -689,8 +710,8 @@ namespace QuanLyHocSinh
         {
             pnHuongDanTraCuu.Show();
             lbHuongDanTraCuu.Text = "Hướng dẫn Tra cứu: Có 2 cách tra cứu\n1.Tra cứu theo Mã số học sinh: Bạn cần nhập ít nhất thông tin Mã số học sinh để tra cứu" +
-                "\n2.Tra cứu theo Họ tên (Không nhập Mã số học sinh): Bạn cần nhập ít nhất các thông tin sau: " +
-                "\nHọ tên học sinh, Khối, Lớp và 1 trong 2 thông tin SĐT hoặc Email ";    
+                "\n2.Tra cứu theo Họ tên (Không cần nhập Mã số học sinh): Bạn cần nhập ít nhất các thông tin sau: " +
+                "\nHọ tên học sinh, Năm học hiện tại, Khối, Lớp hiện tại và 1 trong 2 thông tin SĐT hoặc Email ";    
         }
 
         private void BtnCloseHuongDanTraCuu_Click(object sender, EventArgs e)

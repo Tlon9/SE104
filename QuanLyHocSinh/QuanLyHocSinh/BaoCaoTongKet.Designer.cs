@@ -258,6 +258,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio1.Location = new System.Drawing.Point(877, 156);
             this.guna2DataGridViewRatio1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewRatio1.Name = "guna2DataGridViewRatio1";
+            this.guna2DataGridViewRatio1.ReadOnly = true;
             this.guna2DataGridViewRatio1.RowHeadersVisible = false;
             this.guna2DataGridViewRatio1.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio1.RowTemplate.Height = 24;
@@ -276,7 +277,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewRatio1.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewRatio1.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewRatio1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewRatio1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewRatio1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,6 +313,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport1.Location = new System.Drawing.Point(3, 156);
             this.guna2DataGridViewReport1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewReport1.Name = "guna2DataGridViewReport1";
+            this.guna2DataGridViewReport1.ReadOnly = true;
             this.guna2DataGridViewReport1.RowHeadersVisible = false;
             this.guna2DataGridViewReport1.RowHeadersWidth = 51;
             this.guna2DataGridViewReport1.RowTemplate.Height = 24;
@@ -330,7 +332,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewReport1.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewReport1.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewReport1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewReport1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewReport1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -525,6 +527,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio2.Location = new System.Drawing.Point(867, 153);
             this.guna2DataGridViewRatio2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewRatio2.Name = "guna2DataGridViewRatio2";
+            this.guna2DataGridViewRatio2.ReadOnly = true;
             this.guna2DataGridViewRatio2.RowHeadersVisible = false;
             this.guna2DataGridViewRatio2.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio2.RowTemplate.Height = 24;
@@ -543,7 +546,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewRatio2.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewRatio2.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewRatio2.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewRatio2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewRatio2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -579,6 +582,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport2.Location = new System.Drawing.Point(3, 153);
             this.guna2DataGridViewReport2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewReport2.Name = "guna2DataGridViewReport2";
+            this.guna2DataGridViewReport2.ReadOnly = true;
             this.guna2DataGridViewReport2.RowHeadersVisible = false;
             this.guna2DataGridViewReport2.RowHeadersWidth = 51;
             this.guna2DataGridViewReport2.RowTemplate.Height = 24;
@@ -597,7 +601,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewReport2.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewReport2.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewReport2.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewReport2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewReport2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -771,6 +775,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio3.Location = new System.Drawing.Point(863, 153);
             this.guna2DataGridViewRatio3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewRatio3.Name = "guna2DataGridViewRatio3";
+            this.guna2DataGridViewRatio3.ReadOnly = true;
             this.guna2DataGridViewRatio3.RowHeadersVisible = false;
             this.guna2DataGridViewRatio3.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio3.RowTemplate.Height = 24;
@@ -789,7 +794,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio3.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio3.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewRatio3.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewRatio3.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewRatio3.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewRatio3.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio3.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewRatio3.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -825,6 +830,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport3.Location = new System.Drawing.Point(5, 153);
             this.guna2DataGridViewReport3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewReport3.Name = "guna2DataGridViewReport3";
+            this.guna2DataGridViewReport3.ReadOnly = true;
             this.guna2DataGridViewReport3.RowHeadersVisible = false;
             this.guna2DataGridViewReport3.RowHeadersWidth = 51;
             this.guna2DataGridViewReport3.RowTemplate.Height = 24;
@@ -843,7 +849,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport3.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport3.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewReport3.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewReport3.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewReport3.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewReport3.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport3.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewReport3.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1014,6 +1020,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio4.Location = new System.Drawing.Point(875, 146);
             this.guna2DataGridViewRatio4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewRatio4.Name = "guna2DataGridViewRatio4";
+            this.guna2DataGridViewRatio4.ReadOnly = true;
             this.guna2DataGridViewRatio4.RowHeadersVisible = false;
             this.guna2DataGridViewRatio4.RowHeadersWidth = 51;
             this.guna2DataGridViewRatio4.RowTemplate.Height = 24;
@@ -1032,7 +1039,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewRatio4.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio4.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewRatio4.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewRatio4.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewRatio4.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewRatio4.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewRatio4.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewRatio4.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1068,6 +1075,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport4.Location = new System.Drawing.Point(5, 146);
             this.guna2DataGridViewReport4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DataGridViewReport4.Name = "guna2DataGridViewReport4";
+            this.guna2DataGridViewReport4.ReadOnly = true;
             this.guna2DataGridViewReport4.RowHeadersVisible = false;
             this.guna2DataGridViewReport4.RowHeadersWidth = 51;
             this.guna2DataGridViewReport4.RowTemplate.Height = 24;
@@ -1086,7 +1094,7 @@ namespace QuanLyHocSinh
             this.guna2DataGridViewReport4.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport4.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridViewReport4.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridViewReport4.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridViewReport4.ThemeStyle.ReadOnly = true;
             this.guna2DataGridViewReport4.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridViewReport4.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.guna2DataGridViewReport4.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
