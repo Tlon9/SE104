@@ -273,7 +273,7 @@ namespace QuanLyHocSinh
                 {
                     DNHGridView.Columns.Add("Điểm HK " + ds_hocky[j].ToString(), "Điểm HK " + ds_hocky[j].ToString());
                 }
-                DNHGridView.Columns.Add("Điểm TB", "Điểm TB cả năm");                
+                DNHGridView.Columns.Add("Điểm TB", "Điểm TB cả năm");
                 for (int i = 0; i < MaMonHoc.Count(); i++)
                 {
 

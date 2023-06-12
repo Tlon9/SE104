@@ -198,7 +198,7 @@
             // labelName
             // 
             this.labelName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(16, 79);
+            this.labelName.Location = new System.Drawing.Point(170, 79);
             this.labelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(616, 36);
@@ -317,6 +317,7 @@
             this.dgvHocKy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvHocKy.Location = new System.Drawing.Point(9, 128);
             this.dgvHocKy.Name = "dgvHocKy";
+            this.dgvHocKy.ReadOnly = true;
             this.dgvHocKy.RowHeadersVisible = false;
             this.dgvHocKy.Size = new System.Drawing.Size(907, 412);
             this.dgvHocKy.TabIndex = 26;
@@ -333,7 +334,7 @@
             this.dgvHocKy.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvHocKy.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvHocKy.ThemeStyle.HeaderStyle.Height = 28;
-            this.dgvHocKy.ThemeStyle.ReadOnly = false;
+            this.dgvHocKy.ThemeStyle.ReadOnly = true;
             this.dgvHocKy.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvHocKy.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHocKy.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -472,7 +473,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(983, 90);
+            this.label2.Location = new System.Drawing.Point(994, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 36);
@@ -487,7 +488,7 @@
             this.chartRatio_nh.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartRatio_nh.Legends.Add(legend2);
-            this.chartRatio_nh.Location = new System.Drawing.Point(923, 316);
+            this.chartRatio_nh.Location = new System.Drawing.Point(921, 310);
             this.chartRatio_nh.Margin = new System.Windows.Forms.Padding(2);
             this.chartRatio_nh.Name = "chartRatio_nh";
             series2.ChartArea = "ChartArea1";
@@ -530,7 +531,7 @@
             this.dgvRatio_nh.RowHeadersVisible = false;
             this.dgvRatio_nh.RowHeadersWidth = 51;
             this.dgvRatio_nh.RowTemplate.Height = 24;
-            this.dgvRatio_nh.Size = new System.Drawing.Size(302, 184);
+            this.dgvRatio_nh.Size = new System.Drawing.Size(297, 178);
             this.dgvRatio_nh.TabIndex = 30;
             this.dgvRatio_nh.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvRatio_nh.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -580,8 +581,9 @@
             this.dgvNamHoc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNamHoc.Location = new System.Drawing.Point(9, 128);
             this.dgvNamHoc.Name = "dgvNamHoc";
+            this.dgvNamHoc.ReadOnly = true;
             this.dgvNamHoc.RowHeadersVisible = false;
-            this.dgvNamHoc.Size = new System.Drawing.Size(909, 412);
+            this.dgvNamHoc.Size = new System.Drawing.Size(907, 412);
             this.dgvNamHoc.TabIndex = 28;
             this.dgvNamHoc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNamHoc.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -596,7 +598,7 @@
             this.dgvNamHoc.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvNamHoc.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvNamHoc.ThemeStyle.HeaderStyle.Height = 28;
-            this.dgvNamHoc.ThemeStyle.ReadOnly = false;
+            this.dgvNamHoc.ThemeStyle.ReadOnly = true;
             this.dgvNamHoc.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNamHoc.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvNamHoc.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -611,7 +613,7 @@
             this.guna2GradientPanel2.Controls.Add(this.printButton_nh);
             this.guna2GradientPanel2.Controls.Add(this.TraCuuButton_nh);
             this.guna2GradientPanel2.Controls.Add(this.NamHocCbb_nh);
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(9, 4);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(8, 7);
             this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(647, 60);
@@ -688,7 +690,7 @@
             // labelName_nh
             // 
             this.labelName_nh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName_nh.Location = new System.Drawing.Point(17, 76);
+            this.labelName_nh.Location = new System.Drawing.Point(170, 79);
             this.labelName_nh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelName_nh.Name = "labelName_nh";
             this.labelName_nh.Size = new System.Drawing.Size(616, 36);

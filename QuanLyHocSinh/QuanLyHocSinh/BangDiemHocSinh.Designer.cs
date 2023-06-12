@@ -61,6 +61,7 @@
             this.HocKyCbb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.NamHocCbb_hk = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.DNHGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.XepLoaiTxtBox_nh = new Guna.UI2.WinForms.Guna2TextBox();
@@ -258,8 +259,9 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DHKGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.DHKGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DHKGridView.Location = new System.Drawing.Point(9, 79);
+            this.DHKGridView.Location = new System.Drawing.Point(8, 114);
             this.DHKGridView.Name = "DHKGridView";
+            this.DHKGridView.ReadOnly = true;
             this.DHKGridView.RowHeadersVisible = false;
             this.DHKGridView.Size = new System.Drawing.Size(931, 393);
             this.DHKGridView.TabIndex = 26;
@@ -276,7 +278,7 @@
             this.DHKGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DHKGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DHKGridView.ThemeStyle.HeaderStyle.Height = 28;
-            this.DHKGridView.ThemeStyle.ReadOnly = false;
+            this.DHKGridView.ThemeStyle.ReadOnly = true;
             this.DHKGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DHKGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DHKGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,7 +300,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.Highlight;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(946, 79);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(954, 114);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(263, 393);
             this.guna2GroupBox1.TabIndex = 25;
@@ -387,13 +389,13 @@
             // LabelNameReportGridview1
             // 
             this.LabelNameReportGridview1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNameReportGridview1.Location = new System.Drawing.Point(5, 79);
+            this.LabelNameReportGridview1.Location = new System.Drawing.Point(147, 75);
             this.LabelNameReportGridview1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelNameReportGridview1.Name = "LabelNameReportGridview1";
             this.LabelNameReportGridview1.Size = new System.Drawing.Size(616, 36);
             this.LabelNameReportGridview1.TabIndex = 12;
+            this.LabelNameReportGridview1.Text = "Bảng điểm chi tiết";
             this.LabelNameReportGridview1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LabelNameReportGridview1.Visible = false;
             // 
             // guna2GradientPanel1
             // 
@@ -499,6 +501,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Controls.Add(this.DNHGridView);
             this.tabPage4.Controls.Add(this.guna2GroupBox2);
             this.tabPage4.Controls.Add(this.guna2GradientPanel2);
@@ -511,6 +514,17 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Tra cứu điểm năm học";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(147, 75);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(616, 36);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Bảng điểm chi tiết";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DNHGridView
             // 
@@ -535,10 +549,11 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DNHGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.DNHGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DNHGridView.Location = new System.Drawing.Point(9, 79);
+            this.DNHGridView.Location = new System.Drawing.Point(8, 114);
             this.DNHGridView.Name = "DNHGridView";
+            this.DNHGridView.ReadOnly = true;
             this.DNHGridView.RowHeadersVisible = false;
-            this.DNHGridView.Size = new System.Drawing.Size(933, 393);
+            this.DNHGridView.Size = new System.Drawing.Size(931, 393);
             this.DNHGridView.TabIndex = 28;
             this.DNHGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DNHGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -553,7 +568,7 @@
             this.DNHGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DNHGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DNHGridView.ThemeStyle.HeaderStyle.Height = 28;
-            this.DNHGridView.ThemeStyle.ReadOnly = false;
+            this.DNHGridView.ThemeStyle.ReadOnly = true;
             this.DNHGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.DNHGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DNHGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -575,7 +590,7 @@
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.SystemColors.Highlight;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(948, 79);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(954, 114);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(263, 393);
             this.guna2GroupBox2.TabIndex = 27;
@@ -903,5 +918,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Guna.UI2.WinForms.Guna2DataGridView DNHGridView;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private System.Windows.Forms.Label label6;
     }
 }
