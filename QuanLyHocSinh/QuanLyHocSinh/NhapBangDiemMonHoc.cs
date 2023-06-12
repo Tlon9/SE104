@@ -476,7 +476,8 @@ namespace QuanLyHocSinh
             }
             if (check == 1)
             {
-                new_hs.DiemTB = null;
+                DIEMTB = Math.Round(DIEMTB, 1);
+                new_hs.DiemTB = DIEMTB;
             }
             else
             {
