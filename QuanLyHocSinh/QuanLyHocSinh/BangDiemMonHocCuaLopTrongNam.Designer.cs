@@ -35,85 +35,85 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.labelYear = new System.Windows.Forms.Label();
-            this.labelSubject = new System.Windows.Forms.Label();
-            this.panelPrint = new System.Windows.Forms.Panel();
-            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.chartRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.labelNameOfGrid1 = new System.Windows.Forms.Label();
-            this.panelClassifyYear = new System.Windows.Forms.Panel();
-            this.comboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comboBoxClass = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comboBoxSubject = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.labelClass = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelYear = new System.Windows.Forms.Label();
+            this.LabelSubject = new System.Windows.Forms.Label();
+            this.PanelPrint = new System.Windows.Forms.Panel();
+            this.ButtonExportExcelFile = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.DataGridViewScore = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ChartRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.LabelNameOfDGV = new System.Windows.Forms.Label();
+            this.PanelSummary = new System.Windows.Forms.Panel();
+            this.ComboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ComboBoxClass = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ComboBoxSubject = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelClass = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.TraCuuButton_hk = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.panelPrint.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).BeginInit();
+            this.ButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonShowScore = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonAccount = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.LabelSplit = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LabelAttention = new System.Windows.Forms.Label();
+            this.PanelPrint.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRatio)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // labelYear
+            // LabelYear
             // 
-            this.labelYear.AutoSize = true;
-            this.labelYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelYear.Location = new System.Drawing.Point(176, 92);
-            this.labelYear.Name = "labelYear";
-            this.labelYear.Size = new System.Drawing.Size(80, 23);
-            this.labelYear.TabIndex = 4;
-            this.labelYear.Text = "Năm học";
+            this.LabelYear.AutoSize = true;
+            this.LabelYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LabelYear.Location = new System.Drawing.Point(176, 92);
+            this.LabelYear.Name = "LabelYear";
+            this.LabelYear.Size = new System.Drawing.Size(80, 23);
+            this.LabelYear.TabIndex = 4;
+            this.LabelYear.Text = "Năm học";
             // 
-            // labelSubject
+            // LabelSubject
             // 
-            this.labelSubject.AutoSize = true;
-            this.labelSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelSubject.Location = new System.Drawing.Point(565, 141);
-            this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(78, 23);
-            this.labelSubject.TabIndex = 12;
-            this.labelSubject.Text = "Môn học";
+            this.LabelSubject.AutoSize = true;
+            this.LabelSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LabelSubject.Location = new System.Drawing.Point(565, 141);
+            this.LabelSubject.Name = "LabelSubject";
+            this.LabelSubject.Size = new System.Drawing.Size(78, 23);
+            this.LabelSubject.TabIndex = 12;
+            this.LabelSubject.Text = "Môn học";
             // 
-            // panelPrint
+            // PanelPrint
             // 
-            this.panelPrint.Controls.Add(this.guna2ImageButton2);
-            this.panelPrint.Controls.Add(this.dataGridView1);
-            this.panelPrint.Controls.Add(this.chartRatio);
-            this.panelPrint.Controls.Add(this.labelNameOfGrid1);
-            this.panelPrint.Controls.Add(this.panelClassifyYear);
-            this.panelPrint.Location = new System.Drawing.Point(35, 235);
-            this.panelPrint.Name = "panelPrint";
-            this.panelPrint.Size = new System.Drawing.Size(1373, 614);
-            this.panelPrint.TabIndex = 50;
+            this.PanelPrint.Controls.Add(this.ButtonExportExcelFile);
+            this.PanelPrint.Controls.Add(this.DataGridViewScore);
+            this.PanelPrint.Controls.Add(this.ChartRatio);
+            this.PanelPrint.Controls.Add(this.LabelNameOfDGV);
+            this.PanelPrint.Controls.Add(this.PanelSummary);
+            this.PanelPrint.Location = new System.Drawing.Point(35, 235);
+            this.PanelPrint.Name = "PanelPrint";
+            this.PanelPrint.Size = new System.Drawing.Size(1373, 614);
+            this.PanelPrint.TabIndex = 50;
             // 
-            // guna2ImageButton2
+            // ButtonExportExcelFile
             // 
-            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
-            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton2.ImageRotate = 0F;
-            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(937, 491);
-            this.guna2ImageButton2.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ImageButton2.Name = "guna2ImageButton2";
-            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(87, 88);
-            this.guna2ImageButton2.TabIndex = 139;
-            this.guna2ImageButton2.Click += new System.EventHandler(this.ButtonExportExcel_Click);
+            this.ButtonExportExcelFile.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonExportExcelFile.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonExportExcelFile.Image = ((System.Drawing.Image)(resources.GetObject("ButtonExportExcelFile.Image")));
+            this.ButtonExportExcelFile.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonExportExcelFile.ImageRotate = 0F;
+            this.ButtonExportExcelFile.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonExportExcelFile.Location = new System.Drawing.Point(937, 491);
+            this.ButtonExportExcelFile.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonExportExcelFile.Name = "ButtonExportExcelFile";
+            this.ButtonExportExcelFile.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonExportExcelFile.Size = new System.Drawing.Size(87, 88);
+            this.ButtonExportExcelFile.TabIndex = 139;
+            this.ButtonExportExcelFile.Click += new System.EventHandler(this.ButtonExportExcel_Click);
             // 
-            // dataGridView1
+            // DataGridViewScore
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridViewScore.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,9 +121,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeight = 40;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewScore.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridViewScore.ColumnHeadersHeight = 40;
+            this.DataGridViewScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,135 +131,135 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView1.Location = new System.Drawing.Point(3, 244);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(987, 224);
-            this.dataGridView1.TabIndex = 138;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dataGridView1.ThemeStyle.HeaderStyle.Height = 40;
-            this.dataGridView1.ThemeStyle.ReadOnly = true;
-            this.dataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridView1.ThemeStyle.RowsStyle.Height = 24;
-            this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dataGridView1.Visible = false;
+            this.DataGridViewScore.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridViewScore.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScore.Location = new System.Drawing.Point(3, 244);
+            this.DataGridViewScore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DataGridViewScore.Name = "DataGridViewScore";
+            this.DataGridViewScore.ReadOnly = true;
+            this.DataGridViewScore.RowHeadersVisible = false;
+            this.DataGridViewScore.RowHeadersWidth = 51;
+            this.DataGridViewScore.RowTemplate.Height = 24;
+            this.DataGridViewScore.Size = new System.Drawing.Size(987, 224);
+            this.DataGridViewScore.TabIndex = 138;
+            this.DataGridViewScore.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScore.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewScore.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScore.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewScore.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScore.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScore.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScore.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewScore.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewScore.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScore.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewScore.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewScore.ThemeStyle.HeaderStyle.Height = 40;
+            this.DataGridViewScore.ThemeStyle.ReadOnly = true;
+            this.DataGridViewScore.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScore.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewScore.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScore.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewScore.ThemeStyle.RowsStyle.Height = 24;
+            this.DataGridViewScore.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScore.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewScore.Visible = false;
             // 
-            // chartRatio
+            // ChartRatio
             // 
             chartArea1.Name = "ChartArea1";
-            this.chartRatio.ChartAreas.Add(chartArea1);
+            this.ChartRatio.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chartRatio.Legends.Add(legend1);
-            this.chartRatio.Location = new System.Drawing.Point(1011, 244);
-            this.chartRatio.Name = "chartRatio";
+            this.ChartRatio.Legends.Add(legend1);
+            this.ChartRatio.Location = new System.Drawing.Point(1011, 244);
+            this.ChartRatio.Name = "ChartRatio";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chartRatio.Series.Add(series1);
-            this.chartRatio.Size = new System.Drawing.Size(350, 314);
-            this.chartRatio.TabIndex = 137;
-            this.chartRatio.Text = "chart1";
+            this.ChartRatio.Series.Add(series1);
+            this.ChartRatio.Size = new System.Drawing.Size(350, 314);
+            this.ChartRatio.TabIndex = 137;
+            this.ChartRatio.Text = "chart1";
             // 
-            // labelNameOfGrid1
+            // LabelNameOfDGV
             // 
-            this.labelNameOfGrid1.AutoSize = true;
-            this.labelNameOfGrid1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameOfGrid1.Location = new System.Drawing.Point(532, 541);
-            this.labelNameOfGrid1.Name = "labelNameOfGrid1";
-            this.labelNameOfGrid1.Size = new System.Drawing.Size(85, 29);
-            this.labelNameOfGrid1.TabIndex = 136;
-            this.labelNameOfGrid1.Text = "label1";
+            this.LabelNameOfDGV.AutoSize = true;
+            this.LabelNameOfDGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNameOfDGV.Location = new System.Drawing.Point(532, 541);
+            this.LabelNameOfDGV.Name = "LabelNameOfDGV";
+            this.LabelNameOfDGV.Size = new System.Drawing.Size(85, 29);
+            this.LabelNameOfDGV.TabIndex = 136;
+            this.LabelNameOfDGV.Text = "label1";
             // 
-            // panelClassifyYear
+            // PanelSummary
             // 
-            this.panelClassifyYear.Location = new System.Drawing.Point(65, 3);
-            this.panelClassifyYear.Name = "panelClassifyYear";
-            this.panelClassifyYear.Size = new System.Drawing.Size(925, 236);
-            this.panelClassifyYear.TabIndex = 112;
+            this.PanelSummary.Location = new System.Drawing.Point(65, 3);
+            this.PanelSummary.Name = "PanelSummary";
+            this.PanelSummary.Size = new System.Drawing.Size(925, 236);
+            this.PanelSummary.TabIndex = 112;
             // 
-            // comboBoxYear
+            // ComboBoxYear
             // 
-            this.comboBoxYear.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxYear.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxYear.ItemHeight = 25;
-            this.comboBoxYear.Location = new System.Drawing.Point(262, 92);
-            this.comboBoxYear.Name = "comboBoxYear";
-            this.comboBoxYear.Size = new System.Drawing.Size(231, 31);
-            this.comboBoxYear.TabIndex = 55;
-            this.comboBoxYear.SelectedValueChanged += new System.EventHandler(this.comboBoxYear_SelectedValueChanged);
+            this.ComboBoxYear.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxYear.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxYear.ItemHeight = 25;
+            this.ComboBoxYear.Location = new System.Drawing.Point(262, 92);
+            this.ComboBoxYear.Name = "ComboBoxYear";
+            this.ComboBoxYear.Size = new System.Drawing.Size(231, 31);
+            this.ComboBoxYear.TabIndex = 55;
+            this.ComboBoxYear.SelectedValueChanged += new System.EventHandler(this.comboBoxYear_SelectedValueChanged);
             // 
-            // comboBoxClass
+            // ComboBoxClass
             // 
-            this.comboBoxClass.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxClass.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxClass.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxClass.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxClass.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxClass.ItemHeight = 25;
-            this.comboBoxClass.Location = new System.Drawing.Point(262, 141);
-            this.comboBoxClass.Name = "comboBoxClass";
-            this.comboBoxClass.Size = new System.Drawing.Size(231, 31);
-            this.comboBoxClass.TabIndex = 57;
-            this.comboBoxClass.SelectedIndexChanged += new System.EventHandler(this.comboBoxClass_SelectedIndexChanged);
-            this.comboBoxClass.Click += new System.EventHandler(this.comboBoxClass_Click);
+            this.ComboBoxClass.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxClass.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxClass.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxClass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxClass.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxClass.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxClass.ItemHeight = 25;
+            this.ComboBoxClass.Location = new System.Drawing.Point(262, 141);
+            this.ComboBoxClass.Name = "ComboBoxClass";
+            this.ComboBoxClass.Size = new System.Drawing.Size(231, 31);
+            this.ComboBoxClass.TabIndex = 57;
+            this.ComboBoxClass.SelectedIndexChanged += new System.EventHandler(this.comboBoxClass_SelectedIndexChanged);
+            this.ComboBoxClass.Click += new System.EventHandler(this.comboBoxClass_Click);
             // 
-            // comboBoxSubject
+            // ComboBoxSubject
             // 
-            this.comboBoxSubject.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxSubject.DropDownHeight = 200;
-            this.comboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSubject.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxSubject.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxSubject.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxSubject.FormattingEnabled = true;
-            this.comboBoxSubject.IntegralHeight = false;
-            this.comboBoxSubject.ItemHeight = 25;
-            this.comboBoxSubject.Location = new System.Drawing.Point(649, 141);
-            this.comboBoxSubject.Name = "comboBoxSubject";
-            this.comboBoxSubject.Size = new System.Drawing.Size(231, 31);
-            this.comboBoxSubject.TabIndex = 58;
+            this.ComboBoxSubject.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxSubject.DropDownHeight = 200;
+            this.ComboBoxSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxSubject.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxSubject.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxSubject.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxSubject.FormattingEnabled = true;
+            this.ComboBoxSubject.IntegralHeight = false;
+            this.ComboBoxSubject.ItemHeight = 25;
+            this.ComboBoxSubject.Location = new System.Drawing.Point(649, 141);
+            this.ComboBoxSubject.Name = "ComboBoxSubject";
+            this.ComboBoxSubject.Size = new System.Drawing.Size(231, 31);
+            this.ComboBoxSubject.TabIndex = 58;
             // 
-            // labelClass
+            // LabelClass
             // 
-            this.labelClass.AutoSize = false;
-            this.labelClass.BackColor = System.Drawing.Color.Transparent;
-            this.labelClass.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelClass.Location = new System.Drawing.Point(209, 141);
-            this.labelClass.Name = "labelClass";
-            this.labelClass.Size = new System.Drawing.Size(46, 31);
-            this.labelClass.TabIndex = 59;
-            this.labelClass.Text = "Lớp";
+            this.LabelClass.AutoSize = false;
+            this.LabelClass.BackColor = System.Drawing.Color.Transparent;
+            this.LabelClass.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LabelClass.Location = new System.Drawing.Point(209, 141);
+            this.LabelClass.Name = "LabelClass";
+            this.LabelClass.Size = new System.Drawing.Size(46, 31);
+            this.LabelClass.TabIndex = 59;
+            this.LabelClass.Text = "Lớp";
             // 
             // guna2Panel1
             // 
@@ -319,76 +319,76 @@
             this.guna2ImageButtonMinimize1.TabIndex = 0;
             this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
             // 
-            // guna2ImageButtonHome
+            // ButtonHome
             // 
-            this.guna2ImageButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonHome.Image")));
-            this.guna2ImageButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonHome.ImageRotate = 0F;
-            this.guna2ImageButtonHome.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButtonHome.Location = new System.Drawing.Point(35, 70);
-            this.guna2ImageButtonHome.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ImageButtonHome.Name = "guna2ImageButtonHome";
-            this.guna2ImageButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.Size = new System.Drawing.Size(67, 62);
-            this.guna2ImageButtonHome.TabIndex = 63;
-            this.guna2ImageButtonHome.Click += new System.EventHandler(this.guna2ImageButtonHome_Click);
+            this.ButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("ButtonHome.Image")));
+            this.ButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonHome.ImageRotate = 0F;
+            this.ButtonHome.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonHome.Location = new System.Drawing.Point(35, 70);
+            this.ButtonHome.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonHome.Name = "ButtonHome";
+            this.ButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.Size = new System.Drawing.Size(67, 62);
+            this.ButtonHome.TabIndex = 63;
+            this.ButtonHome.Click += new System.EventHandler(this.guna2ImageButtonHome_Click);
             // 
-            // TraCuuButton_hk
+            // ButtonShowScore
             // 
-            this.TraCuuButton_hk.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuButton_hk.Image")));
-            this.TraCuuButton_hk.ImageOffset = new System.Drawing.Point(0, 0);
-            this.TraCuuButton_hk.ImageRotate = 0F;
-            this.TraCuuButton_hk.ImageSize = new System.Drawing.Size(60, 60);
-            this.TraCuuButton_hk.Location = new System.Drawing.Point(1073, 120);
-            this.TraCuuButton_hk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TraCuuButton_hk.Name = "TraCuuButton_hk";
-            this.TraCuuButton_hk.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.Size = new System.Drawing.Size(75, 82);
-            this.TraCuuButton_hk.TabIndex = 64;
-            this.TraCuuButton_hk.Click += new System.EventHandler(this.buttonPrint_Click);
+            this.ButtonShowScore.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonShowScore.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonShowScore.Image = ((System.Drawing.Image)(resources.GetObject("ButtonShowScore.Image")));
+            this.ButtonShowScore.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonShowScore.ImageRotate = 0F;
+            this.ButtonShowScore.ImageSize = new System.Drawing.Size(60, 60);
+            this.ButtonShowScore.Location = new System.Drawing.Point(1073, 120);
+            this.ButtonShowScore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonShowScore.Name = "ButtonShowScore";
+            this.ButtonShowScore.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonShowScore.Size = new System.Drawing.Size(75, 82);
+            this.ButtonShowScore.TabIndex = 64;
+            this.ButtonShowScore.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
-            // guna2ImageButton1
+            // ButtonAccount
             // 
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(1335, 70);
-            this.guna2ImageButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(73, 68);
-            this.guna2ImageButton1.TabIndex = 65;
-            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            this.ButtonAccount.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAccount.Image")));
+            this.ButtonAccount.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonAccount.ImageRotate = 0F;
+            this.ButtonAccount.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonAccount.Location = new System.Drawing.Point(1335, 70);
+            this.ButtonAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonAccount.Name = "ButtonAccount";
+            this.ButtonAccount.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Size = new System.Drawing.Size(73, 68);
+            this.ButtonAccount.TabIndex = 65;
+            this.ButtonAccount.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             // 
-            // guna2HtmlLabel1
+            // LabelSplit
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(528, 210);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(388, 19);
-            this.guna2HtmlLabel1.TabIndex = 71;
-            this.guna2HtmlLabel1.Text = "-----------------------------------------------------------------------------";
+            this.LabelSplit.BackColor = System.Drawing.Color.Transparent;
+            this.LabelSplit.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSplit.Location = new System.Drawing.Point(528, 210);
+            this.LabelSplit.Name = "LabelSplit";
+            this.LabelSplit.Size = new System.Drawing.Size(388, 19);
+            this.LabelSplit.TabIndex = 71;
+            this.LabelSplit.Text = "-----------------------------------------------------------------------------";
             // 
-            // label26
+            // LabelAttention
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.White;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(273, 191);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(207, 20);
-            this.label26.TabIndex = 98;
-            this.label26.Text = "*Lưu ý: Vui lòng chọn lớp trước";
+            this.LabelAttention.AutoSize = true;
+            this.LabelAttention.BackColor = System.Drawing.Color.White;
+            this.LabelAttention.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAttention.ForeColor = System.Drawing.Color.Black;
+            this.LabelAttention.Location = new System.Drawing.Point(273, 191);
+            this.LabelAttention.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelAttention.Name = "LabelAttention";
+            this.LabelAttention.Size = new System.Drawing.Size(207, 20);
+            this.LabelAttention.TabIndex = 98;
+            this.LabelAttention.Text = "*Lưu ý: Vui lòng chọn lớp trước";
             // 
             // BangDiemMonHocCuaLopTrongNam
             // 
@@ -397,55 +397,55 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1444, 900);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.guna2ImageButton1);
-            this.Controls.Add(this.TraCuuButton_hk);
-            this.Controls.Add(this.guna2ImageButtonHome);
+            this.Controls.Add(this.LabelAttention);
+            this.Controls.Add(this.LabelSplit);
+            this.Controls.Add(this.ButtonAccount);
+            this.Controls.Add(this.ButtonShowScore);
+            this.Controls.Add(this.ButtonHome);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.labelClass);
-            this.Controls.Add(this.comboBoxSubject);
-            this.Controls.Add(this.comboBoxClass);
-            this.Controls.Add(this.comboBoxYear);
-            this.Controls.Add(this.panelPrint);
-            this.Controls.Add(this.labelSubject);
-            this.Controls.Add(this.labelYear);
+            this.Controls.Add(this.LabelClass);
+            this.Controls.Add(this.ComboBoxSubject);
+            this.Controls.Add(this.ComboBoxClass);
+            this.Controls.Add(this.ComboBoxYear);
+            this.Controls.Add(this.PanelPrint);
+            this.Controls.Add(this.LabelSubject);
+            this.Controls.Add(this.LabelYear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BangDiemMonHocCuaLopTrongNam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XuatBangDiemMonHocCuaLopTrongNamHoc";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
-            this.panelPrint.ResumeLayout(false);
-            this.panelPrint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRatio)).EndInit();
+            this.PanelPrint.ResumeLayout(false);
+            this.PanelPrint.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRatio)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-        private System.Windows.Forms.Label labelYear;
-        private System.Windows.Forms.Label labelSubject;
-        private System.Windows.Forms.Panel panelPrint;
-        private System.Windows.Forms.Panel panelClassifyYear;
-        private System.Windows.Forms.Label labelNameOfGrid1;
+        private System.Windows.Forms.Label LabelYear;
+        private System.Windows.Forms.Label LabelSubject;
+        private System.Windows.Forms.Panel PanelPrint;
+        private System.Windows.Forms.Panel PanelSummary;
+        private System.Windows.Forms.Label LabelNameOfDGV;
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxYear;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxClass;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxSubject;
-        private Guna.UI2.WinForms.Guna2HtmlLabel labelClass;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartRatio;
-        private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxYear;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxClass;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxSubject;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelClass;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartRatio;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewScore;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonHome;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
-        private Guna.UI2.WinForms.Guna2ImageButton TraCuuButton_hk;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private System.Windows.Forms.Label label26;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonHome;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonExportExcelFile;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonShowScore;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonAccount;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LabelSplit;
+        private System.Windows.Forms.Label LabelAttention;
     }
 }

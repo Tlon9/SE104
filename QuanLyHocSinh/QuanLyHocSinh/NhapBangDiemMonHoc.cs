@@ -29,29 +29,29 @@ namespace QuanLyHocSinh
             dataEntities data = new dataEntities();
             var comBoxYear = from obj in data.NAMHOCs select obj;
             var comBoxYear1 = comBoxYear.OrderByDescending(p => p.MaNamHoc);
-            comboBoxYear.DataSource = comBoxYear1.ToList();
-            comboBoxYear.DisplayMember = "NamHoc1";
-            comboBoxYear.ValueMember = "MaNamHoc";
-            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == comboBoxYear.SelectedValue select obj;
-            comboBoxClass.DataSource = comboxClassSource.ToList();
-            comboBoxClass.DisplayMember = "TenLop";
-            comboBoxClass.ValueMember = "MaLop";
-            var comboxClassSemester = from obj in data.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
-            comboBoxSemester.DataSource = comboxClassSemester.ToList();
-            comboBoxSemester.DisplayMember = "HocKy";
-            comboBoxSemester.ValueMember = "MaHocKy";
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
+            ComboBoxYear.DataSource = comBoxYear1.ToList();
+            ComboBoxYear.DisplayMember = "NamHoc1";
+            ComboBoxYear.ValueMember = "MaNamHoc";
+            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == ComboBoxYear.SelectedValue select obj;
+            ComboBoxClass.DataSource = comboxClassSource.ToList();
+            ComboBoxClass.DisplayMember = "TenLop";
+            ComboBoxClass.ValueMember = "MaLop";
+            var comboxClassSemester = from obj in data.HocKy_NamApDung(ComboBoxYear.SelectedValue.ToString()) select obj;
+            ComboBoxSemester.DataSource = comboxClassSemester.ToList();
+            ComboBoxSemester.DisplayMember = "HocKy";
+            ComboBoxSemester.ValueMember = "MaHocKy";
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
                                          select obj;
-            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
-            comboBoxSubject.DisplayMember = "TenMonHoc";
-            comboBoxSubject.ValueMember = "MaMonHoc";
-            panelInput.Hide();
-            panelPrint.Hide();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; 
+            ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubject.DisplayMember = "TenMonHoc";
+            ComboBoxSubject.ValueMember = "MaMonHoc";
+            PanelInputScore.Hide();
+            PanelShowScore.Hide();
+            DataGridViewScore1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewScore1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewScore2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewScore2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; 
 
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -65,34 +65,34 @@ namespace QuanLyHocSinh
         }
         private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
-            comboBoxSubject.Enabled = false;
-            var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == comboBoxYear.SelectedValue.ToString() select obj;
-            comboBoxClass.DataSource = comboxClassSource.ToList();
-            comboBoxClass.DisplayMember = "TenLop";
-            comboBoxClass.ValueMember = "MaLop";
-            var comboxClassSemester = from obj in data.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
-            comboBoxSemester.DataSource = comboxClassSemester.ToList();
-            comboBoxSemester.DisplayMember = "HocKy";
-            comboBoxSemester.ValueMember = "MaHocKy";
-            string class_text = comboBoxClass.Text;
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
+            ComboBoxSubject.Enabled = false;
+            var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == ComboBoxYear.SelectedValue.ToString() select obj;
+            ComboBoxClass.DataSource = comboxClassSource.ToList();
+            ComboBoxClass.DisplayMember = "TenLop";
+            ComboBoxClass.ValueMember = "MaLop";
+            var comboxClassSemester = from obj in data.HocKy_NamApDung(ComboBoxYear.SelectedValue.ToString()) select obj;
+            ComboBoxSemester.DataSource = comboxClassSemester.ToList();
+            ComboBoxSemester.DisplayMember = "HocKy";
+            ComboBoxSemester.ValueMember = "MaHocKy";
+            string class_text = ComboBoxClass.Text;
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
                                          select obj;
-            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
-            comboBoxSubject.DisplayMember = "TenMonHoc";
-            comboBoxSubject.ValueMember = "MaMonHoc";
+            ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubject.DisplayMember = "TenMonHoc";
+            ComboBoxSubject.ValueMember = "MaMonHoc";
         }
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
                                          select obj;
-            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
-            comboBoxSubject.DisplayMember = "TenMonHoc";
-            comboBoxSubject.ValueMember = "MaMonHoc";
+            ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubject.DisplayMember = "TenMonHoc";
+            ComboBoxSubject.ValueMember = "MaMonHoc";
         }
         private void comboBoxClass_Click(object sender, EventArgs e)
         {
-            comboBoxSubject.Enabled = true;
+            ComboBoxSubject.Enabled = true;
         }
         private void textBoxScore_TextChanged(object sender, EventArgs e)
         {
@@ -112,13 +112,13 @@ namespace QuanLyHocSinh
         List<TextBox> list = new List<TextBox>();
         void LoadPanel_Score()
         {
-            panelScores.Controls.Clear();
+            PanelIngredientScore.Controls.Clear();
             list.Clear();
-            var Score = from scr in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString())
+            var Score = from scr in data.ThanhPhan_NamApDung(ComboBoxYear.SelectedValue.ToString())
                         select new { scr.MaThanhPhan, scr.TenThanhPhan };
             int x = 120;
             int y = 0;
-            panelScores.AutoSize = true;
+            PanelIngredientScore.AutoSize = true;
             foreach (var i in Score)
             {
                 TextBox textBox = new TextBox();
@@ -131,8 +131,8 @@ namespace QuanLyHocSinh
                 textBox.TextChanged += textBoxScore_TextChanged;
                 lb.Font = new Font("Segoe UI", 10);
                 textBox.Font = new Font("Segoe UI", 10);
-                panelScores.Controls.Add(textBox);
-                panelScores.Controls.Add(lb);
+                PanelIngredientScore.Controls.Add(textBox);
+                PanelIngredientScore.Controls.Add(lb);
                 list.Add(textBox);
                 y += 65;
             }
@@ -162,19 +162,19 @@ namespace QuanLyHocSinh
             Dictionary<string, int> ScoreDict = new Dictionary<string, int>();
             int k = 0;
             int count = 0;
-            foreach (var item in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
+            foreach (var item in data.ThanhPhan_NamApDung(ComboBoxYear.SelectedValue.ToString()))
             {
                     ScoreDict.Add(item.MaThanhPhan.ToString(), k++);
                     count ++;    
             }
-            var reSourceXL_2 = from scr1 in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()).AsEnumerable() 
+            var reSourceXL_2 = from scr1 in data.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()).AsEnumerable() 
                                 select new {MaXepLoai = scr1.MaXepLoai,  TenXepLoai = scr1.TenXepLoai, NamApDung = scr1.NamApDung};
             
             var reSource1 = from scr1 in data.KETQUA_MONHOC_HOCSINH.AsEnumerable()
                            join scr in data.DIEMs.AsEnumerable() on scr1.MaKetQua equals scr.MaKetQua
                            join cls in data.CTLOPs.AsEnumerable() on scr1.MaHocSinh equals cls.MaHocSinh    
                            join cls1 in data.HOCSINHs.AsEnumerable() on cls.MaHocSinh equals cls1.MaHocSinh
-                           where (comboBoxSubject.SelectedValue.ToString() == scr1.MaMonHoc && comboBoxYear.SelectedValue.ToString() == scr1.MaNamHoc && cls.MaLop == comboBoxClass.SelectedValue.ToString() && scr1.MaHocKy == comboBoxSemester.SelectedValue.ToString())      
+                           where (ComboBoxSubject.SelectedValue.ToString() == scr1.MaMonHoc && ComboBoxYear.SelectedValue.ToString() == scr1.MaNamHoc && cls.MaLop == ComboBoxClass.SelectedValue.ToString() && scr1.MaHocKy == ComboBoxSemester.SelectedValue.ToString())      
                            group new {scr, scr1, cls}
                            by new { scr1.MaKetQua,Hoten = cls1.HoTen, scr1.MaHocSinh, scr.MaThanhPhan, scr.Diem1, scr1.DiemTB, scr1.MaXepLoai }
                            into g
@@ -208,7 +208,7 @@ namespace QuanLyHocSinh
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("Mã học sinh", typeof(string));
             dt.Columns.Add("Họ tên", typeof(string));
-            foreach (var ktem in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
+            foreach (var ktem in data.ThanhPhan_NamApDung(ComboBoxYear.SelectedValue.ToString()))
             {
                 dt.Columns.Add(ktem.TenThanhPhan, typeof(string));
             }    
@@ -222,7 +222,7 @@ namespace QuanLyHocSinh
                     row1["Mã học sinh"] = reS[i].MHS;
                     row1["Họ tên"] = reS[i].HOTEN;
                     int i_temp = 0;
-                    foreach (var ktem in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
+                    foreach (var ktem in data.ThanhPhan_NamApDung(ComboBoxYear.SelectedValue.ToString()))
                     {
                         row1[ktem.TenThanhPhan] = reS[i].List_score[i_temp];
                         i_temp++;  
@@ -233,31 +233,31 @@ namespace QuanLyHocSinh
             }
             if (i_o == "1")
             {
-                dataGridView1.DataSource = null;
-                dataGridView1.Controls.Clear();
-                dataGridView1.Refresh();
-                    dataGridView1.DataSource = dt;
-                    dataGridView1.Show(); 
+                DataGridViewScore1.DataSource = null;
+                DataGridViewScore1.Controls.Clear();
+                DataGridViewScore1.Refresh();
+                    DataGridViewScore1.DataSource = dt;
+                    DataGridViewScore1.Show(); 
             }
             else
             {
-                dataGridView2.DataSource = null;
-                dataGridView2.Controls.Clear();
-                dataGridView2.Refresh();
-                dataGridView2.DataSource = dt;
-                    dataGridView2.Show();
+                DataGridViewScore2.DataSource = null;
+                DataGridViewScore2.Controls.Clear();
+                DataGridViewScore2.Refresh();
+                DataGridViewScore2.DataSource = dt;
+                    DataGridViewScore2.Show();
             }
         }
         private void buttonInput_Click(object sender, EventArgs e)
         {
-            if (comboBoxSubject.Enabled == false)
+            if (ComboBoxSubject.Enabled == false)
             {
                 MessageBox.Show("Vui lòng chọn lớp trước", "Error", MessageBoxButtons.OK);
                 return;
             }    
-            if (panelPrint.Visible) { panelPrint.Hide(); }
+            if (PanelShowScore.Visible) { PanelShowScore.Hide(); }
             LoadPanel_Score();
-            if (comboBoxClass.Text.ToString() == string.Empty || comboBoxSubject.Text.ToString() == string.Empty || comboBoxSemester.Text.ToString() == string.Empty)
+            if (ComboBoxClass.Text.ToString() == string.Empty || ComboBoxSubject.Text.ToString() == string.Empty || ComboBoxSemester.Text.ToString() == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập thông tin đầy đủ", "Error", MessageBoxButtons.OK);
             }
@@ -265,36 +265,36 @@ namespace QuanLyHocSinh
             {
                 var comboxID = from obj in data.CTLOPs
                                join obj1 in data.LOPs on obj.MaLop equals obj1.MaLop
-                               where obj.MaLop == comboBoxClass.SelectedValue.ToString() && obj1.MaNamHoc == comboBoxYear.SelectedValue.ToString()
+                               where obj.MaLop == ComboBoxClass.SelectedValue.ToString() && obj1.MaNamHoc == ComboBoxYear.SelectedValue.ToString()
                                select obj.MaHocSinh;
-                comboBoxID.DataSource = comboxID.ToList();
+                ComboBoxID.DataSource = comboxID.ToList();
                 string nameofgrid;
-                nameofgrid = "Bảng điểm môn " + comboBoxSubject.Text.ToString() + " của lớp " + comboBoxClass.Text.ToString() + " học kỳ " + comboBoxSemester.Text.ToString() + " năm học " + comboBoxYear.Text.ToString();
-                labelNameOfGrid1.Text = nameofgrid;
-                int x = dataGridView1.Location.X + (dataGridView1.Width / 2);
-                x -= labelNameOfGrid1.Width / 2;
-                int y = dataGridView1.Location.Y + dataGridView1.Height + 20;
-                labelNameOfGrid1.Location = new System.Drawing.Point(x, y);
-                if(comboBoxID.Text == string.Empty)
+                nameofgrid = "Bảng điểm môn " + ComboBoxSubject.Text.ToString() + " của lớp " + ComboBoxClass.Text.ToString() + " học kỳ " + ComboBoxSemester.Text.ToString() + " năm học " + ComboBoxYear.Text.ToString();
+                LabelNameOfDGV1.Text = nameofgrid;
+                int x = DataGridViewScore1.Location.X + (DataGridViewScore1.Width / 2);
+                x -= LabelNameOfDGV1.Width / 2;
+                int y = DataGridViewScore1.Location.Y + DataGridViewScore1.Height + 20;
+                LabelNameOfDGV1.Location = new System.Drawing.Point(x, y);
+                if(ComboBoxID.Text == string.Empty)
                 {
-                    textBoxName.Text = string.Empty;
-                    textBoxAverageScore.Text = string.Empty;
-                    textBoxClassify.Text = string.Empty;
+                    TextBoxName.Text = string.Empty;
+                    TextBoxAverageScore.Text = string.Empty;
+                    TextBoxClassify.Text = string.Empty;
                 }    
                 ShowGrid("1");
-                panelInput.Show();
+                PanelInputScore.Show();
             }
             
         }
         private void comboBoxID_SelectedValueChanged(object sender, EventArgs e)
         {
             if (list.Count() == 0) return;
-            var a = from obj in data.HOCSINHs where obj.MaHocSinh == comboBoxID.Text select obj.HoTen;
-            textBoxName.Text = a.ToList().SingleOrDefault();
+            var a = from obj in data.HOCSINHs where obj.MaHocSinh == ComboBoxID.Text select obj.HoTen;
+            TextBoxName.Text = a.ToList().SingleOrDefault();
             var reSource1 = from scr in data.KETQUA_MONHOC_HOCSINH
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             join cls1 in data.XEPLOAIs on scr.MaXepLoai equals cls1.MaXepLoai
-                            where  comboBoxID.Text == scr.MaHocSinh && comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedValue == scr.MaNamHoc && comboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == comboBoxClass.SelectedValue
+                            where  ComboBoxID.Text == scr.MaHocSinh && ComboBoxSubject.SelectedValue == scr.MaMonHoc && ComboBoxYear.SelectedValue == scr.MaNamHoc && ComboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == ComboBoxClass.SelectedValue
                             select new {MaKQ = scr.MaKetQua,  DiemTB = scr.DiemTB.ToString(), Xeploai = (cls1.TenXepLoai == "Không" ? string.Empty : cls1.TenXepLoai) };
 
             if (reSource1.Count() != 0)
@@ -319,8 +319,8 @@ namespace QuanLyHocSinh
                         j.Text = null;
                     }    
                 }
-                textBoxAverageScore.Text = reSource1.ToList().SingleOrDefault().DiemTB;
-                textBoxClassify.Text = reSource1.ToList().SingleOrDefault().Xeploai.ToString();
+                TextBoxAverageScore.Text = reSource1.ToList().SingleOrDefault().DiemTB;
+                TextBoxClassify.Text = reSource1.ToList().SingleOrDefault().Xeploai.ToString();
             }
             else
             {
@@ -328,8 +328,8 @@ namespace QuanLyHocSinh
                 {
                         j.Text = null;
                 }
-                textBoxAverageScore.Text = null;
-                textBoxClassify.Text = null;
+                TextBoxAverageScore.Text = null;
+                TextBoxClassify.Text = null;
             }
         }
         private void buttonLook_Click(object sender, EventArgs e)
@@ -339,16 +339,16 @@ namespace QuanLyHocSinh
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string name;
-            if (e.RowIndex > -1 && dataGridView1.Rows[e.RowIndex].Cells[1].Value != null)
+            if (e.RowIndex > -1 && DataGridViewScore1.Rows[e.RowIndex].Cells[1].Value != null)
             {
-                name = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                comboBoxID.Text = name;
+                name = DataGridViewScore1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                ComboBoxID.Text = name;
             }
 
         }
         string funcXepLoai(string t)
         {
-            var reSource = from r in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString())
+            var reSource = from r in data.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString())
                            select r;
             double a;
             var str_K = reSource.Where(p => p.TenXepLoai == "Không");
@@ -357,7 +357,7 @@ namespace QuanLyHocSinh
                 a = Convert.ToDouble(t);
             else
                 return str_Khong;
-            foreach (var item in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
+            foreach (var item in data.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()))
             {
                 if (a >= Convert.ToDouble(item.DiemToiThieu) && a <= Convert.ToDouble(item.DiemToiDa))
                 {
@@ -368,7 +368,7 @@ namespace QuanLyHocSinh
         }
         double getTrongSo(string a)
         {
-            foreach (var item in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
+            foreach (var item in data.ThanhPhan_NamApDung(ComboBoxYear.SelectedValue.ToString()))
             {
                 if (item.MaThanhPhan == a)
                 {
@@ -381,7 +381,7 @@ namespace QuanLyHocSinh
         {
             var reSource1 = from scr in data.KETQUA_MONHOC_HOCSINH
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
-                            where comboBoxID.Text == scr.MaHocSinh && comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedValue == scr.MaNamHoc && comboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == comboBoxClass.SelectedValue
+                            where ComboBoxID.Text == scr.MaHocSinh && ComboBoxSubject.SelectedValue == scr.MaMonHoc && ComboBoxYear.SelectedValue == scr.MaNamHoc && ComboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == ComboBoxClass.SelectedValue
                             select scr.MaKetQua;
             var temp = from scr in data.DIEMs
                        select scr.MaDiem;
@@ -398,7 +398,7 @@ namespace QuanLyHocSinh
             int check = 0;
             if (reSource1.Count() == 0)
             {
-                new_hs = new KETQUA_MONHOC_HOCSINH() { MaKetQua = stringWithoutLastTwo + (index_kq + 1).ToString(), MaMonHoc = comboBoxSubject.SelectedValue.ToString(), MaHocSinh = comboBoxID.SelectedValue.ToString(), MaNamHoc = comboBoxYear.SelectedValue.ToString(), MaHocKy = comboBoxSemester.SelectedValue.ToString() };
+                new_hs = new KETQUA_MONHOC_HOCSINH() { MaKetQua = stringWithoutLastTwo + (index_kq + 1).ToString(), MaMonHoc = ComboBoxSubject.SelectedValue.ToString(), MaHocSinh = ComboBoxID.SelectedValue.ToString(), MaNamHoc = ComboBoxYear.SelectedValue.ToString(), MaHocKy = ComboBoxSemester.SelectedValue.ToString() };
                 foreach (TextBox txb in list)
                 {
                     DIEM diemTP = new DIEM();
@@ -426,7 +426,7 @@ namespace QuanLyHocSinh
                 var check_E = from scr in data.DIEMs
                               where scr.MaKetQua == ID
                               select new { MaThanhPhan = scr.MaThanhPhan };
-                foreach (var tb in data.ThanhPhan_NamApDung(comboBoxYear.SelectedValue.ToString()))
+                foreach (var tb in data.ThanhPhan_NamApDung(ComboBoxYear.SelectedValue.ToString()))
                 {
                         int isE = 0;
                         foreach (var t in check_E)
@@ -484,7 +484,7 @@ namespace QuanLyHocSinh
                 DIEMTB = Math.Round(DIEMTB, 1);
                 new_hs.DiemTB = DIEMTB;
             }
-            textBoxAverageScore.Text = new_hs.DiemTB.ToString();
+            TextBoxAverageScore.Text = new_hs.DiemTB.ToString();
             new_hs.MaXepLoai = funcXepLoai(new_hs.DiemTB.ToString());
             
             try
@@ -497,16 +497,16 @@ namespace QuanLyHocSinh
             }
             string tenxl = data.XEPLOAIs.Where(p => p.MaXepLoai == new_hs.MaXepLoai).Select(p => p.TenXepLoai).SingleOrDefault().ToString();
             if (tenxl != "Không")
-                textBoxClassify.Text = tenxl;
+                TextBoxClassify.Text = tenxl;
             else
-                textBoxClassify.Text = string.Empty;
+                TextBoxClassify.Text = string.Empty;
             ShowGrid("1");
         }
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             var reSource1 = from scr in data.KETQUA_MONHOC_HOCSINH
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
-                            where comboBoxID.Text == scr.MaHocSinh && comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedValue == scr.MaNamHoc && comboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == comboBoxClass.SelectedValue
+                            where ComboBoxID.Text == scr.MaHocSinh && ComboBoxSubject.SelectedValue == scr.MaMonHoc && ComboBoxYear.SelectedValue == scr.MaNamHoc && ComboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == ComboBoxClass.SelectedValue
                             select scr.MaKetQua;
             if (reSource1.Count() == 0)
             {
@@ -524,29 +524,34 @@ namespace QuanLyHocSinh
                 KETQUA_MONHOC_HOCSINH hs = data.KETQUA_MONHOC_HOCSINH.Where(p => p.MaKetQua == ID).FirstOrDefault();
                 data.KETQUA_MONHOC_HOCSINH.Remove(hs);
                 data.SaveChanges();
-                comboBoxID.Text = string.Empty;
+                ComboBoxID.Text = string.Empty;
                 foreach (TextBox i in list)
                 {
                     i.Text = null;
                 }
-                textBoxAverageScore.Text = string.Empty;
-                textBoxClassify.Text = string.Empty;
+                TextBoxAverageScore.Text = string.Empty;
+                TextBoxClassify.Text = string.Empty;
                 ShowGrid("1");
             }
         }
         DataTable ratio_Source;
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            if (comboBoxSubject.Enabled == false)
+            if (ComboBoxClass.Text.ToString() == string.Empty || ComboBoxSubject.Text.ToString() == string.Empty || ComboBoxSemester.Text.ToString() == string.Empty)
+            {
+                MessageBox.Show("Vui lòng nhập thông tin đầy đủ", "Error", MessageBoxButtons.OK);
+                return;
+            }
+            if (ComboBoxSubject.Enabled == false)
             {
                 MessageBox.Show("Vui lòng chọn lớp trước", "Error", MessageBoxButtons.OK);
                 return;
             }
-            panelNumberOfClassify.Controls.Clear();
-            if (panelInput.Visible) { panelInput.Hide(); }
+            PanelSummary.Controls.Clear();
+            if (PanelInputScore.Visible) { PanelInputScore.Hide(); }
             var reSource = from scr in data.KETQUA_MONHOC_HOCSINH
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
-                            where comboBoxSubject.SelectedValue == scr.MaMonHoc && comboBoxYear.SelectedValue == scr.MaNamHoc && comboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == comboBoxClass.SelectedValue
+                            where ComboBoxSubject.SelectedValue == scr.MaMonHoc && ComboBoxYear.SelectedValue == scr.MaNamHoc && ComboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == ComboBoxClass.SelectedValue
                             select new  { MaKQ = scr.MaKetQua, MaHS = scr.MaHocSinh, DiemTB = scr.DiemTB, Xeploai = scr.MaXepLoai};
             List<int> list_xeploai = new List<int>();
             Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
@@ -555,8 +560,8 @@ namespace QuanLyHocSinh
             int index = 0;
             int x = 100;
             int y = 0;
-            panelNumberOfClassify.AutoSize = true;
-            foreach (var i in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
+            PanelSummary.AutoSize = true;
+            foreach (var i in data.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
             {
                     if(i.TenXepLoai != "Không")
                     {
@@ -586,10 +591,10 @@ namespace QuanLyHocSinh
                         list_txb_ratio.Add(txb_ratio);
                         txb.BackColor = Color.White;
                         txb_ratio.BackColor = Color.White;
-                        panelNumberOfClassify.Controls.Add(txb);
-                        panelNumberOfClassify.Controls.Add(txb_ratio);
-                        panelNumberOfClassify.Controls.Add(lb);
-                        panelNumberOfClassify.Controls.Add(lb_ratio);
+                        PanelSummary.Controls.Add(txb);
+                        PanelSummary.Controls.Add(txb_ratio);
+                        PanelSummary.Controls.Add(lb);
+                        PanelSummary.Controls.Add(lb_ratio);
                         y += 40;
                     }
                     keyValuePairs.Add(i.TenXepLoai, index);
@@ -604,10 +609,10 @@ namespace QuanLyHocSinh
             ratio_Source = new DataTable();
             if (numberofClass > 0)
             {
-                guna2ImageButton3.Enabled = true;
+                ButtonExportExcelFile2.Enabled = true;
                 foreach (var i in reSource)
                 {
-                    foreach (var j in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
+                    foreach (var j in data.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()))
                     {
                         if (i.Xeploai == j.MaXepLoai)
                         {
@@ -637,21 +642,21 @@ namespace QuanLyHocSinh
                         ratio_Source.Rows.Add(row_ratio);
                     }
                 }
-                chartRatio.DataSource = ratio_Source;
-                chartRatio.Series[0].XValueMember = "Xếp loại";
-                chartRatio.Series[0].YValueMembers = "Tỉ lệ (%)";
-                chartRatio.Series[0].IsValueShownAsLabel = true;
-                chartRatio.Show();
+                ChartRatio.DataSource = ratio_Source;
+                ChartRatio.Series[0].XValueMember = "Xếp loại";
+                ChartRatio.Series[0].YValueMembers = "Tỉ lệ (%)";
+                ChartRatio.Series[0].IsValueShownAsLabel = true;
+                ChartRatio.Show();
             }
-            else guna2ImageButton3.Enabled = false;
+            else ButtonExportExcelFile2.Enabled = false;
             string nameofgrid;
-            nameofgrid = "Bảng điểm môn " + comboBoxSubject.Text.ToString() + " của lớp " + comboBoxClass.Text.ToString() + " học kỳ " + comboBoxSemester.Text.ToString() + " năm học " + comboBoxYear.Text.ToString();
-            labelNameOfGrid2.Text = nameofgrid;
-            int x_ = dataGridView2.Location.X + (dataGridView2.Width / 2);
-            x_ -= labelNameOfGrid2.Width / 2;
-            int y_ = dataGridView2.Location.Y + dataGridView2.Height + 20;
-            labelNameOfGrid2.Location = new System.Drawing.Point(x_, y_);
-            panelPrint.Show();
+            nameofgrid = "Bảng điểm môn " + ComboBoxSubject.Text.ToString() + " của lớp " + ComboBoxClass.Text.ToString() + " học kỳ " + ComboBoxSemester.Text.ToString() + " năm học " + ComboBoxYear.Text.ToString();
+            LabelNameOfDGV2.Text = nameofgrid;
+            int x_ = DataGridViewScore2.Location.X + (DataGridViewScore2.Width / 2);
+            x_ -= LabelNameOfDGV2.Width / 2;
+            int y_ = DataGridViewScore2.Location.Y + DataGridViewScore2.Height + 20;
+            LabelNameOfDGV2.Location = new System.Drawing.Point(x_, y_);
+            PanelShowScore.Show();
             ShowGrid("2");
         }
 
@@ -662,16 +667,16 @@ namespace QuanLyHocSinh
             Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
             worksheet.Name = "Bảng điểm";
-            for (int i = 1; i <= dataGridView1.Columns.Count; i++)
+            for (int i = 1; i <= DataGridViewScore1.Columns.Count; i++)
             {
-                worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                worksheet.Cells[1, i] = DataGridViewScore1.Columns[i - 1].HeaderText;
             }
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < DataGridViewScore1.Rows.Count; i++)
             {
-                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                for (int j = 0; j < DataGridViewScore1.Columns.Count; j++)
                 {
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
-                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    if (DataGridViewScore1.Rows[i].Cells[j].Value != null)
+                        worksheet.Cells[i + 2, j + 1] = DataGridViewScore1.Rows[i].Cells[j].Value.ToString();
                 }
             }
             workbook.Close();
@@ -685,16 +690,16 @@ namespace QuanLyHocSinh
             Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
             worksheet.Name = "Bảng điểm";
-            for (int i = 1; i <= dataGridView2.Columns.Count; i++)
+            for (int i = 1; i <= DataGridViewScore2.Columns.Count; i++)
             {
-                worksheet.Cells[1, i] = dataGridView2.Columns[i - 1].HeaderText;
+                worksheet.Cells[1, i] = DataGridViewScore2.Columns[i - 1].HeaderText;
             }
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            for (int i = 0; i < DataGridViewScore2.Rows.Count; i++)
             {
-                for (int j = 0; j < dataGridView2.Columns.Count; j++)
+                for (int j = 0; j < DataGridViewScore2.Columns.Count; j++)
                 {
-                    if (dataGridView2.Rows[i].Cells[j].Value != null)
-                        worksheet.Cells[i + 2, j + 1] = dataGridView2.Rows[i].Cells[j].Value.ToString();
+                    if (DataGridViewScore2.Rows[i].Cells[j].Value != null)
+                        worksheet.Cells[i + 2, j + 1] = DataGridViewScore2.Rows[i].Cells[j].Value.ToString();
                 }
             }
             workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);

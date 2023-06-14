@@ -22,22 +22,22 @@ namespace QuanLyHocSinh
             dataEntities data = new dataEntities();
             var comBoxYear = from obj in data.NAMHOCs select obj;
             var comBoxYear1 = comBoxYear.OrderByDescending(p => p.MaNamHoc);
-            comboBoxYear.DataSource = comBoxYear1.ToList();
-            comboBoxYear.DisplayMember = "NamHoc1";
-            comboBoxYear.ValueMember = "MaNamHoc";
-            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == comboBoxYear.SelectedValue select obj;
-            comboBoxClass.DataSource = comboxClassSource.ToList();
-            comboBoxClass.DisplayMember = "TenLop";
-            comboBoxClass.ValueMember = "MaLop";
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
+            ComboBoxYear.DataSource = comBoxYear1.ToList();
+            ComboBoxYear.DisplayMember = "NamHoc1";
+            ComboBoxYear.ValueMember = "MaNamHoc";
+            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == ComboBoxYear.SelectedValue select obj;
+            ComboBoxClass.DataSource = comboxClassSource.ToList();
+            ComboBoxClass.DisplayMember = "TenLop";
+            ComboBoxClass.ValueMember = "MaLop";
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
                                          select obj;
-            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
-            comboBoxSubject.DisplayMember = "TenMonHoc";
-            comboBoxSubject.ValueMember = "MaMonHoc";
-            panelPrint.Hide();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubject.DisplayMember = "TenMonHoc";
+            ComboBoxSubject.ValueMember = "MaMonHoc";
+            PanelPrint.Hide();
+            DataGridViewScore.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewScore.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -50,26 +50,26 @@ namespace QuanLyHocSinh
         }
         private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
-            comboBoxSubject.Enabled = false;
+            ComboBoxSubject.Enabled = false;
             dataEntities data = new dataEntities();
-            var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == comboBoxYear.SelectedValue.ToString() select obj;
-            comboBoxClass.DataSource = comboxClassSource.ToList();
-            comboBoxClass.DisplayMember = "TenLop";
-            comboBoxClass.ValueMember = "MaLop";
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString()) select obj;
-            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
-            comboBoxSubject.DisplayMember = "TenMonHoc";
-            comboBoxSubject.ValueMember = "MaMonHoc";
+            var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == ComboBoxYear.SelectedValue.ToString() select obj;
+            ComboBoxClass.DataSource = comboxClassSource.ToList();
+            ComboBoxClass.DisplayMember = "TenLop";
+            ComboBoxClass.ValueMember = "MaLop";
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString()) select obj;
+            ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubject.DisplayMember = "TenMonHoc";
+            ComboBoxSubject.ValueMember = "MaMonHoc";
         }
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataEntities data = new dataEntities();
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(comboBoxYear.SelectedValue.ToString())
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == comboBoxClass.Text.Substring(0, 2)
+            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
                                          select obj;
-            comboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
-            comboBoxSubject.DisplayMember = "TenMonHoc";
-            comboBoxSubject.ValueMember = "MaMonHoc";
+            ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSubject.DisplayMember = "TenMonHoc";
+            ComboBoxSubject.ValueMember = "MaMonHoc";
         }
         struct HSformat
         {
@@ -107,7 +107,7 @@ namespace QuanLyHocSinh
         string funcXepLoai(string t)
         {
             dataEntities data = new dataEntities();
-            var reSource = from r in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString())
+            var reSource = from r in data.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString())
                            select r;
             double a;
             var str_K = reSource.Where(p => p.TenXepLoai == "Không");
@@ -128,7 +128,7 @@ namespace QuanLyHocSinh
         string funcTenXeploai(string t)
         {
             dataEntities data = new dataEntities();
-            var reSource = from r in data.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString())
+            var reSource = from r in data.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString())
                            select r;
             double a;
             string result = "Không";
@@ -154,8 +154,8 @@ namespace QuanLyHocSinh
             dataEntities dtb = new dataEntities();
             int x = 0;
             int y = 0;
-            panelClassifyYear.AutoSize = true;
-            foreach (var i in dtb.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
+            PanelSummary.AutoSize = true;
+            foreach (var i in dtb.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()).OrderByDescending(r => r.DiemToiThieu))
             {
                 if (i.TenXepLoai != "Không")
                 {
@@ -185,10 +185,10 @@ namespace QuanLyHocSinh
                     txb_ratio.Font = new Font("Segoe UI", 10);
                     txb.BackColor = Color.White;
                     txb_ratio.BackColor = Color.White;
-                    panelClassifyYear.Controls.Add(txb);
-                    panelClassifyYear.Controls.Add(txb_ratio);
-                    panelClassifyYear.Controls.Add(lb);
-                    panelClassifyYear.Controls.Add(lb_ratio);
+                    PanelSummary.Controls.Add(txb);
+                    PanelSummary.Controls.Add(txb_ratio);
+                    PanelSummary.Controls.Add(lb);
+                    PanelSummary.Controls.Add(lb_ratio);
                     y += 40;
                 }
             }
@@ -196,27 +196,27 @@ namespace QuanLyHocSinh
         DataTable ratio_Source;
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            if (comboBoxSubject.Enabled == false)
+            if (ComboBoxSubject.Enabled == false)
             {
                 MessageBox.Show("Vui lòng chọn lớp trước", "Error", MessageBoxButtons.OK);
                 return;
             }
-            panelClassifyYear.Controls.Clear();
+            PanelSummary.Controls.Clear();
             List<TextBox> list_txb_xeploai = new List<TextBox>();
             List<TextBox> list_txb_ratio = new List<TextBox>();
             Load_Panel(list_txb_ratio, list_txb_xeploai);
             dataEntities dtb = new dataEntities();
             Dictionary<string, int> keyValuePairs2 = new Dictionary<string, int>();
             Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
-            if (comboBoxClass.Text.ToString() == string.Empty || comboBoxSubject.Text.ToString() == string.Empty)
+            if (ComboBoxClass.Text.ToString() == string.Empty || ComboBoxSubject.Text.ToString() == string.Empty)
             {
                 MessageBox.Show("Vui lòng nhập thông tin đầy đủ", "Error", MessageBoxButtons.OK);
-                guna2ImageButton2.Enabled = false;
-                //return;
+                ButtonExportExcelFile.Enabled = false;
+                return;
             }
             int t = 0;
             int index_ = 0;
-            foreach (var i in dtb.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
+            foreach (var i in dtb.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()))
             {
                 if (i.TenXepLoai != "Không")
                 {
@@ -225,7 +225,7 @@ namespace QuanLyHocSinh
                 }
             }
             double SumTS = 0;
-            foreach (var i in dtb.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()))
+            foreach (var i in dtb.HocKy_NamApDung(ComboBoxYear.SelectedValue.ToString()))
             {
                 keyValuePairs.Add(i.MaHocKy, t);
                 t++;
@@ -234,7 +234,7 @@ namespace QuanLyHocSinh
             var reSource = from scr in dtb.KETQUA_MONHOC_HOCSINH
                            join cls in dtb.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                            join cls1 in dtb.HOCSINHs on cls.MaHocSinh equals cls1.MaHocSinh
-                           where scr.MaMonHoc == comboBoxSubject.SelectedValue && scr.MaNamHoc == comboBoxYear.SelectedValue && cls.MaLop == comboBoxClass.SelectedValue && scr.DiemTB != null
+                           where scr.MaMonHoc == ComboBoxSubject.SelectedValue && scr.MaNamHoc == ComboBoxYear.SelectedValue && cls.MaLop == ComboBoxClass.SelectedValue && scr.DiemTB != null
                            group new { scr, cls, cls1 }
                            by new { scr.MaHocSinh, cls1.HoTen, scr.MaHocKy, scr.DiemTB, scr.MaXepLoai }
                            into g
@@ -243,14 +243,14 @@ namespace QuanLyHocSinh
             if (reSource.Count() == 0)
             {
                 MessageBox.Show("Không tìm thấy dữ liệu phù hợp", "Error", MessageBoxButtons.OK);
-                guna2ImageButton2.Enabled = false;
+                ButtonExportExcelFile.Enabled = false;
             }
             else
             {
-                guna2ImageButton2.Enabled = true;
+                ButtonExportExcelFile.Enabled = true;
                 int index = -1; 
                 HSformat temp = new HSformat();
-                int numberSemester = dtb.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()).Count();
+                int numberSemester = dtb.HocKy_NamApDung(ComboBoxYear.SelectedValue.ToString()).Count();
                 double temp_DiemTB = 0;
                 int count = 0;
                 foreach (var item in reSource)
@@ -294,7 +294,7 @@ namespace QuanLyHocSinh
                 dt.Columns.Add("STT", typeof(int));
                 dt.Columns.Add("Mã học sinh", typeof(string));
                 dt.Columns.Add("Họ tên", typeof(string));
-                foreach (var ktem in dtb.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()))
+                foreach (var ktem in dtb.HocKy_NamApDung(ComboBoxYear.SelectedValue.ToString()))
                 {
                     dt.Columns.Add(ktem.HocKy, typeof(string));
                 }
@@ -307,7 +307,7 @@ namespace QuanLyHocSinh
                     row1["Mã học sinh"] = HS_list[i].MHS;
                     row1["Họ tên"] = HS_list[i].HOTEN;
                     int i_temp = 0;
-                    foreach (var ktem in dtb.HocKy_NamApDung(comboBoxYear.SelectedValue.ToString()))
+                    foreach (var ktem in dtb.HocKy_NamApDung(ComboBoxYear.SelectedValue.ToString()))
                     {
                             row1[ktem.HocKy] = HS_list[i].List_scoreAverage[i_temp];
                             i_temp++; 
@@ -317,17 +317,17 @@ namespace QuanLyHocSinh
                     dt.Rows.Add(row1);
                 }
                 string nameofgrid;
-                nameofgrid = "Bảng điểm môn " + comboBoxSubject.Text.ToString() + " của lớp " + comboBoxClass.Text.ToString() + " năm học " + comboBoxYear.Text.ToString();
-                labelNameOfGrid1.Text = nameofgrid;
-                int x = dataGridView1.Location.X + (dataGridView1.Width / 2);
-                x -= labelNameOfGrid1.Width / 2;
-                int y = dataGridView1.Location.Y + dataGridView1.Height + 20;
-                labelNameOfGrid1.Location = new System.Drawing.Point(x, y);
-                dataGridView1.DataSource = dt;
-                dataGridView1.Show();
+                nameofgrid = "Bảng điểm môn " + ComboBoxSubject.Text.ToString() + " của lớp " + ComboBoxClass.Text.ToString() + " năm học " + ComboBoxYear.Text.ToString();
+                LabelNameOfDGV.Text = nameofgrid;
+                int x = DataGridViewScore.Location.X + (DataGridViewScore.Width / 2);
+                x -= LabelNameOfDGV.Width / 2;
+                int y = DataGridViewScore.Location.Y + DataGridViewScore.Height + 20;
+                LabelNameOfDGV.Location = new System.Drawing.Point(x, y);
+                DataGridViewScore.DataSource = dt;
+                DataGridViewScore.Show();
             }
             List<int> list_xeploai = new List<int>();
-            foreach (var i in dtb.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
+            foreach (var i in dtb.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()))
             {
                 if (i.TenXepLoai != "Không")
                     list_xeploai.Add(0);
@@ -342,7 +342,7 @@ namespace QuanLyHocSinh
             {
                 foreach (var i in HS_list)
                 {
-                    foreach (var j in dtb.XepLoai_NamApDung(comboBoxYear.SelectedValue.ToString()))
+                    foreach (var j in dtb.XepLoai_NamApDung(ComboBoxYear.SelectedValue.ToString()))
                     {
                         if (i.XEPLOAI == j.TenXepLoai)
                         {
@@ -372,14 +372,14 @@ namespace QuanLyHocSinh
                         ratio_Source.Rows.Add(row_ratio);
                     }
                 }
-                chartRatio.DataSource = ratio_Source;
-                chartRatio.Series[0].XValueMember = "Xếp loại";
-                chartRatio.Series[0].YValueMembers = "Tỉ lệ (%)";
-                chartRatio.Series[0].IsValueShownAsLabel = true;
-                chartRatio.Show();
+                ChartRatio.DataSource = ratio_Source;
+                ChartRatio.Series[0].XValueMember = "Xếp loại";
+                ChartRatio.Series[0].YValueMembers = "Tỉ lệ (%)";
+                ChartRatio.Series[0].IsValueShownAsLabel = true;
+                ChartRatio.Show();
             }
-            panelClassifyYear.Show();
-            panelPrint.Show();
+            PanelSummary.Show();
+            PanelPrint.Show();
         }
 
         private void ButtonExportExcel_Click(object sender, EventArgs e)
@@ -389,16 +389,16 @@ namespace QuanLyHocSinh
             Excel.Workbook workbook = excel.Workbooks.Add(System.Reflection.Missing.Value);
             Excel.Worksheet worksheet = (Excel.Worksheet)workbook.Sheets[1];
             worksheet.Name = "Bảng điểm";
-            for (int i = 1; i <= dataGridView1.Columns.Count; i++)
+            for (int i = 1; i <= DataGridViewScore.Columns.Count; i++)
             {
-                worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+                worksheet.Cells[1, i] = DataGridViewScore.Columns[i - 1].HeaderText;
             }
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            for (int i = 0; i < DataGridViewScore.Rows.Count; i++)
             {
-                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                for (int j = 0; j < DataGridViewScore.Columns.Count; j++)
                 {
-                    if (dataGridView1.Rows[i].Cells[j].Value != null)
-                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                    if (DataGridViewScore.Rows[i].Cells[j].Value != null)
+                        worksheet.Cells[i + 2, j + 1] = DataGridViewScore.Rows[i].Cells[j].Value.ToString();
                 }
             }
             workbook.Sheets.Add(After: workbook.Sheets[workbook.Sheets.Count]);
@@ -445,7 +445,7 @@ namespace QuanLyHocSinh
 
         private void comboBoxClass_Click(object sender, EventArgs e)
         {
-            comboBoxSubject.Enabled = true;
+            ComboBoxSubject.Enabled = true;
         }
     }
 }
