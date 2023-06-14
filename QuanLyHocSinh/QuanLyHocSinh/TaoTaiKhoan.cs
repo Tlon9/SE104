@@ -19,22 +19,22 @@ namespace QuanLyHocSinh
             InitializeComponent();
             var dtb = new dataEntities();
             var comboBoxSource = dtb.PHANQUYENs;
-            guna2ComboBox1.DataSource = comboBoxSource.ToList();
-            guna2ComboBox1.ValueMember = "MaPhanQuyen";
-            guna2ComboBox1.DisplayMember = "VaiTro";
+            ComboBoxRole.DataSource = comboBoxSource.ToList();
+            ComboBoxRole.ValueMember = "MaPhanQuyen";
+            ComboBoxRole.DisplayMember = "VaiTro";
         }
 
         private void guna2ButtonAccount_Click(object sender, EventArgs e)
         {
             label6.Hide();
-            label7.Hide();
-            if (guna2TextBox1.Text == "" || guna2TextBox2.Text == "" || guna2TextBox3.Text == "" || guna2TextBox4.Text == "")
+            LabelWarning.Hide();
+            if (TextBoxName.Text == "" || TextBoxBirthday.Text == "" || TextBoxUserName.Text == "" || TextBoxPass.Text == "")
             {
                 label6.Show();
-                guna2TextBox1.Text = "";
-                guna2TextBox2.Text = "";
-                guna2TextBox3.Text = "";
-                guna2TextBox4.Text = "";
+                TextBoxName.Text = "";
+                TextBoxBirthday.Text = "";
+                TextBoxUserName.Text = "";
+                TextBoxPass.Text = "";
             }
             else
             {
@@ -43,10 +43,10 @@ namespace QuanLyHocSinh
                 bool check = true;
                 foreach (var item in check_source)
                 {
-                    if (guna2TextBox3.Text == item.ToString())
+                    if (TextBoxUserName.Text == item.ToString())
                     {
-                        label7.Show();
-                        guna2TextBox3.Text = "";
+                        LabelWarning.Show();
+                        TextBoxUserName.Text = "";
                         check = false;
                         break;
                     }
@@ -56,12 +56,12 @@ namespace QuanLyHocSinh
                     try
                     {
                         var account = new TAIKHOAN();
-                        account.HoTen = guna2TextBox1.Text;
+                        account.HoTen = TextBoxName.Text;
                         CultureInfo provider = CultureInfo.InvariantCulture;
-                        account.NgaySinh = DateTime.ParseExact(guna2TextBox2.Text, "dd/MM/yyyy", provider);
-                        account.MaPhanQuyen = guna2ComboBox1.SelectedValue.ToString();
-                        account.TenDangNhap = guna2TextBox3.Text;
-                        account.MatKhau = guna2TextBox4.Text;
+                        account.NgaySinh = DateTime.ParseExact(TextBoxBirthday.Text, "dd/MM/yyyy", provider);
+                        account.MaPhanQuyen = ComboBoxRole.SelectedValue.ToString();
+                        account.TenDangNhap = TextBoxUserName.Text;
+                        account.MatKhau = TextBoxPass.Text;
                         var MaTK = dtb.TAIKHOANs.Where(r => r.MaPhanQuyen == account.MaPhanQuyen).OrderByDescending(r => r.MaTaiKhoan).Select(r => r.MaTaiKhoan).FirstOrDefault();
                         
                         int num = Convert.ToInt32(MaTK.Substring(2));

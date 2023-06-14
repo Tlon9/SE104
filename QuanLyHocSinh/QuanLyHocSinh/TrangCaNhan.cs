@@ -16,10 +16,10 @@ namespace QuanLyHocSinh
         public TrangCaNhan()
         {
             InitializeComponent();
-            this.guna2TextBox1.Text = Account.HoTen;
-            this.guna2TextBox2.Text = Account.NgaySinh.ToString();
-            this.guna2TextBox3.Text = Account.TenDangNhap;
-            this.guna2TextBox4.Text = Account.VaiTro;
+            this.TextBoxName.Text = Account.HoTen;
+            this.TextBoxBirthday.Text = Account.NgaySinh.ToString();
+            this.TextBoxUserName.Text = Account.TenDangNhap;
+            this.TextBoxRole.Text = Account.VaiTro;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

@@ -33,38 +33,38 @@ namespace QuanLyHocSinh
         {
             if (show2)
             {
-                guna2TextBoxNewPass.UseSystemPasswordChar = false;
-                guna2TextBoxNewPass.PasswordChar = '\0';
+                TextBoxNewPass.UseSystemPasswordChar = false;
+                TextBoxNewPass.PasswordChar = '\0';
                 show2 = false;
             }
             else
             {
-                guna2TextBoxNewPass.UseSystemPasswordChar = true;
-                guna2TextBoxNewPass.PasswordChar = '.';
+                TextBoxNewPass.UseSystemPasswordChar = true;
+                TextBoxNewPass.PasswordChar = '.';
                 show2 = true;
             }
         }
 
         private void guna2ButtonChangePass_Click(object sender, EventArgs e)
         {
-            label1.Visible = false;
-            label2.Visible = false;
-            if (guna2TextBoxPass.Text != Account.MatKhau)
+            LabelSamePass.Visible = false;
+            LabelWrongPass.Visible = false;
+            if (TextBoxPass.Text != Account.MatKhau)
             {
-                label2.Show();
-                guna2TextBoxNewPass.Text = "";
-                guna2TextBoxPass.Text = "";
+                LabelWrongPass.Show();
+                TextBoxNewPass.Text = "";
+                TextBoxPass.Text = "";
             }
-            else if (guna2TextBoxPass.Text == guna2TextBoxNewPass.Text)
+            else if (TextBoxPass.Text == TextBoxNewPass.Text)
             {
-                label1.Show();
-                guna2TextBoxNewPass.Text = "";
+                LabelSamePass.Show();
+                TextBoxNewPass.Text = "";
             }
             else
             {
                 dataEntities dtb = new dataEntities();
                 var changePass = dtb.TAIKHOANs.Where(r => r.TenDangNhap.ToString() == Account.TenDangNhap).FirstOrDefault();
-                changePass.MatKhau = guna2TextBoxNewPass.Text.ToString();
+                changePass.MatKhau = TextBoxNewPass.Text.ToString();
                 dtb.Entry(changePass).State = System.Data.Entity.EntityState.Modified;
                 dtb.SaveChanges();
                 MessageBox.Show("Đổi mật khẩu thành công!");
@@ -86,14 +86,14 @@ namespace QuanLyHocSinh
         {
             if (show1)
             {
-                guna2TextBoxPass.UseSystemPasswordChar = false;
-                guna2TextBoxPass.PasswordChar = '\0';
+                TextBoxPass.UseSystemPasswordChar = false;
+                TextBoxPass.PasswordChar = '\0';
                 show1 = false;
             }
             else
             {
-                guna2TextBoxPass.UseSystemPasswordChar = true;
-                guna2TextBoxPass.PasswordChar = '.';
+                TextBoxPass.UseSystemPasswordChar = true;
+                TextBoxPass.PasswordChar = '.';
                 show1 = true;
             }    
         }

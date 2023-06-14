@@ -26,7 +26,7 @@ namespace QuanLyHocSinh
                 dataEntities dtb = new dataEntities();
                 foreach (var item in dtb.TAIKHOANs)
                 {
-                    if (item.TenDangNhap == textBoxUsername.Text && item.MatKhau == textBoxPassword.Text)
+                    if (item.TenDangNhap == TextBoxUsername.Text && item.MatKhau == TextBoxPassword.Text)
                     {
                         Account.TenDangNhap = item.TenDangNhap.ToString();
                         Account.MatKhau = item.MatKhau.ToString();
@@ -42,9 +42,9 @@ namespace QuanLyHocSinh
                         this.Close();
                     }
                 }
-                labelWrong.Show();
-                textBoxUsername.Text = "";
-                textBoxPassword.Text = "";
+                LabelWrong.Show();
+                TextBoxUsername.Text = "";
+                TextBoxPassword.Text = "";
             }
             catch 
             {
