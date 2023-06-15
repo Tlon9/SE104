@@ -58,7 +58,7 @@ namespace QuanLyHocSinh
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
-        private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
+        private void MouseDownPanelNameForm(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);

@@ -19,95 +19,95 @@ namespace QuanLyHocSinh
         public QuanLyQuyDinh()
         {
             InitializeComponent();
-            PanelDsQuydinh.Hide();
+            PanelChangeRegulation.Hide();
             dataEntities dtb = new dataEntities();
             //Danh sách lớp
             var dsLop = from obj in dtb.LOPs
                         where obj.TenLop != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                         select new {TenLop = obj.TenLop };
-            dgvDSLOP.DataSource = dsLop.ToList();
-            dgvDSLOP.Show();
+            DataGridViewClass.DataSource = dsLop.ToList();
+            DataGridViewClass.Show();
             //Danh sách khối
             var dsKhoi = from obj in dtb.KHOIs
                          where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                          select new {TenKhoi = obj.TenKhoi };
-            dgvDSKHOI.DataSource = dsKhoi.ToList();
-            dgvDSKHOI.Show();
+            DataGridViewGrade.DataSource = dsKhoi.ToList();
+            DataGridViewGrade.Show();
             //Danh sách môn học
             var dsMonhoc = from obj in dtb.MONHOCs
                            where obj.TenMonHoc != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {TenMonHoc = obj.TenMonHoc };
-            dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-            dgvDSMONHOC.Show();
+            DataGridViewSubject.DataSource = dsMonhoc.ToList();
+            DataGridViewSubject.Show();
             //Danh sách điểm thành phần
             var dsDiemTP = from obj in dtb.THANHPHANs
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
-            dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
-            dgvDiemthanhphan.Show();
+            DataGridViewScore.DataSource = dsDiemTP.ToList();
+            DataGridViewScore.Show();
             //Danh sách xếp loại
             var dsXeploai = from obj in dtb.XEPLOAIs
                             where obj.TenXepLoai != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                             && obj.TenXepLoai != "Không"
                             select new { TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
-            dgvXepLoai.DataSource = dsXeploai.ToList();
-            dgvXepLoai.Show();
+            DataGridViewClassify.DataSource = dsXeploai.ToList();
+            DataGridViewClassify.Show();
             //Danh sách điểm học kỳ
             var dsDiemHK = from obj in dtb.HOCKies
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new { HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
-            dgvDiemHK.DataSource = dsDiemHK.ToList();
-            dgvDiemHK.Show();
+            DataGridViewSemester.DataSource = dsDiemHK.ToList();
+            DataGridViewSemester.Show();
             //Load quy định tuổi tiếp nhận học sinh
             var min_Tuoi = from obj in dtb.THAMSOes
                            select obj.TuoiToiThieu;
-            TuoiToiThieutxtbox.Text = min_Tuoi.First().ToString();
+            TextBoxMinAge.Text = min_Tuoi.First().ToString();
             var max_Tuoi = from obj in dtb.THAMSOes
                            select obj.TuoiToiDa;
-            TuoiToiDatxtbox.Text = max_Tuoi.First().ToString();
+            TextBoxMaxAge.Text = max_Tuoi.First().ToString();
             //Load sĩ số tối đa của lớp
             var max_Siso = from obj in dtb.THAMSOes
                            select obj.SiSoToiDa;
-            Sisotextbox.Text = max_Siso.First().ToString();
+            TextBoxNumberOfClass.Text = max_Siso.First().ToString();
         }
 
         private void dgvDSLOP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TenLoptextbox.Text = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
+            TextBoxNameOfClass.Text = DataGridViewClass.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void dgvDSKHOI_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TenKhoitextbox.Text = dgvDSKHOI.CurrentRow.Cells[0].Value.ToString();
+            TextBoxNameOfGrade.Text = DataGridViewGrade.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void dgvDSMONHOC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Tenmhtextbox.Text = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
+            TextBoxNameOfSubject.Text = DataGridViewSubject.CurrentRow.Cells[0].Value.ToString();
         }
         private void dgvDiemthanhphan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            TenTPtextbox.Text = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
-            TrongsoTPtextbox.Text = dgvDiemthanhphan.CurrentRow.Cells[1].Value.ToString();
+            TextBoxNameOfScore.Text = DataGridViewScore.CurrentRow.Cells[0].Value.ToString();
+            TextBoxWeightScore.Text = DataGridViewScore.CurrentRow.Cells[1].Value.ToString();
         }
         private void dgvXepLoai_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Tenxeploaitextbox.Text = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
-            minDiemtextbox.Text = dgvXepLoai.CurrentRow.Cells[1].Value.ToString();
-            maxDiemtextbox.Text = dgvXepLoai.CurrentRow.Cells[2].Value.ToString();
-            DiemKCtextbox.Text = dgvXepLoai.CurrentRow.Cells[3].Value.ToString();
+            TextBoxNameOfClassify.Text = DataGridViewClassify.CurrentRow.Cells[0].Value.ToString();
+            TextBoxMinScore.Text = DataGridViewClassify.CurrentRow.Cells[1].Value.ToString();
+            TextBoxMaxScore.Text = DataGridViewClassify.CurrentRow.Cells[2].Value.ToString();
+            TextBoxCheckScore.Text = DataGridViewClassify.CurrentRow.Cells[3].Value.ToString();
         }
         private void dgvDiemHK_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            HocKytextbox.Text = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
-            TrongSoHKtextbox.Text = dgvDiemHK.CurrentRow.Cells[1].Value.ToString();
+            TextBoxNameOfSemester.Text = DataGridViewSemester.CurrentRow.Cells[0].Value.ToString();
+            TextBoxWeightSemester.Text = DataGridViewSemester.CurrentRow.Cells[1].Value.ToString();
         }
         //Thêm năm học mới
         //Lưu mã năm học mới
         string MaNamHoc_moi;
         private void AddNamhoc_button_Click(object sender, EventArgs e)
         {
-            string namhoc = Namhoctextbox.Text;
+            string namhoc = TextBoxAddYear.Text;
             string pattern = @"^20\d{2}-20\d{2}$";
             bool isMatch = Regex.IsMatch(namhoc, pattern);
             string manamhoc = "";
@@ -134,8 +134,8 @@ namespace QuanLyHocSinh
                         // Xuất danh sách môn học áp dụng cho năm học
                         var dsMonhoc = from obj in dtb.MonHoc_NamApDung(MaNamHoc_moi)
                                        select new {TenMonHoc = obj.TenMonHoc };
-                        dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-                        dgvDSMONHOC.Show();
+                        DataGridViewSubject.DataSource = dsMonhoc.ToList();
+                        DataGridViewSubject.Show();
                         //Thêm các lớp của năm học mới.
                         string MaNamHoc_Truoc = dtb.NAMHOCs.AsEnumerable().LastOrDefault().MaNamHoc.ToString();
                         foreach (var i in dtb.KHOIs)
@@ -171,14 +171,14 @@ namespace QuanLyHocSinh
                         var dsKHOI = from obj in dtb.KHOIs
                                      where obj.TenKhoi != null && obj.MaNamHoc == MaNamHoc_moi
                                      select new { TenKhoi = obj.TenKhoi };
-                        dgvDSKHOI.DataSource = dsKHOI.ToList();
-                        dgvDSKHOI.Show();
+                        DataGridViewGrade.DataSource = dsKHOI.ToList();
+                        DataGridViewGrade.Show();
                         var dsLop = from obj in dtb.LOPs
                                     where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                                     select new { TenLop = obj.TenLop };
-                        dgvDSLOP.DataSource = dsLop.ToList();
-                        dgvDSLOP.Show();
-                        PanelDsQuydinh.Show();
+                        DataGridViewClass.DataSource = dsLop.ToList();
+                        DataGridViewClass.Show();
+                        PanelChangeRegulation.Show();
                     }
                     else MessageBox.Show("Năm học đã tồn tại!");
                 };
@@ -191,12 +191,12 @@ namespace QuanLyHocSinh
             using(var context = new dataEntities())
             {
                 var std = context.THAMSOes.First();
-                Byte toithieu = Convert.ToByte(TuoiToiThieutxtbox.Text);
-                Byte toida = Convert.ToByte(TuoiToiDatxtbox.Text);
+                Byte toithieu = Convert.ToByte(TextBoxMinAge.Text);
+                Byte toida = Convert.ToByte(TextBoxMaxAge.Text);
                 if (toithieu > 0 && toida >0 && toithieu <= toida)
                 {
-                    std.TuoiToiThieu = Convert.ToByte(TuoiToiThieutxtbox.Text);
-                    std.TuoiToiDa = Convert.ToByte(TuoiToiDatxtbox.Text);
+                    std.TuoiToiThieu = Convert.ToByte(TextBoxMinAge.Text);
+                    std.TuoiToiDa = Convert.ToByte(TextBoxMaxAge.Text);
                     context.SaveChanges();
                     MessageBox.Show("Cập nhật quy định thành công!");
                 }
@@ -213,9 +213,9 @@ namespace QuanLyHocSinh
             {
                 var std = context.THAMSOes.First();
                 byte a;
-                if (Byte.TryParse(Sisotextbox.Text, out a) && Convert.ToByte(Sisotextbox.Text) > 0)
+                if (Byte.TryParse(TextBoxNumberOfClass.Text, out a) && Convert.ToByte(TextBoxNumberOfClass.Text) > 0)
                 {
-                    std.SiSoToiDa = Convert.ToByte(Sisotextbox.Text);
+                    std.SiSoToiDa = Convert.ToByte(TextBoxNumberOfClass.Text);
                     context.SaveChanges();
                     MessageBox.Show("Cập nhật quy định thành công!");
                 }    
@@ -226,9 +226,9 @@ namespace QuanLyHocSinh
         //Thay đổi danh sách lớp
         private void AddLop_button_Click(object sender, EventArgs e)
         {
-            string year = Namhoctextbox.Text;
-            string tenlop = TenLoptextbox.Text;
-            string malop = MaNamHoc_moi.Substring(2, 2) + TenLoptextbox.Text;
+            string year = TextBoxAddYear.Text;
+            string tenlop = TextBoxNameOfClass.Text;
+            string malop = MaNamHoc_moi.Substring(2, 2) + TextBoxNameOfClass.Text;
             if(tenlop.Length != 4)
             {
                 MessageBox.Show("Tên lớp không hợp lệ!");
@@ -264,31 +264,31 @@ namespace QuanLyHocSinh
                 var dsLop = from obj in dtb.LOPs
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new { TenLop = obj.TenLop };
-                dgvDSLOP.DataSource = dsLop.ToList();
-                dgvDSLOP.Show();
+                DataGridViewClass.DataSource = dsLop.ToList();
+                DataGridViewClass.Show();
             }
         }
         private void DeleteLop_button_Click(object sender, EventArgs e)
         {
-            string ten_lop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
+            string ten_lop = DataGridViewClass.CurrentRow.Cells[0].Value.ToString();
             using (var dtb = new dataEntities())
             {
                 LOP std = dtb.LOPs.Where(r => r.TenLop == ten_lop && r.MaNamHoc == MaNamHoc_moi).First();
                 dtb.LOPs.Remove(std);
                 dtb.SaveChanges();
                 MessageBox.Show("Cập nhật danh sách lớp thành công!");
-                TenLoptextbox.Text = null;
+                TextBoxNameOfClass.Text = null;
                 var dsLop = from obj in dtb.LOPs
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new {TenLop = obj.TenLop };
-                dgvDSLOP.DataSource = dsLop.ToList();
-                dgvDSLOP.Show();
+                DataGridViewClass.DataSource = dsLop.ToList();
+                DataGridViewClass.Show();
             }
         }
         private void EditLop_button_Click(object sender, EventArgs e)
         {
-            string ten_lop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
-            string tenlop = TenLoptextbox.Text;
+            string ten_lop = DataGridViewClass.CurrentRow.Cells[0].Value.ToString();
+            string tenlop = TextBoxNameOfClass.Text;
             if (tenlop.Length != 4)
             {
                 MessageBox.Show("Tên lớp không hợp lệ!");
@@ -305,7 +305,7 @@ namespace QuanLyHocSinh
                 if (check_tenlop)
                 {
                     var std = dtb.LOPs.Where(r => r.TenLop == ten_lop && r.MaNamHoc==MaNamHoc_moi).First();
-                    std.TenLop = TenLoptextbox.Text;
+                    std.TenLop = TextBoxNameOfClass.Text;
                     dtb.SaveChanges();
                     MessageBox.Show("Cập nhật danh sách lớp thành công!");
                 }
@@ -313,15 +313,15 @@ namespace QuanLyHocSinh
                 var dsLop = from obj in dtb.LOPs
                             where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                             select new {TenLop = obj.TenLop };
-                dgvDSLOP.DataSource = dsLop.ToList();
-                dgvDSLOP.Show();
+                DataGridViewClass.DataSource = dsLop.ToList();
+                DataGridViewClass.Show();
             }
         }
 
         //Thay đổi danh sách khối
         private void AddKhoi_button_Click(object sender, EventArgs e)
         {
-            string tenkhoi = TenKhoitextbox.Text;
+            string tenkhoi = TextBoxNameOfGrade.Text;
             if (tenkhoi.Length == 0)
             {
                 MessageBox.Show("Tên khối không hợp lệ!");
@@ -353,8 +353,8 @@ namespace QuanLyHocSinh
                 var dsKhoi = from obj in dtb.KHOIs
                              where obj.TenKhoi != null && obj.MaNamHoc == MaNamHoc_moi
                              select new {TenKhoi = obj.TenKhoi };
-                dgvDSKHOI.DataSource = dsKhoi.ToList();
-                dgvDSKHOI.Show();
+                DataGridViewGrade.DataSource = dsKhoi.ToList();
+                DataGridViewGrade.Show();
             }
         }
         private void EditKhoi_button_Click(object sender, EventArgs e)
@@ -362,8 +362,8 @@ namespace QuanLyHocSinh
             var dtb = new dataEntities();
 
             string subMaNamHoc = MaNamHoc_moi.Substring(2, 2);
-            string ten_khoi = dgvDSKHOI.CurrentRow.Cells[0].Value.ToString();
-            string tenkhoi = TenKhoitextbox.Text;
+            string ten_khoi = DataGridViewGrade.CurrentRow.Cells[0].Value.ToString();
+            string tenkhoi = TextBoxNameOfGrade.Text;
             if (tenkhoi.Length == 0)
             {
                 MessageBox.Show("Tên khối không hợp lệ!");
@@ -379,7 +379,7 @@ namespace QuanLyHocSinh
             {
 
                 var std = dtb.KHOIs.Where(r => r.TenKhoi == ten_khoi && r.MaNamHoc == MaNamHoc_moi).First();
-                std.TenKhoi = TenKhoitextbox.Text;
+                std.TenKhoi = TextBoxNameOfGrade.Text;
                 dtb.SaveChanges();
 
                 MessageBox.Show("Cập nhật danh sách khối lớp thành công!");
@@ -388,14 +388,14 @@ namespace QuanLyHocSinh
             var dsKhoi = from obj in dtb.KHOIs
                          where obj.TenKhoi != null && obj.MaNamHoc == MaNamHoc_moi
                          select new { TenKhoi = obj.TenKhoi };
-            dgvDSKHOI.DataSource = dsKhoi.ToList();
-            dgvDSKHOI.Show();
+            DataGridViewGrade.DataSource = dsKhoi.ToList();
+            DataGridViewGrade.Show();
         }
 
         private void DeleteKhoi_button_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            string tenkhoi = dgvDSKHOI.CurrentRow.Cells[0].Value.ToString();
+            string tenkhoi = DataGridViewGrade.CurrentRow.Cells[0].Value.ToString();
             string makhoi = MaNamHoc_moi.Substring(2,2)+tenkhoi;
             var std = dtb.KHOIs.Where(r => r.MaKhoi == makhoi).First();
             dtb.KHOIs.Remove(std);
@@ -407,13 +407,13 @@ namespace QuanLyHocSinh
             var dsKhoi = from obj in dtb.KHOIs
                          where obj.TenKhoi != null && obj.MaNamHoc == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                          select new {TenKhoi = obj.TenKhoi};
-            dgvDSKHOI.DataSource = dsKhoi.ToList();
-            dgvDSKHOI.Show();
+            DataGridViewGrade.DataSource = dsKhoi.ToList();
+            DataGridViewGrade.Show();
             var dsLop = from obj in dtb.LOPs
                         where obj.TenLop != null && obj.MaNamHoc == MaNamHoc_moi
                         select new { TenLop = obj.TenLop };
-            dgvDSLOP.DataSource = dsLop.ToList();
-            dgvDSLOP.Show();
+            DataGridViewClass.DataSource = dsLop.ToList();
+            DataGridViewClass.Show();
             MessageBox.Show("Cập nhật danh sách khối lớp thành công! Đã xóa các lớp của khối "+tenkhoi);
         }
 
@@ -422,7 +422,7 @@ namespace QuanLyHocSinh
         {
             dataEntities dtb = new dataEntities();
             var getMaNamHoc = from scr in dtb.NAMHOCs
-                    where scr.NamHoc1 == Namhoctextbox.Text
+                    where scr.NamHoc1 == TextBoxAddYear.Text
                     select scr;
             string MaNamHoc = getMaNamHoc.SingleOrDefault().MaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2,2);
@@ -439,11 +439,11 @@ namespace QuanLyHocSinh
         }
         private void AddMonhoc_button_Click(object sender, EventArgs e)
         {
-            if (Tenmhtextbox.Text == string.Empty)
+            if (TextBoxNameOfSubject.Text == string.Empty)
                 return;
             var dtb = new dataEntities();
-            string tenmh = Tenmhtextbox.Text;
-            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string tenmh = TextBoxNameOfSubject.Text;
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == TextBoxAddYear.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
             List<MONHOC> list_mh = new List<MONHOC>();
@@ -489,17 +489,17 @@ namespace QuanLyHocSinh
             var dsMonhoc = from obj in dtb.MONHOCs
                                where obj.TenMonHoc != null && obj.NamApDung == MaNamHoc
                                select new {TenMonHoc = obj.TenMonHoc };
-            dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-            dgvDSMONHOC.Show();
+            DataGridViewSubject.DataSource = dsMonhoc.ToList();
+            DataGridViewSubject.Show();
         }
         private void EditMonhoc_button_Click(object sender, EventArgs e)
         {
             var dtb = new dataEntities();
-            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == TextBoxAddYear.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
-            string ten_mh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
-            string tenmh = Tenmhtextbox.Text;
+            string ten_mh = DataGridViewSubject.CurrentRow.Cells[0].Value.ToString();
+            string tenmh = TextBoxNameOfSubject.Text;
             List<MONHOC> list_mh = new List<MONHOC>();
             if (tenmh.Length == 0)
             {
@@ -534,7 +534,7 @@ namespace QuanLyHocSinh
                 else
                 {
                     var std = dtb.MONHOCs.Where(r => r.TenMonHoc == ten_mh && r.NamApDung == MaNamHoc_moi).First();
-                    std.TenMonHoc = Tenmhtextbox.Text;
+                    std.TenMonHoc = TextBoxNameOfSubject.Text;
                 }
                 dtb.SaveChanges();
                 MessageBox.Show("Cập nhật danh sách môn học thành công!");
@@ -543,13 +543,13 @@ namespace QuanLyHocSinh
             var dsMonhoc = from obj in dtb.MonHoc_NamApDung(MaNamHoc)
                            where obj.TenMonHoc != null
                            select new {TenMonHoc = obj.TenMonHoc };
-            dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-            dgvDSMONHOC.Show();
+            DataGridViewSubject.DataSource = dsMonhoc.ToList();
+            DataGridViewSubject.Show();
         }
         private void DeleteMonhoc_button_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == TextBoxAddYear.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
             var check_ = dtb.MONHOCs.Where(p => p.NamApDung == MaNamHoc);
@@ -558,7 +558,7 @@ namespace QuanLyHocSinh
             {
                 list_mh = Copy_Monhoc();
             }
-            string tenmh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
+            string tenmh = DataGridViewSubject.CurrentRow.Cells[0].Value.ToString();
             if (list_mh.Count > 0)
             {
                 foreach (var i in list_mh)
@@ -577,8 +577,8 @@ namespace QuanLyHocSinh
             var dsMonhoc = from obj in dtb.MONHOCs
                            where obj.TenMonHoc != null && obj.NamApDung == MaNamHoc_moi
                            select new {TenKhoi = obj.TenMonHoc };
-            dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-            dgvDSMONHOC.Show();
+            DataGridViewSubject.DataSource = dsMonhoc.ToList();
+            DataGridViewSubject.Show();
             MessageBox.Show("Cập nhật danh sách môn học thành công!");
         }
         //Thay đổi danh sách điểm thành phần
@@ -600,16 +600,16 @@ namespace QuanLyHocSinh
         }
         private void AddDiemTP_button_Click(object sender, EventArgs e)
         {
-            string tentp = TenTPtextbox.Text;
+            string tentp = TextBoxNameOfScore.Text;
             string[] words = tentp.Split(' ');
             string matp = "";
-            string string_trongso = TrongsoTPtextbox.Text;
+            string string_trongso = TextBoxWeightScore.Text;
             if (string_trongso == string.Empty)
             {
                 MessageBox.Show("Bạn chưa nhập trọng số!");
                 return;
             }    
-            double trongso = Convert.ToDouble(TrongsoTPtextbox.Text);
+            double trongso = Convert.ToDouble(TextBoxWeightScore.Text);
             if(trongso < 0.1 || trongso > 1)
             {
                 MessageBox.Show("Trọng số không hợp lệ!");
@@ -657,23 +657,23 @@ namespace QuanLyHocSinh
                 var dsDiemTP = from obj in dtb.THANHPHANs
                                where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                                select new {TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
-                dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
-                dgvDiemthanhphan.Show();
+                DataGridViewScore.DataSource = dsDiemTP.ToList();
+                DataGridViewScore.Show();
             }
         }
         private void EditDiemTP_button_Click(object sender, EventArgs e)
         {
             var dtb = new dataEntities();
-            string tentp = TenTPtextbox.Text;
-            string ten_tp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
+            string tentp = TextBoxNameOfScore.Text;
+            string ten_tp = DataGridViewScore.CurrentRow.Cells[0].Value.ToString();
             List<THANHPHAN> list_tp = new List<THANHPHAN>();
-            string string_trongso = TrongsoTPtextbox.Text;
+            string string_trongso = TextBoxWeightScore.Text;
             if (string_trongso == string.Empty)
             {
                 MessageBox.Show("Bạn chưa nhập trọng số!");
                 return;
             }
-            double trongso = Convert.ToDouble(TrongsoTPtextbox.Text);
+            double trongso = Convert.ToDouble(TextBoxWeightScore.Text);
             if (trongso < 0.1 || trongso > 1)
             {
                 MessageBox.Show("Trọng số không hợp lệ!");
@@ -730,8 +730,8 @@ namespace QuanLyHocSinh
             var dsDiemTP = from obj in dtb.THANHPHANs
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
-            dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
-            dgvDiemthanhphan.Show();
+            DataGridViewScore.DataSource = dsDiemTP.ToList();
+            DataGridViewScore.Show();
         }
         private void DeleteDiemTP_button_Click(object sender, EventArgs e)
         {
@@ -742,7 +742,7 @@ namespace QuanLyHocSinh
             {
                 list_tp = Copy_ThanhPhan();
             }
-            string tentp = dgvDiemthanhphan.CurrentRow.Cells[0].Value.ToString();
+            string tentp = DataGridViewScore.CurrentRow.Cells[0].Value.ToString();
 
             if (list_tp.Count > 0)
             {
@@ -762,8 +762,8 @@ namespace QuanLyHocSinh
             var dsDiemTP = from obj in dtb.THANHPHANs
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
-            dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
-            dgvDiemthanhphan.Show();
+            DataGridViewScore.DataSource = dsDiemTP.ToList();
+            DataGridViewScore.Show();
             MessageBox.Show("Cập nhật danh sách môn học thành công!");
         }
         //Thay đổi danh sách xếp loại
@@ -771,7 +771,7 @@ namespace QuanLyHocSinh
         {
             dataEntities dtb = new dataEntities();
             var getMaNamHoc = from scr in dtb.NAMHOCs
-                              where scr.NamHoc1 == Namhoctextbox.Text
+                              where scr.NamHoc1 == TextBoxAddYear.Text
                               select scr;
             string MaNamHoc = getMaNamHoc.SingleOrDefault().MaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2).ToUpper();
@@ -791,19 +791,19 @@ namespace QuanLyHocSinh
         }
         private void AddXeploai_button_Click(object sender, EventArgs e)
         {
-            if (Tenxeploaitextbox.Text == string.Empty || DiemKCtextbox.Text == string.Empty || minDiemtextbox.Text == string.Empty || maxDiemtextbox.Text == string.Empty)  
+            if (TextBoxNameOfClassify.Text == string.Empty || TextBoxCheckScore.Text == string.Empty || TextBoxMinScore.Text == string.Empty || TextBoxMaxScore.Text == string.Empty)  
                 return;
-            double diem_kc = Convert.ToDouble(DiemKCtextbox.Text);
-            double diem_min = Convert.ToDouble(minDiemtextbox.Text);
-            double diem_max = Convert.ToDouble(maxDiemtextbox.Text);
+            double diem_kc = Convert.ToDouble(TextBoxCheckScore.Text);
+            double diem_min = Convert.ToDouble(TextBoxMinScore.Text);
+            double diem_max = Convert.ToDouble(TextBoxMaxScore.Text);
             if(diem_kc > 10 || diem_kc < 0 || diem_min > 10 || diem_min < 0 || diem_max > 10 || diem_max < 0)
             {
                 MessageBox.Show("Gía trị điểm không hợp lệ!", "Error");
                 return;
             }
             var dtb = new dataEntities();
-            string tenxl = Tenxeploaitextbox.Text;
-            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            string tenxl = TextBoxNameOfClassify.Text;
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == TextBoxAddYear.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
             List<XEPLOAI> list_xl = new List<XEPLOAI>();
@@ -833,9 +833,9 @@ namespace QuanLyHocSinh
                 XEPLOAI new_item = new XEPLOAI();
                 new_item.TenXepLoai = tenxl;
                 new_item.MaXepLoai = maxl;
-                new_item.DiemKhongChe = Convert.ToDouble(DiemKCtextbox.Text);
-                new_item.DiemToiThieu = Convert.ToDouble(minDiemtextbox.Text);
-                new_item.DiemToiDa = Convert.ToDouble(maxDiemtextbox.Text);
+                new_item.DiemKhongChe = Convert.ToDouble(TextBoxCheckScore.Text);
+                new_item.DiemToiThieu = Convert.ToDouble(TextBoxMinScore.Text);
+                new_item.DiemToiDa = Convert.ToDouble(TextBoxMaxScore.Text);
                 new_item.NamApDung = MaNamHoc;
                 list_xl.Add(new_item);
                 MessageBox.Show("Cập nhật danh sách học lực thành công!");
@@ -849,24 +849,24 @@ namespace QuanLyHocSinh
                             && obj.TenXepLoai != "Không"
                             orderby obj.DiemToiThieu descending
                             select new {TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
-            dgvXepLoai.DataSource = dsXeploai.ToList();
-            dgvXepLoai.Show();
+            DataGridViewClassify.DataSource = dsXeploai.ToList();
+            DataGridViewClassify.Show();
         }
         private void EditXeploai_button_Click(object sender, EventArgs e)
         {
-            if (Tenxeploaitextbox.Text == string.Empty || DiemKCtextbox.Text == string.Empty || minDiemtextbox.Text == string.Empty || maxDiemtextbox.Text == string.Empty)
+            if (TextBoxNameOfClassify.Text == string.Empty || TextBoxCheckScore.Text == string.Empty || TextBoxMinScore.Text == string.Empty || TextBoxMaxScore.Text == string.Empty)
                 return;
-            double diem_kc = Convert.ToDouble(DiemKCtextbox.Text);
-            double diem_min = Convert.ToDouble(minDiemtextbox.Text);
-            double diem_max = Convert.ToDouble(maxDiemtextbox.Text);
+            double diem_kc = Convert.ToDouble(TextBoxCheckScore.Text);
+            double diem_min = Convert.ToDouble(TextBoxMinScore.Text);
+            double diem_max = Convert.ToDouble(TextBoxMaxScore.Text);
             if (diem_kc > 10 || diem_kc < 0 || diem_min > 10 || diem_min < 0 || diem_max > 10 || diem_max < 0)
             {
                 MessageBox.Show("Gía trị điểm không hợp lệ!", "Error");
                 return;
             }
             var dtb = new dataEntities();
-            string ten_xl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
-            string tenxl = Tenxeploaitextbox.Text;
+            string ten_xl = DataGridViewClassify.CurrentRow.Cells[0].Value.ToString();
+            string tenxl = TextBoxNameOfClassify.Text;
             List<XEPLOAI> list_xl = new List<XEPLOAI>();
             var check_ = dtb.XEPLOAIs.Where(p => p.NamApDung == MaNamHoc_moi);
             if (check_.Count() == 0)
@@ -877,7 +877,7 @@ namespace QuanLyHocSinh
             bool check_tenxl = true;
             for (int i = 0; i < ds_tenxl.Count; i++)
             {
-                if (ds_tenxl[i] == tenxl && ds_tenxl[i] != Tenxeploaitextbox.Text) { check_tenxl = false; break; }
+                if (ds_tenxl[i] == tenxl && ds_tenxl[i] != TextBoxNameOfClassify.Text) { check_tenxl = false; break; }
             }
             if (check_tenxl)
             {
@@ -896,10 +896,10 @@ namespace QuanLyHocSinh
                 else
                 {
                     var std = dtb.XEPLOAIs.Where(r => r.TenXepLoai == ten_xl && r.NamApDung == MaNamHoc_moi).First();
-                    std.TenXepLoai = Tenxeploaitextbox.Text;
-                    std.DiemKhongChe = Convert.ToDouble(DiemKCtextbox.Text);
-                    std.DiemToiThieu = Convert.ToDouble(minDiemtextbox.Text);
-                    std.DiemToiDa = Convert.ToDouble(maxDiemtextbox.Text);
+                    std.TenXepLoai = TextBoxNameOfClassify.Text;
+                    std.DiemKhongChe = Convert.ToDouble(TextBoxCheckScore.Text);
+                    std.DiemToiThieu = Convert.ToDouble(TextBoxMinScore.Text);
+                    std.DiemToiDa = Convert.ToDouble(TextBoxMaxScore.Text);
                 }
                 dtb.SaveChanges();
                 MessageBox.Show("Cập nhật danh sách học lực thành công!");
@@ -909,13 +909,13 @@ namespace QuanLyHocSinh
                             && obj.TenXepLoai != "Không"
                             orderby obj.DiemToiThieu descending
                             select new {TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
-            dgvXepLoai.DataSource = dsXeploai.ToList();
-            dgvXepLoai.Show();
+            DataGridViewClassify.DataSource = dsXeploai.ToList();
+            DataGridViewClassify.Show();
         }
         private void DeleteXeploai_button_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
+            var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == TextBoxAddYear.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
             var check_ = dtb.XEPLOAIs.Where(p => p.NamApDung == MaNamHoc);
@@ -924,7 +924,7 @@ namespace QuanLyHocSinh
             {
                 list_xl = Copy_Xeploai();
             }
-            string tenxl = dgvXepLoai.CurrentRow.Cells[0].Value.ToString();
+            string tenxl = DataGridViewClassify.CurrentRow.Cells[0].Value.ToString();
             if (list_xl.Count > 0)
             {
                 foreach (var i in list_xl)
@@ -944,8 +944,8 @@ namespace QuanLyHocSinh
                             && obj.TenXepLoai != "Không"
                             orderby obj.DiemToiThieu descending
                             select new {TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
-            dgvXepLoai.DataSource = dsXeploai.ToList();
-            dgvXepLoai.Show();
+            DataGridViewClassify.DataSource = dsXeploai.ToList();
+            DataGridViewClassify.Show();
             MessageBox.Show("Cập nhật danh sách học lực thành công!");
         }
         //Thay đổi danh sách học kỳ
@@ -970,14 +970,14 @@ namespace QuanLyHocSinh
         private void AddHocky_button_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            string tenhk = HocKytextbox.Text;
-            string string_trongso = TrongSoHKtextbox.Text;
+            string tenhk = TextBoxNameOfSemester.Text;
+            string string_trongso = TextBoxWeightSemester.Text;
             if (string_trongso == string.Empty)
             {
                 MessageBox.Show("Bạn chưa nhập trọng số!");
                 return;
             }
-            double trongso = Convert.ToDouble(TrongSoHKtextbox.Text);
+            double trongso = Convert.ToDouble(TextBoxWeightSemester.Text);
             if (trongso < 1)
             {
                 MessageBox.Show("Trọng số không hợp lệ!");
@@ -1018,22 +1018,22 @@ namespace QuanLyHocSinh
             var dsDiemHK = from obj in dtb.HOCKies
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
-            dgvDiemHK.DataSource = dsDiemHK.ToList();
-            dgvDiemHK.Show();
+            DataGridViewSemester.DataSource = dsDiemHK.ToList();
+            DataGridViewSemester.Show();
         }
         private void EditHocky_button_Click(object sender, EventArgs e)
         {
             var dtb = new dataEntities();
-            string tenhk = HocKytextbox.Text;
-            string ten_hk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
+            string tenhk = TextBoxNameOfSemester.Text;
+            string ten_hk = DataGridViewSemester.CurrentRow.Cells[0].Value.ToString();
             var ds_tenhk = dtb.HocKy_NamApDung(MaNamHoc_moi).ToList();
-            string string_trongso = TrongSoHKtextbox.Text;
+            string string_trongso = TextBoxWeightSemester.Text;
             if (string_trongso == string.Empty)
             {
                 MessageBox.Show("Bạn chưa nhập trọng số!");
                 return;
             }
-            double trongso = Convert.ToDouble(TrongSoHKtextbox.Text);
+            double trongso = Convert.ToDouble(TextBoxWeightSemester.Text);
             if (trongso < 1)
             {
                 MessageBox.Show("Trọng số không hợp lệ!");
@@ -1078,7 +1078,7 @@ namespace QuanLyHocSinh
                 else
                 {
                     var std = dtb.HOCKies.Where(r => r.HocKy1 == tenhk && r.NamApDung == MaNamHoc_moi).First();
-                    std.HocKy1 = HocKytextbox.Text;
+                    std.HocKy1 = TextBoxNameOfSemester.Text;
                     std.TrongSo = trongso;
                 }
                 MessageBox.Show("Cập nhật danh sách học kỳ thành công!");
@@ -1090,13 +1090,13 @@ namespace QuanLyHocSinh
             var dsDiemHK = from obj in dtb.HOCKies
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
-            dgvDiemHK.DataSource = dsDiemHK.ToList();
-            dgvDiemHK.Show();
+            DataGridViewSemester.DataSource = dsDiemHK.ToList();
+            DataGridViewSemester.Show();
         }
         private void DeleteHocky_button_Click(object sender, EventArgs e)
         {
             var dtb = new dataEntities();
-            string tenhk = dgvDiemHK.CurrentRow.Cells[0].Value.ToString();
+            string tenhk = DataGridViewSemester.CurrentRow.Cells[0].Value.ToString();
             var check_ = dtb.HOCKies.Where(p => p.NamApDung == MaNamHoc_moi);
             List<HOCKY> list_hk = new List<HOCKY>();
             if (check_.Count() == 0)
@@ -1122,8 +1122,8 @@ namespace QuanLyHocSinh
             var dsDiemHK = from obj in dtb.HOCKies
                            where obj.HocKy1 != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {HocKy1 = obj.HocKy1, TrongSo = obj.TrongSo };
-            dgvDiemHK.DataSource = dsDiemHK.ToList();
-            dgvDiemHK.Show();
+            DataGridViewSemester.DataSource = dsDiemHK.ToList();
+            DataGridViewSemester.Show();
         }
         private void guna2ImageButton2_Click(object sender, EventArgs e)
         {

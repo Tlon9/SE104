@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangDiemMonHocCuaLopTrongNam));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.LabelYear = new System.Windows.Forms.Label();
             this.LabelSubject = new System.Windows.Forms.Label();
             this.PanelPrint = new System.Windows.Forms.Panel();
@@ -47,10 +47,10 @@
             this.ComboBoxClass = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ComboBoxSubject = new Guna.UI2.WinForms.Guna2ComboBox();
             this.LabelClass = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.PanelNameOfForm = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelNameOfForm = new System.Windows.Forms.Label();
+            this.ButtonClose = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonMinimize = new Guna.UI2.WinForms.Guna2ImageButton();
             this.ButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
             this.ButtonShowScore = new Guna.UI2.WinForms.Guna2ImageButton();
             this.ButtonAccount = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -59,7 +59,7 @@
             this.PanelPrint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartRatio)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
+            this.PanelNameOfForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelYear
@@ -112,26 +112,26 @@
             // 
             // DataGridViewScore
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGridViewScore.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewScore.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScore.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewScore.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridViewScore.ColumnHeadersHeight = 40;
             this.DataGridViewScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridViewScore.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewScore.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridViewScore.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewScore.Location = new System.Drawing.Point(3, 244);
             this.DataGridViewScore.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -167,17 +167,17 @@
             // 
             // ChartRatio
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartRatio.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartRatio.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.ChartRatio.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.ChartRatio.Legends.Add(legend2);
             this.ChartRatio.Location = new System.Drawing.Point(1011, 244);
             this.ChartRatio.Name = "ChartRatio";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartRatio.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.ChartRatio.Series.Add(series2);
             this.ChartRatio.Size = new System.Drawing.Size(350, 314);
             this.ChartRatio.TabIndex = 137;
             this.ChartRatio.Text = "chart1";
@@ -261,63 +261,63 @@
             this.LabelClass.TabIndex = 59;
             this.LabelClass.Text = "Lớp";
             // 
-            // guna2Panel1
+            // PanelNameOfForm
             // 
-            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonClose1);
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1444, 52);
-            this.guna2Panel1.TabIndex = 62;
-            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
+            this.PanelNameOfForm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.PanelNameOfForm.Controls.Add(this.LabelNameOfForm);
+            this.PanelNameOfForm.Controls.Add(this.ButtonClose);
+            this.PanelNameOfForm.Controls.Add(this.ButtonMinimize);
+            this.PanelNameOfForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelNameOfForm.Location = new System.Drawing.Point(0, 0);
+            this.PanelNameOfForm.Margin = new System.Windows.Forms.Padding(4);
+            this.PanelNameOfForm.Name = "PanelNameOfForm";
+            this.PanelNameOfForm.Size = new System.Drawing.Size(1444, 52);
+            this.PanelNameOfForm.TabIndex = 62;
+            this.PanelNameOfForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownPanelNameForm);
             // 
-            // label1
+            // LabelNameOfForm
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(16, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(587, 41);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Xuất bảng điểm môn học của lớp trong năm học";
+            this.LabelNameOfForm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNameOfForm.ForeColor = System.Drawing.SystemColors.Window;
+            this.LabelNameOfForm.Location = new System.Drawing.Point(16, 11);
+            this.LabelNameOfForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelNameOfForm.Name = "LabelNameOfForm";
+            this.LabelNameOfForm.Size = new System.Drawing.Size(587, 41);
+            this.LabelNameOfForm.TabIndex = 2;
+            this.LabelNameOfForm.Text = "Xuất bảng điểm môn học của lớp trong năm học";
             // 
-            // guna2ImageButtonClose1
+            // ButtonClose
             // 
-            this.guna2ImageButtonClose1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonClose1.Image")));
-            this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonClose1.ImageRotate = 0F;
-            this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1361, 5);
-            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
-            this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Size = new System.Drawing.Size(47, 43);
-            this.guna2ImageButtonClose1.TabIndex = 1;
-            this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click);
+            this.ButtonClose.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Image = ((System.Drawing.Image)(resources.GetObject("ButtonClose.Image")));
+            this.ButtonClose.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonClose.ImageRotate = 0F;
+            this.ButtonClose.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonClose.Location = new System.Drawing.Point(1361, 5);
+            this.ButtonClose.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Size = new System.Drawing.Size(47, 43);
+            this.ButtonClose.TabIndex = 1;
+            this.ButtonClose.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click);
             // 
-            // guna2ImageButtonMinimize1
+            // ButtonMinimize
             // 
-            this.guna2ImageButtonMinimize1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2ImageButtonMinimize1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonMinimize1.Image")));
-            this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonMinimize1.ImageRotate = 0F;
-            this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1306, 5);
-            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
-            this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(47, 43);
-            this.guna2ImageButtonMinimize1.TabIndex = 0;
-            this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
+            this.ButtonMinimize.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ButtonMinimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMinimize.Image")));
+            this.ButtonMinimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonMinimize.ImageRotate = 0F;
+            this.ButtonMinimize.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonMinimize.Location = new System.Drawing.Point(1306, 5);
+            this.ButtonMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonMinimize.Name = "ButtonMinimize";
+            this.ButtonMinimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Size = new System.Drawing.Size(47, 43);
+            this.ButtonMinimize.TabIndex = 0;
+            this.ButtonMinimize.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
             // 
             // ButtonHome
             // 
@@ -402,7 +402,7 @@
             this.Controls.Add(this.ButtonAccount);
             this.Controls.Add(this.ButtonShowScore);
             this.Controls.Add(this.ButtonHome);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.PanelNameOfForm);
             this.Controls.Add(this.LabelClass);
             this.Controls.Add(this.ComboBoxSubject);
             this.Controls.Add(this.ComboBoxClass);
@@ -414,12 +414,12 @@
             this.Name = "BangDiemMonHocCuaLopTrongNam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "XuatBangDiemMonHocCuaLopTrongNamHoc";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownPanelNameForm);
             this.PanelPrint.ResumeLayout(false);
             this.PanelPrint.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartRatio)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
+            this.PanelNameOfForm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,10 +437,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel LabelClass;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartRatio;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridViewScore;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
+        private Guna.UI2.WinForms.Guna2Panel PanelNameOfForm;
+        private System.Windows.Forms.Label LabelNameOfForm;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonClose;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonMinimize;
         private Guna.UI2.WinForms.Guna2ImageButton ButtonHome;
         private Guna.UI2.WinForms.Guna2ImageButton ButtonExportExcelFile;
         private Guna.UI2.WinForms.Guna2ImageButton ButtonShowScore;
