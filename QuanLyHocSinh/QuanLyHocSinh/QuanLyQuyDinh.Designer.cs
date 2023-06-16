@@ -157,9 +157,9 @@
             this.PanelNameOfForm.Controls.Add(this.ButtonMinimize);
             this.PanelNameOfForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelNameOfForm.Location = new System.Drawing.Point(0, 0);
-            this.PanelNameOfForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelNameOfForm.Margin = new System.Windows.Forms.Padding(4);
             this.PanelNameOfForm.Name = "PanelNameOfForm";
-            this.PanelNameOfForm.Size = new System.Drawing.Size(1101, 53);
+            this.PanelNameOfForm.Size = new System.Drawing.Size(1100, 53);
             this.PanelNameOfForm.TabIndex = 17;
             this.PanelNameOfForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
@@ -183,7 +183,7 @@
             this.ButtonClose.ImageRotate = 0F;
             this.ButtonClose.ImageSize = new System.Drawing.Size(30, 30);
             this.ButtonClose.Location = new System.Drawing.Point(1051, 4);
-            this.ButtonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonClose.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.ButtonClose.Size = new System.Drawing.Size(47, 43);
@@ -200,7 +200,7 @@
             this.ButtonMinimize.ImageRotate = 0F;
             this.ButtonMinimize.ImageSize = new System.Drawing.Size(30, 30);
             this.ButtonMinimize.Location = new System.Drawing.Point(1007, 5);
-            this.ButtonMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonMinimize.Name = "ButtonMinimize";
             this.ButtonMinimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.ButtonMinimize.Size = new System.Drawing.Size(47, 43);
@@ -216,7 +216,7 @@
             this.ButtonHome.ImageRotate = 0F;
             this.ButtonHome.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonHome.Location = new System.Drawing.Point(0, 60);
-            this.ButtonHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonHome.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonHome.Name = "ButtonHome";
             this.ButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.ButtonHome.Size = new System.Drawing.Size(67, 62);
@@ -379,7 +379,7 @@
             this.ButtonUpdateAge.Image = ((System.Drawing.Image)(resources.GetObject("ButtonUpdateAge.Image")));
             this.ButtonUpdateAge.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonUpdateAge.Location = new System.Drawing.Point(985, 128);
-            this.ButtonUpdateAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonUpdateAge.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonUpdateAge.Name = "ButtonUpdateAge";
             this.ButtonUpdateAge.Size = new System.Drawing.Size(69, 54);
             this.ButtonUpdateAge.TabIndex = 49;
@@ -447,7 +447,7 @@
             this.PanelChangeRegulation.Controls.Add(this.LabelListClassify);
             this.PanelChangeRegulation.Controls.Add(this.DataGridViewClassify);
             this.PanelChangeRegulation.Location = new System.Drawing.Point(23, 354);
-            this.PanelChangeRegulation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelChangeRegulation.Margin = new System.Windows.Forms.Padding(4);
             this.PanelChangeRegulation.Name = "PanelChangeRegulation";
             this.PanelChangeRegulation.Size = new System.Drawing.Size(1039, 1514);
             this.PanelChangeRegulation.TabIndex = 93;
@@ -589,7 +589,7 @@
             this.ButtonAddScore.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddScore.Image")));
             this.ButtonAddScore.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonAddScore.Location = new System.Drawing.Point(961, 741);
-            this.ButtonAddScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAddScore.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAddScore.Name = "ButtonAddScore";
             this.ButtonAddScore.Size = new System.Drawing.Size(69, 54);
             this.ButtonAddScore.TabIndex = 80;
@@ -607,7 +607,7 @@
             this.ButtonDeleteScore.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDeleteScore.Image")));
             this.ButtonDeleteScore.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonDeleteScore.Location = new System.Drawing.Point(961, 864);
-            this.ButtonDeleteScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDeleteScore.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDeleteScore.Name = "ButtonDeleteScore";
             this.ButtonDeleteScore.Size = new System.Drawing.Size(69, 54);
             this.ButtonDeleteScore.TabIndex = 82;
@@ -625,7 +625,7 @@
             this.ButtonEditScore.Image = ((System.Drawing.Image)(resources.GetObject("ButtonEditScore.Image")));
             this.ButtonEditScore.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonEditScore.Location = new System.Drawing.Point(965, 802);
-            this.ButtonEditScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonEditScore.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonEditScore.Name = "ButtonEditScore";
             this.ButtonEditScore.Size = new System.Drawing.Size(69, 54);
             this.ButtonEditScore.TabIndex = 81;
@@ -693,7 +693,7 @@
             this.DataGridViewScore.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridViewScore.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewScore.Location = new System.Drawing.Point(240, 752);
-            this.DataGridViewScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewScore.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewScore.Name = "DataGridViewScore";
             this.DataGridViewScore.ReadOnly = true;
             this.DataGridViewScore.RowHeadersVisible = false;
@@ -764,7 +764,7 @@
             this.ButtonAddSubject.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddSubject.Image")));
             this.ButtonAddSubject.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonAddSubject.Location = new System.Drawing.Point(961, 498);
-            this.ButtonAddSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAddSubject.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAddSubject.Name = "ButtonAddSubject";
             this.ButtonAddSubject.Size = new System.Drawing.Size(69, 54);
             this.ButtonAddSubject.TabIndex = 73;
@@ -782,7 +782,7 @@
             this.ButtonDeleteSubject.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDeleteSubject.Image")));
             this.ButtonDeleteSubject.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonDeleteSubject.Location = new System.Drawing.Point(961, 622);
-            this.ButtonDeleteSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDeleteSubject.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDeleteSubject.Name = "ButtonDeleteSubject";
             this.ButtonDeleteSubject.Size = new System.Drawing.Size(69, 54);
             this.ButtonDeleteSubject.TabIndex = 75;
@@ -828,7 +828,7 @@
             this.DataGridViewGrade.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridViewGrade.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewGrade.Location = new System.Drawing.Point(240, 80);
-            this.DataGridViewGrade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewGrade.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewGrade.Name = "DataGridViewGrade";
             this.DataGridViewGrade.ReadOnly = true;
             this.DataGridViewGrade.RowHeadersVisible = false;
@@ -912,7 +912,7 @@
             this.ButtonEditSubject.Image = ((System.Drawing.Image)(resources.GetObject("ButtonEditSubject.Image")));
             this.ButtonEditSubject.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonEditSubject.Location = new System.Drawing.Point(965, 560);
-            this.ButtonEditSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonEditSubject.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonEditSubject.Name = "ButtonEditSubject";
             this.ButtonEditSubject.Size = new System.Drawing.Size(69, 54);
             this.ButtonEditSubject.TabIndex = 74;
@@ -964,7 +964,7 @@
             this.ButtonEditGrade.Image = ((System.Drawing.Image)(resources.GetObject("ButtonEditGrade.Image")));
             this.ButtonEditGrade.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonEditGrade.Location = new System.Drawing.Point(965, 126);
-            this.ButtonEditGrade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonEditGrade.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonEditGrade.Name = "ButtonEditGrade";
             this.ButtonEditGrade.Size = new System.Drawing.Size(69, 54);
             this.ButtonEditGrade.TabIndex = 63;
@@ -995,7 +995,7 @@
             this.ButtonDeleteGrade.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDeleteGrade.Image")));
             this.ButtonDeleteGrade.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonDeleteGrade.Location = new System.Drawing.Point(961, 187);
-            this.ButtonDeleteGrade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDeleteGrade.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDeleteGrade.Name = "ButtonDeleteGrade";
             this.ButtonDeleteGrade.Size = new System.Drawing.Size(69, 54);
             this.ButtonDeleteGrade.TabIndex = 64;
@@ -1013,7 +1013,7 @@
             this.ButtonAddSemester.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddSemester.Image")));
             this.ButtonAddSemester.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonAddSemester.Location = new System.Drawing.Point(961, 1313);
-            this.ButtonAddSemester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAddSemester.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAddSemester.Name = "ButtonAddSemester";
             this.ButtonAddSemester.Size = new System.Drawing.Size(69, 54);
             this.ButtonAddSemester.TabIndex = 88;
@@ -1031,7 +1031,7 @@
             this.ButtonAddGrade.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddGrade.Image")));
             this.ButtonAddGrade.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonAddGrade.Location = new System.Drawing.Point(961, 64);
-            this.ButtonAddGrade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAddGrade.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAddGrade.Name = "ButtonAddGrade";
             this.ButtonAddGrade.Size = new System.Drawing.Size(69, 54);
             this.ButtonAddGrade.TabIndex = 62;
@@ -1070,7 +1070,7 @@
             this.ButtonDeleteSemester.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDeleteSemester.Image")));
             this.ButtonDeleteSemester.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonDeleteSemester.Location = new System.Drawing.Point(961, 1436);
-            this.ButtonDeleteSemester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDeleteSemester.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDeleteSemester.Name = "ButtonDeleteSemester";
             this.ButtonDeleteSemester.Size = new System.Drawing.Size(69, 54);
             this.ButtonDeleteSemester.TabIndex = 90;
@@ -1101,7 +1101,7 @@
             this.ButtonEditSemester.Image = ((System.Drawing.Image)(resources.GetObject("ButtonEditSemester.Image")));
             this.ButtonEditSemester.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonEditSemester.Location = new System.Drawing.Point(965, 1375);
-            this.ButtonEditSemester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonEditSemester.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonEditSemester.Name = "ButtonEditSemester";
             this.ButtonEditSemester.Size = new System.Drawing.Size(69, 54);
             this.ButtonEditSemester.TabIndex = 89;
@@ -1134,7 +1134,7 @@
             this.DataGridViewSubject.DefaultCellStyle = dataGridViewCellStyle9;
             this.DataGridViewSubject.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewSubject.Location = new System.Drawing.Point(240, 511);
-            this.DataGridViewSubject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewSubject.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewSubject.Name = "DataGridViewSubject";
             this.DataGridViewSubject.ReadOnly = true;
             this.DataGridViewSubject.RowHeadersVisible = false;
@@ -1234,7 +1234,7 @@
             this.DataGridViewSemester.DefaultCellStyle = dataGridViewCellStyle12;
             this.DataGridViewSemester.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewSemester.Location = new System.Drawing.Point(240, 1313);
-            this.DataGridViewSemester.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewSemester.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewSemester.Name = "DataGridViewSemester";
             this.DataGridViewSemester.ReadOnly = true;
             this.DataGridViewSemester.RowHeadersVisible = false;
@@ -1407,7 +1407,7 @@
             this.ButtonDeleteClass.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDeleteClass.Image")));
             this.ButtonDeleteClass.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonDeleteClass.Location = new System.Drawing.Point(961, 412);
-            this.ButtonDeleteClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDeleteClass.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDeleteClass.Name = "ButtonDeleteClass";
             this.ButtonDeleteClass.Size = new System.Drawing.Size(69, 54);
             this.ButtonDeleteClass.TabIndex = 57;
@@ -1438,7 +1438,7 @@
             this.ButtonEditClass.Image = ((System.Drawing.Image)(resources.GetObject("ButtonEditClass.Image")));
             this.ButtonEditClass.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonEditClass.Location = new System.Drawing.Point(965, 351);
-            this.ButtonEditClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonEditClass.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonEditClass.Name = "ButtonEditClass";
             this.ButtonEditClass.Size = new System.Drawing.Size(69, 54);
             this.ButtonEditClass.TabIndex = 56;
@@ -1477,7 +1477,7 @@
             this.ButtonAddClass.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddClass.Image")));
             this.ButtonAddClass.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonAddClass.Location = new System.Drawing.Point(961, 289);
-            this.ButtonAddClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAddClass.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAddClass.Name = "ButtonAddClass";
             this.ButtonAddClass.Size = new System.Drawing.Size(69, 54);
             this.ButtonAddClass.TabIndex = 55;
@@ -1495,7 +1495,7 @@
             this.ButtonAddClassify.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddClassify.Image")));
             this.ButtonAddClassify.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonAddClassify.Location = new System.Drawing.Point(965, 986);
-            this.ButtonAddClassify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAddClassify.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAddClassify.Name = "ButtonAddClassify";
             this.ButtonAddClassify.Size = new System.Drawing.Size(69, 54);
             this.ButtonAddClassify.TabIndex = 73;
@@ -1513,7 +1513,7 @@
             this.ButtonDeleteClassify.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDeleteClassify.Image")));
             this.ButtonDeleteClassify.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonDeleteClassify.Location = new System.Drawing.Point(965, 1124);
-            this.ButtonDeleteClassify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonDeleteClassify.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonDeleteClassify.Name = "ButtonDeleteClassify";
             this.ButtonDeleteClassify.Size = new System.Drawing.Size(69, 54);
             this.ButtonDeleteClassify.TabIndex = 75;
@@ -1544,7 +1544,7 @@
             this.ButtonEditClassify.Image = ((System.Drawing.Image)(resources.GetObject("ButtonEditClassify.Image")));
             this.ButtonEditClassify.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonEditClassify.Location = new System.Drawing.Point(969, 1055);
-            this.ButtonEditClassify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonEditClassify.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonEditClassify.Name = "ButtonEditClassify";
             this.ButtonEditClassify.Size = new System.Drawing.Size(69, 54);
             this.ButtonEditClassify.TabIndex = 74;
@@ -1590,7 +1590,7 @@
             this.DataGridViewClass.DefaultCellStyle = dataGridViewCellStyle15;
             this.DataGridViewClass.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewClass.Location = new System.Drawing.Point(240, 303);
-            this.DataGridViewClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewClass.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewClass.Name = "DataGridViewClass";
             this.DataGridViewClass.RowHeadersVisible = false;
             this.DataGridViewClass.RowHeadersWidth = 51;
@@ -1690,7 +1690,7 @@
             this.DataGridViewClassify.DefaultCellStyle = dataGridViewCellStyle18;
             this.DataGridViewClassify.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGridViewClassify.Location = new System.Drawing.Point(40, 996);
-            this.DataGridViewClassify.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridViewClassify.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridViewClassify.Name = "DataGridViewClassify";
             this.DataGridViewClassify.ReadOnly = true;
             this.DataGridViewClassify.RowHeadersVisible = false;
@@ -1764,7 +1764,7 @@
             this.ButtonUpdateNumberOfClass.Image = ((System.Drawing.Image)(resources.GetObject("ButtonUpdateNumberOfClass.Image")));
             this.ButtonUpdateNumberOfClass.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonUpdateNumberOfClass.Location = new System.Drawing.Point(668, 194);
-            this.ButtonUpdateNumberOfClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonUpdateNumberOfClass.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonUpdateNumberOfClass.Name = "ButtonUpdateNumberOfClass";
             this.ButtonUpdateNumberOfClass.Size = new System.Drawing.Size(69, 54);
             this.ButtonUpdateNumberOfClass.TabIndex = 94;
@@ -1816,7 +1816,7 @@
             this.ButtonAddYear.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddYear.Image")));
             this.ButtonAddYear.ImageSize = new System.Drawing.Size(40, 40);
             this.ButtonAddYear.Location = new System.Drawing.Point(543, 274);
-            this.ButtonAddYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonAddYear.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonAddYear.Name = "ButtonAddYear";
             this.ButtonAddYear.Size = new System.Drawing.Size(69, 54);
             this.ButtonAddYear.TabIndex = 97;
@@ -1861,7 +1861,7 @@
             this.Controls.Add(this.ButtonAccount);
             this.Controls.Add(this.PanelNameOfForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLyQuyDinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
