@@ -29,81 +29,86 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangDiemTongKetLop));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.PanelNameForm = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonClose = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonMinimize = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TabControlReport = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.labelName = new System.Windows.Forms.Label();
             this.LabelNameRatio1 = new System.Windows.Forms.Label();
-            this.ChartRatio = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dgvRatio = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvHocKy = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ChartRatioSemester = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.DataGridViewRatitoSemester = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.DataGridViewScoreSemester = new Guna.UI2.WinForms.Guna2DataGridView();
             this.LabelNameReportGridview1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.LopCbb_hk = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.TraCuuButton_hk = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.HocKyCbb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.NamHocCbb_hk = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelClass1 = new System.Windows.Forms.Label();
+            this.LabelSemester = new System.Windows.Forms.Label();
+            this.LabelYear1 = new System.Windows.Forms.Label();
+            this.ComboBoxClass1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ButtonPrint1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonSearch1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ComboBoxSemester = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ComboBoxYear1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
-            this.chartRatio_nh = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dgvRatio_nh = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvNamHoc = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.ChartRatioYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.DataGridViewRatioYear = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.DataGridViewScoreYear = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.LopCbb_nh = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.printButton_nh = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.TraCuuButton_nh = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.NamHocCbb_nh = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelClass2 = new System.Windows.Forms.Label();
+            this.LabelYear2 = new System.Windows.Forms.Label();
+            this.ComboBoxClass2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ButtonPrint2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonSearch2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ComboBoxYear2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelName_nh = new System.Windows.Forms.Label();
-            this.guna2ImageButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2Panel1.SuspendLayout();
+            this.ButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonAccount = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.PanelNameForm.SuspendLayout();
             this.guna2TabControlReport.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartRatio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRatio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHocKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRatioSemester)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRatitoSemester)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreSemester)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRatio_nh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRatio_nh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNamHoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRatioYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRatioYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreYear)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2Panel1
+            // PanelNameForm
             // 
-            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonClose1);
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1244, 42);
-            this.guna2Panel1.TabIndex = 24;
-            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
+            this.PanelNameForm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.PanelNameForm.Controls.Add(this.label1);
+            this.PanelNameForm.Controls.Add(this.ButtonClose);
+            this.PanelNameForm.Controls.Add(this.ButtonMinimize);
+            this.PanelNameForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelNameForm.Location = new System.Drawing.Point(0, 0);
+            this.PanelNameForm.Name = "PanelNameForm";
+            this.PanelNameForm.Size = new System.Drawing.Size(1244, 42);
+            this.PanelNameForm.TabIndex = 24;
+            this.PanelNameForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
             // label1
             // 
@@ -115,36 +120,36 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Bảng điểm tổng kết lớp";
             // 
-            // guna2ImageButtonClose1
+            // ButtonClose
             // 
-            this.guna2ImageButtonClose1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonClose1.Image")));
-            this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonClose1.ImageRotate = 0F;
-            this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1209, 3);
-            this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
-            this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Size = new System.Drawing.Size(35, 35);
-            this.guna2ImageButtonClose1.TabIndex = 1;
-            this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click);
+            this.ButtonClose.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Image = ((System.Drawing.Image)(resources.GetObject("ButtonClose.Image")));
+            this.ButtonClose.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonClose.ImageRotate = 0F;
+            this.ButtonClose.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonClose.Location = new System.Drawing.Point(1209, 3);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Size = new System.Drawing.Size(35, 35);
+            this.ButtonClose.TabIndex = 1;
+            this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // guna2ImageButtonMinimize1
+            // ButtonMinimize
             // 
-            this.guna2ImageButtonMinimize1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2ImageButtonMinimize1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonMinimize1.Image")));
-            this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonMinimize1.ImageRotate = 0F;
-            this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1178, 4);
-            this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
-            this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(35, 35);
-            this.guna2ImageButtonMinimize1.TabIndex = 0;
-            this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
+            this.ButtonMinimize.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ButtonMinimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMinimize.Image")));
+            this.ButtonMinimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonMinimize.ImageRotate = 0F;
+            this.ButtonMinimize.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonMinimize.Location = new System.Drawing.Point(1178, 4);
+            this.ButtonMinimize.Name = "ButtonMinimize";
+            this.ButtonMinimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Size = new System.Drawing.Size(35, 35);
+            this.ButtonMinimize.TabIndex = 0;
+            this.ButtonMinimize.Click += new System.EventHandler(this.ButtonMinimize_Click);
             // 
             // guna2TabControlReport
             // 
@@ -181,9 +186,9 @@
             // 
             this.tabPage3.Controls.Add(this.labelName);
             this.tabPage3.Controls.Add(this.LabelNameRatio1);
-            this.tabPage3.Controls.Add(this.ChartRatio);
-            this.tabPage3.Controls.Add(this.dgvRatio);
-            this.tabPage3.Controls.Add(this.dgvHocKy);
+            this.tabPage3.Controls.Add(this.ChartRatioSemester);
+            this.tabPage3.Controls.Add(this.DataGridViewRatitoSemester);
+            this.tabPage3.Controls.Add(this.DataGridViewScoreSemester);
             this.tabPage3.Controls.Add(this.LabelNameReportGridview1);
             this.tabPage3.Controls.Add(this.guna2GradientPanel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 44);
@@ -218,130 +223,130 @@
             this.LabelNameRatio1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LabelNameRatio1.Visible = false;
             // 
-            // ChartRatio
+            // ChartRatioSemester
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartRatio.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartRatio.Legends.Add(legend1);
-            this.ChartRatio.Location = new System.Drawing.Point(921, 310);
-            this.ChartRatio.Margin = new System.Windows.Forms.Padding(2);
-            this.ChartRatio.Name = "ChartRatio";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartRatio.Series.Add(series1);
-            this.ChartRatio.Size = new System.Drawing.Size(299, 231);
-            this.ChartRatio.TabIndex = 28;
-            this.ChartRatio.Text = "chart1";
-            this.ChartRatio.Visible = false;
+            chartArea4.Name = "ChartArea1";
+            this.ChartRatioSemester.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.ChartRatioSemester.Legends.Add(legend4);
+            this.ChartRatioSemester.Location = new System.Drawing.Point(921, 310);
+            this.ChartRatioSemester.Margin = new System.Windows.Forms.Padding(2);
+            this.ChartRatioSemester.Name = "ChartRatioSemester";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.IsValueShownAsLabel = true;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.ChartRatioSemester.Series.Add(series4);
+            this.ChartRatioSemester.Size = new System.Drawing.Size(299, 231);
+            this.ChartRatioSemester.TabIndex = 28;
+            this.ChartRatioSemester.Text = "chart1";
+            this.ChartRatioSemester.Visible = false;
             // 
-            // dgvRatio
+            // DataGridViewRatitoSemester
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvRatio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRatio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvRatio.ColumnHeadersHeight = 40;
-            this.dgvRatio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRatio.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvRatio.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRatio.Location = new System.Drawing.Point(923, 128);
-            this.dgvRatio.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvRatio.Name = "dgvRatio";
-            this.dgvRatio.RowHeadersVisible = false;
-            this.dgvRatio.RowHeadersWidth = 51;
-            this.dgvRatio.RowTemplate.Height = 24;
-            this.dgvRatio.Size = new System.Drawing.Size(297, 178);
-            this.dgvRatio.TabIndex = 27;
-            this.dgvRatio.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRatio.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvRatio.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvRatio.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvRatio.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvRatio.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRatio.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRatio.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvRatio.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvRatio.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvRatio.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvRatio.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvRatio.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvRatio.ThemeStyle.ReadOnly = false;
-            this.dgvRatio.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRatio.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvRatio.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvRatio.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvRatio.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvRatio.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRatio.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvRatio.Visible = false;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatitoSemester.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewRatitoSemester.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.DataGridViewRatitoSemester.ColumnHeadersHeight = 40;
+            this.DataGridViewRatitoSemester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewRatitoSemester.DefaultCellStyle = dataGridViewCellStyle21;
+            this.DataGridViewRatitoSemester.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatitoSemester.Location = new System.Drawing.Point(923, 128);
+            this.DataGridViewRatitoSemester.Margin = new System.Windows.Forms.Padding(2);
+            this.DataGridViewRatitoSemester.Name = "DataGridViewRatitoSemester";
+            this.DataGridViewRatitoSemester.RowHeadersVisible = false;
+            this.DataGridViewRatitoSemester.RowHeadersWidth = 51;
+            this.DataGridViewRatitoSemester.RowTemplate.Height = 24;
+            this.DataGridViewRatitoSemester.Size = new System.Drawing.Size(297, 178);
+            this.DataGridViewRatitoSemester.TabIndex = 27;
+            this.DataGridViewRatitoSemester.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatitoSemester.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewRatitoSemester.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewRatitoSemester.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewRatitoSemester.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewRatitoSemester.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatitoSemester.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatitoSemester.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatitoSemester.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewRatitoSemester.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewRatitoSemester.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewRatitoSemester.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewRatitoSemester.ThemeStyle.HeaderStyle.Height = 40;
+            this.DataGridViewRatitoSemester.ThemeStyle.ReadOnly = false;
+            this.DataGridViewRatitoSemester.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatitoSemester.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewRatitoSemester.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewRatitoSemester.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewRatitoSemester.ThemeStyle.RowsStyle.Height = 24;
+            this.DataGridViewRatitoSemester.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatitoSemester.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewRatitoSemester.Visible = false;
             // 
-            // dgvHocKy
+            // DataGridViewScoreSemester
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvHocKy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHocKy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvHocKy.ColumnHeadersHeight = 28;
-            this.dgvHocKy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHocKy.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvHocKy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvHocKy.Location = new System.Drawing.Point(9, 128);
-            this.dgvHocKy.Name = "dgvHocKy";
-            this.dgvHocKy.ReadOnly = true;
-            this.dgvHocKy.RowHeadersVisible = false;
-            this.dgvHocKy.Size = new System.Drawing.Size(907, 412);
-            this.dgvHocKy.TabIndex = 26;
-            this.dgvHocKy.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvHocKy.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvHocKy.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvHocKy.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvHocKy.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvHocKy.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvHocKy.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvHocKy.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvHocKy.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvHocKy.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvHocKy.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvHocKy.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvHocKy.ThemeStyle.HeaderStyle.Height = 28;
-            this.dgvHocKy.ThemeStyle.ReadOnly = true;
-            this.dgvHocKy.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvHocKy.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvHocKy.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvHocKy.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvHocKy.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvHocKy.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvHocKy.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewScoreSemester.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.DataGridViewScoreSemester.ColumnHeadersHeight = 28;
+            this.DataGridViewScoreSemester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewScoreSemester.DefaultCellStyle = dataGridViewCellStyle24;
+            this.DataGridViewScoreSemester.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.Location = new System.Drawing.Point(9, 128);
+            this.DataGridViewScoreSemester.Name = "DataGridViewScoreSemester";
+            this.DataGridViewScoreSemester.ReadOnly = true;
+            this.DataGridViewScoreSemester.RowHeadersVisible = false;
+            this.DataGridViewScoreSemester.Size = new System.Drawing.Size(907, 412);
+            this.DataGridViewScoreSemester.TabIndex = 26;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreSemester.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.Height = 28;
+            this.DataGridViewScoreSemester.ThemeStyle.ReadOnly = true;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.Height = 22;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // LabelNameReportGridview1
             // 
@@ -356,109 +361,145 @@
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.Controls.Add(this.LopCbb_hk);
-            this.guna2GradientPanel1.Controls.Add(this.guna2ImageButton2);
-            this.guna2GradientPanel1.Controls.Add(this.TraCuuButton_hk);
-            this.guna2GradientPanel1.Controls.Add(this.HocKyCbb);
-            this.guna2GradientPanel1.Controls.Add(this.NamHocCbb_hk);
+            this.guna2GradientPanel1.Controls.Add(this.LabelClass1);
+            this.guna2GradientPanel1.Controls.Add(this.LabelSemester);
+            this.guna2GradientPanel1.Controls.Add(this.LabelYear1);
+            this.guna2GradientPanel1.Controls.Add(this.ComboBoxClass1);
+            this.guna2GradientPanel1.Controls.Add(this.ButtonPrint1);
+            this.guna2GradientPanel1.Controls.Add(this.ButtonSearch1);
+            this.guna2GradientPanel1.Controls.Add(this.ComboBoxSemester);
+            this.guna2GradientPanel1.Controls.Add(this.ComboBoxYear1);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(8, 7);
             this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(647, 60);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
-            // LopCbb_hk
+            // LabelClass1
             // 
-            this.LopCbb_hk.BackColor = System.Drawing.Color.Transparent;
-            this.LopCbb_hk.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.LopCbb_hk.DropDownHeight = 100;
-            this.LopCbb_hk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LopCbb_hk.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LopCbb_hk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LopCbb_hk.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.LopCbb_hk.ForeColor = System.Drawing.Color.Black;
-            this.LopCbb_hk.IntegralHeight = false;
-            this.LopCbb_hk.ItemHeight = 30;
-            this.LopCbb_hk.Location = new System.Drawing.Point(330, 17);
-            this.LopCbb_hk.Margin = new System.Windows.Forms.Padding(2);
-            this.LopCbb_hk.Name = "LopCbb_hk";
-            this.LopCbb_hk.Size = new System.Drawing.Size(146, 36);
-            this.LopCbb_hk.TabIndex = 28;
+            this.LabelClass1.AutoSize = true;
+            this.LabelClass1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelClass1.ForeColor = System.Drawing.Color.Black;
+            this.LabelClass1.Location = new System.Drawing.Point(328, 3);
+            this.LabelClass1.Name = "LabelClass1";
+            this.LabelClass1.Size = new System.Drawing.Size(34, 19);
+            this.LabelClass1.TabIndex = 34;
+            this.LabelClass1.Text = "Lớp";
             // 
-            // guna2ImageButton2
+            // LabelSemester
             // 
-            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
-            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton2.ImageRotate = 0F;
-            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(553, 3);
-            this.guna2ImageButton2.Name = "guna2ImageButton2";
-            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(50, 50);
-            this.guna2ImageButton2.TabIndex = 27;
-            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            this.LabelSemester.AutoSize = true;
+            this.LabelSemester.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSemester.ForeColor = System.Drawing.Color.Black;
+            this.LabelSemester.Location = new System.Drawing.Point(186, 3);
+            this.LabelSemester.Name = "LabelSemester";
+            this.LabelSemester.Size = new System.Drawing.Size(54, 19);
+            this.LabelSemester.TabIndex = 35;
+            this.LabelSemester.Text = "Học kỳ";
             // 
-            // TraCuuButton_hk
+            // LabelYear1
             // 
-            this.TraCuuButton_hk.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuButton_hk.Image")));
-            this.TraCuuButton_hk.ImageOffset = new System.Drawing.Point(0, 0);
-            this.TraCuuButton_hk.ImageRotate = 0F;
-            this.TraCuuButton_hk.ImageSize = new System.Drawing.Size(60, 60);
-            this.TraCuuButton_hk.Location = new System.Drawing.Point(494, 1);
-            this.TraCuuButton_hk.Margin = new System.Windows.Forms.Padding(2);
-            this.TraCuuButton_hk.Name = "TraCuuButton_hk";
-            this.TraCuuButton_hk.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.Size = new System.Drawing.Size(52, 57);
-            this.TraCuuButton_hk.TabIndex = 3;
-            this.TraCuuButton_hk.Click += new System.EventHandler(this.TraCuuButton_hk_Click);
+            this.LabelYear1.AutoSize = true;
+            this.LabelYear1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelYear1.ForeColor = System.Drawing.Color.Black;
+            this.LabelYear1.Location = new System.Drawing.Point(8, 3);
+            this.LabelYear1.Name = "LabelYear1";
+            this.LabelYear1.Size = new System.Drawing.Size(65, 19);
+            this.LabelYear1.TabIndex = 34;
+            this.LabelYear1.Text = "Năm học";
             // 
-            // HocKyCbb
+            // ComboBoxClass1
             // 
-            this.HocKyCbb.BackColor = System.Drawing.Color.Transparent;
-            this.HocKyCbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.HocKyCbb.DropDownHeight = 100;
-            this.HocKyCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HocKyCbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HocKyCbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HocKyCbb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.HocKyCbb.ForeColor = System.Drawing.Color.Black;
-            this.HocKyCbb.IntegralHeight = false;
-            this.HocKyCbb.ItemHeight = 30;
-            this.HocKyCbb.Location = new System.Drawing.Point(188, 17);
-            this.HocKyCbb.Margin = new System.Windows.Forms.Padding(2);
-            this.HocKyCbb.Name = "HocKyCbb";
-            this.HocKyCbb.Size = new System.Drawing.Size(112, 36);
-            this.HocKyCbb.TabIndex = 2;
+            this.ComboBoxClass1.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxClass1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxClass1.DropDownHeight = 100;
+            this.ComboBoxClass1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxClass1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxClass1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxClass1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxClass1.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxClass1.IntegralHeight = false;
+            this.ComboBoxClass1.ItemHeight = 30;
+            this.ComboBoxClass1.Location = new System.Drawing.Point(332, 24);
+            this.ComboBoxClass1.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxClass1.Name = "ComboBoxClass1";
+            this.ComboBoxClass1.Size = new System.Drawing.Size(146, 36);
+            this.ComboBoxClass1.TabIndex = 28;
             // 
-            // NamHocCbb_hk
+            // ButtonPrint1
             // 
-            this.NamHocCbb_hk.BackColor = System.Drawing.Color.Transparent;
-            this.NamHocCbb_hk.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.NamHocCbb_hk.DropDownHeight = 100;
-            this.NamHocCbb_hk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NamHocCbb_hk.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_hk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_hk.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.NamHocCbb_hk.ForeColor = System.Drawing.Color.Black;
-            this.NamHocCbb_hk.IntegralHeight = false;
-            this.NamHocCbb_hk.ItemHeight = 30;
-            this.NamHocCbb_hk.Location = new System.Drawing.Point(12, 17);
-            this.NamHocCbb_hk.Margin = new System.Windows.Forms.Padding(2);
-            this.NamHocCbb_hk.Name = "NamHocCbb_hk";
-            this.NamHocCbb_hk.Size = new System.Drawing.Size(146, 36);
-            this.NamHocCbb_hk.TabIndex = 1;
-            this.NamHocCbb_hk.SelectedValueChanged += new System.EventHandler(this.NamHocCbb_hk_SelectedValueChanged);
+            this.ButtonPrint1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint1.Image = ((System.Drawing.Image)(resources.GetObject("ButtonPrint1.Image")));
+            this.ButtonPrint1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonPrint1.ImageRotate = 0F;
+            this.ButtonPrint1.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonPrint1.Location = new System.Drawing.Point(553, 3);
+            this.ButtonPrint1.Name = "ButtonPrint1";
+            this.ButtonPrint1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint1.Size = new System.Drawing.Size(50, 50);
+            this.ButtonPrint1.TabIndex = 27;
+            this.ButtonPrint1.Click += new System.EventHandler(this.ButtonPrint1_Click);
+            // 
+            // ButtonSearch1
+            // 
+            this.ButtonSearch1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch1.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSearch1.Image")));
+            this.ButtonSearch1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonSearch1.ImageRotate = 0F;
+            this.ButtonSearch1.ImageSize = new System.Drawing.Size(60, 60);
+            this.ButtonSearch1.Location = new System.Drawing.Point(494, 1);
+            this.ButtonSearch1.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonSearch1.Name = "ButtonSearch1";
+            this.ButtonSearch1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch1.Size = new System.Drawing.Size(52, 57);
+            this.ButtonSearch1.TabIndex = 3;
+            this.ButtonSearch1.Click += new System.EventHandler(this.ButtonSearch1_Click);
+            // 
+            // ComboBoxSemester
+            // 
+            this.ComboBoxSemester.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxSemester.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxSemester.DropDownHeight = 100;
+            this.ComboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxSemester.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxSemester.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxSemester.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxSemester.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxSemester.IntegralHeight = false;
+            this.ComboBoxSemester.ItemHeight = 30;
+            this.ComboBoxSemester.Location = new System.Drawing.Point(189, 24);
+            this.ComboBoxSemester.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxSemester.Name = "ComboBoxSemester";
+            this.ComboBoxSemester.Size = new System.Drawing.Size(112, 36);
+            this.ComboBoxSemester.TabIndex = 2;
+            // 
+            // ComboBoxYear1
+            // 
+            this.ComboBoxYear1.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxYear1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxYear1.DropDownHeight = 100;
+            this.ComboBoxYear1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxYear1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxYear1.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxYear1.IntegralHeight = false;
+            this.ComboBoxYear1.ItemHeight = 30;
+            this.ComboBoxYear1.Location = new System.Drawing.Point(12, 24);
+            this.ComboBoxYear1.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxYear1.Name = "ComboBoxYear1";
+            this.ComboBoxYear1.Size = new System.Drawing.Size(146, 36);
+            this.ComboBoxYear1.TabIndex = 1;
+            this.ComboBoxYear1.SelectedValueChanged += new System.EventHandler(this.ComboBoxYear1_SelectedValueChanged);
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.label2);
-            this.tabPage4.Controls.Add(this.chartRatio_nh);
-            this.tabPage4.Controls.Add(this.dgvRatio_nh);
-            this.tabPage4.Controls.Add(this.dgvNamHoc);
+            this.tabPage4.Controls.Add(this.ChartRatioYear);
+            this.tabPage4.Controls.Add(this.DataGridViewRatioYear);
+            this.tabPage4.Controls.Add(this.DataGridViewScoreYear);
             this.tabPage4.Controls.Add(this.guna2GradientPanel2);
             this.tabPage4.Controls.Add(this.labelName_nh);
             this.tabPage4.Location = new System.Drawing.Point(4, 44);
@@ -482,210 +523,234 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Visible = false;
             // 
-            // chartRatio_nh
+            // ChartRatioYear
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartRatio_nh.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartRatio_nh.Legends.Add(legend2);
-            this.chartRatio_nh.Location = new System.Drawing.Point(921, 310);
-            this.chartRatio_nh.Margin = new System.Windows.Forms.Padding(2);
-            this.chartRatio_nh.Name = "chartRatio_nh";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.IsValueShownAsLabel = true;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartRatio_nh.Series.Add(series2);
-            this.chartRatio_nh.Size = new System.Drawing.Size(299, 231);
-            this.chartRatio_nh.TabIndex = 31;
-            this.chartRatio_nh.Text = "chart1";
-            this.chartRatio_nh.Visible = false;
+            chartArea3.Name = "ChartArea1";
+            this.ChartRatioYear.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.ChartRatioYear.Legends.Add(legend3);
+            this.ChartRatioYear.Location = new System.Drawing.Point(921, 310);
+            this.ChartRatioYear.Margin = new System.Windows.Forms.Padding(2);
+            this.ChartRatioYear.Name = "ChartRatioYear";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.ChartRatioYear.Series.Add(series3);
+            this.ChartRatioYear.Size = new System.Drawing.Size(299, 231);
+            this.ChartRatioYear.TabIndex = 31;
+            this.ChartRatioYear.Text = "chart1";
+            this.ChartRatioYear.Visible = false;
             // 
-            // dgvRatio_nh
+            // DataGridViewRatioYear
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvRatio_nh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRatio_nh.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvRatio_nh.ColumnHeadersHeight = 40;
-            this.dgvRatio_nh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRatio_nh.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvRatio_nh.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRatio_nh.Location = new System.Drawing.Point(923, 128);
-            this.dgvRatio_nh.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvRatio_nh.Name = "dgvRatio_nh";
-            this.dgvRatio_nh.RowHeadersVisible = false;
-            this.dgvRatio_nh.RowHeadersWidth = 51;
-            this.dgvRatio_nh.RowTemplate.Height = 24;
-            this.dgvRatio_nh.Size = new System.Drawing.Size(297, 178);
-            this.dgvRatio_nh.TabIndex = 30;
-            this.dgvRatio_nh.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRatio_nh.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvRatio_nh.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvRatio_nh.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvRatio_nh.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvRatio_nh.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRatio_nh.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRatio_nh.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvRatio_nh.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvRatio_nh.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvRatio_nh.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvRatio_nh.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvRatio_nh.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvRatio_nh.ThemeStyle.ReadOnly = false;
-            this.dgvRatio_nh.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvRatio_nh.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvRatio_nh.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvRatio_nh.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvRatio_nh.ThemeStyle.RowsStyle.Height = 24;
-            this.dgvRatio_nh.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvRatio_nh.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvRatio_nh.Visible = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatioYear.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewRatioYear.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.DataGridViewRatioYear.ColumnHeadersHeight = 40;
+            this.DataGridViewRatioYear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewRatioYear.DefaultCellStyle = dataGridViewCellStyle15;
+            this.DataGridViewRatioYear.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatioYear.Location = new System.Drawing.Point(923, 128);
+            this.DataGridViewRatioYear.Margin = new System.Windows.Forms.Padding(2);
+            this.DataGridViewRatioYear.Name = "DataGridViewRatioYear";
+            this.DataGridViewRatioYear.RowHeadersVisible = false;
+            this.DataGridViewRatioYear.RowHeadersWidth = 51;
+            this.DataGridViewRatioYear.RowTemplate.Height = 24;
+            this.DataGridViewRatioYear.Size = new System.Drawing.Size(297, 178);
+            this.DataGridViewRatioYear.TabIndex = 30;
+            this.DataGridViewRatioYear.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatioYear.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewRatioYear.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewRatioYear.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewRatioYear.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewRatioYear.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatioYear.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatioYear.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatioYear.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewRatioYear.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewRatioYear.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewRatioYear.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewRatioYear.ThemeStyle.HeaderStyle.Height = 40;
+            this.DataGridViewRatioYear.ThemeStyle.ReadOnly = false;
+            this.DataGridViewRatioYear.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewRatioYear.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewRatioYear.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewRatioYear.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewRatioYear.ThemeStyle.RowsStyle.Height = 24;
+            this.DataGridViewRatioYear.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewRatioYear.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewRatioYear.Visible = false;
             // 
-            // dgvNamHoc
+            // DataGridViewScoreYear
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvNamHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNamHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvNamHoc.ColumnHeadersHeight = 28;
-            this.dgvNamHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNamHoc.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvNamHoc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNamHoc.Location = new System.Drawing.Point(9, 128);
-            this.dgvNamHoc.Name = "dgvNamHoc";
-            this.dgvNamHoc.ReadOnly = true;
-            this.dgvNamHoc.RowHeadersVisible = false;
-            this.dgvNamHoc.Size = new System.Drawing.Size(907, 412);
-            this.dgvNamHoc.TabIndex = 28;
-            this.dgvNamHoc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvNamHoc.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvNamHoc.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvNamHoc.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvNamHoc.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvNamHoc.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvNamHoc.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNamHoc.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvNamHoc.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvNamHoc.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNamHoc.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvNamHoc.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvNamHoc.ThemeStyle.HeaderStyle.Height = 28;
-            this.dgvNamHoc.ThemeStyle.ReadOnly = true;
-            this.dgvNamHoc.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvNamHoc.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvNamHoc.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvNamHoc.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvNamHoc.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvNamHoc.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNamHoc.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewScoreYear.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.DataGridViewScoreYear.ColumnHeadersHeight = 28;
+            this.DataGridViewScoreYear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewScoreYear.DefaultCellStyle = dataGridViewCellStyle18;
+            this.DataGridViewScoreYear.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.Location = new System.Drawing.Point(9, 128);
+            this.DataGridViewScoreYear.Name = "DataGridViewScoreYear";
+            this.DataGridViewScoreYear.ReadOnly = true;
+            this.DataGridViewScoreYear.RowHeadersVisible = false;
+            this.DataGridViewScoreYear.Size = new System.Drawing.Size(907, 412);
+            this.DataGridViewScoreYear.TabIndex = 28;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreYear.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.Height = 28;
+            this.DataGridViewScoreYear.ThemeStyle.ReadOnly = true;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.Height = 22;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // guna2GradientPanel2
             // 
-            this.guna2GradientPanel2.Controls.Add(this.LopCbb_nh);
-            this.guna2GradientPanel2.Controls.Add(this.printButton_nh);
-            this.guna2GradientPanel2.Controls.Add(this.TraCuuButton_nh);
-            this.guna2GradientPanel2.Controls.Add(this.NamHocCbb_nh);
+            this.guna2GradientPanel2.Controls.Add(this.LabelClass2);
+            this.guna2GradientPanel2.Controls.Add(this.LabelYear2);
+            this.guna2GradientPanel2.Controls.Add(this.ComboBoxClass2);
+            this.guna2GradientPanel2.Controls.Add(this.ButtonPrint2);
+            this.guna2GradientPanel2.Controls.Add(this.ButtonSearch2);
+            this.guna2GradientPanel2.Controls.Add(this.ComboBoxYear2);
             this.guna2GradientPanel2.Location = new System.Drawing.Point(8, 7);
             this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(647, 60);
             this.guna2GradientPanel2.TabIndex = 26;
             // 
-            // LopCbb_nh
+            // LabelClass2
             // 
-            this.LopCbb_nh.BackColor = System.Drawing.Color.Transparent;
-            this.LopCbb_nh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.LopCbb_nh.DropDownHeight = 100;
-            this.LopCbb_nh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LopCbb_nh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LopCbb_nh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LopCbb_nh.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.LopCbb_nh.ForeColor = System.Drawing.Color.Black;
-            this.LopCbb_nh.IntegralHeight = false;
-            this.LopCbb_nh.ItemHeight = 30;
-            this.LopCbb_nh.Location = new System.Drawing.Point(188, 17);
-            this.LopCbb_nh.Margin = new System.Windows.Forms.Padding(2);
-            this.LopCbb_nh.Name = "LopCbb_nh";
-            this.LopCbb_nh.Size = new System.Drawing.Size(146, 36);
-            this.LopCbb_nh.TabIndex = 27;
+            this.LabelClass2.AutoSize = true;
+            this.LabelClass2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelClass2.ForeColor = System.Drawing.Color.Black;
+            this.LabelClass2.Location = new System.Drawing.Point(184, 3);
+            this.LabelClass2.Name = "LabelClass2";
+            this.LabelClass2.Size = new System.Drawing.Size(34, 19);
+            this.LabelClass2.TabIndex = 34;
+            this.LabelClass2.Text = "Lớp";
             // 
-            // printButton_nh
+            // LabelYear2
             // 
-            this.printButton_nh.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.printButton_nh.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.printButton_nh.Image = ((System.Drawing.Image)(resources.GetObject("printButton_nh.Image")));
-            this.printButton_nh.ImageOffset = new System.Drawing.Point(0, 0);
-            this.printButton_nh.ImageRotate = 0F;
-            this.printButton_nh.ImageSize = new System.Drawing.Size(40, 40);
-            this.printButton_nh.Location = new System.Drawing.Point(553, 3);
-            this.printButton_nh.Name = "printButton_nh";
-            this.printButton_nh.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.printButton_nh.Size = new System.Drawing.Size(50, 50);
-            this.printButton_nh.TabIndex = 26;
-            this.printButton_nh.Click += new System.EventHandler(this.printButton_nh_Click);
+            this.LabelYear2.AutoSize = true;
+            this.LabelYear2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelYear2.ForeColor = System.Drawing.Color.Black;
+            this.LabelYear2.Location = new System.Drawing.Point(8, 3);
+            this.LabelYear2.Name = "LabelYear2";
+            this.LabelYear2.Size = new System.Drawing.Size(65, 19);
+            this.LabelYear2.TabIndex = 34;
+            this.LabelYear2.Text = "Năm học";
             // 
-            // TraCuuButton_nh
+            // ComboBoxClass2
             // 
-            this.TraCuuButton_nh.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_nh.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_nh.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuButton_nh.Image")));
-            this.TraCuuButton_nh.ImageOffset = new System.Drawing.Point(0, 0);
-            this.TraCuuButton_nh.ImageRotate = 0F;
-            this.TraCuuButton_nh.ImageSize = new System.Drawing.Size(60, 60);
-            this.TraCuuButton_nh.Location = new System.Drawing.Point(494, 1);
-            this.TraCuuButton_nh.Margin = new System.Windows.Forms.Padding(2);
-            this.TraCuuButton_nh.Name = "TraCuuButton_nh";
-            this.TraCuuButton_nh.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_nh.Size = new System.Drawing.Size(52, 57);
-            this.TraCuuButton_nh.TabIndex = 3;
-            this.TraCuuButton_nh.Click += new System.EventHandler(this.TraCuuButton_nh_Click);
+            this.ComboBoxClass2.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxClass2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxClass2.DropDownHeight = 100;
+            this.ComboBoxClass2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxClass2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxClass2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxClass2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxClass2.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxClass2.IntegralHeight = false;
+            this.ComboBoxClass2.ItemHeight = 30;
+            this.ComboBoxClass2.Location = new System.Drawing.Point(188, 24);
+            this.ComboBoxClass2.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxClass2.Name = "ComboBoxClass2";
+            this.ComboBoxClass2.Size = new System.Drawing.Size(146, 36);
+            this.ComboBoxClass2.TabIndex = 27;
             // 
-            // NamHocCbb_nh
+            // ButtonPrint2
             // 
-            this.NamHocCbb_nh.BackColor = System.Drawing.Color.Transparent;
-            this.NamHocCbb_nh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.NamHocCbb_nh.DropDownHeight = 100;
-            this.NamHocCbb_nh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NamHocCbb_nh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_nh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_nh.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.NamHocCbb_nh.ForeColor = System.Drawing.Color.Black;
-            this.NamHocCbb_nh.IntegralHeight = false;
-            this.NamHocCbb_nh.ItemHeight = 30;
-            this.NamHocCbb_nh.Location = new System.Drawing.Point(12, 17);
-            this.NamHocCbb_nh.Margin = new System.Windows.Forms.Padding(2);
-            this.NamHocCbb_nh.Name = "NamHocCbb_nh";
-            this.NamHocCbb_nh.Size = new System.Drawing.Size(146, 36);
-            this.NamHocCbb_nh.TabIndex = 1;
-            this.NamHocCbb_nh.SelectedValueChanged += new System.EventHandler(this.NamHocCbb_nh_SelectedValueChanged);
+            this.ButtonPrint2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint2.Image = ((System.Drawing.Image)(resources.GetObject("ButtonPrint2.Image")));
+            this.ButtonPrint2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonPrint2.ImageRotate = 0F;
+            this.ButtonPrint2.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonPrint2.Location = new System.Drawing.Point(551, 3);
+            this.ButtonPrint2.Name = "ButtonPrint2";
+            this.ButtonPrint2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint2.Size = new System.Drawing.Size(50, 50);
+            this.ButtonPrint2.TabIndex = 26;
+            this.ButtonPrint2.Click += new System.EventHandler(this.ButtonPrint2_Click);
+            // 
+            // ButtonSearch2
+            // 
+            this.ButtonSearch2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch2.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSearch2.Image")));
+            this.ButtonSearch2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonSearch2.ImageRotate = 0F;
+            this.ButtonSearch2.ImageSize = new System.Drawing.Size(60, 60);
+            this.ButtonSearch2.Location = new System.Drawing.Point(494, 1);
+            this.ButtonSearch2.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonSearch2.Name = "ButtonSearch2";
+            this.ButtonSearch2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch2.Size = new System.Drawing.Size(52, 57);
+            this.ButtonSearch2.TabIndex = 3;
+            this.ButtonSearch2.Click += new System.EventHandler(this.ButtonSearch2_Click);
+            // 
+            // ComboBoxYear2
+            // 
+            this.ComboBoxYear2.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxYear2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxYear2.DropDownHeight = 100;
+            this.ComboBoxYear2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxYear2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxYear2.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxYear2.IntegralHeight = false;
+            this.ComboBoxYear2.ItemHeight = 30;
+            this.ComboBoxYear2.Location = new System.Drawing.Point(12, 24);
+            this.ComboBoxYear2.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxYear2.Name = "ComboBoxYear2";
+            this.ComboBoxYear2.Size = new System.Drawing.Size(146, 36);
+            this.ComboBoxYear2.TabIndex = 1;
+            this.ComboBoxYear2.SelectedValueChanged += new System.EventHandler(this.ComboBoxYear2_SelectedValueChanged);
             // 
             // labelName_nh
             // 
@@ -698,98 +763,105 @@
             this.labelName_nh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelName_nh.Visible = false;
             // 
-            // guna2ImageButtonHome
+            // ButtonHome
             // 
-            this.guna2ImageButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonHome.Image")));
-            this.guna2ImageButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonHome.ImageRotate = 0F;
-            this.guna2ImageButtonHome.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButtonHome.Location = new System.Drawing.Point(9, 48);
-            this.guna2ImageButtonHome.Name = "guna2ImageButtonHome";
-            this.guna2ImageButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.Size = new System.Drawing.Size(50, 50);
-            this.guna2ImageButtonHome.TabIndex = 26;
-            this.guna2ImageButtonHome.Click += new System.EventHandler(this.guna2ImageButtonHome_Click);
+            this.ButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("ButtonHome.Image")));
+            this.ButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonHome.ImageRotate = 0F;
+            this.ButtonHome.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonHome.Location = new System.Drawing.Point(9, 48);
+            this.ButtonHome.Name = "ButtonHome";
+            this.ButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.Size = new System.Drawing.Size(50, 50);
+            this.ButtonHome.TabIndex = 26;
+            this.ButtonHome.Click += new System.EventHandler(this.ButtonHome_Click);
             // 
-            // guna2ImageButton3
+            // ButtonAccount
             // 
-            this.guna2ImageButton3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton3.Image")));
-            this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton3.ImageRotate = 0F;
-            this.guna2ImageButton3.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton3.Location = new System.Drawing.Point(1187, 43);
-            this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2ImageButton3.Name = "guna2ImageButton3";
-            this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Size = new System.Drawing.Size(55, 55);
-            this.guna2ImageButton3.TabIndex = 27;
-            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
+            this.ButtonAccount.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAccount.Image")));
+            this.ButtonAccount.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonAccount.ImageRotate = 0F;
+            this.ButtonAccount.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonAccount.Location = new System.Drawing.Point(1187, 43);
+            this.ButtonAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonAccount.Name = "ButtonAccount";
+            this.ButtonAccount.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Size = new System.Drawing.Size(55, 55);
+            this.ButtonAccount.TabIndex = 27;
+            this.ButtonAccount.Click += new System.EventHandler(this.ButtonAccount_Click);
             // 
             // BangDiemTongKetLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 694);
-            this.Controls.Add(this.guna2ImageButton3);
-            this.Controls.Add(this.guna2ImageButtonHome);
+            this.Controls.Add(this.ButtonAccount);
+            this.Controls.Add(this.ButtonHome);
             this.Controls.Add(this.guna2TabControlReport);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.PanelNameForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BangDiemTongKetLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BangDiemTongKetLop";
-            this.guna2Panel1.ResumeLayout(false);
+            this.PanelNameForm.ResumeLayout(false);
             this.guna2TabControlReport.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ChartRatio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRatio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHocKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRatioSemester)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRatitoSemester)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreSemester)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartRatio_nh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRatio_nh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNamHoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartRatioYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewRatioYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreYear)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel PanelNameForm;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonClose;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonMinimize;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControlReport;
         private System.Windows.Forms.TabPage tabPage3;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvHocKy;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewScoreSemester;
         private System.Windows.Forms.Label LabelNameReportGridview1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
-        private Guna.UI2.WinForms.Guna2ImageButton TraCuuButton_hk;
-        private Guna.UI2.WinForms.Guna2ComboBox HocKyCbb;
-        private Guna.UI2.WinForms.Guna2ComboBox NamHocCbb_hk;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonPrint1;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonSearch1;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxSemester;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxYear1;
         private System.Windows.Forms.TabPage tabPage4;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvNamHoc;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewScoreYear;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
-        private Guna.UI2.WinForms.Guna2ImageButton printButton_nh;
-        private Guna.UI2.WinForms.Guna2ImageButton TraCuuButton_nh;
-        private Guna.UI2.WinForms.Guna2ComboBox NamHocCbb_nh;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonPrint2;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonSearch2;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxYear2;
         private System.Windows.Forms.Label labelName_nh;
         private System.Windows.Forms.Label LabelNameRatio1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartRatio;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvRatio;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartRatioSemester;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewRatitoSemester;
         private System.Windows.Forms.Label labelName;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonHome;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonHome;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonAccount;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartRatio_nh;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvRatio_nh;
-        private Guna.UI2.WinForms.Guna2ComboBox LopCbb_hk;
-        private Guna.UI2.WinForms.Guna2ComboBox LopCbb_nh;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartRatioYear;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewRatioYear;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxClass1;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxClass2;
+        private System.Windows.Forms.Label LabelYear1;
+        private System.Windows.Forms.Label LabelClass1;
+        private System.Windows.Forms.Label LabelSemester;
+        private System.Windows.Forms.Label LabelClass2;
+        private System.Windows.Forms.Label LabelYear2;
     }
 }
