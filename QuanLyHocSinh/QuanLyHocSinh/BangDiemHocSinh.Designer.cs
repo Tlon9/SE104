@@ -30,39 +30,42 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BangDiemHocSinh));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.LabelClassify1 = new System.Windows.Forms.Label();
+            this.LabelAverageScore1 = new System.Windows.Forms.Label();
+            this.LabelClass1 = new System.Windows.Forms.Label();
+            this.LabelName1 = new System.Windows.Forms.Label();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.PanelNameForm = new Guna.UI2.WinForms.Guna2Panel();
+            this.LabelNameForm = new System.Windows.Forms.Label();
+            this.ButtonClose = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonMinimize = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2TabControlReport = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.DHKGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.DataGridViewScoreSemester = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.XepLoaiTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.DTBHKTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.LopTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.HoTenTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TextBoxClassify1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TextBoxAverageScore1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TextBoxClass1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TextBoxName1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.LabelNameReportGridview1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.MHStextbox_hk = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TraCuuButton_hk = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.HocKyCbb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.NamHocCbb_hk = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelSemester = new System.Windows.Forms.Label();
+            this.LabelYear = new System.Windows.Forms.Label();
+            this.LabelID1 = new System.Windows.Forms.Label();
+            this.ButtonPrint1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.TextBoxID1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ButtonSearch1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ComboBoxSemester = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ComboBoxYear1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-            this.DNHGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.DataGridViewScoreYear = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.XepLoaiTxtBox_nh = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,122 +76,124 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.MHStextbox_nh = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TraCuuButton_nh = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.NamHocCbb_nh = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.LabelID2 = new System.Windows.Forms.Label();
+            this.LabelYear2 = new System.Windows.Forms.Label();
+            this.ButtonPrint2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.TextBoxID2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.ButtonSearch2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ComboBoxYear2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.LabelNameReportGridview2 = new System.Windows.Forms.Label();
-            this.guna2ImageButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2Panel1.SuspendLayout();
+            this.ButtonHome = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonAccount = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.PanelNameForm.SuspendLayout();
             this.guna2TabControlReport.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DHKGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreSemester)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DNHGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreYear)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label9
+            // LabelClassify1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(26, 275);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 19);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Xếp loại";
+            this.LabelClassify1.AutoSize = true;
+            this.LabelClassify1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelClassify1.ForeColor = System.Drawing.Color.Black;
+            this.LabelClassify1.Location = new System.Drawing.Point(26, 275);
+            this.LabelClassify1.Name = "LabelClassify1";
+            this.LabelClassify1.Size = new System.Drawing.Size(60, 19);
+            this.LabelClassify1.TabIndex = 14;
+            this.LabelClassify1.Text = "Xếp loại";
             // 
-            // label10
+            // LabelAverageScore1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(23, 201);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 19);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Điểm TB";
+            this.LabelAverageScore1.AutoSize = true;
+            this.LabelAverageScore1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAverageScore1.ForeColor = System.Drawing.Color.Black;
+            this.LabelAverageScore1.Location = new System.Drawing.Point(23, 201);
+            this.LabelAverageScore1.Name = "LabelAverageScore1";
+            this.LabelAverageScore1.Size = new System.Drawing.Size(64, 19);
+            this.LabelAverageScore1.TabIndex = 13;
+            this.LabelAverageScore1.Text = "Điểm TB";
             // 
-            // label11
+            // LabelClass1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(52, 139);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 19);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Lớp";
+            this.LabelClass1.AutoSize = true;
+            this.LabelClass1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelClass1.ForeColor = System.Drawing.Color.Black;
+            this.LabelClass1.Location = new System.Drawing.Point(52, 139);
+            this.LabelClass1.Name = "LabelClass1";
+            this.LabelClass1.Size = new System.Drawing.Size(34, 19);
+            this.LabelClass1.TabIndex = 12;
+            this.LabelClass1.Text = "Lớp";
             // 
-            // label12
+            // LabelName1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(23, 79);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 19);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Họ và tên";
+            this.LabelName1.AutoSize = true;
+            this.LabelName1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelName1.ForeColor = System.Drawing.Color.Black;
+            this.LabelName1.Location = new System.Drawing.Point(23, 79);
+            this.LabelName1.Name = "LabelName1";
+            this.LabelName1.Size = new System.Drawing.Size(68, 19);
+            this.LabelName1.TabIndex = 11;
+            this.LabelName1.Text = "Họ và tên";
             // 
-            // guna2Panel1
+            // PanelNameForm
             // 
-            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonClose1);
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1244, 42);
-            this.guna2Panel1.TabIndex = 23;
-            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown_1);
+            this.PanelNameForm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.PanelNameForm.Controls.Add(this.LabelNameForm);
+            this.PanelNameForm.Controls.Add(this.ButtonClose);
+            this.PanelNameForm.Controls.Add(this.ButtonMinimize);
+            this.PanelNameForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelNameForm.Location = new System.Drawing.Point(0, 0);
+            this.PanelNameForm.Name = "PanelNameForm";
+            this.PanelNameForm.Size = new System.Drawing.Size(1244, 42);
+            this.PanelNameForm.TabIndex = 23;
+            this.PanelNameForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown_1);
             // 
-            // label1
+            // LabelNameForm
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Bảng điểm học sinh";
+            this.LabelNameForm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelNameForm.ForeColor = System.Drawing.SystemColors.Window;
+            this.LabelNameForm.Location = new System.Drawing.Point(12, 9);
+            this.LabelNameForm.Name = "LabelNameForm";
+            this.LabelNameForm.Size = new System.Drawing.Size(260, 23);
+            this.LabelNameForm.TabIndex = 2;
+            this.LabelNameForm.Text = "Bảng điểm học sinh";
             // 
-            // guna2ImageButtonClose1
+            // ButtonClose
             // 
-            this.guna2ImageButtonClose1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonClose1.Image")));
-            this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonClose1.ImageRotate = 0F;
-            this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1206, 7);
-            this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
-            this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Size = new System.Drawing.Size(35, 35);
-            this.guna2ImageButtonClose1.TabIndex = 1;
-            this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click_1);
+            this.ButtonClose.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Image = ((System.Drawing.Image)(resources.GetObject("ButtonClose.Image")));
+            this.ButtonClose.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonClose.ImageRotate = 0F;
+            this.ButtonClose.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonClose.Location = new System.Drawing.Point(1206, 7);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Size = new System.Drawing.Size(35, 35);
+            this.ButtonClose.TabIndex = 1;
+            this.ButtonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // guna2ImageButtonMinimize1
+            // ButtonMinimize
             // 
-            this.guna2ImageButtonMinimize1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2ImageButtonMinimize1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonMinimize1.Image")));
-            this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonMinimize1.ImageRotate = 0F;
-            this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1175, 7);
-            this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
-            this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(35, 35);
-            this.guna2ImageButtonMinimize1.TabIndex = 0;
-            this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click_1);
+            this.ButtonMinimize.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ButtonMinimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMinimize.Image")));
+            this.ButtonMinimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonMinimize.ImageRotate = 0F;
+            this.ButtonMinimize.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonMinimize.Location = new System.Drawing.Point(1175, 7);
+            this.ButtonMinimize.Name = "ButtonMinimize";
+            this.ButtonMinimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Size = new System.Drawing.Size(35, 35);
+            this.ButtonMinimize.TabIndex = 0;
+            this.ButtonMinimize.Click += new System.EventHandler(this.ButtonMinimize_Click);
             // 
             // guna2TabControlReport
             // 
@@ -223,7 +228,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.DHKGridView);
+            this.tabPage3.Controls.Add(this.DataGridViewScoreSemester);
             this.tabPage3.Controls.Add(this.guna2GroupBox1);
             this.tabPage3.Controls.Add(this.LabelNameReportGridview1);
             this.tabPage3.Controls.Add(this.guna2GradientPanel1);
@@ -236,67 +241,67 @@
             this.tabPage3.Text = "Tra cứu điểm học kỳ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // DHKGridView
+            // DataGridViewScoreSemester
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DHKGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DHKGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.DHKGridView.ColumnHeadersHeight = 28;
-            this.DHKGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DHKGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DHKGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DHKGridView.Location = new System.Drawing.Point(8, 114);
-            this.DHKGridView.Name = "DHKGridView";
-            this.DHKGridView.ReadOnly = true;
-            this.DHKGridView.RowHeadersVisible = false;
-            this.DHKGridView.Size = new System.Drawing.Size(931, 393);
-            this.DHKGridView.TabIndex = 26;
-            this.DHKGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DHKGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DHKGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DHKGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DHKGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DHKGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DHKGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DHKGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DHKGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DHKGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DHKGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DHKGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DHKGridView.ThemeStyle.HeaderStyle.Height = 28;
-            this.DHKGridView.ThemeStyle.ReadOnly = true;
-            this.DHKGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DHKGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DHKGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DHKGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DHKGridView.ThemeStyle.RowsStyle.Height = 22;
-            this.DHKGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DHKGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewScoreSemester.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.DataGridViewScoreSemester.ColumnHeadersHeight = 28;
+            this.DataGridViewScoreSemester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewScoreSemester.DefaultCellStyle = dataGridViewCellStyle12;
+            this.DataGridViewScoreSemester.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.Location = new System.Drawing.Point(8, 114);
+            this.DataGridViewScoreSemester.Name = "DataGridViewScoreSemester";
+            this.DataGridViewScoreSemester.ReadOnly = true;
+            this.DataGridViewScoreSemester.RowHeadersVisible = false;
+            this.DataGridViewScoreSemester.Size = new System.Drawing.Size(931, 393);
+            this.DataGridViewScoreSemester.TabIndex = 26;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreSemester.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreSemester.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewScoreSemester.ThemeStyle.HeaderStyle.Height = 28;
+            this.DataGridViewScoreSemester.ThemeStyle.ReadOnly = true;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.Height = 22;
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreSemester.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // guna2GroupBox1
             // 
-            this.guna2GroupBox1.Controls.Add(this.XepLoaiTextBox);
-            this.guna2GroupBox1.Controls.Add(this.label9);
-            this.guna2GroupBox1.Controls.Add(this.DTBHKTextBox);
-            this.guna2GroupBox1.Controls.Add(this.label10);
-            this.guna2GroupBox1.Controls.Add(this.LopTextBox);
-            this.guna2GroupBox1.Controls.Add(this.HoTenTextBox);
-            this.guna2GroupBox1.Controls.Add(this.label12);
-            this.guna2GroupBox1.Controls.Add(this.label11);
+            this.guna2GroupBox1.Controls.Add(this.TextBoxClassify1);
+            this.guna2GroupBox1.Controls.Add(this.LabelClassify1);
+            this.guna2GroupBox1.Controls.Add(this.TextBoxAverageScore1);
+            this.guna2GroupBox1.Controls.Add(this.LabelAverageScore1);
+            this.guna2GroupBox1.Controls.Add(this.TextBoxClass1);
+            this.guna2GroupBox1.Controls.Add(this.TextBoxName1);
+            this.guna2GroupBox1.Controls.Add(this.LabelName1);
+            this.guna2GroupBox1.Controls.Add(this.LabelClass1);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.Highlight;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
@@ -306,85 +311,85 @@
             this.guna2GroupBox1.TabIndex = 25;
             this.guna2GroupBox1.Text = "Kết quả học kỳ";
             // 
-            // XepLoaiTextBox
+            // TextBoxClassify1
             // 
-            this.XepLoaiTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.XepLoaiTextBox.DefaultText = "";
-            this.XepLoaiTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.XepLoaiTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.XepLoaiTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.XepLoaiTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.XepLoaiTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.XepLoaiTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.XepLoaiTextBox.ForeColor = System.Drawing.Color.Black;
-            this.XepLoaiTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.XepLoaiTextBox.Location = new System.Drawing.Point(97, 258);
-            this.XepLoaiTextBox.Name = "XepLoaiTextBox";
-            this.XepLoaiTextBox.PasswordChar = '\0';
-            this.XepLoaiTextBox.PlaceholderText = "";
-            this.XepLoaiTextBox.SelectedText = "";
-            this.XepLoaiTextBox.Size = new System.Drawing.Size(146, 36);
-            this.XepLoaiTextBox.TabIndex = 29;
+            this.TextBoxClassify1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxClassify1.DefaultText = "";
+            this.TextBoxClassify1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxClassify1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxClassify1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxClassify1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxClassify1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxClassify1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxClassify1.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxClassify1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxClassify1.Location = new System.Drawing.Point(97, 258);
+            this.TextBoxClassify1.Name = "TextBoxClassify1";
+            this.TextBoxClassify1.PasswordChar = '\0';
+            this.TextBoxClassify1.PlaceholderText = "";
+            this.TextBoxClassify1.SelectedText = "";
+            this.TextBoxClassify1.Size = new System.Drawing.Size(146, 36);
+            this.TextBoxClassify1.TabIndex = 29;
             // 
-            // DTBHKTextBox
+            // TextBoxAverageScore1
             // 
-            this.DTBHKTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.DTBHKTextBox.DefaultText = "";
-            this.DTBHKTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.DTBHKTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.DTBHKTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.DTBHKTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.DTBHKTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DTBHKTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DTBHKTextBox.ForeColor = System.Drawing.Color.Black;
-            this.DTBHKTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DTBHKTextBox.Location = new System.Drawing.Point(97, 184);
-            this.DTBHKTextBox.Name = "DTBHKTextBox";
-            this.DTBHKTextBox.PasswordChar = '\0';
-            this.DTBHKTextBox.PlaceholderText = "";
-            this.DTBHKTextBox.SelectedText = "";
-            this.DTBHKTextBox.Size = new System.Drawing.Size(146, 36);
-            this.DTBHKTextBox.TabIndex = 28;
+            this.TextBoxAverageScore1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxAverageScore1.DefaultText = "";
+            this.TextBoxAverageScore1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxAverageScore1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxAverageScore1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAverageScore1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxAverageScore1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxAverageScore1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxAverageScore1.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxAverageScore1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxAverageScore1.Location = new System.Drawing.Point(97, 184);
+            this.TextBoxAverageScore1.Name = "TextBoxAverageScore1";
+            this.TextBoxAverageScore1.PasswordChar = '\0';
+            this.TextBoxAverageScore1.PlaceholderText = "";
+            this.TextBoxAverageScore1.SelectedText = "";
+            this.TextBoxAverageScore1.Size = new System.Drawing.Size(146, 36);
+            this.TextBoxAverageScore1.TabIndex = 28;
             // 
-            // LopTextBox
+            // TextBoxClass1
             // 
-            this.LopTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.LopTextBox.DefaultText = "";
-            this.LopTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.LopTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.LopTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.LopTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.LopTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LopTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.LopTextBox.ForeColor = System.Drawing.Color.Black;
-            this.LopTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LopTextBox.Location = new System.Drawing.Point(97, 122);
-            this.LopTextBox.Name = "LopTextBox";
-            this.LopTextBox.PasswordChar = '\0';
-            this.LopTextBox.PlaceholderText = "";
-            this.LopTextBox.SelectedText = "";
-            this.LopTextBox.Size = new System.Drawing.Size(146, 36);
-            this.LopTextBox.TabIndex = 27;
+            this.TextBoxClass1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxClass1.DefaultText = "";
+            this.TextBoxClass1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxClass1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxClass1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxClass1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxClass1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxClass1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxClass1.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxClass1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxClass1.Location = new System.Drawing.Point(97, 122);
+            this.TextBoxClass1.Name = "TextBoxClass1";
+            this.TextBoxClass1.PasswordChar = '\0';
+            this.TextBoxClass1.PlaceholderText = "";
+            this.TextBoxClass1.SelectedText = "";
+            this.TextBoxClass1.Size = new System.Drawing.Size(146, 36);
+            this.TextBoxClass1.TabIndex = 27;
             // 
-            // HoTenTextBox
+            // TextBoxName1
             // 
-            this.HoTenTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.HoTenTextBox.DefaultText = "";
-            this.HoTenTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.HoTenTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.HoTenTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.HoTenTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.HoTenTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HoTenTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.HoTenTextBox.ForeColor = System.Drawing.Color.Black;
-            this.HoTenTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HoTenTextBox.Location = new System.Drawing.Point(97, 62);
-            this.HoTenTextBox.Name = "HoTenTextBox";
-            this.HoTenTextBox.PasswordChar = '\0';
-            this.HoTenTextBox.PlaceholderText = "";
-            this.HoTenTextBox.SelectedText = "";
-            this.HoTenTextBox.Size = new System.Drawing.Size(146, 36);
-            this.HoTenTextBox.TabIndex = 26;
+            this.TextBoxName1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxName1.DefaultText = "";
+            this.TextBoxName1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxName1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxName1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxName1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxName1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxName1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxName1.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxName1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxName1.Location = new System.Drawing.Point(97, 62);
+            this.TextBoxName1.Name = "TextBoxName1";
+            this.TextBoxName1.PasswordChar = '\0';
+            this.TextBoxName1.PlaceholderText = "";
+            this.TextBoxName1.SelectedText = "";
+            this.TextBoxName1.Size = new System.Drawing.Size(146, 36);
+            this.TextBoxName1.TabIndex = 26;
             // 
             // LabelNameReportGridview1
             // 
@@ -399,110 +404,146 @@
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.Controls.Add(this.guna2ImageButton2);
-            this.guna2GradientPanel1.Controls.Add(this.MHStextbox_hk);
-            this.guna2GradientPanel1.Controls.Add(this.TraCuuButton_hk);
-            this.guna2GradientPanel1.Controls.Add(this.HocKyCbb);
-            this.guna2GradientPanel1.Controls.Add(this.NamHocCbb_hk);
+            this.guna2GradientPanel1.Controls.Add(this.LabelSemester);
+            this.guna2GradientPanel1.Controls.Add(this.LabelYear);
+            this.guna2GradientPanel1.Controls.Add(this.LabelID1);
+            this.guna2GradientPanel1.Controls.Add(this.ButtonPrint1);
+            this.guna2GradientPanel1.Controls.Add(this.TextBoxID1);
+            this.guna2GradientPanel1.Controls.Add(this.ButtonSearch1);
+            this.guna2GradientPanel1.Controls.Add(this.ComboBoxSemester);
+            this.guna2GradientPanel1.Controls.Add(this.ComboBoxYear1);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(8, 7);
             this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(647, 60);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
-            // guna2ImageButton2
+            // LabelSemester
             // 
-            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton2.Image")));
-            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton2.ImageRotate = 0F;
-            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(553, 3);
-            this.guna2ImageButton2.Name = "guna2ImageButton2";
-            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Size = new System.Drawing.Size(50, 50);
-            this.guna2ImageButton2.TabIndex = 27;
-            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            this.LabelSemester.AutoSize = true;
+            this.LabelSemester.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSemester.ForeColor = System.Drawing.Color.Black;
+            this.LabelSemester.Location = new System.Drawing.Point(166, 1);
+            this.LabelSemester.Name = "LabelSemester";
+            this.LabelSemester.Size = new System.Drawing.Size(54, 19);
+            this.LabelSemester.TabIndex = 34;
+            this.LabelSemester.Text = "Học kỳ";
             // 
-            // MHStextbox_hk
+            // LabelYear
             // 
-            this.MHStextbox_hk.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.MHStextbox_hk.DefaultText = "";
-            this.MHStextbox_hk.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.MHStextbox_hk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.MHStextbox_hk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.MHStextbox_hk.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.MHStextbox_hk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MHStextbox_hk.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.MHStextbox_hk.ForeColor = System.Drawing.Color.Black;
-            this.MHStextbox_hk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MHStextbox_hk.Location = new System.Drawing.Point(313, 17);
-            this.MHStextbox_hk.Name = "MHStextbox_hk";
-            this.MHStextbox_hk.PasswordChar = '\0';
-            this.MHStextbox_hk.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.MHStextbox_hk.PlaceholderText = "Mã học sinh";
-            this.MHStextbox_hk.SelectedText = "";
-            this.MHStextbox_hk.Size = new System.Drawing.Size(146, 36);
-            this.MHStextbox_hk.TabIndex = 26;
+            this.LabelYear.AutoSize = true;
+            this.LabelYear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelYear.ForeColor = System.Drawing.Color.Black;
+            this.LabelYear.Location = new System.Drawing.Point(3, 0);
+            this.LabelYear.Name = "LabelYear";
+            this.LabelYear.Size = new System.Drawing.Size(65, 19);
+            this.LabelYear.TabIndex = 33;
+            this.LabelYear.Text = "Năm học";
             // 
-            // TraCuuButton_hk
+            // LabelID1
             // 
-            this.TraCuuButton_hk.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuButton_hk.Image")));
-            this.TraCuuButton_hk.ImageOffset = new System.Drawing.Point(0, 0);
-            this.TraCuuButton_hk.ImageRotate = 0F;
-            this.TraCuuButton_hk.ImageSize = new System.Drawing.Size(60, 60);
-            this.TraCuuButton_hk.Location = new System.Drawing.Point(494, 1);
-            this.TraCuuButton_hk.Margin = new System.Windows.Forms.Padding(2);
-            this.TraCuuButton_hk.Name = "TraCuuButton_hk";
-            this.TraCuuButton_hk.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_hk.Size = new System.Drawing.Size(52, 57);
-            this.TraCuuButton_hk.TabIndex = 3;
-            this.TraCuuButton_hk.Click += new System.EventHandler(this.TraCuuButton_hk_Click);
+            this.LabelID1.AutoSize = true;
+            this.LabelID1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelID1.ForeColor = System.Drawing.Color.Black;
+            this.LabelID1.Location = new System.Drawing.Point(309, 1);
+            this.LabelID1.Name = "LabelID1";
+            this.LabelID1.Size = new System.Drawing.Size(83, 19);
+            this.LabelID1.TabIndex = 32;
+            this.LabelID1.Text = "Mã học sinh";
             // 
-            // HocKyCbb
+            // ButtonPrint1
             // 
-            this.HocKyCbb.BackColor = System.Drawing.Color.Transparent;
-            this.HocKyCbb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.HocKyCbb.DropDownHeight = 100;
-            this.HocKyCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HocKyCbb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HocKyCbb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HocKyCbb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.HocKyCbb.ForeColor = System.Drawing.Color.Black;
-            this.HocKyCbb.IntegralHeight = false;
-            this.HocKyCbb.ItemHeight = 30;
-            this.HocKyCbb.Location = new System.Drawing.Point(170, 17);
-            this.HocKyCbb.Margin = new System.Windows.Forms.Padding(2);
-            this.HocKyCbb.Name = "HocKyCbb";
-            this.HocKyCbb.Size = new System.Drawing.Size(112, 36);
-            this.HocKyCbb.TabIndex = 2;
+            this.ButtonPrint1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint1.Image = ((System.Drawing.Image)(resources.GetObject("ButtonPrint1.Image")));
+            this.ButtonPrint1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonPrint1.ImageRotate = 0F;
+            this.ButtonPrint1.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonPrint1.Location = new System.Drawing.Point(553, 3);
+            this.ButtonPrint1.Name = "ButtonPrint1";
+            this.ButtonPrint1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint1.Size = new System.Drawing.Size(50, 50);
+            this.ButtonPrint1.TabIndex = 27;
+            this.ButtonPrint1.Click += new System.EventHandler(this.ButtonPrint1_Click);
             // 
-            // NamHocCbb_hk
+            // TextBoxID1
             // 
-            this.NamHocCbb_hk.BackColor = System.Drawing.Color.Transparent;
-            this.NamHocCbb_hk.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.NamHocCbb_hk.DropDownHeight = 100;
-            this.NamHocCbb_hk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NamHocCbb_hk.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_hk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_hk.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.NamHocCbb_hk.ForeColor = System.Drawing.Color.Black;
-            this.NamHocCbb_hk.IntegralHeight = false;
-            this.NamHocCbb_hk.ItemHeight = 30;
-            this.NamHocCbb_hk.Location = new System.Drawing.Point(2, 17);
-            this.NamHocCbb_hk.Margin = new System.Windows.Forms.Padding(2);
-            this.NamHocCbb_hk.Name = "NamHocCbb_hk";
-            this.NamHocCbb_hk.Size = new System.Drawing.Size(146, 36);
-            this.NamHocCbb_hk.TabIndex = 1;
-            this.NamHocCbb_hk.SelectedValueChanged += new System.EventHandler(this.NamHocCbb_hk_SelectedValueChanged);
+            this.TextBoxID1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxID1.DefaultText = "";
+            this.TextBoxID1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxID1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxID1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxID1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxID1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxID1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxID1.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxID1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxID1.Location = new System.Drawing.Point(313, 22);
+            this.TextBoxID1.Name = "TextBoxID1";
+            this.TextBoxID1.PasswordChar = '\0';
+            this.TextBoxID1.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.TextBoxID1.PlaceholderText = "";
+            this.TextBoxID1.SelectedText = "";
+            this.TextBoxID1.Size = new System.Drawing.Size(146, 36);
+            this.TextBoxID1.TabIndex = 26;
+            // 
+            // ButtonSearch1
+            // 
+            this.ButtonSearch1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch1.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSearch1.Image")));
+            this.ButtonSearch1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonSearch1.ImageRotate = 0F;
+            this.ButtonSearch1.ImageSize = new System.Drawing.Size(60, 60);
+            this.ButtonSearch1.Location = new System.Drawing.Point(494, 1);
+            this.ButtonSearch1.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonSearch1.Name = "ButtonSearch1";
+            this.ButtonSearch1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch1.Size = new System.Drawing.Size(52, 57);
+            this.ButtonSearch1.TabIndex = 3;
+            this.ButtonSearch1.Click += new System.EventHandler(this.ButtonSearch1_Click);
+            // 
+            // ComboBoxSemester
+            // 
+            this.ComboBoxSemester.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxSemester.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxSemester.DropDownHeight = 100;
+            this.ComboBoxSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxSemester.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxSemester.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxSemester.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxSemester.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxSemester.IntegralHeight = false;
+            this.ComboBoxSemester.ItemHeight = 30;
+            this.ComboBoxSemester.Location = new System.Drawing.Point(170, 22);
+            this.ComboBoxSemester.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxSemester.Name = "ComboBoxSemester";
+            this.ComboBoxSemester.Size = new System.Drawing.Size(112, 36);
+            this.ComboBoxSemester.TabIndex = 2;
+            // 
+            // ComboBoxYear1
+            // 
+            this.ComboBoxYear1.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxYear1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxYear1.DropDownHeight = 100;
+            this.ComboBoxYear1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxYear1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxYear1.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxYear1.IntegralHeight = false;
+            this.ComboBoxYear1.ItemHeight = 30;
+            this.ComboBoxYear1.Location = new System.Drawing.Point(2, 22);
+            this.ComboBoxYear1.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxYear1.Name = "ComboBoxYear1";
+            this.ComboBoxYear1.Size = new System.Drawing.Size(146, 36);
+            this.ComboBoxYear1.TabIndex = 1;
+            this.ComboBoxYear1.SelectedValueChanged += new System.EventHandler(this.ComboBoxYear1_SelectedValueChanged);
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.DNHGridView);
+            this.tabPage4.Controls.Add(this.DataGridViewScoreYear);
             this.tabPage4.Controls.Add(this.guna2GroupBox2);
             this.tabPage4.Controls.Add(this.guna2GradientPanel2);
             this.tabPage4.Controls.Add(this.LabelNameReportGridview2);
@@ -526,56 +567,56 @@
             this.label6.Text = "Bảng điểm chi tiết";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // DNHGridView
+            // DataGridViewScoreYear
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.DNHGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DNHGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.DNHGridView.ColumnHeadersHeight = 28;
-            this.DNHGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DNHGridView.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DNHGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DNHGridView.Location = new System.Drawing.Point(8, 114);
-            this.DNHGridView.Name = "DNHGridView";
-            this.DNHGridView.ReadOnly = true;
-            this.DNHGridView.RowHeadersVisible = false;
-            this.DNHGridView.Size = new System.Drawing.Size(931, 393);
-            this.DNHGridView.TabIndex = 28;
-            this.DNHGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.DNHGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.DNHGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.DNHGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.DNHGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.DNHGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.DNHGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DNHGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.DNHGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.DNHGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DNHGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.DNHGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.DNHGridView.ThemeStyle.HeaderStyle.Height = 28;
-            this.DNHGridView.ThemeStyle.ReadOnly = true;
-            this.DNHGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.DNHGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.DNHGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DNHGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DNHGridView.ThemeStyle.RowsStyle.Height = 22;
-            this.DNHGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DNHGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewScoreYear.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.DataGridViewScoreYear.ColumnHeadersHeight = 28;
+            this.DataGridViewScoreYear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewScoreYear.DefaultCellStyle = dataGridViewCellStyle9;
+            this.DataGridViewScoreYear.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.Location = new System.Drawing.Point(8, 114);
+            this.DataGridViewScoreYear.Name = "DataGridViewScoreYear";
+            this.DataGridViewScoreYear.ReadOnly = true;
+            this.DataGridViewScoreYear.RowHeadersVisible = false;
+            this.DataGridViewScoreYear.Size = new System.Drawing.Size(931, 393);
+            this.DataGridViewScoreYear.TabIndex = 28;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreYear.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewScoreYear.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewScoreYear.ThemeStyle.HeaderStyle.Height = 28;
+            this.DataGridViewScoreYear.ThemeStyle.ReadOnly = true;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.Height = 22;
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewScoreYear.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // guna2GroupBox2
             // 
@@ -722,85 +763,109 @@
             // 
             // guna2GradientPanel2
             // 
-            this.guna2GradientPanel2.Controls.Add(this.guna2ImageButton1);
-            this.guna2GradientPanel2.Controls.Add(this.MHStextbox_nh);
-            this.guna2GradientPanel2.Controls.Add(this.TraCuuButton_nh);
-            this.guna2GradientPanel2.Controls.Add(this.NamHocCbb_nh);
+            this.guna2GradientPanel2.Controls.Add(this.LabelID2);
+            this.guna2GradientPanel2.Controls.Add(this.LabelYear2);
+            this.guna2GradientPanel2.Controls.Add(this.ButtonPrint2);
+            this.guna2GradientPanel2.Controls.Add(this.TextBoxID2);
+            this.guna2GradientPanel2.Controls.Add(this.ButtonSearch2);
+            this.guna2GradientPanel2.Controls.Add(this.ComboBoxYear2);
             this.guna2GradientPanel2.Location = new System.Drawing.Point(8, 7);
             this.guna2GradientPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(647, 60);
             this.guna2GradientPanel2.TabIndex = 26;
             // 
-            // guna2ImageButton1
+            // LabelID2
             // 
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.Image")));
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(553, 3);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(50, 50);
-            this.guna2ImageButton1.TabIndex = 26;
-            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            this.LabelID2.AutoSize = true;
+            this.LabelID2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelID2.ForeColor = System.Drawing.Color.Black;
+            this.LabelID2.Location = new System.Drawing.Point(168, 3);
+            this.LabelID2.Name = "LabelID2";
+            this.LabelID2.Size = new System.Drawing.Size(83, 19);
+            this.LabelID2.TabIndex = 31;
+            this.LabelID2.Text = "Mã học sinh";
             // 
-            // MHStextbox_nh
+            // LabelYear2
             // 
-            this.MHStextbox_nh.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.MHStextbox_nh.DefaultText = "";
-            this.MHStextbox_nh.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.MHStextbox_nh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.MHStextbox_nh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.MHStextbox_nh.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.MHStextbox_nh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MHStextbox_nh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.MHStextbox_nh.ForeColor = System.Drawing.Color.Black;
-            this.MHStextbox_nh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.MHStextbox_nh.Location = new System.Drawing.Point(170, 17);
-            this.MHStextbox_nh.Name = "MHStextbox_nh";
-            this.MHStextbox_nh.PasswordChar = '\0';
-            this.MHStextbox_nh.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.MHStextbox_nh.PlaceholderText = "Mã học sinh";
-            this.MHStextbox_nh.SelectedText = "";
-            this.MHStextbox_nh.Size = new System.Drawing.Size(146, 36);
-            this.MHStextbox_nh.TabIndex = 25;
+            this.LabelYear2.AutoSize = true;
+            this.LabelYear2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelYear2.ForeColor = System.Drawing.Color.Black;
+            this.LabelYear2.Location = new System.Drawing.Point(3, 3);
+            this.LabelYear2.Name = "LabelYear2";
+            this.LabelYear2.Size = new System.Drawing.Size(65, 19);
+            this.LabelYear2.TabIndex = 30;
+            this.LabelYear2.Text = "Năm học";
             // 
-            // TraCuuButton_nh
+            // ButtonPrint2
             // 
-            this.TraCuuButton_nh.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_nh.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_nh.Image = ((System.Drawing.Image)(resources.GetObject("TraCuuButton_nh.Image")));
-            this.TraCuuButton_nh.ImageOffset = new System.Drawing.Point(0, 0);
-            this.TraCuuButton_nh.ImageRotate = 0F;
-            this.TraCuuButton_nh.ImageSize = new System.Drawing.Size(60, 60);
-            this.TraCuuButton_nh.Location = new System.Drawing.Point(494, 1);
-            this.TraCuuButton_nh.Margin = new System.Windows.Forms.Padding(2);
-            this.TraCuuButton_nh.Name = "TraCuuButton_nh";
-            this.TraCuuButton_nh.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.TraCuuButton_nh.Size = new System.Drawing.Size(52, 57);
-            this.TraCuuButton_nh.TabIndex = 3;
-            this.TraCuuButton_nh.Click += new System.EventHandler(this.TraCuuButton_nh_Click);
+            this.ButtonPrint2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint2.Image = ((System.Drawing.Image)(resources.GetObject("ButtonPrint2.Image")));
+            this.ButtonPrint2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonPrint2.ImageRotate = 0F;
+            this.ButtonPrint2.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonPrint2.Location = new System.Drawing.Point(553, 3);
+            this.ButtonPrint2.Name = "ButtonPrint2";
+            this.ButtonPrint2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonPrint2.Size = new System.Drawing.Size(50, 50);
+            this.ButtonPrint2.TabIndex = 26;
+            this.ButtonPrint2.Click += new System.EventHandler(this.ButtonPrint2_Click);
             // 
-            // NamHocCbb_nh
+            // TextBoxID2
             // 
-            this.NamHocCbb_nh.BackColor = System.Drawing.Color.Transparent;
-            this.NamHocCbb_nh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.NamHocCbb_nh.DropDownHeight = 100;
-            this.NamHocCbb_nh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NamHocCbb_nh.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_nh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NamHocCbb_nh.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.NamHocCbb_nh.ForeColor = System.Drawing.Color.Black;
-            this.NamHocCbb_nh.IntegralHeight = false;
-            this.NamHocCbb_nh.ItemHeight = 30;
-            this.NamHocCbb_nh.Location = new System.Drawing.Point(2, 17);
-            this.NamHocCbb_nh.Margin = new System.Windows.Forms.Padding(2);
-            this.NamHocCbb_nh.Name = "NamHocCbb_nh";
-            this.NamHocCbb_nh.Size = new System.Drawing.Size(146, 36);
-            this.NamHocCbb_nh.TabIndex = 1;
+            this.TextBoxID2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxID2.DefaultText = "";
+            this.TextBoxID2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxID2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxID2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxID2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxID2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxID2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TextBoxID2.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxID2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxID2.Location = new System.Drawing.Point(172, 24);
+            this.TextBoxID2.Name = "TextBoxID2";
+            this.TextBoxID2.PasswordChar = '\0';
+            this.TextBoxID2.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.TextBoxID2.PlaceholderText = "";
+            this.TextBoxID2.SelectedText = "";
+            this.TextBoxID2.Size = new System.Drawing.Size(146, 36);
+            this.TextBoxID2.TabIndex = 25;
+            // 
+            // ButtonSearch2
+            // 
+            this.ButtonSearch2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch2.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSearch2.Image")));
+            this.ButtonSearch2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonSearch2.ImageRotate = 0F;
+            this.ButtonSearch2.ImageSize = new System.Drawing.Size(60, 60);
+            this.ButtonSearch2.Location = new System.Drawing.Point(494, 1);
+            this.ButtonSearch2.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonSearch2.Name = "ButtonSearch2";
+            this.ButtonSearch2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSearch2.Size = new System.Drawing.Size(52, 57);
+            this.ButtonSearch2.TabIndex = 3;
+            this.ButtonSearch2.Click += new System.EventHandler(this.ButtonSearch2_Click);
+            // 
+            // ComboBoxYear2
+            // 
+            this.ComboBoxYear2.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxYear2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxYear2.DropDownHeight = 100;
+            this.ComboBoxYear2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxYear2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxYear2.ForeColor = System.Drawing.Color.Black;
+            this.ComboBoxYear2.IntegralHeight = false;
+            this.ComboBoxYear2.ItemHeight = 30;
+            this.ComboBoxYear2.Location = new System.Drawing.Point(2, 24);
+            this.ComboBoxYear2.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboBoxYear2.Name = "ComboBoxYear2";
+            this.ComboBoxYear2.Size = new System.Drawing.Size(146, 36);
+            this.ComboBoxYear2.TabIndex = 1;
             // 
             // LabelNameReportGridview2
             // 
@@ -813,90 +878,92 @@
             this.LabelNameReportGridview2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LabelNameReportGridview2.Visible = false;
             // 
-            // guna2ImageButtonHome
+            // ButtonHome
             // 
-            this.guna2ImageButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonHome.Image")));
-            this.guna2ImageButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonHome.ImageRotate = 0F;
-            this.guna2ImageButtonHome.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButtonHome.Location = new System.Drawing.Point(11, 48);
-            this.guna2ImageButtonHome.Name = "guna2ImageButtonHome";
-            this.guna2ImageButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonHome.Size = new System.Drawing.Size(50, 50);
-            this.guna2ImageButtonHome.TabIndex = 25;
-            this.guna2ImageButtonHome.Click += new System.EventHandler(this.guna2ImageButtonHome_Click);
+            this.ButtonHome.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.Image = ((System.Drawing.Image)(resources.GetObject("ButtonHome.Image")));
+            this.ButtonHome.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonHome.ImageRotate = 0F;
+            this.ButtonHome.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonHome.Location = new System.Drawing.Point(11, 48);
+            this.ButtonHome.Name = "ButtonHome";
+            this.ButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonHome.Size = new System.Drawing.Size(50, 50);
+            this.ButtonHome.TabIndex = 25;
+            this.ButtonHome.Click += new System.EventHandler(this.ButtonHome_Click);
             // 
-            // guna2ImageButton3
+            // ButtonAccount
             // 
-            this.guna2ImageButton3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton3.Image")));
-            this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton3.ImageRotate = 0F;
-            this.guna2ImageButton3.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton3.IndicateFocus = true;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(1178, 43);
-            this.guna2ImageButton3.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2ImageButton3.Name = "guna2ImageButton3";
-            this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Size = new System.Drawing.Size(55, 55);
-            this.guna2ImageButton3.TabIndex = 26;
-            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
+            this.ButtonAccount.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAccount.Image")));
+            this.ButtonAccount.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonAccount.ImageRotate = 0F;
+            this.ButtonAccount.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonAccount.IndicateFocus = true;
+            this.ButtonAccount.Location = new System.Drawing.Point(1178, 43);
+            this.ButtonAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.ButtonAccount.Name = "ButtonAccount";
+            this.ButtonAccount.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Size = new System.Drawing.Size(55, 55);
+            this.ButtonAccount.TabIndex = 26;
+            this.ButtonAccount.Click += new System.EventHandler(this.ButtonAccount_Click);
             // 
             // BangDiemHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 694);
-            this.Controls.Add(this.guna2ImageButton3);
-            this.Controls.Add(this.guna2ImageButtonHome);
+            this.Controls.Add(this.ButtonAccount);
+            this.Controls.Add(this.ButtonHome);
             this.Controls.Add(this.guna2TabControlReport);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.PanelNameForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BangDiemHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BangDiemHocSinh";
-            this.guna2Panel1.ResumeLayout(false);
+            this.PanelNameForm.ResumeLayout(false);
             this.guna2TabControlReport.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DHKGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreSemester)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DNHGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewScoreYear)).EndInit();
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label LabelClassify1;
+        private System.Windows.Forms.Label LabelAverageScore1;
+        private System.Windows.Forms.Label LabelClass1;
+        private System.Windows.Forms.Label LabelName1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
+        private Guna.UI2.WinForms.Guna2Panel PanelNameForm;
+        private System.Windows.Forms.Label LabelNameForm;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonClose;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonMinimize;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControlReport;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label LabelNameReportGridview1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2ImageButton TraCuuButton_hk;
-        private Guna.UI2.WinForms.Guna2ComboBox HocKyCbb;
-        private Guna.UI2.WinForms.Guna2ComboBox NamHocCbb_hk;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonSearch1;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxSemester;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxYear1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label LabelNameReportGridview2;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox XepLoaiTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox DTBHKTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox LopTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxClassify1;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxAverageScore1;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxClass1;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2TextBox XepLoaiTxtBox_nh;
         private System.Windows.Forms.Label label2;
@@ -907,17 +974,22 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
-        private Guna.UI2.WinForms.Guna2TextBox MHStextbox_nh;
-        private Guna.UI2.WinForms.Guna2ImageButton TraCuuButton_nh;
-        private Guna.UI2.WinForms.Guna2ComboBox NamHocCbb_nh;
-        private Guna.UI2.WinForms.Guna2TextBox HoTenTextBox;
-        private Guna.UI2.WinForms.Guna2DataGridView DHKGridView;
-        private Guna.UI2.WinForms.Guna2TextBox MHStextbox_hk;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonHome;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
-        private Guna.UI2.WinForms.Guna2DataGridView DNHGridView;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxID2;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonSearch2;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxYear2;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxName1;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewScoreSemester;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxID1;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonHome;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonPrint2;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonPrint1;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewScoreYear;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonAccount;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LabelSemester;
+        private System.Windows.Forms.Label LabelYear;
+        private System.Windows.Forms.Label LabelID1;
+        private System.Windows.Forms.Label LabelID2;
+        private System.Windows.Forms.Label LabelYear2;
     }
 }

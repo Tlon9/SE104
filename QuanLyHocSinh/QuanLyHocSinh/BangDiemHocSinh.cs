@@ -21,33 +21,26 @@ namespace QuanLyHocSinh
         {
 
             InitializeComponent();
-            DHKGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DHKGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            DHKGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DHKGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewScoreSemester.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewScoreSemester.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewScoreSemester.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewScoreSemester.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataEntities data = new dataEntities();
             var ComboBoxYearSource = from obj in data.NAMHOCs orderby obj.NamHoc1 descending select obj;
-            NamHocCbb_nh.DataSource = ComboBoxYearSource.ToList();
-            NamHocCbb_nh.DisplayMember = "NamHoc1";
-            NamHocCbb_nh.ValueMember = "MaNamHoc";
-            NamHocCbb_hk.DataSource = ComboBoxYearSource.ToList();
-            NamHocCbb_hk.DisplayMember = "NamHoc1";
-            NamHocCbb_hk.ValueMember = "MaNamHoc";
+            ComboBoxYear2.DataSource = ComboBoxYearSource.ToList();
+            ComboBoxYear2.DisplayMember = "NamHoc1";
+            ComboBoxYear2.ValueMember = "MaNamHoc";
+            ComboBoxYear1.DataSource = ComboBoxYearSource.ToList();
+            ComboBoxYear1.DisplayMember = "NamHoc1";
+            ComboBoxYear1.ValueMember = "MaNamHoc";
 
         }
-        private void NamHocCbb_hk_SelectedValueChanged(object sender, EventArgs e)
-        {
-            dataEntities data = new dataEntities();
-            var ComboBoxSubjectsSource = data.HocKy_NamApDung(NamHocCbb_hk.SelectedValue.ToString());
-            HocKyCbb.DataSource = ComboBoxSubjectsSource.ToList();
-            HocKyCbb.DisplayMember = "HocKy";
-            HocKyCbb.ValueMember = "MaHocKy";
-        }
+
         string MaNamHoc(string namhoc)
         {
             dataEntities data = new dataEntities();
             var manamhoc = from obj in data.NAMHOCs
-                           where obj.NamHoc1 == NamHocCbb_nh.Text
+                           where obj.NamHoc1 == ComboBoxYear2.Text
                            select obj.MaNamHoc;
             return manamhoc.ToString();
         }
@@ -160,68 +153,68 @@ namespace QuanLyHocSinh
         void TraCuuDiemHocKy()
         {
             //Nhap sai
-            if (Kiemtra_input(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text))
+            if (Kiemtra_input(TextBoxID1.Text, ComboBoxSemester.Text, ComboBoxYear1.Text))
             {
                 dataEntities dtb = new dataEntities();
                 var DIEMTB = from kq in dtb.KETQUA_MONHOC_HOCSINH
                              join hk in dtb.HOCKies on kq.MaHocKy equals hk.MaHocKy
                              join nh in dtb.NAMHOCs on kq.MaNamHoc equals nh.MaNamHoc
                              join mh in dtb.MONHOCs on kq.MaMonHoc equals mh.MaMonHoc
-                             where kq.MaHocSinh == MHStextbox_hk.Text && hk.HocKy1 == HocKyCbb.Text && nh.NamHoc1 == NamHocCbb_hk.Text
+                             where kq.MaHocSinh == TextBoxID1.Text && hk.HocKy1 == ComboBoxSemester.Text && nh.NamHoc1 == ComboBoxYear1.Text
                              select (kq.DiemTB != null ? kq.DiemTB : null);
                 var MaMonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
                                join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
                                join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
-                               where c.MaHocSinh == MHStextbox_hk.Text && g.HocKy1 == HocKyCbb.Text && k.NamHoc1 == NamHocCbb_hk.Text
+                               where c.MaHocSinh == TextBoxID1.Text && g.HocKy1 == ComboBoxSemester.Text && k.NamHoc1 == ComboBoxYear1.Text
                                select c.MaMonHoc;
                 var TenMonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
                                 join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
                                 join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
                                 join m in dtb.MONHOCs on c.MaMonHoc equals m.MaMonHoc
-                                where c.MaHocSinh == MHStextbox_hk.Text && g.HocKy1 == HocKyCbb.Text && k.NamHoc1 == NamHocCbb_hk.Text
+                                where c.MaHocSinh == TextBoxID1.Text && g.HocKy1 == ComboBoxSemester.Text && k.NamHoc1 == ComboBoxYear1.Text
                                 select m.TenMonHoc;
-                var ds_thanhphan = dtb.THANHPHANs.Where(r => r.NamApDung == NamHocCbb_hk.SelectedValue.ToString()).OrderByDescending(r=>r.MaThanhPhan).Select(r => r.TenThanhPhan).ToList();
-                DHKGridView.Columns.Clear();
-                DHKGridView.Columns.Add("STT", "STT");
-                DHKGridView.Columns.Add("Mã môn học", "Mã môn học");
-                DHKGridView.Columns.Add("Tên môn học", "Tên môn học");
+                var ds_thanhphan = dtb.THANHPHANs.Where(r => r.NamApDung == ComboBoxYear1.SelectedValue.ToString()).OrderByDescending(r=>r.MaThanhPhan).Select(r => r.TenThanhPhan).ToList();
+                DataGridViewScoreSemester.Columns.Clear();
+                DataGridViewScoreSemester.Columns.Add("STT", "STT");
+                DataGridViewScoreSemester.Columns.Add("Mã môn học", "Mã môn học");
+                DataGridViewScoreSemester.Columns.Add("Tên môn học", "Tên môn học");
                 for (int j = 0; j < ds_thanhphan.Count; j++)
                 {
-                    DHKGridView.Columns.Add(ds_thanhphan[j].ToString(),"Điểm " + ds_thanhphan[j].ToString());
+                    DataGridViewScoreSemester.Columns.Add(ds_thanhphan[j].ToString(),"Điểm " + ds_thanhphan[j].ToString());
                 }
-                DHKGridView.Columns.Add("Điểm TB", "Điểm TB");
-                DHKGridView.Rows.Clear();
+                DataGridViewScoreSemester.Columns.Add("Điểm TB", "Điểm TB");
+                DataGridViewScoreSemester.Rows.Clear();
                 for (int i = 0; i < MaMonHoc.Count(); i++)
                 {
                     string Mamh = MaMonHoc.ToList()[i].ToString();
                     DataGridViewRow newRow = new DataGridViewRow();
-                    newRow.CreateCells(DHKGridView);
+                    newRow.CreateCells(DataGridViewScoreSemester);
                     newRow.Cells[0].Value = i + 1;
                     newRow.Cells[1].Value = MaMonHoc.ToList()[i];
                     newRow.Cells[2].Value = TenMonHoc.ToList()[i];
                     for(int j = 0; j < ds_thanhphan.Count; j++)
                     {
-                        var DiemTP = Diem_TP(MHStextbox_hk.Text, HocKyCbb.Text, NamHocCbb_hk.Text, ds_thanhphan[j].ToString(), MaMonHoc.ToList()[i]);
+                        var DiemTP = Diem_TP(TextBoxID1.Text, ComboBoxSemester.Text, ComboBoxYear1.Text, ds_thanhphan[j].ToString(), MaMonHoc.ToList()[i]);
                         if (DiemTP.Count != 0) newRow.Cells[j+3].Value = DiemTP[0];
                     }
 
                     newRow.Cells[ds_thanhphan.Count+3].Value = DIEMTB.ToList()[i];
-                    DHKGridView.Rows.Add(newRow);
+                    DataGridViewScoreSemester.Rows.Add(newRow);
                 }
                 //Ho Ten
-                HoTenTextBox.Text = GetHoTen(MHStextbox_hk.Text, dtb);
+                TextBoxName1.Text = GetHoTen(TextBoxID1.Text, dtb);
 
                 //LOP
-                LopTextBox.Text = GetLop(MHStextbox_hk.Text,NamHocCbb_hk.Text, dtb);
+                TextBoxClass1.Text = GetLop(TextBoxID1.Text,ComboBoxYear1.Text, dtb);
 
                 //Diem trung binh ca hoc ky
                 var DTBHK = DIEMTB.Sum(row => row) / DIEMTB.Count(row => row != null);
                 DTBHK = Math.Round((double)DTBHK, 2);
-                DTBHKTextBox.Text = DTBHK.ToString();
+                TextBoxAverageScore1.Text = DTBHK.ToString();
 
                 //XepLoai
                 var MaNamHoc = from n in dtb.NAMHOCs
-                            where n.NamHoc1 == NamHocCbb_hk.Text
+                            where n.NamHoc1 == ComboBoxYear1.Text
                             select n.MaNamHoc;
                 var DiemToiThieu = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r=>r.DiemToiThieu).ToList();
                 var DiemKhongChe = dtb.XepLoai_NamApDung(MaNamHoc.ToString()).OrderByDescending(r => r.DiemToiThieu).Select(r=>r.DiemKhongChe).ToList();
@@ -232,9 +225,9 @@ namespace QuanLyHocSinh
                     {
                         if (DIEMTB.Min() < DiemKhongChe.ToList()[k])
                         {
-                            XepLoaiTextBox.Text = TenXepLoai.ToList()[k + 1].ToString();
+                            TextBoxClassify1.Text = TenXepLoai.ToList()[k + 1].ToString();
                         }
-                        else XepLoaiTextBox.Text = TenXepLoai.ToList()[k].ToString();
+                        else TextBoxClassify1.Text = TenXepLoai.ToList()[k].ToString();
                         break;
                     }
                 }
@@ -243,42 +236,42 @@ namespace QuanLyHocSinh
         void TraCuuDiemNamHoc()
         {
 
-            if (Kiemtra_input(MHStextbox_nh.Text, " ", NamHocCbb_nh.Text))
+            if (Kiemtra_input(TextBoxID2.Text, " ", ComboBoxYear2.Text))
             {
                 dataEntities dtb = new dataEntities();
                 var MaMonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
                                join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
                                join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
-                               where c.MaHocSinh == MHStextbox_nh.Text && g.MaHocKy == "1" && k.NamHoc1 == NamHocCbb_nh.Text
+                               where c.MaHocSinh == TextBoxID2.Text && g.MaHocKy == "1" && k.NamHoc1 == ComboBoxYear2.Text
                                select c.MaMonHoc;
                 var TenMonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
                                 join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
                                 join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
                                 join m in dtb.MONHOCs on c.MaMonHoc equals m.MaMonHoc
-                                where c.MaHocSinh == MHStextbox_nh.Text && g.MaHocKy == "1" && k.NamHoc1 == NamHocCbb_nh.Text
+                                where c.MaHocSinh == TextBoxID2.Text && g.MaHocKy == "1" && k.NamHoc1 == ComboBoxYear2.Text
                                 select m.TenMonHoc;
                 var MaNamHoc = from n in dtb.NAMHOCs
-                               where n.NamHoc1 == NamHocCbb_nh.Text
+                               where n.NamHoc1 == ComboBoxYear2.Text
                                select n.MaNamHoc;
                 double Tong_DiemTB = 0;
                 double Min_DiemTB = 10;
                 int so_mon_da_co_diem = MaMonHoc.Count();
-                var ds_hocky = dtb.HocKy_NamApDung(NamHocCbb_nh.SelectedValue.ToString()).Select(r => r.MaHocKy).ToList();
-                DNHGridView.Rows.Clear();
-                DNHGridView.Columns.Clear();
-                DNHGridView.Columns.Add("STT", "STT");
-                DNHGridView.Columns.Add("Mã môn học", "Mã môn học");
-                DNHGridView.Columns.Add("Tên môn học", "Tên môn học");
+                var ds_hocky = dtb.HocKy_NamApDung(ComboBoxYear2.SelectedValue.ToString()).Select(r => r.MaHocKy).ToList();
+                DataGridViewScoreYear.Rows.Clear();
+                DataGridViewScoreYear.Columns.Clear();
+                DataGridViewScoreYear.Columns.Add("STT", "STT");
+                DataGridViewScoreYear.Columns.Add("Mã môn học", "Mã môn học");
+                DataGridViewScoreYear.Columns.Add("Tên môn học", "Tên môn học");
                 for (int j = 0; j < ds_hocky.Count; j++)
                 {
-                    DNHGridView.Columns.Add("Điểm HK " + ds_hocky[j].ToString(), "Điểm HK " + ds_hocky[j].ToString());
+                    DataGridViewScoreYear.Columns.Add("Điểm HK " + ds_hocky[j].ToString(), "Điểm HK " + ds_hocky[j].ToString());
                 }
-                DNHGridView.Columns.Add("Điểm TB", "Điểm TB cả năm");
+                DataGridViewScoreYear.Columns.Add("Điểm TB", "Điểm TB cả năm");
                 for (int i = 0; i < MaMonHoc.Count(); i++)
                 {
 
                     DataGridViewRow newRow = new DataGridViewRow();
-                    newRow.CreateCells(DNHGridView);
+                    newRow.CreateCells(DataGridViewScoreYear);
                     newRow.Cells[0].Value = i + 1;
                     newRow.Cells[1].Value = MaMonHoc.ToList()[i];
                     newRow.Cells[2].Value = TenMonHoc.ToList()[i];
@@ -287,7 +280,7 @@ namespace QuanLyHocSinh
 
                     for (int j = 3; j < ds_hocky.Count+3; j++)
                     {
-                        var DiemTBhk = dtb.TongKetMon_HocSinh(MaNamHoc.ToList()[0].ToString(), MHStextbox_nh.Text).Where(r => r.MaMonHoc == MaMonHoc.ToList()[i] && r.MaHocKy == ds_hocky[j-3]).Select(r=>r.DiemTB).ToList();
+                        var DiemTBhk = dtb.TongKetMon_HocSinh(MaNamHoc.ToList()[0].ToString(), TextBoxID2.Text).Where(r => r.MaMonHoc == MaMonHoc.ToList()[i] && r.MaHocKy == ds_hocky[j-3]).Select(r=>r.DiemTB).ToList();
                         var trong_so_hk = dtb.HocKy_NamApDung(MaNamHoc.ToList()[0].ToString()).Where(r => r.MaHocKy == ds_hocky[j-3]).Select(r => r.TrongSo).ToList();
                         if (DiemTBhk.Count() == 1)
                         {
@@ -313,13 +306,13 @@ namespace QuanLyHocSinh
 
                     newRow.Cells[ds_hocky.Count + 3].Value = DiemTB_mon_namhoc;
                     Tong_DiemTB += DiemTB_mon_namhoc;
-                    DNHGridView.Rows.Add(newRow);
+                    DataGridViewScoreYear.Rows.Add(newRow);
                 }
                 //Ho Ten
-                HoTenTxtBox_nh.Text = GetHoTen(MHStextbox_nh.Text, dtb);
+                HoTenTxtBox_nh.Text = GetHoTen(TextBoxID2.Text, dtb);
 
                 //LOP
-                LopTxtBox_nh.Text = GetLop(MHStextbox_nh.Text,NamHocCbb_nh.Text, dtb);
+                LopTxtBox_nh.Text = GetLop(TextBoxID2.Text,ComboBoxYear2.Text, dtb);
 
                 //Tinh Diem TB
                 double DiemTB = Math.Round((double)(Tong_DiemTB / so_mon_da_co_diem),2);
@@ -375,49 +368,7 @@ namespace QuanLyHocSinh
             excel.Quit();
         }
 
-        private void TraCuuButton_hk_Click(object sender, EventArgs e)
-        {
-            TraCuuDiemHocKy();
-        }
 
-        private void TraCuuButton_nh_Click(object sender, EventArgs e)
-        {
-            TraCuuDiemNamHoc();
-        }
-
-        private void guna2ImageButtonMinimize1_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
-
-        private void guna2ImageButtonClose1_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void guna2ImageButtonHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
-            ExportToExcel(DNHGridView);
-        }
-
-        private void guna2ImageButton2_Click(object sender, EventArgs e)
-        {
-            ExportToExcel(DHKGridView);
-        }
-
-        private void guna2ImageButton3_Click(object sender, EventArgs e)
-        {
-            TrangCaNhan newform = new TrangCaNhan();
-            this.Hide();
-            newform.ShowDialog();
-            this.Show();
-        }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -429,7 +380,57 @@ namespace QuanLyHocSinh
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
+        private void ButtonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void ButtonAccount_Click(object sender, EventArgs e)
+        {
+            TrangCaNhan newform = new TrangCaNhan();
+            this.Hide();
+            newform.ShowDialog();
+            this.Show();
+        }
+
+        private void ButtonMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ButtonSearch1_Click(object sender, EventArgs e)
+        {
+            TraCuuDiemHocKy();
+        }
+
+        private void ButtonPrint1_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(DataGridViewScoreSemester);
+        }
+
+        private void ButtonSearch2_Click(object sender, EventArgs e)
+        {
+            TraCuuDiemNamHoc();
+        }
+
+        private void ButtonPrint2_Click(object sender, EventArgs e)
+        {
+            ExportToExcel(DataGridViewScoreYear);
+        }
+
+        private void ComboBoxYear1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dataEntities data = new dataEntities();
+            var ComboBoxSubjectsSource = data.HocKy_NamApDung(ComboBoxYear1.SelectedValue.ToString());
+            ComboBoxSemester.DataSource = ComboBoxSubjectsSource.ToList();
+            ComboBoxSemester.DisplayMember = "HocKy";
+            ComboBoxSemester.ValueMember = "MaHocKy";
+        }
     }
 }
 
