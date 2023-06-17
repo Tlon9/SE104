@@ -777,7 +777,7 @@ namespace QuanLyHocSinh
                            select new {TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
             DataGridViewScore.DataSource = dsDiemTP.ToList();
             DataGridViewScore.Show();
-            MessageBox.Show("Cập nhật danh sách môn học thành công!");
+            MessageBox.Show("Cập nhật danh sách điểm thành phần thành công!");
         }
         //Thay đổi danh sách xếp loại
         List<XEPLOAI> Copy_Xeploai()
@@ -998,7 +998,7 @@ namespace QuanLyHocSinh
             }
             else if (tenhk == "")
             {
-                MessageBox.Show("Tên thành phần không hợp lệ!");
+                MessageBox.Show("Tên học kỳ không hợp lệ!");
                 return;
             }
             var ds_tenhk = dtb.HocKy_NamApDung(MaNamHoc_moi).Select(r => r.HocKy).ToList();

@@ -159,7 +159,7 @@
             this.PanelNameOfForm.Location = new System.Drawing.Point(0, 0);
             this.PanelNameOfForm.Margin = new System.Windows.Forms.Padding(4);
             this.PanelNameOfForm.Name = "PanelNameOfForm";
-            this.PanelNameOfForm.Size = new System.Drawing.Size(1100, 53);
+            this.PanelNameOfForm.Size = new System.Drawing.Size(1101, 53);
             this.PanelNameOfForm.TabIndex = 17;
             this.PanelNameOfForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
