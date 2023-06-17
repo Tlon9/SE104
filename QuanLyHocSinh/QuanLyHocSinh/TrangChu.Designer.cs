@@ -33,7 +33,7 @@ namespace QuanLyHocSinh
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.MenuItemAddStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemListCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSearch = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,34 +47,34 @@ namespace QuanLyHocSinh
             this.ToolStripMenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuQuanLyQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.guna2DataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.PanelForm = new Guna.UI2.WinForms.Guna2Panel();
+            this.ButtonClose = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ButtonMinimize = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.MonthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.DataGridViewInfo = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2ComboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ButtonSubject = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ButtonClass = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ImageButtonUser = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2TextBoxUser = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Background = new System.Windows.Forms.Panel();
-            this.menuStrip1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView)).BeginInit();
+            this.LabelYear = new System.Windows.Forms.Label();
+            this.ComboBoxYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ButtonSubject = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonClass = new Guna.UI2.WinForms.Guna2Button();
+            this.ButtonAccount = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.TextBoxUser = new Guna.UI2.WinForms.Guna2TextBox();
+            this.PanelBackground = new System.Windows.Forms.Panel();
+            this.MenuStrip.SuspendLayout();
+            this.PanelForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewInfo)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // MenuStrip
             // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuStrip.AutoSize = false;
+            this.MenuStrip.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.MenuStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.MenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemAddStudent,
             this.MenuItemListCreate,
             this.MenuItemSearch,
@@ -82,12 +82,12 @@ namespace QuanLyHocSinh
             this.MenuItemFinalReport,
             this.MenuQuanLyQuyDinh,
             this.ToolStripMenuItemAccount});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 208);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1312, 50);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MenuStrip.Location = new System.Drawing.Point(0, 208);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.MenuStrip.Size = new System.Drawing.Size(1312, 50);
+            this.MenuStrip.TabIndex = 2;
+            this.MenuStrip.Text = "menuStrip1";
             // 
             // MenuItemAddStudent
             // 
@@ -213,62 +213,62 @@ namespace QuanLyHocSinh
             this.ToolStripMenuItemAccount.Visible = false;
             this.ToolStripMenuItemAccount.Click += new System.EventHandler(this.taojToolStripMenuItem_Click);
             // 
-            // guna2Panel1
+            // PanelForm
             // 
-            this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonClose1);
-            this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1312, 53);
-            this.guna2Panel1.TabIndex = 17;
-            this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
+            this.PanelForm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.PanelForm.Controls.Add(this.ButtonClose);
+            this.PanelForm.Controls.Add(this.ButtonMinimize);
+            this.PanelForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelForm.Location = new System.Drawing.Point(0, 0);
+            this.PanelForm.Margin = new System.Windows.Forms.Padding(4);
+            this.PanelForm.Name = "PanelForm";
+            this.PanelForm.Size = new System.Drawing.Size(1312, 53);
+            this.PanelForm.TabIndex = 17;
+            this.PanelForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
-            // guna2ImageButtonClose1
+            // ButtonClose
             // 
-            this.guna2ImageButtonClose1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonClose1.Image")));
-            this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonClose1.ImageRotate = 0F;
-            this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1261, 6);
-            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
-            this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonClose1.Size = new System.Drawing.Size(47, 43);
-            this.guna2ImageButtonClose1.TabIndex = 1;
-            this.guna2ImageButtonClose1.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click);
+            this.ButtonClose.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Image = ((System.Drawing.Image)(resources.GetObject("ButtonClose.Image")));
+            this.ButtonClose.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonClose.ImageRotate = 0F;
+            this.ButtonClose.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonClose.Location = new System.Drawing.Point(1261, 6);
+            this.ButtonClose.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonClose.Name = "ButtonClose";
+            this.ButtonClose.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonClose.Size = new System.Drawing.Size(47, 43);
+            this.ButtonClose.TabIndex = 1;
+            this.ButtonClose.Click += new System.EventHandler(this.guna2ImageButtonClose1_Click);
             // 
-            // guna2ImageButtonMinimize1
+            // ButtonMinimize
             // 
-            this.guna2ImageButtonMinimize1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.guna2ImageButtonMinimize1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonMinimize1.Image")));
-            this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonMinimize1.ImageRotate = 0F;
-            this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1219, 6);
-            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
-            this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(47, 43);
-            this.guna2ImageButtonMinimize1.TabIndex = 0;
-            this.guna2ImageButtonMinimize1.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
+            this.ButtonMinimize.BackColor = System.Drawing.SystemColors.Highlight;
+            this.ButtonMinimize.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("ButtonMinimize.Image")));
+            this.ButtonMinimize.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonMinimize.ImageRotate = 0F;
+            this.ButtonMinimize.ImageSize = new System.Drawing.Size(30, 30);
+            this.ButtonMinimize.Location = new System.Drawing.Point(1219, 6);
+            this.ButtonMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonMinimize.Name = "ButtonMinimize";
+            this.ButtonMinimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonMinimize.Size = new System.Drawing.Size(47, 43);
+            this.ButtonMinimize.TabIndex = 0;
+            this.ButtonMinimize.Click += new System.EventHandler(this.guna2ImageButtonMinimize1_Click);
             // 
-            // monthCalendar1
+            // MonthCalendar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(32, 35);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 18;
+            this.MonthCalendar.Location = new System.Drawing.Point(32, 35);
+            this.MonthCalendar.Name = "MonthCalendar";
+            this.MonthCalendar.TabIndex = 18;
             // 
-            // guna2DataGridView
+            // DataGridViewInfo
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridViewInfo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,9 +276,9 @@ namespace QuanLyHocSinh
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView.ColumnHeadersHeight = 40;
-            this.guna2DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridViewInfo.ColumnHeadersHeight = 40;
+            this.DataGridViewInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -286,40 +286,40 @@ namespace QuanLyHocSinh
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView.Location = new System.Drawing.Point(243, 23);
-            this.guna2DataGridView.Name = "guna2DataGridView";
-            this.guna2DataGridView.RowHeadersVisible = false;
-            this.guna2DataGridView.RowHeadersWidth = 51;
-            this.guna2DataGridView.RowTemplate.Height = 24;
-            this.guna2DataGridView.Size = new System.Drawing.Size(576, 341);
-            this.guna2DataGridView.TabIndex = 19;
-            this.guna2DataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView.ThemeStyle.HeaderStyle.Height = 40;
-            this.guna2DataGridView.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView.ThemeStyle.RowsStyle.Height = 24;
-            this.guna2DataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewInfo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridViewInfo.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewInfo.Location = new System.Drawing.Point(243, 23);
+            this.DataGridViewInfo.Name = "DataGridViewInfo";
+            this.DataGridViewInfo.RowHeadersVisible = false;
+            this.DataGridViewInfo.RowHeadersWidth = 51;
+            this.DataGridViewInfo.RowTemplate.Height = 24;
+            this.DataGridViewInfo.Size = new System.Drawing.Size(576, 341);
+            this.DataGridViewInfo.TabIndex = 19;
+            this.DataGridViewInfo.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewInfo.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.DataGridViewInfo.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewInfo.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.DataGridViewInfo.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.DataGridViewInfo.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewInfo.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewInfo.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.DataGridViewInfo.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.DataGridViewInfo.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewInfo.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.DataGridViewInfo.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGridViewInfo.ThemeStyle.HeaderStyle.Height = 40;
+            this.DataGridViewInfo.ThemeStyle.ReadOnly = false;
+            this.DataGridViewInfo.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridViewInfo.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridViewInfo.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DataGridViewInfo.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridViewInfo.ThemeStyle.RowsStyle.Height = 24;
+            this.DataGridViewInfo.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.DataGridViewInfo.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.monthCalendar1);
+            this.guna2Panel2.Controls.Add(this.MonthCalendar);
             this.guna2Panel2.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
             this.guna2Panel2.CustomBorderThickness = new System.Windows.Forms.Padding(5, 3, 5, 5);
             this.guna2Panel2.Location = new System.Drawing.Point(26, 348);
@@ -329,11 +329,11 @@ namespace QuanLyHocSinh
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.Controls.Add(this.label1);
-            this.guna2Panel3.Controls.Add(this.guna2ComboBoxYear);
-            this.guna2Panel3.Controls.Add(this.guna2ButtonSubject);
-            this.guna2Panel3.Controls.Add(this.guna2ButtonClass);
-            this.guna2Panel3.Controls.Add(this.guna2DataGridView);
+            this.guna2Panel3.Controls.Add(this.LabelYear);
+            this.guna2Panel3.Controls.Add(this.ComboBoxYear);
+            this.guna2Panel3.Controls.Add(this.ButtonSubject);
+            this.guna2Panel3.Controls.Add(this.ButtonClass);
+            this.guna2Panel3.Controls.Add(this.DataGridViewInfo);
             this.guna2Panel3.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
             this.guna2Panel3.CustomBorderThickness = new System.Windows.Forms.Padding(5, 3, 5, 5);
             this.guna2Panel3.Location = new System.Drawing.Point(433, 348);
@@ -341,117 +341,117 @@ namespace QuanLyHocSinh
             this.guna2Panel3.Size = new System.Drawing.Size(847, 405);
             this.guna2Panel3.TabIndex = 21;
             // 
-            // label1
+            // LabelYear
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 28);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Năm học";
+            this.LabelYear.AutoSize = true;
+            this.LabelYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelYear.Location = new System.Drawing.Point(30, 35);
+            this.LabelYear.Name = "LabelYear";
+            this.LabelYear.Size = new System.Drawing.Size(91, 28);
+            this.LabelYear.TabIndex = 23;
+            this.LabelYear.Text = "Năm học";
             // 
-            // guna2ComboBoxYear
+            // ComboBoxYear
             // 
-            this.guna2ComboBoxYear.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBoxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBoxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBoxYear.ItemHeight = 30;
-            this.guna2ComboBoxYear.Location = new System.Drawing.Point(35, 70);
-            this.guna2ComboBoxYear.Name = "guna2ComboBoxYear";
-            this.guna2ComboBoxYear.Size = new System.Drawing.Size(166, 36);
-            this.guna2ComboBoxYear.TabIndex = 22;
+            this.ComboBoxYear.BackColor = System.Drawing.Color.Transparent;
+            this.ComboBoxYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboBoxYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboBoxYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.ComboBoxYear.ItemHeight = 30;
+            this.ComboBoxYear.Location = new System.Drawing.Point(35, 70);
+            this.ComboBoxYear.Name = "ComboBoxYear";
+            this.ComboBoxYear.Size = new System.Drawing.Size(166, 36);
+            this.ComboBoxYear.TabIndex = 22;
             // 
-            // guna2ButtonSubject
+            // ButtonSubject
             // 
-            this.guna2ButtonSubject.AutoRoundedCorners = true;
-            this.guna2ButtonSubject.BorderRadius = 22;
-            this.guna2ButtonSubject.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2ButtonSubject.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2ButtonSubject.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2ButtonSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonSubject.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.guna2ButtonSubject.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2ButtonSubject.ForeColor = System.Drawing.Color.White;
-            this.guna2ButtonSubject.Location = new System.Drawing.Point(35, 225);
-            this.guna2ButtonSubject.Name = "guna2ButtonSubject";
-            this.guna2ButtonSubject.Size = new System.Drawing.Size(153, 47);
-            this.guna2ButtonSubject.TabIndex = 21;
-            this.guna2ButtonSubject.Text = "Danh sách môn";
-            this.guna2ButtonSubject.Click += new System.EventHandler(this.guna2ButtonSubject_Click);
+            this.ButtonSubject.AutoRoundedCorners = true;
+            this.ButtonSubject.BorderRadius = 22;
+            this.ButtonSubject.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonSubject.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonSubject.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonSubject.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonSubject.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.ButtonSubject.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonSubject.ForeColor = System.Drawing.Color.White;
+            this.ButtonSubject.Location = new System.Drawing.Point(35, 225);
+            this.ButtonSubject.Name = "ButtonSubject";
+            this.ButtonSubject.Size = new System.Drawing.Size(153, 47);
+            this.ButtonSubject.TabIndex = 21;
+            this.ButtonSubject.Text = "Danh sách môn";
+            this.ButtonSubject.Click += new System.EventHandler(this.guna2ButtonSubject_Click);
             // 
-            // guna2ButtonClass
+            // ButtonClass
             // 
-            this.guna2ButtonClass.AutoRoundedCorners = true;
-            this.guna2ButtonClass.BorderRadius = 22;
-            this.guna2ButtonClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2ButtonClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2ButtonClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2ButtonClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2ButtonClass.FillColor = System.Drawing.SystemColors.HotTrack;
-            this.guna2ButtonClass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2ButtonClass.ForeColor = System.Drawing.Color.White;
-            this.guna2ButtonClass.Location = new System.Drawing.Point(35, 145);
-            this.guna2ButtonClass.Name = "guna2ButtonClass";
-            this.guna2ButtonClass.Size = new System.Drawing.Size(153, 47);
-            this.guna2ButtonClass.TabIndex = 20;
-            this.guna2ButtonClass.Text = "Danh sách lớp";
-            this.guna2ButtonClass.Click += new System.EventHandler(this.guna2ButtonClass_Click);
+            this.ButtonClass.AutoRoundedCorners = true;
+            this.ButtonClass.BorderRadius = 22;
+            this.ButtonClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.ButtonClass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.ButtonClass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.ButtonClass.FillColor = System.Drawing.SystemColors.HotTrack;
+            this.ButtonClass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ButtonClass.ForeColor = System.Drawing.Color.White;
+            this.ButtonClass.Location = new System.Drawing.Point(35, 145);
+            this.ButtonClass.Name = "ButtonClass";
+            this.ButtonClass.Size = new System.Drawing.Size(153, 47);
+            this.ButtonClass.TabIndex = 20;
+            this.ButtonClass.Text = "Danh sách lớp";
+            this.ButtonClass.Click += new System.EventHandler(this.guna2ButtonClass_Click);
             // 
-            // guna2ImageButtonUser
+            // ButtonAccount
             // 
-            this.guna2ImageButtonUser.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonUser.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonUser.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButtonUser.Image")));
-            this.guna2ImageButtonUser.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButtonUser.ImageRotate = 0F;
-            this.guna2ImageButtonUser.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2ImageButtonUser.Location = new System.Drawing.Point(1207, 264);
-            this.guna2ImageButtonUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ImageButtonUser.Name = "guna2ImageButtonUser";
-            this.guna2ImageButtonUser.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButtonUser.Size = new System.Drawing.Size(73, 68);
-            this.guna2ImageButtonUser.TabIndex = 22;
-            this.guna2ImageButtonUser.Click += new System.EventHandler(this.guna2ImageButtonUser_Click);
+            this.ButtonAccount.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAccount.Image")));
+            this.ButtonAccount.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonAccount.ImageRotate = 0F;
+            this.ButtonAccount.ImageSize = new System.Drawing.Size(60, 60);
+            this.ButtonAccount.Location = new System.Drawing.Point(1207, 264);
+            this.ButtonAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonAccount.Name = "ButtonAccount";
+            this.ButtonAccount.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonAccount.Size = new System.Drawing.Size(73, 68);
+            this.ButtonAccount.TabIndex = 22;
+            this.ButtonAccount.Click += new System.EventHandler(this.guna2ImageButtonUser_Click);
             // 
-            // guna2TextBoxUser
+            // TextBoxUser
             // 
-            this.guna2TextBoxUser.AutoRoundedCorners = true;
-            this.guna2TextBoxUser.BorderRadius = 27;
-            this.guna2TextBoxUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBoxUser.DefaultText = "";
-            this.guna2TextBoxUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBoxUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBoxUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBoxUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBoxUser.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBoxUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxUser.Location = new System.Drawing.Point(926, 275);
-            this.guna2TextBoxUser.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.guna2TextBoxUser.Name = "guna2TextBoxUser";
-            this.guna2TextBoxUser.PasswordChar = '\0';
-            this.guna2TextBoxUser.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.guna2TextBoxUser.PlaceholderText = "";
-            this.guna2TextBoxUser.ReadOnly = true;
-            this.guna2TextBoxUser.SelectedText = "";
-            this.guna2TextBoxUser.Size = new System.Drawing.Size(274, 57);
-            this.guna2TextBoxUser.TabIndex = 23;
-            this.guna2TextBoxUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxUser.AutoRoundedCorners = true;
+            this.TextBoxUser.BorderRadius = 27;
+            this.TextBoxUser.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBoxUser.DefaultText = "";
+            this.TextBoxUser.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBoxUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBoxUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxUser.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBoxUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxUser.ForeColor = System.Drawing.Color.Black;
+            this.TextBoxUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBoxUser.Location = new System.Drawing.Point(926, 275);
+            this.TextBoxUser.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.TextBoxUser.Name = "TextBoxUser";
+            this.TextBoxUser.PasswordChar = '\0';
+            this.TextBoxUser.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.TextBoxUser.PlaceholderText = "";
+            this.TextBoxUser.ReadOnly = true;
+            this.TextBoxUser.SelectedText = "";
+            this.TextBoxUser.Size = new System.Drawing.Size(274, 57);
+            this.TextBoxUser.TabIndex = 23;
+            this.TextBoxUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Background
+            // PanelBackground
             // 
-            this.Background.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Background.BackgroundImage")));
-            this.Background.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Background.Location = new System.Drawing.Point(0, 56);
-            this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1312, 149);
-            this.Background.TabIndex = 24;
+            this.PanelBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelBackground.BackgroundImage")));
+            this.PanelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelBackground.Location = new System.Drawing.Point(0, 56);
+            this.PanelBackground.Name = "PanelBackground";
+            this.PanelBackground.Size = new System.Drawing.Size(1312, 149);
+            this.PanelBackground.TabIndex = 24;
             // 
             // TrangChu
             // 
@@ -459,23 +459,23 @@ namespace QuanLyHocSinh
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1312, 783);
-            this.Controls.Add(this.Background);
-            this.Controls.Add(this.guna2TextBoxUser);
-            this.Controls.Add(this.guna2ImageButtonUser);
+            this.Controls.Add(this.PanelBackground);
+            this.Controls.Add(this.TextBoxUser);
+            this.Controls.Add(this.ButtonAccount);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.PanelForm);
+            this.Controls.Add(this.MenuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.MenuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView)).EndInit();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.PanelForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewInfo)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
@@ -484,7 +484,7 @@ namespace QuanLyHocSinh
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MenuStrip;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFinalReport;
         private System.Windows.Forms.ToolStripMenuItem MenuItemAddStudent;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSearch;
@@ -493,24 +493,24 @@ namespace QuanLyHocSinh
         private System.Windows.Forms.ToolStripMenuItem MenuItemSubjectScore;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSubjectScore1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSubjectScoreYear;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonClose1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonMinimize1;
+        private Guna.UI2.WinForms.Guna2Panel PanelForm;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonClose;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonMinimize;
         private System.Windows.Forms.ToolStripMenuItem MenuQuanLyQuyDinh;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemClassReport;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemFinalReport;
         private System.Windows.Forms.ToolStripMenuItem MenuItemListCreate;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView;
+        private System.Windows.Forms.MonthCalendar MonthCalendar;
+        private Guna.UI2.WinForms.Guna2DataGridView DataGridViewInfo;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Button guna2ButtonSubject;
-        private Guna.UI2.WinForms.Guna2Button guna2ButtonClass;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBoxYear;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButtonUser;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxUser;
-        private System.Windows.Forms.Panel Background;
+        private Guna.UI2.WinForms.Guna2Button ButtonSubject;
+        private Guna.UI2.WinForms.Guna2Button ButtonClass;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxYear;
+        private System.Windows.Forms.Label LabelYear;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonAccount;
+        private Guna.UI2.WinForms.Guna2TextBox TextBoxUser;
+        private System.Windows.Forms.Panel PanelBackground;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAccount;
     }
 }

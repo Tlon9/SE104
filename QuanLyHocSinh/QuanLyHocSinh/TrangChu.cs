@@ -22,7 +22,7 @@ namespace QuanLyHocSinh
 
         void initialize()
         {
-            guna2TextBoxUser.Text = Account.HoTen.ToString();
+            TextBoxUser.Text = Account.HoTen.ToString();
             if (Account.VaiTro == "Giáo viên")
             {
                 this.MenuItemSubjectScore.Visible = true;
@@ -40,9 +40,9 @@ namespace QuanLyHocSinh
             var ComboBoxYearsSource = from obj in dtb.NAMHOCs
                                       orderby obj.MaNamHoc descending
                                       select obj;
-            guna2ComboBoxYear.DataSource = ComboBoxYearsSource.ToList();
-            guna2ComboBoxYear.DisplayMember = "NamHoc1";
-            guna2ComboBoxYear.ValueMember = "MaNamHoc";
+            ComboBoxYear.DataSource = ComboBoxYearsSource.ToList();
+            ComboBoxYear.DisplayMember = "NamHoc1";
+            ComboBoxYear.ValueMember = "MaNamHoc";
         }
 
         private void MenuItemFinalReport_Click(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace QuanLyHocSinh
             {
                 dataEntities dtb = new dataEntities();
                 var Source = from cls in dtb.LOPs
-                             where cls.MaNamHoc == guna2ComboBoxYear.SelectedValue.ToString()
+                             where cls.MaNamHoc == ComboBoxYear.SelectedValue.ToString()
                              select new { cls.MaLop, cls.TenLop, SoLuong = cls.SiSo };
                 DataTable tbl = new DataTable();
                 tbl.Columns.Add("STT", typeof(int));
@@ -167,10 +167,10 @@ namespace QuanLyHocSinh
                     tbl.Rows.Add(row);
                 }
 
-                guna2DataGridView.DataSource = tbl;
-                guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+                DataGridViewInfo.DataSource = tbl;
+                DataGridViewInfo.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 
-                guna2DataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+                DataGridViewInfo.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             }
             catch
             {
@@ -183,7 +183,7 @@ namespace QuanLyHocSinh
             try
             {
                 dataEntities dtb = new dataEntities();
-                var Source = dtb.MonHoc_NamApDung(guna2ComboBoxYear.SelectedValue.ToString()).Select(r => new { r.TenMonHoc, r.NamApDung });
+                var Source = dtb.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString()).Select(r => new { r.TenMonHoc, r.NamApDung });
                     
                 DataTable tbl = new DataTable();
                 tbl.Columns.Add("STT", typeof(int));
@@ -201,8 +201,8 @@ namespace QuanLyHocSinh
                     tbl.Rows.Add(row);
                 }
 
-                guna2DataGridView.DataSource = tbl;
-                guna2DataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+                DataGridViewInfo.DataSource = tbl;
+                DataGridViewInfo.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             }
             catch
             {
