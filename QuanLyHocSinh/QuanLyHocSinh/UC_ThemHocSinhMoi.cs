@@ -17,7 +17,7 @@ namespace QuanLyHocSinh
         public UC_ThemHocSinhMoi()
         {
             InitializeComponent();
-            this.cbGender.SelectedIndex = 0;
+            this.ComboBoxGender.SelectedIndex = 0;
             this.dtpBirthday.CustomFormat = "dd/MM/yyyy";
             this.dtpBirthday.Format = DateTimePickerFormat.Custom;
         }
@@ -35,31 +35,31 @@ namespace QuanLyHocSinh
 
         private void AddNewStudent()
         {
-            this.tbName.Text.Trim();
-            this.tbOrigin.Text.Trim();
-            this.tbAddress.Text.Trim();
-            this.tbNumPhone.Text.Trim();
+            this.TextBoxName.Text.Trim();
+            this.TextBoxOrigin.Text.Trim();
+            this.TextBoxAddress.Text.Trim();
+            this.TextBoxNumPhone.Text.Trim();
 
-            if(tbName.Text.Length > 0
-                && tbOrigin.Text.Length > 0
-                && tbAddress.Text.Length > 0
-                && tbNumPhone.Text.Length > 0
-                && !IsOnlySpace(tbName.Text)
-                && !IsOnlySpace(tbOrigin.Text)
-                && !IsOnlySpace(tbAddress.Text)
-                && !IsOnlySpace(tbNumPhone.Text))
+            if(TextBoxName.Text.Length > 0
+                && TextBoxOrigin.Text.Length > 0
+                && TextBoxAddress.Text.Length > 0
+                && TextBoxNumPhone.Text.Length > 0
+                && !IsOnlySpace(TextBoxName.Text)
+                && !IsOnlySpace(TextBoxOrigin.Text)
+                && !IsOnlySpace(TextBoxAddress.Text)
+                && !IsOnlySpace(TextBoxNumPhone.Text))
             {
                 try {
                     short sNamSinhCha = 0;
                     short sNamSinhMe = 0;
-                    if (this.tbDadBirthyear.Text != "")
+                    if (this.TextBoxDadBirthyear.Text != "")
                     {
-                        sNamSinhCha = short.Parse(this.tbDadBirthyear.Text);
+                        sNamSinhCha = short.Parse(this.TextBoxDadBirthyear.Text);
 
                     }
-                    if (this.tbMomBirthyear.Text != "")
+                    if (this.TextBoxMomBirthyear.Text != "")
                     {
-                        sNamSinhMe = short.Parse(this.tbMomBirthyear.Text);
+                        sNamSinhMe = short.Parse(this.TextBoxMomBirthyear.Text);
                     }
 
                     dataEntities db = new dataEntities();
@@ -95,8 +95,8 @@ namespace QuanLyHocSinh
                     {
                         HOCSINH hs = new HOCSINH();
                         hs.MaHocSinh = strID;
-                        hs.HoTen = this.tbName.Text;
-                        hs.GioiTinh = this.cbGender.Text;
+                        hs.HoTen = this.TextBoxName.Text;
+                        hs.GioiTinh = this.ComboBoxGender.Text;
 
                         // Birthday
                         DateTime dateTime = new DateTime();
@@ -105,28 +105,28 @@ namespace QuanLyHocSinh
                         dateTime = dateTime.AddYears(this.dtpBirthday.Value.Year);
                         hs.NgaySinh = dateTime;
 
-                        hs.DiaChi = this.tbAddress.Text;
-                        hs.QueQuan = this.tbOrigin.Text;
-                        hs.DanToc = this.tbEthnicity.Text;
-                        hs.TonGiao = this.tbReligion.Text;
-                        hs.SDT = this.tbNumPhone.Text;
-                        hs.Email = this.tbEmail.Text;
-                        hs.HoTenCha = this.tbDadName.Text;
-                        if(this.tbDadBirthyear.Text != "")
+                        hs.DiaChi = this.TextBoxAddress.Text;
+                        hs.QueQuan = this.TextBoxOrigin.Text;
+                        hs.DanToc = this.TextBoxEthnicity.Text;
+                        hs.TonGiao = this.TextBoxReligion.Text;
+                        hs.SDT = this.TextBoxNumPhone.Text;
+                        hs.Email = this.TextBoxEmail.Text;
+                        hs.HoTenCha = this.TextBoxDadName.Text;
+                        if(this.TextBoxDadBirthyear.Text != "")
                         {
                             hs.NamSinh_Cha = sNamSinhCha;
                         }
-                        hs.CCCD_Cha = this.tbDadID.Text;
-                        hs.SDT_Cha = this.tbDadPhoneNum.Text;
-                        hs.NgheNghiep_Cha = this.tbDadJob.Text;
-                        hs.HoTenMe = this.tbMomName.Text;
-                        if (this.tbMomBirthyear.Text != "")
+                        hs.CCCD_Cha = this.TextBoxDadID.Text;
+                        hs.SDT_Cha = this.TextBoxDadPhoneNum.Text;
+                        hs.NgheNghiep_Cha = this.TextBoxDadJob.Text;
+                        hs.HoTenMe = this.TextBoxMomName.Text;
+                        if (this.TextBoxMomBirthyear.Text != "")
                         {
                             hs.NamSinh_Me = sNamSinhMe;
                         }
-                        hs.CCCD_Me = this.tbMomID.Text;
-                        hs.SDT_Me = this.tbMomPhoneNum.Text;
-                        hs.NgheNghiep_Me = this.tbMomJob.Text;
+                        hs.CCCD_Me = this.TextBoxMomID.Text;
+                        hs.SDT_Me = this.TextBoxMomPhoneNum.Text;
+                        hs.NgheNghiep_Me = this.TextBoxMomJob.Text;
 
                         db.HOCSINHs.Add(hs);
                         db.SaveChanges();
@@ -161,7 +161,7 @@ namespace QuanLyHocSinh
             
         }
 
-        private void btnAddStudent_Click(object sender, EventArgs e)
+        private void ButtonAddStudent_Click(object sender, EventArgs e)
         {
             AddNewStudent();
         }

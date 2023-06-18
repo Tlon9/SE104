@@ -16,17 +16,17 @@ namespace QuanLyHocSinh
         private TrangChu mainform { get; set; }
         private short sStdNum;
         private DataTable dt;
-        private int iNamHoc;
-        private int iKhoi;
-        private int iLop;
+        private int iSchoolYear;
+        private int iGrade;
+        private int iClass;
 
         public LapDanhSachLop(TrangChu mainform)
         {
             InitializeComponent();
             this.mainform = mainform;
 
-            this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.DataGridViewClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridViewClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             dt = new DataTable();
             dt.Columns.Add("STT", typeof(byte)).ReadOnly = true;
@@ -43,27 +43,20 @@ namespace QuanLyHocSinh
             CapNhatDanhSachLop(db);
             HienThiDanhSachHocSinh(db);
 
-            this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
-            this.cbGrade.SelectedIndexChanged += new System.EventHandler(this.cbGrade_SelectedIndexChanged);
-            this.cbClass.SelectedIndexChanged += new System.EventHandler(this.cbClass_SelectedIndexChanged);
+            this.ComboBoxSchoolYear.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSchoolYear_SelectedIndexChanged);
+            this.ComboBoxGrade.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGrade_SelectedIndexChanged);
+            this.ComboBoxClass.SelectedIndexChanged += new System.EventHandler(this.ComboBoxClass_SelectedIndexChanged);
         }
-
-        //private void LapDanhSachLop_Load(object sender, EventArgs e)
-        //{
-        //    // TODO: This line of code loads data into the 'duLieu.LOP' table. You can move, or remove it, as needed.
-        //    this.lOPTableAdapter.Fill(this.duLieu.LOP);
-
-        //}
 
         private void CapNhatDanhSachNamHoc(dataEntities db)
         {
             List<NAMHOC> list = (from obj in db.NAMHOCs.AsEnumerable()
                                  orderby obj.MaNamHoc descending
                                  select obj).ToList();
-            iNamHoc = list.Count();
-            cbSchoolYear.DataSource = list;
-            cbSchoolYear.DisplayMember = "NamHoc1";
-            cbSchoolYear.ValueMember = "MaNamHoc";            
+            iSchoolYear = list.Count();
+            ComboBoxSchoolYear.DataSource = list;
+            ComboBoxSchoolYear.DisplayMember = "NamHoc1";
+            ComboBoxSchoolYear.ValueMember = "MaNamHoc";            
         }
 
         private void CapNhatDanhSachKhoi(dataEntities db)
@@ -71,29 +64,29 @@ namespace QuanLyHocSinh
             try
             {
                 List<KHOI> list = (from obj in db.KHOIs.AsEnumerable()
-                                   where obj.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                                   where obj.MaNamHoc == this.ComboBoxSchoolYear.SelectedValue.ToString()
                                    select obj).ToList();
-                iKhoi = list.Count();
-                cbGrade.DataSource = list;
-                cbGrade.DisplayMember = "TenKhoi";
-                cbGrade.ValueMember = "MaKhoi";
+                iGrade = list.Count();
+                ComboBoxGrade.DataSource = list;
+                ComboBoxGrade.DisplayMember = "TenKhoi";
+                ComboBoxGrade.ValueMember = "MaKhoi";
 
-                if (iKhoi == 0)
+                if (iGrade == 0)
                 {
                     List<LOP> lop = new List<LOP>();
-                    cbClass.DataSource = lop;
-                    tbStdNum.Text = "";
-                    dgvClassDetail.Hide();
+                    ComboBoxClass.DataSource = lop;
+                    TextBoxStdNum.Text = "";
+                    DataGridViewClassDetail.Hide();
                 }
             }
             catch(InvalidOperationException)
             {
                 List<KHOI> khoi = new List<KHOI>();
-                cbGrade.DataSource = khoi;
+                ComboBoxGrade.DataSource = khoi;
                 List<LOP> lop = new List<LOP>();
-                cbClass.DataSource = lop;
-                tbStdNum.Text = "";
-                dgvClassDetail.Hide();
+                ComboBoxClass.DataSource = lop;
+                TextBoxStdNum.Text = "";
+                DataGridViewClassDetail.Hide();
             }
         }
 
@@ -102,33 +95,33 @@ namespace QuanLyHocSinh
             try
             {
                 List<LOP> list = (from l in db.LOPs.AsEnumerable()
-                                  where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
-                                  && l.MaKhoi == this.cbGrade.SelectedValue.ToString()
+                                  where l.MaNamHoc == this.ComboBoxSchoolYear.SelectedValue.ToString()
+                                  && l.MaKhoi == this.ComboBoxGrade.SelectedValue.ToString()
                                   orderby l.MaLop ascending
                                   select l).ToList();
-                iLop = list.Count();
-                this.cbClass.DataSource = list;
-                this.cbClass.DisplayMember = "TenLop";
-                this.cbClass.ValueMember = "MaLop";
+                iClass = list.Count();
+                this.ComboBoxClass.DataSource = list;
+                this.ComboBoxClass.DisplayMember = "TenLop";
+                this.ComboBoxClass.ValueMember = "MaLop";
 
-                if (iLop == 0)
+                if (iClass == 0)
                 {
-                    tbStdNum.Text = "";
-                    dgvClassDetail.Hide();
+                    TextBoxStdNum.Text = "";
+                    DataGridViewClassDetail.Hide();
                 }
             }
             catch(InvalidOperationException) 
             {
                 List<LOP> lop = new List<LOP>();
-                cbClass.DataSource = lop;
-                tbStdNum.Text = "";
-                dgvClassDetail.Hide();
+                ComboBoxClass.DataSource = lop;
+                TextBoxStdNum.Text = "";
+                DataGridViewClassDetail.Hide();
             }           
         }
 
         private void ThemHocSinhVaoLop()
         {
-            if(this.tbStdIdAdd.Text == "")
+            if(this.TextBoxStdIdAdd.Text == "")
             {
                 MessageBox.Show("Hãy nhập mã số học sinh", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -136,7 +129,7 @@ namespace QuanLyHocSinh
             {
                 dataEntities db = new dataEntities();
                 var stdIdDb = from hs in db.HOCSINHs
-                              where hs.MaHocSinh == this.tbStdIdAdd.Text
+                              where hs.MaHocSinh == this.TextBoxStdIdAdd.Text
                               select hs;
                 if (stdIdDb.Count() > 0)
                 {
@@ -156,7 +149,7 @@ namespace QuanLyHocSinh
                                          join ctl in db.CTLOPs on hs.MaHocSinh equals ctl.MaHocSinh
                                          join l in db.LOPs on ctl.MaLop equals l.MaLop
                                          join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
-                                         where nh.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                                         where nh.MaNamHoc == this.ComboBoxSchoolYear.SelectedValue.ToString()
                                          select hs;
                         if (stdIdNowDb.Count() == 0)
                         {
@@ -166,15 +159,15 @@ namespace QuanLyHocSinh
                             {
                                 // Thêm học sinh vào lớp
                                 CTLOP cTLOP = new CTLOP();
-                                cTLOP.MaHocSinh = this.tbStdIdAdd.Text;
-                                cTLOP.MaLop = this.cbClass.SelectedValue.ToString();
-                                cTLOP.MaCTL = this.cbClass.SelectedValue.ToString() + "_" + this.tbStdIdAdd.Text;
+                                cTLOP.MaHocSinh = this.TextBoxStdIdAdd.Text;
+                                cTLOP.MaLop = this.ComboBoxClass.SelectedValue.ToString();
+                                cTLOP.MaCTL = this.ComboBoxClass.SelectedValue.ToString() + "_" + this.TextBoxStdIdAdd.Text;
                                 db.CTLOPs.Add(cTLOP);
                                 db.SaveChanges();
                                 // Thêm học sinh vào lớp
 
                                 HienThiDanhSachHocSinh(db);
-                                this.tbStdIdAdd.Text = "";
+                                this.TextBoxStdIdAdd.Text = "";
                                 MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
@@ -200,15 +193,15 @@ namespace QuanLyHocSinh
             }            
         }
 
-        private void XoaHocSinhKhoiLop()
+        private void XoaHocSinhKhoiClass()
         {
             try
             {
-                if (short.Parse(this.tbStdIDDel.Text) < 1)
+                if (short.Parse(this.TextBoxStdIDDel.Text) < 1)
                 {
                     MessageBox.Show("Giá trị nhập vào không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (short.Parse(this.tbStdIDDel.Text) > sStdNum)
+                else if (short.Parse(this.TextBoxStdIDDel.Text) > sStdNum)
                 {
                     MessageBox.Show("Số thứ tự lớn hơn sĩ số lớp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -226,8 +219,8 @@ namespace QuanLyHocSinh
                     {
                         dataEntities db = new dataEntities();
 
-                        String str1 = dt.Rows[short.Parse(this.tbStdIDDel.Text) - 1]["MSHS"].ToString();
-                        String str2 = this.cbClass.SelectedValue.ToString();
+                        String str1 = dt.Rows[short.Parse(this.TextBoxStdIDDel.Text) - 1]["MSHS"].ToString();
+                        String str2 = this.ComboBoxClass.SelectedValue.ToString();
 
                         db.CTLOPs.Remove(
                             db.CTLOPs.Where(p => p.MaHocSinh == str1)
@@ -241,7 +234,7 @@ namespace QuanLyHocSinh
                         // Xoá học sinh khỏi lớp
 
                         HienThiDanhSachHocSinh(db);
-                        this.tbStdIDDel.Text = string.Empty;
+                        this.TextBoxStdIDDel.Text = string.Empty;
                         MessageBox.Show(
                             "Xoá học sinh khỏi lớp thành công",
                             "Xoá thành công",
@@ -271,7 +264,7 @@ namespace QuanLyHocSinh
             {
                 var dataSource = from ctl in db.CTLOPs.AsEnumerable()
                                  join hs in db.HOCSINHs.AsEnumerable() on ctl.MaHocSinh equals hs.MaHocSinh
-                                 where ctl.MaLop == this.cbClass.SelectedValue.ToString()
+                                 where ctl.MaLop == this.ComboBoxClass.SelectedValue.ToString()
                                  group new { hs }
                                  by new { hs.MaHocSinh, hs.HoTen, hs.GioiTinh, hs.NgaySinh, hs.DiaChi, hs.SDT }
                              into g
@@ -301,61 +294,61 @@ namespace QuanLyHocSinh
                     dt.Rows.Add(row);
                 }
 
-                this.tbStdNum.Text = sStdNum.ToString();
-                this.dgvClassDetail.DataSource = dt;
-                this.dgvClassDetail.AutoResizeColumns();
-                this.dgvClassDetail.Show();
+                this.TextBoxStdNum.Text = sStdNum.ToString();
+                this.DataGridViewClassDetail.DataSource = dt;
+                this.DataGridViewClassDetail.AutoResizeColumns();
+                this.DataGridViewClassDetail.Show();
             }
             catch(InvalidOperationException)
             {
-                tbStdNum.Text = "";
-                dgvClassDetail.Hide();
+                TextBoxStdNum.Text = "";
+                DataGridViewClassDetail.Hide();
             }
             
         }
 
-        private void cbSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxSchoolYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataEntities db = new dataEntities();
             CapNhatDanhSachKhoi(db);
         }
 
-        private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataEntities db = new dataEntities();
             CapNhatDanhSachLop(db);
         }
 
-        private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataEntities db = new dataEntities();            
             HienThiDanhSachHocSinh(db);                    
         }
 
-        private void Btn_Minimize_Click(object sender, EventArgs e)
+        private void Button_Minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Btn_Close_Click(object sender, EventArgs e)
+        private void Button_Close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnHomeScreen_Click(object sender, EventArgs e)
+        private void ButtonHomeScreen_Click(object sender, EventArgs e)
         {
             (this.mainform as TrangChu).Show();
             this.Hide();
         }
 
-        private void btnAddStdToClass_Click(object sender, EventArgs e)
+        private void ButtonAddStdToClass_Click(object sender, EventArgs e)
         {
             ThemHocSinhVaoLop();
         }
 
-        private void btnDelStdOutClass_Click(object sender, EventArgs e)
+        private void ButtonDelStdOutClass_Click(object sender, EventArgs e)
         {
-            XoaHocSinhKhoiLop();
+            XoaHocSinhKhoiClass();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

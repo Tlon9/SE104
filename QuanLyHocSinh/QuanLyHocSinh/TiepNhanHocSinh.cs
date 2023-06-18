@@ -23,13 +23,13 @@ namespace QuanLyHocSinh
             this.uC_XemThongTinHocSinh1.Visible = false;
         }
 
-        private void btnHomeScreen_Click(object sender, EventArgs e)
+        private void ButtonHomeScreen_Click(object sender, EventArgs e)
         {
             (this.formTNHocSinh as TrangChu).Show();
             this.Close();
         }
 
-        private void btnAddNewStudent_Click(object sender, EventArgs e)
+        private void ButtonAddNewStudent_Click(object sender, EventArgs e)
         {
             if(this.uC_ThemHocSinhMoi1.Visible == false)
             {
@@ -38,7 +38,7 @@ namespace QuanLyHocSinh
             }
         }
 
-        private void btnInteractStudentInfo_Click(object sender, EventArgs e)
+        private void ButtonInteractStudentInfo_Click(object sender, EventArgs e)
         {
             if(this.uC_XemThongTinHocSinh1.Visible == false)
             {
@@ -47,12 +47,12 @@ namespace QuanLyHocSinh
             }
         }
 
-        private void Btn_Minimize_Click(object sender, EventArgs e)
+        private void Button_Minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Btn_Close_Click(object sender, EventArgs e)
+        private void Button_Close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
