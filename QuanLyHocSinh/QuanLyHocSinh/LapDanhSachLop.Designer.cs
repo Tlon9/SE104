@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LapDanhSachLop));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ComboBoxClass = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ComboBoxGrade = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -42,10 +42,8 @@
             this.lbClass = new System.Windows.Forms.Label();
             this.lbGrade = new System.Windows.Forms.Label();
             this.lbSchoolYear = new System.Windows.Forms.Label();
-            this.duLieu = new QuanLyHocSinh.DuLieu();
             this.duLieuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lOPTableAdapter = new QuanLyHocSinh.DuLieuTableAdapters.LOPTableAdapter();
             this.duLieuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainLabelStdInfo = new System.Windows.Forms.Label();
@@ -64,7 +62,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.duLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource1)).BeginInit();
@@ -85,9 +82,10 @@
             this.panel1.Controls.Add(this.lbClass);
             this.panel1.Controls.Add(this.lbGrade);
             this.panel1.Controls.Add(this.lbSchoolYear);
-            this.panel1.Location = new System.Drawing.Point(177, 96);
+            this.panel1.Location = new System.Drawing.Point(157, 77);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1390, 123);
+            this.panel1.Size = new System.Drawing.Size(1236, 98);
             this.panel1.TabIndex = 0;
             // 
             // ComboBoxClass
@@ -100,9 +98,10 @@
             this.ComboBoxClass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ComboBoxClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.ComboBoxClass.ItemHeight = 30;
-            this.ComboBoxClass.Location = new System.Drawing.Point(907, 29);
+            this.ComboBoxClass.Location = new System.Drawing.Point(806, 23);
+            this.ComboBoxClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxClass.Name = "ComboBoxClass";
-            this.ComboBoxClass.Size = new System.Drawing.Size(185, 36);
+            this.ComboBoxClass.Size = new System.Drawing.Size(165, 36);
             this.ComboBoxClass.TabIndex = 10;
             // 
             // ComboBoxGrade
@@ -115,9 +114,10 @@
             this.ComboBoxGrade.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ComboBoxGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.ComboBoxGrade.ItemHeight = 30;
-            this.ComboBoxGrade.Location = new System.Drawing.Point(529, 29);
+            this.ComboBoxGrade.Location = new System.Drawing.Point(470, 23);
+            this.ComboBoxGrade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxGrade.Name = "ComboBoxGrade";
-            this.ComboBoxGrade.Size = new System.Drawing.Size(209, 36);
+            this.ComboBoxGrade.Size = new System.Drawing.Size(186, 36);
             this.ComboBoxGrade.TabIndex = 9;
             // 
             // ComboBoxSchoolYear
@@ -130,27 +130,29 @@
             this.ComboBoxSchoolYear.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ComboBoxSchoolYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.ComboBoxSchoolYear.ItemHeight = 30;
-            this.ComboBoxSchoolYear.Location = new System.Drawing.Point(157, 28);
+            this.ComboBoxSchoolYear.Location = new System.Drawing.Point(140, 22);
+            this.ComboBoxSchoolYear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ComboBoxSchoolYear.Name = "ComboBoxSchoolYear";
-            this.ComboBoxSchoolYear.Size = new System.Drawing.Size(209, 36);
+            this.ComboBoxSchoolYear.Size = new System.Drawing.Size(186, 36);
             this.ComboBoxSchoolYear.TabIndex = 8;
             // 
             // TextBoxStdNum
             // 
             this.TextBoxStdNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxStdNum.Location = new System.Drawing.Point(1222, 40);
+            this.TextBoxStdNum.Location = new System.Drawing.Point(1086, 32);
+            this.TextBoxStdNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TextBoxStdNum.Name = "TextBoxStdNum";
             this.TextBoxStdNum.ReadOnly = true;
-            this.TextBoxStdNum.Size = new System.Drawing.Size(88, 39);
+            this.TextBoxStdNum.Size = new System.Drawing.Size(79, 34);
             this.TextBoxStdNum.TabIndex = 7;
             // 
             // lbStdNum
             // 
             this.lbStdNum.AutoSize = true;
             this.lbStdNum.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStdNum.Location = new System.Drawing.Point(1149, 43);
+            this.lbStdNum.Location = new System.Drawing.Point(1021, 34);
             this.lbStdNum.Name = "lbStdNum";
-            this.lbStdNum.Size = new System.Drawing.Size(67, 32);
+            this.lbStdNum.Size = new System.Drawing.Size(56, 28);
             this.lbStdNum.TabIndex = 3;
             this.lbStdNum.Text = "Sĩ số";
             // 
@@ -158,9 +160,9 @@
             // 
             this.lbClass.AutoSize = true;
             this.lbClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbClass.Location = new System.Drawing.Point(831, 43);
+            this.lbClass.Location = new System.Drawing.Point(739, 34);
             this.lbClass.Name = "lbClass";
-            this.lbClass.Size = new System.Drawing.Size(56, 32);
+            this.lbClass.Size = new System.Drawing.Size(47, 28);
             this.lbClass.TabIndex = 2;
             this.lbClass.Text = "Lớp";
             // 
@@ -168,9 +170,9 @@
             // 
             this.lbGrade.AutoSize = true;
             this.lbGrade.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGrade.Location = new System.Drawing.Point(441, 43);
+            this.lbGrade.Location = new System.Drawing.Point(392, 34);
             this.lbGrade.Name = "lbGrade";
-            this.lbGrade.Size = new System.Drawing.Size(66, 32);
+            this.lbGrade.Size = new System.Drawing.Size(55, 28);
             this.lbGrade.TabIndex = 1;
             this.lbGrade.Text = "Khối";
             // 
@@ -178,35 +180,11 @@
             // 
             this.lbSchoolYear.AutoSize = true;
             this.lbSchoolYear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSchoolYear.Location = new System.Drawing.Point(21, 43);
+            this.lbSchoolYear.Location = new System.Drawing.Point(19, 34);
             this.lbSchoolYear.Name = "lbSchoolYear";
-            this.lbSchoolYear.Size = new System.Drawing.Size(116, 32);
+            this.lbSchoolYear.Size = new System.Drawing.Size(97, 28);
             this.lbSchoolYear.TabIndex = 0;
             this.lbSchoolYear.Text = "Năm học";
-            // 
-            // duLieu
-            // 
-            this.duLieu.DataSetName = "DuLieu";
-            this.duLieu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // duLieuBindingSource
-            // 
-            this.duLieuBindingSource.DataSource = this.duLieu;
-            this.duLieuBindingSource.Position = 0;
-            // 
-            // lOPBindingSource
-            // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.duLieuBindingSource;
-            // 
-            // lOPTableAdapter
-            // 
-            this.lOPTableAdapter.ClearBeforeFill = true;
-            // 
-            // duLieuBindingSource1
-            // 
-            this.duLieuBindingSource1.DataSource = this.duLieu;
-            this.duLieuBindingSource1.Position = 0;
             // 
             // panel2
             // 
@@ -215,8 +193,9 @@
             this.panel2.Controls.Add(this.Button_Minimize);
             this.panel2.Controls.Add(this.Button_Close);
             this.panel2.Location = new System.Drawing.Point(-4, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1605, 76);
+            this.panel2.Size = new System.Drawing.Size(1427, 61);
             this.panel2.TabIndex = 7;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -225,9 +204,9 @@
             this.mainLabelStdInfo.AutoSize = true;
             this.mainLabelStdInfo.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainLabelStdInfo.ForeColor = System.Drawing.Color.White;
-            this.mainLabelStdInfo.Location = new System.Drawing.Point(18, 17);
+            this.mainLabelStdInfo.Location = new System.Drawing.Point(16, 14);
             this.mainLabelStdInfo.Name = "mainLabelStdInfo";
-            this.mainLabelStdInfo.Size = new System.Drawing.Size(231, 45);
+            this.mainLabelStdInfo.Size = new System.Drawing.Size(196, 37);
             this.mainLabelStdInfo.TabIndex = 6;
             this.mainLabelStdInfo.Text = "Danh sách lớp";
             this.mainLabelStdInfo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainLabelStdInfo_MouseDown);
@@ -241,11 +220,11 @@
             this.Button_Minimize.ImageOffset = new System.Drawing.Point(0, 0);
             this.Button_Minimize.ImageRotate = 0F;
             this.Button_Minimize.ImageSize = new System.Drawing.Size(30, 30);
-            this.Button_Minimize.Location = new System.Drawing.Point(1473, 14);
-            this.Button_Minimize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button_Minimize.Location = new System.Drawing.Point(1309, 11);
+            this.Button_Minimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_Minimize.Name = "Button_Minimize";
             this.Button_Minimize.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Button_Minimize.Size = new System.Drawing.Size(53, 54);
+            this.Button_Minimize.Size = new System.Drawing.Size(47, 43);
             this.Button_Minimize.TabIndex = 4;
             this.Button_Minimize.Click += new System.EventHandler(this.Button_Minimize_Click);
             // 
@@ -258,11 +237,11 @@
             this.Button_Close.ImageOffset = new System.Drawing.Point(0, 0);
             this.Button_Close.ImageRotate = 0F;
             this.Button_Close.ImageSize = new System.Drawing.Size(30, 30);
-            this.Button_Close.Location = new System.Drawing.Point(1534, 14);
-            this.Button_Close.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button_Close.Location = new System.Drawing.Point(1364, 11);
+            this.Button_Close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Button_Close.Name = "Button_Close";
             this.Button_Close.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.Button_Close.Size = new System.Drawing.Size(53, 54);
+            this.Button_Close.Size = new System.Drawing.Size(47, 43);
             this.Button_Close.TabIndex = 5;
             this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
             // 
@@ -277,44 +256,45 @@
             this.ButtonHomeScreen.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.ButtonHomeScreen.ForeColor = System.Drawing.Color.White;
             this.ButtonHomeScreen.Image = ((System.Drawing.Image)(resources.GetObject("ButtonHomeScreen.Image")));
-            this.ButtonHomeScreen.ImageSize = new System.Drawing.Size(30, 30);
-            this.ButtonHomeScreen.Location = new System.Drawing.Point(60, 136);
+            this.ButtonHomeScreen.ImageSize = new System.Drawing.Size(40, 40);
+            this.ButtonHomeScreen.Location = new System.Drawing.Point(53, 81);
+            this.ButtonHomeScreen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonHomeScreen.Name = "ButtonHomeScreen";
-            this.ButtonHomeScreen.Size = new System.Drawing.Size(60, 60);
+            this.ButtonHomeScreen.Size = new System.Drawing.Size(67, 62);
             this.ButtonHomeScreen.TabIndex = 8;
             this.ButtonHomeScreen.Click += new System.EventHandler(this.ButtonHomeScreen_Click);
             // 
             // DataGridViewClassDetail
             // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.DataGridViewClassDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridViewClassDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DataGridViewClassDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridViewClassDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGridViewClassDetail.ColumnHeadersHeight = 40;
             this.DataGridViewClassDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridViewClassDetail.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridViewClassDetail.DefaultCellStyle = dataGridViewCellStyle6;
             this.DataGridViewClassDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGridViewClassDetail.Location = new System.Drawing.Point(22, 366);
+            this.DataGridViewClassDetail.Location = new System.Drawing.Point(20, 293);
             this.DataGridViewClassDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DataGridViewClassDetail.Name = "DataGridViewClassDetail";
             this.DataGridViewClassDetail.ReadOnly = true;
             this.DataGridViewClassDetail.RowHeadersVisible = false;
             this.DataGridViewClassDetail.RowHeadersWidth = 62;
             this.DataGridViewClassDetail.RowTemplate.Height = 24;
-            this.DataGridViewClassDetail.Size = new System.Drawing.Size(1545, 300);
+            this.DataGridViewClassDetail.Size = new System.Drawing.Size(1373, 240);
             this.DataGridViewClassDetail.TabIndex = 9;
             this.DataGridViewClassDetail.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGridViewClassDetail.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -344,16 +324,17 @@
             this.panel3.Controls.Add(this.TextBoxStdIdAdd);
             this.panel3.Controls.Add(this.lbInputStdID);
             this.panel3.Controls.Add(this.lbAddStdToClass);
-            this.panel3.Location = new System.Drawing.Point(22, 219);
+            this.panel3.Location = new System.Drawing.Point(20, 175);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1042, 141);
+            this.panel3.Size = new System.Drawing.Size(926, 113);
             this.panel3.TabIndex = 10;
             // 
             // ButtonAddStdToClass
             // 
             this.ButtonAddStdToClass.AutoRoundedCorners = true;
             this.ButtonAddStdToClass.BackColor = System.Drawing.Color.White;
-            this.ButtonAddStdToClass.BorderRadius = 21;
+            this.ButtonAddStdToClass.BorderRadius = 18;
             this.ButtonAddStdToClass.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.ButtonAddStdToClass.DefaultAutoSize = true;
             this.ButtonAddStdToClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -363,12 +344,12 @@
             this.ButtonAddStdToClass.FillColor = System.Drawing.Color.LightCyan;
             this.ButtonAddStdToClass.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ButtonAddStdToClass.ForeColor = System.Drawing.Color.Black;
-            this.ButtonAddStdToClass.Image = ((System.Drawing.Image)(resources.GetObject("ButtonAddStdToClass.Image")));
             this.ButtonAddStdToClass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonAddStdToClass.ImageSize = new System.Drawing.Size(30, 30);
-            this.ButtonAddStdToClass.Location = new System.Drawing.Point(811, 65);
+            this.ButtonAddStdToClass.Location = new System.Drawing.Point(721, 52);
+            this.ButtonAddStdToClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonAddStdToClass.Name = "ButtonAddStdToClass";
-            this.ButtonAddStdToClass.Size = new System.Drawing.Size(125, 44);
+            this.ButtonAddStdToClass.Size = new System.Drawing.Size(83, 39);
             this.ButtonAddStdToClass.TabIndex = 3;
             this.ButtonAddStdToClass.Text = "Thêm";
             this.ButtonAddStdToClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -385,22 +366,22 @@
             this.TextBoxStdIdAdd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxStdIdAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxStdIdAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxStdIdAdd.Location = new System.Drawing.Point(192, 62);
-            this.TextBoxStdIdAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBoxStdIdAdd.Location = new System.Drawing.Point(171, 50);
+            this.TextBoxStdIdAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TextBoxStdIdAdd.Name = "TextBoxStdIdAdd";
             this.TextBoxStdIdAdd.PasswordChar = '\0';
             this.TextBoxStdIdAdd.PlaceholderText = "";
             this.TextBoxStdIdAdd.SelectedText = "";
-            this.TextBoxStdIdAdd.Size = new System.Drawing.Size(592, 60);
+            this.TextBoxStdIdAdd.Size = new System.Drawing.Size(526, 48);
             this.TextBoxStdIdAdd.TabIndex = 2;
             // 
             // lbInputStdID
             // 
             this.lbInputStdID.AutoSize = true;
             this.lbInputStdID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInputStdID.Location = new System.Drawing.Point(21, 78);
+            this.lbInputStdID.Location = new System.Drawing.Point(19, 62);
             this.lbInputStdID.Name = "lbInputStdID";
-            this.lbInputStdID.Size = new System.Drawing.Size(144, 32);
+            this.lbInputStdID.Size = new System.Drawing.Size(119, 28);
             this.lbInputStdID.TabIndex = 1;
             this.lbInputStdID.Text = "Nhập MSHS";
             // 
@@ -408,9 +389,9 @@
             // 
             this.lbAddStdToClass.AutoSize = true;
             this.lbAddStdToClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddStdToClass.Location = new System.Drawing.Point(21, 18);
+            this.lbAddStdToClass.Location = new System.Drawing.Point(19, 14);
             this.lbAddStdToClass.Name = "lbAddStdToClass";
-            this.lbAddStdToClass.Size = new System.Drawing.Size(271, 32);
+            this.lbAddStdToClass.Size = new System.Drawing.Size(227, 28);
             this.lbAddStdToClass.TabIndex = 0;
             this.lbAddStdToClass.Text = "Thêm học sinh vào lớp";
             // 
@@ -420,15 +401,16 @@
             this.panel4.Controls.Add(this.TextBoxStdIDDel);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(1091, 219);
+            this.panel4.Location = new System.Drawing.Point(970, 175);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(476, 141);
+            this.panel4.Size = new System.Drawing.Size(423, 113);
             this.panel4.TabIndex = 11;
             // 
             // ButtonDelStdOutClass
             // 
             this.ButtonDelStdOutClass.AutoRoundedCorners = true;
-            this.ButtonDelStdOutClass.BorderRadius = 21;
+            this.ButtonDelStdOutClass.BorderRadius = 18;
             this.ButtonDelStdOutClass.DefaultAutoSize = true;
             this.ButtonDelStdOutClass.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ButtonDelStdOutClass.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -437,12 +419,12 @@
             this.ButtonDelStdOutClass.FillColor = System.Drawing.Color.LightCyan;
             this.ButtonDelStdOutClass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDelStdOutClass.ForeColor = System.Drawing.Color.Black;
-            this.ButtonDelStdOutClass.Image = ((System.Drawing.Image)(resources.GetObject("ButtonDelStdOutClass.Image")));
             this.ButtonDelStdOutClass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.ButtonDelStdOutClass.ImageSize = new System.Drawing.Size(30, 30);
-            this.ButtonDelStdOutClass.Location = new System.Drawing.Point(329, 65);
+            this.ButtonDelStdOutClass.Location = new System.Drawing.Point(292, 52);
+            this.ButtonDelStdOutClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonDelStdOutClass.Name = "ButtonDelStdOutClass";
-            this.ButtonDelStdOutClass.Size = new System.Drawing.Size(105, 44);
+            this.ButtonDelStdOutClass.Size = new System.Drawing.Size(67, 39);
             this.ButtonDelStdOutClass.TabIndex = 4;
             this.ButtonDelStdOutClass.Text = "Xoá";
             this.ButtonDelStdOutClass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -459,22 +441,22 @@
             this.TextBoxStdIDDel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBoxStdIDDel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.TextBoxStdIDDel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBoxStdIDDel.Location = new System.Drawing.Point(185, 61);
-            this.TextBoxStdIDDel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBoxStdIDDel.Location = new System.Drawing.Point(164, 49);
+            this.TextBoxStdIDDel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TextBoxStdIDDel.Name = "TextBoxStdIDDel";
             this.TextBoxStdIDDel.PasswordChar = '\0';
             this.TextBoxStdIDDel.PlaceholderText = "";
             this.TextBoxStdIDDel.SelectedText = "";
-            this.TextBoxStdIDDel.Size = new System.Drawing.Size(118, 60);
+            this.TextBoxStdIDDel.Size = new System.Drawing.Size(105, 48);
             this.TextBoxStdIDDel.TabIndex = 3;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 77);
+            this.label8.Location = new System.Drawing.Point(22, 62);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 32);
+            this.label8.Size = new System.Drawing.Size(96, 28);
             this.label8.TabIndex = 2;
             this.label8.Text = "Nhập STT";
             // 
@@ -482,19 +464,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 18);
+            this.label6.Location = new System.Drawing.Point(22, 14);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(260, 32);
+            this.label6.Size = new System.Drawing.Size(217, 28);
             this.label6.TabIndex = 1;
             this.label6.Text = "Xoá học sinh khỏi lớp";
             // 
             // LapDanhSachLop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1900, 850);
+            this.ClientSize = new System.Drawing.Size(1689, 680);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.DataGridViewClassDetail);
@@ -502,13 +484,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LapDanhSachLop";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LapDanhSachLop";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.duLieu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.duLieuBindingSource1)).EndInit();
@@ -532,9 +514,7 @@
         private System.Windows.Forms.Label lbGrade;
         private System.Windows.Forms.Label lbSchoolYear;
         private System.Windows.Forms.BindingSource duLieuBindingSource;
-        private DuLieu duLieu;
         private System.Windows.Forms.BindingSource lOPBindingSource;
-        private DuLieuTableAdapters.LOPTableAdapter lOPTableAdapter;
         private System.Windows.Forms.BindingSource duLieuBindingSource1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label mainLabelStdInfo;

@@ -126,11 +126,6 @@
     <Compile Include="DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="DuLieu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DuLieu.xsd</DependentUpon>
-    </Compile>
     <Compile Include="HocKy_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
@@ -323,17 +318,6 @@
     </EntityDeploy>
     <None Include="dataModel.edmx.diagram">
       <DependentUpon>dataModel.edmx</DependentUpon>
-    </None>
-    <None Include="DuLieu.xsc">
-      <DependentUpon>DuLieu.xsd</DependentUpon>
-    </None>
-    <None Include="DuLieu.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DuLieu.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DuLieu.xss">
-      <DependentUpon>DuLieu.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Data.Entity.SqlServer.SqlAzureExecutionStrategy.datasource" />
